@@ -64,6 +64,74 @@ h1 {
   margin-bottom: 20px;
 }
 
+.timeline-panel {
+  margin-bottom: 24px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(255, 253, 248, 0.82);
+  box-shadow: 0 12px 40px rgba(31, 41, 51, 0.06);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.timeline-header h2 {
+  margin: 0;
+}
+
+.timeline-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.timeline {
+  display: grid;
+  gap: 12px;
+}
+
+.timeline-month {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(245, 241, 232, 0.8);
+  border: 1px solid rgba(217, 208, 191, 0.85);
+}
+
+.timeline-month-label {
+  font-weight: 700;
+}
+
+.timeline-country-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timeline-country-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.timeline-country-pill strong {
+  font-weight: 700;
+}
+
 .status-pill {
   display: inline-flex;
   align-items: center;

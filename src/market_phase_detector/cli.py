@@ -6,7 +6,7 @@ from market_phase_detector.collectors.us_fred import FredCollector
 from market_phase_detector.engine.state_machine import resolve_transition
 from market_phase_detector.engine.tw_rules import derive_tw_candidate
 from market_phase_detector.engine.us_rules import derive_us_candidate
-from market_phase_detector.exporters.json_exporter import write_latest_snapshot
+from market_phase_detector.exporters.json_exporter import write_dashboard_snapshot
 from market_phase_detector.live_pipeline import build_tw_observations, build_us_observations
 from market_phase_detector.pipeline import build_country_snapshot
 from market_phase_detector.site_builder import build_site
@@ -153,7 +153,7 @@ def generate_dashboard_payload() -> dict:
 
 def main() -> None:
     target = Path("data/latest.json")
-    write_latest_snapshot(generate_dashboard_payload(), target)
+    write_dashboard_snapshot(generate_dashboard_payload(), target, Path("data/history"))
     build_site("frontend/src", "data", "dist")
 
 

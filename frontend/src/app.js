@@ -17,9 +17,11 @@ async function loadDashboard() {
   const payload = await response.json();
   const root = document.getElementById("summary");
   const status = document.getElementById("status");
+  const timelineRoot = document.getElementById("timeline");
 
   root.innerHTML = "";
   status.innerHTML = "";
+  timelineRoot.innerHTML = "";
 
   const source = payload.meta?.source ?? "unknown";
   const sourcePill = document.createElement("div");
@@ -37,6 +39,37 @@ async function loadDashboard() {
     errorPill.className = "status-pill meta-error";
     errorPill.textContent = `Fallback reason: ${payload.meta.error}`;
     status.appendChild(errorPill);
+  }
+
+  try {
+    const historyResponse = await fetch("./data/history/index.json");
+    const historyPayload = await historyResponse.json();
+    for (const month of historyPayload.months ?? []) {
+      const monthRow = document.createElement("div");
+      monthRow.className = "timeline-month";
+
+      const monthLabel = document.createElement("div");
+      monthLabel.className = "timeline-month-label";
+      monthLabel.textContent = month.month;
+      monthRow.appendChild(monthLabel);
+
+      const countryList = document.createElement("div");
+      countryList.className = "timeline-country-list";
+      for (const country of month.countries ?? []) {
+        const pill = document.createElement("div");
+        pill.className = "timeline-country-pill";
+        pill.innerHTML = `<strong>${country.country}</strong> ${country.phase}`;
+        countryList.appendChild(pill);
+      }
+      monthRow.appendChild(countryList);
+
+      timelineRoot.appendChild(monthRow);
+    }
+  } catch (error) {
+    const empty = document.createElement("div");
+    empty.className = "status-pill";
+    empty.textContent = `Timeline unavailable: ${error.message}`;
+    timelineRoot.appendChild(empty);
   }
 
   for (const country of payload.countries) {

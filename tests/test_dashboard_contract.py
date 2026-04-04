@@ -14,3 +14,5 @@ def test_frontend_script_references_meta_and_observations():
 
     assert "payload.meta" in script
     assert "country.observations" in script
+    assert "history/index.json" in script
+    assert "timeline" in script

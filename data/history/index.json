@@ -1,0 +1,22 @@
+{
+  "months": [
+    {
+      "month": "2026-04",
+      "file": "2026-04.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Growth",
+          "watch": null,
+          "as_of": "2026-02-01"
+        },
+        {
+          "country": "TW",
+          "phase": "Recovery",
+          "watch": null,
+          "as_of": "202602"
+        }
+      ]
+    }
+  ]
+}
