@@ -22,5 +22,19 @@ The sample CLI writes `data/latest.json` and builds a deployable static site int
 ## Deployment Direction
 
 - Run the monthly pipeline in GitHub Actions
-- Publish the frontend as a static site on Cloudflare Pages
-- Replace the sample CLI payload with live collectors as the next step
+- Publish the frontend as a static site on GitHub Pages
+- The site is hosted by GitHub, so it remains reachable from your phone and does not depend on your local machine being on
+
+## GitHub Pages Setup
+
+1. In the repository settings, open `Pages`.
+2. Set the build source to `GitHub Actions`.
+3. Trigger the `Monthly Market Update` workflow manually once, or push a new commit.
+4. After the workflow finishes, GitHub Pages will expose a public HTTPS URL for the `dist/` site.
+
+The workflow already:
+
+- runs tests
+- generates the latest live snapshot
+- builds `dist/`
+- deploys `dist/` to GitHub Pages
