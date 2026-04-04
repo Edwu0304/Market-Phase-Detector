@@ -1,10 +1,22 @@
-import re
 import csv
 import io
+import re
 import zipfile
+
 import requests
 
 from market_phase_detector.collectors.base import HttpCollector
+
+
+INDICATORS_FILE = "景氣指標與燈號.csv"
+SIGNAL_COMPONENTS_FILE = "景氣對策信號構成項目.csv"
+LAGGING_FILE = "落後指標構成項目.csv"
+
+LEADING_INDEX_KEY = "領先指標不含趨勢指數"
+COINCIDENT_INDEX_KEY = "同時指標不含趨勢指數"
+BUSINESS_SIGNAL_SCORE_KEY = "景氣對策信號綜合分數"
+UNEMPLOYMENT_KEY = "失業率(%)"
+EXPORT_VALUE_KEY = "海關出口值(十億元)"
 
 
 def parse_tw_series_payload(payload: list[dict]) -> dict:
@@ -43,32 +55,84 @@ def parse_ndc_zip(zip_bytes: bytes) -> dict[str, list[dict]]:
     return dataset
 
 
-def extract_latest_ndc_metrics(dataset: dict[str, list[dict]]) -> dict:
-    indicators = dataset["景氣指標與燈號.csv"]
-    signal_components = dataset["景氣對策信號構成項目.csv"]
-    lagging = dataset["落後指標構成項目.csv"]
+def _as_float(row: dict, key: str) -> float | None:
+    value = row.get(key, "")
+    if value in {"", "-", None}:
+        return None
+    return float(value)
 
-    latest = indicators[-1]
-    previous = indicators[-2]
+
+def extract_ndc_history_metrics(dataset: dict[str, list[dict]]) -> list[dict]:
+    indicators = dataset[INDICATORS_FILE]
+    signal_components = dataset[SIGNAL_COMPONENTS_FILE]
+    lagging = dataset[LAGGING_FILE]
 
     lagging_by_date = {row["Date"]: row for row in lagging}
     signal_by_date = {row["Date"]: row for row in signal_components}
+    history: list[dict] = []
 
-    previous_unemployment = lagging_by_date.get(previous["Date"], lagging[-2] if len(lagging) > 1 else lagging[-1])
-    year_ago_date = f"{int(latest['Date']) - 100}"
+    for index in range(1, len(indicators)):
+        current = indicators[index]
+        previous = indicators[index - 1]
+        current_date = current["Date"]
+        year_ago_date = f"{int(current_date) - 100}"
 
-    return {
-        "latest_date": latest["Date"],
-        "business_signal_score": int(float(latest["景氣對策信號綜合分數"])),
-        "leading_index": float(latest["領先指標不含趨勢指數"]),
-        "leading_index_prev": float(previous["領先指標不含趨勢指數"]),
-        "coincident_index": float(latest["同時指標不含趨勢指數"]),
-        "coincident_index_prev": float(previous["同時指標不含趨勢指數"]),
-        "unemployment": float(lagging_by_date[latest["Date"]]["失業率(%)"]),
-        "unemployment_prev": float(previous_unemployment["失業率(%)"]),
-        "export_value": float(signal_by_date[latest["Date"]]["海關出口值(十億元)"]),
-        "export_value_year_ago": float(signal_by_date[year_ago_date]["海關出口值(十億元)"]),
-    }
+        lagging_row = lagging_by_date.get(current_date)
+        previous_lagging_row = lagging_by_date.get(previous["Date"])
+        signal_row = signal_by_date.get(current_date)
+        year_ago_signal_row = signal_by_date.get(year_ago_date)
+        if not all([lagging_row, previous_lagging_row, signal_row, year_ago_signal_row]):
+            continue
+
+        leading_index = _as_float(current, LEADING_INDEX_KEY)
+        leading_index_prev = _as_float(previous, LEADING_INDEX_KEY)
+        coincident_index = _as_float(current, COINCIDENT_INDEX_KEY)
+        coincident_index_prev = _as_float(previous, COINCIDENT_INDEX_KEY)
+        business_signal_score = _as_float(current, BUSINESS_SIGNAL_SCORE_KEY)
+        unemployment = _as_float(lagging_row, UNEMPLOYMENT_KEY)
+        unemployment_prev = _as_float(previous_lagging_row, UNEMPLOYMENT_KEY)
+        export_value = _as_float(signal_row, EXPORT_VALUE_KEY)
+        export_value_year_ago = _as_float(year_ago_signal_row, EXPORT_VALUE_KEY)
+
+        if any(
+            value is None
+            for value in [
+                leading_index,
+                leading_index_prev,
+                coincident_index,
+                coincident_index_prev,
+                business_signal_score,
+                unemployment,
+                unemployment_prev,
+                export_value,
+                export_value_year_ago,
+            ]
+        ):
+            continue
+
+        history.append(
+            {
+                "latest_date": current_date,
+                "business_signal_score": int(business_signal_score),
+                "leading_index": leading_index,
+                "leading_index_prev": leading_index_prev,
+                "coincident_index": coincident_index,
+                "coincident_index_prev": coincident_index_prev,
+                "unemployment": unemployment,
+                "unemployment_prev": unemployment_prev,
+                "export_value": export_value,
+                "export_value_year_ago": export_value_year_ago,
+            }
+        )
+
+    if not history:
+        raise ValueError("NDC zip dataset did not contain enough history to derive metrics")
+
+    return history
+
+
+def extract_latest_ndc_metrics(dataset: dict[str, list[dict]]) -> dict:
+    return extract_ndc_history_metrics(dataset)[-1]
 
 
 class TaiwanOfficialCollector(HttpCollector):
@@ -88,6 +152,9 @@ class TaiwanOfficialCollector(HttpCollector):
         return response.content
 
     def fetch_ndc_zip_metrics(self, url: str) -> dict:
-        zip_bytes = self.fetch_bytes(url)
-        dataset = parse_ndc_zip(zip_bytes)
+        dataset = parse_ndc_zip(self.fetch_bytes(url))
         return extract_latest_ndc_metrics(dataset)
+
+    def fetch_ndc_zip_history_metrics(self, url: str) -> list[dict]:
+        dataset = parse_ndc_zip(self.fetch_bytes(url))
+        return extract_ndc_history_metrics(dataset)

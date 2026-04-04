@@ -1,0 +1,292 @@
+PHASE_LABELS = {
+    "Recovery": "Recovery 復甦",
+    "Growth": "Growth 成長",
+    "Boom": "Boom 榮景",
+    "Recession": "Recession 衰退",
+}
+
+COUNTRY_LABELS = {
+    "TW": "Taiwan 台灣",
+    "US": "United States 美國",
+}
+
+LENS_ORDER = [
+    "izaax",
+    "urakami",
+    "marks",
+]
+
+LENS_META = {
+    "izaax": {
+        "title": "愛榭克 Izaax",
+        "school": "總體經濟數據派",
+        "book": "《景氣循環投資》",
+    },
+    "urakami": {
+        "title": "浦上邦雄",
+        "school": "市場機制與利率派",
+        "book": "《股市循環之選股時機》",
+    },
+    "marks": {
+        "title": "霍華．馬克斯 Howard Marks",
+        "school": "投資心理與風險派",
+        "book": "《掌握市場週期》",
+    },
+}
+
+LANDING_CONTENT = {
+    "hero": {
+        "title": "用一條統一週期軸，讀懂三位大師的市場語言",
+        "subtitle": (
+            "This handbook uses one unified operating framework to locate the current cycle, "
+            "then reads Taiwan and the United States through three interpretive lenses."
+        ),
+    },
+    "method_notice": {
+        "zh": (
+            "本網站先以統一操作框架判斷目前位階，再用三位作者的理論作對照解讀。"
+            "這不是宣稱三本書原本就使用同一套分期，而是把它們轉成可比較、可操作的觀測鏡頭。"
+        ),
+        "en": (
+            "This is not a claim that the three books share an identical native phase model. "
+            "The site first determines a unified operating phase, then maps each author as an interpretive lens."
+        ),
+    },
+}
+
+LENS_PHASE_CONTENT = {
+    "izaax": {
+        "Recovery": {
+            "definition": (
+                "在統一框架中的復甦，對應到總經數據由壞轉好但仍未全面擴張的區段。"
+                "重點不在景氣已經很強，而在領先訊號與景氣動能出現止跌回升。"
+            ),
+            "phenomena": (
+                "景氣谷底附近常先看到領先指標改善、庫存調整接近尾聲、需求不再繼續惡化，"
+                "同時指標通常仍偏弱。"
+            ),
+            "indicators": (
+                "優先觀察領先指標、製造業動能、出口或工業生產的轉折，以及失業壓力是否停止上升。"
+            ),
+            "strategy": (
+                "操作上偏向逐步提高景氣敏感資產比重，但重點是確認轉折，而不是在單一月數據反彈後一次押滿。"
+            ),
+        },
+        "Growth": {
+            "definition": (
+                "成長階段代表總經擴張已被較多數據確認，景氣不只止跌，而是進入較穩定的向上區間。"
+            ),
+            "phenomena": (
+                "企業活動、就業與需求面通常同步改善，景氣擴張的廣度變大，市場對未來成長也較有把握。"
+            ),
+            "indicators": (
+                "觀察同時指標與領先指標是否同向上行，並搭配就業、工業生產、PMI 或景氣燈號確認擴張延續。"
+            ),
+            "strategy": (
+                "此時可維持較高的風險資產配置，但要持續追蹤景氣是否由擴張轉向過熱，而不是把穩定擴張誤認為永續強勢。"
+            ),
+        },
+        "Boom": {
+            "definition": (
+                "榮景階段在總經視角下，不只是景氣強，而是景氣強勢已持續一段時間，"
+                "並開始出現高檔鈍化或過熱風險。"
+            ),
+            "phenomena": (
+                "數據表面仍佳，但景氣邊際改善速度可能放慢；市場對景氣與獲利過度樂觀，"
+                "資產價格往往先反映好消息。"
+            ),
+            "indicators": (
+                "留意景氣燈號高檔、同時指標仍強但領先指標走平，或景氣敏感數據不再明顯創高。"
+            ),
+            "strategy": (
+                "此階段更重視降低過度樂觀的曝險。與其追價，不如檢查持股結構、提高對反轉訊號的敏感度。"
+            ),
+        },
+        "Recession": {
+            "definition": (
+                "衰退階段對應到景氣活動由擴張轉為收縮，數據確認需求與生產同步走弱，"
+                "且弱勢不再只是局部現象。"
+            ),
+            "phenomena": (
+                "企業活動降溫、景氣燈號轉弱、工業與外需數據惡化，失業壓力常在此階段逐步升高。"
+            ),
+            "indicators": (
+                "關注失業率或失業壓力上升、PMI 落入收縮、工業生產轉弱、出口或訂單明顯下行。"
+            ),
+            "strategy": (
+                "操作核心是保留資本與等待下一次轉折。與其預測最低點，不如先接受景氣環境已變差，降低脆弱部位。"
+            ),
+        },
+    },
+    "urakami": {
+        "Recovery": {
+            "definition": (
+                "在浦上邦雄的利率與股市循環視角中，復甦較接近資金環境開始改善、"
+                "市場從過度悲觀回到重新評價早周期資產的時段。"
+            ),
+            "phenomena": (
+                "股市往往比景氣數據更早反應，低估值資產先回穩，對利率敏感或景氣敏感的族群開始有相對表現。"
+            ),
+            "indicators": (
+                "觀察利率方向、殖利率曲線、信用條件與股市領先性走勢，確認資金壓力是否開始緩和。"
+            ),
+            "strategy": (
+                "偏向從防守轉為選擇性進攻，優先布局受惠資金鬆動與景氣回溫的標的，而不是全面追逐高估值題材。"
+            ),
+        },
+        "Growth": {
+            "definition": (
+                "成長階段代表市場機制與基本面方向開始一致，資金與企業活動彼此強化，"
+                "股市循環通常處在較舒適的擴張中段。"
+            ),
+            "phenomena": (
+                "股價上漲不再只靠情緒修復，而有利率環境、獲利預期與產業循環共同支持。"
+            ),
+            "indicators": (
+                "利率仍具可承受性、信用利差穩定、股市廣度改善，且景氣敏感族群維持領先。"
+            ),
+            "strategy": (
+                "此時重點是順著資金與產業循環配置，但要開始區分是真成長還是只剩估值擴張。"
+            ),
+        },
+        "Boom": {
+            "definition": (
+                "榮景階段在浦上的框架下，更像是股市與資金循環進入成熟段，"
+                "市場已普遍接受好景氣，利率與評價開始成為壓力來源。"
+            ),
+            "phenomena": (
+                "股價仍可能上行，但漲勢更依賴資金與情緒延續；一旦利率或流動性條件轉緊，"
+                "高估值區域會先變得脆弱。"
+            ),
+            "indicators": (
+                "需特別觀察政策利率、殖利率曲線、信用利差與市場領漲結構是否轉向末升段。"
+            ),
+            "strategy": (
+                "操作上以保留勝率為主，逐步降低對高估值與高度擁擠部位的依賴，避免在流動性拐點後被動調整。"
+            ),
+        },
+        "Recession": {
+            "definition": (
+                "衰退階段代表利率、資金與股市機制不再支撐擴張，市場對獲利與景氣的評價進入下修。"
+            ),
+            "phenomena": (
+                "資金轉向保守，股市循環領先反映獲利下修，先前靠流動性推升的區塊容易最先失速。"
+            ),
+            "indicators": (
+                "觀察殖利率曲線、信用利差、政策態度與股市領跌結構，確認風險偏好是否系統性收縮。"
+            ),
+            "strategy": (
+                "此時應先處理流動性與部位品質，而不是急著搶反彈。等到資金環境真正改善，再轉向下一輪布局。"
+            ),
+        },
+    },
+    "marks": {
+        "Recovery": {
+            "definition": (
+                "在霍華．馬克斯的框架中，復甦通常是市場從過度悲觀與高風險溢價的區域慢慢回到較正常的位置。"
+            ),
+            "phenomena": (
+                "投資人記憶仍偏向衰退，風險偏好不高，但便宜資產已開始吸引資本，"
+                "市場回報往往來自估值修復與情緒改善。"
+            ),
+            "indicators": (
+                "觀察信用利差是否收斂、風險資產是否止穩、投資人情緒是否仍保守但不再恐慌。"
+            ),
+            "strategy": (
+                "若價格仍反映過度悲觀，可逐步承擔經計算的風險。關鍵不是猜底，而是在風險報酬重新變得有利時開始行動。"
+            ),
+        },
+        "Growth": {
+            "definition": (
+                "成長階段較接近市場處於理性偏樂觀的區域，風險承擔有報酬，但尚未全面失去紀律。"
+            ),
+            "phenomena": (
+                "資本容易投入風險資產，借貸與投資活動增加，但市場尚未進入全面亢奮或條件極度寬鬆的極端。"
+            ),
+            "indicators": (
+                "關注投資人風險偏好、信用條件、估值水位與新發行活動，判斷市場是否仍在可承受範圍。"
+            ),
+            "strategy": (
+                "保持參與，但不要因為環境舒服就放棄風險紀律。馬克斯的重點不是滿倉，而是依循環位置調整進取與保守。"
+            ),
+        },
+        "Boom": {
+            "definition": (
+                "榮景階段最符合馬克斯對市場過熱的描述：樂觀、寬鬆、風險被低估，"
+                "多數人開始把好環境視為常態。"
+            ),
+            "phenomena": (
+                "價格高、條件鬆、紀律下降，市場參與者更重視錯過漲勢而不是避免損失，"
+                "高風險資產最受歡迎。"
+            ),
+            "indicators": (
+                "留意信用利差壓得過低、估值偏高、槓桿與融資活動升溫，以及投資語氣由審慎轉向自滿。"
+            ),
+            "strategy": (
+                "此階段不一定要立刻反向做空，但應明確提高保守程度。馬克斯強調的是把鐘擺視角放回風險，而不是追逐最後一段漲幅。"
+            ),
+        },
+        "Recession": {
+            "definition": (
+                "衰退階段對馬克斯而言，常伴隨風險厭惡升高、資本撤退與價格下修，"
+                "市場鐘擺由樂觀快速擺向恐懼。"
+            ),
+            "phenomena": (
+                "投資人要求更高補償才願意承擔風險，信用市場變緊，估值與價格容易同時下修。"
+            ),
+            "indicators": (
+                "觀察信用利差擴大、違約風險上升、風險資產承壓以及市場情緒由警戒轉為明顯防禦。"
+            ),
+            "strategy": (
+                "先保護資本與流動性，但也要開始留意何時恐慌被過度定價。對馬克斯而言，真正的機會往往在壞消息最充分時逐步出現。"
+            ),
+        },
+    },
+}
+
+
+def build_country_handbook(country: str, phase: str) -> dict:
+    lenses = []
+    for key in LENS_ORDER:
+        meta = LENS_META[key]
+        phase_content = LENS_PHASE_CONTENT[key][phase]
+        lenses.append(
+            {
+                "id": key,
+                "title": meta["title"],
+                "school": meta["school"],
+                "book": meta["book"],
+                **phase_content,
+            }
+        )
+
+    return {
+        "country": country,
+        "country_label": COUNTRY_LABELS[country],
+        "phase": phase,
+        "phase_label": PHASE_LABELS[phase],
+        "lenses": lenses,
+    }
+
+
+def build_landing_content() -> dict:
+    timeline = []
+    for phase, label in PHASE_LABELS.items():
+        timeline.append(
+            {
+                "phase": phase,
+                "label": label,
+                "lenses": [
+                    {
+                        "id": key,
+                        "title": LENS_META[key]["title"],
+                        "focus": LENS_PHASE_CONTENT[key][phase]["definition"],
+                    }
+                    for key in LENS_ORDER
+                ],
+            }
+        )
+    return {
+        **LANDING_CONTENT,
+        "timeline": timeline,
+    }

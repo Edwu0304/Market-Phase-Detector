@@ -8,5 +8,5 @@ def test_monthly_workflow_exists():
 def test_monthly_workflow_mentions_github_pages():
     workflow = Path(".github/workflows/monthly-update.yml").read_text(encoding="utf-8")
 
-    assert "actions/configure-pages" in workflow
-    assert "actions/deploy-pages" in workflow
+    assert "wrangler pages deploy dist --project-name market-phase-detector" in workflow
+    assert "CLOUDFLARE_API_TOKEN" in workflow

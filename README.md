@@ -7,7 +7,7 @@ Monthly Taiwan and US market-cycle dashboard built with a conservative, explaina
 - Taiwan and US monthly phase detection
 - Conservative state transitions
 - Static dashboard output
-- GitHub Actions monthly automation
+- Cloudflare Pages deployment
 
 ## Local Development
 
@@ -21,20 +21,44 @@ The sample CLI writes `data/latest.json` and builds a deployable static site int
 
 ## Deployment Direction
 
-- Run the monthly pipeline in GitHub Actions
-- Publish the frontend as a static site on GitHub Pages
-- The site is hosted by GitHub, so it remains reachable from your phone and does not depend on your local machine being on
+- Generate the latest snapshot locally or in CI
+- Publish the `dist/` directory to Cloudflare Pages
+- The site remains reachable from your phone and does not depend on your local machine being on once deployed
 
-## GitHub Pages Setup
+## Cloudflare Pages Setup
 
-1. In the repository settings, open `Pages`.
-2. Set the build source to `GitHub Actions`.
-3. Trigger the `Monthly Market Update` workflow manually once, or push a new commit.
-4. After the workflow finishes, GitHub Pages will expose a public HTTPS URL for the `dist/` site.
+1. Log in with Wrangler:
 
-The workflow already:
+```bash
+npx wrangler login
+```
 
-- runs tests
-- generates the latest live snapshot
-- builds `dist/`
-- deploys `dist/` to GitHub Pages
+2. Build the latest static output:
+
+```bash
+python -m market_phase_detector.cli
+```
+
+3. Deploy the site:
+
+```bash
+npx wrangler pages deploy dist --project-name market-phase-detector
+```
+
+## GitHub Actions Secrets
+
+If you want the monthly workflow to deploy to Cloudflare automatically, add these GitHub repository secrets:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+## Cloudflare Config
+
+- `wrangler.toml` declares `pages_build_output_dir = "dist"`
+- `dist/` includes the landing page, Taiwan page, United States page, and `data/history`
+
+## Static Pages
+
+- `/` is the unified cycle-map landing page
+- `/tw/` is the Taiwan strategy manual
+- `/us/` is the United States strategy manual

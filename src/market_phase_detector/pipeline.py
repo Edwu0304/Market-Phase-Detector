@@ -10,6 +10,7 @@ def build_country_snapshot(
     final_phase: str,
     reasons: list[str],
     watch: str | None,
+    handbook: dict | None = None,
 ) -> dict:
     decision = DecisionRecord(
         country=country,
@@ -20,7 +21,7 @@ def build_country_snapshot(
         reasons=reasons,
     )
 
-    return {
+    snapshot = {
         "country": country,
         "as_of": as_of,
         "observations": observations,
@@ -32,3 +33,8 @@ def build_country_snapshot(
             "reasons": decision.reasons,
         },
     }
+
+    if handbook is not None:
+        snapshot["handbook"] = handbook
+
+    return snapshot

@@ -6,15 +6,15 @@
       "countries": [
         {
           "country": "US",
-          "phase": "Growth",
-          "watch": null,
-          "as_of": "2026-02-01"
+          "phase": "Boom",
+          "watch": "recession_risk",
+          "as_of": "2026-03-31"
         },
         {
           "country": "TW",
           "phase": "Recovery",
-          "watch": null,
-          "as_of": "202602"
+          "watch": "recovery_not_confirmed",
+          "as_of": "2026-03-31"
         }
       ]
     }

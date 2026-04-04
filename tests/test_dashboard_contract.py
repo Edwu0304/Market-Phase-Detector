@@ -19,7 +19,7 @@ def test_frontend_script_references_meta_and_observations():
 def test_readme_mentions_github_pages_hosting():
     readme = Path("README.md").read_text(encoding="utf-8")
 
-    assert "GitHub Pages" in readme
+    assert "Cloudflare Pages" in readme
 
 
 def test_frontend_script_references_history_timeline():
@@ -27,3 +27,11 @@ def test_frontend_script_references_history_timeline():
 
     assert "history/index.json" in script
     assert "timeline" in script
+
+
+def test_frontend_script_mentions_interpretive_lenses():
+    script = Path("frontend/src/app.js").read_text(encoding="utf-8")
+
+    assert "interpretive lenses" in script
+    assert "site-content.json" in script
+    assert "buildStrategySections" in script

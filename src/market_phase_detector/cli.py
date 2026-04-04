@@ -3,13 +3,21 @@ from pathlib import Path
 
 from market_phase_detector.collectors.tw_official import TaiwanOfficialCollector
 from market_phase_detector.collectors.us_fred import FredCollector
+from market_phase_detector.content import build_site_content
 from market_phase_detector.engine.state_machine import resolve_transition
 from market_phase_detector.engine.tw_rules import derive_tw_candidate
 from market_phase_detector.engine.us_rules import derive_us_candidate
-from market_phase_detector.exporters.json_exporter import write_dashboard_snapshot
-from market_phase_detector.live_pipeline import build_tw_observations, build_us_observations
+from market_phase_detector.exporters.json_exporter import write_dashboard_snapshot, write_site_content
+from market_phase_detector.live_pipeline import (
+    NDC_ZIP_URL,
+    build_tw_history_observations,
+    build_tw_observations,
+    build_us_history_observations,
+    build_us_observations,
+)
 from market_phase_detector.pipeline import build_country_snapshot
 from market_phase_detector.site_builder import build_site
+from market_phase_detector.strategy_content import build_country_handbook, build_landing_content
 
 
 def build_sample_payload() -> dict:
@@ -18,6 +26,7 @@ def build_sample_payload() -> dict:
         "meta": {
             "source": "sample",
         },
+        "landing": build_landing_content(),
         "countries": [
             build_country_snapshot(
                 country="US",
@@ -40,6 +49,7 @@ def build_sample_payload() -> dict:
                     "Manufacturing remains above the expansion threshold",
                 ],
                 watch="recession_risk",
+                handbook=build_country_handbook("US", "Boom"),
             ),
             build_country_snapshot(
                 country="TW",
@@ -62,81 +72,149 @@ def build_sample_payload() -> dict:
                     "External demand is stabilizing",
                 ],
                 watch="recovery_not_confirmed",
+                handbook=build_country_handbook("TW", "Recovery"),
             ),
         ],
     }
 
 
-def fetch_live_dashboard_payload() -> dict:
-    us_collector = FredCollector()
-    tw_collector = TaiwanOfficialCollector()
+def _build_us_snapshot(observations: dict, previous_phase: str | None, previous_candidate_phase: str | None) -> tuple[dict, str]:
+    candidate = derive_us_candidate(
+        leading_index_change=observations["leading_index_change"],
+        claims_trend=observations["claims_trend"],
+        sahm_rule=observations["sahm_rule"],
+        yield_curve=observations["yield_curve"],
+        hy_spread=observations["hy_spread"],
+    )
+    transition = resolve_transition(
+        previous_phase=previous_phase or candidate.phase,
+        candidate_phase=candidate.phase,
+        previous_candidate_phase=previous_candidate_phase or candidate.phase,
+        stress_override=candidate.phase == "Recession",
+    )
+    snapshot = build_country_snapshot(
+        country="US",
+        as_of=observations["as_of"],
+        observations=observations,
+        derived_signals={
+            "macro_direction": "improving" if observations["leading_index_change"] >= 0 else "softening",
+            "risk_state": transition.watch or "none",
+        },
+        candidate_phase=candidate.phase,
+        final_phase=transition.final_phase,
+        reasons=candidate.reasons,
+        watch=transition.watch,
+        handbook=build_country_handbook("US", transition.final_phase),
+    )
+    return snapshot, candidate.phase
 
-    us_observations = build_us_observations(us_collector)
-    tw_observations = build_tw_observations(tw_collector)
 
-    us_candidate = derive_us_candidate(
-        leading_index_change=us_observations["leading_index_change"],
-        claims_trend=us_observations["claims_trend"],
-        sahm_rule=us_observations["sahm_rule"],
-        yield_curve=us_observations["yield_curve"],
-        hy_spread=us_observations["hy_spread"],
+def _build_tw_snapshot(observations: dict, previous_phase: str | None, previous_candidate_phase: str | None) -> tuple[dict, str]:
+    candidate = derive_tw_candidate(
+        business_signal_score=observations["business_signal_score"],
+        leading_trend=observations["leading_trend"],
+        coincident_trend=observations["coincident_trend"],
+        unemployment_trend=observations["unemployment_trend"],
+        exports_yoy=observations["exports_yoy"],
+        exports_trend="improving" if observations["exports_yoy"] >= 0 else "deteriorating",
     )
-    us_transition = resolve_transition(
-        previous_phase=us_candidate.phase,
-        candidate_phase=us_candidate.phase,
-        previous_candidate_phase=us_candidate.phase,
-        stress_override=us_candidate.phase == "Recession",
+    transition = resolve_transition(
+        previous_phase=previous_phase or candidate.phase,
+        candidate_phase=candidate.phase,
+        previous_candidate_phase=previous_candidate_phase or candidate.phase,
+        stress_override=candidate.phase == "Recession",
     )
+    snapshot = build_country_snapshot(
+        country="TW",
+        as_of=observations["as_of"],
+        observations=observations,
+        derived_signals={
+            "macro_direction": observations["leading_trend"],
+            "risk_state": transition.watch or "none",
+        },
+        candidate_phase=candidate.phase,
+        final_phase=transition.final_phase,
+        reasons=candidate.reasons,
+        watch=transition.watch,
+        handbook=build_country_handbook("TW", transition.final_phase),
+    )
+    return snapshot, candidate.phase
 
-    tw_candidate = derive_tw_candidate(
-        business_signal_score=tw_observations["business_signal_score"],
-        leading_trend=tw_observations["leading_trend"],
-        coincident_trend=tw_observations["coincident_trend"],
-        unemployment_trend=tw_observations["unemployment_trend"],
-        exports_yoy=tw_observations["exports_yoy"],
-        exports_trend="improving" if tw_observations["exports_yoy"] >= 0 else "deteriorating",
-    )
-    tw_transition = resolve_transition(
-        previous_phase=tw_candidate.phase,
-        candidate_phase=tw_candidate.phase,
-        previous_candidate_phase=tw_candidate.phase,
-        stress_override=tw_candidate.phase == "Recession",
-    )
+
+def _build_latest_payload(us_observations: dict, tw_observations: dict) -> dict:
+    us_snapshot, _ = _build_us_snapshot(us_observations, None, None)
+    tw_snapshot, _ = _build_tw_snapshot(tw_observations, None, None)
 
     return {
         "generated_at": str(date.today()),
         "meta": {
             "source": "live",
         },
-        "countries": [
-            build_country_snapshot(
-                country="US",
-                as_of=us_observations["as_of"],
-                observations=us_observations,
-                derived_signals={
-                    "macro_direction": "improving" if us_observations["leading_index_change"] >= 0 else "softening",
-                    "risk_state": us_transition.watch or "none",
-                },
-                candidate_phase=us_candidate.phase,
-                final_phase=us_transition.final_phase,
-                reasons=us_candidate.reasons,
-                watch=us_transition.watch,
-            ),
-            build_country_snapshot(
-                country="TW",
-                as_of=tw_observations["as_of"],
-                observations=tw_observations,
-                derived_signals={
-                    "macro_direction": tw_observations["leading_trend"],
-                    "risk_state": tw_transition.watch or "none",
-                },
-                candidate_phase=tw_candidate.phase,
-                final_phase=tw_transition.final_phase,
-                reasons=tw_candidate.reasons,
-                watch=tw_transition.watch,
-            ),
-        ],
+        "landing": build_landing_content(),
+        "countries": [us_snapshot, tw_snapshot],
     }
+
+
+def _build_history_payloads(us_history: list[dict], tw_history: list[dict]) -> list[dict]:
+    us_by_month = {entry["month"]: entry for entry in us_history}
+    tw_by_month = {entry["month"]: entry for entry in tw_history}
+    months = sorted(set(us_by_month) & set(tw_by_month))
+
+    previous_phases = {"US": None, "TW": None}
+    previous_candidates = {"US": None, "TW": None}
+    payloads = []
+    for month in months:
+        us_snapshot, us_candidate = _build_us_snapshot(
+            us_by_month[month],
+            previous_phases["US"],
+            previous_candidates["US"],
+        )
+        previous_phases["US"] = us_snapshot["decision"]["final_phase"]
+        previous_candidates["US"] = us_candidate
+
+        tw_snapshot, tw_candidate = _build_tw_snapshot(
+            tw_by_month[month],
+            previous_phases["TW"],
+            previous_candidates["TW"],
+        )
+        previous_phases["TW"] = tw_snapshot["decision"]["final_phase"]
+        previous_candidates["TW"] = tw_candidate
+
+        payloads.append(
+            {
+                "generated_at": f"{month}-01",
+                "meta": {"source": "live_history"},
+                "landing": build_landing_content(),
+                "countries": [us_snapshot, tw_snapshot],
+            }
+        )
+
+    return payloads
+
+
+def fetch_live_dashboard_payload() -> dict:
+    us_collector = FredCollector()
+    tw_collector = TaiwanOfficialCollector()
+    us_observations = build_us_observations(us_collector)
+    tw_observations = build_tw_observations(tw_collector)
+    return _build_latest_payload(us_observations, tw_observations)
+
+
+def fetch_live_dashboard_bundle(months: int = 6) -> dict:
+    us_collector = FredCollector()
+    tw_collector = TaiwanOfficialCollector()
+
+    us_observations = build_us_observations(us_collector)
+    tw_observations = build_tw_observations(tw_collector)
+    latest_payload = _build_latest_payload(us_observations, tw_observations)
+
+    us_history = build_us_history_observations(us_collector, months=months)
+    tw_history = build_tw_history_observations(
+        tw_collector.fetch_ndc_zip_history_metrics(NDC_ZIP_URL),
+        months=months,
+    )
+    history_payloads = _build_history_payloads(us_history, tw_history)
+    return {"latest": latest_payload, "history": history_payloads}
 
 
 def generate_dashboard_payload() -> dict:
@@ -151,9 +229,28 @@ def generate_dashboard_payload() -> dict:
         return payload
 
 
+def generate_dashboard_bundle() -> dict:
+    try:
+        return fetch_live_dashboard_bundle()
+    except Exception as exc:
+        payload = build_sample_payload()
+        payload["meta"] = {
+            "source": "sample_fallback",
+            "error": str(exc),
+        }
+        return {"latest": payload, "history": [payload]}
+
+
 def main() -> None:
+    bundle = generate_dashboard_bundle()
     target = Path("data/latest.json")
-    write_dashboard_snapshot(generate_dashboard_payload(), target, Path("data/history"))
+    write_dashboard_snapshot(
+        bundle["latest"],
+        target,
+        Path("data/history"),
+        history_payloads=bundle["history"],
+    )
+    write_site_content(build_site_content(), Path("data/site-content.json"))
     build_site("frontend/src", "data", "dist")
 
 

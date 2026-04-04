@@ -1,54 +1,227 @@
 {
   "generated_at": "2026-04-05",
   "meta": {
-    "source": "live"
+    "source": "sample_fallback",
+    "error": "could not convert string to float: '-'"
+  },
+  "landing": {
+    "hero": {
+      "title": "用一條統一週期軸，讀懂三位大師的市場語言",
+      "subtitle": "This handbook uses one unified operating framework to locate the current cycle, then reads Taiwan and the United States through three interpretive lenses."
+    },
+    "method_notice": {
+      "zh": "本網站先以統一操作框架判斷目前位階，再用三位作者的理論作對照解讀。這不是宣稱三本書原本就使用同一套分期，而是把它們轉成可比較、可操作的觀測鏡頭。",
+      "en": "The site first determines a unified operating phase, then maps each author as an interpretive lens. It does not claim the three books share an identical native phase model."
+    },
+    "timeline": [
+      {
+        "phase": "Recovery",
+        "label": "Recovery 復甦",
+        "lenses": [
+          {
+            "id": "izaax",
+            "title": "愛榭克 Izaax",
+            "focus": "在統一框架中的復甦，對應到總經數據由壞轉好但仍未全面擴張的區段。重點不在景氣已經很強，而在領先訊號與景氣動能出現止跌回升。"
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "focus": "在浦上邦雄的利率與股市循環視角中，復甦較接近資金環境開始改善、市場從過度悲觀回到重新評價早周期資產的時段。"
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯 Howard Marks",
+            "focus": "在霍華．馬克斯的框架中，復甦通常是市場從過度悲觀與高風險溢價的區域慢慢回到較正常的位置。"
+          }
+        ]
+      },
+      {
+        "phase": "Growth",
+        "label": "Growth 成長",
+        "lenses": [
+          {
+            "id": "izaax",
+            "title": "愛榭克 Izaax",
+            "focus": "成長階段代表總經擴張已被較多數據確認，景氣不只止跌，而是進入較穩定的向上區間。"
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "focus": "成長階段代表市場機制與基本面方向開始一致，資金與企業活動彼此強化，股市循環通常處在較舒適的擴張中段。"
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯 Howard Marks",
+            "focus": "成長階段較接近市場處於理性偏樂觀的區域，風險承擔有報酬，但尚未全面失去紀律。"
+          }
+        ]
+      },
+      {
+        "phase": "Boom",
+        "label": "Boom 榮景",
+        "lenses": [
+          {
+            "id": "izaax",
+            "title": "愛榭克 Izaax",
+            "focus": "榮景階段在總經視角下，不只是景氣強，而是景氣強勢已持續一段時間，並開始出現高檔鈍化或過熱風險。"
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "focus": "榮景階段在浦上的框架下，更像是股市與資金循環進入成熟段，市場已普遍接受好景氣，利率與評價開始成為壓力來源。"
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯 Howard Marks",
+            "focus": "榮景階段最符合馬克斯對市場過熱的描述：樂觀、寬鬆、風險被低估，多數人開始把好環境視為常態。"
+          }
+        ]
+      },
+      {
+        "phase": "Recession",
+        "label": "Recession 衰退",
+        "lenses": [
+          {
+            "id": "izaax",
+            "title": "愛榭克 Izaax",
+            "focus": "衰退階段對應到景氣活動由擴張轉為收縮，數據確認需求與生產同步走弱，且弱勢不再只是局部現象。"
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "focus": "衰退階段代表利率、資金與股市機制不再支撐擴張，市場對獲利與景氣的評價進入下修。"
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯 Howard Marks",
+            "focus": "衰退階段對馬克斯而言，常伴隨風險厭惡升高、資本撤退與價格下修，市場鐘擺由樂觀快速擺向恐懼。"
+          }
+        ]
+      }
+    ]
   },
   "countries": [
     {
       "country": "US",
-      "as_of": "2026-02-01",
+      "as_of": "2026-03-31",
       "observations": {
-        "as_of": "2026-02-01",
-        "leading_index_change": 0.1608,
-        "claims_trend": "falling",
-        "sahm_rule": 0.2,
-        "yield_curve": 0.51,
-        "hy_spread": 3.17
+        "ism": 52.0,
+        "claims_trend": "stable",
+        "sahm_rule": 0.28,
+        "yield_curve": -0.35,
+        "hy_spread": 3.8
       },
       "derived_signals": {
-        "macro_direction": "improving",
-        "risk_state": "none"
+        "macro_direction": "firm",
+        "risk_state": "late_cycle_warning"
       },
       "decision": {
-        "candidate_phase": "Growth",
-        "final_phase": "Growth",
-        "watch": null,
+        "candidate_phase": "Boom",
+        "final_phase": "Boom",
+        "watch": "recession_risk",
         "reasons": [
-          "Leading activity remains stable without broad stress confirmation"
+          "Yield curve inversion is a late-cycle warning",
+          "Manufacturing remains above the expansion threshold"
+        ]
+      },
+      "handbook": {
+        "country": "US",
+        "country_label": "United States 美國",
+        "phase": "Boom",
+        "phase_label": "Boom 榮景",
+        "lenses": [
+          {
+            "id": "izaax",
+            "title": "愛榭克 Izaax",
+            "school": "總體經濟數據派",
+            "book": "《景氣循環投資》",
+            "definition": "榮景階段在總經視角下，不只是景氣強，而是景氣強勢已持續一段時間，並開始出現高檔鈍化或過熱風險。",
+            "phenomena": "數據表面仍佳，但景氣邊際改善速度可能放慢；市場對景氣與獲利過度樂觀，資產價格往往先反映好消息。",
+            "indicators": "留意景氣燈號高檔、同時指標仍強但領先指標走平，或景氣敏感數據不再明顯創高。",
+            "strategy": "此階段更重視降低過度樂觀的曝險。與其追價，不如檢查持股結構、提高對反轉訊號的敏感度。"
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "school": "市場機制與利率派",
+            "book": "《股市循環之選股時機》",
+            "definition": "榮景階段在浦上的框架下，更像是股市與資金循環進入成熟段，市場已普遍接受好景氣，利率與評價開始成為壓力來源。",
+            "phenomena": "股價仍可能上行，但漲勢更依賴資金與情緒延續；一旦利率或流動性條件轉緊，高估值區域會先變得脆弱。",
+            "indicators": "需特別觀察政策利率、殖利率曲線、信用利差與市場領漲結構是否轉向末升段。",
+            "strategy": "操作上以保留勝率為主，逐步降低對高估值與高度擁擠部位的依賴，避免在流動性拐點後被動調整。"
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯 Howard Marks",
+            "school": "投資心理與風險派",
+            "book": "《掌握市場週期》",
+            "definition": "榮景階段最符合馬克斯對市場過熱的描述：樂觀、寬鬆、風險被低估，多數人開始把好環境視為常態。",
+            "phenomena": "價格高、條件鬆、紀律下降，市場參與者更重視錯過漲勢而不是避免損失，高風險資產最受歡迎。",
+            "indicators": "留意信用利差壓得過低、估值偏高、槓桿與融資活動升溫，以及投資語氣由審慎轉向自滿。",
+            "strategy": "此階段不一定要立刻反向做空，但應明確提高保守程度。馬克斯強調的是把鐘擺視角放回風險，而不是追逐最後一段漲幅。"
+          }
         ]
       }
     },
     {
       "country": "TW",
-      "as_of": "202602",
+      "as_of": "2026-03-31",
       "observations": {
-        "as_of": "202602",
-        "business_signal_score": 40,
+        "business_signal_score": 18,
         "leading_trend": "improving",
-        "coincident_trend": "improving",
-        "unemployment_trend": "rising",
-        "exports_yoy": -4.109688551800019
+        "coincident_trend": "stable",
+        "unemployment_trend": "stable",
+        "exports_yoy": -2.5
       },
       "derived_signals": {
         "macro_direction": "improving",
-        "risk_state": "none"
+        "risk_state": "recovery_not_confirmed"
       },
       "decision": {
         "candidate_phase": "Recovery",
         "final_phase": "Recovery",
-        "watch": null,
+        "watch": "recovery_not_confirmed",
         "reasons": [
-          "Leading indicators are improving from weak levels"
+          "Leading indicators are improving from weak levels",
+          "External demand is stabilizing"
+        ]
+      },
+      "handbook": {
+        "country": "TW",
+        "country_label": "Taiwan 台灣",
+        "phase": "Recovery",
+        "phase_label": "Recovery 復甦",
+        "lenses": [
+          {
+            "id": "izaax",
+            "title": "愛榭克 Izaax",
+            "school": "總體經濟數據派",
+            "book": "《景氣循環投資》",
+            "definition": "在統一框架中的復甦，對應到總經數據由壞轉好但仍未全面擴張的區段。重點不在景氣已經很強，而在領先訊號與景氣動能出現止跌回升。",
+            "phenomena": "景氣谷底附近常先看到領先指標改善、庫存調整接近尾聲、需求不再繼續惡化，同時指標通常仍偏弱。",
+            "indicators": "優先觀察領先指標、製造業動能、出口或工業生產的轉折，以及失業壓力是否停止上升。",
+            "strategy": "操作上偏向逐步提高景氣敏感資產比重，但重點是確認轉折，而不是在單一月數據反彈後一次押滿。"
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "school": "市場機制與利率派",
+            "book": "《股市循環之選股時機》",
+            "definition": "在浦上邦雄的利率與股市循環視角中，復甦較接近資金環境開始改善、市場從過度悲觀回到重新評價早周期資產的時段。",
+            "phenomena": "股市往往比景氣數據更早反應，低估值資產先回穩，對利率敏感或景氣敏感的族群開始有相對表現。",
+            "indicators": "觀察利率方向、殖利率曲線、信用條件與股市領先性走勢，確認資金壓力是否開始緩和。",
+            "strategy": "偏向從防守轉為選擇性進攻，優先布局受惠資金鬆動與景氣回溫的標的，而不是全面追逐高估值題材。"
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯 Howard Marks",
+            "school": "投資心理與風險派",
+            "book": "《掌握市場週期》",
+            "definition": "在霍華．馬克斯的框架中，復甦通常是市場從過度悲觀與高風險溢價的區域慢慢回到較正常的位置。",
+            "phenomena": "投資人記憶仍偏向衰退，風險偏好不高，但便宜資產已開始吸引資本，市場回報往往來自估值修復與情緒改善。",
+            "indicators": "觀察信用利差是否收斂、風險資產是否止穩、投資人情緒是否仍保守但不再恐慌。",
+            "strategy": "若價格仍反映過度悲觀，可逐步承擔經計算的風險。關鍵不是猜底，而是在風險報酬重新變得有利時開始行動。"
+          }
         ]
       }
     }
