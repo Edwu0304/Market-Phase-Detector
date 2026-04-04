@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-05",
+  "generated_at": "2025-12-01",
   "meta": {
-    "source": "live"
+    "source": "live_history"
   },
   "landing": {
     "hero": {
@@ -102,79 +102,18 @@
   "countries": [
     {
       "country": "US",
-      "as_of": "2026-02-01",
+      "as_of": "2025-12-01",
       "observations": {
-        "as_of": "2026-02-01",
-        "leading_index_change": 0.1608,
+        "month": "2025-12",
+        "as_of": "2025-12-01",
+        "leading_index_change": -0.1995,
         "claims_trend": "falling",
-        "sahm_rule": 0.2,
-        "yield_curve": 0.51,
-        "hy_spread": 3.17
+        "sahm_rule": 0.35,
+        "yield_curve": 0.71,
+        "hy_spread": 2.81
       },
       "derived_signals": {
-        "macro_direction": "improving",
-        "risk_state": "none"
-      },
-      "decision": {
-        "candidate_phase": "Growth",
-        "final_phase": "Growth",
-        "watch": null,
-        "reasons": [
-          "Leading activity remains stable without broad stress confirmation"
-        ]
-      },
-      "handbook": {
-        "country": "US",
-        "country_label": "United States 美國",
-        "phase": "Growth",
-        "phase_label": "Growth 成長",
-        "lenses": [
-          {
-            "id": "izaax",
-            "title": "愛榭克 Izaax",
-            "school": "總體經濟數據派",
-            "book": "《景氣循環投資》",
-            "definition": "成長階段代表總經擴張已被較多數據確認，景氣不只止跌，而是進入較穩定的向上區間。",
-            "phenomena": "企業活動、就業與需求面通常同步改善，景氣擴張的廣度變大，市場對未來成長也較有把握。",
-            "indicators": "觀察同時指標與領先指標是否同向上行，並搭配就業、工業生產、PMI 或景氣燈號確認擴張延續。",
-            "strategy": "此時可維持較高的風險資產配置，但要持續追蹤景氣是否由擴張轉向過熱，而不是把穩定擴張誤認為永續強勢。"
-          },
-          {
-            "id": "urakami",
-            "title": "浦上邦雄",
-            "school": "市場機制與利率派",
-            "book": "《股市循環之選股時機》",
-            "definition": "成長階段代表市場機制與基本面方向開始一致，資金與企業活動彼此強化，股市循環通常處在較舒適的擴張中段。",
-            "phenomena": "股價上漲不再只靠情緒修復，而有利率環境、獲利預期與產業循環共同支持。",
-            "indicators": "利率仍具可承受性、信用利差穩定、股市廣度改善，且景氣敏感族群維持領先。",
-            "strategy": "此時重點是順著資金與產業循環配置，但要開始區分是真成長還是只剩估值擴張。"
-          },
-          {
-            "id": "marks",
-            "title": "霍華．馬克斯 Howard Marks",
-            "school": "投資心理與風險派",
-            "book": "《掌握市場週期》",
-            "definition": "成長階段較接近市場處於理性偏樂觀的區域，風險承擔有報酬，但尚未全面失去紀律。",
-            "phenomena": "資本容易投入風險資產，借貸與投資活動增加，但市場尚未進入全面亢奮或條件極度寬鬆的極端。",
-            "indicators": "關注投資人風險偏好、信用條件、估值水位與新發行活動，判斷市場是否仍在可承受範圍。",
-            "strategy": "保持參與，但不要因為環境舒服就放棄風險紀律。馬克斯的重點不是滿倉，而是依循環位置調整進取與保守。"
-          }
-        ]
-      }
-    },
-    {
-      "country": "TW",
-      "as_of": "202602",
-      "observations": {
-        "as_of": "202602",
-        "business_signal_score": 40,
-        "leading_trend": "improving",
-        "coincident_trend": "improving",
-        "unemployment_trend": "rising",
-        "exports_yoy": -4.109688551800019
-      },
-      "derived_signals": {
-        "macro_direction": "improving",
+        "macro_direction": "softening",
         "risk_state": "none"
       },
       "decision": {
@@ -182,12 +121,12 @@
         "final_phase": "Recovery",
         "watch": null,
         "reasons": [
-          "Leading indicators are improving from weak levels"
+          "Leading activity is improving from softer conditions"
         ]
       },
       "handbook": {
-        "country": "TW",
-        "country_label": "Taiwan 台灣",
+        "country": "US",
+        "country_label": "United States 美國",
         "phase": "Recovery",
         "phase_label": "Recovery 復甦",
         "lenses": [
@@ -220,6 +159,69 @@
             "phenomena": "投資人記憶仍偏向衰退，風險偏好不高，但便宜資產已開始吸引資本，市場回報往往來自估值修復與情緒改善。",
             "indicators": "觀察信用利差是否收斂、風險資產是否止穩、投資人情緒是否仍保守但不再恐慌。",
             "strategy": "若價格仍反映過度悲觀，可逐步承擔經計算的風險。關鍵不是猜底，而是在風險報酬重新變得有利時開始行動。"
+          }
+        ]
+      }
+    },
+    {
+      "country": "TW",
+      "as_of": "202512",
+      "observations": {
+        "month": "2025-12",
+        "as_of": "202512",
+        "business_signal_score": 38,
+        "leading_trend": "improving",
+        "coincident_trend": "improving",
+        "unemployment_trend": "stable",
+        "exports_yoy": -1.2805977507048394
+      },
+      "derived_signals": {
+        "macro_direction": "improving",
+        "risk_state": "insufficient_confirmation"
+      },
+      "decision": {
+        "candidate_phase": "Recovery",
+        "final_phase": "Growth",
+        "watch": "insufficient_confirmation",
+        "reasons": [
+          "Leading indicators are improving from weak levels"
+        ]
+      },
+      "handbook": {
+        "country": "TW",
+        "country_label": "Taiwan 台灣",
+        "phase": "Growth",
+        "phase_label": "Growth 成長",
+        "lenses": [
+          {
+            "id": "izaax",
+            "title": "愛榭克 Izaax",
+            "school": "總體經濟數據派",
+            "book": "《景氣循環投資》",
+            "definition": "成長階段代表總經擴張已被較多數據確認，景氣不只止跌，而是進入較穩定的向上區間。",
+            "phenomena": "企業活動、就業與需求面通常同步改善，景氣擴張的廣度變大，市場對未來成長也較有把握。",
+            "indicators": "觀察同時指標與領先指標是否同向上行，並搭配就業、工業生產、PMI 或景氣燈號確認擴張延續。",
+            "strategy": "此時可維持較高的風險資產配置，但要持續追蹤景氣是否由擴張轉向過熱，而不是把穩定擴張誤認為永續強勢。"
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "school": "市場機制與利率派",
+            "book": "《股市循環之選股時機》",
+            "definition": "成長階段代表市場機制與基本面方向開始一致，資金與企業活動彼此強化，股市循環通常處在較舒適的擴張中段。",
+            "phenomena": "股價上漲不再只靠情緒修復，而有利率環境、獲利預期與產業循環共同支持。",
+            "indicators": "利率仍具可承受性、信用利差穩定、股市廣度改善，且景氣敏感族群維持領先。",
+            "strategy": "此時重點是順著資金與產業循環配置，但要開始區分是真成長還是只剩估值擴張。"
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯 Howard Marks",
+            "school": "投資心理與風險派",
+            "book": "《掌握市場週期》",
+            "definition": "成長階段較接近市場處於理性偏樂觀的區域，風險承擔有報酬，但尚未全面失去紀律。",
+            "phenomena": "資本容易投入風險資產，借貸與投資活動增加，但市場尚未進入全面亢奮或條件極度寬鬆的極端。",
+            "indicators": "關注投資人風險偏好、信用條件、估值水位與新發行活動，判斷市場是否仍在可承受範圍。",
+            "strategy": "保持參與，但不要因為環境舒服就放棄風險紀律。馬克斯的重點不是滿倉，而是依循環位置調整進取與保守。"
           }
         ]
       }
