@@ -1,0 +1,1 @@
+"""Market phase detector package."""

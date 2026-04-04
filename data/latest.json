@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-04-05",
+  "meta": {
+    "source": "live"
+  },
+  "countries": [
+    {
+      "country": "US",
+      "as_of": "2026-02-01",
+      "observations": {
+        "as_of": "2026-02-01",
+        "leading_index_change": 0.1608,
+        "claims_trend": "falling",
+        "sahm_rule": 0.2,
+        "yield_curve": 0.51,
+        "hy_spread": 3.17
+      },
+      "derived_signals": {
+        "macro_direction": "improving",
+        "risk_state": "none"
+      },
+      "decision": {
+        "candidate_phase": "Growth",
+        "final_phase": "Growth",
+        "watch": null,
+        "reasons": [
+          "Leading activity remains stable without broad stress confirmation"
+        ]
+      }
+    },
+    {
+      "country": "TW",
+      "as_of": "202602",
+      "observations": {
+        "as_of": "202602",
+        "business_signal_score": 40,
+        "leading_trend": "improving",
+        "coincident_trend": "improving",
+        "unemployment_trend": "rising",
+        "exports_yoy": -4.109688551800019
+      },
+      "derived_signals": {
+        "macro_direction": "improving",
+        "risk_state": "none"
+      },
+      "decision": {
+        "candidate_phase": "Recovery",
+        "final_phase": "Recovery",
+        "watch": null,
+        "reasons": [
+          "Leading indicators are improving from weak levels"
+        ]
+      }
+    }
+  ]
+}
