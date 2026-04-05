@@ -80,12 +80,12 @@ def build_us_observations(collector) -> dict:
     hy = collector.fetch_latest_csv(US_SERIES["hy_spread"])
 
     return {
-        "as_of": min(
+        "as_of": month_key_from_date(min(
             leading_index["latest"]["date"],
             sahm["latest"]["date"],
             curve["latest"]["date"],
             hy["latest"]["date"],
-        ),
+        )),
         "leading_index_change": compute_monthly_change(leading_index["rows"]),
         "claims_trend": compute_claims_trend(claims["rows"]),
         "sahm_rule": sahm["latest"]["value"],
@@ -94,7 +94,7 @@ def build_us_observations(collector) -> dict:
     }
 
 
-def build_us_history_observations(collector, months: int = 6) -> list[dict]:
+def build_us_history_observations(collector, months: int = 12) -> list[dict]:
     series = {name: collector.fetch_latest_csv(series_id) for name, series_id in US_SERIES.items()}
     leading_rows = series["leading_index"]["rows"]
     claims_rows = series["claims"]["rows"]
@@ -119,9 +119,11 @@ def build_us_history_observations(collector, months: int = 6) -> list[dict]:
         history.append(
             {
                 "month": month_key,
-                "as_of": min(current["date"], sahm_row["date"], curve_row["date"], hy_row["date"]),
+                "as_of": month_key,
                 "leading_index_change": round(current["value"] - previous["value"], 4),
                 "claims_trend": compute_claims_trend(claims_window),
+                "coincident_trend": "improving" if round(current["value"] - previous["value"], 4) > 0 else "deteriorating" if round(current["value"] - previous["value"], 4) < 0 else "stable",
+                "coincident_direction_score": 1.0 if round(current["value"] - previous["value"], 4) > 0 else -1.0 if round(current["value"] - previous["value"], 4) < 0 else 0.0,
                 "sahm_rule": sahm_row["value"],
                 "yield_curve": curve_row["value"],
                 "hy_spread": hy_row["value"],
@@ -135,7 +137,7 @@ def build_tw_observations(collector) -> dict:
     metrics = collector.fetch_ndc_zip_metrics(NDC_ZIP_URL)
 
     return {
-        "as_of": metrics["latest_date"],
+        "as_of": month_key_from_compact(metrics["latest_date"]),
         "business_signal_score": metrics["business_signal_score"],
         "leading_trend": classify_direction(metrics["leading_index"] - metrics["leading_index_prev"]),
         "coincident_trend": classify_direction(metrics["coincident_index"] - metrics["coincident_index_prev"]),
@@ -144,7 +146,7 @@ def build_tw_observations(collector) -> dict:
     }
 
 
-def build_tw_history_observations(history_metrics: list[dict] | dict[str, list[dict]], months: int = 6) -> list[dict]:
+def build_tw_history_observations(history_metrics: list[dict] | dict[str, list[dict]], months: int = 12) -> list[dict]:
     metrics_rows = extract_ndc_history_metrics(history_metrics) if isinstance(history_metrics, dict) else history_metrics
 
     history = []
@@ -152,8 +154,9 @@ def build_tw_history_observations(history_metrics: list[dict] | dict[str, list[d
         history.append(
             {
                 "month": month_key_from_compact(metrics["latest_date"]),
-                "as_of": metrics["latest_date"],
+                "as_of": month_key_from_compact(metrics["latest_date"]),
                 "business_signal_score": metrics["business_signal_score"],
+                "leading_index_change": metrics["leading_index"] - metrics["leading_index_prev"],
                 "leading_trend": classify_direction(metrics["leading_index"] - metrics["leading_index_prev"]),
                 "coincident_trend": classify_direction(metrics["coincident_index"] - metrics["coincident_index_prev"]),
                 "unemployment_trend": "rising" if metrics["unemployment"] > metrics["unemployment_prev"] else "stable",

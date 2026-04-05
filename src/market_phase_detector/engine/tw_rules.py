@@ -16,11 +16,11 @@ def derive_tw_candidate(
         and coincident_trend == "deteriorating"
         and unemployment_trend == "rising"
     ):
-        reasons.append("Leading and coincident indicators are weakening together")
+        reasons.append("領先與同時指標同步轉弱。")
         return CandidateDecision(phase="Recession", reasons=reasons)
 
     if business_signal_score >= 32 and leading_trend != "improving":
-        reasons.append("Business signal is elevated while leading data is no longer improving")
+        reasons.append("景氣燈號已在高檔，但領先資料不再改善。")
         return CandidateDecision(phase="Boom", reasons=reasons)
 
     if (
@@ -29,10 +29,10 @@ def derive_tw_candidate(
         and unemployment_trend != "rising"
         and exports_yoy >= 0
     ):
-        reasons.append("Leading and coincident indicators are improving together")
+        reasons.append("領先與同時指標同步改善。")
         return CandidateDecision(phase="Growth", reasons=reasons)
 
-    reasons.append("Leading indicators are improving from weak levels")
+    reasons.append("領先指標正從低檔往上修復。")
     if exports_trend == "improving":
-        reasons.append("External demand is stabilizing")
+        reasons.append("外需正在止穩。")
     return CandidateDecision(phase="Recovery", reasons=reasons)

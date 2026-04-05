@@ -17,7 +17,7 @@ def test_pipeline_returns_country_snapshot_with_decision():
     assert snapshot["observations"]["ism"] == 51.1
 
 
-def test_pipeline_can_include_additional_sections():
+def test_pipeline_can_include_lens_bundles():
     snapshot = build_country_snapshot(
         country="TW",
         as_of="2026-03-31",
@@ -27,7 +27,14 @@ def test_pipeline_can_include_additional_sections():
         final_phase="Recovery",
         reasons=["Leading indicators are improving"],
         watch=None,
-        handbook={"phase_label": "Recovery 復甦"},
+        lenses={
+            "izaax": {
+                "phase": "Recovery",
+                "metrics": [{"id": "leading_index_change", "value": 0.2}],
+                "history": [{"month": "2026-03", "phase": "Recovery"}],
+            }
+        },
     )
 
-    assert snapshot["handbook"]["phase_label"] == "Recovery 復甦"
+    assert snapshot["lenses"]["izaax"]["phase"] == "Recovery"
+    assert snapshot["lenses"]["izaax"]["history"][0]["month"] == "2026-03"

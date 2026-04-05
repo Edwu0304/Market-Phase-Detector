@@ -30,7 +30,7 @@ jobs:
       - name: Run tests
         run: pytest -v
 
-      - name: Generate latest snapshot
+      - name: Generate strategy-map data and static site
         run: python -m market_phase_detector.cli
 
       - name: Deploy to Cloudflare Pages
