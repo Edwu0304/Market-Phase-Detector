@@ -1,68 +1,79 @@
 # Market Phase Detector
 
-Monthly Taiwan and US strategy-map site with one site phase plus three independent author lenses.
+這是一個把台灣與美國景氣資料整理成靜態網站的專案。
 
-## Current Scope
+網站有兩層判讀：
 
-- Taiwan and US monthly phase detection
-- Three master lenses with independent monthly sliders
-- Real metric values for each lens history row
-- Static multi-page dashboard output
-- Cloudflare Pages deployment
+- 一層是網站自己的「總相位」
+- 一層是三位作者各自獨立的鏡頭判讀
 
-## Local Development
+最後輸出成首頁、台灣頁、美國頁，並部署到 Cloudflare Pages。
+
+## 專案起源
+
+這個專案的概念起點，來自這篇文章：
+
+- [景氣循環投資的終極指南：地圖、時鐘與鏡子，三位大師的致勝策略](https://fintastic.trading/market_analysis/%E6%99%AF%E6%B0%A3%E5%BE%AA%E7%92%B0%E6%8A%95%E8%B3%87%E7%9A%84%E7%B5%82%E6%A5%B5%E6%8C%87%E5%8D%97%EF%BC%9A%E5%9C%B0%E5%9C%96%E3%80%81%E6%99%82%E9%90%98%E8%88%87%E9%8F%A1%E5%AD%90%EF%BC%8C%E4%B8%89/)
+
+這篇文章把整體思路拆成三個面向：
+
+- 愛榭克偏總體數據
+- 浦上邦雄偏利率、資金與股市循環
+- 霍華．馬克斯偏心理、風險與信貸週期
+
+這個專案就是把那篇文章的概念，落成一個可以每月更新、可直接上線的資料網站。
+
+要注意的是，網站不是把原書內容逐字搬上來，而是把三位作者的觀點整理成可以長期維運的判讀框架。
+
+## 目前專案在做什麼
+
+- 每月抓取台灣與美國資料
+- 先產出網站總相位
+- 再產出三位作者各自獨立的鏡頭
+- 生成 `data/latest.json`、`data/history/*.json`、`data/site-content.json`
+- 組成可部署的靜態網站 `dist/`
+- 透過 Cloudflare Pages 對外提供 `/`、`/tw/`、`/us/`
+
+## 快速開始
 
 ```bash
 pip install -e .
-pytest -v
+pytest -q
 python -m market_phase_detector.cli
 ```
 
-The CLI regenerates `data/latest.json`, `data/history`, `data/site-content.json`, and a deployable static site in `dist/`.
+上面第三個命令會重建資料與網站輸出。
 
-## Deployment Direction
+## 維運文件
 
-- Generate the latest snapshot locally or in CI
-- Publish the `dist/` directory to Cloudflare Pages
-- The deployed site serves `/`, `/tw/`, and `/us/` with three-lens panels and independent history sliders
-- The site remains reachable from your phone and does not depend on your local machine being on once deployed
+所有細節都集中在這一份手冊，不再拆成多份入口文件：
 
-## Cloudflare Pages Setup
+- [維運手冊](./docs/maintenance/維運手冊.md)
 
-1. Log in with Wrangler:
+手冊內包含：
 
-```bash
-npx wrangler login
-```
+- 專案脈絡與起源
+- 所有指標與 API／官方資料來源
+- 各主要程式在做什麼
+- 從抓資料到上 UI 的完整流程
+- Cloudflare Pages 上線步驟
+- 常見維運檢查順序
 
-2. Build the latest static output:
+如果你是第一次接手，從這裡開始最省時間：
 
-```bash
-python -m market_phase_detector.cli
-```
+1. 先看這份 `README`
+2. 再看維運手冊
+3. 最後再進程式碼
 
-3. Deploy the site:
+如果你只是要直接部署，命令是：
 
 ```bash
 npx wrangler pages deploy dist --project-name market-phase-detector
 ```
 
-## GitHub Actions Secrets
+## 目前系統的幾個原則
 
-If you want the monthly workflow to deploy to Cloudflare automatically, add these GitHub repository secrets:
-
-- `CLOUDFLARE_API_TOKEN`
-- `CLOUDFLARE_ACCOUNT_ID`
-
-## Cloudflare Config
-
-- `wrangler.toml` declares `pages_build_output_dir = "dist"`
-- `dist/` includes the landing page, Taiwan page, United States page, and `data/history`
-- Every country payload includes `lenses.izaax`, `lenses.urakami`, and `lenses.marks`
-- Each lens bundle includes a current snapshot, real metric values, and its own monthly history series
-
-## Static Pages
-
-- `/` is the strategy-map landing page
-- `/tw/` is the Taiwan three-lens map
-- `/us/` is the United States three-lens map
+- 首頁顯示的是網站總相位，不是某一位作者的結論
+- 三位作者各自獨立判讀，不共用相位、不共用時間軸
+- 歷史資料以台美都能對齊的真實月份為主
+- 前端不直接打外部 API，而是讀專案產出的 JSON
