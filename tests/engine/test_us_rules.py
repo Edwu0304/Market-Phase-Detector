@@ -11,4 +11,4 @@ def test_us_boom_candidate_when_activity_is_firm_but_risk_builds():
     )
 
     assert candidate.phase == "Boom"
-    assert "Yield curve inversion is a late-cycle warning" in candidate.reasons
+    assert "殖利率曲線倒掛屬於景氣晚期警訊。" in candidate.reasons

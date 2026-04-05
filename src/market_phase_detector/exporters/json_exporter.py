@@ -2,6 +2,14 @@ import json
 from pathlib import Path
 
 
+def _normalize_month_token(value: str) -> str:
+    if len(value) >= 7 and value[4] == "-":
+        return value[:7]
+    if len(value) >= 6 and value[:6].isdigit():
+        return f"{value[:4]}-{value[4:6]}"
+    raise ValueError(f"Unsupported month token: {value}")
+
+
 def write_latest_snapshot(payload: dict, target: str | Path) -> None:
     target_path = Path(target)
     target_path.parent.mkdir(parents=True, exist_ok=True)
@@ -12,10 +20,15 @@ def write_latest_snapshot(payload: dict, target: str | Path) -> None:
 
 
 def _month_key(payload: dict) -> str:
+    countries = payload.get("countries", [])
+    if countries:
+        normalized = {_normalize_month_token(country["as_of"]) for country in countries if country.get("as_of")}
+        if len(normalized) == 1:
+            return next(iter(normalized))
     generated_at = payload.get("generated_at", "")
-    if len(generated_at) < 7:
-        raise ValueError("payload.generated_at must be an ISO date string")
-    return generated_at[:7]
+    if generated_at:
+        return _normalize_month_token(generated_at)
+    raise ValueError("payload must contain countries.as_of or generated_at")
 
 
 def _build_history_entry(payload: dict) -> dict:
@@ -28,6 +41,13 @@ def _build_history_entry(payload: dict) -> dict:
                 "phase": country["decision"]["final_phase"],
                 "watch": country["decision"].get("watch"),
                 "as_of": country["as_of"],
+                "lenses": {
+                    lens_id: {
+                        "phase": lens_bundle["phase"],
+                        "as_of": lens_bundle["history"][-1]["as_of"] if lens_bundle.get("history") else country["as_of"],
+                    }
+                    for lens_id, lens_bundle in country.get("lenses", {}).items()
+                },
             }
             for country in payload.get("countries", [])
         ],
@@ -47,6 +67,8 @@ def write_dashboard_snapshot(
     write_latest_snapshot(payload, latest_path)
 
     payloads = history_payloads or [payload]
+    for existing_file in history_path.glob("*.json"):
+        existing_file.unlink()
     new_entries = []
     for history_payload in payloads:
         month_key = _month_key(history_payload)
@@ -58,14 +80,7 @@ def write_dashboard_snapshot(
         new_entries.append(_build_history_entry(history_payload))
 
     index_path = history_path / "index.json"
-    if index_path.exists():
-        index = json.loads(index_path.read_text(encoding="utf-8"))
-    else:
-        index = {"months": []}
-
-    replace_keys = {entry["month"] for entry in new_entries}
-    months = [entry for entry in index.get("months", []) if entry.get("month") not in replace_keys]
-    months.extend(new_entries)
+    months = list(new_entries)
     months.sort(key=lambda entry: entry["month"])
 
     index_path.write_text(

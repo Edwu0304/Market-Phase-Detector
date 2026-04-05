@@ -1,0 +1,1647 @@
+{
+  "generated_at": "2024-06-01",
+  "meta": {
+    "source": "live_history"
+  },
+  "landing": {
+    "hero": {
+      "title": "三鏡頭市場週期地圖",
+      "subtitle": "同一組台灣與美國月資料，分成網站總相位與三位大師各自獨立判讀，避免把不同方法硬湊成同一個答案。"
+    },
+    "method_notice": {
+      "zh": "首頁的台灣與美國卡片顯示的是網站總相位，不代表任何一位大師；真正的大師判讀要進入各國頁，看三個獨立鏡頭與各自時間軸。",
+      "en": "The home-page country cards show the site-level phase, not a master lens. Each country page exposes three independent lens engines with separate timelines and metrics."
+    },
+    "data_sources": [
+      "美國資料來自 FRED 公開序列，網站目前使用製造業工業生產、初領失業救濟金、Sahm Rule、10Y-2Y 殖利率差與高收益債利差。",
+      "台灣資料來自國發會景氣指標與景氣對策信號公開資料，搭配出口年增率與就業方向代理。",
+      "網站只展示台美都能對齊的真實月份，不再用生成日期冒充資料月份。"
+    ],
+    "authors": [
+      {
+        "id": "izaax",
+        "title": "愛榭克",
+        "school": "景氣循環與資產配置",
+        "book": "以景氣循環四階段切分市場，重點放在領先指標、景氣燈號、就業與出口變化。",
+        "phases": {
+          "Recovery": {
+            "definition": "景氣剛脫離谷底，領先指標先止跌翻揚，但總體數據通常仍偏弱，市場常在懷疑中啟動。",
+            "phenomena": "工業活動、出口與景氣燈號從低檔改善，就業壓力尚未完全解除，資金開始回流景氣循環股。",
+            "indicators": "觀察領先指標年增率或月變動、工業與出口方向、就業壓力是否停止惡化，以及景氣對策信號是否脫離低檔。",
+            "strategy": "重點放在分批布局景氣敏感資產，接受基本面仍不漂亮，但要求領先資料持續往上。"
+          },
+          "Growth": {
+            "definition": "領先與同時指標同步走強，需求擴張開始擴散到企業獲利與就業，屬於景氣最健康的推進期。",
+            "phenomena": "企業營收與生產回升，失業壓力受控，出口與內需同向改善，股市漲勢擴散。",
+            "indicators": "觀察領先與同時指標是否同向上行、失業與請領失業金是否穩定、出口或工業生產是否維持擴張。",
+            "strategy": "持有趨勢資產，但開始區分哪些產業是真成長、哪些只是修復後的追價，避免把成長期誤當榮景期。"
+          },
+          "Boom": {
+            "definition": "景氣仍強，但領先指標不再加速，市場對好消息過度樂觀，估值與風險承受度升高。",
+            "phenomena": "景氣分數偏高、股市過熱、景氣循環股與高貝塔資產大漲，但基本面改善速度開始鈍化。",
+            "indicators": "觀察高檔景氣分數、領先指標是否轉平、就業市場是否過熱，以及出口或生產是否出現高基期後鈍化。",
+            "strategy": "降低追價，逐步收回風險，保留部位但提高現金與防禦比重，防止高檔反轉時來不及撤退。"
+          },
+          "Recession": {
+            "definition": "領先與同時指標一起走弱，失業與信用壓力擴大，景氣進入收縮區間。",
+            "phenomena": "生產、出口與企業信心下滑，請領失業金與失業率惡化，風險資產承受連續性壓力。",
+            "indicators": "觀察領先與同時指標同步轉弱、失業壓力上升、出口轉負與景氣燈號跌回低檔。",
+            "strategy": "保留防守部位與流動性，優先避免大幅回撤，等待領先資料重新止穩後再考慮回補。"
+          }
+        }
+      },
+      {
+        "id": "urakami",
+        "title": "浦上邦雄",
+        "school": "利率機制與市場風格輪動",
+        "book": "以利率、殖利率曲線與市場主流板塊的切換來觀察景氣與股市節奏。",
+        "phases": {
+          "Recovery": {
+            "definition": "利率壓力開始緩和，市場主流從防守走向攻擊，但資金仍在測試景氣是否真正回暖。",
+            "phenomena": "殖利率曲線由倒掛往正常化修復，板塊輪動開始擴散，市場領導權從少數防禦資產外溢。",
+            "indicators": "觀察殖利率曲線斜率、政策利率壓力代理、以及市場領導是否由單一題材轉向更廣的板塊。",
+            "strategy": "優先觀察資金風格是否切換成功，確認利率壓力真正減弱後，再提高景氣循環與金融資產權重。"
+          },
+          "Growth": {
+            "definition": "利率結構與市場領導同步支持風險資產，景氣與股市處於順風區。",
+            "phenomena": "殖利率曲線回到較正常區間，成長與景氣循環板塊輪流接棒，市場廣度改善。",
+            "indicators": "觀察殖利率曲線是否維持正斜率、領先數據是否支持利率環境轉鬆、以及市場廣度是否擴散。",
+            "strategy": "提高順週期配置，但必須持續監看市場領導是否再度縮窄，因為那通常是成長晚期的前兆。"
+          },
+          "Boom": {
+            "definition": "市場樂觀情緒升高，寬鬆效果已充分反映在資產價格，容易出現擁擠交易與風格泡沫。",
+            "phenomena": "熱門板塊與高估值資產吸走資金，漲勢高度集中，殖利率曲線正常但價格已反映過多樂觀。",
+            "indicators": "觀察殖利率曲線已正常化但股市領導過度集中、風格擁擠度升高、以及風險偏好接近極端。",
+            "strategy": "不再用榮景期的漲幅外推未來報酬，開始轉向紀律減碼，重視價格與風險管理。"
+          },
+          "Recession": {
+            "definition": "利率與景氣壓力一起打擊風險資產，市場主流退回防禦，板塊輪動失靈。",
+            "phenomena": "殖利率曲線倒掛或信用環境偏緊，市場領漲範圍縮小，股市對壞消息敏感。",
+            "indicators": "觀察殖利率曲線倒掛、資金成本維持偏高、板塊廣度轉弱與市場主流退回防守資產。",
+            "strategy": "降低風格賭注，先確認利率與市場主流回穩，再談重新加碼。"
+          }
+        }
+      },
+      {
+        "id": "marks",
+        "title": "霍華．馬克斯",
+        "school": "信用週期與投資人心理",
+        "book": "從風險偏好、信用利差與市場情緒擺盪，判讀週期所處位置與報酬風險比。",
+        "phases": {
+          "Recovery": {
+            "definition": "恐慌仍在，但信用與情緒從最差處回升，風險溢酬仍高，報酬風險比開始改善。",
+            "phenomena": "信用利差高檔回落，投資人仍保守，價格尚未完全反映基本面修復。",
+            "indicators": "觀察高收益利差是否自高檔收斂、避險與恐慌指標是否降溫、估值是否仍有安全邊際。",
+            "strategy": "在風險仍被高估時分批承接，不追求完美確認，而是利用悲觀留下的便宜價格。"
+          },
+          "Growth": {
+            "definition": "信用環境改善，市場情緒回到中性或偏樂觀，資產價格與基本面大致匹配。",
+            "phenomena": "信用利差回到正常區間，恐慌下降，投資人願意承擔風險但尚未失控。",
+            "indicators": "觀察信用利差是否維持溫和、風險偏好是否平衡、以及估值是否尚未過熱。",
+            "strategy": "維持配置，但不把正常化誤判成無風險，持續追蹤情緒是否走向過度自信。"
+          },
+          "Boom": {
+            "definition": "投資人信心過度飽滿，信用太便宜，資產價格過度樂觀，未來報酬被提前透支。",
+            "phenomena": "高收益利差偏低、投資人普遍輕忽風險、熱門資產估值昂貴且資金擁擠。",
+            "indicators": "觀察信用利差過窄、風險偏好過熱、估值代理升高與市場對壞消息失去警覺。",
+            "strategy": "重點不是猜高點，而是承認安全邊際正在消失，逐步減碼高風險部位。"
+          },
+          "Recession": {
+            "definition": "信用壓力與恐慌急升，投資人不願承擔風險，價格快速反映壞消息。",
+            "phenomena": "利差擴大、情緒惡化、流動性轉緊，市場對任何風險訊號都高度敏感。",
+            "indicators": "觀察信用利差大幅擴張、就業或景氣壓力帶動恐慌升溫，以及資產價格出現折價。",
+            "strategy": "先保資本，等待恐慌與信用壓力從極端回落，再逐步提高風險承擔。"
+          }
+        }
+      }
+    ],
+    "phases": [
+      {
+        "phase": "Recovery",
+        "label": "復甦"
+      },
+      {
+        "phase": "Growth",
+        "label": "成長"
+      },
+      {
+        "phase": "Boom",
+        "label": "榮景"
+      },
+      {
+        "phase": "Recession",
+        "label": "衰退"
+      }
+    ]
+  },
+  "countries": [
+    {
+      "country": "US",
+      "as_of": "2024-06",
+      "observations": {
+        "month": "2024-06",
+        "as_of": "2024-06",
+        "leading_index_change": -0.1782,
+        "claims_trend": "rising",
+        "coincident_trend": "deteriorating",
+        "coincident_direction_score": -1.0,
+        "sahm_rule": 0.43,
+        "yield_curve": -0.35,
+        "hy_spread": 3.21
+      },
+      "derived_signals": {
+        "macro_direction": "softening",
+        "risk_state": "insufficient_confirmation"
+      },
+      "decision": {
+        "candidate_phase": "Recovery",
+        "final_phase": "Boom",
+        "watch": "insufficient_confirmation",
+        "reasons": [
+          "領先活動正從偏弱環境往上修復。"
+        ]
+      },
+      "handbook": {
+        "country": "US",
+        "country_label": "美國",
+        "phase": "Boom",
+        "phase_label": "榮景",
+        "authors": [
+          {
+            "id": "izaax",
+            "title": "愛榭克",
+            "school": "景氣循環與資產配置",
+            "book": "以景氣循環四階段切分市場，重點放在領先指標、景氣燈號、就業與出口變化。",
+            "phases": {
+              "Recovery": {
+                "definition": "景氣剛脫離谷底，領先指標先止跌翻揚，但總體數據通常仍偏弱，市場常在懷疑中啟動。",
+                "phenomena": "工業活動、出口與景氣燈號從低檔改善，就業壓力尚未完全解除，資金開始回流景氣循環股。",
+                "indicators": "觀察領先指標年增率或月變動、工業與出口方向、就業壓力是否停止惡化，以及景氣對策信號是否脫離低檔。",
+                "strategy": "重點放在分批布局景氣敏感資產，接受基本面仍不漂亮，但要求領先資料持續往上。"
+              },
+              "Growth": {
+                "definition": "領先與同時指標同步走強，需求擴張開始擴散到企業獲利與就業，屬於景氣最健康的推進期。",
+                "phenomena": "企業營收與生產回升，失業壓力受控，出口與內需同向改善，股市漲勢擴散。",
+                "indicators": "觀察領先與同時指標是否同向上行、失業與請領失業金是否穩定、出口或工業生產是否維持擴張。",
+                "strategy": "持有趨勢資產，但開始區分哪些產業是真成長、哪些只是修復後的追價，避免把成長期誤當榮景期。"
+              },
+              "Boom": {
+                "definition": "景氣仍強，但領先指標不再加速，市場對好消息過度樂觀，估值與風險承受度升高。",
+                "phenomena": "景氣分數偏高、股市過熱、景氣循環股與高貝塔資產大漲，但基本面改善速度開始鈍化。",
+                "indicators": "觀察高檔景氣分數、領先指標是否轉平、就業市場是否過熱，以及出口或生產是否出現高基期後鈍化。",
+                "strategy": "降低追價，逐步收回風險，保留部位但提高現金與防禦比重，防止高檔反轉時來不及撤退。"
+              },
+              "Recession": {
+                "definition": "領先與同時指標一起走弱，失業與信用壓力擴大，景氣進入收縮區間。",
+                "phenomena": "生產、出口與企業信心下滑，請領失業金與失業率惡化，風險資產承受連續性壓力。",
+                "indicators": "觀察領先與同時指標同步轉弱、失業壓力上升、出口轉負與景氣燈號跌回低檔。",
+                "strategy": "保留防守部位與流動性，優先避免大幅回撤，等待領先資料重新止穩後再考慮回補。"
+              }
+            }
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "school": "利率機制與市場風格輪動",
+            "book": "以利率、殖利率曲線與市場主流板塊的切換來觀察景氣與股市節奏。",
+            "phases": {
+              "Recovery": {
+                "definition": "利率壓力開始緩和，市場主流從防守走向攻擊，但資金仍在測試景氣是否真正回暖。",
+                "phenomena": "殖利率曲線由倒掛往正常化修復，板塊輪動開始擴散，市場領導權從少數防禦資產外溢。",
+                "indicators": "觀察殖利率曲線斜率、政策利率壓力代理、以及市場領導是否由單一題材轉向更廣的板塊。",
+                "strategy": "優先觀察資金風格是否切換成功，確認利率壓力真正減弱後，再提高景氣循環與金融資產權重。"
+              },
+              "Growth": {
+                "definition": "利率結構與市場領導同步支持風險資產，景氣與股市處於順風區。",
+                "phenomena": "殖利率曲線回到較正常區間，成長與景氣循環板塊輪流接棒，市場廣度改善。",
+                "indicators": "觀察殖利率曲線是否維持正斜率、領先數據是否支持利率環境轉鬆、以及市場廣度是否擴散。",
+                "strategy": "提高順週期配置，但必須持續監看市場領導是否再度縮窄，因為那通常是成長晚期的前兆。"
+              },
+              "Boom": {
+                "definition": "市場樂觀情緒升高，寬鬆效果已充分反映在資產價格，容易出現擁擠交易與風格泡沫。",
+                "phenomena": "熱門板塊與高估值資產吸走資金，漲勢高度集中，殖利率曲線正常但價格已反映過多樂觀。",
+                "indicators": "觀察殖利率曲線已正常化但股市領導過度集中、風格擁擠度升高、以及風險偏好接近極端。",
+                "strategy": "不再用榮景期的漲幅外推未來報酬，開始轉向紀律減碼，重視價格與風險管理。"
+              },
+              "Recession": {
+                "definition": "利率與景氣壓力一起打擊風險資產，市場主流退回防禦，板塊輪動失靈。",
+                "phenomena": "殖利率曲線倒掛或信用環境偏緊，市場領漲範圍縮小，股市對壞消息敏感。",
+                "indicators": "觀察殖利率曲線倒掛、資金成本維持偏高、板塊廣度轉弱與市場主流退回防守資產。",
+                "strategy": "降低風格賭注，先確認利率與市場主流回穩，再談重新加碼。"
+              }
+            }
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯",
+            "school": "信用週期與投資人心理",
+            "book": "從風險偏好、信用利差與市場情緒擺盪，判讀週期所處位置與報酬風險比。",
+            "phases": {
+              "Recovery": {
+                "definition": "恐慌仍在，但信用與情緒從最差處回升，風險溢酬仍高，報酬風險比開始改善。",
+                "phenomena": "信用利差高檔回落，投資人仍保守，價格尚未完全反映基本面修復。",
+                "indicators": "觀察高收益利差是否自高檔收斂、避險與恐慌指標是否降溫、估值是否仍有安全邊際。",
+                "strategy": "在風險仍被高估時分批承接，不追求完美確認，而是利用悲觀留下的便宜價格。"
+              },
+              "Growth": {
+                "definition": "信用環境改善，市場情緒回到中性或偏樂觀，資產價格與基本面大致匹配。",
+                "phenomena": "信用利差回到正常區間，恐慌下降，投資人願意承擔風險但尚未失控。",
+                "indicators": "觀察信用利差是否維持溫和、風險偏好是否平衡、以及估值是否尚未過熱。",
+                "strategy": "維持配置，但不把正常化誤判成無風險，持續追蹤情緒是否走向過度自信。"
+              },
+              "Boom": {
+                "definition": "投資人信心過度飽滿，信用太便宜，資產價格過度樂觀，未來報酬被提前透支。",
+                "phenomena": "高收益利差偏低、投資人普遍輕忽風險、熱門資產估值昂貴且資金擁擠。",
+                "indicators": "觀察信用利差過窄、風險偏好過熱、估值代理升高與市場對壞消息失去警覺。",
+                "strategy": "重點不是猜高點，而是承認安全邊際正在消失，逐步減碼高風險部位。"
+              },
+              "Recession": {
+                "definition": "信用壓力與恐慌急升，投資人不願承擔風險，價格快速反映壞消息。",
+                "phenomena": "利差擴大、情緒惡化、流動性轉緊，市場對任何風險訊號都高度敏感。",
+                "indicators": "觀察信用利差大幅擴張、就業或景氣壓力帶動恐慌升溫，以及資產價格出現折價。",
+                "strategy": "先保資本，等待恐慌與信用壓力從極端回落，再逐步提高風險承擔。"
+              }
+            }
+          }
+        ]
+      },
+      "lenses": {
+        "izaax": {
+          "id": "izaax",
+          "title": "愛榭克鏡頭",
+          "phase": "Recession",
+          "phase_label": "衰退",
+          "reasons": [
+            "領先動能分數為 -0.18。",
+            "同時面方向目前是 惡化。",
+            "勞動壓力正在升高。"
+          ],
+          "metrics": [
+            {
+              "id": "leading_index_change",
+              "label": "領先指標變動",
+              "value": -0.1782,
+              "display_value": "-0.18",
+              "display_format": "decimal",
+              "status": "negative"
+            },
+            {
+              "id": "coincident_trend_score",
+              "label": "同時指標方向",
+              "value": -1.0,
+              "display_value": "-1.00",
+              "display_format": "decimal",
+              "status": "negative"
+            },
+            {
+              "id": "labor_stress",
+              "label": "勞動壓力",
+              "value": 1.0,
+              "display_value": "1.00",
+              "display_format": "decimal",
+              "status": "negative"
+            },
+            {
+              "id": "export_or_production",
+              "label": "出口／生產",
+              "value": -0.1782,
+              "display_value": "-0.2%",
+              "display_format": "percent",
+              "status": "negative"
+            }
+          ],
+          "history": [
+            {
+              "month": "2024-03",
+              "as_of": "2024-03",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "領先動能分數為 0.13。",
+                "同時面方向目前是 改善。",
+                "勞動壓力正在升高。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": 0.1343,
+                  "display_value": "0.13",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "coincident_trend_score",
+                  "label": "同時指標方向",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "export_or_production",
+                  "label": "出口／生產",
+                  "value": 0.1343,
+                  "display_value": "0.1%",
+                  "display_format": "percent",
+                  "status": "positive"
+                }
+              ]
+            },
+            {
+              "month": "2024-04",
+              "as_of": "2024-04",
+              "phase": "Recovery",
+              "phase_label": "復甦",
+              "reasons": [
+                "領先動能分數為 -0.53。",
+                "同時面方向目前是 惡化。",
+                "勞動壓力仍受控制。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": -0.5256,
+                  "display_value": "-0.53",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "coincident_trend_score",
+                  "label": "同時指標方向",
+                  "value": -1.0,
+                  "display_value": "-1.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "export_or_production",
+                  "label": "出口／生產",
+                  "value": -0.5256,
+                  "display_value": "-0.5%",
+                  "display_format": "percent",
+                  "status": "negative"
+                }
+              ]
+            },
+            {
+              "month": "2024-05",
+              "as_of": "2024-05",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "領先動能分數為 0.54。",
+                "同時面方向目前是 改善。",
+                "勞動壓力正在升高。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": 0.5406,
+                  "display_value": "0.54",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "coincident_trend_score",
+                  "label": "同時指標方向",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "export_or_production",
+                  "label": "出口／生產",
+                  "value": 0.5406,
+                  "display_value": "0.5%",
+                  "display_format": "percent",
+                  "status": "positive"
+                }
+              ]
+            },
+            {
+              "month": "2024-06",
+              "as_of": "2024-06",
+              "phase": "Recession",
+              "phase_label": "衰退",
+              "reasons": [
+                "領先動能分數為 -0.18。",
+                "同時面方向目前是 惡化。",
+                "勞動壓力正在升高。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": -0.1782,
+                  "display_value": "-0.18",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "coincident_trend_score",
+                  "label": "同時指標方向",
+                  "value": -1.0,
+                  "display_value": "-1.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "export_or_production",
+                  "label": "出口／生產",
+                  "value": -0.1782,
+                  "display_value": "-0.2%",
+                  "display_format": "percent",
+                  "status": "negative"
+                }
+              ]
+            }
+          ]
+        },
+        "urakami": {
+          "id": "urakami",
+          "title": "浦上邦雄鏡頭",
+          "phase": "Recession",
+          "phase_label": "衰退",
+          "reasons": [
+            "殖利率曲線代理值為 -0.35。",
+            "利率環境仍偏緊。",
+            "市場主流仍偏狹窄或中性。"
+          ],
+          "metrics": [
+            {
+              "id": "yield_curve",
+              "label": "殖利率曲線",
+              "value": -0.35,
+              "display_value": "-0.35",
+              "display_format": "spread",
+              "status": "negative",
+              "proxy_label": "利率曲線代理"
+            },
+            {
+              "id": "rates_regime",
+              "label": "利率環境",
+              "value": -0.1782,
+              "display_value": "-0.18",
+              "display_format": "decimal",
+              "status": "negative"
+            },
+            {
+              "id": "market_leadership_proxy",
+              "label": "市場領導廣度代理",
+              "value": -1.0,
+              "display_value": "-1.00",
+              "display_format": "decimal",
+              "status": "negative",
+              "proxy_label": "市場廣度代理"
+            }
+          ],
+          "history": [
+            {
+              "month": "2024-03",
+              "as_of": "2024-03",
+              "phase": "Recovery",
+              "phase_label": "復甦",
+              "reasons": [
+                "殖利率曲線代理值為 -0.39。",
+                "利率環境正在轉鬆。",
+                "市場主流正在擴散。"
+              ],
+              "metrics": [
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線",
+                  "value": -0.39,
+                  "display_value": "-0.39",
+                  "display_format": "spread",
+                  "status": "negative",
+                  "proxy_label": "利率曲線代理"
+                },
+                {
+                  "id": "rates_regime",
+                  "label": "利率環境",
+                  "value": 0.1343,
+                  "display_value": "0.13",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "market_leadership_proxy",
+                  "label": "市場領導廣度代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "市場廣度代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-04",
+              "as_of": "2024-04",
+              "phase": "Recession",
+              "phase_label": "衰退",
+              "reasons": [
+                "殖利率曲線代理值為 -0.35。",
+                "利率環境仍偏緊。",
+                "市場主流仍偏狹窄或中性。"
+              ],
+              "metrics": [
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線",
+                  "value": -0.35,
+                  "display_value": "-0.35",
+                  "display_format": "spread",
+                  "status": "negative",
+                  "proxy_label": "利率曲線代理"
+                },
+                {
+                  "id": "rates_regime",
+                  "label": "利率環境",
+                  "value": -0.5256,
+                  "display_value": "-0.53",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "market_leadership_proxy",
+                  "label": "市場領導廣度代理",
+                  "value": -1.0,
+                  "display_value": "-1.00",
+                  "display_format": "decimal",
+                  "status": "negative",
+                  "proxy_label": "市場廣度代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-05",
+              "as_of": "2024-05",
+              "phase": "Recovery",
+              "phase_label": "復甦",
+              "reasons": [
+                "殖利率曲線代理值為 -0.38。",
+                "利率環境正在轉鬆。",
+                "市場主流正在擴散。"
+              ],
+              "metrics": [
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線",
+                  "value": -0.38,
+                  "display_value": "-0.38",
+                  "display_format": "spread",
+                  "status": "negative",
+                  "proxy_label": "利率曲線代理"
+                },
+                {
+                  "id": "rates_regime",
+                  "label": "利率環境",
+                  "value": 0.5406,
+                  "display_value": "0.54",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "market_leadership_proxy",
+                  "label": "市場領導廣度代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "市場廣度代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-06",
+              "as_of": "2024-06",
+              "phase": "Recession",
+              "phase_label": "衰退",
+              "reasons": [
+                "殖利率曲線代理值為 -0.35。",
+                "利率環境仍偏緊。",
+                "市場主流仍偏狹窄或中性。"
+              ],
+              "metrics": [
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線",
+                  "value": -0.35,
+                  "display_value": "-0.35",
+                  "display_format": "spread",
+                  "status": "negative",
+                  "proxy_label": "利率曲線代理"
+                },
+                {
+                  "id": "rates_regime",
+                  "label": "利率環境",
+                  "value": -0.1782,
+                  "display_value": "-0.18",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "market_leadership_proxy",
+                  "label": "市場領導廣度代理",
+                  "value": -1.0,
+                  "display_value": "-1.00",
+                  "display_format": "decimal",
+                  "status": "negative",
+                  "proxy_label": "市場廣度代理"
+                }
+              ]
+            }
+          ]
+        },
+        "marks": {
+          "id": "marks",
+          "title": "霍華．馬克斯鏡頭",
+          "phase": "Recession",
+          "phase_label": "衰退",
+          "reasons": [
+            "高收益債利差代理值為 3.21。",
+            "估值與風險偏好尚未過熱。",
+            "恐慌代理升高。"
+          ],
+          "metrics": [
+            {
+              "id": "hy_spread",
+              "label": "高收益債利差",
+              "value": 3.21,
+              "display_value": "3.21",
+              "display_format": "spread",
+              "status": "positive",
+              "proxy_label": "信用壓力代理"
+            },
+            {
+              "id": "valuation_proxy",
+              "label": "估值／風險偏好代理",
+              "value": -0.6782,
+              "display_value": "-0.68",
+              "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "fear_proxy",
+              "label": "恐慌／自滿代理",
+              "value": 1.0,
+              "display_value": "1.00",
+              "display_format": "decimal",
+              "status": "positive",
+              "proxy_label": "情緒代理"
+            }
+          ],
+          "history": [
+            {
+              "month": "2024-03",
+              "as_of": "2024-03",
+              "phase": "Recession",
+              "phase_label": "衰退",
+              "reasons": [
+                "高收益債利差代理值為 3.15。",
+                "估值與風險偏好尚未過熱。",
+                "恐慌代理升高。"
+              ],
+              "metrics": [
+                {
+                  "id": "hy_spread",
+                  "label": "高收益債利差",
+                  "value": 3.15,
+                  "display_value": "3.15",
+                  "display_format": "spread",
+                  "status": "positive",
+                  "proxy_label": "信用壓力代理"
+                },
+                {
+                  "id": "valuation_proxy",
+                  "label": "估值／風險偏好代理",
+                  "value": -0.3657,
+                  "display_value": "-0.37",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "fear_proxy",
+                  "label": "恐慌／自滿代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "情緒代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-04",
+              "as_of": "2024-04",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "高收益債利差代理值為 3.18。",
+                "估值與風險偏好尚未過熱。",
+                "恐慌代理偏低，市場較平靜或自滿。"
+              ],
+              "metrics": [
+                {
+                  "id": "hy_spread",
+                  "label": "高收益債利差",
+                  "value": 3.18,
+                  "display_value": "3.18",
+                  "display_format": "spread",
+                  "status": "positive",
+                  "proxy_label": "信用壓力代理"
+                },
+                {
+                  "id": "valuation_proxy",
+                  "label": "估值／風險偏好代理",
+                  "value": -1.0255999999999998,
+                  "display_value": "-1.03",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "fear_proxy",
+                  "label": "恐慌／自滿代理",
+                  "value": -0.5,
+                  "display_value": "-0.50",
+                  "display_format": "decimal",
+                  "status": "negative",
+                  "proxy_label": "情緒代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-05",
+              "as_of": "2024-05",
+              "phase": "Recession",
+              "phase_label": "衰退",
+              "reasons": [
+                "高收益債利差代理值為 3.20。",
+                "估值與風險偏好尚未過熱。",
+                "恐慌代理升高。"
+              ],
+              "metrics": [
+                {
+                  "id": "hy_spread",
+                  "label": "高收益債利差",
+                  "value": 3.2,
+                  "display_value": "3.20",
+                  "display_format": "spread",
+                  "status": "positive",
+                  "proxy_label": "信用壓力代理"
+                },
+                {
+                  "id": "valuation_proxy",
+                  "label": "估值／風險偏好代理",
+                  "value": 0.04059999999999997,
+                  "display_value": "0.04",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "fear_proxy",
+                  "label": "恐慌／自滿代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "情緒代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-06",
+              "as_of": "2024-06",
+              "phase": "Recession",
+              "phase_label": "衰退",
+              "reasons": [
+                "高收益債利差代理值為 3.21。",
+                "估值與風險偏好尚未過熱。",
+                "恐慌代理升高。"
+              ],
+              "metrics": [
+                {
+                  "id": "hy_spread",
+                  "label": "高收益債利差",
+                  "value": 3.21,
+                  "display_value": "3.21",
+                  "display_format": "spread",
+                  "status": "positive",
+                  "proxy_label": "信用壓力代理"
+                },
+                {
+                  "id": "valuation_proxy",
+                  "label": "估值／風險偏好代理",
+                  "value": -0.6782,
+                  "display_value": "-0.68",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "fear_proxy",
+                  "label": "恐慌／自滿代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "情緒代理"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "country": "TW",
+      "as_of": "2024-06",
+      "observations": {
+        "month": "2024-06",
+        "as_of": "2024-06",
+        "business_signal_score": 38,
+        "leading_index_change": 0.3899261999999908,
+        "leading_trend": "improving",
+        "coincident_trend": "improving",
+        "unemployment_trend": "rising",
+        "exports_yoy": 29.827852526729394
+      },
+      "derived_signals": {
+        "macro_direction": "improving",
+        "risk_state": "insufficient_confirmation"
+      },
+      "decision": {
+        "candidate_phase": "Recovery",
+        "final_phase": "Growth",
+        "watch": "insufficient_confirmation",
+        "reasons": [
+          "領先指標正從低檔往上修復。",
+          "外需正在止穩。"
+        ]
+      },
+      "handbook": {
+        "country": "TW",
+        "country_label": "台灣",
+        "phase": "Growth",
+        "phase_label": "成長",
+        "authors": [
+          {
+            "id": "izaax",
+            "title": "愛榭克",
+            "school": "景氣循環與資產配置",
+            "book": "以景氣循環四階段切分市場，重點放在領先指標、景氣燈號、就業與出口變化。",
+            "phases": {
+              "Recovery": {
+                "definition": "景氣剛脫離谷底，領先指標先止跌翻揚，但總體數據通常仍偏弱，市場常在懷疑中啟動。",
+                "phenomena": "工業活動、出口與景氣燈號從低檔改善，就業壓力尚未完全解除，資金開始回流景氣循環股。",
+                "indicators": "觀察領先指標年增率或月變動、工業與出口方向、就業壓力是否停止惡化，以及景氣對策信號是否脫離低檔。",
+                "strategy": "重點放在分批布局景氣敏感資產，接受基本面仍不漂亮，但要求領先資料持續往上。"
+              },
+              "Growth": {
+                "definition": "領先與同時指標同步走強，需求擴張開始擴散到企業獲利與就業，屬於景氣最健康的推進期。",
+                "phenomena": "企業營收與生產回升，失業壓力受控，出口與內需同向改善，股市漲勢擴散。",
+                "indicators": "觀察領先與同時指標是否同向上行、失業與請領失業金是否穩定、出口或工業生產是否維持擴張。",
+                "strategy": "持有趨勢資產，但開始區分哪些產業是真成長、哪些只是修復後的追價，避免把成長期誤當榮景期。"
+              },
+              "Boom": {
+                "definition": "景氣仍強，但領先指標不再加速，市場對好消息過度樂觀，估值與風險承受度升高。",
+                "phenomena": "景氣分數偏高、股市過熱、景氣循環股與高貝塔資產大漲，但基本面改善速度開始鈍化。",
+                "indicators": "觀察高檔景氣分數、領先指標是否轉平、就業市場是否過熱，以及出口或生產是否出現高基期後鈍化。",
+                "strategy": "降低追價，逐步收回風險，保留部位但提高現金與防禦比重，防止高檔反轉時來不及撤退。"
+              },
+              "Recession": {
+                "definition": "領先與同時指標一起走弱，失業與信用壓力擴大，景氣進入收縮區間。",
+                "phenomena": "生產、出口與企業信心下滑，請領失業金與失業率惡化，風險資產承受連續性壓力。",
+                "indicators": "觀察領先與同時指標同步轉弱、失業壓力上升、出口轉負與景氣燈號跌回低檔。",
+                "strategy": "保留防守部位與流動性，優先避免大幅回撤，等待領先資料重新止穩後再考慮回補。"
+              }
+            }
+          },
+          {
+            "id": "urakami",
+            "title": "浦上邦雄",
+            "school": "利率機制與市場風格輪動",
+            "book": "以利率、殖利率曲線與市場主流板塊的切換來觀察景氣與股市節奏。",
+            "phases": {
+              "Recovery": {
+                "definition": "利率壓力開始緩和，市場主流從防守走向攻擊，但資金仍在測試景氣是否真正回暖。",
+                "phenomena": "殖利率曲線由倒掛往正常化修復，板塊輪動開始擴散，市場領導權從少數防禦資產外溢。",
+                "indicators": "觀察殖利率曲線斜率、政策利率壓力代理、以及市場領導是否由單一題材轉向更廣的板塊。",
+                "strategy": "優先觀察資金風格是否切換成功，確認利率壓力真正減弱後，再提高景氣循環與金融資產權重。"
+              },
+              "Growth": {
+                "definition": "利率結構與市場領導同步支持風險資產，景氣與股市處於順風區。",
+                "phenomena": "殖利率曲線回到較正常區間，成長與景氣循環板塊輪流接棒，市場廣度改善。",
+                "indicators": "觀察殖利率曲線是否維持正斜率、領先數據是否支持利率環境轉鬆、以及市場廣度是否擴散。",
+                "strategy": "提高順週期配置，但必須持續監看市場領導是否再度縮窄，因為那通常是成長晚期的前兆。"
+              },
+              "Boom": {
+                "definition": "市場樂觀情緒升高，寬鬆效果已充分反映在資產價格，容易出現擁擠交易與風格泡沫。",
+                "phenomena": "熱門板塊與高估值資產吸走資金，漲勢高度集中，殖利率曲線正常但價格已反映過多樂觀。",
+                "indicators": "觀察殖利率曲線已正常化但股市領導過度集中、風格擁擠度升高、以及風險偏好接近極端。",
+                "strategy": "不再用榮景期的漲幅外推未來報酬，開始轉向紀律減碼，重視價格與風險管理。"
+              },
+              "Recession": {
+                "definition": "利率與景氣壓力一起打擊風險資產，市場主流退回防禦，板塊輪動失靈。",
+                "phenomena": "殖利率曲線倒掛或信用環境偏緊，市場領漲範圍縮小，股市對壞消息敏感。",
+                "indicators": "觀察殖利率曲線倒掛、資金成本維持偏高、板塊廣度轉弱與市場主流退回防守資產。",
+                "strategy": "降低風格賭注，先確認利率與市場主流回穩，再談重新加碼。"
+              }
+            }
+          },
+          {
+            "id": "marks",
+            "title": "霍華．馬克斯",
+            "school": "信用週期與投資人心理",
+            "book": "從風險偏好、信用利差與市場情緒擺盪，判讀週期所處位置與報酬風險比。",
+            "phases": {
+              "Recovery": {
+                "definition": "恐慌仍在，但信用與情緒從最差處回升，風險溢酬仍高，報酬風險比開始改善。",
+                "phenomena": "信用利差高檔回落，投資人仍保守，價格尚未完全反映基本面修復。",
+                "indicators": "觀察高收益利差是否自高檔收斂、避險與恐慌指標是否降溫、估值是否仍有安全邊際。",
+                "strategy": "在風險仍被高估時分批承接，不追求完美確認，而是利用悲觀留下的便宜價格。"
+              },
+              "Growth": {
+                "definition": "信用環境改善，市場情緒回到中性或偏樂觀，資產價格與基本面大致匹配。",
+                "phenomena": "信用利差回到正常區間，恐慌下降，投資人願意承擔風險但尚未失控。",
+                "indicators": "觀察信用利差是否維持溫和、風險偏好是否平衡、以及估值是否尚未過熱。",
+                "strategy": "維持配置，但不把正常化誤判成無風險，持續追蹤情緒是否走向過度自信。"
+              },
+              "Boom": {
+                "definition": "投資人信心過度飽滿，信用太便宜，資產價格過度樂觀，未來報酬被提前透支。",
+                "phenomena": "高收益利差偏低、投資人普遍輕忽風險、熱門資產估值昂貴且資金擁擠。",
+                "indicators": "觀察信用利差過窄、風險偏好過熱、估值代理升高與市場對壞消息失去警覺。",
+                "strategy": "重點不是猜高點，而是承認安全邊際正在消失，逐步減碼高風險部位。"
+              },
+              "Recession": {
+                "definition": "信用壓力與恐慌急升，投資人不願承擔風險，價格快速反映壞消息。",
+                "phenomena": "利差擴大、情緒惡化、流動性轉緊，市場對任何風險訊號都高度敏感。",
+                "indicators": "觀察信用利差大幅擴張、就業或景氣壓力帶動恐慌升溫，以及資產價格出現折價。",
+                "strategy": "先保資本，等待恐慌與信用壓力從極端回落，再逐步提高風險承擔。"
+              }
+            }
+          }
+        ]
+      },
+      "lenses": {
+        "izaax": {
+          "id": "izaax",
+          "title": "愛榭克鏡頭",
+          "phase": "Growth",
+          "phase_label": "成長",
+          "reasons": [
+            "領先動能分數為 0.39。",
+            "同時面方向目前是 改善。",
+            "勞動壓力正在升高。"
+          ],
+          "metrics": [
+            {
+              "id": "leading_index_change",
+              "label": "領先指標變動",
+              "value": 0.3899261999999908,
+              "display_value": "0.39",
+              "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "coincident_trend_score",
+              "label": "同時指標方向",
+              "value": 1.0,
+              "display_value": "1.00",
+              "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "labor_stress",
+              "label": "勞動壓力",
+              "value": 1.0,
+              "display_value": "1.00",
+              "display_format": "decimal",
+              "status": "negative"
+            },
+            {
+              "id": "export_or_production",
+              "label": "出口／生產",
+              "value": 29.827852526729394,
+              "display_value": "29.8%",
+              "display_format": "percent",
+              "status": "positive"
+            }
+          ],
+          "history": [
+            {
+              "month": "2024-03",
+              "as_of": "2024-03",
+              "phase": "Boom",
+              "phase_label": "榮景",
+              "reasons": [
+                "領先動能分數為 0.59。",
+                "同時面方向目前是 改善。",
+                "勞動壓力仍受控制。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": 0.5890334999999993,
+                  "display_value": "0.59",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "coincident_trend_score",
+                  "label": "同時指標方向",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "export_or_production",
+                  "label": "出口／生產",
+                  "value": 22.71299389214162,
+                  "display_value": "22.7%",
+                  "display_format": "percent",
+                  "status": "positive"
+                }
+              ]
+            },
+            {
+              "month": "2024-04",
+              "as_of": "2024-04",
+              "phase": "Boom",
+              "phase_label": "榮景",
+              "reasons": [
+                "領先動能分數為 0.64。",
+                "同時面方向目前是 改善。",
+                "勞動壓力仍受控制。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": 0.6396769999999918,
+                  "display_value": "0.64",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "coincident_trend_score",
+                  "label": "同時指標方向",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "export_or_production",
+                  "label": "出口／生產",
+                  "value": 9.955330695473465,
+                  "display_value": "10.0%",
+                  "display_format": "percent",
+                  "status": "positive"
+                }
+              ]
+            },
+            {
+              "month": "2024-05",
+              "as_of": "2024-05",
+              "phase": "Boom",
+              "phase_label": "榮景",
+              "reasons": [
+                "領先動能分數為 0.57。",
+                "同時面方向目前是 改善。",
+                "勞動壓力仍受控制。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": 0.5677822000000106,
+                  "display_value": "0.57",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "coincident_trend_score",
+                  "label": "同時指標方向",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "export_or_production",
+                  "label": "出口／生產",
+                  "value": 9.145023987302945,
+                  "display_value": "9.1%",
+                  "display_format": "percent",
+                  "status": "positive"
+                }
+              ]
+            },
+            {
+              "month": "2024-06",
+              "as_of": "2024-06",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "領先動能分數為 0.39。",
+                "同時面方向目前是 改善。",
+                "勞動壓力正在升高。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": 0.3899261999999908,
+                  "display_value": "0.39",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "coincident_trend_score",
+                  "label": "同時指標方向",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "export_or_production",
+                  "label": "出口／生產",
+                  "value": 29.827852526729394,
+                  "display_value": "29.8%",
+                  "display_format": "percent",
+                  "status": "positive"
+                }
+              ]
+            }
+          ]
+        },
+        "urakami": {
+          "id": "urakami",
+          "title": "浦上邦雄鏡頭",
+          "phase": "Growth",
+          "phase_label": "成長",
+          "reasons": [
+            "殖利率曲線代理值為 0.00。",
+            "利率環境正在轉鬆。",
+            "市場主流正在擴散。"
+          ],
+          "metrics": [
+            {
+              "id": "yield_curve",
+              "label": "殖利率曲線",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "spread",
+              "status": "negative",
+              "proxy_label": "利率曲線代理"
+            },
+            {
+              "id": "rates_regime",
+              "label": "利率環境",
+              "value": 0.3899261999999908,
+              "display_value": "0.39",
+              "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "market_leadership_proxy",
+              "label": "市場領導廣度代理",
+              "value": 1.0,
+              "display_value": "1.00",
+              "display_format": "decimal",
+              "status": "positive",
+              "proxy_label": "市場廣度代理"
+            }
+          ],
+          "history": [
+            {
+              "month": "2024-03",
+              "as_of": "2024-03",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "殖利率曲線代理值為 0.00。",
+                "利率環境正在轉鬆。",
+                "市場主流正在擴散。"
+              ],
+              "metrics": [
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "negative",
+                  "proxy_label": "利率曲線代理"
+                },
+                {
+                  "id": "rates_regime",
+                  "label": "利率環境",
+                  "value": 0.5890334999999993,
+                  "display_value": "0.59",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "market_leadership_proxy",
+                  "label": "市場領導廣度代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "市場廣度代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-04",
+              "as_of": "2024-04",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "殖利率曲線代理值為 0.00。",
+                "利率環境正在轉鬆。",
+                "市場主流正在擴散。"
+              ],
+              "metrics": [
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "negative",
+                  "proxy_label": "利率曲線代理"
+                },
+                {
+                  "id": "rates_regime",
+                  "label": "利率環境",
+                  "value": 0.6396769999999918,
+                  "display_value": "0.64",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "market_leadership_proxy",
+                  "label": "市場領導廣度代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "市場廣度代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-05",
+              "as_of": "2024-05",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "殖利率曲線代理值為 0.00。",
+                "利率環境正在轉鬆。",
+                "市場主流正在擴散。"
+              ],
+              "metrics": [
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "negative",
+                  "proxy_label": "利率曲線代理"
+                },
+                {
+                  "id": "rates_regime",
+                  "label": "利率環境",
+                  "value": 0.5677822000000106,
+                  "display_value": "0.57",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "market_leadership_proxy",
+                  "label": "市場領導廣度代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "市場廣度代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-06",
+              "as_of": "2024-06",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "殖利率曲線代理值為 0.00。",
+                "利率環境正在轉鬆。",
+                "市場主流正在擴散。"
+              ],
+              "metrics": [
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "negative",
+                  "proxy_label": "利率曲線代理"
+                },
+                {
+                  "id": "rates_regime",
+                  "label": "利率環境",
+                  "value": 0.3899261999999908,
+                  "display_value": "0.39",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "market_leadership_proxy",
+                  "label": "市場領導廣度代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "市場廣度代理"
+                }
+              ]
+            }
+          ]
+        },
+        "marks": {
+          "id": "marks",
+          "title": "霍華．馬克斯鏡頭",
+          "phase": "Recession",
+          "phase_label": "衰退",
+          "reasons": [
+            "高收益債利差代理值為 4.50。",
+            "估值與風險偏好尚未過熱。",
+            "恐慌代理升高。"
+          ],
+          "metrics": [
+            {
+              "id": "hy_spread",
+              "label": "高收益債利差",
+              "value": 4.5,
+              "display_value": "4.50",
+              "display_format": "spread",
+              "status": "positive",
+              "proxy_label": "信用壓力代理"
+            },
+            {
+              "id": "valuation_proxy",
+              "label": "估值／風險偏好代理",
+              "value": 0.3899261999999908,
+              "display_value": "0.39",
+              "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "fear_proxy",
+              "label": "恐慌／自滿代理",
+              "value": 1.0,
+              "display_value": "1.00",
+              "display_format": "decimal",
+              "status": "positive",
+              "proxy_label": "情緒代理"
+            }
+          ],
+          "history": [
+            {
+              "month": "2024-03",
+              "as_of": "2024-03",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "高收益債利差代理值為 4.50。",
+                "估值與風險偏好代理偏熱。",
+                "恐慌代理偏低，市場較平靜或自滿。"
+              ],
+              "metrics": [
+                {
+                  "id": "hy_spread",
+                  "label": "高收益債利差",
+                  "value": 4.5,
+                  "display_value": "4.50",
+                  "display_format": "spread",
+                  "status": "positive",
+                  "proxy_label": "信用壓力代理"
+                },
+                {
+                  "id": "valuation_proxy",
+                  "label": "估值／風險偏好代理",
+                  "value": 0.5890334999999993,
+                  "display_value": "0.59",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "fear_proxy",
+                  "label": "恐慌／自滿代理",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative",
+                  "proxy_label": "情緒代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-04",
+              "as_of": "2024-04",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "高收益債利差代理值為 4.50。",
+                "估值與風險偏好代理偏熱。",
+                "恐慌代理偏低，市場較平靜或自滿。"
+              ],
+              "metrics": [
+                {
+                  "id": "hy_spread",
+                  "label": "高收益債利差",
+                  "value": 4.5,
+                  "display_value": "4.50",
+                  "display_format": "spread",
+                  "status": "positive",
+                  "proxy_label": "信用壓力代理"
+                },
+                {
+                  "id": "valuation_proxy",
+                  "label": "估值／風險偏好代理",
+                  "value": 0.6396769999999918,
+                  "display_value": "0.64",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "fear_proxy",
+                  "label": "恐慌／自滿代理",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative",
+                  "proxy_label": "情緒代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-05",
+              "as_of": "2024-05",
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [
+                "高收益債利差代理值為 4.50。",
+                "估值與風險偏好代理偏熱。",
+                "恐慌代理偏低，市場較平靜或自滿。"
+              ],
+              "metrics": [
+                {
+                  "id": "hy_spread",
+                  "label": "高收益債利差",
+                  "value": 4.5,
+                  "display_value": "4.50",
+                  "display_format": "spread",
+                  "status": "positive",
+                  "proxy_label": "信用壓力代理"
+                },
+                {
+                  "id": "valuation_proxy",
+                  "label": "估值／風險偏好代理",
+                  "value": 0.5677822000000106,
+                  "display_value": "0.57",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "fear_proxy",
+                  "label": "恐慌／自滿代理",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative",
+                  "proxy_label": "情緒代理"
+                }
+              ]
+            },
+            {
+              "month": "2024-06",
+              "as_of": "2024-06",
+              "phase": "Recession",
+              "phase_label": "衰退",
+              "reasons": [
+                "高收益債利差代理值為 4.50。",
+                "估值與風險偏好尚未過熱。",
+                "恐慌代理升高。"
+              ],
+              "metrics": [
+                {
+                  "id": "hy_spread",
+                  "label": "高收益債利差",
+                  "value": 4.5,
+                  "display_value": "4.50",
+                  "display_format": "spread",
+                  "status": "positive",
+                  "proxy_label": "信用壓力代理"
+                },
+                {
+                  "id": "valuation_proxy",
+                  "label": "估值／風險偏好代理",
+                  "value": 0.3899261999999908,
+                  "display_value": "0.39",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "fear_proxy",
+                  "label": "恐慌／自滿代理",
+                  "value": 1.0,
+                  "display_value": "1.00",
+                  "display_format": "decimal",
+                  "status": "positive",
+                  "proxy_label": "情緒代理"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -25,13 +25,14 @@ def test_readme_mentions_github_pages_hosting():
 def test_frontend_script_references_history_timeline():
     script = Path("frontend/src/app.js").read_text(encoding="utf-8")
 
-    assert "history/index.json" in script
-    assert "timeline" in script
+    assert "lens-history-slider" in script
+    assert "history-table" in script
 
 
 def test_frontend_script_mentions_interpretive_lenses():
     script = Path("frontend/src/app.js").read_text(encoding="utf-8")
 
-    assert "interpretive lenses" in script
+    assert "網站總相位" in script
+    assert "buildLanding" in script
     assert "site-content.json" in script
-    assert "buildStrategySections" in script
+    assert "renderCountryPage" in script

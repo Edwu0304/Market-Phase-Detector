@@ -11,18 +11,18 @@ def derive_us_candidate(
     reasons: list[str] = []
 
     if sahm_rule >= 0.5 or (claims_trend == "rising" and hy_spread >= 4.5 and leading_index_change < 0):
-        reasons.append("Labor and credit stress are strong enough to confirm recession risk")
+        reasons.append("就業與信用壓力已升高到足以確認衰退風險。")
         return CandidateDecision(phase="Recession", reasons=reasons)
 
     if leading_index_change > 0 and yield_curve < 0:
-        reasons.append("Yield curve inversion is a late-cycle warning")
+        reasons.append("殖利率曲線倒掛屬於景氣晚期警訊。")
         if hy_spread >= 4.0:
-            reasons.append("Credit spreads are widening from benign levels")
+            reasons.append("信用利差正在從低風險區往上擴大。")
         return CandidateDecision(phase="Boom", reasons=reasons)
 
     if leading_index_change >= 0 and claims_trend in {"stable", "falling"} and hy_spread < 4.0:
-        reasons.append("Leading activity remains stable without broad stress confirmation")
+        reasons.append("領先活動維持穩定，尚未出現廣泛壓力確認。")
         return CandidateDecision(phase="Growth", reasons=reasons)
 
-    reasons.append("Leading activity is improving from softer conditions")
+    reasons.append("領先活動正從偏弱環境往上修復。")
     return CandidateDecision(phase="Recovery", reasons=reasons)

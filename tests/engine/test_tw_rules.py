@@ -12,4 +12,4 @@ def test_tw_recovery_candidate_when_leading_data_turns_up():
     )
 
     assert candidate.phase == "Recovery"
-    assert "Leading indicators are improving from weak levels" in candidate.reasons
+    assert "領先指標正從低檔往上修復。" in candidate.reasons

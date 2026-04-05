@@ -11,6 +11,7 @@ def build_country_snapshot(
     reasons: list[str],
     watch: str | None,
     handbook: dict | None = None,
+    lenses: dict | None = None,
 ) -> dict:
     decision = DecisionRecord(
         country=country,
@@ -36,5 +37,7 @@ def build_country_snapshot(
 
     if handbook is not None:
         snapshot["handbook"] = handbook
+    if lenses is not None:
+        snapshot["lenses"] = lenses
 
     return snapshot

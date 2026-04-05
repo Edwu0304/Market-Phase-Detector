@@ -1,11 +1,12 @@
 from market_phase_detector.live_pipeline import (
-    classify_direction,
-    compute_claims_trend,
-    build_us_observations,
+    build_tw_history_observations,
     build_tw_observations,
     build_us_history_observations,
-    build_tw_history_observations,
+    build_us_observations,
+    classify_direction,
+    compute_claims_trend,
 )
+from market_phase_detector.collectors import tw_official
 
 
 def test_compute_claims_trend_uses_recent_average():
@@ -19,7 +20,6 @@ def test_compute_claims_trend_uses_recent_average():
         {"date": "2026-04-12", "value": 222000.0},
         {"date": "2026-04-19", "value": 223000.0},
     ]
-
     assert compute_claims_trend(rows) == "rising"
 
 
@@ -48,15 +48,7 @@ class StubTaiwanCollector:
 def test_build_us_observations_uses_fred_series():
     collector = StubFredCollector(
         {
-            "IPMAN": {
-                "rows": [
-                    {"date": "2026-01-01", "value": 0.10},
-                    {"date": "2026-02-01", "value": 0.20},
-                    {"date": "2026-03-01", "value": 0.30},
-                    {"date": "2026-04-01", "value": 0.45},
-                ],
-                "latest": {"date": "2026-04-01", "value": 0.45},
-            },
+            "IPMAN": {"rows": [{"date": "2026-03-01", "value": 0.30}, {"date": "2026-04-01", "value": 0.45}], "latest": {"date": "2026-04-01", "value": 0.45}},
             "ICSA": {
                 "rows": [
                     {"date": "2026-03-01", "value": 205000.0},
@@ -75,10 +67,9 @@ def test_build_us_observations_uses_fred_series():
             "BAMLH0A0HYM2": {"rows": [{"date": "2026-04-01", "value": 4.1}], "latest": {"date": "2026-04-01", "value": 4.1}},
         }
     )
-
     observations = build_us_observations(collector)
-
     assert observations["leading_index_change"] == 0.15
+    assert observations["as_of"] == "2026-04"
     assert observations["claims_trend"] == "rising"
     assert observations["yield_curve"] == -0.2
 
@@ -98,125 +89,75 @@ def test_build_tw_observations_uses_ndc_metrics():
             "export_value_year_ago": 1200.0,
         }
     )
-
     observations = build_tw_observations(collector)
-
     assert observations["business_signal_score"] == 29
+    assert observations["as_of"] == "2026-02"
     assert observations["leading_trend"] == "improving"
     assert observations["coincident_trend"] == "improving"
     assert observations["unemployment_trend"] == "rising"
     assert observations["exports_yoy"] > 0
 
 
-def test_build_us_history_observations_returns_multiple_months():
+def test_build_us_history_observations_can_backfill_twelve_months():
+    leading_rows = []
+    claims_rows = []
+    sahm_rows = []
+    curve_rows = []
+    hy_rows = []
+    for month in range(1, 14):
+        year = 2025 if month <= 12 else 2026
+        display_month = month if month <= 12 else 1
+        month_text = f"{year}-{display_month:02d}"
+        leading_rows.append({"date": f"{month_text}-01", "value": 99.0 + month * 0.2})
+        sahm_rows.append({"date": f"{month_text}-01", "value": max(0.2, 0.6 - month * 0.02)})
+        curve_rows.append({"date": f"{month_text}-28", "value": -0.2 + month * 0.05})
+        hy_rows.append({"date": f"{month_text}-28", "value": 5.0 - month * 0.1})
+        for week in range(4):
+            claims_rows.append({"date": f"{month_text}-{7 + week * 7:02d}", "value": 240000.0 - month * 1500 - week * 100})
+
     collector = StubFredCollector(
         {
-            "IPMAN": {
-                "rows": [
-                    {"date": "2026-01-01", "value": 99.7},
-                    {"date": "2026-02-01", "value": 99.8},
-                    {"date": "2026-03-01", "value": 100.1},
-                    {"date": "2026-04-01", "value": 100.4},
-                ],
-                "latest": {"date": "2026-04-01", "value": 100.4},
-            },
-            "ICSA": {
-                "rows": [
-                    {"date": "2026-01-10", "value": 230000.0},
-                    {"date": "2026-01-17", "value": 231000.0},
-                    {"date": "2026-01-24", "value": 232000.0},
-                    {"date": "2026-01-31", "value": 233000.0},
-                    {"date": "2026-02-07", "value": 225000.0},
-                    {"date": "2026-02-14", "value": 224000.0},
-                    {"date": "2026-02-21", "value": 223000.0},
-                    {"date": "2026-02-28", "value": 222000.0},
-                    {"date": "2026-03-07", "value": 220000.0},
-                    {"date": "2026-03-14", "value": 219000.0},
-                    {"date": "2026-03-21", "value": 218000.0},
-                    {"date": "2026-03-28", "value": 217000.0},
-                    {"date": "2026-04-04", "value": 216000.0},
-                    {"date": "2026-04-11", "value": 215000.0},
-                    {"date": "2026-04-18", "value": 214000.0},
-                    {"date": "2026-04-25", "value": 213000.0},
-                ],
-                "latest": {"date": "2026-04-25", "value": 213000.0},
-            },
-            "SAHMCURRENT": {
-                "rows": [
-                    {"date": "2026-01-01", "value": 0.45},
-                    {"date": "2026-02-01", "value": 0.42},
-                    {"date": "2026-03-01", "value": 0.35},
-                    {"date": "2026-04-01", "value": 0.30},
-                ],
-                "latest": {"date": "2026-04-01", "value": 0.30},
-            },
-            "T10Y2Y": {
-                "rows": [
-                    {"date": "2026-01-30", "value": -0.25},
-                    {"date": "2026-02-27", "value": -0.15},
-                    {"date": "2026-03-31", "value": 0.10},
-                    {"date": "2026-04-30", "value": 0.20},
-                ],
-                "latest": {"date": "2026-04-30", "value": 0.20},
-            },
-            "BAMLH0A0HYM2": {
-                "rows": [
-                    {"date": "2026-01-30", "value": 4.60},
-                    {"date": "2026-02-27", "value": 4.20},
-                    {"date": "2026-03-31", "value": 3.90},
-                    {"date": "2026-04-30", "value": 3.60},
-                ],
-                "latest": {"date": "2026-04-30", "value": 3.60},
-            },
+            "IPMAN": {"rows": leading_rows, "latest": leading_rows[-1]},
+            "ICSA": {"rows": claims_rows, "latest": claims_rows[-1]},
+            "SAHMCURRENT": {"rows": sahm_rows, "latest": sahm_rows[-1]},
+            "T10Y2Y": {"rows": curve_rows, "latest": curve_rows[-1]},
+            "BAMLH0A0HYM2": {"rows": hy_rows, "latest": hy_rows[-1]},
         }
     )
-
-    observations = build_us_history_observations(collector, months=3)
-
-    assert [row["month"] for row in observations] == ["2026-02", "2026-03", "2026-04"]
-    assert observations[-1]["claims_trend"] == "falling"
-    assert observations[-1]["yield_curve"] == 0.20
+    observations = build_us_history_observations(collector, months=12)
+    assert len(observations) == 12
+    assert observations[-1]["as_of"] == observations[-1]["month"]
+    assert observations[-1]["coincident_direction_score"] in {-1.0, 0.0, 1.0}
 
 
-def test_build_tw_history_observations_returns_multiple_months():
+def test_build_tw_history_observations_include_lens_ready_metrics():
+    indicator_rows = []
+    signal_rows = []
+    lagging_rows = []
+    for month in range(1, 14):
+        compact = f"2025{month:02d}"
+        year = 2025 if month <= 12 else 2026
+        display_month = month if month <= 12 else 1
+        compact = f"{year}{display_month:02d}"
+        indicator_rows.append(
+            {
+                "Date": compact,
+                tw_official.LEADING_INDEX_KEY: f"{100 + month * 0.3:.1f}",
+                tw_official.COINCIDENT_INDEX_KEY: f"{101 + month * 0.3:.1f}",
+                tw_official.BUSINESS_SIGNAL_SCORE_KEY: f"{18 + month}",
+            }
+        )
+        signal_rows.append({"Date": compact, tw_official.EXPORT_VALUE_KEY: f"{1200 + month * 15}"})
+        signal_rows.append({"Date": f"{int(compact) - 100}", tw_official.EXPORT_VALUE_KEY: f"{1100 + month * 10}"})
+        lagging_rows.append({"Date": compact, tw_official.UNEMPLOYMENT_KEY: f"{3.5 - month * 0.01:.2f}"})
+
     dataset = {
-        "景氣指標與燈號.csv": [
-            {
-                "Date": "202501",
-                "領先指標不含趨勢指數": "100.0",
-                "同時指標不含趨勢指數": "101.0",
-                "景氣對策信號綜合分數": "20",
-            },
-            {
-                "Date": "202502",
-                "領先指標不含趨勢指數": "100.4",
-                "同時指標不含趨勢指數": "101.2",
-                "景氣對策信號綜合分數": "24",
-            },
-            {
-                "Date": "202503",
-                "領先指標不含趨勢指數": "100.8",
-                "同時指標不含趨勢指數": "101.6",
-                "景氣對策信號綜合分數": "28",
-            },
-        ],
-        "景氣對策信號構成項目.csv": [
-            {"Date": "202403", "海關出口值(十億元)": "1100"},
-            {"Date": "202501", "海關出口值(十億元)": "1200"},
-            {"Date": "202402", "海關出口值(十億元)": "1080"},
-            {"Date": "202502", "海關出口值(十億元)": "1220"},
-            {"Date": "202503", "海關出口值(十億元)": "1260"},
-            {"Date": "202403", "海關出口值(十億元)": "1100"},
-        ],
-        "落後指標構成項目.csv": [
-            {"Date": "202501", "失業率(%)": "3.40"},
-            {"Date": "202502", "失業率(%)": "3.35"},
-            {"Date": "202503", "失業率(%)": "3.30"},
-        ],
+        tw_official.INDICATORS_FILE: indicator_rows,
+        tw_official.SIGNAL_COMPONENTS_FILE: signal_rows,
+        tw_official.LAGGING_FILE: lagging_rows,
     }
-
-    observations = build_tw_history_observations(dataset, months=2)
-
-    assert [row["month"] for row in observations] == ["2025-02", "2025-03"]
-    assert observations[-1]["leading_trend"] == "improving"
-    assert observations[-1]["exports_yoy"] > 0
+    observations = build_tw_history_observations(dataset, months=12)
+    assert len(observations) == 12
+    assert observations[-1]["as_of"] == observations[-1]["month"]
+    assert "leading_index_change" in observations[-1]
+    assert "exports_yoy" in observations[-1]
