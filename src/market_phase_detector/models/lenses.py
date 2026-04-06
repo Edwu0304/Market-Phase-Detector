@@ -87,3 +87,51 @@ class CountryLensBundle:
         payload = self.current.to_dict()
         payload["history"] = [row.to_dict() for row in self.history]
         return payload
+
+
+@dataclass(slots=True)
+class TransposedMetricRow:
+    """A single metric with its values across time, for izaax transposed table."""
+    metric_id: str
+    label: str
+    display_format: str
+    is_transition_key: bool  # Whether this metric is critical for phase transition
+    transition_direction: str  # "next" if it would push to next phase, "prev" if warning
+    values: list[dict] = field(default_factory=list)  # [{"month": "2026-01", "display_value": "0.38", "status": "positive"}, ...]
+
+    def to_dict(self) -> dict:
+        return {
+            "metric_id": self.metric_id,
+            "label": self.label,
+            "display_format": self.display_format,
+            "is_transition_key": self.is_transition_key,
+            "transition_direction": self.transition_direction,
+            "values": self.values,
+        }
+
+
+@dataclass(slots=True)
+class IzaaxTransposedBundle:
+    """Transposed Izaax data: metrics as rows, months as columns."""
+    current_phase: str
+    current_phase_label: str
+    next_phase: str  # Next phase in sequence
+    prev_phase: str  # Previous phase in sequence
+    phase_sequence: list[str]  # Full sequence
+    transition_keys: list[str]  # Which metric_ids are critical for next transition
+    metric_rows: list[TransposedMetricRow]
+    months: list[str]  # Month labels
+    reasons: list[str] = field(default_factory=list)
+
+    def to_dict(self) -> dict:
+        return {
+            "current_phase": self.current_phase,
+            "current_phase_label": self.current_phase_label,
+            "next_phase": self.next_phase,
+            "prev_phase": self.prev_phase,
+            "phase_sequence": self.phase_sequence,
+            "transition_keys": self.transition_keys,
+            "metric_rows": [r.to_dict() for r in self.metric_rows],
+            "months": self.months,
+            "reasons": self.reasons,
+        }

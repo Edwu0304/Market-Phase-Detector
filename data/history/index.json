@@ -11,7 +11,7 @@
           "as_of": "2024-03",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-03"
             },
             "urakami": {
@@ -19,7 +19,7 @@
               "as_of": "2024-03"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-03"
             }
           }
@@ -35,11 +35,11 @@
               "as_of": "2024-03"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-03"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-03"
             }
           }
@@ -61,11 +61,11 @@
               "as_of": "2024-04"
             },
             "urakami": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-04"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-04"
             }
           }
@@ -77,15 +77,15 @@
           "as_of": "2024-04",
           "lenses": {
             "izaax": {
-              "phase": "Boom",
+              "phase": "Recovery",
               "as_of": "2024-04"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-04"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-04"
             }
           }
@@ -111,7 +111,7 @@
               "as_of": "2024-05"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-05"
             }
           }
@@ -127,11 +127,11 @@
               "as_of": "2024-05"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-05"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-05"
             }
           }
@@ -149,15 +149,15 @@
           "as_of": "2024-06",
           "lenses": {
             "izaax": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-06"
             },
             "urakami": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-06"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-06"
             }
           }
@@ -169,7 +169,7 @@
           "as_of": "2024-06",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recession",
               "as_of": "2024-06"
             },
             "urakami": {
@@ -177,7 +177,7 @@
               "as_of": "2024-06"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-06"
             }
           }
@@ -195,15 +195,15 @@
           "as_of": "2024-07",
           "lenses": {
             "izaax": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-07"
             },
             "urakami": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-07"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-07"
             }
           }
@@ -223,7 +223,7 @@
               "as_of": "2024-07"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-07"
             }
           }
@@ -241,15 +241,15 @@
           "as_of": "2024-08",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-08"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-08"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-08"
             }
           }
@@ -265,11 +265,11 @@
               "as_of": "2024-08"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-08"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-08"
             }
           }
@@ -295,7 +295,7 @@
               "as_of": "2024-09"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-09"
             }
           }
@@ -315,7 +315,7 @@
               "as_of": "2024-09"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-09"
             }
           }
@@ -333,7 +333,7 @@
           "as_of": "2024-10",
           "lenses": {
             "izaax": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-10"
             },
             "urakami": {
@@ -341,7 +341,7 @@
               "as_of": "2024-10"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-10"
             }
           }
@@ -357,11 +357,11 @@
               "as_of": "2024-10"
             },
             "urakami": {
-              "phase": "Recovery",
+              "phase": "Growth",
               "as_of": "2024-10"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-10"
             }
           }
@@ -379,15 +379,15 @@
           "as_of": "2024-11",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-11"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-11"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-11"
             }
           }
@@ -403,11 +403,11 @@
               "as_of": "2024-11"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-11"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-11"
             }
           }
@@ -425,15 +425,15 @@
           "as_of": "2024-12",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-12"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-12"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-12"
             }
           }
@@ -453,7 +453,7 @@
               "as_of": "2024-12"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-12"
             }
           }
@@ -479,7 +479,7 @@
               "as_of": "2025-01"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-01"
             }
           }
@@ -491,7 +491,7 @@
           "as_of": "2025-01",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-01"
             },
             "urakami": {
@@ -499,7 +499,7 @@
               "as_of": "2025-01"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-01"
             }
           }
@@ -521,11 +521,11 @@
               "as_of": "2025-02"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-02"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-02"
             }
           }
@@ -537,15 +537,15 @@
           "as_of": "2025-02",
           "lenses": {
             "izaax": {
-              "phase": "Recovery",
+              "phase": "Recession",
               "as_of": "2025-02"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-02"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-02"
             }
           }
@@ -563,15 +563,15 @@
           "as_of": "2025-03",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-03"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-03"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-03"
             }
           }
@@ -587,11 +587,11 @@
               "as_of": "2025-03"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-03"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-03"
             }
           }
@@ -609,7 +609,7 @@
           "as_of": "2025-04",
           "lenses": {
             "izaax": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-04"
             },
             "urakami": {
@@ -617,7 +617,7 @@
               "as_of": "2025-04"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-04"
             }
           }
@@ -633,11 +633,11 @@
               "as_of": "2025-04"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-04"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-04"
             }
           }
@@ -655,7 +655,7 @@
           "as_of": "2025-05",
           "lenses": {
             "izaax": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-05"
             },
             "urakami": {
@@ -663,7 +663,7 @@
               "as_of": "2025-05"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-05"
             }
           }
@@ -679,11 +679,11 @@
               "as_of": "2025-05"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-05"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-05"
             }
           }
@@ -701,15 +701,15 @@
           "as_of": "2025-06",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-06"
             },
             "urakami": {
-              "phase": "Boom",
+              "phase": "Recovery",
               "as_of": "2025-06"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-06"
             }
           }
@@ -721,7 +721,7 @@
           "as_of": "2025-06",
           "lenses": {
             "izaax": {
-              "phase": "Recovery",
+              "phase": "Recession",
               "as_of": "2025-06"
             },
             "urakami": {
@@ -729,7 +729,7 @@
               "as_of": "2025-06"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-06"
             }
           }
@@ -747,15 +747,15 @@
           "as_of": "2025-07",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-07"
             },
             "urakami": {
-              "phase": "Boom",
+              "phase": "Recovery",
               "as_of": "2025-07"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-07"
             }
           }
@@ -771,11 +771,11 @@
               "as_of": "2025-07"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-07"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-07"
             }
           }
@@ -793,15 +793,15 @@
           "as_of": "2025-08",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-08"
             },
             "urakami": {
-              "phase": "Boom",
+              "phase": "Recovery",
               "as_of": "2025-08"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-08"
             }
           }
@@ -817,11 +817,11 @@
               "as_of": "2025-08"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-08"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-08"
             }
           }
@@ -839,7 +839,7 @@
           "as_of": "2025-09",
           "lenses": {
             "izaax": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-09"
             },
             "urakami": {
@@ -847,7 +847,7 @@
               "as_of": "2025-09"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2025-09"
             }
           }
@@ -859,7 +859,7 @@
           "as_of": "2025-09",
           "lenses": {
             "izaax": {
-              "phase": "Boom",
+              "phase": "Growth",
               "as_of": "2025-09"
             },
             "urakami": {
@@ -867,7 +867,7 @@
               "as_of": "2025-09"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-09"
             }
           }
@@ -893,7 +893,7 @@
               "as_of": "2025-10"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-10"
             }
           }
@@ -905,15 +905,15 @@
           "as_of": "2025-10",
           "lenses": {
             "izaax": {
-              "phase": "Boom",
+              "phase": "Recovery",
               "as_of": "2025-10"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-10"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-10"
             }
           }
@@ -931,15 +931,15 @@
           "as_of": "2025-11",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-11"
             },
             "urakami": {
-              "phase": "Boom",
+              "phase": "Recovery",
               "as_of": "2025-11"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-11"
             }
           }
@@ -959,7 +959,7 @@
               "as_of": "2025-11"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-11"
             }
           }
@@ -985,7 +985,7 @@
               "as_of": "2025-12"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-12"
             }
           }
@@ -1001,11 +1001,11 @@
               "as_of": "2025-12"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-12"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-12"
             }
           }
@@ -1027,11 +1027,11 @@
               "as_of": "2026-01"
             },
             "urakami": {
-              "phase": "Boom",
+              "phase": "Recovery",
               "as_of": "2026-01"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2026-01"
             }
           }
@@ -1043,7 +1043,7 @@
           "as_of": "2026-01",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2026-01"
             },
             "urakami": {
@@ -1051,7 +1051,7 @@
               "as_of": "2026-01"
             },
             "marks": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2026-01"
             }
           }
@@ -1069,15 +1069,15 @@
           "as_of": "2026-02",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2026-02"
             },
             "urakami": {
-              "phase": "Boom",
+              "phase": "Recovery",
               "as_of": "2026-02"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2026-02"
             }
           }
@@ -1089,15 +1089,15 @@
           "as_of": "2026-02",
           "lenses": {
             "izaax": {
-              "phase": "Recovery",
+              "phase": "Recession",
               "as_of": "2026-02"
             },
             "urakami": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2026-02"
             },
             "marks": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2026-02"
             }
           }

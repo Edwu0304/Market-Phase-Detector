@@ -388,3 +388,254 @@ p {
     padding: 18px;
   }
 }
+
+/* ===== Izaax Transposed Table ===== */
+.izaax-transposed {
+  width: 100%;
+}
+
+.izaax-phase-banner {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.phase-progress {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.phase-step {
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  background: rgba(83, 97, 102, 0.1);
+  transition: all 0.3s ease;
+}
+
+.phase-step-active {
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.phase-step-active.phase-recovery {
+  background: var(--phase-recovery);
+}
+.phase-step-active.phase-growth {
+  background: var(--phase-growth);
+}
+.phase-step-active.phase-boom {
+  background: var(--phase-boom);
+}
+.phase-step-active.phase-recession {
+  background: var(--phase-recession);
+}
+
+.phase-step-prev {
+  opacity: 0.5;
+}
+
+.phase-step-next {
+  border: 2px dashed var(--border);
+  background: transparent;
+  color: var(--accent);
+}
+
+.phase-arrow {
+  margin: 0 4px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.izaax-current-phase {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.phase-badge-large {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.phase-badge-large.phase-recovery {
+  background: var(--phase-recovery);
+}
+.phase-badge-large.phase-growth {
+  background: var(--phase-growth);
+}
+.phase-badge-large.phase-boom {
+  background: var(--phase-boom);
+}
+.phase-badge-large.phase-recession {
+  background: var(--phase-recession);
+}
+
+.izaax-next-info {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Transposed Table Scroll Wrapper */
+.izaax-table-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-strong);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--surface);
+  max-width: 100%;
+  width: 100%;
+}
+
+.izaax-table-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.izaax-table-scroll-wrapper::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 4px;
+}
+
+.izaax-table-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+/* Transposed Table */
+.izaax-transposed-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.izaax-transposed-table th,
+.izaax-transposed-table td {
+  padding: 8px 12px;
+  text-align: center;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.metric-col-header,
+.metric-label {
+  text-align: left !important;
+  position: sticky;
+  left: 0;
+  background: var(--surface-strong);
+  z-index: 2;
+  min-width: 140px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.month-header {
+  font-weight: 700;
+  font-size: 0.82rem;
+  background: rgba(11, 107, 98, 0.06);
+  color: var(--accent);
+}
+
+/* Cell Status Colors */
+.cell-positive {
+  color: var(--phase-growth);
+  font-weight: 600;
+}
+
+.cell-negative {
+  color: var(--phase-recession);
+  font-weight: 600;
+}
+
+.cell-neutral {
+  color: var(--muted);
+}
+
+/* Transition Key Indicator */
+.metric-row-transition-key {
+  background: rgba(44, 123, 229, 0.04);
+}
+
+.cell-transition-key {
+  box-shadow: inset 0 -2px 0 0 var(--phase-recovery);
+  font-weight: 700;
+}
+
+.transition-key-indicator {
+  color: var(--phase-boom);
+  margin-right: 4px;
+  font-size: 0.9rem;
+}
+
+/* Legend */
+.izaax-legend {
+  padding: 10px 14px;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Reasons */
+.izaax-reasons {
+  margin-top: 16px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.izaax-reasons h3 {
+  font-size: 0.95rem;
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+
+.izaax-reasons ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.izaax-reasons li {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Izaax lens row styling */
+.lens-row-izaax {
+  grid-column: 1 / -1;
+}
+
+.lens-row-body-full {
+  grid-template-columns: 1fr;
+  overflow-x: auto;
+}
+
+.lens-row-body-full .lens-main {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.lens-row-body-full .lens-side {
+  display: none;
+}

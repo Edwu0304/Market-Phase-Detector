@@ -5,16 +5,19 @@ def test_urakami_lens_uses_rates_and_market_proxies():
     decision = build_urakami_lens(
         {
             "as_of": "2026-03-31",
-            "yield_curve": 0.25,
-            "leading_index_change": 0.2,
-            "coincident_trend": "improving",
+            "rate_trend": "falling",
+            "credit_trend": "improving",
+            "money_supply_trend": "improving",
+            "bank_lending_rate": 2.0,
+            "credit_change": 100.0,
+            "m1b_change": 50.0,
         }
     )
 
-    assert decision.phase in {"Growth", "Boom"}
-    assert {metric.metric_id for metric in decision.metrics} == {
-        "yield_curve",
-        "rates_regime",
-        "market_leadership_proxy",
-    }
+    assert decision.phase == "Boom"
+    # Check that core metrics are present (new metrics may also be included)
+    metric_ids = {metric.metric_id for metric in decision.metrics}
+    assert "bank_lending_rate" in metric_ids
+    assert "credit_change" in metric_ids
+    assert "m1b_change" in metric_ids
     assert decision.reasons

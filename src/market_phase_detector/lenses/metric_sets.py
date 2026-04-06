@@ -34,6 +34,35 @@ LENS_METRIC_SETS = {
             "positive": "expanding",
             "negative": "contracting",
         },
+        # 新增指標
+        {
+            "id": "unemployment_claims",
+            "label": "初領失業救濟金",
+            "display_format": "decimal",
+            "positive": "declining",
+            "negative": "rising",
+        },
+        {
+            "id": "cci_level",
+            "label": "消費者信心指數",
+            "display_format": "decimal",
+            "positive": "optimistic",
+            "negative": "pessimistic",
+        },
+        {
+            "id": "sahm_rule",
+            "label": "薩姆規則",
+            "display_format": "decimal",
+            "positive": "no_recession",
+            "negative": "recession_signal",
+        },
+        {
+            "id": "inventory_sales_ratio",
+            "label": "庫存/銷售比",
+            "display_format": "decimal",
+            "positive": "healthy",
+            "negative": "accumulating",
+        },
     ],
     "urakami": [
         {
@@ -57,6 +86,28 @@ LENS_METRIC_SETS = {
             "positive": "broadening",
             "negative": "narrow",
         },
+        # 新增指標
+        {
+            "id": "pe_ratio",
+            "label": "大盤本益比",
+            "display_format": "decimal",
+            "positive": "reasonable",
+            "negative": "overvalued",
+        },
+        {
+            "id": "ma_200day",
+            "label": "200日均線位置",
+            "display_format": "percent",
+            "positive": "above",
+            "negative": "below",
+        },
+        {
+            "id": "volume_ma",
+            "label": "成交量均線",
+            "display_format": "decimal",
+            "positive": "confirming",
+            "negative": "diverging",
+        },
     ],
     "marks": [
         {
@@ -79,6 +130,28 @@ LENS_METRIC_SETS = {
             "display_format": "decimal",
             "positive": "fearful",
             "negative": "complacent",
+        },
+        # 新增指標
+        {
+            "id": "credit_spread",
+            "label": "信用利差",
+            "display_format": "spread",
+            "positive": "narrow",
+            "negative": "wide",
+        },
+        {
+            "id": "margin_balance",
+            "label": "融資餘額",
+            "display_format": "decimal",
+            "positive": "moderate",
+            "negative": "excessive",
+        },
+        {
+            "id": "government_spending",
+            "label": "政府支出趨勢",
+            "display_format": "decimal",
+            "positive": "prudent",
+            "negative": "expanding",
         },
     ],
 }

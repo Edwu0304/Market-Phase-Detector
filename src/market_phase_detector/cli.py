@@ -2,13 +2,18 @@ from datetime import date
 from pathlib import Path
 
 from market_phase_detector.collectors.tw_official import TaiwanOfficialCollector
+from market_phase_detector.collectors.tw_external import TaiwanExternalCollector
 from market_phase_detector.collectors.us_fred import FredCollector
 from market_phase_detector.content import build_site_content
 from market_phase_detector.engine.state_machine import resolve_transition
 from market_phase_detector.engine.tw_rules import derive_tw_candidate
 from market_phase_detector.engine.us_rules import derive_us_candidate
 from market_phase_detector.exporters.json_exporter import write_dashboard_snapshot, write_site_content
-from market_phase_detector.lenses.izaax import build_izaax_history_row, build_izaax_lens
+from market_phase_detector.lenses.izaax import (
+    build_izaax_history_row,
+    build_izaax_lens,
+    build_izaax_transposed_bundle,
+)
 from market_phase_detector.lenses.marks import build_marks_history_row, build_marks_lens
 from market_phase_detector.lenses.urakami import build_urakami_history_row, build_urakami_lens
 from market_phase_detector.live_pipeline import (
@@ -24,11 +29,15 @@ from market_phase_detector.strategy_content import AUTHOR_ORDER, build_country_h
 
 
 def _build_lens_bundle(observations: dict, history_observations: list[dict]) -> dict:
+    izaax_bundle = {
+        **build_izaax_lens(observations).to_dict(),
+        "history": [build_izaax_history_row(row["month"], row).to_dict() for row in history_observations],
+    }
+    # Add transposed bundle for Izaax specialized UI
+    izaax_bundle["transposed"] = build_izaax_transposed_bundle(observations, history_observations).to_dict()
+
     return {
-        "izaax": {
-            **build_izaax_lens(observations).to_dict(),
-            "history": [build_izaax_history_row(row["month"], row).to_dict() for row in history_observations],
-        },
+        "izaax": izaax_bundle,
         "urakami": {
             **build_urakami_lens(observations).to_dict(),
             "history": [build_urakami_history_row(row["month"], row).to_dict() for row in history_observations],
@@ -268,10 +277,11 @@ def fetch_live_dashboard_payload() -> dict:
 def fetch_live_dashboard_bundle(months: int = 24) -> dict:
     us_collector = FredCollector()
     tw_collector = TaiwanOfficialCollector()
+    tw_external = TaiwanExternalCollector()
     us_history = build_us_history_observations(us_collector, months=months)
-    tw_history = build_tw_history_observations(tw_collector.fetch_ndc_zip_history_metrics(NDC_ZIP_URL), months=months)
+    tw_history = build_tw_history_observations(tw_collector.fetch_ndc_zip_history_metrics(NDC_ZIP_URL), external_collector=tw_external, months=months)
     us_observations = build_us_observations(us_collector)
-    tw_observations = build_tw_observations(tw_collector)
+    tw_observations = build_tw_observations(tw_collector, external_collector=tw_external)
     latest_payload = _build_latest_payload(us_observations, tw_observations, us_history, tw_history)
     history_payloads = _build_history_payloads(us_history, tw_history)
     return {"latest": latest_payload, "history": history_payloads}

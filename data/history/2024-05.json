@@ -273,8 +273,9 @@
           "phase_label": "成長",
           "reasons": [
             "領先動能分數為 0.54。",
-            "同時面方向目前是 改善。",
-            "勞動壓力正在升高。"
+            "工業生產趨勢 持平。",
+            "勞動壓力仍受控制。",
+            "加班工時趨勢 持平。"
           ],
           "metrics": [
             {
@@ -286,40 +287,81 @@
               "status": "positive"
             },
             {
-              "id": "coincident_trend_score",
-              "label": "同時指標方向",
-              "value": 1.0,
-              "display_value": "1.00",
+              "id": "industrial_production_trend",
+              "label": "工業生產趨勢",
+              "value": 0.0,
+              "display_value": "0.00",
               "display_format": "decimal",
-              "status": "positive"
+              "status": "neutral"
             },
             {
               "id": "labor_stress",
               "label": "勞動壓力",
-              "value": 1.0,
-              "display_value": "1.00",
+              "value": 0.0,
+              "display_value": "0.00",
               "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "overtime_trend",
+              "label": "加班工時趨勢",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "exports_yoy",
+              "label": "出口年增率",
+              "value": 0.0,
+              "display_value": "0.0%",
+              "display_format": "percent",
               "status": "negative"
             },
             {
-              "id": "export_or_production",
-              "label": "出口／生產",
-              "value": 0.5406,
-              "display_value": "0.5%",
-              "display_format": "percent",
+              "id": "unemployment_claims",
+              "label": "初領失業救濟金",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "cci_level",
+              "label": "消費者信心指數",
+              "value": 50.0,
+              "display_value": "50.00",
+              "display_format": "decimal",
               "status": "positive"
+            },
+            {
+              "id": "sahm_rule",
+              "label": "薩姆規則",
+              "value": 0.4,
+              "display_value": "0.40",
+              "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "inventory_sales_ratio",
+              "label": "庫存/銷售比",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
             }
           ],
           "history": [
             {
               "month": "2024-03",
               "as_of": "2024-03",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
                 "領先動能分數為 0.13。",
-                "同時面方向目前是 改善。",
-                "勞動壓力正在升高。"
+                "工業生產趨勢 持平。",
+                "勞動壓力仍受控制。",
+                "加班工時趨勢 持平。"
               ],
               "metrics": [
                 {
@@ -331,57 +373,12 @@
                   "status": "positive"
                 },
                 {
-                  "id": "coincident_trend_score",
-                  "label": "同時指標方向",
-                  "value": 1.0,
-                  "display_value": "1.00",
+                  "id": "industrial_production_trend",
+                  "label": "工業生產趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "labor_stress",
-                  "label": "勞動壓力",
-                  "value": 1.0,
-                  "display_value": "1.00",
-                  "display_format": "decimal",
-                  "status": "negative"
-                },
-                {
-                  "id": "export_or_production",
-                  "label": "出口／生產",
-                  "value": 0.1343,
-                  "display_value": "0.1%",
-                  "display_format": "percent",
-                  "status": "positive"
-                }
-              ]
-            },
-            {
-              "month": "2024-04",
-              "as_of": "2024-04",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "領先動能分數為 -0.53。",
-                "同時面方向目前是 惡化。",
-                "勞動壓力仍受控制。"
-              ],
-              "metrics": [
-                {
-                  "id": "leading_index_change",
-                  "label": "領先指標變動",
-                  "value": -0.5256,
-                  "display_value": "-0.53",
-                  "display_format": "decimal",
-                  "status": "negative"
-                },
-                {
-                  "id": "coincident_trend_score",
-                  "label": "同時指標方向",
-                  "value": -1.0,
-                  "display_value": "-1.00",
-                  "display_format": "decimal",
-                  "status": "negative"
+                  "status": "neutral"
                 },
                 {
                   "id": "labor_stress",
@@ -392,12 +389,138 @@
                   "status": "positive"
                 },
                 {
-                  "id": "export_or_production",
-                  "label": "出口／生產",
-                  "value": -0.5256,
-                  "display_value": "-0.5%",
+                  "id": "overtime_trend",
+                  "label": "加班工時趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "exports_yoy",
+                  "label": "出口年增率",
+                  "value": 0.0,
+                  "display_value": "0.0%",
                   "display_format": "percent",
                   "status": "negative"
+                },
+                {
+                  "id": "unemployment_claims",
+                  "label": "初領失業救濟金",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "sahm_rule",
+                  "label": "薩姆規則",
+                  "value": 0.33,
+                  "display_value": "0.33",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "inventory_sales_ratio",
+                  "label": "庫存/銷售比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                }
+              ]
+            },
+            {
+              "month": "2024-04",
+              "as_of": "2024-04",
+              "phase": "Recovery",
+              "phase_label": "復甦",
+              "reasons": [
+                "領先動能分數為 -0.53。",
+                "工業生產趨勢 持平。",
+                "勞動壓力仍受控制。",
+                "加班工時趨勢 持平。"
+              ],
+              "metrics": [
+                {
+                  "id": "leading_index_change",
+                  "label": "領先指標變動",
+                  "value": -0.5256,
+                  "display_value": "-0.53",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "industrial_production_trend",
+                  "label": "工業生產趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "labor_stress",
+                  "label": "勞動壓力",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "overtime_trend",
+                  "label": "加班工時趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "exports_yoy",
+                  "label": "出口年增率",
+                  "value": 0.0,
+                  "display_value": "0.0%",
+                  "display_format": "percent",
+                  "status": "negative"
+                },
+                {
+                  "id": "unemployment_claims",
+                  "label": "初領失業救濟金",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "sahm_rule",
+                  "label": "薩姆規則",
+                  "value": 0.4,
+                  "display_value": "0.40",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "inventory_sales_ratio",
+                  "label": "庫存/銷售比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
@@ -408,8 +531,9 @@
               "phase_label": "成長",
               "reasons": [
                 "領先動能分數為 0.54。",
-                "同時面方向目前是 改善。",
-                "勞動壓力正在升高。"
+                "工業生產趨勢 持平。",
+                "勞動壓力仍受控制。",
+                "加班工時趨勢 持平。"
               ],
               "metrics": [
                 {
@@ -421,32 +545,318 @@
                   "status": "positive"
                 },
                 {
-                  "id": "coincident_trend_score",
-                  "label": "同時指標方向",
-                  "value": 1.0,
-                  "display_value": "1.00",
+                  "id": "industrial_production_trend",
+                  "label": "工業生產趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "positive"
+                  "status": "neutral"
                 },
                 {
                   "id": "labor_stress",
                   "label": "勞動壓力",
-                  "value": 1.0,
-                  "display_value": "1.00",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "overtime_trend",
+                  "label": "加班工時趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "exports_yoy",
+                  "label": "出口年增率",
+                  "value": 0.0,
+                  "display_value": "0.0%",
+                  "display_format": "percent",
                   "status": "negative"
                 },
                 {
-                  "id": "export_or_production",
-                  "label": "出口／生產",
-                  "value": 0.5406,
-                  "display_value": "0.5%",
-                  "display_format": "percent",
+                  "id": "unemployment_claims",
+                  "label": "初領失業救濟金",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
                   "status": "positive"
+                },
+                {
+                  "id": "sahm_rule",
+                  "label": "薩姆規則",
+                  "value": 0.4,
+                  "display_value": "0.40",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "inventory_sales_ratio",
+                  "label": "庫存/銷售比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             }
-          ]
+          ],
+          "transposed": {
+            "current_phase": "Growth",
+            "current_phase_label": "成長",
+            "next_phase": "Boom",
+            "prev_phase": "Recovery",
+            "phase_sequence": [
+              "Recovery",
+              "Growth",
+              "Boom",
+              "Recession"
+            ],
+            "transition_keys": [
+              "cci_level",
+              "inventory_sales_ratio",
+              "export_or_production"
+            ],
+            "metric_rows": [
+              {
+                "metric_id": "leading_index_change",
+                "label": "領先指標變動",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "prev",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "0.13",
+                    "status": "positive"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "-0.53",
+                    "status": "negative"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "0.54",
+                    "status": "positive"
+                  }
+                ]
+              },
+              {
+                "metric_id": "industrial_production_trend",
+                "label": "工業生產趨勢",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "labor_stress",
+                "label": "勞動壓力",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "overtime_trend",
+                "label": "加班工時趨勢",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "exports_yoy",
+                "label": "出口年增率",
+                "display_format": "percent",
+                "is_transition_key": false,
+                "transition_direction": "prev",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "—",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "unemployment_claims",
+                "label": "初領失業救濟金",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "—",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "cci_level",
+                "label": "消費者信心指數",
+                "display_format": "decimal",
+                "is_transition_key": true,
+                "transition_direction": "next",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "—",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "sahm_rule",
+                "label": "薩姆規則",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "0.33",
+                    "status": "positive"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.40",
+                    "status": "positive"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "0.40",
+                    "status": "positive"
+                  }
+                ]
+              },
+              {
+                "metric_id": "inventory_sales_ratio",
+                "label": "庫存/銷售比",
+                "display_format": "decimal",
+                "is_transition_key": true,
+                "transition_direction": "next",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  }
+                ]
+              }
+            ],
+            "months": [
+              "2024-03",
+              "2024-04",
+              "2024-05"
+            ],
+            "reasons": [
+              "領先動能分數為 0.54。",
+              "工業生產趨勢 持平。",
+              "勞動壓力仍受控制。",
+              "加班工時趨勢 持平。"
+            ]
+          }
         },
         "urakami": {
           "id": "urakami",
@@ -454,36 +864,58 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "殖利率曲線代理值為 -0.38。",
-            "利率環境正在轉鬆。",
-            "市場主流正在擴散。"
+            "銀行放款利率趨勢 持平（當前 0.000%）。",
+            "信用收縮中。",
+            "貨幣供給停滯。"
           ],
           "metrics": [
             {
+              "id": "bank_lending_rate",
+              "label": "銀行放款利率",
+              "value": 0.0,
+              "display_value": "0.0%",
+              "display_format": "percent",
+              "status": "negative"
+            },
+            {
+              "id": "credit_change",
+              "label": "信用擴張",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "negative"
+            },
+            {
+              "id": "m1b_change",
+              "label": "M1B 貨幣供給",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "negative"
+            },
+            {
+              "id": "pe_ratio",
+              "label": "大盤本益比",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
               "id": "yield_curve",
-              "label": "殖利率曲線",
-              "value": -0.38,
-              "display_value": "-0.38",
+              "label": "殖利率曲線利差",
+              "value": 0.0,
+              "display_value": "0.00",
               "display_format": "spread",
-              "status": "negative",
-              "proxy_label": "利率曲線代理"
+              "status": "neutral"
             },
             {
-              "id": "rates_regime",
-              "label": "利率環境",
-              "value": 0.5406,
-              "display_value": "0.54",
+              "id": "margin_balance",
+              "label": "融資餘額",
+              "value": 0.0,
+              "display_value": "0.00",
               "display_format": "decimal",
-              "status": "positive"
-            },
-            {
-              "id": "market_leadership_proxy",
-              "label": "市場領導廣度代理",
-              "value": 1.0,
-              "display_value": "1.00",
-              "display_format": "decimal",
-              "status": "positive",
-              "proxy_label": "市場廣度代理"
+              "status": "neutral"
             }
           ],
           "history": [
@@ -493,75 +925,119 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "殖利率曲線代理值為 -0.39。",
-                "利率環境正在轉鬆。",
-                "市場主流正在擴散。"
+                "銀行放款利率趨勢 持平（當前 0.000%）。",
+                "信用收縮中。",
+                "貨幣供給停滯。"
               ],
               "metrics": [
                 {
+                  "id": "bank_lending_rate",
+                  "label": "銀行放款利率",
+                  "value": 0.0,
+                  "display_value": "0.0%",
+                  "display_format": "percent",
+                  "status": "negative"
+                },
+                {
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "m1b_change",
+                  "label": "M1B 貨幣供給",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "pe_ratio",
+                  "label": "大盤本益比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
                   "id": "yield_curve",
-                  "label": "殖利率曲線",
-                  "value": -0.39,
-                  "display_value": "-0.39",
+                  "label": "殖利率曲線利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "spread",
-                  "status": "negative",
-                  "proxy_label": "利率曲線代理"
+                  "status": "neutral"
                 },
                 {
-                  "id": "rates_regime",
-                  "label": "利率環境",
-                  "value": 0.1343,
-                  "display_value": "0.13",
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "market_leadership_proxy",
-                  "label": "市場領導廣度代理",
-                  "value": 1.0,
-                  "display_value": "1.00",
-                  "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "市場廣度代理"
+                  "status": "neutral"
                 }
               ]
             },
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Recession",
-              "phase_label": "衰退",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "殖利率曲線代理值為 -0.35。",
-                "利率環境仍偏緊。",
-                "市場主流仍偏狹窄或中性。"
+                "銀行放款利率趨勢 持平（當前 0.000%）。",
+                "信用收縮中。",
+                "貨幣供給停滯。"
               ],
               "metrics": [
                 {
-                  "id": "yield_curve",
-                  "label": "殖利率曲線",
-                  "value": -0.35,
-                  "display_value": "-0.35",
-                  "display_format": "spread",
-                  "status": "negative",
-                  "proxy_label": "利率曲線代理"
+                  "id": "bank_lending_rate",
+                  "label": "銀行放款利率",
+                  "value": 0.0,
+                  "display_value": "0.0%",
+                  "display_format": "percent",
+                  "status": "negative"
                 },
                 {
-                  "id": "rates_regime",
-                  "label": "利率環境",
-                  "value": -0.5256,
-                  "display_value": "-0.53",
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
                   "status": "negative"
                 },
                 {
-                  "id": "market_leadership_proxy",
-                  "label": "市場領導廣度代理",
-                  "value": -1.0,
-                  "display_value": "-1.00",
+                  "id": "m1b_change",
+                  "label": "M1B 貨幣供給",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "negative",
-                  "proxy_label": "市場廣度代理"
+                  "status": "negative"
+                },
+                {
+                  "id": "pe_ratio",
+                  "label": "大盤本益比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "neutral"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
@@ -571,36 +1047,58 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "殖利率曲線代理值為 -0.38。",
-                "利率環境正在轉鬆。",
-                "市場主流正在擴散。"
+                "銀行放款利率趨勢 持平（當前 0.000%）。",
+                "信用收縮中。",
+                "貨幣供給停滯。"
               ],
               "metrics": [
                 {
+                  "id": "bank_lending_rate",
+                  "label": "銀行放款利率",
+                  "value": 0.0,
+                  "display_value": "0.0%",
+                  "display_format": "percent",
+                  "status": "negative"
+                },
+                {
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "m1b_change",
+                  "label": "M1B 貨幣供給",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "pe_ratio",
+                  "label": "大盤本益比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
                   "id": "yield_curve",
-                  "label": "殖利率曲線",
-                  "value": -0.38,
-                  "display_value": "-0.38",
+                  "label": "殖利率曲線利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "spread",
-                  "status": "negative",
-                  "proxy_label": "利率曲線代理"
+                  "status": "neutral"
                 },
                 {
-                  "id": "rates_regime",
-                  "label": "利率環境",
-                  "value": 0.5406,
-                  "display_value": "0.54",
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "market_leadership_proxy",
-                  "label": "市場領導廣度代理",
-                  "value": 1.0,
-                  "display_value": "1.00",
-                  "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "市場廣度代理"
+                  "status": "neutral"
                 }
               ]
             }
@@ -609,156 +1107,276 @@
         "marks": {
           "id": "marks",
           "title": "霍華．馬克斯鏡頭",
-          "phase": "Recession",
-          "phase_label": "衰退",
+          "phase": "Recovery",
+          "phase_label": "復甦",
           "reasons": [
-            "高收益債利差代理值為 3.20。",
-            "估值與風險偏好尚未過熱。",
-            "恐慌代理升高。"
+            "股市趨勢 持平（年增 0.00%）。",
+            "信用收縮中。",
+            "庫存可控。"
           ],
           "metrics": [
             {
-              "id": "hy_spread",
-              "label": "高收益債利差",
-              "value": 3.2,
-              "display_value": "3.20",
-              "display_format": "spread",
-              "status": "positive",
-              "proxy_label": "信用壓力代理"
+              "id": "stock_index_yoy",
+              "label": "股價指數年增",
+              "value": 0.0,
+              "display_value": "0.0%",
+              "display_format": "percent",
+              "status": "negative"
             },
             {
-              "id": "valuation_proxy",
-              "label": "估值／風險偏好代理",
-              "value": 0.04059999999999997,
-              "display_value": "0.04",
+              "id": "credit_change",
+              "label": "信用擴張",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "negative"
+            },
+            {
+              "id": "inventory_change",
+              "label": "庫存變動",
+              "value": 0.0,
+              "display_value": "0.00",
               "display_format": "decimal",
               "status": "positive"
             },
             {
-              "id": "fear_proxy",
-              "label": "恐慌／自滿代理",
-              "value": 1.0,
-              "display_value": "1.00",
+              "id": "credit_spread",
+              "label": "信用利差",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "spread",
+              "status": "neutral"
+            },
+            {
+              "id": "cci_level",
+              "label": "消費者信心指數",
+              "value": 50.0,
+              "display_value": "50.00",
               "display_format": "decimal",
-              "status": "positive",
-              "proxy_label": "情緒代理"
+              "status": "neutral"
+            },
+            {
+              "id": "government_spending",
+              "label": "政府支出趨勢",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "margin_balance",
+              "label": "融資餘額",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
             }
           ],
           "history": [
             {
               "month": "2024-03",
               "as_of": "2024-03",
-              "phase": "Recession",
-              "phase_label": "衰退",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "高收益債利差代理值為 3.15。",
-                "估值與風險偏好尚未過熱。",
-                "恐慌代理升高。"
+                "股市趨勢 持平（年增 0.00%）。",
+                "信用收縮中。",
+                "庫存可控。"
               ],
               "metrics": [
                 {
-                  "id": "hy_spread",
-                  "label": "高收益債利差",
-                  "value": 3.15,
-                  "display_value": "3.15",
-                  "display_format": "spread",
-                  "status": "positive",
-                  "proxy_label": "信用壓力代理"
+                  "id": "stock_index_yoy",
+                  "label": "股價指數年增",
+                  "value": 0.0,
+                  "display_value": "0.0%",
+                  "display_format": "percent",
+                  "status": "negative"
                 },
                 {
-                  "id": "valuation_proxy",
-                  "label": "估值／風險偏好代理",
-                  "value": -0.3657,
-                  "display_value": "-0.37",
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "inventory_change",
+                  "label": "庫存變動",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
                   "status": "positive"
                 },
                 {
-                  "id": "fear_proxy",
-                  "label": "恐慌／自滿代理",
-                  "value": 1.0,
-                  "display_value": "1.00",
+                  "id": "credit_spread",
+                  "label": "信用利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
                   "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "情緒代理"
+                  "status": "neutral"
+                },
+                {
+                  "id": "government_spending",
+                  "label": "政府支出趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "高收益債利差代理值為 3.18。",
-                "估值與風險偏好尚未過熱。",
-                "恐慌代理偏低，市場較平靜或自滿。"
+                "股市趨勢 持平（年增 0.00%）。",
+                "信用收縮中。",
+                "庫存可控。"
               ],
               "metrics": [
                 {
-                  "id": "hy_spread",
-                  "label": "高收益債利差",
-                  "value": 3.18,
-                  "display_value": "3.18",
-                  "display_format": "spread",
-                  "status": "positive",
-                  "proxy_label": "信用壓力代理"
+                  "id": "stock_index_yoy",
+                  "label": "股價指數年增",
+                  "value": 0.0,
+                  "display_value": "0.0%",
+                  "display_format": "percent",
+                  "status": "negative"
                 },
                 {
-                  "id": "valuation_proxy",
-                  "label": "估值／風險偏好代理",
-                  "value": -1.0255999999999998,
-                  "display_value": "-1.03",
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "inventory_change",
+                  "label": "庫存變動",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
                   "status": "positive"
                 },
                 {
-                  "id": "fear_proxy",
-                  "label": "恐慌／自滿代理",
-                  "value": -0.5,
-                  "display_value": "-0.50",
+                  "id": "credit_spread",
+                  "label": "信用利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
                   "display_format": "decimal",
-                  "status": "negative",
-                  "proxy_label": "情緒代理"
+                  "status": "neutral"
+                },
+                {
+                  "id": "government_spending",
+                  "label": "政府支出趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
             {
               "month": "2024-05",
               "as_of": "2024-05",
-              "phase": "Recession",
-              "phase_label": "衰退",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "高收益債利差代理值為 3.20。",
-                "估值與風險偏好尚未過熱。",
-                "恐慌代理升高。"
+                "股市趨勢 持平（年增 0.00%）。",
+                "信用收縮中。",
+                "庫存可控。"
               ],
               "metrics": [
                 {
-                  "id": "hy_spread",
-                  "label": "高收益債利差",
-                  "value": 3.2,
-                  "display_value": "3.20",
-                  "display_format": "spread",
-                  "status": "positive",
-                  "proxy_label": "信用壓力代理"
+                  "id": "stock_index_yoy",
+                  "label": "股價指數年增",
+                  "value": 0.0,
+                  "display_value": "0.0%",
+                  "display_format": "percent",
+                  "status": "negative"
                 },
                 {
-                  "id": "valuation_proxy",
-                  "label": "估值／風險偏好代理",
-                  "value": 0.04059999999999997,
-                  "display_value": "0.04",
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "inventory_change",
+                  "label": "庫存變動",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
                   "status": "positive"
                 },
                 {
-                  "id": "fear_proxy",
-                  "label": "恐慌／自滿代理",
-                  "value": 1.0,
-                  "display_value": "1.00",
+                  "id": "credit_spread",
+                  "label": "信用利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
                   "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "情緒代理"
+                  "status": "neutral"
+                },
+                {
+                  "id": "government_spending",
+                  "label": "政府支出趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             }
@@ -776,8 +1394,41 @@
         "leading_index_change": 0.5677822000000106,
         "leading_trend": "improving",
         "coincident_trend": "improving",
+        "coincident_trend_score": 0.5489515199999886,
         "unemployment_trend": "stable",
-        "exports_yoy": 9.145023987302945
+        "industrial_production_change": 10.129999999999995,
+        "industrial_production_trend": "improving",
+        "overtime_hours_change": 0.09999999999999964,
+        "overtime_trend": "stable",
+        "machinery_import_yoy": -2.13648853249593,
+        "investment_trend": "contracting",
+        "retail_sales_change": 36.31503600000019,
+        "consumption_trend": "expanding",
+        "inventory_change": null,
+        "inventory_trend": "stable",
+        "inventory_sales_ratio": null,
+        "exports_yoy": 9.145023987302945,
+        "export_trend": "expanding",
+        "mfg_sales_change": 5.280000000000001,
+        "mfg_sales_trend": "improving",
+        "bank_lending_rate": 2.187,
+        "bank_lending_rate_change": 0.03200000000000003,
+        "rate_trend": "rising",
+        "credit_change": null,
+        "credit_trend": "stable",
+        "m1b_change": 61741.0,
+        "money_supply_trend": "expanding",
+        "stock_index_yoy": 4.257006117001072,
+        "stock_trend": "neutral",
+        "credit_inventory_ratio": null,
+        "unemployment": 3.34,
+        "unemployment_prev": 3.36,
+        "sahm_rule": null,
+        "gov_yield_10y": 1.61,
+        "gov_yield_2y": 1.31,
+        "yield_curve_spread": 0.30000000000000004,
+        "credit_spread_bbb": 0.6151,
+        "credit_spread": 0.6151
       },
       "derived_signals": {
         "macro_direction": "improving",
@@ -903,8 +1554,9 @@
           "phase_label": "榮景",
           "reasons": [
             "領先動能分數為 0.57。",
-            "同時面方向目前是 改善。",
-            "勞動壓力仍受控制。"
+            "工業生產趨勢 改善。",
+            "勞動壓力仍受控制。",
+            "加班工時趨勢 持平。"
           ],
           "metrics": [
             {
@@ -916,8 +1568,8 @@
               "status": "positive"
             },
             {
-              "id": "coincident_trend_score",
-              "label": "同時指標方向",
+              "id": "industrial_production_trend",
+              "label": "工業生產趨勢",
               "value": 1.0,
               "display_value": "1.00",
               "display_format": "decimal",
@@ -932,12 +1584,52 @@
               "status": "positive"
             },
             {
-              "id": "export_or_production",
-              "label": "出口／生產",
+              "id": "overtime_trend",
+              "label": "加班工時趨勢",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "exports_yoy",
+              "label": "出口年增率",
               "value": 9.145023987302945,
               "display_value": "9.1%",
               "display_format": "percent",
               "status": "positive"
+            },
+            {
+              "id": "unemployment_claims",
+              "label": "初領失業救濟金",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "cci_level",
+              "label": "消費者信心指數",
+              "value": 50.0,
+              "display_value": "50.00",
+              "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "sahm_rule",
+              "label": "薩姆規則",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "positive"
+            },
+            {
+              "id": "inventory_sales_ratio",
+              "label": "庫存/銷售比",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
             }
           ],
           "history": [
@@ -948,8 +1640,9 @@
               "phase_label": "榮景",
               "reasons": [
                 "領先動能分數為 0.59。",
-                "同時面方向目前是 改善。",
-                "勞動壓力仍受控制。"
+                "工業生產趨勢 改善。",
+                "勞動壓力仍受控制。",
+                "加班工時趨勢 持平。"
               ],
               "metrics": [
                 {
@@ -961,8 +1654,8 @@
                   "status": "positive"
                 },
                 {
-                  "id": "coincident_trend_score",
-                  "label": "同時指標方向",
+                  "id": "industrial_production_trend",
+                  "label": "工業生產趨勢",
                   "value": 1.0,
                   "display_value": "1.00",
                   "display_format": "decimal",
@@ -977,24 +1670,65 @@
                   "status": "positive"
                 },
                 {
-                  "id": "export_or_production",
-                  "label": "出口／生產",
+                  "id": "overtime_trend",
+                  "label": "加班工時趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "exports_yoy",
+                  "label": "出口年增率",
                   "value": 22.71299389214162,
                   "display_value": "22.7%",
                   "display_format": "percent",
                   "status": "positive"
+                },
+                {
+                  "id": "unemployment_claims",
+                  "label": "初領失業救濟金",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "sahm_rule",
+                  "label": "薩姆規則",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "inventory_sales_ratio",
+                  "label": "庫存/銷售比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Boom",
-              "phase_label": "榮景",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
                 "領先動能分數為 0.64。",
-                "同時面方向目前是 改善。",
-                "勞動壓力仍受控制。"
+                "工業生產趨勢 惡化。",
+                "勞動壓力仍受控制。",
+                "加班工時趨勢 持平。"
               ],
               "metrics": [
                 {
@@ -1006,12 +1740,12 @@
                   "status": "positive"
                 },
                 {
-                  "id": "coincident_trend_score",
-                  "label": "同時指標方向",
-                  "value": 1.0,
-                  "display_value": "1.00",
+                  "id": "industrial_production_trend",
+                  "label": "工業生產趨勢",
+                  "value": -1.0,
+                  "display_value": "-1.00",
                   "display_format": "decimal",
-                  "status": "positive"
+                  "status": "negative"
                 },
                 {
                   "id": "labor_stress",
@@ -1022,12 +1756,52 @@
                   "status": "positive"
                 },
                 {
-                  "id": "export_or_production",
-                  "label": "出口／生產",
+                  "id": "overtime_trend",
+                  "label": "加班工時趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "exports_yoy",
+                  "label": "出口年增率",
                   "value": 9.955330695473465,
                   "display_value": "10.0%",
                   "display_format": "percent",
                   "status": "positive"
+                },
+                {
+                  "id": "unemployment_claims",
+                  "label": "初領失業救濟金",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "sahm_rule",
+                  "label": "薩姆規則",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "inventory_sales_ratio",
+                  "label": "庫存/銷售比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
@@ -1038,8 +1812,9 @@
               "phase_label": "榮景",
               "reasons": [
                 "領先動能分數為 0.57。",
-                "同時面方向目前是 改善。",
-                "勞動壓力仍受控制。"
+                "工業生產趨勢 改善。",
+                "勞動壓力仍受控制。",
+                "加班工時趨勢 持平。"
               ],
               "metrics": [
                 {
@@ -1051,8 +1826,8 @@
                   "status": "positive"
                 },
                 {
-                  "id": "coincident_trend_score",
-                  "label": "同時指標方向",
+                  "id": "industrial_production_trend",
+                  "label": "工業生產趨勢",
                   "value": 1.0,
                   "display_value": "1.00",
                   "display_format": "decimal",
@@ -1067,170 +1842,544 @@
                   "status": "positive"
                 },
                 {
-                  "id": "export_or_production",
-                  "label": "出口／生產",
+                  "id": "overtime_trend",
+                  "label": "加班工時趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "exports_yoy",
+                  "label": "出口年增率",
                   "value": 9.145023987302945,
                   "display_value": "9.1%",
                   "display_format": "percent",
                   "status": "positive"
+                },
+                {
+                  "id": "unemployment_claims",
+                  "label": "初領失業救濟金",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "sahm_rule",
+                  "label": "薩姆規則",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "positive"
+                },
+                {
+                  "id": "inventory_sales_ratio",
+                  "label": "庫存/銷售比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             }
-          ]
+          ],
+          "transposed": {
+            "current_phase": "Boom",
+            "current_phase_label": "榮景",
+            "next_phase": "Recession",
+            "prev_phase": "Growth",
+            "phase_sequence": [
+              "Recovery",
+              "Growth",
+              "Boom",
+              "Recession"
+            ],
+            "transition_keys": [
+              "sahm_rule",
+              "unemployment_claims",
+              "inventory_sales_ratio"
+            ],
+            "metric_rows": [
+              {
+                "metric_id": "leading_index_change",
+                "label": "領先指標變動",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "prev",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "0.59",
+                    "status": "positive"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.64",
+                    "status": "positive"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "0.57",
+                    "status": "positive"
+                  }
+                ]
+              },
+              {
+                "metric_id": "industrial_production_trend",
+                "label": "工業生產趨勢",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "improving",
+                    "status": "positive"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "deteriorating",
+                    "status": "negative"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "improving",
+                    "status": "positive"
+                  }
+                ]
+              },
+              {
+                "metric_id": "labor_stress",
+                "label": "勞動壓力",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "overtime_trend",
+                "label": "加班工時趨勢",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "exports_yoy",
+                "label": "出口年增率",
+                "display_format": "percent",
+                "is_transition_key": false,
+                "transition_direction": "",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "22.7%",
+                    "status": "positive"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "10.0%",
+                    "status": "positive"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "9.1%",
+                    "status": "positive"
+                  }
+                ]
+              },
+              {
+                "metric_id": "unemployment_claims",
+                "label": "初領失業救濟金",
+                "display_format": "decimal",
+                "is_transition_key": true,
+                "transition_direction": "next",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "—",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "cci_level",
+                "label": "消費者信心指數",
+                "display_format": "decimal",
+                "is_transition_key": false,
+                "transition_direction": "prev",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "—",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "sahm_rule",
+                "label": "薩姆規則",
+                "display_format": "decimal",
+                "is_transition_key": true,
+                "transition_direction": "next",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "—",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "—",
+                    "status": "neutral"
+                  }
+                ]
+              },
+              {
+                "metric_id": "inventory_sales_ratio",
+                "label": "庫存/銷售比",
+                "display_format": "decimal",
+                "is_transition_key": true,
+                "transition_direction": "next",
+                "values": [
+                  {
+                    "month": "2024-03",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-04",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  },
+                  {
+                    "month": "2024-05",
+                    "display_value": "stable",
+                    "status": "neutral"
+                  }
+                ]
+              }
+            ],
+            "months": [
+              "2024-03",
+              "2024-04",
+              "2024-05"
+            ],
+            "reasons": [
+              "領先動能分數為 0.57。",
+              "工業生產趨勢 改善。",
+              "勞動壓力仍受控制。",
+              "加班工時趨勢 持平。"
+            ]
+          }
         },
         "urakami": {
           "id": "urakami",
           "title": "浦上邦雄鏡頭",
-          "phase": "Growth",
-          "phase_label": "成長",
+          "phase": "Recovery",
+          "phase_label": "復甦",
           "reasons": [
-            "殖利率曲線代理值為 0.00。",
-            "利率環境正在轉鬆。",
-            "市場主流正在擴散。"
+            "銀行放款利率趨勢 升息（當前 2.187%）。",
+            "信用收縮中。",
+            "貨幣供給停滯。"
           ],
           "metrics": [
             {
-              "id": "yield_curve",
-              "label": "殖利率曲線",
-              "value": 0.0,
-              "display_value": "0.00",
-              "display_format": "spread",
-              "status": "negative",
-              "proxy_label": "利率曲線代理"
+              "id": "bank_lending_rate",
+              "label": "銀行放款利率",
+              "value": 2.187,
+              "display_value": "2.2%",
+              "display_format": "percent",
+              "status": "negative"
             },
             {
-              "id": "rates_regime",
-              "label": "利率環境",
-              "value": 0.5677822000000106,
-              "display_value": "0.57",
+              "id": "credit_change",
+              "label": "信用擴張",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "m1b_change",
+              "label": "M1B 貨幣供給",
+              "value": 61741.0,
+              "display_value": "61741.00",
               "display_format": "decimal",
               "status": "positive"
             },
             {
-              "id": "market_leadership_proxy",
-              "label": "市場領導廣度代理",
-              "value": 1.0,
-              "display_value": "1.00",
+              "id": "pe_ratio",
+              "label": "大盤本益比",
+              "value": 0.0,
+              "display_value": "0.00",
               "display_format": "decimal",
-              "status": "positive",
-              "proxy_label": "市場廣度代理"
+              "status": "neutral"
+            },
+            {
+              "id": "yield_curve",
+              "label": "殖利率曲線利差",
+              "value": 0.30000000000000004,
+              "display_value": "0.30",
+              "display_format": "spread",
+              "status": "positive"
+            },
+            {
+              "id": "margin_balance",
+              "label": "融資餘額",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
             }
           ],
           "history": [
             {
               "month": "2024-03",
               "as_of": "2024-03",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "殖利率曲線代理值為 0.00。",
-                "利率環境正在轉鬆。",
-                "市場主流正在擴散。"
+                "銀行放款利率趨勢 升息（當前 2.017%）。",
+                "信用收縮中。",
+                "貨幣供給停滯。"
               ],
               "metrics": [
                 {
-                  "id": "yield_curve",
-                  "label": "殖利率曲線",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "spread",
-                  "status": "negative",
-                  "proxy_label": "利率曲線代理"
+                  "id": "bank_lending_rate",
+                  "label": "銀行放款利率",
+                  "value": 2.017,
+                  "display_value": "2.0%",
+                  "display_format": "percent",
+                  "status": "negative"
                 },
                 {
-                  "id": "rates_regime",
-                  "label": "利率環境",
-                  "value": 0.5890334999999993,
-                  "display_value": "0.59",
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "m1b_change",
+                  "label": "M1B 貨幣供給",
+                  "value": 223512.0,
+                  "display_value": "223512.00",
                   "display_format": "decimal",
                   "status": "positive"
                 },
                 {
-                  "id": "market_leadership_proxy",
-                  "label": "市場領導廣度代理",
-                  "value": 1.0,
-                  "display_value": "1.00",
+                  "id": "pe_ratio",
+                  "label": "大盤本益比",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "市場廣度代理"
+                  "status": "neutral"
+                },
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "neutral"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "殖利率曲線代理值為 0.00。",
-                "利率環境正在轉鬆。",
-                "市場主流正在擴散。"
+                "銀行放款利率趨勢 升息（當前 2.155%）。",
+                "信用收縮中。",
+                "貨幣供給停滯。"
               ],
               "metrics": [
                 {
+                  "id": "bank_lending_rate",
+                  "label": "銀行放款利率",
+                  "value": 2.155,
+                  "display_value": "2.2%",
+                  "display_format": "percent",
+                  "status": "negative"
+                },
+                {
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "m1b_change",
+                  "label": "M1B 貨幣供給",
+                  "value": -55554.0,
+                  "display_value": "-55554.00",
+                  "display_format": "decimal",
+                  "status": "negative"
+                },
+                {
+                  "id": "pe_ratio",
+                  "label": "大盤本益比",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
                   "id": "yield_curve",
-                  "label": "殖利率曲線",
+                  "label": "殖利率曲線利差",
                   "value": 0.0,
                   "display_value": "0.00",
                   "display_format": "spread",
-                  "status": "negative",
-                  "proxy_label": "利率曲線代理"
+                  "status": "neutral"
                 },
                 {
-                  "id": "rates_regime",
-                  "label": "利率環境",
-                  "value": 0.6396769999999918,
-                  "display_value": "0.64",
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "market_leadership_proxy",
-                  "label": "市場領導廣度代理",
-                  "value": 1.0,
-                  "display_value": "1.00",
-                  "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "市場廣度代理"
+                  "status": "neutral"
                 }
               ]
             },
             {
               "month": "2024-05",
               "as_of": "2024-05",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "殖利率曲線代理值為 0.00。",
-                "利率環境正在轉鬆。",
-                "市場主流正在擴散。"
+                "銀行放款利率趨勢 升息（當前 2.187%）。",
+                "信用收縮中。",
+                "貨幣供給停滯。"
               ],
               "metrics": [
                 {
-                  "id": "yield_curve",
-                  "label": "殖利率曲線",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "spread",
-                  "status": "negative",
-                  "proxy_label": "利率曲線代理"
+                  "id": "bank_lending_rate",
+                  "label": "銀行放款利率",
+                  "value": 2.187,
+                  "display_value": "2.2%",
+                  "display_format": "percent",
+                  "status": "negative"
                 },
                 {
-                  "id": "rates_regime",
-                  "label": "利率環境",
-                  "value": 0.5677822000000106,
-                  "display_value": "0.57",
+                  "id": "credit_change",
+                  "label": "信用擴張",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "m1b_change",
+                  "label": "M1B 貨幣供給",
+                  "value": 61741.0,
+                  "display_value": "61741.00",
                   "display_format": "decimal",
                   "status": "positive"
                 },
                 {
-                  "id": "market_leadership_proxy",
-                  "label": "市場領導廣度代理",
-                  "value": 1.0,
-                  "display_value": "1.00",
+                  "id": "pe_ratio",
+                  "label": "大盤本益比",
+                  "value": 0.0,
+                  "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "市場廣度代理"
+                  "status": "neutral"
+                },
+                {
+                  "id": "yield_curve",
+                  "label": "殖利率曲線利差",
+                  "value": 0.30000000000000004,
+                  "display_value": "0.30",
+                  "display_format": "spread",
+                  "status": "positive"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             }
@@ -1239,156 +2388,276 @@
         "marks": {
           "id": "marks",
           "title": "霍華．馬克斯鏡頭",
-          "phase": "Growth",
-          "phase_label": "成長",
+          "phase": "Recovery",
+          "phase_label": "復甦",
           "reasons": [
-            "高收益債利差代理值為 4.50。",
-            "估值與風險偏好代理偏熱。",
-            "恐慌代理偏低，市場較平靜或自滿。"
+            "股市趨勢 neutral（年增 4.26%）。",
+            "信用收縮中。",
+            "庫存可控。"
           ],
           "metrics": [
             {
-              "id": "hy_spread",
-              "label": "高收益債利差",
-              "value": 4.5,
-              "display_value": "4.50",
-              "display_format": "spread",
-              "status": "positive",
-              "proxy_label": "信用壓力代理"
+              "id": "stock_index_yoy",
+              "label": "股價指數年增",
+              "value": 4.257006117001072,
+              "display_value": "4.3%",
+              "display_format": "percent",
+              "status": "positive"
             },
             {
-              "id": "valuation_proxy",
-              "label": "估值／風險偏好代理",
-              "value": 0.5677822000000106,
-              "display_value": "0.57",
-              "display_format": "decimal",
-              "status": "negative"
-            },
-            {
-              "id": "fear_proxy",
-              "label": "恐慌／自滿代理",
+              "id": "credit_change",
+              "label": "信用擴張",
               "value": 0.0,
               "display_value": "0.00",
               "display_format": "decimal",
-              "status": "negative",
-              "proxy_label": "情緒代理"
+              "status": "neutral"
+            },
+            {
+              "id": "inventory_change",
+              "label": "庫存變動",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "credit_spread",
+              "label": "信用利差",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "spread",
+              "status": "neutral"
+            },
+            {
+              "id": "cci_level",
+              "label": "消費者信心指數",
+              "value": 50.0,
+              "display_value": "50.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "government_spending",
+              "label": "政府支出趨勢",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
+            },
+            {
+              "id": "margin_balance",
+              "label": "融資餘額",
+              "value": 0.0,
+              "display_value": "0.00",
+              "display_format": "decimal",
+              "status": "neutral"
             }
           ],
           "history": [
             {
               "month": "2024-03",
               "as_of": "2024-03",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "高收益債利差代理值為 4.50。",
-                "估值與風險偏好代理偏熱。",
-                "恐慌代理偏低，市場較平靜或自滿。"
+                "股市趨勢 bullish（年增 6.62%）。",
+                "信用收縮中。",
+                "庫存可控。"
               ],
               "metrics": [
                 {
-                  "id": "hy_spread",
-                  "label": "高收益債利差",
-                  "value": 4.5,
-                  "display_value": "4.50",
-                  "display_format": "spread",
-                  "status": "positive",
-                  "proxy_label": "信用壓力代理"
+                  "id": "stock_index_yoy",
+                  "label": "股價指數年增",
+                  "value": 6.616082319230383,
+                  "display_value": "6.6%",
+                  "display_format": "percent",
+                  "status": "positive"
                 },
                 {
-                  "id": "valuation_proxy",
-                  "label": "估值／風險偏好代理",
-                  "value": 0.5890334999999993,
-                  "display_value": "0.59",
-                  "display_format": "decimal",
-                  "status": "negative"
-                },
-                {
-                  "id": "fear_proxy",
-                  "label": "恐慌／自滿代理",
+                  "id": "credit_change",
+                  "label": "信用擴張",
                   "value": 0.0,
                   "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "negative",
-                  "proxy_label": "情緒代理"
+                  "status": "neutral"
+                },
+                {
+                  "id": "inventory_change",
+                  "label": "庫存變動",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "credit_spread",
+                  "label": "信用利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "government_spending",
+                  "label": "政府支出趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "高收益債利差代理值為 4.50。",
-                "估值與風險偏好代理偏熱。",
-                "恐慌代理偏低，市場較平靜或自滿。"
+                "股市趨勢 neutral（年增 2.03%）。",
+                "信用收縮中。",
+                "庫存可控。"
               ],
               "metrics": [
                 {
-                  "id": "hy_spread",
-                  "label": "高收益債利差",
-                  "value": 4.5,
-                  "display_value": "4.50",
-                  "display_format": "spread",
-                  "status": "positive",
-                  "proxy_label": "信用壓力代理"
+                  "id": "stock_index_yoy",
+                  "label": "股價指數年增",
+                  "value": 2.025286888282012,
+                  "display_value": "2.0%",
+                  "display_format": "percent",
+                  "status": "positive"
                 },
                 {
-                  "id": "valuation_proxy",
-                  "label": "估值／風險偏好代理",
-                  "value": 0.6396769999999918,
-                  "display_value": "0.64",
-                  "display_format": "decimal",
-                  "status": "negative"
-                },
-                {
-                  "id": "fear_proxy",
-                  "label": "恐慌／自滿代理",
+                  "id": "credit_change",
+                  "label": "信用擴張",
                   "value": 0.0,
                   "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "negative",
-                  "proxy_label": "情緒代理"
+                  "status": "neutral"
+                },
+                {
+                  "id": "inventory_change",
+                  "label": "庫存變動",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "credit_spread",
+                  "label": "信用利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "government_spending",
+                  "label": "政府支出趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             },
             {
               "month": "2024-05",
               "as_of": "2024-05",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "高收益債利差代理值為 4.50。",
-                "估值與風險偏好代理偏熱。",
-                "恐慌代理偏低，市場較平靜或自滿。"
+                "股市趨勢 neutral（年增 4.26%）。",
+                "信用收縮中。",
+                "庫存可控。"
               ],
               "metrics": [
                 {
-                  "id": "hy_spread",
-                  "label": "高收益債利差",
-                  "value": 4.5,
-                  "display_value": "4.50",
-                  "display_format": "spread",
-                  "status": "positive",
-                  "proxy_label": "信用壓力代理"
+                  "id": "stock_index_yoy",
+                  "label": "股價指數年增",
+                  "value": 4.257006117001072,
+                  "display_value": "4.3%",
+                  "display_format": "percent",
+                  "status": "positive"
                 },
                 {
-                  "id": "valuation_proxy",
-                  "label": "估值／風險偏好代理",
-                  "value": 0.5677822000000106,
-                  "display_value": "0.57",
-                  "display_format": "decimal",
-                  "status": "negative"
-                },
-                {
-                  "id": "fear_proxy",
-                  "label": "恐慌／自滿代理",
+                  "id": "credit_change",
+                  "label": "信用擴張",
                   "value": 0.0,
                   "display_value": "0.00",
                   "display_format": "decimal",
-                  "status": "negative",
-                  "proxy_label": "情緒代理"
+                  "status": "neutral"
+                },
+                {
+                  "id": "inventory_change",
+                  "label": "庫存變動",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "credit_spread",
+                  "label": "信用利差",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "spread",
+                  "status": "neutral"
+                },
+                {
+                  "id": "cci_level",
+                  "label": "消費者信心指數",
+                  "value": 50.0,
+                  "display_value": "50.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "government_spending",
+                  "label": "政府支出趨勢",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
+                },
+                {
+                  "id": "margin_balance",
+                  "label": "融資餘額",
+                  "value": 0.0,
+                  "display_value": "0.00",
+                  "display_format": "decimal",
+                  "status": "neutral"
                 }
               ]
             }

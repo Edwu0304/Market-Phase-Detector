@@ -277,6 +277,95 @@ function buildMetricTable(history, selectedIndex) {
   `;
 }
 
+// ===== Izaax Transposed Table =====
+function buildIzaaxTransposedTable(transposed) {
+  const {
+    current_phase,
+    current_phase_label,
+    next_phase,
+    prev_phase,
+    phase_sequence,
+    transition_keys,
+    metric_rows,
+    months,
+    reasons,
+  } = transposed;
+
+  const currentIdx = phase_sequence.indexOf(current_phase);
+
+  // Phase progression banner
+  const phaseBanner = phase_sequence
+    .map((ph, i) => {
+      const label = { Recovery: "復甦", Growth: "成長", Boom: "榮景", Recession: "衰退" }[ph] || ph;
+      const isActive = ph === current_phase;
+      const isPrev = i === (currentIdx - 1 + phase_sequence.length) % phase_sequence.length;
+      const isNext = i === (currentIdx + 1) % phase_sequence.length;
+      let cls = "phase-step";
+      if (isActive) cls += ` phase-step-active phase-${ph.toLowerCase()}`;
+      else if (isPrev) cls += " phase-step-prev";
+      else if (isNext) cls += " phase-step-next";
+      const arrow = i < phase_sequence.length - 1 ? '<span class="phase-arrow">→</span>' : "";
+      return `<span class="${cls}">${label}</span>${arrow}`;
+    })
+    .join("");
+
+  // Month columns headers
+  const monthHeaders = months.map((m) => `<th class="month-header">${m}</th>`).join("");
+
+  // Metric rows with transition highlighting
+  const metricRows = metric_rows
+    .map((row) => {
+      const isTransitionKey = row.is_transition_key;
+      const rowClass = isTransitionKey ? "metric-row-transition-key" : "";
+      const cells = row.values
+        .map((v) => {
+          let statusCls = `cell-${v.status}`;
+          if (isTransitionKey) statusCls += " cell-transition-key";
+          return `<td class="${statusCls}">${v.display_value}</td>`;
+        })
+        .join("");
+      const labelPrefix = isTransitionKey ? '<span class="transition-key-indicator">★</span>' : "";
+      return `<tr class="metric-row ${rowClass}"><th class="metric-label">${labelPrefix}${row.label}</th>${cells}</tr>`;
+    })
+    .join("");
+
+  // Reasons
+  const reasonsList = reasons.map((r) => `<li>${r}</li>`).join("");
+
+  return `
+    <div class="izaax-transposed">
+      <div class="izaax-phase-banner">
+        <div class="phase-progress">${phaseBanner}</div>
+        <div class="izaax-current-phase">
+          <span class="phase-badge-large ${phaseTone(current_phase)}">${current_phase_label}</span>
+          <span class="izaax-next-info">下一步：<strong>${{ Recovery: "成長", Growth: "榮景", Boom: "衰退", Recession: "復甦" }[next_phase] || next_phase}</strong></span>
+        </div>
+      </div>
+      <div class="izaax-table-scroll-wrapper">
+        <table class="izaax-transposed-table">
+          <thead>
+            <tr>
+              <th class="metric-col-header">指標</th>
+              ${monthHeaders}
+            </tr>
+          </thead>
+          <tbody>
+            ${metricRows}
+          </tbody>
+        </table>
+      </div>
+      <div class="izaax-legend">
+        <p><span class="transition-key-indicator">★</span> 表示影響進入下一階段的關鍵指標</p>
+        <p><span class="cell-positive">●</span> 正向 <span class="cell-negative">●</span> 負向 <span class="cell-neutral">●</span> 中性</p>
+      </div>
+      <div class="izaax-reasons">
+        <h3>判讀原因</h3>
+        <ul>${reasonsList}</ul>
+      </div>
+    </div>
+  `;
+}
+
 function buildLensRow(lensId, bundle, strategyBook) {
   const history = bundle.history ?? [];
   const maxIndex = Math.max(history.length - 1, 0);
@@ -289,6 +378,25 @@ function buildLensRow(lensId, bundle, strategyBook) {
     reasons: bundle.reasons ?? [],
   };
 
+  // Izaax: full-width transposed table, no side panel, no slider
+  if (lensId === "izaax" && bundle.transposed) {
+    return `
+      <article class="lens-row lens-row-izaax" data-lens-id="${lensId}">
+        <div class="lens-row-head">
+          <div>
+            <p class="lens-kicker">${strategyBook.school}</p>
+            <h2>${bundle.title}</h2>
+            <p class="lens-book">${strategyBook.book}</p>
+          </div>
+        </div>
+        <div class="lens-row-body lens-row-body-full">
+          ${buildIzaaxTransposedTable(bundle.transposed)}
+        </div>
+      </article>
+    `;
+  }
+
+  // Urakami / Marks: standard layout with slider + side panel
   return `
     <article class="lens-row" data-lens-id="${lensId}">
       <div class="lens-row-head">
@@ -337,6 +445,12 @@ function createLensController(panel, lensId, bundle, strategyBook) {
   const independentSliderState = { index: Math.max((bundle.history ?? []).length - 1, 0) };
   const history = bundle.history ?? [];
   const slider = panel.querySelector(".lens-history-slider");
+
+  // Izaax uses transposed table, no slider control
+  if (lensId === "izaax") {
+    return;
+  }
+
   const badge = panel.querySelector('[data-role="phase-badge"]');
   const historyState = panel.querySelector('[data-role="history-state"]');
   const tableSlot = panel.querySelector('[data-role="history-table"]');
