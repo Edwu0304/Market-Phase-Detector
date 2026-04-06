@@ -1,0 +1,1108 @@
+{
+  "months": [
+    {
+      "month": "2024-03",
+      "file": "2024-03.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2024-03",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-03"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-03"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-03"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Growth",
+          "watch": null,
+          "as_of": "2024-03",
+          "lenses": {
+            "izaax": {
+              "phase": "Boom",
+              "as_of": "2024-03"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-03"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-03"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-04",
+      "file": "2024-04.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2024-04",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-04"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-04"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-04"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Growth",
+          "watch": null,
+          "as_of": "2024-04",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-04"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-04"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-04"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-05",
+      "file": "2024-05.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2024-05",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2024-05"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-05"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-05"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Growth",
+          "watch": null,
+          "as_of": "2024-05",
+          "lenses": {
+            "izaax": {
+              "phase": "Boom",
+              "as_of": "2024-05"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-05"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-05"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-06",
+      "file": "2024-06.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2024-06",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-06"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-06"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-06"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Growth",
+          "watch": "insufficient_confirmation",
+          "as_of": "2024-06",
+          "lenses": {
+            "izaax": {
+              "phase": "Recession",
+              "as_of": "2024-06"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2024-06"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-06"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-07",
+      "file": "2024-07.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": null,
+          "as_of": "2024-07",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-07"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-07"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-07"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Growth",
+          "watch": "insufficient_confirmation",
+          "as_of": "2024-07",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2024-07"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2024-07"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-07"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-08",
+      "file": "2024-08.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": null,
+          "as_of": "2024-08",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-08"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-08"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-08"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Growth",
+          "watch": "insufficient_confirmation",
+          "as_of": "2024-08",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-08"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-08"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-08"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-09",
+      "file": "2024-09.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": null,
+          "as_of": "2024-09",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-09"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-09"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-09"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2024-09",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-09"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-09"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-09"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-10",
+      "file": "2024-10.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2024-10",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-10"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-10"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-10"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2024-10",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-10"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2024-10"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-10"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-11",
+      "file": "2024-11.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2024-11",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-11"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-11"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-11"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2024-11",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2024-11"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-11"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-11"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2024-12",
+      "file": "2024-12.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2024-12",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2024-12"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2024-12"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-12"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2024-12",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2024-12"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2024-12"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2024-12"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-01",
+      "file": "2025-01.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-01",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-01"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-01"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-01"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2025-01",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-01"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2025-01"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-01"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-02",
+      "file": "2025-02.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-02",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2025-02"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-02"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-02"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2025-02",
+          "lenses": {
+            "izaax": {
+              "phase": "Recession",
+              "as_of": "2025-02"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-02"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-02"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-03",
+      "file": "2025-03.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-03",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-03"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-03"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-03"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2025-03",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-03"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-03"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-03"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-04",
+      "file": "2025-04.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-04",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-04"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-04"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-04"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": null,
+          "as_of": "2025-04",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2025-04"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-04"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-04"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-05",
+      "file": "2025-05.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-05",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-05"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-05"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-05"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-05",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2025-05"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-05"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-05"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-06",
+      "file": "2025-06.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-06",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-06"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-06"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-06"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-06",
+          "lenses": {
+            "izaax": {
+              "phase": "Recession",
+              "as_of": "2025-06"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2025-06"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-06"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-07",
+      "file": "2025-07.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-07",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-07"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-07"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-07"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-07",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2025-07"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-07"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-07"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-08",
+      "file": "2025-08.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-08",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-08"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-08"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-08"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-08",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-08"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-08"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-08"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-09",
+      "file": "2025-09.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-09",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-09"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-09"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-09"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-09",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2025-09"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2025-09"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-09"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-10",
+      "file": "2025-10.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-10",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-10"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-10"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-10"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-10",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-10"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-10"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-10"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-11",
+      "file": "2025-11.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-11",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-11"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-11"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-11"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-11",
+          "lenses": {
+            "izaax": {
+              "phase": "Boom",
+              "as_of": "2025-11"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2025-11"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-11"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2025-12",
+      "file": "2025-12.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-12",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2025-12"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-12"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-12"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2025-12",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2025-12"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2025-12"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2025-12"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2026-01",
+      "file": "2026-01.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2026-01",
+          "lenses": {
+            "izaax": {
+              "phase": "Growth",
+              "as_of": "2026-01"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2026-01"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2026-01"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2026-01",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2026-01"
+            },
+            "urakami": {
+              "phase": "Growth",
+              "as_of": "2026-01"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2026-01"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "month": "2026-02",
+      "file": "2026-02.json",
+      "countries": [
+        {
+          "country": "US",
+          "phase": "Recession",
+          "watch": "insufficient_confirmation",
+          "as_of": "2026-02",
+          "lenses": {
+            "izaax": {
+              "phase": "Recovery",
+              "as_of": "2026-02"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2026-02"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2026-02"
+            }
+          }
+        },
+        {
+          "country": "TW",
+          "phase": "Boom",
+          "watch": "insufficient_confirmation",
+          "as_of": "2026-02",
+          "lenses": {
+            "izaax": {
+              "phase": "Recession",
+              "as_of": "2026-02"
+            },
+            "urakami": {
+              "phase": "Recovery",
+              "as_of": "2026-02"
+            },
+            "marks": {
+              "phase": "Recovery",
+              "as_of": "2026-02"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
