@@ -1,0 +1,12 @@
+[     271ms] [ERROR] Refused to execute script from 'https://www.tpex.org.tw/errors' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled. @ https://www.tpex.org.tw/en-us/bond.html:0
+[    1191ms] Error: Element not found
+    at https://www.tpex.org.tw/rsrc/lib/charts/apexcharts.min.js:14:36814
+    at new Promise (<anonymous>)
+    at t.value (https://www.tpex.org.tw/rsrc/lib/charts/apexcharts.min.js:14:21694)
+    at _setchart_bondmline (https://www.tpex.org.tw/rsrc/asset/js/global.js:1950:15)
+    at _setbond_interest (https://www.tpex.org.tw/rsrc/asset/js/bond_overview.js:141:25)
+    at https://www.tpex.org.tw/rsrc/asset/js/bond_overview.js:165:13
+    at Object.complete (https://www.tpex.org.tw/rsrc/asset/js/global.js:36:13)
+    at c (https://www.tpex.org.tw/rsrc/asset/js/jquery-3.7.1.min.js:2:25304)
+    at Object.fireWith (https://www.tpex.org.tw/rsrc/asset/js/jquery-3.7.1.min.js:2:26053)
+    at l (https://www.tpex.org.tw/rsrc/asset/js/jquery-3.7.1.min.js:2:77910)

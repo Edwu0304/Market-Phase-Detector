@@ -1,0 +1,3 @@
+[     130ms] [WARNING] Error with Feature-Policy header: Some features are specified in both Feature-Policy and Permissions-Policy header: camera. Values defined in Permissions-Policy header will be used. @ :0
+[     188ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://statdb.mol.gov.tw/statiscla/prvbtn.gif:0
+[     239ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://statdb.mol.gov.tw/statiscla/prvbtn_f2.gif:0

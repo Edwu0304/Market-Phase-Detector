@@ -31,7 +31,7 @@
           "as_of": "2024-03",
           "lenses": {
             "izaax": {
-              "phase": "Boom",
+              "phase": "Growth",
               "as_of": "2024-03"
             },
             "urakami": {
@@ -103,7 +103,7 @@
           "as_of": "2024-05",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2024-05"
             },
             "urakami": {
@@ -169,7 +169,7 @@
           "as_of": "2024-06",
           "lenses": {
             "izaax": {
-              "phase": "Recession",
+              "phase": "Recovery",
               "as_of": "2024-06"
             },
             "urakami": {
@@ -261,7 +261,7 @@
           "as_of": "2024-08",
           "lenses": {
             "izaax": {
-              "phase": "Recovery",
+              "phase": "Growth",
               "as_of": "2024-08"
             },
             "urakami": {
@@ -353,7 +353,7 @@
           "as_of": "2024-10",
           "lenses": {
             "izaax": {
-              "phase": "Recovery",
+              "phase": "Growth",
               "as_of": "2024-10"
             },
             "urakami": {
@@ -583,7 +583,7 @@
           "as_of": "2025-03",
           "lenses": {
             "izaax": {
-              "phase": "Recovery",
+              "phase": "Growth",
               "as_of": "2025-03"
             },
             "urakami": {
@@ -629,7 +629,7 @@
           "as_of": "2025-04",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-04"
             },
             "urakami": {
@@ -767,7 +767,7 @@
           "as_of": "2025-07",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-07"
             },
             "urakami": {
@@ -813,7 +813,7 @@
           "as_of": "2025-08",
           "lenses": {
             "izaax": {
-              "phase": "Recovery",
+              "phase": "Recession",
               "as_of": "2025-08"
             },
             "urakami": {
@@ -859,7 +859,7 @@
           "as_of": "2025-09",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2025-09"
             },
             "urakami": {
@@ -1023,7 +1023,7 @@
           "as_of": "2026-01",
           "lenses": {
             "izaax": {
-              "phase": "Growth",
+              "phase": "Recovery",
               "as_of": "2026-01"
             },
             "urakami": {

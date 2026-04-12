@@ -1,0 +1,657 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - 'heading ":::  工具列(手機版)" [level=1] [ref=e3]':
+      - generic [ref=e4]:
+        - link ":::" [ref=e5] [cursor=pointer]:
+          - /url: "#U"
+        - link "" [ref=e6] [cursor=pointer]:
+          - /url: /zh/index.html
+          - heading "" [level=1] [ref=e7]:
+            - generic [ref=e8]:  
+            - text: 
+        - text:  
+      - navigation "工具列(手機版)" [ref=e9]:
+        - listitem [ref=e10]:
+          - link "" [ref=e11] [cursor=pointer]:
+            - /url: /zh/search.html
+        - listitem [ref=e12]:
+          - button "選單開關" [ref=e13] [cursor=pointer]
+          - text:                                                                                                            
+    - generic [ref=e16]:
+      - text: 
+      - main [ref=e17]:
+        - link ":::" [ref=e18] [cursor=pointer]:
+          - /url: "#C"
+        - text: 
+        - generic [ref=e19]:
+          - list [ref=e21]:
+            - listitem [ref=e22]:
+              - link " 熱門導覽" [ref=e23] [cursor=pointer]:
+                - /url: ./focus/popular.html
+                - text: 
+                - paragraph [ref=e24]: 熱門導覽
+            - listitem [ref=e25]:
+              - link " 公告/活動" [ref=e26] [cursor=pointer]:
+                - /url: ./focus/events.html
+                - text: 
+                - paragraph [ref=e27]: 公告/活動
+            - listitem [ref=e28]:
+              - link " 新上市證券" [ref=e29] [cursor=pointer]:
+                - /url: ./focus/newly.html
+                - text: 
+                - paragraph [ref=e30]: 新上市證券
+            - listitem [ref=e31]:
+              - link " 其他連結" [ref=e32] [cursor=pointer]:
+                - /url: ./focus/links.html
+                - text: 
+                - paragraph [ref=e33]: 其他連結
+            - listitem [ref=e34]:
+              - link " 臺灣投資指南" [ref=e35] [cursor=pointer]:
+                - /url: ./focus/investing.html
+                - text: 
+                - paragraph [ref=e36]: 臺灣投資指南
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - generic [ref=e41]:
+                - generic [ref=e42]: 加權指數
+                - generic [ref=e43]:
+                  - text: 32,572.43 ▼602.39 (1.82%)
+                  - text: 成交金額：6,729.07 (億)
+              - generic [ref=e44]:
+                - generic [ref=e45]: 臺灣50指數
+                - generic [ref=e46]:
+                  - text: 29,566.99 點
+                  - text: ▼644.98 (2.13%)
+              - generic [ref=e47]:
+                - generic [ref=e48]: 臺灣公司治理100指數
+                - generic [ref=e49]:
+                  - text: 20,255.87 點
+                  - text: ▼378.6 (1.83%)
+              - generic [ref=e50]:
+                - generic [ref=e51]: 金融保險
+                - generic [ref=e52]:
+                  - text: 2,441.93 點
+                  - text: ▲1.31 (0.05%)
+              - generic [ref=e53]:
+                - generic [ref=e54]: 電子工業
+                - generic [ref=e55]:
+                  - text: 2,016.26 點
+                  - text: ▼44.12 (2.14%)
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - generic [ref=e58]: 加權指數
+                - generic [ref=e59]:
+                  - text: 32,572.43 ▼602.39 (1.82%)
+                  - text: 成交金額：6,729.07 (億)
+              - generic [ref=e60]:
+                - generic [ref=e61]: 臺灣50指數
+                - generic [ref=e62]:
+                  - text: 29,566.99 點
+                  - text: ▼644.98 (2.13%)
+              - generic [ref=e63]:
+                - generic [ref=e64]: 臺灣公司治理100指數
+                - generic [ref=e65]:
+                  - text: 20,255.87 點
+                  - text: ▼378.6 (1.83%)
+              - generic [ref=e66]:
+                - generic [ref=e67]: 金融保險
+                - generic [ref=e68]:
+                  - text: 2,441.93 點
+                  - text: ▲1.31 (0.05%)
+              - generic [ref=e69]:
+                - generic [ref=e70]: 電子工業
+                - generic [ref=e71]:
+                  - text: 2,016.26 點
+                  - text: ▼44.12 (2.14%)
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - generic [ref=e74]: 加權指數
+                - generic [ref=e75]:
+                  - text: 32,572.43 ▼602.39 (1.82%)
+                  - text: 成交金額：6,729.07 (億)
+              - generic [ref=e76]:
+                - generic [ref=e77]: 臺灣50指數
+                - generic [ref=e78]:
+                  - text: 29,566.99 點
+                  - text: ▼644.98 (2.13%)
+              - generic [ref=e79]:
+                - generic [ref=e80]: 臺灣公司治理100指數
+                - generic [ref=e81]:
+                  - text: 20,255.87 點
+                  - text: ▼378.6 (1.83%)
+              - generic [ref=e82]:
+                - generic [ref=e83]: 金融保險
+                - generic [ref=e84]:
+                  - text: 2,441.93 點
+                  - text: ▲1.31 (0.05%)
+              - generic [ref=e85]:
+                - generic [ref=e86]: 電子工業
+                - generic [ref=e87]:
+                  - text: 2,016.26 點
+                  - text: ▼44.12 (2.14%)
+        - generic:
+          - generic:
+            - list
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - group "1 / 7" [ref=e91]:
+              - link "115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日） 本次業績發表於證交所(101大樓)1樓資訊展示中心舉辦，投資人也可多利用影音傳播網WebPro（https://webpro.twse.com.tw/）同步直播。" [ref=e92] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/zh/about/news/event/content.html?8a8216d69d19ce2e019d23a9b4810084
+                - figure [ref=e93]
+                - generic [ref=e94]:
+                  - heading "115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日）" [level=2] [ref=e95]
+                  - paragraph [ref=e96]: 本次業績發表於證交所(101大樓)1樓資訊展示中心舉辦，投資人也可多利用影音傳播網WebPro（https://webpro.twse.com.tw/）同步直播。
+            - group "2 / 7":
+              - link "「ESG生態系」專區 證交所建置「ESG生態系」專區，整合提升ESG數位建設、轉型ESG評鑑與綠色證券、接軌IFRS永續揭露準則、強化投資人關係、實踐永續責任、厚植ESG人才、發展多元ESG商品及推動永續碳市場等八大重點面向，以利各界了解證交所ESG推動方向及重要成果。":
+                - /url: https://www.twse.com.tw/ESG/zh/ESGecology.html
+                - figure
+                - generic:
+                  - heading "「ESG生態系」專區" [level=2]
+                  - paragraph: 證交所建置「ESG生態系」專區，整合提升ESG數位建設、轉型ESG評鑑與綠色證券、接軌IFRS永續揭露準則、強化投資人關係、實踐永續責任、厚植ESG人才、發展多元ESG商品及推動永續碳市場等八大重點面向，以利各界了解證交所ESG推動方向及重要成果。
+            - group "3 / 7":
+              - link "創新板邁向新里程碑！ 114年11月17日創新板開放當沖交易！ 有關得當日沖銷交易標的，請參考https://www.twse.com.tw/zh/trading/day-trading.html":
+                - /url: https://www.twse.com.tw/zh/trading/day-trading.html
+                - figure
+                - generic:
+                  - heading "創新板邁向新里程碑！ 114年11月17日創新板開放當沖交易！" [level=2]
+                  - paragraph: 有關得當日沖銷交易標的，請參考https://www.twse.com.tw/zh/trading/day-trading.html
+            - group "4 / 7":
+              - link "亞洲資產管理中心專網 亞洲資產管理中心專網整合政策資訊與市場機會，深化亞洲資產管理影響力。重點政策：TIB創新板、TISA、高雄專區、OAMU、家族辦公室、私人銀行、跨境金融、多元化商品。":
+                - /url: https://www.aamc.tw/zh/
+                - figure
+                - generic:
+                  - heading "亞洲資產管理中心專網" [level=2]
+                  - paragraph: 亞洲資產管理中心專網整合政策資訊與市場機會，深化亞洲資產管理影響力。重點政策：TIB創新板、TISA、高雄專區、OAMU、家族辦公室、私人銀行、跨境金融、多元化商品。
+            - group "5 / 7":
+              - link "亞洲資產管理中心推動辦公室 為利亞洲資產管理中心推動及業者更快速諮詢，證交所成立「亞洲資產管理中心推動辦公室」提供電話客服、線上提問平台及會面諮詢等多元服務。":
+                - /url: https://www.aamc.tw/zh/about.html
+                - figure
+                - generic:
+                  - heading "亞洲資產管理中心推動辦公室" [level=2]
+                  - paragraph: 為利亞洲資產管理中心推動及業者更快速諮詢，證交所成立「亞洲資產管理中心推動辦公室」提供電話客服、線上提問平台及會面諮詢等多元服務。
+            - group "6 / 7":
+              - link "「台灣自然碳匯永續共生行動計畫」 「台灣自然碳匯永續共生行動計畫」由臺灣證券交易所及臺灣碳權交易所共同推動，包含森林與土壤碳匯專案，結合碳權開發、生態調查、社區參與及地方創生，期望為上市公司提供自然碳匯示範案例，落實企業永續責任。":
+                - /url: https://www.tcx.com.tw/learn/studio/articleContent/4028908496a9878a0197108423c70454
+                - figure
+                - generic:
+                  - heading "「台灣自然碳匯永續共生行動計畫」" [level=2]
+                  - paragraph: 「台灣自然碳匯永續共生行動計畫」由臺灣證券交易所及臺灣碳權交易所共同推動，包含森林與土壤碳匯專案，結合碳權開發、生態調查、社區參與及地方創生，期望為上市公司提供自然碳匯示範案例，落實企業永續責任。
+            - group "7 / 7":
+              - link "證券投資反詐騙專區 三思而行聽看查 金融詐騙我不怕 證交所提醒，投資理財前務必停看聽，注意風險，審慎確認所做投資或交易係透過合法金融機構進行，以維護自身權益及保障財產安全。":
+                - /url: https://www.twse.com.tw/anti-fraud/zh/index.html
+                - figure
+                - generic:
+                  - heading "證券投資反詐騙專區" [level=2]
+                  - paragraph:
+                    - text: 三思而行聽看查 金融詐騙我不怕
+                    - text: 證交所提醒，投資理財前務必停看聽，注意風險，審慎確認所做投資或交易係透過合法金融機構進行，以維護自身權益及保障財產安全。
+          - generic [ref=e97]:
+            - button "Go to slide 1" [ref=e98] [cursor=pointer]
+            - button "Go to slide 2" [ref=e99] [cursor=pointer]
+            - button "Go to slide 3" [ref=e100] [cursor=pointer]
+            - button "Go to slide 4" [ref=e101] [cursor=pointer]
+            - button "Go to slide 5" [ref=e102] [cursor=pointer]
+            - button "Go to slide 6" [ref=e103] [cursor=pointer]
+            - button "Go to slide 7" [ref=e104] [cursor=pointer]
+          - button "Previous slide" [ref=e105] [cursor=pointer]: prev
+          - button "Next slide" [ref=e106] [cursor=pointer]: next
+        - generic [ref=e110]:
+          - heading "「e添富」一站式ETF整合資訊平台 全方位ETF數據與分析，帶您掌握ETF投資趨勢" [level=2] [ref=e111]:
+            - text: 「e添富」一站式ETF整合資訊平台
+            - text: 全方位ETF數據與分析，帶您掌握ETF投資趨勢
+          - paragraph [ref=e112]: 為方便投資人掌握投資脈動及ETF最新資訊，本公司籌設一站式投資資訊平台「e添富」。提供視覺化分析工具、ETF相關統計數據、達人講BAR及投資篩選器等功能，打造健全ETF資訊整合平台。
+          - navigation [ref=e113]:
+            - link "配息資訊" [ref=e114] [cursor=pointer]:
+              - /url: /zh/ETFortune/dividendCalendar
+            - link "投資篩選器" [ref=e115] [cursor=pointer]:
+              - /url: /zh/ETFortune/products
+            - link "達人講 BAR" [ref=e116] [cursor=pointer]:
+              - /url: /zh/ETFortune/advisor
+            - link "ETF基本資料查詢" [ref=e117] [cursor=pointer]:
+              - /url: "#etf-search"
+        - generic [ref=e121]:
+          - heading "資本市場發展重要里程碑 臺灣創新板打造嶄新上市聚落" [level=2] [ref=e123]:
+            - text: 資本市場發展重要里程碑
+            - text: 臺灣創新板打造嶄新上市聚落
+          - paragraph [ref=e124]: 為接軌國際、落實國家政策，並全力支持政府推動之產業發展策略，本公司籌設「臺灣創新板」，鼓勵擁有關鍵核心技術及創新能力或創新經營模式之企業進入資本市場籌資。
+          - navigation [ref=e125]:
+            - link "上市制度" [ref=e126] [cursor=pointer]:
+              - /url: /TIB/zh/requirement.html
+            - link "交易制度" [ref=e127] [cursor=pointer]:
+              - /url: /TIB/zh/mechanism.html
+            - link "新聞稿" [ref=e128] [cursor=pointer]:
+              - /url: /TIB/zh/news.html
+        - generic [ref=e132]:
+          - heading "以永續發展出發， 深掘核心價值並積極創新， 形塑嶄新企業文化並發揮供應鏈影響力" [level=2] [ref=e133]:
+            - generic [ref=e134]: 以永續發展出發，
+            - generic [ref=e135]: 深掘核心價值並積極創新，
+            - generic [ref=e136]: 形塑嶄新企業文化並發揮供應鏈影響力
+          - paragraph [ref=e137]: 環境、社會及公司治理(ESG)成為引領永續發展不可或缺的要件，企業需具備辨別經營風險、潛在機會與轉型能力，提升韌性，以實現永續未來。
+          - navigation [ref=e138]:
+            - link "ESG InfoHub" [ref=e139] [cursor=pointer]:
+              - /url: https://esg.twse.com.tw/ESG/front/tw/
+            - link "ESG資料庫" [ref=e140] [cursor=pointer]:
+              - /url: https://esg.twse.com.tw/ESG/front/tw/#/main/esg-data
+            - link "溫室氣體盤查" [ref=e141] [cursor=pointer]:
+              - /url: https://esg.twse.com.tw/ESG/front/tw/#/main/greenhouse-gas-inventory
+            - link "接軌IFRS永續揭露準則專區" [ref=e142] [cursor=pointer]:
+              - /url: https://isds.tpex.org.tw
+        - generic [ref=e146]:
+          - heading "攜手同行 邁向未來" [level=2] [ref=e147]:
+            - generic [ref=e148]: 攜手同行
+            - generic [ref=e149]: 邁向未來
+          - paragraph [ref=e150]: 證交所肩負國家政策，同時滿足國內外投資人、發行人及中介機構的需求，為所有市場參與者創造更大的價值。致力促進企業資訊透明、交易機制公正，以維護投資者權益。落實「企業籌資便捷、大眾投資穩當」的初衷，及達成「打造健全資本市場、實現福國利民」的願景。
+          - navigation [ref=e151]:
+            - link "關於證交所" [ref=e152] [cursor=pointer]:
+              - /url: ./about/company/welcome.html
+            - link "服務介紹" [ref=e153] [cursor=pointer]:
+              - /url: ./about/company/service.html
+            - link "永續發展專區" [ref=e154] [cursor=pointer]:
+              - /url: /ESG/zh/index.html
+        - generic [ref=e158]:
+          - heading "新聞稿" [level=2] [ref=e159]
+          - list [ref=e160]:
+            - listitem [ref=e161]:
+              - text: 
+              - link "證交所攜手台經院與資策會推出數位雲端、電動機械及生技醫療之產業洞察報告" [ref=e162] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d4dcaa98400bc
+            - listitem [ref=e163]:
+              - text: 
+              - link "本週發行量加權股價指數跌幅約為1.63%，上市股票總市值達106.30兆元" [ref=e164] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d4d80c02b00b8
+            - listitem [ref=e165]:
+              - text: 
+              - link "臺灣證券交易所對益航股份有限公司（公司代號：2601）違反重大訊息規定，處以新台幣3萬元違約金" [ref=e166] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d4d56c72000b4
+            - listitem [ref=e167]:
+              - text: 
+              - link "新代科技股份有限公司上市股票自本（115）年4月7日起得為融資融券交易" [ref=e168] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d4d48dd2500b0
+            - listitem [ref=e169]:
+              - text: 
+              - link "臺灣證券交易所對崇越科技股份有限公司違反重大訊息規定，處以新台幣3萬元違約金" [ref=e170] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d48a4a33e0095
+          - navigation [ref=e171]:
+            - link "更多新聞稿" [ref=e172] [cursor=pointer]:
+              - /url: ./about/news/news/list.html
+            - link "活動訊息" [ref=e173] [cursor=pointer]:
+              - /url: ./about/news/event/list.html
+            - link "上市公司重大訊息" [ref=e174] [cursor=pointer]:
+              - /url: https://mops.twse.com.tw/mops/web/t05sr01_1
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - heading "最新宣導活動 / 訓練課程" [level=2] [ref=e179]
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - group "1 / 10" [ref=e182]:
+                  - link "宣導說明會 115年度證券商內部控制制度標準規範宣導說明會 本公司辦理115年度證券商內部控制制度標準規範宣導說明會，請證券商內部稽核人員與分公司非專職稽核制度之自行查核人員踴躍參加" [ref=e183] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69d2e8217019d3d669669002a
+                    - heading "宣導說明會 115年度證券商內部控制制度標準規範宣導說明會" [level=3] [ref=e184]:
+                      - generic [ref=e185]: 宣導說明會
+                      - text: 115年度證券商內部控制制度標準規範宣導說明會
+                    - paragraph [ref=e186]: 本公司辦理115年度證券商內部控制制度標準規範宣導說明會，請證券商內部稽核人員與分公司非專職稽核制度之自行查核人員踴躍參加
+                - group "2 / 10" [ref=e187]:
+                  - link "法人說明會 2026年上市公司辦理法人說明會(4月1日至4月30日) 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)" [ref=e188] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69d19ce2e019d23c7b720008a
+                    - heading "法人說明會 2026年上市公司辦理法人說明會(4月1日至4月30日)" [level=3] [ref=e189]:
+                      - generic [ref=e190]: 法人說明會
+                      - text: 2026年上市公司辦理法人說明會(4月1日至4月30日)
+                    - paragraph [ref=e191]: 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)
+                - group "3 / 10" [ref=e192]:
+                  - link "主題式業績發表會 115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日） 115年「AI及綠能環保產業」主題式業績發表會及產業講座，時間及地點詳公告/活動。" [ref=e193] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69d19ce2e019d23a9b4810084
+                    - heading "主題式業績發表會 115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日）" [level=3] [ref=e194]:
+                      - generic [ref=e195]: 主題式業績發表會
+                      - text: 115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日）
+                    - paragraph [ref=e196]: 115年「AI及綠能環保產業」主題式業績發表會及產業講座，時間及地點詳公告/活動。
+                - group "4 / 10" [ref=e197]:
+                  - link "主題式業績發表會 115年「自行車產業」主題式業績發表會（3月25日） 本次業績發表於南港展覽館1館5樓500會議室舉辦，本場不提供直播，將於會後上傳各場次影音檔至本公司WebPro頻道。" [ref=e198] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69c37647f019cf45a97f20223
+                    - heading "主題式業績發表會 115年「自行車產業」主題式業績發表會（3月25日）" [level=3] [ref=e199]:
+                      - generic [ref=e200]: 主題式業績發表會
+                      - text: 115年「自行車產業」主題式業績發表會（3月25日）
+                    - paragraph [ref=e201]: 本次業績發表於南港展覽館1館5樓500會議室舉辦，本場不提供直播，將於會後上傳各場次影音檔至本公司WebPro頻道。
+                - group "5 / 10" [ref=e202]:
+                  - link "法人說明會 2026年上市公司辦理法人說明會(3月1日至3月31日) 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)" [ref=e203] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69c37647f019c98e9b56000ae
+                    - heading "法人說明會 2026年上市公司辦理法人說明會(3月1日至3月31日)" [level=3] [ref=e204]:
+                      - generic [ref=e205]: 法人說明會
+                      - text: 2026年上市公司辦理法人說明會(3月1日至3月31日)
+                    - paragraph [ref=e206]: 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)
+                - group "6 / 10" [ref=e207]:
+                  - link "宣導說明會 「開放外資擔保品質權設定暨強化外資登記」宣導會 本公司於115年3月10日(二)假本公司36樓會議室舉辦「開放外資擔保品質權設定暨強化外資登記」宣導會，並於115年2月24日開放網路報名至3月3日止。參加對象為保管機構業務相關人員2名，額滿時停止受理報名。" [ref=e208] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69c37647f019c8d5f3002006e
+                    - heading "宣導說明會 「開放外資擔保品質權設定暨強化外資登記」宣導會" [level=3] [ref=e209]:
+                      - generic [ref=e210]: 宣導說明會
+                      - text: 「開放外資擔保品質權設定暨強化外資登記」宣導會
+                    - paragraph [ref=e211]: 本公司於115年3月10日(二)假本公司36樓會議室舉辦「開放外資擔保品質權設定暨強化外資登記」宣導會，並於115年2月24日開放網路報名至3月3日止。參加對象為保管機構業務相關人員2名，額滿時停止受理報名。
+                - group "7 / 10" [ref=e212]:
+                  - link "券商限定活動 115年度第一季證券承銷商業務宣導會(115.3.12) 3月12日辦理115年第1季證券承銷商業務宣導會，歡迎證券承銷商業務相關人員踴躍參加。" [ref=e213] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69c37647f019c4bdf74ec0020
+                    - heading "券商限定活動 115年度第一季證券承銷商業務宣導會(115.3.12)" [level=3] [ref=e214]:
+                      - generic [ref=e215]: 券商限定活動
+                      - text: 115年度第一季證券承銷商業務宣導會(115.3.12)
+                    - paragraph [ref=e216]: 3月12日辦理115年第1季證券承銷商業務宣導會，歡迎證券承銷商業務相關人員踴躍參加。
+                - group "8 / 10" [ref=e217]:
+                  - link "法人說明會 2026年上市公司辦理法人說明會(2月1日至2月28日) 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)" [ref=e218] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69bde495d019bdf32d6370019
+                    - heading "法人說明會 2026年上市公司辦理法人說明會(2月1日至2月28日)" [level=3] [ref=e219]:
+                      - generic [ref=e220]: 法人說明會
+                      - text: 2026年上市公司辦理法人說明會(2月1日至2月28日)
+                    - paragraph [ref=e221]: 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)
+                - group "9 / 10" [ref=e222]:
+                  - link "券商限定活動 115年證券商資通安全會議（即日起至1月26日） 115年3月20日到115年3月21日到辦理115年證券商資通安全會議，歡迎各證券商之資安長或資安最高主管踴躍參加" [ref=e223] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69a3d6cf9019b732999de0651
+                    - heading "券商限定活動 115年證券商資通安全會議（即日起至1月26日）" [level=3] [ref=e224]:
+                      - generic [ref=e225]: 券商限定活動
+                      - text: 115年證券商資通安全會議（即日起至1月26日）
+                    - paragraph [ref=e226]: 115年3月20日到115年3月21日到辦理115年證券商資通安全會議，歡迎各證券商之資安長或資安最高主管踴躍參加
+                - group "10 / 10" [ref=e227]:
+                  - link "券商限定活動 115年ETF申贖作業流程說明會 將於115年1月9日與115年1月16日舉辦115年度ETF申贖作業流程說明會。本報名系統24小時開放，欲參加者請於114年12月22日9時起至12月29日17時直接線上報名，不接受電話或現場報名。" [ref=e228] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69a3d6cf9019b4379a2e4056d
+                    - heading "券商限定活動 115年ETF申贖作業流程說明會" [level=3] [ref=e229]:
+                      - generic [ref=e230]: 券商限定活動
+                      - text: 115年ETF申贖作業流程說明會
+                    - paragraph [ref=e231]: 將於115年1月9日與115年1月16日舉辦115年度ETF申贖作業流程說明會。本報名系統24小時開放，欲參加者請於114年12月22日9時起至12月29日17時直接線上報名，不接受電話或現場報名。
+              - generic [ref=e232]:
+                - button "Go to slide 1" [ref=e233] [cursor=pointer]
+                - button "Go to slide 2" [ref=e234] [cursor=pointer]
+                - button "Go to slide 3" [ref=e235] [cursor=pointer]
+                - button "Go to slide 4" [ref=e236] [cursor=pointer]
+                - button "Go to slide 5" [ref=e237] [cursor=pointer]
+                - button "Go to slide 6" [ref=e238] [cursor=pointer]
+                - button "Go to slide 7" [ref=e239] [cursor=pointer]
+                - button "Go to slide 8" [ref=e240] [cursor=pointer]
+                - button "Go to slide 9" [ref=e241] [cursor=pointer]
+            - button "Previous slide" [disabled]: prev
+            - button "Next slide" [ref=e242] [cursor=pointer]: next
+          - navigation [ref=e243]:
+            - link "更多..." [ref=e244] [cursor=pointer]:
+              - /url: ./about/news/event/list.html
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - heading "觀點專區" [level=2] [ref=e249]
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - group "1 / 10" [ref=e252]:
+                  - link "焦點 證交所赴美深化國際對話與資金連結 穩步推進亞洲資產管理中心 證交所 張祐瑄｜115/03/31" [ref=e253] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d2e8217019d3df5ae620048
+                    - figure [ref=e254]:
+                      - img [ref=e255]
+                    - heading "焦點 證交所赴美深化國際對話與資金連結 穩步推進亞洲資產管理中心" [level=3] [ref=e256]:
+                      - generic [ref=e257]: 焦點
+                      - text: 證交所赴美深化國際對話與資金連結 穩步推進亞洲資產管理中心
+                    - paragraph [ref=e258]: 證交所 張祐瑄｜115/03/31
+                - group "2 / 10" [ref=e259]:
+                  - link "焦點 114年度機構投資人盡職治理趨勢 證交所 高晟晉｜115/03/30" [ref=e260] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d2e8217019d3d646baa0028
+                    - figure [ref=e261]:
+                      - img [ref=e262]
+                    - heading "焦點 114年度機構投資人盡職治理趨勢" [level=3] [ref=e263]:
+                      - generic [ref=e264]: 焦點
+                      - text: 114年度機構投資人盡職治理趨勢
+                    - paragraph [ref=e265]: 證交所 高晟晉｜115/03/30
+                - group "3 / 10" [ref=e266]:
+                  - link "市場動態 新上市公司：倍利科(7822) 證交所 林芸卉｜115/03/30" [ref=e267] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d19ce2e019d1f6fafa5005c
+                    - figure [ref=e268]:
+                      - img [ref=e269]
+                    - heading "市場動態 新上市公司：倍利科(7822)" [level=3] [ref=e270]:
+                      - generic [ref=e271]: 市場動態
+                      - text: 新上市公司：倍利科(7822)
+                    - paragraph [ref=e272]: 證交所 林芸卉｜115/03/30
+                - group "4 / 10" [ref=e273]:
+                  - link "市場動態 新上市公司：世紀風電(2072) 證交所 劉佳穎｜115/03/26" [ref=e274] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d19ce2e019d1d753d8f0039
+                    - figure [ref=e275]:
+                      - img [ref=e276]
+                    - heading "市場動態 新上市公司：世紀風電(2072)" [level=3] [ref=e277]:
+                      - generic [ref=e278]: 市場動態
+                      - text: 新上市公司：世紀風電(2072)
+                    - paragraph [ref=e279]: 證交所 劉佳穎｜115/03/26
+                - group "5 / 10" [ref=e280]:
+                  - link "市場動態 新上市公司：宏碁遊戲(6908) 證交所 張至穎｜115/03/25" [ref=e281] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d04cf46019d093e44db001a
+                    - figure [ref=e282]:
+                      - img [ref=e283]
+                    - heading "市場動態 新上市公司：宏碁遊戲(6908)" [level=3] [ref=e284]:
+                      - generic [ref=e285]: 市場動態
+                      - text: 新上市公司：宏碁遊戲(6908)
+                    - paragraph [ref=e286]: 證交所 張至穎｜115/03/25
+                - group "6 / 10" [ref=e287]:
+                  - link "焦點 國際證券市場縮短交割週期之發展趨勢 證交所 廖依婷、證交所 許正誼｜115/03/25" [ref=e288] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69c37647f019cb788fbb8011c
+                    - figure [ref=e289]:
+                      - img [ref=e290]
+                    - heading "焦點 國際證券市場縮短交割週期之發展趨勢" [level=3] [ref=e291]:
+                      - generic [ref=e292]: 焦點
+                      - text: 國際證券市場縮短交割週期之發展趨勢
+                    - paragraph [ref=e293]: 證交所 廖依婷、證交所 許正誼｜115/03/25
+                - group "7 / 10" [ref=e294]:
+                  - link "焦點 全球金融中心指數視角下的競爭力分析 證交所 林士琛｜115/03/19" [ref=e295] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d04cf46019d05536ae7000a
+                    - figure [ref=e296]:
+                      - img [ref=e297]
+                    - heading "焦點 全球金融中心指數視角下的競爭力分析" [level=3] [ref=e298]:
+                      - generic [ref=e299]: 焦點
+                      - text: 全球金融中心指數視角下的競爭力分析
+                    - paragraph [ref=e300]: 證交所 林士琛｜115/03/19
+                - group "8 / 10" [ref=e301]:
+                  - link "焦點 台股價量齊揚，普惠金融成果亮麗 證交所 劉奕君、證交所 楊欣穎｜115/03/05" [ref=e302] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69c37647f019cbcb852730161
+                    - figure [ref=e303]:
+                      - img [ref=e304]
+                    - heading "焦點 台股價量齊揚，普惠金融成果亮麗" [level=3] [ref=e305]:
+                      - generic [ref=e306]: 焦點
+                      - text: 台股價量齊揚，普惠金融成果亮麗
+                    - paragraph [ref=e307]: 證交所 劉奕君、證交所 楊欣穎｜115/03/05
+                - group "9 / 10" [ref=e308]:
+                  - link "焦點 配合亞資中心多元商品政策，新設金融商品部，商品研發、審查、交易一站式服務 證交所 吳俊瑩｜115/02/26" [ref=e309] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69c37647f019cac1ba87a00dc
+                    - figure [ref=e310]:
+                      - img [ref=e311]
+                    - heading "焦點 配合亞資中心多元商品政策，新設金融商品部，商品研發、審查、交易一站式服務" [level=3] [ref=e312]:
+                      - generic [ref=e313]: 焦點
+                      - text: 配合亞資中心多元商品政策，新設金融商品部，商品研發、審查、交易一站式服務
+                    - paragraph [ref=e314]: 證交所 吳俊瑩｜115/02/26
+                - group "10 / 10" [ref=e315]:
+                  - link "焦點 淺釋證券商受託賣出委託人因繼承取得有價證券相關作業 證交所 楊哲倫｜115/02/26" [ref=e316] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69c37647f019c98cf280c00ac
+                    - figure [ref=e317]:
+                      - img [ref=e318]
+                    - heading "焦點 淺釋證券商受託賣出委託人因繼承取得有價證券相關作業" [level=3] [ref=e319]:
+                      - generic [ref=e320]: 焦點
+                      - text: 淺釋證券商受託賣出委託人因繼承取得有價證券相關作業
+                    - paragraph [ref=e321]: 證交所 楊哲倫｜115/02/26
+              - generic [ref=e322]:
+                - button "Go to slide 1" [ref=e323] [cursor=pointer]
+                - button "Go to slide 2" [ref=e324] [cursor=pointer]
+                - button "Go to slide 3" [ref=e325] [cursor=pointer]
+                - button "Go to slide 4" [ref=e326] [cursor=pointer]
+                - button "Go to slide 5" [ref=e327] [cursor=pointer]
+                - button "Go to slide 6" [ref=e328] [cursor=pointer]
+                - button "Go to slide 7" [ref=e329] [cursor=pointer]
+                - button "Go to slide 8" [ref=e330] [cursor=pointer]
+                - button "Go to slide 9" [ref=e331] [cursor=pointer]
+            - button "Previous slide" [disabled]: prev
+            - button "Next slide" [ref=e332] [cursor=pointer]: next
+          - navigation [ref=e333]:
+            - link "更多..." [ref=e334] [cursor=pointer]:
+              - /url: /market_insights/zh/
+        - generic [ref=e335]:
+          - generic [ref=e337]:
+            - group "1 / 4" [ref=e338]:
+              - link "ESG相關指數化商品" [ref=e339] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/rwd/zh/esg-index-product/etf
+                - figure "ESG相關指數化商品" [ref=e340]:
+                  - img [ref=e341]
+                  - generic [ref=e342]: ESG相關指數化商品
+            - group "2 / 4" [ref=e343]:
+              - link "ESG InfoHub" [ref=e344] [cursor=pointer]:
+                - /url: https://esg.twse.com.tw/ESG/front/tw/#/main/home
+                - figure "ESG InfoHub" [ref=e345]:
+                  - img [ref=e346]
+                  - generic [ref=e347]: ESG InfoHub
+            - group "3 / 4" [ref=e348]:
+              - link "反詐騙專區" [ref=e349] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/anti-fraud/zh/index.html
+                - figure "反詐騙專區" [ref=e350]:
+                  - img [ref=e351]
+                  - generic [ref=e352]: 反詐騙專區
+            - group "4 / 4" [ref=e353]:
+              - link "投資資訊中心2.0" [ref=e354] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/IIH2/zh/
+                - figure "投資資訊中心2.0" [ref=e355]:
+                  - img [ref=e356]
+                  - generic [ref=e357]: 投資資訊中心2.0
+          - button "Previous slide" [disabled]: prev
+          - button "Next slide" [ref=e358] [cursor=pointer]: next
+        - generic [ref=e359]:
+          - heading "最新市場動態" [level=2] [ref=e360]
+          - navigation [ref=e361]:
+            - link "指數走勢圖" [ref=e362] [cursor=pointer]:
+              - /url: "#index-chart"
+            - link "上市股票殖利率" [ref=e363] [cursor=pointer]:
+              - /url: "#yield"
+            - link "排行榜" [ref=e364] [cursor=pointer]:
+              - /url: "#ranking"
+            - link "市場統計資訊" [ref=e365] [cursor=pointer]:
+              - /url: "#statistics"
+            - link "上市公司總市值" [ref=e366] [cursor=pointer]:
+              - /url: "#capital"
+            - link "當日沖銷相關統計" [ref=e367] [cursor=pointer]:
+              - /url: "#day-trading"
+            - link "新上市股票" [ref=e368] [cursor=pointer]:
+              - /url: "#newly"
+            - link "三大法人" [ref=e369] [cursor=pointer]:
+              - /url: "#foreign"
+            - link "融資融券" [ref=e370] [cursor=pointer]:
+              - /url: "#margin"
+            - link "借券資訊" [ref=e371] [cursor=pointer]:
+              - /url: "#sbl"
+            - link "新聞訊息" [ref=e372] [cursor=pointer]:
+              - /url: "#news"
+            - link "重要制度" [ref=e373] [cursor=pointer]:
+              - /url: "#topic"
+            - link "重要宣導" [ref=e374] [cursor=pointer]:
+              - /url: "#announce"
+            - link "外賓參訪" [ref=e375] [cursor=pointer]:
+              - /url: "#guest"
+            - link "行事曆" [ref=e376] [cursor=pointer]:
+              - /url: "#calendar"
+          - separator [ref=e377]
+          - generic [ref=e378]:
+            - generic [ref=e379]:
+              - generic [ref=e380]:
+                - text: 上市公司整合資訊 (
+                - link "瀏覽代碼" [ref=e381] [cursor=pointer]:
+                  - /url: "#"
+                - text: )
+              - generic [ref=e382]:
+                - textbox "代碼或名稱" [ref=e383]
+                - button " 搜尋" [ref=e384]
+            - generic [ref=e385]:
+              - generic [ref=e386]:
+                - text: 個股查詢 (
+                - link "瀏覽代碼" [ref=e387] [cursor=pointer]:
+                  - /url: "#"
+                - text: )
+              - generic [ref=e388]:
+                - textbox "代碼或名稱" [ref=e389]
+                - button " 搜尋" [ref=e390]
+            - generic [ref=e391]:
+              - generic [ref=e392]:
+                - text: ETF基本資料查詢 (
+                - link "瀏覽代碼" [ref=e393] [cursor=pointer]:
+                  - /url: "#"
+                - text: )
+              - generic [ref=e394]:
+                - textbox "代碼或名稱" [ref=e395]
+                - button " 搜尋" [ref=e396]
+            - generic [ref=e397]:
+              - generic [ref=e398]:
+                - text: 上市公司條件選股｜指標項目
+                - combobox [ref=e400]:
+                  - option "收盤價" [selected]
+                  - option "成交量"
+                  - option "三大法人"
+                  - option "融資融券"
+                  - option "月營收成長率"
+                  - option "上市公司月週轉率"
+              - generic [ref=e401]:
+                - text: 查詢條件
+                - generic [ref=e402]:
+                  - combobox [ref=e403]:
+                    - option "股價漲幅前 50 名" [selected]
+                    - option "股價跌幅前 50 名"
+                  - button " 搜尋" [ref=e404]
+    - contentinfo [ref=e405]:
+      - generic [ref=e406]:
+        - link ":::" [ref=e407] [cursor=pointer]:
+          - /url: "#B"
+        - link "TWSE " [ref=e409] [cursor=pointer]:
+          - /url: /zh/index.html
+          - generic [ref=e410]:
+            - generic [ref=e411]:  
+            - generic: TWSE
+            - text: 
+        - generic [ref=e412]:
+          - list [ref=e413]:
+            - listitem [ref=e414]:
+              - link "聯絡我們" [ref=e415] [cursor=pointer]:
+                - /url: //reportingbox.twse.com.tw/POP30
+            - listitem [ref=e416]:
+              - link "訂閱電子報" [ref=e417] [cursor=pointer]:
+                - /url: /zh/terms/subscribe.html
+            - listitem [ref=e418]:
+              - link "網站地圖" [ref=e419] [cursor=pointer]:
+                - /url: /zh/sitemap.html
+            - listitem [ref=e420]:
+              - link "使用條款" [ref=e421] [cursor=pointer]:
+                - /url: /zh/terms/use.html
+            - listitem [ref=e422]:
+              - link "隱私權保護說明" [ref=e423] [cursor=pointer]:
+                - /url: /zh/terms/privacy.html
+            - listitem [ref=e424]:
+              - link "個人資料管理政策聲明" [ref=e425] [cursor=pointer]:
+                - /url: /zh/terms/personal.html
+            - listitem [ref=e426]:
+              - link "資訊安全政策" [ref=e427] [cursor=pointer]:
+                - /url: /zh/terms/security.html
+            - listitem [ref=e428]:
+              - link "營運持續政策" [ref=e429] [cursor=pointer]:
+                - /url: /zh/terms/BCMS.html
+            - listitem [ref=e430]:
+              - link "性騷擾防治專區" [ref=e431] [cursor=pointer]:
+                - /url: /zh/terms/anti-harassment.html
+          - generic [ref=e432]:
+            - text: 地址：110615 台北市信義路五段7號
+            - generic [ref=e433]: 3樓、9至12樓、19樓
+            - generic [ref=e434]: 電話：(02)8101-3101
+            - generic [ref=e435]: 投資人服務中心專線：(02)2792-8188
+          - generic [ref=e436]: 本站限制直接存取主機IP，請使用網址連結瀏覽
+          - generic [ref=e437]:
+            - link "本公司簽約資訊公司" [ref=e438] [cursor=pointer]:
+              - /url: /zh/products/information/list.html
+            - text: 亦提供相關資訊
+          - generic [ref=e439]: Copyright © 2026 Taiwan Stock Exchange Corporation. All rights reserved.
+        - list [ref=e440]:
+          - listitem [ref=e441]:
+            - link " Facebook" [ref=e442] [cursor=pointer]:
+              - /url: //www.facebook.com/TaiwanStockExchangeCorp/
+          - listitem [ref=e443]:
+            - link " Youtube" [ref=e444] [cursor=pointer]:
+              - /url: //www.youtube.com/channel/UCb_JzqaWz4Dw1OScrDpGxrg
+          - listitem [ref=e445]:
+            - link " RSS" [ref=e446] [cursor=pointer]:
+              - /url: /zh/terms/rss.html
+  - generic [ref=e447]:
+    - link "指數走勢" [ref=e448] [cursor=pointer]:
+      - /url: "#index-chart"
+    - link "排行榜" [ref=e449] [cursor=pointer]:
+      - /url: "#ranking"
+    - link "統計資訊" [ref=e450] [cursor=pointer]:
+      - /url: "#statistics"
+    - link "" [ref=e451] [cursor=pointer]:
+      - /url: "#market"
+  - text:     ▼ ▼ ⋮     prev next

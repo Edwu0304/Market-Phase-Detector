@@ -1,0 +1,172 @@
+- generic [active] [ref=e1]:
+  - link "跳至主要內容" [ref=e2] [cursor=pointer]:
+    - /url: "#accesskey-c"
+  - banner [ref=e3]:
+    - link ":::" [ref=e4] [cursor=pointer]:
+      - /url: "#"
+    - generic [ref=e6]:
+      - button "EN" [ref=e7] [cursor=pointer]
+      - button "日本語" [ref=e8] [cursor=pointer]
+      - button "網站導覽" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]:
+        - textbox "關鍵字搜尋" [ref=e11]
+        - button "搜尋" [ref=e12] [cursor=pointer]
+    - generic [ref=e13]:
+      - heading "證券櫃檯買賣中心" [level=1] [ref=e15]:
+        - link "證券櫃檯買賣中心" [ref=e16] [cursor=pointer]:
+          - /url: /zh-tw/
+          - generic [ref=e17]: 證券櫃檯買賣中心
+      - generic:
+        - list:
+          - listitem:
+            - link "上櫃":
+              - /url: "#"
+          - listitem:
+            - link "興櫃":
+              - /url: "#"
+          - listitem:
+            - link "創櫃":
+              - /url: "#"
+          - listitem:
+            - link "債券":
+              - /url: "#"
+          - listitem:
+            - link "ETF/ETN":
+              - /url: "#"
+          - listitem:
+            - link "指數":
+              - /url: "#"
+          - listitem:
+            - link "衍生性金融商品":
+              - /url: "#"
+          - listitem:
+            - link "其他商品":
+              - /url: "#"
+          - listitem:
+            - link "服務":
+              - /url: "#"
+          - listitem:
+            - link "公告與法規":
+              - /url: "#"
+          - listitem:
+            - link "關於櫃買":
+              - /url: "#"
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "404" [level=2] [ref=e20]
+      - paragraph [ref=e21]:
+        - text: 您好。很抱歉，您所輸入的網址並不存在，建議您可以利用搜尋功能查詢。
+        - text: Sorry, the page you requested was not found.
+        - text: Please check the URL for proper spelling and capitalization.Also, you may find what you're looking for if you try searching below.
+      - link "回證券櫃檯買賣中心首頁" [ref=e22] [cursor=pointer]:
+        - /url: /zh-tw/
+    - contentinfo [ref=e23]:
+      - link ":::" [ref=e24] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - strong [ref=e27]: 常用交易資訊
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - link "櫃買指數歷史資料" [ref=e30] [cursor=pointer]:
+                - /url: /zh-tw/indices/stock-index/industrial/inxh.html
+            - listitem [ref=e31]:
+              - link "上櫃個股歷史行情" [ref=e32] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/info/stock-pricing.html
+            - listitem [ref=e33]:
+              - link "興櫃個股歷史行情" [ref=e34] [cursor=pointer]:
+                - /url: /zh-tw/esb/trading/info/stock-pricing.html
+            - listitem [ref=e35]:
+              - link "融資融券餘額表" [ref=e36] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/margin-trading/transactions.html
+            - listitem [ref=e37]:
+              - link "融券借券賣出餘額" [ref=e38] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/margin-trading/sbl.html
+            - listitem [ref=e39]:
+              - link "平盤下得融(借)券賣出之證券名單" [ref=e40] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/margin-trading/exempted.html
+            - listitem [ref=e41]:
+              - link "三大法人買賣金額彙總表" [ref=e42] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/major-institutional/summary/day.html
+            - listitem [ref=e43]:
+              - link "投信買賣超彙總表" [ref=e44] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/major-institutional/domestic-inst/day.html
+            - listitem [ref=e45]:
+              - link "外資及陸資買賣超彙總表" [ref=e46] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/major-institutional/foreign/day.html
+            - listitem [ref=e47]:
+              - link "當日可借券賣出股數" [ref=e48] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/zh/trading/margin/twt96u.html
+            - listitem [ref=e49]:
+              - link "有價證券借貸" [ref=e50] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/zh/products/sbl/disclosures/twt60u.html
+            - listitem [ref=e51]:
+              - link "有價證券借貸交易查詢" [ref=e52] [cursor=pointer]:
+                - /url: https://mis.twse.com.tw/stock/detail-sblInquiry?lang=zhHant
+        - generic [ref=e53]:
+          - strong [ref=e54]: 統計資料
+          - list [ref=e55]:
+            - listitem [ref=e56]:
+              - link "上櫃股票統計" [ref=e57] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/statistics/month/listed.html
+            - listitem [ref=e58]:
+              - link "上櫃公司市值、本益比、殖利率、投資報酬率一覽表" [ref=e59] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/statistics/month/value.html
+            - listitem [ref=e60]:
+              - link "個股本益比、殖利率、股價淨值比" [ref=e61] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/info/daily-pe.html
+            - listitem [ref=e62]:
+              - link "獲利及股利分派情形" [ref=e63] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/listed/month/fundamentals.html
+            - listitem [ref=e64]:
+              - link "櫃買市場統計報表" [ref=e65] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/trading/statistics/highlight.html
+        - generic [ref=e66]:
+          - strong [ref=e67]: 常用資訊
+          - list [ref=e68]:
+            - listitem [ref=e69]:
+              - link "資訊購買" [ref=e70] [cursor=pointer]:
+                - /url: /zh-tw/service/data/overview.html
+            - listitem [ref=e71]:
+              - link "開休市日期表" [ref=e72] [cursor=pointer]:
+                - /url: /zh-tw/announce/market/holiday.html
+            - listitem [ref=e73]:
+              - link "投資人個人資料查詢" [ref=e74] [cursor=pointer]:
+                - /url: /zh-tw/service/investor/info/personal.html
+            - listitem [ref=e75]:
+              - link "向本中心申請上櫃公司" [ref=e76] [cursor=pointer]:
+                - /url: /zh-tw/mainboard/applying/status/company.html
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - link "回首頁" [ref=e79] [cursor=pointer]:
+            - /url: /zh-tw/index.html
+          - link "常見問題" [ref=e80] [cursor=pointer]:
+            - /url: /zh-tw/about/company/faq.html
+          - link "聯絡我們" [ref=e81] [cursor=pointer]:
+            - /url: /zh-tw/about/company/contact/contact.html
+          - link "相關網站" [ref=e82] [cursor=pointer]:
+            - /url: /zh-tw/related_links.html
+          - link "使用條款" [ref=e83] [cursor=pointer]:
+            - /url: /zh-tw/gtsm_disclaimer.html
+          - link "隱私權保護說明" [ref=e84] [cursor=pointer]:
+            - /url: /zh-tw/privacy.html
+          - link "個人資料管理政策聲明" [ref=e85] [cursor=pointer]:
+            - /url: /storage/publish/others/04000001個人資料管理政策聲明.pdf
+          - link "資訊安全政策" [ref=e86] [cursor=pointer]:
+            - /url: /storage/publish/others/資通安全政策及內涵.pdf
+          - link "營運持續政策" [ref=e87] [cursor=pointer]:
+            - /url: /storage/publish/others/營運持續政策.pdf
+          - link "FB粉絲頁" [ref=e88] [cursor=pointer]:
+            - /url: https://www.facebook.com/TaipeiExchange/
+          - link "IG" [ref=e89] [cursor=pointer]:
+            - /url: https://www.instagram.com/taipeiexchange/
+          - link "YouTube" [ref=e90] [cursor=pointer]:
+            - /url: https://www.youtube.com/@taipeiexchange
+          - link "Linkedin" [ref=e91] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/taipei-exchange-tpex/
+        - generic [ref=e92]:
+          - text: 證券櫃檯買賣中心 版權所有©1994-2026 10084台北市中正區羅斯福路二段100號15樓 總機:(02)2369-9555
+          - text: 投資人服務及投資詐騙檢舉專線:(02)2796-3788
+        - link "通過AA無障礙網頁檢測" [ref=e94] [cursor=pointer]:
+          - /url: https://accessibility.moda.gov.tw/Applications/DetectLog/172983
+          - img "通過AA無障礙網頁檢測" [ref=e95]

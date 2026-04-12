@@ -45,6 +45,47 @@ class StubTaiwanCollector:
         return self.metrics
 
 
+class StubTaiwanExternalCollector:
+    def fetch_mol_claims_annual(self):
+        return [
+            {"date": "2024", "year": 2024, "initial_claims": 90000},
+            {"date": "2025", "year": 2025, "initial_claims": 82000},
+        ]
+
+    def fetch_ncu_cci(self):
+        return {"date": "2026-02", "cci_total": 71.2}
+
+    def fetch_ncu_cci_history(self, months: int):
+        return [{"date": "2026-02", "cci_total": 71.2}]
+
+    def fetch_latest_cier_pmi(self):
+        return {"date": "2026-02", "pmi": 55.4}
+
+    def fetch_cier_pmi_history(self, months: int):
+        return [{"date": "2026-02", "pmi": 55.4}]
+
+    def fetch_twse_market_pe(self):
+        return {"date": "2026-02-28", "pe_ratio": 23.22}
+
+    def fetch_latest_twse_margin(self):
+        return {"date": "2026-02-28", "margin_amount": 368046780, "margin_shares": 7872624}
+
+    def fetch_cbc_credit_spread_proxy(self):
+        return {
+            "date": "2026-02-27",
+            "gov_yield_10y": 1.57,
+            "gov_yield_2y": 1.19,
+            "spread_10y_2y": 0.38,
+            "credit_spread_bbb": 0.58,
+        }
+
+    def fetch_latest_cbc_m2(self):
+        return {"date": "2026-02", "m2_yoy": 5.38}
+
+    def fetch_cbc_m2_history(self, months: int):
+        return [{"date": "2026-02", "m2_yoy": 5.38}]
+
+
 def test_build_us_observations_uses_fred_series():
     collector = StubFredCollector(
         {
@@ -96,6 +137,30 @@ def test_build_tw_observations_uses_ndc_metrics():
     assert observations["coincident_trend"] == "improving"
     assert observations["unemployment_trend"] == "rising"
     assert observations["exports_yoy"] > 0
+
+
+def test_build_tw_observations_wires_existing_external_fields():
+    collector = StubTaiwanCollector(
+        {
+            "latest_date": "202602",
+            "business_signal_score": 29,
+            "leading_index": 103.5,
+            "leading_index_prev": 103.1,
+            "coincident_index": 106.4,
+            "coincident_index_prev": 106.1,
+            "unemployment": 3.32,
+            "unemployment_prev": 3.29,
+            "export_value": 1367.0,
+            "export_value_year_ago": 1200.0,
+        }
+    )
+    observations = build_tw_observations(collector, external_collector=StubTaiwanExternalCollector())
+    assert observations["unemployment_claims"] == 82000
+    assert observations["unemployment_claims_trend"] == "falling"
+    assert observations["pmi"] == 55.4
+    assert observations["m2_yoy"] == 5.38
+    assert observations["credit_spread"] == 0.58
+    assert observations["margin_trend"] == "moderate"
 
 
 def test_build_us_history_observations_can_backfill_twelve_months():

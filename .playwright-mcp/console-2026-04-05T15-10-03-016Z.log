@@ -1,0 +1,4 @@
+[    2614ms] [LOG] replaceState {u: /charts/930/us-credit-spread, c: 930} @ https://en.macromicro.me/assets/js/chartcollection/chartcollection_bundle.js?v=260401.1200:0
+[    3598ms] [LOG] [MacroMicro Widget] Bubble mode initialized @ https://madam-chat.macromicro.me/widget.js:235
+[    3599ms] [LOG] [MacroMicro Widget] Instance created: 1 @ https://madam-chat.macromicro.me/widget.js:624
+[    4947ms] [LOG] drawChart() called @ https://en.macromicro.me/assets/js/chartcollection/chartcollection_bundle.js?v=260401.1200:0

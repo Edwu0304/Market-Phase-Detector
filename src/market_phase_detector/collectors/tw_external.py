@@ -1,17 +1,12 @@
-"""
-台灣外部總經指標爬蟲
+"""Taiwan external data collectors."""
 
-資料來源：
-1. 櫃買中心公債/公司債殖利率：https://www.tpex.org.tw/
-2. 勞動部失業給付（年度）：https://statdb.mol.gov.tw/html/year/year12/37040.csv
-3. 中央大學 CCI：https://rcted.ncu.edu.tw/
-4. 證交所本益比/融資：https://www.twse.com.tw/res/data/zh/home/
-5. 央行重貼現率：https://www.cbc.gov.tw/tw/lp-640-1-1-20.html
-"""
+from __future__ import annotations
 
-import io
-import re
 import calendar
+import html
+import io
+import json
+import re
 from datetime import datetime
 
 import pandas as pd
@@ -20,174 +15,261 @@ import requests
 from market_phase_detector.collectors.base import HttpCollector
 
 
-# =============================================================================
-# Parsers
-# =============================================================================
+TPEX_BOND_BASE_URL = "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond"
+MOL_CLAIMS_URL = "https://statdb.mol.gov.tw/html/year/year12/37040.csv"
+NCU_CCI_URL = "https://rcted.ncu.edu.tw/"
+TWSE_YIELDS_URL = "https://www.twse.com.tw/res/data/zh/home/yields.json"
+TWSE_VALUES_URL = "https://www.twse.com.tw/res/data/zh/home/values.json"
+CBC_DISCOUNT_RATE_URL = "https://www.cbc.gov.tw/tw/lp-640-1-1-20.html"
+CBC_HOME_URL = "https://www.cbc.gov.tw/tw/mp-1.html"
+CBC_M2_HISTORY_URL = "https://www.cbc.gov.tw/tw/lp-643-1.html"
+CBC_M2_HISTORY_PAGE_TEMPLATE = "https://www.cbc.gov.tw/tw/lp-643-1-{page}-{page_size}.html"
+CIER_PMI_CATEGORY_URL = "https://www.cier.edu.tw/eco_cat/pmi-ch/"
+CIER_PMI_TREND_URL = "https://www.cier.edu.tw/pmi-trend/"
 
-def parse_cbc_discount_rate(html: str) -> list[dict]:
-    """解析央行重貼現率表格
+ZH_M2_TITLE = "\u8ca8\u5e63\u7e3d\u8a08\u6578M2\u5e74\u589e\u7387"
+ZH_PMI_TITLE = "\u53f0\u7063\u88fd\u9020\u696d\u63a1\u8cfc\u7d93\u7406\u4eba\u6307\u6578"
+ZH_PMI_SHORT = "\u53f0\u7063\u88fd\u9020\u696dPMI"
+ZH_CCI = "\u6d88\u8cbb\u8005\u4fe1\u5fc3\u6307\u6578"
+ZH_TWSE_TW = "\u81fa\u7063"
+ZH_TWSE_TW_ALT = "\u53f0\u7063"
 
-    Returns:
-        [{"date": "2026-03", "discount_rate": 2.0, "accommodation_rate": 2.375, "short_term_rate": 4.25}, ...]
-    """
-    rows = []
-    tr_pattern = re.compile(r'<tr[^>]*>(.*?)</tr>', re.DOTALL)
-    td_pattern = re.compile(r'<td[^>]*>(.*?)</td>', re.DOTALL)
 
-    for tr_match in tr_pattern.finditer(html):
-        td_matches = td_pattern.findall(tr_match.group(1))
-        if len(td_matches) >= 4:
-            date_str = re.sub(r'<[^>]+>', '', td_matches[0]).strip()
-            discount = re.sub(r'<[^>]+>', '', td_matches[1]).strip()
-            accommodation = re.sub(r'<[^>]+>', '', td_matches[2]).strip()
-            short_term = re.sub(r'<[^>]+>', '', td_matches[3]).strip()
+def _strip_tags(value: str) -> str:
+    text = re.sub(r"<[^>]+>", "", value)
+    return html.unescape(text).replace("\xa0", " ").strip()
 
-            try:
-                if '/' in date_str:
-                    parts = date_str.split('/')
-                    year = int(parts[0]) + 1911 if len(parts[0]) <= 3 else int(parts[0])
-                    month = int(parts[1])
-                    date_key = f"{year}-{month:02d}"
-                else:
-                    continue
 
-                rows.append({
-                    "date": date_key,
-                    "discount_rate": float(discount.replace(',', '')) if discount else None,
-                    "accommodation_rate": float(accommodation.replace(',', '')) if accommodation else None,
-                    "short_term_rate": float(short_term.replace(',', '')) if short_term else None,
-                })
-            except (ValueError, IndexError):
-                continue
+def _safe_float(value: str | float | int | None) -> float | None:
+    if value is None:
+        return None
+    if isinstance(value, (float, int)):
+        return float(value)
+
+    cleaned = str(value).replace(",", "").replace("%", "").strip()
+    if not cleaned or cleaned in {"-", "--"}:
+        return None
+    try:
+        return float(cleaned)
+    except ValueError:
+        return None
+
+
+def _month_key(year: int, month: int) -> str:
+    return f"{year:04d}-{month:02d}"
+
+
+def _parse_year_month_label(value: str) -> str | None:
+    match = re.search(r"(\d{4})[./-](\d{1,2})", value)
+    if not match:
+        return None
+    return _month_key(int(match.group(1)), int(match.group(2)))
+
+
+def parse_cbc_discount_rate(html_text: str) -> list[dict]:
+    rows: list[dict] = []
+    tr_pattern = re.compile(r"<tr[^>]*>(.*?)</tr>", re.DOTALL | re.IGNORECASE)
+    td_pattern = re.compile(r"<td[^>]*>(.*?)</td>", re.DOTALL | re.IGNORECASE)
+
+    for tr_match in tr_pattern.finditer(html_text):
+        cells = td_pattern.findall(tr_match.group(1))
+        if len(cells) < 4:
+            continue
+
+        month_key = _parse_year_month_label(_strip_tags(cells[0]))
+        discount_rate = _safe_float(_strip_tags(cells[1]))
+        if month_key is None or discount_rate is None:
+            continue
+
+        rows.append(
+            {
+                "date": month_key,
+                "discount_rate": discount_rate,
+                "accommodation_rate": _safe_float(_strip_tags(cells[2])),
+                "short_term_rate": _safe_float(_strip_tags(cells[3])),
+            }
+        )
 
     return rows
 
 
-def parse_ncu_cci_from_news(html: str) -> dict | None:
-    """從中央大學新聞稿解析 CCI
+def parse_ncu_cci_from_news(html_text: str) -> dict | None:
+    normalized = _strip_tags(html_text)
+    match = re.search(
+        rf"(\d{{3,4}})\u5e74\s*(\d{{1,2}})\u6708.*?{ZH_CCI}.*?(?:\u7e3d\u6307\u6578)?.*?([\d.]+)",
+        normalized,
+    )
+    if not match:
+        return None
 
-    Returns:
-        {"date": "2026-03", "cci_total": 62.3} 或 None
-    """
-    # 尋找 pattern: (\d{3})年(\d{1,2})月...總指數為\s*([\d.]+)\s*點
-    cci_match = re.search(r'(\d{3})\s*年\s*(\d{1,2})\s*月.*?總指數為\s*([\d.]+)\s*點', html)
-    if cci_match:
-        year = int(cci_match.group(1)) + 1911
-        month = int(cci_match.group(2))
-        return {
-            "date": f"{year}-{month:02d}",
-            "cci_total": float(cci_match.group(3)),
-        }
-    return None
+    year = int(match.group(1))
+    if year < 1911:
+        year += 1911
+    month = int(match.group(2))
+    value = _safe_float(match.group(3))
+    if value is None:
+        return None
+
+    return {"date": _month_key(year, month), "cci_total": value}
 
 
-def parse_dgbas_cpi(html: str) -> list[dict]:
-    """解析主計總處 CPI 資料
+def parse_dgbas_cpi(html_text: str) -> list[dict]:
+    normalized = _strip_tags(html_text)
+    pattern = re.compile(
+        r"(\d{3,4})\u5e74\s*(\d{1,2})\u6708.*?CPI.*?([\d.]+).*?(?:\u5e74\u589e\u7387|\u8f03\u4e0a\u5e74\u540c\u6708\u589e\u7387).*?([-\d.]+)"
+    )
 
-    Returns:
-        [{"date": "2026-02", "cpi": 110.91, "cpi_yoy": 1.75}, ...]
-    """
-    rows = []
-    pattern = re.compile(r'(\d+)年(\d+)月.*?消費者物價指數.*?([\d.]+).*?(?:年增|較上年|同比).*?([\d.]+)', re.DOTALL)
-
-    for match in pattern.finditer(html):
-        year = int(match.group(1)) + 1911
+    rows: list[dict] = []
+    for match in pattern.finditer(normalized):
+        year = int(match.group(1))
+        if year < 1911:
+            year += 1911
         month = int(match.group(2))
-        cpi = float(match.group(3))
-        cpi_yoy = float(match.group(4))
-
-        rows.append({
-            "date": f"{year}-{month:02d}",
-            "cpi": cpi,
-            "cpi_yoy": cpi_yoy,
-        })
+        cpi = _safe_float(match.group(3))
+        cpi_yoy = _safe_float(match.group(4))
+        if cpi is None or cpi_yoy is None:
+            continue
+        rows.append({"date": _month_key(year, month), "cpi": cpi, "cpi_yoy": cpi_yoy})
 
     return rows
 
 
-# =============================================================================
-# Standalone fetcher functions
-# =============================================================================
+def parse_cbc_m2_from_homepage(html_text: str) -> dict | None:
+    pattern = re.compile(
+        rf"<a[^>]*title=[\"']{re.escape(ZH_M2_TITLE)}[\"'][^>]*>.*?"
+        r"<span[^>]*class=[\"']date[\"'][^>]*>([^<]+)</span>.*?"
+        r"<span[^>]*class=[\"']info[\"'][^>]*>\s*<em>([^<]+)</em>",
+        re.DOTALL | re.IGNORECASE,
+    )
+    match = pattern.search(html_text)
+    if not match:
+        return None
+
+    source_date = _strip_tags(match.group(1))
+    month_key = _parse_year_month_label(source_date)
+    m2_yoy = _safe_float(_strip_tags(match.group(2)))
+    if month_key is None or m2_yoy is None:
+        return None
+
+    return {"date": month_key, "m2_yoy": m2_yoy, "source_date": source_date}
+
+
+def parse_cbc_m2_history_page(html_text: str) -> list[dict]:
+    pattern = re.compile(
+        r"<tr>\s*<td[^>]*><span>([^<]+)</span></td>\s*<td[^>]*><span>([^<]+)</span></td>\s*</tr>",
+        re.DOTALL | re.IGNORECASE,
+    )
+
+    rows: list[dict] = []
+    for match in pattern.finditer(html_text):
+        source_date = _strip_tags(match.group(1))
+        month_key = _parse_year_month_label(source_date)
+        m2_yoy = _safe_float(_strip_tags(match.group(2)))
+        if month_key is None or m2_yoy is None:
+            continue
+        rows.append({"date": month_key, "m2_yoy": m2_yoy, "source_date": source_date})
+
+    return rows
+
+
+def parse_cier_pmi_article(html_text: str, source_url: str) -> dict | None:
+    normalized = _strip_tags(html_text)
+    month_match = re.search(rf"(\d{{4}})\u5e74\s*(\d{{1,2}})\u6708{ZH_PMI_TITLE}", normalized)
+    if not month_match:
+        return None
+
+    window = normalized[month_match.start() : month_match.start() + 3000]
+    value_match = re.search(rf"{ZH_PMI_SHORT}.*?(?:\u81f3|\u70ba)\s*([\d.]+)%", window)
+    if not value_match:
+        value_match = re.search(r"\bPMI\b.*?(?:\u81f3|\u70ba)\s*([\d.]+)%", window)
+    if not value_match:
+        return None
+
+    value = _safe_float(value_match.group(1))
+    if value is None:
+        return None
+
+    year = int(month_match.group(1))
+    month = int(month_match.group(2))
+    return {"date": _month_key(year, month), "pmi": value, "source_url": source_url}
+
+
+def parse_cier_pmi_history_page(html_text: str, source_url: str) -> list[dict]:
+    attr_match = re.search(r"data-data=(['\"])(.*?)\1", html_text, re.DOTALL | re.IGNORECASE)
+    if not attr_match:
+        return []
+
+    try:
+        table = json.loads(html.unescape(attr_match.group(2)))
+    except json.JSONDecodeError:
+        return []
+
+    rows: list[dict] = []
+    for row in table[1:]:
+        if not isinstance(row, list) or len(row) < 2:
+            continue
+        month_key = _parse_year_month_label(str(row[0]))
+        pmi_value = _safe_float(row[1])
+        if month_key is None or pmi_value is None:
+            continue
+        rows.append({"date": month_key, "pmi": pmi_value, "source_url": source_url})
+
+    return rows
+
 
 def fetch_tpex_bond_data(collector: HttpCollector | None, year: int, month: int) -> dict | None:
-    """從櫃買中心取得公債殖利率 + 公司債殖利率，計算信用利差
-
-    URL patterns:
-      - Gov bond:    https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/{year}/{month}/Curve.{date}-C.xls
-      - Corp bond:   https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/{year}/{month}/COCurve.{date}-C.xls
-
-    Returns:
-        {"date": "2026-03-27", "gov_yield_10y": 1.571, "gov_yield_2y": 1.193,
-         "spread_10y_2y": 0.378, "corporate_bbb_10y": 2.1506, "credit_spread_bbb": 0.5796}
-        或 None
-    """
     last_day = calendar.monthrange(year, month)[1]
+    timeout = collector.timeout if collector else 30
 
     for day in range(min(28, last_day), 0, -1):
         try:
             dt = datetime(year, month, day)
-            if dt.weekday() >= 5:  # Skip weekends
+            if dt.weekday() >= 5:
                 continue
 
             date_str = dt.strftime("%Y%m%d")
-            year_str = str(year)
-            month_str = f"{year}{month:02d}"
+            month_key = f"{year}{month:02d}"
 
-            # Fetch gov bond XLS
-            gov_url = f"https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/{year_str}/{month_str}/Curve.{date_str}-C.xls"
-            gov_bytes = requests.get(gov_url, timeout=30).content
-            if len(gov_bytes) < 1000:
+            gov_url = f"{TPEX_BOND_BASE_URL}/{year}/{month_key}/Curve.{date_str}-C.xls"
+            gov_response = requests.get(gov_url, timeout=timeout)
+            if gov_response.status_code != 200 or len(gov_response.content) < 1000:
                 continue
 
-            gov_df = pd.read_excel(io.BytesIO(gov_bytes), engine='xlrd')
-
-            # Parse gov yields: row[1] = tenor (e.g. "10年(Year)"), row[2] = yield value
-            gov_yields = {}
+            gov_df = pd.read_excel(io.BytesIO(gov_response.content), engine="xlrd")
+            gov_yields: dict[str, float] = {}
             for _, row in gov_df.iterrows():
                 tenor = str(row.iloc[1]) if len(row) > 1 else ""
-                rate_val = row.iloc[2] if len(row) > 2 else None
-                if rate_val is not None and rate_val != '':
-                    try:
-                        rate = float(rate_val)
-                    except (ValueError, TypeError):
-                        continue
-                    if "2年" in tenor:
-                        gov_yields["2y"] = rate
-                    elif "10年" in tenor:
-                        gov_yields["10y"] = rate
+                rate = _safe_float(row.iloc[2] if len(row) > 2 else None)
+                if rate is None:
+                    continue
+                if "2" in tenor and "Year" in tenor:
+                    gov_yields["2y"] = rate
+                elif "10" in tenor and "Year" in tenor:
+                    gov_yields["10y"] = rate
 
-            # Fetch corporate bond XLS
-            corp_url = f"https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/{year_str}/{month_str}/COCurve.{date_str}-C.xls"
-            corp_bytes = requests.get(corp_url, timeout=30).content
-            if len(corp_bytes) < 1000:
+            if "10y" not in gov_yields:
                 continue
 
-            # COCurve: row 6 = twBBB, column 13 = 10Y yield (decimal, multiply by 100 for %)
-            corp_df = pd.read_excel(io.BytesIO(corp_bytes), engine='xlrd', header=None)
+            corp_url = f"{TPEX_BOND_BASE_URL}/{year}/{month_key}/COCurve.{date_str}-C.xls"
+            corp_response = requests.get(corp_url, timeout=timeout)
             corporate_bbb_10y = None
-            if len(corp_df) > 6:
-                bbb_row = corp_df.iloc[6]
-                if len(bbb_row) > 13:
-                    val = bbb_row.iloc[13]
-                    if val is not None and val != '':
-                        try:
-                            corporate_bbb_10y = float(val) * 100  # Convert decimal to percentage
-                        except (ValueError, TypeError):
-                            pass
+            if corp_response.status_code == 200 and len(corp_response.content) >= 1000:
+                corp_df = pd.read_excel(io.BytesIO(corp_response.content), engine="xlrd", header=None)
+                if len(corp_df) > 6 and len(corp_df.iloc[6]) > 13:
+                    raw_value = _safe_float(corp_df.iloc[6].iloc[13])
+                    if raw_value is not None:
+                        corporate_bbb_10y = raw_value * 100
 
-            # Build result
-            if gov_yields.get("10y") is not None:
-                result = {
-                    "date": dt.strftime("%Y-%m-%d"),
-                    "gov_yield_10y": gov_yields["10y"],
-                    "gov_yield_2y": gov_yields.get("2y"),
-                    "spread_10y_2y": gov_yields["10y"] - gov_yields.get("2y", 0),
-                }
-                if corporate_bbb_10y is not None:
-                    result["corporate_bbb_10y"] = corporate_bbb_10y
-                    result["credit_spread_bbb"] = round(corporate_bbb_10y - gov_yields["10y"], 4)
-                return result
-
+            result = {
+                "date": dt.strftime("%Y-%m-%d"),
+                "gov_yield_10y": gov_yields["10y"],
+                "gov_yield_2y": gov_yields.get("2y"),
+                "spread_10y_2y": None if gov_yields.get("2y") is None else gov_yields["10y"] - gov_yields["2y"],
+            }
+            if corporate_bbb_10y is not None:
+                result["corporate_bbb_10y"] = corporate_bbb_10y
+                result["credit_spread_bbb"] = round(corporate_bbb_10y - gov_yields["10y"], 4)
+            return result
         except Exception:
             continue
 
@@ -195,249 +277,161 @@ def fetch_tpex_bond_data(collector: HttpCollector | None, year: int, month: int)
 
 
 def fetch_tpex_bond_history(collector: HttpCollector | None, months: int = 24) -> list[dict]:
-    """取得櫃買中心公債/公司債殖利率歷史（過去 N 個月）"""
     now = datetime.now()
-    results = []
-
-    for i in range(months):
+    rows: list[dict] = []
+    for offset in range(months):
         year = now.year
-        month = now.month - i
+        month = now.month - offset
         while month <= 0:
             month += 12
             year -= 1
-        try:
-            data = fetch_tpex_bond_data(collector, year, month)
-            if data:
-                results.append(data)
-        except Exception:
-            continue
-
-    return results
+        item = fetch_tpex_bond_data(collector, year, month)
+        if item:
+            rows.append(item)
+    return sorted(rows, key=lambda row: row["date"])
 
 
 def fetch_mol_claims_annual(collector: HttpCollector | None) -> list[dict]:
-    """取得勞動部失業給付初次認定件數（年度資料）
+    timeout = collector.timeout if collector else 30
+    response = requests.get(MOL_CLAIMS_URL, timeout=timeout, verify=False)
+    response.raise_for_status()
+    text = response.content.decode("big5", errors="replace")
 
-    URL: https://statdb.mol.gov.tw/html/year/year12/37040.csv
-    Encoding: big5
-    Skip first 3 header lines
-    parts[0] = year (e.g. "92年"), parts[6] = 初次認定核付件數
-
-    Returns:
-        [{"date": "2023", "initial_claims": 85534, "year": 2023}, ...]
-    """
-    url = "https://statdb.mol.gov.tw/html/year/year12/37040.csv"
-    try:
-        import urllib3
-        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        raw_bytes = requests.get(url, timeout=8, verify=False).content
-        text = raw_bytes.decode('big5', errors='replace')
-    except Exception:
-        try:
-            raw_bytes = requests.get(url, timeout=8).content
-            text = raw_bytes.decode('big5', errors='replace')
-        except Exception:
-            return []
-
-    lines = text.strip().split('\n')
-    # Skip first 3 header lines
-    data_lines = lines[3:] if len(lines) > 3 else []
-
-    results = []
-    for line in data_lines:
-        parts = [p.strip() for p in line.split(',')]
+    rows: list[dict] = []
+    for line in text.strip().splitlines()[3:]:
+        parts = [part.strip() for part in line.split(",")]
         if len(parts) < 7:
             continue
 
-        # Parse year: e.g. "92年" -> extract number
-        year_str = parts[0].replace('年', '').strip()
-        try:
-            year = int(year_str)
-            # Convert ROC year to AD
-            if year < 2000:
-                year += 1911
-        except ValueError:
+        year_match = re.search(r"(\d+)", parts[0])
+        if not year_match:
             continue
+        year = int(year_match.group(1))
+        if year < 1911:
+            year += 1911
 
-        # Parse initial claims (column 6, 0-indexed)
-        claims_str = parts[6].replace(',', '').strip() if len(parts) > 6 else ''
-        try:
-            claims = int(claims_str) if claims_str and claims_str not in ('-', '') else None
-        except ValueError:
-            claims = None
+        claims = _safe_float(parts[6])
+        rows.append({"date": str(year), "initial_claims": int(claims) if claims is not None else None, "year": year})
 
-        results.append({
-            "date": f"{year}",
-            "initial_claims": claims,
-            "year": year,
-        })
-
-    return results
+    return rows
 
 
 def fetch_ncu_cci(collector: HttpCollector | None) -> dict | None:
-    """取得中央大學 CCI 最新資料
-
-    URL: https://rcted.ncu.edu.tw/
-    Parse pattern: (\\d{3})\\s*年\\s*(\\d{1,2})\\s*月.*?總指數為\\s*([\\d.]+)\\s*點
-
-    Returns:
-        {"date": "2026-03", "cci_total": 62.3} 或 None
-    """
-    url = "https://rcted.ncu.edu.tw/"
-    try:
-        html = requests.get(url, timeout=30).text
-        return parse_ncu_cci_from_news(html)
-    except Exception:
-        return None
+    timeout = collector.timeout if collector else 30
+    html_text = requests.get(NCU_CCI_URL, timeout=timeout).text
+    return parse_ncu_cci_from_news(html_text)
 
 
 def fetch_twse_market_pe(collector: HttpCollector | None) -> dict | None:
-    """取得證交所大盤本益比（最新）
+    timeout = collector.timeout if collector else 30
+    data = requests.get(TWSE_YIELDS_URL, timeout=timeout).json()
+    chart1 = data.get("chart1", {})
+    pe_data = chart1.get("table2", {}).get("data", [])
 
-    URL: https://www.twse.com.tw/res/data/zh/home/yields.json
-    Parse: data["chart1"]["table2"]["data"] → find item where "台灣" in item[0]
-
-    Returns:
-        {"date": "2025/12/31", "pe_ratio": 23.22} 或 None
-    """
-    url = "https://www.twse.com.tw/res/data/zh/home/yields.json"
-    try:
-        data = requests.get(url, timeout=30).json()
-        chart1 = data.get("chart1", {})
-        pe_table = chart1.get("table2", {})
-        pe_data = pe_table.get("data", [])
-
-        for item in pe_data:
-            if len(item) >= 2 and "台灣" in str(item[0]):
-                date_str = chart1.get("table1", {}).get("date", "")
-                return {
-                    "date": date_str,
-                    "pe_ratio": float(item[1]),
-                }
-    except Exception:
-        pass
+    for item in pe_data:
+        if len(item) < 2:
+            continue
+        label = str(item[0])
+        if label in {ZH_TWSE_TW, ZH_TWSE_TW_ALT}:
+            pe_ratio = _safe_float(item[1])
+            if pe_ratio is not None:
+                return {"date": chart1.get("table1", {}).get("date", ""), "pe_ratio": pe_ratio}
 
     return None
 
 
 def fetch_latest_twse_margin(collector: HttpCollector | None) -> dict | None:
-    """取得證交所最新融資融券餘額
+    timeout = collector.timeout if collector else 30
+    data = requests.get(TWSE_VALUES_URL, timeout=timeout).json()
+    margin_rows = data.get("chart", {}).get("margin", [])
+    if not margin_rows:
+        return None
 
-    URL: https://www.twse.com.tw/res/data/zh/home/values.json
-    Parse: data["chart"]["margin"] → last row = [date, margin_shares, margin_amount, short_shares]
+    last_row = margin_rows[-1]
+    if len(last_row) < 4:
+        return None
 
-    Returns:
-        {"date": "4/2", "margin_shares": 8081563, "margin_amount": 385200709, "short_shares": 170164}
-        或 None
-    """
-    url = "https://www.twse.com.tw/res/data/zh/home/values.json"
-    try:
-        data = requests.get(url, timeout=30).json()
-        margin_data = data.get("chart", {}).get("margin", [])
-        if margin_data and len(margin_data) > 0:
-            last_row = margin_data[-1]
-            if len(last_row) >= 4:
-                return {
-                    "date": str(last_row[0]),
-                    "margin_shares": int(last_row[1]),
-                    "margin_amount": int(last_row[2]),
-                    "short_shares": int(last_row[3]),
-                }
-    except Exception:
-        pass
-
-    return None
+    return {
+        "date": str(last_row[0]),
+        "margin_shares": int(last_row[1]),
+        "margin_amount": int(last_row[2]),
+        "short_shares": int(last_row[3]),
+    }
 
 
 def fetch_cbc_discount_rate(collector: HttpCollector | None) -> list[dict]:
-    """取得央行重貼現率歷史資料
-
-    URL: https://www.cbc.gov.tw/tw/lp-640-1-1-20.html
-
-    Returns:
-        [{"date": "2026-03", "discount_rate": 2.0, ...}, ...]
-    """
-    url = "https://www.cbc.gov.tw/tw/lp-640-1-1-20.html"
-    try:
-        html = requests.get(url, timeout=30).text
-        return parse_cbc_discount_rate(html)
-    except Exception:
-        return []
+    timeout = collector.timeout if collector else 30
+    html_text = requests.get(CBC_DISCOUNT_RATE_URL, timeout=timeout).text
+    return parse_cbc_discount_rate(html_text)
 
 
-# =============================================================================
-# TaiwanExternalCollector class
-# =============================================================================
+def fetch_latest_cbc_m2(collector: HttpCollector | None) -> dict | None:
+    timeout = collector.timeout if collector else 30
+    html_text = requests.get(CBC_HOME_URL, timeout=timeout).text
+    return parse_cbc_m2_from_homepage(html_text)
+
+
+def fetch_cbc_m2_history(collector: HttpCollector | None, months: int = 24) -> list[dict]:
+    timeout = collector.timeout if collector else 30
+    page_size = max(40, months)
+    html_text = requests.get(CBC_M2_HISTORY_PAGE_TEMPLATE.format(page=1, page_size=page_size), timeout=timeout).text
+    rows = sorted(parse_cbc_m2_history_page(html_text), key=lambda row: row["date"])
+
+    if len(rows) >= months:
+        return rows[-months:]
+
+    fallback_html = requests.get(CBC_M2_HISTORY_URL, timeout=timeout).text
+    fallback_rows = sorted(parse_cbc_m2_history_page(fallback_html), key=lambda row: row["date"])
+    return fallback_rows[-months:]
+
+
+def fetch_latest_cier_pmi(collector: HttpCollector | None) -> dict | None:
+    timeout = collector.timeout if collector else 30
+    html_text = requests.get(CIER_PMI_CATEGORY_URL, timeout=timeout).text
+    return parse_cier_pmi_article(html_text, CIER_PMI_CATEGORY_URL)
+
+
+def fetch_cier_pmi_history(collector: HttpCollector | None, months: int = 24) -> list[dict]:
+    timeout = collector.timeout if collector else 30
+    html_text = requests.get(CIER_PMI_TREND_URL, timeout=timeout).text
+    rows = parse_cier_pmi_history_page(html_text, CIER_PMI_TREND_URL)
+    return rows[-months:]
+
 
 class TaiwanExternalCollector(HttpCollector):
-    """採集台灣外部總經指標（非 NDC 來源）"""
-
-    # ------------------------------------------------------------------
-    # TPEx Bond Data
-    # ------------------------------------------------------------------
-
     def fetch_tpex_bond_data(self, year: int, month: int) -> dict | None:
-        """取得櫃買中心公債+公司債殖利率（指定年月）
-
-        Returns:
-            {"date": "2026-03-27", "gov_yield_10y": 1.571, "gov_yield_2y": 1.193,
-             "spread_10y_2y": 0.378, "corporate_bbb_10y": 2.1506, "credit_spread_bbb": 0.5796}
-        """
         return fetch_tpex_bond_data(self, year, month)
 
     def fetch_tpex_bond_history(self, months: int = 24) -> list[dict]:
-        """取得櫃買中心公債/公司債殖利率歷史（過去 N 個月）"""
         return fetch_tpex_bond_history(self, months)
 
-    # ------------------------------------------------------------------
-    # MOL Unemployment Claims
-    # ------------------------------------------------------------------
-
     def fetch_mol_claims_annual(self) -> list[dict]:
-        """取得勞動部失業給付初次認定件數（年度）"""
         return fetch_mol_claims_annual(self)
 
-    # ------------------------------------------------------------------
-    # NCU CCI
-    # ------------------------------------------------------------------
-
     def fetch_ncu_cci(self) -> dict | None:
-        """取得中央大學 CCI 最新資料"""
         return fetch_ncu_cci(self)
 
-    # ------------------------------------------------------------------
-    # TWSE PE Ratio
-    # ------------------------------------------------------------------
-
     def fetch_twse_market_pe(self) -> dict | None:
-        """取得證交所大盤本益比（最新）"""
         return fetch_twse_market_pe(self)
 
-    # ------------------------------------------------------------------
-    # TWSE Margin
-    # ------------------------------------------------------------------
-
     def fetch_latest_twse_margin(self) -> dict | None:
-        """取得證交所最新融資融券餘額"""
         return fetch_latest_twse_margin(self)
 
-    # ------------------------------------------------------------------
-    # CBC Discount Rate
-    # ------------------------------------------------------------------
-
     def fetch_cbc_discount_rate(self) -> list[dict]:
-        """取得央行重貼現率歷史資料"""
         return fetch_cbc_discount_rate(self)
 
-    # ------------------------------------------------------------------
-    # CBC Credit Spread Proxy (alias to TPEx bond data for current month)
-    # ------------------------------------------------------------------
+    def fetch_latest_cbc_m2(self) -> dict | None:
+        return fetch_latest_cbc_m2(self)
+
+    def fetch_cbc_m2_history(self, months: int = 24) -> list[dict]:
+        return fetch_cbc_m2_history(self, months)
+
+    def fetch_latest_cier_pmi(self) -> dict | None:
+        return fetch_latest_cier_pmi(self)
+
+    def fetch_cier_pmi_history(self, months: int = 24) -> list[dict]:
+        return fetch_cier_pmi_history(self, months)
 
     def fetch_cbc_credit_spread_proxy(self) -> dict | None:
-        """取得信用利差（代理，使用櫃買中心當月資料）
-
-        等價於 fetch_tpex_bond_data(current_year, current_month)。
-        """
         now = datetime.now()
         return self.fetch_tpex_bond_data(now.year, now.month)

@@ -46,6 +46,9 @@ class LensDecision:
     phase_label: str
     reasons: list[str] = field(default_factory=list)
     metrics: list[LensMetric] = field(default_factory=list)
+    transition_keys: list[str] = field(default_factory=list)
+    narrative: str = ""
+    stance: str = "neutral"
 
     def to_dict(self) -> dict:
         return {
@@ -55,6 +58,9 @@ class LensDecision:
             "phase_label": self.phase_label,
             "reasons": list(self.reasons),
             "metrics": [metric.to_dict() for metric in self.metrics],
+            "transition_keys": list(self.transition_keys),
+            "narrative": self.narrative,
+            "stance": self.stance,
         }
 
 
@@ -66,6 +72,15 @@ class LensHistoryRow:
     phase_label: str
     reasons: list[str] = field(default_factory=list)
     metrics: list[LensMetric] = field(default_factory=list)
+    previous_phase: str | None = None
+    previous_phase_label: str | None = None
+    transition_keys: list[str] = field(default_factory=list)
+    narrative: str = ""
+    stance: str = "neutral"
+    decision_mode: str = "hold"
+    decision_summary: str = ""
+    supporting_signals: list[str] = field(default_factory=list)
+    conflicting_signals: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -75,6 +90,15 @@ class LensHistoryRow:
             "phase_label": self.phase_label,
             "reasons": list(self.reasons),
             "metrics": [metric.to_dict() for metric in self.metrics],
+            "previous_phase": self.previous_phase,
+            "previous_phase_label": self.previous_phase_label,
+            "transition_keys": list(self.transition_keys),
+            "narrative": self.narrative,
+            "stance": self.stance,
+            "decision_mode": self.decision_mode,
+            "decision_summary": self.decision_summary,
+            "supporting_signals": list(self.supporting_signals),
+            "conflicting_signals": list(self.conflicting_signals),
         }
 
 
@@ -121,6 +145,7 @@ class IzaaxTransposedBundle:
     transition_keys: list[str]  # Which metric_ids are critical for next transition
     metric_rows: list[TransposedMetricRow]
     months: list[str]  # Month labels
+    month_columns: list[dict] = field(default_factory=list)  # [{"month": "...", "phase": "...", "phase_label": "...", "transition_keys": [...]}]
     reasons: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
@@ -133,5 +158,6 @@ class IzaaxTransposedBundle:
             "transition_keys": self.transition_keys,
             "metric_rows": [r.to_dict() for r in self.metric_rows],
             "months": self.months,
+            "month_columns": self.month_columns,
             "reasons": self.reasons,
         }

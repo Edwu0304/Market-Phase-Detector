@@ -5,6 +5,7 @@ def build_country_snapshot(
     country: str,
     as_of: str,
     observations: dict,
+    observation_history: list[dict] | None,
     derived_signals: dict,
     candidate_phase: str,
     final_phase: str,
@@ -26,6 +27,7 @@ def build_country_snapshot(
         "country": country,
         "as_of": as_of,
         "observations": observations,
+        "observation_history": observation_history or [],
         "derived_signals": derived_signals,
         "decision": {
             "candidate_phase": decision.candidate_phase,

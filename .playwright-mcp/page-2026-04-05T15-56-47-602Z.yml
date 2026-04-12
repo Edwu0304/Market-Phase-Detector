@@ -1,0 +1,137 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - img "央行LOGO標誌" [ref=e3]
+    - paragraph [ref=e4]:
+      - link "中央銀行統計資料庫" [ref=e5] [cursor=pointer]:
+        - /url: /Tree/TreeSelect
+    - button "English" [ref=e8] [cursor=pointer]
+    - link "其他相關資料庫" [ref=e9] [cursor=pointer]:
+      - /url: /Tree/TreeSelect#OtherDB
+    - link "操作說明" [ref=e10] [cursor=pointer]:
+      - /url: /Tree/TreeSelect#Guide
+    - link "統計資料庫" [ref=e11] [cursor=pointer]:
+      - /url: /Tree/TreeSelect#Content
+  - table [ref=e15]:
+    - rowgroup [ref=e16]:
+      - row "中央銀行統計資料庫 API 說明 " [ref=e17]:
+        - cell "中央銀行統計資料庫 API 說明 " [ref=e18]:
+          - generic [ref=e20]:
+            - paragraph [ref=e21]:
+              - text: 中央銀行統計資料庫
+              - button "API 說明 " [ref=e22] [cursor=pointer]:
+                - text: API 說明
+                - generic [ref=e23]: 
+            - textbox [active] [ref=e25]:
+              - /placeholder: 請輸入搜尋關鍵字....
+            - generic [ref=e26]:
+              - button [ref=e28] [cursor=pointer]:
+                - text: 搜尋所有
+                - generic [ref=e29]: 
+              - button [ref=e31] [cursor=pointer]:
+                - text: 展開全部
+                - generic [ref=e32]: 
+              - button [ref=e34] [cursor=pointer]:
+                - text: 收合全部
+                - generic [ref=e35]: 
+      - row " 中央銀行統計資料庫  我國與主要貿易對手通貨對美元之匯率  金融統計月報  國際收支與國際投資部位  資金流量統計" [ref=e36]:
+        - cell " 中央銀行統計資料庫  我國與主要貿易對手通貨對美元之匯率  金融統計月報  國際收支與國際投資部位  資金流量統計" [ref=e37]:
+          - list [ref=e40]:
+            - listitem [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]: 
+              - text: 中央銀行統計資料庫
+            - listitem [ref=e43] [cursor=pointer]:
+              - generic [ref=e44]: 
+              - text: 我國與主要貿易對手通貨對美元之匯率
+            - listitem [ref=e45] [cursor=pointer]:
+              - generic [ref=e46]: 
+              - text: 金融統計月報
+            - listitem [ref=e47] [cursor=pointer]:
+              - generic [ref=e48]: 
+              - text: 國際收支與國際投資部位
+            - listitem [ref=e49] [cursor=pointer]:
+              - generic [ref=e50]: 
+              - text: 資金流量統計
+  - generic [ref=e52]:
+    - paragraph [ref=e53]: 操作說明
+    - generic [ref=e57]:
+      - list [ref=e58]:
+        - listitem [ref=e59] [cursor=pointer]
+        - listitem [ref=e60] [cursor=pointer]
+      - generic [ref=e61]:
+        - img "Tip1" [ref=e63]
+        - img "Tip2" [ref=e134]
+      - link "<" [ref=e64] [cursor=pointer]:
+        - /url: "#myCarousel"
+        - generic [ref=e65]: <
+      - link ">" [ref=e66] [cursor=pointer]:
+        - /url: "#myCarousel"
+        - generic [ref=e67]: ">"
+  - generic [ref=e70]:
+    - paragraph [ref=e71]: 其他相關資料庫
+    - generic [ref=e72]:
+      - generic [ref=e74]:
+        - img "主計總處LOGO" [ref=e76]
+        - generic [ref=e77]:
+          - heading "行政院主計總處" [level=3] [ref=e78]
+          - text: Directorte-General of Budget, Accounting and Statistics,Executive Yuan, R.O.C. (Taiwan)
+          - paragraph [ref=e79]:
+            - link "http://www.dgbas.gov.tw/" [ref=e80] [cursor=pointer]:
+              - /url: http://www.dgbas.gov.tw/
+      - generic [ref=e82]:
+        - img "財政部關務署LOGO" [ref=e84]
+        - generic [ref=e85]:
+          - heading "財政部關務署" [level=3] [ref=e86]
+          - text: Customs Administration, Ministry of Finance
+          - paragraph [ref=e87]:
+            - link "https://web.customs.gov.tw/" [ref=e88] [cursor=pointer]:
+              - /url: https://web.customs.gov.tw/
+    - generic [ref=e89]:
+      - generic [ref=e91]:
+        - img "內政部統計處LOGO" [ref=e93]
+        - generic [ref=e94]:
+          - heading "內政部統計處" [level=3] [ref=e95]
+          - text: Department of Statistics, Ministry of Interior
+          - paragraph [ref=e96]:
+            - link "http://www.moi.gov.tw/stat/index.aspx" [ref=e97] [cursor=pointer]:
+              - /url: http://www.moi.gov.tw/stat/index.aspx
+      - generic [ref=e99]:
+        - img "MOEA LOGO" [ref=e101]
+        - generic [ref=e102]:
+          - heading "經濟部經濟統計資訊網路查詢系統" [level=3] [ref=e103]
+          - text: Ministry of Economic Affairs, R.O.C.(Taiwan)
+          - paragraph [ref=e104]:
+            - link "https://www.moea.gov.tw/MNS/populace/content/ContentMenu.aspx?menu_id=6027" [ref=e105] [cursor=pointer]:
+              - /url: https://www.moea.gov.tw/MNS/populace/content/ContentMenu.aspx?menu_id=6027
+    - generic [ref=e106]:
+      - generic [ref=e108]:
+        - img "行政院農委會LOGO" [ref=e110]
+        - generic [ref=e111]:
+          - heading "行政院農業委員會 - 農業統計資料查詢" [level=3] [ref=e112]
+          - text: Council of Agriculture, Executive Yuan, R.O.C.(Taiwan)
+          - paragraph [ref=e113]:
+            - link "https://www.moa.gov.tw/" [ref=e114] [cursor=pointer]:
+              - /url: https://www.moa.gov.tw/
+      - generic [ref=e116]:
+        - img "主計總處LOGO" [ref=e118]
+        - generic [ref=e119]:
+          - heading "中華民國統計資訊網" [level=3] [ref=e120]
+          - text: Nation Statistics, R.O.C.(Taiwan)
+          - paragraph [ref=e121]:
+            - link "http://www.stat.gov.tw/mp.asp?mp=4/" [ref=e122] [cursor=pointer]:
+              - /url: http://www.stat.gov.tw/mp.asp?mp=4
+  - generic [ref=e124]:
+    - generic [ref=e125]:
+      - img "央行LOGO" [ref=e126]
+      - text: 中央銀行
+    - generic [ref=e127]:
+      - text: 聯絡地址：100243台北市中正區羅斯福路一段2號
+      - text: 中央銀行：(02)2393-6161 傳真：(02)23571974
+    - generic [ref=e128]:
+      - link "服務窗口" [ref=e129] [cursor=pointer]:
+        - /url: https://www.cbc.gov.tw/tw/sp-opma-form-1.html
+      - link "政府網站資料開放宣告" [ref=e130] [cursor=pointer]:
+        - /url: /Tree/PublicStatement
+      - link "隱私權宣告" [ref=e131] [cursor=pointer]:
+        - /url: /Tree/PrivacyStatement
+      - link "資訊安全政策宣告" [ref=e132] [cursor=pointer]:
+        - /url: /Tree/SecureStatement

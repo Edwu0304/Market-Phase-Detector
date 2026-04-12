@@ -1,0 +1,3030 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - 'heading ":::  工具列(手機版)" [level=1] [ref=e3]':
+      - generic [ref=e4]:
+        - link ":::" [ref=e5] [cursor=pointer]:
+          - /url: "#U"
+        - link "" [ref=e6] [cursor=pointer]:
+          - /url: /zh/index.html
+          - heading "" [level=1] [ref=e7]:
+            - generic [ref=e8]:  
+            - text: 
+        - text:  
+      - navigation "工具列(手機版)" [ref=e9]:
+        - listitem [ref=e10]:
+          - link "" [ref=e11] [cursor=pointer]:
+            - /url: /zh/search.html
+        - listitem [ref=e12]:
+          - button "選單開關" [ref=e13] [cursor=pointer]
+          - text:                                                                                                            
+    - generic [ref=e16]:
+      - text: 
+      - main [ref=e17]:
+        - link ":::" [ref=e18] [cursor=pointer]:
+          - /url: "#C"
+        - text: 
+        - generic [ref=e19]:
+          - list [ref=e21]:
+            - listitem [ref=e22]:
+              - link " 熱門導覽" [ref=e23] [cursor=pointer]:
+                - /url: ./focus/popular.html
+                - text: 
+                - paragraph [ref=e24]: 熱門導覽
+            - listitem [ref=e25]:
+              - link " 公告/活動" [ref=e26] [cursor=pointer]:
+                - /url: ./focus/events.html
+                - text: 
+                - paragraph [ref=e27]: 公告/活動
+            - listitem [ref=e28]:
+              - link " 新上市證券" [ref=e29] [cursor=pointer]:
+                - /url: ./focus/newly.html
+                - text: 
+                - paragraph [ref=e30]: 新上市證券
+            - listitem [ref=e31]:
+              - link " 其他連結" [ref=e32] [cursor=pointer]:
+                - /url: ./focus/links.html
+                - text: 
+                - paragraph [ref=e33]: 其他連結
+            - listitem [ref=e34]:
+              - link " 臺灣投資指南" [ref=e35] [cursor=pointer]:
+                - /url: ./focus/investing.html
+                - text: 
+                - paragraph [ref=e36]: 臺灣投資指南
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - generic [ref=e41]:
+                - generic [ref=e42]: 加權指數
+                - generic [ref=e43]:
+                  - text: 32,572.43 ▼602.39 (1.82%)
+                  - text: 成交金額：6,729.07 (億)
+              - generic [ref=e44]:
+                - generic [ref=e45]: 臺灣50指數
+                - generic [ref=e46]:
+                  - text: 29,566.99 點
+                  - text: ▼644.98 (2.13%)
+              - generic [ref=e47]:
+                - generic [ref=e48]: 臺灣公司治理100指數
+                - generic [ref=e49]:
+                  - text: 20,255.87 點
+                  - text: ▼378.6 (1.83%)
+              - generic [ref=e50]:
+                - generic [ref=e51]: 金融保險
+                - generic [ref=e52]:
+                  - text: 2,441.93 點
+                  - text: ▲1.31 (0.05%)
+              - generic [ref=e53]:
+                - generic [ref=e54]: 電子工業
+                - generic [ref=e55]:
+                  - text: 2,016.26 點
+                  - text: ▼44.12 (2.14%)
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - generic [ref=e58]: 加權指數
+                - generic [ref=e59]:
+                  - text: 32,572.43 ▼602.39 (1.82%)
+                  - text: 成交金額：6,729.07 (億)
+              - generic [ref=e60]:
+                - generic [ref=e61]: 臺灣50指數
+                - generic [ref=e62]:
+                  - text: 29,566.99 點
+                  - text: ▼644.98 (2.13%)
+              - generic [ref=e63]:
+                - generic [ref=e64]: 臺灣公司治理100指數
+                - generic [ref=e65]:
+                  - text: 20,255.87 點
+                  - text: ▼378.6 (1.83%)
+              - generic [ref=e66]:
+                - generic [ref=e67]: 金融保險
+                - generic [ref=e68]:
+                  - text: 2,441.93 點
+                  - text: ▲1.31 (0.05%)
+              - generic [ref=e69]:
+                - generic [ref=e70]: 電子工業
+                - generic [ref=e71]:
+                  - text: 2,016.26 點
+                  - text: ▼44.12 (2.14%)
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - generic [ref=e74]: 加權指數
+                - generic [ref=e75]:
+                  - text: 32,572.43 ▼602.39 (1.82%)
+                  - text: 成交金額：6,729.07 (億)
+              - generic [ref=e76]:
+                - generic [ref=e77]: 臺灣50指數
+                - generic [ref=e78]:
+                  - text: 29,566.99 點
+                  - text: ▼644.98 (2.13%)
+              - generic [ref=e79]:
+                - generic [ref=e80]: 臺灣公司治理100指數
+                - generic [ref=e81]:
+                  - text: 20,255.87 點
+                  - text: ▼378.6 (1.83%)
+              - generic [ref=e82]:
+                - generic [ref=e83]: 金融保險
+                - generic [ref=e84]:
+                  - text: 2,441.93 點
+                  - text: ▲1.31 (0.05%)
+              - generic [ref=e85]:
+                - generic [ref=e86]: 電子工業
+                - generic [ref=e87]:
+                  - text: 2,016.26 點
+                  - text: ▼44.12 (2.14%)
+        - generic:
+          - generic:
+            - list
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - group "7 / 7":
+              - link "證券投資反詐騙專區 三思而行聽看查 金融詐騙我不怕 證交所提醒，投資理財前務必停看聽，注意風險，審慎確認所做投資或交易係透過合法金融機構進行，以維護自身權益及保障財產安全。":
+                - /url: https://www.twse.com.tw/anti-fraud/zh/index.html
+                - figure
+                - generic:
+                  - heading "證券投資反詐騙專區" [level=2]
+                  - paragraph:
+                    - text: 三思而行聽看查 金融詐騙我不怕
+                    - text: 證交所提醒，投資理財前務必停看聽，注意風險，審慎確認所做投資或交易係透過合法金融機構進行，以維護自身權益及保障財產安全。
+            - group "1 / 7":
+              - link "115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日） 本次業績發表於證交所(101大樓)1樓資訊展示中心舉辦，投資人也可多利用影音傳播網WebPro（https://webpro.twse.com.tw/）同步直播。":
+                - /url: https://www.twse.com.tw/zh/about/news/event/content.html?8a8216d69d19ce2e019d23a9b4810084
+                - figure
+                - generic:
+                  - heading "115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日）" [level=2]
+                  - paragraph: 本次業績發表於證交所(101大樓)1樓資訊展示中心舉辦，投資人也可多利用影音傳播網WebPro（https://webpro.twse.com.tw/）同步直播。
+            - group "2 / 7":
+              - link "「ESG生態系」專區 證交所建置「ESG生態系」專區，整合提升ESG數位建設、轉型ESG評鑑與綠色證券、接軌IFRS永續揭露準則、強化投資人關係、實踐永續責任、厚植ESG人才、發展多元ESG商品及推動永續碳市場等八大重點面向，以利各界了解證交所ESG推動方向及重要成果。":
+                - /url: https://www.twse.com.tw/ESG/zh/ESGecology.html
+                - figure
+                - generic:
+                  - heading "「ESG生態系」專區" [level=2]
+                  - paragraph: 證交所建置「ESG生態系」專區，整合提升ESG數位建設、轉型ESG評鑑與綠色證券、接軌IFRS永續揭露準則、強化投資人關係、實踐永續責任、厚植ESG人才、發展多元ESG商品及推動永續碳市場等八大重點面向，以利各界了解證交所ESG推動方向及重要成果。
+            - group "3 / 7":
+              - link "創新板邁向新里程碑！ 114年11月17日創新板開放當沖交易！ 有關得當日沖銷交易標的，請參考https://www.twse.com.tw/zh/trading/day-trading.html":
+                - /url: https://www.twse.com.tw/zh/trading/day-trading.html
+                - figure
+                - generic:
+                  - heading "創新板邁向新里程碑！ 114年11月17日創新板開放當沖交易！" [level=2]
+                  - paragraph: 有關得當日沖銷交易標的，請參考https://www.twse.com.tw/zh/trading/day-trading.html
+            - group "4 / 7":
+              - link "亞洲資產管理中心專網 亞洲資產管理中心專網整合政策資訊與市場機會，深化亞洲資產管理影響力。重點政策：TIB創新板、TISA、高雄專區、OAMU、家族辦公室、私人銀行、跨境金融、多元化商品。":
+                - /url: https://www.aamc.tw/zh/
+                - figure
+                - generic:
+                  - heading "亞洲資產管理中心專網" [level=2]
+                  - paragraph: 亞洲資產管理中心專網整合政策資訊與市場機會，深化亞洲資產管理影響力。重點政策：TIB創新板、TISA、高雄專區、OAMU、家族辦公室、私人銀行、跨境金融、多元化商品。
+            - group "5 / 7":
+              - link "亞洲資產管理中心推動辦公室 為利亞洲資產管理中心推動及業者更快速諮詢，證交所成立「亞洲資產管理中心推動辦公室」提供電話客服、線上提問平台及會面諮詢等多元服務。":
+                - /url: https://www.aamc.tw/zh/about.html
+                - figure
+                - generic:
+                  - heading "亞洲資產管理中心推動辦公室" [level=2]
+                  - paragraph: 為利亞洲資產管理中心推動及業者更快速諮詢，證交所成立「亞洲資產管理中心推動辦公室」提供電話客服、線上提問平台及會面諮詢等多元服務。
+            - group "6 / 7" [ref=e3229]:
+              - link "「台灣自然碳匯永續共生行動計畫」 「台灣自然碳匯永續共生行動計畫」由臺灣證券交易所及臺灣碳權交易所共同推動，包含森林與土壤碳匯專案，結合碳權開發、生態調查、社區參與及地方創生，期望為上市公司提供自然碳匯示範案例，落實企業永續責任。" [ref=e3230] [cursor=pointer]:
+                - /url: https://www.tcx.com.tw/learn/studio/articleContent/4028908496a9878a0197108423c70454
+                - figure [ref=e3231]
+                - generic [ref=e3232]:
+                  - heading "「台灣自然碳匯永續共生行動計畫」" [level=2] [ref=e3233]
+                  - paragraph [ref=e3234]: 「台灣自然碳匯永續共生行動計畫」由臺灣證券交易所及臺灣碳權交易所共同推動，包含森林與土壤碳匯專案，結合碳權開發、生態調查、社區參與及地方創生，期望為上市公司提供自然碳匯示範案例，落實企業永續責任。
+          - generic [ref=e97]:
+            - button "Go to slide 1" [ref=e98] [cursor=pointer]
+            - button "Go to slide 2" [ref=e99] [cursor=pointer]
+            - button "Go to slide 3" [ref=e100] [cursor=pointer]
+            - button "Go to slide 4" [ref=e101] [cursor=pointer]
+            - button "Go to slide 5" [ref=e102] [cursor=pointer]
+            - button "Go to slide 6" [ref=e103] [cursor=pointer]
+            - button "Go to slide 7" [ref=e104] [cursor=pointer]
+          - button "Previous slide" [ref=e105] [cursor=pointer]: prev
+          - button "Next slide" [ref=e106] [cursor=pointer]: next
+        - generic [ref=e110]:
+          - heading "「e添富」一站式ETF整合資訊平台 全方位ETF數據與分析，帶您掌握ETF投資趨勢" [level=2] [ref=e111]:
+            - text: 「e添富」一站式ETF整合資訊平台
+            - text: 全方位ETF數據與分析，帶您掌握ETF投資趨勢
+          - paragraph [ref=e112]: 為方便投資人掌握投資脈動及ETF最新資訊，本公司籌設一站式投資資訊平台「e添富」。提供視覺化分析工具、ETF相關統計數據、達人講BAR及投資篩選器等功能，打造健全ETF資訊整合平台。
+          - navigation [ref=e113]:
+            - link "配息資訊" [ref=e114] [cursor=pointer]:
+              - /url: /zh/ETFortune/dividendCalendar
+            - link "投資篩選器" [ref=e115] [cursor=pointer]:
+              - /url: /zh/ETFortune/products
+            - link "達人講 BAR" [ref=e116] [cursor=pointer]:
+              - /url: /zh/ETFortune/advisor
+            - link "ETF基本資料查詢" [ref=e117] [cursor=pointer]:
+              - /url: "#etf-search"
+        - generic [ref=e121]:
+          - heading "資本市場發展重要里程碑 臺灣創新板打造嶄新上市聚落" [level=2] [ref=e123]:
+            - text: 資本市場發展重要里程碑
+            - text: 臺灣創新板打造嶄新上市聚落
+          - paragraph [ref=e124]: 為接軌國際、落實國家政策，並全力支持政府推動之產業發展策略，本公司籌設「臺灣創新板」，鼓勵擁有關鍵核心技術及創新能力或創新經營模式之企業進入資本市場籌資。
+          - navigation [ref=e125]:
+            - link "上市制度" [ref=e126] [cursor=pointer]:
+              - /url: /TIB/zh/requirement.html
+            - link "交易制度" [ref=e127] [cursor=pointer]:
+              - /url: /TIB/zh/mechanism.html
+            - link "新聞稿" [ref=e128] [cursor=pointer]:
+              - /url: /TIB/zh/news.html
+        - generic [ref=e132]:
+          - heading "以永續發展出發， 深掘核心價值並積極創新， 形塑嶄新企業文化並發揮供應鏈影響力" [level=2] [ref=e133]:
+            - generic [ref=e134]: 以永續發展出發，
+            - generic [ref=e135]: 深掘核心價值並積極創新，
+            - generic [ref=e136]: 形塑嶄新企業文化並發揮供應鏈影響力
+          - paragraph [ref=e137]: 環境、社會及公司治理(ESG)成為引領永續發展不可或缺的要件，企業需具備辨別經營風險、潛在機會與轉型能力，提升韌性，以實現永續未來。
+          - navigation [ref=e138]:
+            - link "ESG InfoHub" [ref=e139] [cursor=pointer]:
+              - /url: https://esg.twse.com.tw/ESG/front/tw/
+            - link "ESG資料庫" [ref=e140] [cursor=pointer]:
+              - /url: https://esg.twse.com.tw/ESG/front/tw/#/main/esg-data
+            - link "溫室氣體盤查" [ref=e141] [cursor=pointer]:
+              - /url: https://esg.twse.com.tw/ESG/front/tw/#/main/greenhouse-gas-inventory
+            - link "接軌IFRS永續揭露準則專區" [ref=e142] [cursor=pointer]:
+              - /url: https://isds.tpex.org.tw
+        - generic [ref=e146]:
+          - heading "攜手同行 邁向未來" [level=2] [ref=e147]:
+            - generic [ref=e148]: 攜手同行
+            - generic [ref=e149]: 邁向未來
+          - paragraph [ref=e150]: 證交所肩負國家政策，同時滿足國內外投資人、發行人及中介機構的需求，為所有市場參與者創造更大的價值。致力促進企業資訊透明、交易機制公正，以維護投資者權益。落實「企業籌資便捷、大眾投資穩當」的初衷，及達成「打造健全資本市場、實現福國利民」的願景。
+          - navigation [ref=e151]:
+            - link "關於證交所" [ref=e152] [cursor=pointer]:
+              - /url: ./about/company/welcome.html
+            - link "服務介紹" [ref=e153] [cursor=pointer]:
+              - /url: ./about/company/service.html
+            - link "永續發展專區" [ref=e154] [cursor=pointer]:
+              - /url: /ESG/zh/index.html
+        - generic [ref=e158]:
+          - heading "新聞稿" [level=2] [ref=e159]
+          - list [ref=e160]:
+            - listitem [ref=e161]:
+              - text: 
+              - link "證交所攜手台經院與資策會推出數位雲端、電動機械及生技醫療之產業洞察報告" [ref=e162] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d4dcaa98400bc
+            - listitem [ref=e163]:
+              - text: 
+              - link "本週發行量加權股價指數跌幅約為1.63%，上市股票總市值達106.30兆元" [ref=e164] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d4d80c02b00b8
+            - listitem [ref=e165]:
+              - text: 
+              - link "臺灣證券交易所對益航股份有限公司（公司代號：2601）違反重大訊息規定，處以新台幣3萬元違約金" [ref=e166] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d4d56c72000b4
+            - listitem [ref=e167]:
+              - text: 
+              - link "新代科技股份有限公司上市股票自本（115）年4月7日起得為融資融券交易" [ref=e168] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d4d48dd2500b0
+            - listitem [ref=e169]:
+              - text: 
+              - link "臺灣證券交易所對崇越科技股份有限公司違反重大訊息規定，處以新台幣3萬元違約金" [ref=e170] [cursor=pointer]:
+                - /url: /zh/about/news/news/content.html?8a8216d69d2e8217019d48a4a33e0095
+          - navigation [ref=e171]:
+            - link "更多新聞稿" [ref=e172] [cursor=pointer]:
+              - /url: ./about/news/news/list.html
+            - link "活動訊息" [ref=e173] [cursor=pointer]:
+              - /url: ./about/news/event/list.html
+            - link "上市公司重大訊息" [ref=e174] [cursor=pointer]:
+              - /url: https://mops.twse.com.tw/mops/web/t05sr01_1
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - heading "最新宣導活動 / 訓練課程" [level=2] [ref=e179]
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - group "1 / 10" [ref=e182]:
+                  - link "宣導說明會 115年度證券商內部控制制度標準規範宣導說明會 本公司辦理115年度證券商內部控制制度標準規範宣導說明會，請證券商內部稽核人員與分公司非專職稽核制度之自行查核人員踴躍參加" [ref=e183] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69d2e8217019d3d669669002a
+                    - heading "宣導說明會 115年度證券商內部控制制度標準規範宣導說明會" [level=3] [ref=e184]:
+                      - generic [ref=e185]: 宣導說明會
+                      - text: 115年度證券商內部控制制度標準規範宣導說明會
+                    - paragraph [ref=e186]: 本公司辦理115年度證券商內部控制制度標準規範宣導說明會，請證券商內部稽核人員與分公司非專職稽核制度之自行查核人員踴躍參加
+                - group "2 / 10" [ref=e187]:
+                  - link "法人說明會 2026年上市公司辦理法人說明會(4月1日至4月30日) 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)" [ref=e188] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69d19ce2e019d23c7b720008a
+                    - heading "法人說明會 2026年上市公司辦理法人說明會(4月1日至4月30日)" [level=3] [ref=e189]:
+                      - generic [ref=e190]: 法人說明會
+                      - text: 2026年上市公司辦理法人說明會(4月1日至4月30日)
+                    - paragraph [ref=e191]: 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)
+                - group "3 / 10" [ref=e192]:
+                  - link "主題式業績發表會 115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日） 115年「AI及綠能環保產業」主題式業績發表會及產業講座，時間及地點詳公告/活動。" [ref=e193] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69d19ce2e019d23a9b4810084
+                    - heading "主題式業績發表會 115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日）" [level=3] [ref=e194]:
+                      - generic [ref=e195]: 主題式業績發表會
+                      - text: 115年「AI及綠能環保產業」主題式業績發表會及產業講座（3月23日到4月30日）
+                    - paragraph [ref=e196]: 115年「AI及綠能環保產業」主題式業績發表會及產業講座，時間及地點詳公告/活動。
+                - group "4 / 10" [ref=e197]:
+                  - link "主題式業績發表會 115年「自行車產業」主題式業績發表會（3月25日） 本次業績發表於南港展覽館1館5樓500會議室舉辦，本場不提供直播，將於會後上傳各場次影音檔至本公司WebPro頻道。" [ref=e198] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69c37647f019cf45a97f20223
+                    - heading "主題式業績發表會 115年「自行車產業」主題式業績發表會（3月25日）" [level=3] [ref=e199]:
+                      - generic [ref=e200]: 主題式業績發表會
+                      - text: 115年「自行車產業」主題式業績發表會（3月25日）
+                    - paragraph [ref=e201]: 本次業績發表於南港展覽館1館5樓500會議室舉辦，本場不提供直播，將於會後上傳各場次影音檔至本公司WebPro頻道。
+                - group "5 / 10" [ref=e202]:
+                  - link "法人說明會 2026年上市公司辦理法人說明會(3月1日至3月31日) 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)" [ref=e203] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69c37647f019c98e9b56000ae
+                    - heading "法人說明會 2026年上市公司辦理法人說明會(3月1日至3月31日)" [level=3] [ref=e204]:
+                      - generic [ref=e205]: 法人說明會
+                      - text: 2026年上市公司辦理法人說明會(3月1日至3月31日)
+                    - paragraph [ref=e206]: 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)
+                - group "6 / 10" [ref=e207]:
+                  - link "宣導說明會 「開放外資擔保品質權設定暨強化外資登記」宣導會 本公司於115年3月10日(二)假本公司36樓會議室舉辦「開放外資擔保品質權設定暨強化外資登記」宣導會，並於115年2月24日開放網路報名至3月3日止。參加對象為保管機構業務相關人員2名，額滿時停止受理報名。" [ref=e208] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69c37647f019c8d5f3002006e
+                    - heading "宣導說明會 「開放外資擔保品質權設定暨強化外資登記」宣導會" [level=3] [ref=e209]:
+                      - generic [ref=e210]: 宣導說明會
+                      - text: 「開放外資擔保品質權設定暨強化外資登記」宣導會
+                    - paragraph [ref=e211]: 本公司於115年3月10日(二)假本公司36樓會議室舉辦「開放外資擔保品質權設定暨強化外資登記」宣導會，並於115年2月24日開放網路報名至3月3日止。參加對象為保管機構業務相關人員2名，額滿時停止受理報名。
+                - group "7 / 10" [ref=e212]:
+                  - link "券商限定活動 115年度第一季證券承銷商業務宣導會(115.3.12) 3月12日辦理115年第1季證券承銷商業務宣導會，歡迎證券承銷商業務相關人員踴躍參加。" [ref=e213] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69c37647f019c4bdf74ec0020
+                    - heading "券商限定活動 115年度第一季證券承銷商業務宣導會(115.3.12)" [level=3] [ref=e214]:
+                      - generic [ref=e215]: 券商限定活動
+                      - text: 115年度第一季證券承銷商業務宣導會(115.3.12)
+                    - paragraph [ref=e216]: 3月12日辦理115年第1季證券承銷商業務宣導會，歡迎證券承銷商業務相關人員踴躍參加。
+                - group "8 / 10" [ref=e217]:
+                  - link "法人說明會 2026年上市公司辦理法人說明會(2月1日至2月28日) 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)" [ref=e218] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69bde495d019bdf32d6370019
+                    - heading "法人說明會 2026年上市公司辦理法人說明會(2月1日至2月28日)" [level=3] [ref=e219]:
+                      - generic [ref=e220]: 法人說明會
+                      - text: 2026年上市公司辦理法人說明會(2月1日至2月28日)
+                    - paragraph [ref=e221]: 本公司為提升對國內上市公司之服務，舉辦上市公司法人說明會，地點：臺灣證券交易所 1 樓資訊展示中心或可透過網路轉播同步收看(https://webpro.twse.com.tw)
+                - group "9 / 10" [ref=e222]:
+                  - link "券商限定活動 115年證券商資通安全會議（即日起至1月26日） 115年3月20日到115年3月21日到辦理115年證券商資通安全會議，歡迎各證券商之資安長或資安最高主管踴躍參加" [ref=e223] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69a3d6cf9019b732999de0651
+                    - heading "券商限定活動 115年證券商資通安全會議（即日起至1月26日）" [level=3] [ref=e224]:
+                      - generic [ref=e225]: 券商限定活動
+                      - text: 115年證券商資通安全會議（即日起至1月26日）
+                    - paragraph [ref=e226]: 115年3月20日到115年3月21日到辦理115年證券商資通安全會議，歡迎各證券商之資安長或資安最高主管踴躍參加
+                - group "10 / 10" [ref=e227]:
+                  - link "券商限定活動 115年ETF申贖作業流程說明會 將於115年1月9日與115年1月16日舉辦115年度ETF申贖作業流程說明會。本報名系統24小時開放，欲參加者請於114年12月22日9時起至12月29日17時直接線上報名，不接受電話或現場報名。" [ref=e228] [cursor=pointer]:
+                    - /url: /zh/about/news/event/content.html?8a8216d69a3d6cf9019b4379a2e4056d
+                    - heading "券商限定活動 115年ETF申贖作業流程說明會" [level=3] [ref=e229]:
+                      - generic [ref=e230]: 券商限定活動
+                      - text: 115年ETF申贖作業流程說明會
+                    - paragraph [ref=e231]: 將於115年1月9日與115年1月16日舉辦115年度ETF申贖作業流程說明會。本報名系統24小時開放，欲參加者請於114年12月22日9時起至12月29日17時直接線上報名，不接受電話或現場報名。
+              - generic [ref=e232]:
+                - button "Go to slide 1" [ref=e233] [cursor=pointer]
+                - button "Go to slide 2" [ref=e234] [cursor=pointer]
+                - button "Go to slide 3" [ref=e235] [cursor=pointer]
+                - button "Go to slide 4" [ref=e236] [cursor=pointer]
+                - button "Go to slide 5" [ref=e237] [cursor=pointer]
+                - button "Go to slide 6" [ref=e238] [cursor=pointer]
+                - button "Go to slide 7" [ref=e239] [cursor=pointer]
+                - button "Go to slide 8" [ref=e240] [cursor=pointer]
+                - button "Go to slide 9" [ref=e241] [cursor=pointer]
+            - button "Previous slide" [disabled]: prev
+            - button "Next slide" [ref=e242] [cursor=pointer]: next
+          - navigation [ref=e243]:
+            - link "更多..." [ref=e244] [cursor=pointer]:
+              - /url: ./about/news/event/list.html
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - heading "觀點專區" [level=2] [ref=e249]
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - group "1 / 10" [ref=e252]:
+                  - link "焦點 證交所赴美深化國際對話與資金連結 穩步推進亞洲資產管理中心 證交所 張祐瑄｜115/03/31" [ref=e253] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d2e8217019d3df5ae620048
+                    - figure [ref=e254]:
+                      - img [ref=e255]
+                    - heading "焦點 證交所赴美深化國際對話與資金連結 穩步推進亞洲資產管理中心" [level=3] [ref=e256]:
+                      - generic [ref=e257]: 焦點
+                      - text: 證交所赴美深化國際對話與資金連結 穩步推進亞洲資產管理中心
+                    - paragraph [ref=e258]: 證交所 張祐瑄｜115/03/31
+                - group "2 / 10" [ref=e259]:
+                  - link "焦點 114年度機構投資人盡職治理趨勢 證交所 高晟晉｜115/03/30" [ref=e260] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d2e8217019d3d646baa0028
+                    - figure [ref=e261]:
+                      - img [ref=e262]
+                    - heading "焦點 114年度機構投資人盡職治理趨勢" [level=3] [ref=e263]:
+                      - generic [ref=e264]: 焦點
+                      - text: 114年度機構投資人盡職治理趨勢
+                    - paragraph [ref=e265]: 證交所 高晟晉｜115/03/30
+                - group "3 / 10" [ref=e266]:
+                  - link "市場動態 新上市公司：倍利科(7822) 證交所 林芸卉｜115/03/30" [ref=e267] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d19ce2e019d1f6fafa5005c
+                    - figure [ref=e268]:
+                      - img [ref=e269]
+                    - heading "市場動態 新上市公司：倍利科(7822)" [level=3] [ref=e270]:
+                      - generic [ref=e271]: 市場動態
+                      - text: 新上市公司：倍利科(7822)
+                    - paragraph [ref=e272]: 證交所 林芸卉｜115/03/30
+                - group "4 / 10" [ref=e273]:
+                  - link "市場動態 新上市公司：世紀風電(2072) 證交所 劉佳穎｜115/03/26" [ref=e274] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d19ce2e019d1d753d8f0039
+                    - figure [ref=e275]:
+                      - img [ref=e276]
+                    - heading "市場動態 新上市公司：世紀風電(2072)" [level=3] [ref=e277]:
+                      - generic [ref=e278]: 市場動態
+                      - text: 新上市公司：世紀風電(2072)
+                    - paragraph [ref=e279]: 證交所 劉佳穎｜115/03/26
+                - group "5 / 10" [ref=e280]:
+                  - link "市場動態 新上市公司：宏碁遊戲(6908) 證交所 張至穎｜115/03/25" [ref=e281] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d04cf46019d093e44db001a
+                    - figure [ref=e282]:
+                      - img [ref=e283]
+                    - heading "市場動態 新上市公司：宏碁遊戲(6908)" [level=3] [ref=e284]:
+                      - generic [ref=e285]: 市場動態
+                      - text: 新上市公司：宏碁遊戲(6908)
+                    - paragraph [ref=e286]: 證交所 張至穎｜115/03/25
+                - group "6 / 10" [ref=e287]:
+                  - link "焦點 國際證券市場縮短交割週期之發展趨勢 證交所 廖依婷、證交所 許正誼｜115/03/25" [ref=e288] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69c37647f019cb788fbb8011c
+                    - figure [ref=e289]:
+                      - img [ref=e290]
+                    - heading "焦點 國際證券市場縮短交割週期之發展趨勢" [level=3] [ref=e291]:
+                      - generic [ref=e292]: 焦點
+                      - text: 國際證券市場縮短交割週期之發展趨勢
+                    - paragraph [ref=e293]: 證交所 廖依婷、證交所 許正誼｜115/03/25
+                - group "7 / 10" [ref=e294]:
+                  - link "焦點 全球金融中心指數視角下的競爭力分析 證交所 林士琛｜115/03/19" [ref=e295] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69d04cf46019d05536ae7000a
+                    - figure [ref=e296]:
+                      - img [ref=e297]
+                    - heading "焦點 全球金融中心指數視角下的競爭力分析" [level=3] [ref=e298]:
+                      - generic [ref=e299]: 焦點
+                      - text: 全球金融中心指數視角下的競爭力分析
+                    - paragraph [ref=e300]: 證交所 林士琛｜115/03/19
+                - group "8 / 10" [ref=e301]:
+                  - link "焦點 台股價量齊揚，普惠金融成果亮麗 證交所 劉奕君、證交所 楊欣穎｜115/03/05" [ref=e302] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69c37647f019cbcb852730161
+                    - figure [ref=e303]:
+                      - img [ref=e304]
+                    - heading "焦點 台股價量齊揚，普惠金融成果亮麗" [level=3] [ref=e305]:
+                      - generic [ref=e306]: 焦點
+                      - text: 台股價量齊揚，普惠金融成果亮麗
+                    - paragraph [ref=e307]: 證交所 劉奕君、證交所 楊欣穎｜115/03/05
+                - group "9 / 10" [ref=e308]:
+                  - link "焦點 配合亞資中心多元商品政策，新設金融商品部，商品研發、審查、交易一站式服務 證交所 吳俊瑩｜115/02/26" [ref=e309] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69c37647f019cac1ba87a00dc
+                    - figure [ref=e310]:
+                      - img [ref=e311]
+                    - heading "焦點 配合亞資中心多元商品政策，新設金融商品部，商品研發、審查、交易一站式服務" [level=3] [ref=e312]:
+                      - generic [ref=e313]: 焦點
+                      - text: 配合亞資中心多元商品政策，新設金融商品部，商品研發、審查、交易一站式服務
+                    - paragraph [ref=e314]: 證交所 吳俊瑩｜115/02/26
+                - group "10 / 10" [ref=e315]:
+                  - link "焦點 淺釋證券商受託賣出委託人因繼承取得有價證券相關作業 證交所 楊哲倫｜115/02/26" [ref=e316] [cursor=pointer]:
+                    - /url: /market_insights/zh/detail/8a8216d69c37647f019c98cf280c00ac
+                    - figure [ref=e317]:
+                      - img [ref=e318]
+                    - heading "焦點 淺釋證券商受託賣出委託人因繼承取得有價證券相關作業" [level=3] [ref=e319]:
+                      - generic [ref=e320]: 焦點
+                      - text: 淺釋證券商受託賣出委託人因繼承取得有價證券相關作業
+                    - paragraph [ref=e321]: 證交所 楊哲倫｜115/02/26
+              - generic [ref=e322]:
+                - button "Go to slide 1" [ref=e323] [cursor=pointer]
+                - button "Go to slide 2" [ref=e324] [cursor=pointer]
+                - button "Go to slide 3" [ref=e325] [cursor=pointer]
+                - button "Go to slide 4" [ref=e326] [cursor=pointer]
+                - button "Go to slide 5" [ref=e327] [cursor=pointer]
+                - button "Go to slide 6" [ref=e328] [cursor=pointer]
+                - button "Go to slide 7" [ref=e329] [cursor=pointer]
+                - button "Go to slide 8" [ref=e330] [cursor=pointer]
+                - button "Go to slide 9" [ref=e331] [cursor=pointer]
+            - button "Previous slide" [disabled]: prev
+            - button "Next slide" [ref=e332] [cursor=pointer]: next
+          - navigation [ref=e333]:
+            - link "更多..." [ref=e334] [cursor=pointer]:
+              - /url: /market_insights/zh/
+        - generic [ref=e335]:
+          - generic [ref=e337]:
+            - group "1 / 4" [ref=e338]:
+              - link "ESG相關指數化商品" [ref=e339] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/rwd/zh/esg-index-product/etf
+                - figure "ESG相關指數化商品" [ref=e340]:
+                  - img [ref=e341]
+                  - generic [ref=e342]: ESG相關指數化商品
+            - group "2 / 4" [ref=e343]:
+              - link "ESG InfoHub" [ref=e344] [cursor=pointer]:
+                - /url: https://esg.twse.com.tw/ESG/front/tw/#/main/home
+                - figure "ESG InfoHub" [ref=e345]:
+                  - img [ref=e346]
+                  - generic [ref=e347]: ESG InfoHub
+            - group "3 / 4" [ref=e348]:
+              - link "反詐騙專區" [ref=e349] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/anti-fraud/zh/index.html
+                - figure "反詐騙專區" [ref=e350]:
+                  - img [ref=e351]
+                  - generic [ref=e352]: 反詐騙專區
+            - group "4 / 4" [ref=e353]:
+              - link "投資資訊中心2.0" [ref=e354] [cursor=pointer]:
+                - /url: https://www.twse.com.tw/IIH2/zh/
+                - figure "投資資訊中心2.0" [ref=e355]:
+                  - img [ref=e356]
+                  - generic [ref=e357]: 投資資訊中心2.0
+          - button "Previous slide" [disabled]: prev
+          - button "Next slide" [ref=e358] [cursor=pointer]: next
+        - generic [ref=e359]:
+          - heading "最新市場動態" [level=2] [ref=e360]
+          - navigation [ref=e361]:
+            - link "指數走勢圖" [ref=e362] [cursor=pointer]:
+              - /url: "#index-chart"
+            - link "上市股票殖利率" [ref=e363] [cursor=pointer]:
+              - /url: "#yield"
+            - link "排行榜" [ref=e364] [cursor=pointer]:
+              - /url: "#ranking"
+            - link "市場統計資訊" [ref=e365] [cursor=pointer]:
+              - /url: "#statistics"
+            - link "上市公司總市值" [ref=e366] [cursor=pointer]:
+              - /url: "#capital"
+            - link "當日沖銷相關統計" [ref=e367] [cursor=pointer]:
+              - /url: "#day-trading"
+            - link "新上市股票" [ref=e368] [cursor=pointer]:
+              - /url: "#newly"
+            - link "三大法人" [ref=e369] [cursor=pointer]:
+              - /url: "#foreign"
+            - link "融資融券" [ref=e370] [cursor=pointer]:
+              - /url: "#margin"
+            - link "借券資訊" [ref=e371] [cursor=pointer]:
+              - /url: "#sbl"
+            - link "新聞訊息" [ref=e372] [cursor=pointer]:
+              - /url: "#news"
+            - link "重要制度" [ref=e373] [cursor=pointer]:
+              - /url: "#topic"
+            - link "重要宣導" [ref=e374] [cursor=pointer]:
+              - /url: "#announce"
+            - link "外賓參訪" [ref=e375] [cursor=pointer]:
+              - /url: "#guest"
+            - link "行事曆" [ref=e376] [cursor=pointer]:
+              - /url: "#calendar"
+          - separator [ref=e377]
+          - generic [ref=e378]:
+            - generic [ref=e379]:
+              - generic [ref=e380]:
+                - text: 上市公司整合資訊 (
+                - link "瀏覽代碼" [ref=e381] [cursor=pointer]:
+                  - /url: "#"
+                - text: )
+              - generic [ref=e382]:
+                - textbox "代碼或名稱" [ref=e383]
+                - button " 搜尋" [ref=e384]
+            - generic [ref=e385]:
+              - generic [ref=e386]:
+                - text: 個股查詢 (
+                - link "瀏覽代碼" [ref=e387] [cursor=pointer]:
+                  - /url: "#"
+                - text: )
+              - generic [ref=e388]:
+                - textbox "代碼或名稱" [ref=e389]
+                - button " 搜尋" [ref=e390]
+            - generic [ref=e391]:
+              - generic [ref=e392]:
+                - text: ETF基本資料查詢 (
+                - link "瀏覽代碼" [ref=e393] [cursor=pointer]:
+                  - /url: "#"
+                - text: )
+              - generic [ref=e394]:
+                - textbox "代碼或名稱" [ref=e395]
+                - button " 搜尋" [ref=e396]
+            - generic [ref=e397]:
+              - generic [ref=e398]:
+                - text: 上市公司條件選股｜指標項目
+                - combobox [ref=e400]:
+                  - option "收盤價" [selected]
+                  - option "成交量"
+                  - option "三大法人"
+                  - option "融資融券"
+                  - option "月營收成長率"
+                  - option "上市公司月週轉率"
+              - generic [ref=e401]:
+                - text: 查詢條件
+                - generic [ref=e402]:
+                  - combobox [ref=e403]:
+                    - option "股價漲幅前 50 名" [selected]
+                    - option "股價跌幅前 50 名"
+                  - button " 搜尋" [ref=e404]
+    - contentinfo [ref=e405]:
+      - generic [ref=e406]:
+        - link ":::" [ref=e407] [cursor=pointer]:
+          - /url: "#B"
+        - link "TWSE " [ref=e409] [cursor=pointer]:
+          - /url: /zh/index.html
+          - generic [ref=e410]:
+            - generic [ref=e411]:  
+            - generic: TWSE
+            - text: 
+        - generic [ref=e412]:
+          - list [ref=e413]:
+            - listitem [ref=e414]:
+              - link "聯絡我們" [ref=e415] [cursor=pointer]:
+                - /url: //reportingbox.twse.com.tw/POP30
+            - listitem [ref=e416]:
+              - link "訂閱電子報" [ref=e417] [cursor=pointer]:
+                - /url: /zh/terms/subscribe.html
+            - listitem [ref=e418]:
+              - link "網站地圖" [ref=e419] [cursor=pointer]:
+                - /url: /zh/sitemap.html
+            - listitem [ref=e420]:
+              - link "使用條款" [ref=e421] [cursor=pointer]:
+                - /url: /zh/terms/use.html
+            - listitem [ref=e422]:
+              - link "隱私權保護說明" [ref=e423] [cursor=pointer]:
+                - /url: /zh/terms/privacy.html
+            - listitem [ref=e424]:
+              - link "個人資料管理政策聲明" [ref=e425] [cursor=pointer]:
+                - /url: /zh/terms/personal.html
+            - listitem [ref=e426]:
+              - link "資訊安全政策" [ref=e427] [cursor=pointer]:
+                - /url: /zh/terms/security.html
+            - listitem [ref=e428]:
+              - link "營運持續政策" [ref=e429] [cursor=pointer]:
+                - /url: /zh/terms/BCMS.html
+            - listitem [ref=e430]:
+              - link "性騷擾防治專區" [ref=e431] [cursor=pointer]:
+                - /url: /zh/terms/anti-harassment.html
+          - generic [ref=e432]:
+            - text: 地址：110615 台北市信義路五段7號
+            - generic [ref=e433]: 3樓、9至12樓、19樓
+            - generic [ref=e434]: 電話：(02)8101-3101
+            - generic [ref=e435]: 投資人服務中心專線：(02)2792-8188
+          - generic [ref=e436]: 本站限制直接存取主機IP，請使用網址連結瀏覽
+          - generic [ref=e437]:
+            - link "本公司簽約資訊公司" [ref=e438] [cursor=pointer]:
+              - /url: /zh/products/information/list.html
+            - text: 亦提供相關資訊
+          - generic [ref=e439]: Copyright © 2026 Taiwan Stock Exchange Corporation. All rights reserved.
+        - list [ref=e440]:
+          - listitem [ref=e441]:
+            - link " Facebook" [ref=e442] [cursor=pointer]:
+              - /url: //www.facebook.com/TaiwanStockExchangeCorp/
+          - listitem [ref=e443]:
+            - link " Youtube" [ref=e444] [cursor=pointer]:
+              - /url: //www.youtube.com/channel/UCb_JzqaWz4Dw1OScrDpGxrg
+          - listitem [ref=e445]:
+            - link " RSS" [ref=e446] [cursor=pointer]:
+              - /url: /zh/terms/rss.html
+    - link " Top" [ref=e3235] [cursor=pointer]:
+      - /url: "#"
+  - generic [ref=e447]:
+    - link "指數走勢" [ref=e448] [cursor=pointer]:
+      - /url: "#index-chart"
+    - link "排行榜" [ref=e449] [cursor=pointer]:
+      - /url: "#ranking"
+    - link "統計資訊" [ref=e450] [cursor=pointer]:
+      - /url: "#statistics"
+    - link "" [ref=e451] [cursor=pointer]:
+      - /url: "#market"
+  - generic [ref=e465]:
+    - generic [ref=e466]:
+      - generic "關閉" [ref=e467] [cursor=pointer]: 
+      - heading "" [level=2] [ref=e468]:
+        - generic [ref=e469]:  
+        - text: 
+    - generic [ref=e472]:
+      - generic [ref=e473]:
+        - generic [ref=e474]:
+          - heading "指數走勢圖" [level=3] [ref=e475]
+          - generic [ref=e477]:
+            - list [ref=e478]:
+              - listitem [ref=e479] [cursor=pointer]: 加權指數
+              - listitem [ref=e480] [cursor=pointer]: 證券市場指數資訊
+              - listitem [ref=e481] [cursor=pointer]:
+                - text: 臺灣50指數
+                - generic [ref=e482]:
+                  - text: 29,566.99 點
+                  - generic [ref=e3236]: ▼ 644.98 (2.13%)
+                  - text: 115年04月02日 13:30
+              - listitem [ref=e484] [cursor=pointer]:
+                - text: 臺灣公司治理100指數
+                - generic [ref=e485]:
+                  - text: 20,255.87 點
+                  - generic [ref=e3237]: ▼ 378.6 (1.83%)
+                  - text: 115年04月02日 13:30
+            - generic [ref=e488]:
+              - list [ref=e489]:
+                - listitem [ref=e490] [cursor=pointer]: 即時
+                - listitem [ref=e491] [cursor=pointer]: 週
+                - listitem [ref=e492] [cursor=pointer]: 月
+                - listitem [ref=e493] [cursor=pointer]: 季
+                - listitem [ref=e494] [cursor=pointer]: 年
+              - iframe [ref=e496]:
+                - generic [ref=f8e6]:
+                  - img [ref=f8e9]:
+                    - generic [ref=f8e85]:
+                      - generic [ref=f8e86]: "09"
+                      - generic [ref=f8e87]: "10"
+                      - generic [ref=f8e88]: "11"
+                      - generic [ref=f8e89]: "12"
+                      - generic [ref=f8e90]: "13"
+                    - generic [ref=f8e91]:
+                      - generic [ref=f8e92]: "0"
+                      - generic [ref=f8e93]: "186"
+                      - generic [ref=f8e94]: "373"
+                      - generic [ref=f8e95]: "560"
+                      - generic [ref=f8e96]: "746"
+                    - generic [ref=f8e97]:
+                      - generic [ref=f8e98]: "32385"
+                      - generic [ref=f8e99]: "32780"
+                      - generic [ref=f8e100]: "33175"
+                      - generic [ref=f8e101]: "33569"
+                      - generic [ref=f8e102]: "33964"
+                  - generic [ref=f8e42]:
+                    - generic [ref=f8e43]:
+                      - paragraph [ref=f8e44]: 2026/04/02
+                      - paragraph [ref=f8e45]: "加權指數: 32572.43"
+                      - paragraph [ref=f8e46]: "-602.39"
+                      - paragraph [ref=f8e47]: "-1.82%"
+                      - paragraph [ref=f8e48]: "成交金額: 6729.07 (億)"
+                    - paragraph [ref=f8e50]: 成交金額不含零股、鉅額、盤後定價、拍賣及標購。
+            - generic:  
+        - generic [ref=e497]:
+          - heading "上市股票殖利率" [level=3] [ref=e498]
+          - generic [ref=e500]:
+            - list [ref=e501]:
+              - listitem [ref=e502] [cursor=pointer]: 主要股市殖利率、本益比及股價淨值比
+              - listitem [ref=e503] [cursor=pointer]: 上市股票殖利率
+            - generic [ref=e504]:
+              - generic [ref=e505]:
+                - table [ref=e506]:
+                  - rowgroup [ref=e507]:
+                    - row "現金股利殖利率" [ref=e508]:
+                      - columnheader "現金股利殖利率" [ref=e509]
+                    - row "新加坡 4.56" [ref=e510]:
+                      - cell "新加坡" [ref=e511]
+                      - cell "4.56" [ref=e512]
+                    - row "英國 3.11" [ref=e513]:
+                      - cell "英國" [ref=e514]
+                      - cell "3.11" [ref=e515]
+                    - row "香港 3.01" [ref=e516]:
+                      - cell "香港" [ref=e517]
+                      - cell "3.01" [ref=e518]
+                    - row "臺灣 2.36" [ref=e519]:
+                      - cell "臺灣" [ref=e520]
+                      - cell "2.36" [ref=e521]
+                    - row "上海 2.31" [ref=e522]:
+                      - cell "上海" [ref=e523]
+                      - cell "2.31" [ref=e524]
+                    - row "美國 1.58" [ref=e525]:
+                      - cell "美國" [ref=e526]
+                      - cell "1.58" [ref=e527]
+                    - row "日本 1.55" [ref=e528]:
+                      - cell "日本" [ref=e529]
+                      - cell "1.55" [ref=e530]
+                    - row "韓國 1.41" [ref=e531]:
+                      - cell "韓國" [ref=e532]
+                      - cell "1.41" [ref=e533]
+                    - row "深圳 1.29" [ref=e534]:
+                      - cell "深圳" [ref=e535]
+                      - cell "1.29" [ref=e536]
+                - table [ref=e537]:
+                  - rowgroup [ref=e538]:
+                    - row "本益比" [ref=e539]:
+                      - columnheader "本益比" [ref=e540]
+                    - row "深圳 31.59" [ref=e541]:
+                      - cell "深圳" [ref=e542]
+                      - cell "31.59" [ref=e543]
+                    - row "美國 28.12" [ref=e544]:
+                      - cell "美國" [ref=e545]
+                      - cell "28.12" [ref=e546]
+                    - row "臺灣 23.22" [ref=e547]:
+                      - cell "臺灣" [ref=e548]
+                      - cell "23.22" [ref=e549]
+                    - row "英國 19.70" [ref=e550]:
+                      - cell "英國" [ref=e551]
+                      - cell "19.70" [ref=e552]
+                    - row "日本 18.90" [ref=e553]:
+                      - cell "日本" [ref=e554]
+                      - cell "18.90" [ref=e555]
+                    - row "韓國 17.56" [ref=e556]:
+                      - cell "韓國" [ref=e557]
+                      - cell "17.56" [ref=e558]
+                    - row "上海 16.30" [ref=e559]:
+                      - cell "上海" [ref=e560]
+                      - cell "16.30" [ref=e561]
+                    - row "香港 14.63" [ref=e562]:
+                      - cell "香港" [ref=e563]
+                      - cell "14.63" [ref=e564]
+                    - row "新加坡 11.86" [ref=e565]:
+                      - cell "新加坡" [ref=e566]
+                      - cell "11.86" [ref=e567]
+                - table [ref=e568]:
+                  - rowgroup [ref=e569]:
+                    - row "股價淨值比" [ref=e570]:
+                      - columnheader "股價淨值比" [ref=e571]
+                    - row "美國 5.71" [ref=e572]:
+                      - cell "美國" [ref=e573]
+                      - cell "5.71" [ref=e574]
+                    - row "臺灣 3.03" [ref=e575]:
+                      - cell "臺灣" [ref=e576]
+                      - cell "3.03" [ref=e577]
+                    - row "深圳 2.80" [ref=e578]:
+                      - cell "深圳" [ref=e579]
+                      - cell "2.80" [ref=e580]
+                    - row "日本 2.48" [ref=e581]:
+                      - cell "日本" [ref=e582]
+                      - cell "2.48" [ref=e583]
+                    - row "英國 2.31" [ref=e584]:
+                      - cell "英國" [ref=e585]
+                      - cell "2.31" [ref=e586]
+                    - row "上海 1.56" [ref=e587]:
+                      - cell "上海" [ref=e588]
+                      - cell "1.56" [ref=e589]
+                    - row "新加坡 1.53" [ref=e590]:
+                      - cell "新加坡" [ref=e591]
+                      - cell "1.53" [ref=e592]
+                    - row "香港 1.38" [ref=e593]:
+                      - cell "香港" [ref=e594]
+                      - cell "1.38" [ref=e595]
+                    - row "韓國 1.35" [ref=e596]:
+                      - cell "韓國" [ref=e597]
+                      - cell "1.35" [ref=e598]
+              - generic [ref=e599]:
+                - text: 114年年底主要股市殖利率、本益比及股價淨值比
+                - text: ※ 資料主要來源為Bloomberg & 證券暨期貨市場重要指標，僅供參考 ※ 資料時間：114年12月31日
+            - generic:  
+        - generic [ref=e600]:
+          - heading "排行榜" [level=3] [ref=e601]
+          - generic [ref=e603]:
+            - list [ref=e604]:
+              - listitem [ref=e605] [cursor=pointer]: 成交值
+              - listitem [ref=e606] [cursor=pointer]: 成交量
+              - listitem [ref=e607] [cursor=pointer]: 市值
+            - generic [ref=e608]:
+              - table [ref=e609]:
+                - rowgroup [ref=e610]:
+                  - row "股票 代號 公司 名稱 成交值 (億) 殖利率/ 年度" [ref=e611]:
+                    - columnheader "股票 代號" [ref=e612]:
+                      - text: 股票
+                      - text: 代號
+                    - columnheader "公司 名稱" [ref=e613]:
+                      - text: 公司
+                      - text: 名稱
+                    - columnheader "成交值 (億)" [ref=e614]:
+                      - text: 成交值
+                      - text: (億)
+                    - columnheader "殖利率/ 年度" [ref=e615]:
+                      - text: 殖利率/
+                      - text: 年度
+                - rowgroup [ref=e616]:
+                  - row "2330 台積電 535.40 1.22 / 114" [ref=e617] [cursor=pointer]:
+                    - cell "2330" [ref=e618]
+                    - cell "台積電" [ref=e619]
+                    - cell "535.40" [ref=e620]
+                    - cell "1.22 / 114" [ref=e621]
+                  - row "2313 華通 324.42 1.08 / 114" [ref=e622] [cursor=pointer]:
+                    - cell "2313" [ref=e623]
+                    - cell "華通" [ref=e624]
+                    - cell "324.42" [ref=e625]
+                    - cell "1.08 / 114" [ref=e626]
+                  - row "8046 南電 279.52 0.35 / 114" [ref=e627] [cursor=pointer]:
+                    - cell "8046" [ref=e628]
+                    - cell "南電" [ref=e629]
+                    - cell "279.52" [ref=e630]
+                    - cell "0.35 / 114" [ref=e631]
+                  - row "3037 欣興 259.57 0.39 / 114" [ref=e632] [cursor=pointer]:
+                    - cell "3037" [ref=e633]
+                    - cell "欣興" [ref=e634]
+                    - cell "259.57" [ref=e635]
+                    - cell "0.39 / 114" [ref=e636]
+                  - row "2408 南亞科 248.95 0.75 / 114" [ref=e637] [cursor=pointer]:
+                    - cell "2408" [ref=e638]
+                    - cell "南亞科" [ref=e639]
+                    - cell "248.95" [ref=e640]
+                    - cell "0.75 / 114" [ref=e641]
+                  - row "2344 華邦電 172.99 0.54 / 114" [ref=e642] [cursor=pointer]:
+                    - cell "2344" [ref=e643]
+                    - cell "華邦電" [ref=e644]
+                    - cell "172.99" [ref=e645]
+                    - cell "0.54 / 114" [ref=e646]
+                  - row "2308 台達電 144.89 0.81 / 114" [ref=e647] [cursor=pointer]:
+                    - cell "2308" [ref=e648]
+                    - cell "台達電" [ref=e649]
+                    - cell "144.89" [ref=e650]
+                    - cell "0.81 / 114" [ref=e651]
+                  - row "2454 聯發科 136.58 3.65 / 114" [ref=e652] [cursor=pointer]:
+                    - cell "2454" [ref=e653]
+                    - cell "聯發科" [ref=e654]
+                    - cell "136.58" [ref=e655]
+                    - cell "3.65 / 114" [ref=e656]
+                  - row "2383 台光電 118.63 0.90 / 114" [ref=e657] [cursor=pointer]:
+                    - cell "2383" [ref=e658]
+                    - cell "台光電" [ref=e659]
+                    - cell "118.63" [ref=e660]
+                    - cell "0.90 / 114" [ref=e661]
+                  - row "2409 友達 118.24 2.37 / 114" [ref=e662] [cursor=pointer]:
+                    - cell "2409" [ref=e663]
+                    - cell "友達" [ref=e664]
+                    - cell "118.24" [ref=e665]
+                    - cell "2.37 / 114" [ref=e666]
+                  - row "6213 聯茂 101.10 1.76 / 114" [ref=e667] [cursor=pointer]:
+                    - cell "6213" [ref=e668]
+                    - cell "聯茂" [ref=e669]
+                    - cell "101.10" [ref=e670]
+                    - cell "1.76 / 114" [ref=e671]
+                  - row "3665 貿聯-KY 97.30 0.78 / 114" [ref=e672] [cursor=pointer]:
+                    - cell "3665" [ref=e673]
+                    - cell "貿聯-KY" [ref=e674]
+                    - cell "97.30" [ref=e675]
+                    - cell "0.78 / 114" [ref=e676]
+                  - row "2368 金像電 94.68 1.10 / 114" [ref=e677] [cursor=pointer]:
+                    - cell "2368" [ref=e678]
+                    - cell "金像電" [ref=e679]
+                    - cell "94.68" [ref=e680]
+                    - cell "1.10 / 114" [ref=e681]
+                  - row "2360 致茂 94.25 1.27 / 114" [ref=e682] [cursor=pointer]:
+                    - cell "2360" [ref=e683]
+                    - cell "致茂" [ref=e684]
+                    - cell "94.25" [ref=e685]
+                    - cell "1.27 / 114" [ref=e686]
+                  - row "2367 燿華 92.29 0.28 / 114" [ref=e687] [cursor=pointer]:
+                    - cell "2367" [ref=e688]
+                    - cell "燿華" [ref=e689]
+                    - cell "92.29" [ref=e690]
+                    - cell "0.28 / 114" [ref=e691]
+                  - row "3711 日月光投控 89.25 1.83 / 114" [ref=e692] [cursor=pointer]:
+                    - cell "3711" [ref=e693]
+                    - cell "日月光投控" [ref=e694]
+                    - cell "89.25" [ref=e695]
+                    - cell "1.83 / 114" [ref=e696]
+                  - row "4958 臻鼎-KY 88.96 1.62 / 114" [ref=e697] [cursor=pointer]:
+                    - cell "4958" [ref=e698]
+                    - cell "臻鼎-KY" [ref=e699]
+                    - cell "88.96" [ref=e700]
+                    - cell "1.62 / 114" [ref=e701]
+                  - row "6770 力積電 85.83 -" [ref=e702] [cursor=pointer]:
+                    - cell "6770" [ref=e703]
+                    - cell "力積電" [ref=e704]
+                    - cell "85.83" [ref=e705]
+                    - cell "-" [ref=e706]
+                  - row "0050 元大台灣50 84.78 -" [ref=e707] [cursor=pointer]:
+                    - cell "0050" [ref=e708]
+                    - cell "元大台灣50" [ref=e709]
+                    - cell "84.78" [ref=e710]
+                    - cell "-" [ref=e711]
+                  - row "2317 鴻海 81.43 3.73 / 114" [ref=e712] [cursor=pointer]:
+                    - cell "2317" [ref=e713]
+                    - cell "鴻海" [ref=e714]
+                    - cell "81.43" [ref=e715]
+                    - cell "3.73 / 114" [ref=e716]
+              - generic [ref=e717]: 統計日期：115/04/02
+              - link "更多 " [ref=e718] [cursor=pointer]:
+                - /url: ./trading/historical/bwibbu-day.html
+        - generic [ref=e719]:
+          - heading "市場統計資訊" [level=3] [ref=e720]
+          - generic [ref=e722]:
+            - list [ref=e723]:
+              - listitem [ref=e724] [cursor=pointer]: 集中市場
+              - listitem [ref=e725] [cursor=pointer]: 櫃檯暨期貨市場
+            - generic [ref=e727]:
+              - list [ref=e728]:
+                - listitem [ref=e729] [cursor=pointer]: 日
+                - listitem [ref=e730] [cursor=pointer]: 週
+                - listitem [ref=e731] [cursor=pointer]: 走勢圖
+              - generic [ref=e732]:
+                - table [ref=e733]:
+                  - rowgroup [ref=e734]:
+                    - row "項目 成交金額 (億元) 成交張數 成交筆數" [ref=e735]:
+                      - columnheader "項目" [ref=e736]
+                      - columnheader "成交金額 (億元)" [ref=e737]
+                      - columnheader "成交張數" [ref=e738]
+                      - columnheader "成交筆數" [ref=e739]
+                    - row "股票 6,402.08 5,584,100 3,537,451" [ref=e740]:
+                      - cell "股票" [ref=e741]
+                      - cell "6,402.08" [ref=e742]
+                      - cell "5,584,100" [ref=e743]
+                      - cell "3,537,451" [ref=e744]
+                    - row "ETF 600.67 2,407,582 924,275" [ref=e745]:
+                      - cell "ETF" [ref=e746]
+                      - cell "600.67" [ref=e747]
+                      - cell "2,407,582" [ref=e748]
+                      - cell "924,275" [ref=e749]
+                    - row "認購(售)權證 22.66 2,198,370 78,397" [ref=e750]:
+                      - cell "認購(售)權證" [ref=e751]
+                      - cell "22.66" [ref=e752]
+                      - cell "2,198,370" [ref=e753]
+                      - cell "78,397" [ref=e754]
+                    - row "臺灣存託憑證(TDR) 0.56 9,630 1,909" [ref=e755]:
+                      - cell "臺灣存託憑證(TDR)" [ref=e756]
+                      - cell "0.56" [ref=e757]
+                      - cell "9,630" [ref=e758]
+                      - cell "1,909" [ref=e759]
+                    - row "其他 0.09 791 110" [ref=e760]:
+                      - cell "其他" [ref=e761]
+                      - cell "0.09" [ref=e762]
+                      - cell "791" [ref=e763]
+                      - cell "110" [ref=e764]
+                    - row "整體市場約計 7,026.08 10,200,475 4,542,142" [ref=e765]:
+                      - cell "整體市場約計" [ref=e766]
+                      - cell "7,026.08" [ref=e767]
+                      - cell "10,200,475" [ref=e768]
+                      - cell "4,542,142" [ref=e769]
+                - list [ref=e771]:
+                  - listitem [ref=e772]: 資料時間：115/04/02
+                  - listitem [ref=e773]: 當日統計資訊含一般、零股、盤後定價及鉅額交易，不含拍賣、標購。
+                  - listitem [ref=e774]:
+                    - text: 外幣成交值係以本公司當日下午3時30分公告匯率換算後加入成交金額。公告匯率請參考本公司首頁 > 交易資訊 > 最新宣導專區 > 雙幣ETF交易專區 >
+                    - link "代號對應及每日公告匯率" [ref=e775] [cursor=pointer]:
+                      - /url: ./products/system/dual-etf/rate.html
+                    - text: 。
+              - text: ⋮
+        - generic [ref=e776]:
+          - heading "上市公司總市值" [level=3] [ref=e777]
+          - generic [ref=e778]:
+            - generic "A chart." [ref=e782]:
+              - img "A chart." [ref=e783]:
+                - generic [ref=e790]: 總市值(億元)
+                - generic [ref=e808]:
+                  - generic [ref=e810]: 03/27
+                  - generic [ref=e812]: 03/30
+                  - generic [ref=e814]: 03/31
+                  - generic [ref=e816]: 04/01
+                  - generic [ref=e818]: 04/02
+                  - generic [ref=e820]: 1,020,000
+                  - generic [ref=e822]: 1,035,000
+                  - generic [ref=e824]: 1,050,000
+                  - generic [ref=e826]: 1,065,000
+                  - generic [ref=e828]: 1,080,000
+                  - generic [ref=e830]: 1,095,000
+              - generic "A tabular representation of the data in the chart." [ref=e831]:
+                - table [ref=e832]:
+                  - rowgroup [ref=e833]:
+                    - row "日期 總市值(億元)" [ref=e834]:
+                      - columnheader "日期" [ref=e835]
+                      - columnheader "總市值(億元)" [ref=e836]
+                  - rowgroup [ref=e837]:
+                    - row "03/27 1,079,795" [ref=e838]:
+                      - cell "03/27" [ref=e839]
+                      - cell "1,079,795" [ref=e840]
+                    - row "03/30 1,061,260.51" [ref=e841]:
+                      - cell "03/30" [ref=e842]
+                      - cell "1,061,260.51" [ref=e843]
+                    - row "03/31 1,035,352.3" [ref=e844]:
+                      - cell "03/31" [ref=e845]
+                      - cell "1,035,352.3" [ref=e846]
+                    - row "04/01 1,082,522.98" [ref=e847]:
+                      - cell "04/01" [ref=e848]
+                      - cell "1,082,522.98" [ref=e849]
+                    - row "04/02 1,062,966.75" [ref=e850]:
+                      - cell "04/02" [ref=e851]
+                      - cell "1,062,966.75" [ref=e852]
+            - table [ref=e854]:
+              - rowgroup [ref=e855]:
+                - row "日期 總市值 (億)" [ref=e856]:
+                  - columnheader "日期" [ref=e857]
+                  - columnheader "總市值 (億)" [ref=e858]
+              - rowgroup [ref=e859]:
+                - row "04/02 1,062,966.75" [ref=e860]:
+                  - cell "04/02" [ref=e861]
+                  - cell "1,062,966.75" [ref=e862]
+                - row "04/01 1,082,522.98" [ref=e863]:
+                  - cell "04/01" [ref=e864]
+                  - cell "1,082,522.98" [ref=e865]
+                - row "03/31 1,035,352.30" [ref=e866]:
+                  - cell "03/31" [ref=e867]
+                  - cell "1,035,352.30" [ref=e868]
+                - row "03/30 1,061,260.51" [ref=e869]:
+                  - cell "03/30" [ref=e870]
+                  - cell "1,061,260.51" [ref=e871]
+                - row "03/27 1,079,795.00" [ref=e872]:
+                  - cell "03/27" [ref=e873]
+                  - cell "1,079,795.00" [ref=e874]
+        - generic [ref=e875]:
+          - heading "當日沖銷相關統計" [level=3] [ref=e876]
+          - generic [ref=e877]:
+            - generic "A chart." [ref=e881]:
+              - img "A chart." [ref=e882]:
+                - generic [ref=e884]:
+                  - generic [ref=e889]: 買賣金額加總…
+                  - generic [ref=e895]: 戶數
+                - generic [ref=e927]:
+                  - generic [ref=e929]: 03/27
+                  - generic [ref=e931]: 03/30
+                  - generic [ref=e933]: 03/31
+                  - generic [ref=e935]: 04/01
+                  - generic [ref=e937]: 04/02
+                  - generic [ref=e939]: 4,200
+                  - generic [ref=e941]: 4,620
+                  - generic [ref=e943]: 5,040
+                  - generic [ref=e945]: 5,460
+                  - generic [ref=e947]: 5,880
+                  - generic [ref=e949]: 6,300
+                  - generic [ref=e951]: 150,000
+                  - generic [ref=e953]: 160,000
+                  - generic [ref=e955]: 170,000
+                  - generic [ref=e957]: 180,000
+                  - generic [ref=e959]: 190,000
+                  - generic [ref=e961]: 200,000
+              - generic "A tabular representation of the data in the chart." [ref=e962]:
+                - table [ref=e963]:
+                  - rowgroup [ref=e964]:
+                    - row "日期 買賣金額加總(億) 戶數" [ref=e965]:
+                      - columnheader "日期" [ref=e966]
+                      - columnheader "買賣金額加總(億)" [ref=e967]
+                      - columnheader "戶數" [ref=e968]
+                  - rowgroup [ref=e969]:
+                    - row "03/27 5,015.02 191,079" [ref=e970]:
+                      - cell "03/27" [ref=e971]
+                      - cell "5,015.02" [ref=e972]
+                      - cell "191,079" [ref=e973]
+                    - row "03/30 5,038.11 172,307" [ref=e974]:
+                      - cell "03/30" [ref=e975]
+                      - cell "5,038.11" [ref=e976]
+                      - cell "172,307" [ref=e977]
+                    - row "03/31 5,971.91 190,858" [ref=e978]:
+                      - cell "03/31" [ref=e979]
+                      - cell "5,971.91" [ref=e980]
+                      - cell "190,858" [ref=e981]
+                    - row "04/01 4,610.15 159,037" [ref=e982]:
+                      - cell "04/01" [ref=e983]
+                      - cell "4,610.15" [ref=e984]
+                      - cell "159,037" [ref=e985]
+                    - row "04/02 6,019.53 193,428" [ref=e986]:
+                      - cell "04/02" [ref=e987]
+                      - cell "6,019.53" [ref=e988]
+                      - cell "193,428" [ref=e989]
+            - table [ref=e991]:
+              - rowgroup [ref=e992]:
+                - row "日期 全市場總交易 戶數 當沖 交易戶數 交易買賣金 額加總(億) 金額加總占 市場比例%" [ref=e993]:
+                  - columnheader "日期" [ref=e994]
+                  - columnheader "全市場總交易 戶數" [ref=e995]:
+                    - text: 全市場總交易
+                    - text: 戶數
+                  - columnheader "當沖 交易戶數" [ref=e996]:
+                    - text: 當沖
+                    - text: 交易戶數
+                  - columnheader "交易買賣金 額加總(億)" [ref=e997]:
+                    - text: 交易買賣金
+                    - text: 額加總(億)
+                  - columnheader "金額加總占 市場比例%" [ref=e998]:
+                    - text: 金額加總占
+                    - text: 市場比例%
+                - row "04/02 1,241,569 193,428 6,019.53 42.83" [ref=e999]:
+                  - cell "04/02" [ref=e1000]
+                  - cell "1,241,569" [ref=e1001]
+                  - cell "193,428" [ref=e1002]
+                  - cell "6,019.53" [ref=e1003]
+                  - cell "42.83" [ref=e1004]
+                - row "04/01 995,509 159,037 4,610.15 35.32" [ref=e1005]:
+                  - cell "04/01" [ref=e1006]
+                  - cell "995,509" [ref=e1007]
+                  - cell "159,037" [ref=e1008]
+                  - cell "4,610.15" [ref=e1009]
+                  - cell "35.32" [ref=e1010]
+                - row "03/31 1,781,057 190,858 5,971.91 33.83" [ref=e1011]:
+                  - cell "03/31" [ref=e1012]
+                  - cell "1,781,057" [ref=e1013]
+                  - cell "190,858" [ref=e1014]
+                  - cell "5,971.91" [ref=e1015]
+                  - cell "33.83" [ref=e1016]
+                - row "03/30 1,468,879 172,307 5,038.11 37.14" [ref=e1017]:
+                  - cell "03/30" [ref=e1018]
+                  - cell "1,468,879" [ref=e1019]
+                  - cell "172,307" [ref=e1020]
+                  - cell "5,038.11" [ref=e1021]
+                  - cell "37.14" [ref=e1022]
+                - row "03/27 1,276,342 191,079 5,015.02 38.09" [ref=e1023]:
+                  - cell "03/27" [ref=e1024]
+                  - cell "1,276,342" [ref=e1025]
+                  - cell "191,079" [ref=e1026]
+                  - cell "5,015.02" [ref=e1027]
+                  - cell "38.09" [ref=e1028]
+        - generic [ref=e1029]:
+          - heading "新上市股票" [level=3] [ref=e1030]
+          - generic [ref=e1031]:
+            - table [ref=e1033]:
+              - rowgroup [ref=e1034]:
+                - row "股票代號 公司名稱 上市日期" [ref=e1035] [cursor=pointer]:
+                  - columnheader "股票代號" [ref=e1036]
+                  - columnheader "公司名稱" [ref=e1037]
+                  - columnheader "上市日期" [ref=e1038]
+                - row "7822 倍利科 115/03/30" [ref=e1039] [cursor=pointer]:
+                  - cell "7822" [ref=e1040]
+                  - cell "倍利科" [ref=e1041]
+                  - cell "115/03/30" [ref=e1042]
+                - row "2072 世紀風電 115/03/26" [ref=e1043] [cursor=pointer]:
+                  - cell "2072" [ref=e1044]
+                  - cell "世紀風電" [ref=e1045]
+                  - cell "115/03/26" [ref=e1046]
+                - row "6908 宏碁遊戲-創 115/03/25" [ref=e1047] [cursor=pointer]:
+                  - cell "6908" [ref=e1048]
+                  - cell "宏碁遊戲-創" [ref=e1049]
+                  - cell "115/03/25" [ref=e1050]
+                - row "7823 奧義賽博-KY創 115/02/05" [ref=e1051] [cursor=pointer]:
+                  - cell "7823" [ref=e1052]
+                  - cell "奧義賽博-KY創" [ref=e1053]
+                  - cell "115/02/05" [ref=e1054]
+                - row "6934 心誠鎂 115/02/02" [ref=e1055] [cursor=pointer]:
+                  - cell "6934" [ref=e1056]
+                  - cell "心誠鎂" [ref=e1057]
+                  - cell "115/02/02" [ref=e1058]
+            - link "更多 " [ref=e1059] [cursor=pointer]:
+              - /url: ./listed/listed/new-listing.html
+      - generic [ref=e1060]:
+        - generic [ref=e1061]:
+          - heading "三大法人" [level=3] [ref=e1062]
+          - generic [ref=e1064]:
+            - list [ref=e1065]:
+              - listitem [ref=e1066] [cursor=pointer]: 外資買賣超
+              - listitem [ref=e1067] [cursor=pointer]: 投信買賣超
+              - listitem [ref=e1068] [cursor=pointer]: 自營商買賣超
+              - listitem [ref=e1069] [cursor=pointer]: 三大法人買賣超
+            - generic [ref=e1070]:
+              - generic "A chart." [ref=e1074]:
+                - img "A chart." [ref=e1075]:
+                  - generic [ref=e1077]:
+                    - generic [ref=e1082]: 外資及陸資
+                    - generic [ref=e1087]: 外資自營商
+                  - generic [ref=e1150]:
+                    - generic [ref=e1152]: 3/5
+                    - generic [ref=e1154]: 3/9
+                    - generic [ref=e1156]: 3/11
+                    - generic [ref=e1158]: 3/13
+                    - generic [ref=e1160]: 3/17
+                    - generic [ref=e1162]: 3/19
+                    - generic [ref=e1164]: 3/23
+                    - generic [ref=e1166]: 3/25
+                    - generic [ref=e1168]: 3/27
+                    - generic [ref=e1170]: 3/31
+                    - generic [ref=e1172]: 4/2
+                    - generic [ref=e1174]: "-1,500"
+                    - generic [ref=e1176]: "-1,000"
+                    - generic [ref=e1178]: "-500"
+                    - generic [ref=e1180]: "0"
+                    - generic [ref=e1182]: "500"
+                    - generic [ref=e1184]: "-1.00"
+                    - generic [ref=e1186]: "-0.50"
+                    - generic [ref=e1188]: "0.00"
+                    - generic [ref=e1190]: "0.50"
+                    - generic [ref=e1192]: "1.00"
+                - generic "A tabular representation of the data in the chart." [ref=e1193]:
+                  - table [ref=e1194]:
+                    - rowgroup [ref=e1195]:
+                      - row "日期 外資及陸資 外資自營商" [ref=e1196]:
+                        - columnheader "日期" [ref=e1197]
+                        - columnheader "外資及陸資" [ref=e1198]
+                        - columnheader "外資自營商" [ref=e1199]
+                    - rowgroup [ref=e1200]:
+                      - row "3/5 -514.95 億元 0.00 億元" [ref=e1201]:
+                        - cell "3/5" [ref=e1202]
+                        - cell "-514.95 億元" [ref=e1203]
+                        - cell "0.00 億元" [ref=e1204]
+                      - row "3/6 -352.36 億元 0.00 億元" [ref=e1205]:
+                        - cell "3/6" [ref=e1206]
+                        - cell "-352.36 億元" [ref=e1207]
+                        - cell "0.00 億元" [ref=e1208]
+                      - row "3/9 -1,208.17 億元 0.00 億元" [ref=e1209]:
+                        - cell "3/9" [ref=e1210]
+                        - cell "-1,208.17 億元" [ref=e1211]
+                        - cell "0.00 億元" [ref=e1212]
+                      - row "3/10 -250.85 億元 0.00 億元" [ref=e1213]:
+                        - cell "3/10" [ref=e1214]
+                        - cell "-250.85 億元" [ref=e1215]
+                        - cell "0.00 億元" [ref=e1216]
+                      - row "3/11 371.80 億元 0.00 億元" [ref=e1217]:
+                        - cell "3/11" [ref=e1218]
+                        - cell "371.80 億元" [ref=e1219]
+                        - cell "0.00 億元" [ref=e1220]
+                      - row "3/12 -711.27 億元 0.00 億元" [ref=e1221]:
+                        - cell "3/12" [ref=e1222]
+                        - cell "-711.27 億元" [ref=e1223]
+                        - cell "0.00 億元" [ref=e1224]
+                      - row "3/13 -580.17 億元 0.00 億元" [ref=e1225]:
+                        - cell "3/13" [ref=e1226]
+                        - cell "-580.17 億元" [ref=e1227]
+                        - cell "0.00 億元" [ref=e1228]
+                      - row "3/16 -438.25 億元 0.00 億元" [ref=e1229]:
+                        - cell "3/16" [ref=e1230]
+                        - cell "-438.25 億元" [ref=e1231]
+                        - cell "0.00 億元" [ref=e1232]
+                      - row "3/17 4.72 億元 0.00 億元" [ref=e1233]:
+                        - cell "3/17" [ref=e1234]
+                        - cell "4.72 億元" [ref=e1235]
+                        - cell "0.00 億元" [ref=e1236]
+                      - row "3/18 90.20 億元 0.00 億元" [ref=e1237]:
+                        - cell "3/18" [ref=e1238]
+                        - cell "90.20 億元" [ref=e1239]
+                        - cell "0.00 億元" [ref=e1240]
+                      - row "3/19 -909.47 億元 0.00 億元" [ref=e1241]:
+                        - cell "3/19" [ref=e1242]
+                        - cell "-909.47 億元" [ref=e1243]
+                        - cell "0.00 億元" [ref=e1244]
+                      - row "3/20 -403.11 億元 0.00 億元" [ref=e1245]:
+                        - cell "3/20" [ref=e1246]
+                        - cell "-403.11 億元" [ref=e1247]
+                        - cell "0.00 億元" [ref=e1248]
+                      - row "3/23 -839.22 億元 0.00 億元" [ref=e1249]:
+                        - cell "3/23" [ref=e1250]
+                        - cell "-839.22 億元" [ref=e1251]
+                        - cell "0.00 億元" [ref=e1252]
+                      - row "3/24 -123.05 億元 0.00 億元" [ref=e1253]:
+                        - cell "3/24" [ref=e1254]
+                        - cell "-123.05 億元" [ref=e1255]
+                        - cell "0.00 億元" [ref=e1256]
+                      - row "3/25 374.74 億元 0.00 億元" [ref=e1257]:
+                        - cell "3/25" [ref=e1258]
+                        - cell "374.74 億元" [ref=e1259]
+                        - cell "0.00 億元" [ref=e1260]
+                      - row "3/26 -79.20 億元 0.00 億元" [ref=e1261]:
+                        - cell "3/26" [ref=e1262]
+                        - cell "-79.20 億元" [ref=e1263]
+                        - cell "0.00 億元" [ref=e1264]
+                      - row "3/27 -363.55 億元 0.00 億元" [ref=e1265]:
+                        - cell "3/27" [ref=e1266]
+                        - cell "-363.55 億元" [ref=e1267]
+                        - cell "0.00 億元" [ref=e1268]
+                      - row "3/30 -639.36 億元 0.00 億元" [ref=e1269]:
+                        - cell "3/30" [ref=e1270]
+                        - cell "-639.36 億元" [ref=e1271]
+                        - cell "0.00 億元" [ref=e1272]
+                      - row "3/31 -807.45 億元 0.00 億元" [ref=e1273]:
+                        - cell "3/31" [ref=e1274]
+                        - cell "-807.45 億元" [ref=e1275]
+                        - cell "0.00 億元" [ref=e1276]
+                      - row "4/1 232.51 億元 0.00 億元" [ref=e1277]:
+                        - cell "4/1" [ref=e1278]
+                        - cell "232.51 億元" [ref=e1279]
+                        - cell "0.00 億元" [ref=e1280]
+                      - row "4/2 -386.95 億元 0.00 億元" [ref=e1281]:
+                        - cell "4/2" [ref=e1282]
+                        - cell "-386.95 億元" [ref=e1283]
+                        - cell "0.00 億元" [ref=e1284]
+              - generic [ref=e1285]: 每日外資買賣淨額變動情形
+              - generic [ref=e1286]: 億元
+              - generic [ref=e1287]: 億元
+            - generic:  
+        - generic [ref=e1288]:
+          - heading "融資融券" [level=3] [ref=e1289]
+          - generic [ref=e1291]:
+            - list [ref=e1292]:
+              - listitem [ref=e1293] [cursor=pointer]: 融資張數餘額
+              - listitem [ref=e1294] [cursor=pointer]: 融資金額餘額
+              - listitem [ref=e1295] [cursor=pointer]: 融券張數餘額
+            - generic [ref=e1296]:
+              - generic "A chart." [ref=e1300]:
+                - img "A chart." [ref=e1301]:
+                  - generic [ref=e1334]:
+                    - generic [ref=e1336]: 3/5
+                    - generic [ref=e1338]: 3/9
+                    - generic [ref=e1340]: 3/11
+                    - generic [ref=e1342]: 3/13
+                    - generic [ref=e1344]: 3/17
+                    - generic [ref=e1346]: 3/19
+                    - generic [ref=e1348]: 3/23
+                    - generic [ref=e1350]: 3/25
+                    - generic [ref=e1352]: 3/27
+                    - generic [ref=e1354]: 3/31
+                    - generic [ref=e1356]: 4/2
+                    - generic [ref=e1358]: 7,800,000
+                    - generic [ref=e1360]: 7,900,000
+                    - generic [ref=e1362]: 8,000,000
+                    - generic [ref=e1364]: 8,100,000
+                    - generic [ref=e1366]: 8,200,000
+                - generic "A tabular representation of the data in the chart." [ref=e1367]:
+                  - table [ref=e1368]:
+                    - rowgroup [ref=e1369]:
+                      - row "日期 融資張數餘額" [ref=e1370]:
+                        - columnheader "日期" [ref=e1371]
+                        - columnheader "融資張數餘額" [ref=e1372]
+                    - rowgroup [ref=e1373]:
+                      - row "3/5 7,959,571 交易單位" [ref=e1374]:
+                        - cell "3/5" [ref=e1375]
+                        - cell "7,959,571 交易單位" [ref=e1376]
+                      - row "3/6 8,015,602 交易單位" [ref=e1377]:
+                        - cell "3/6" [ref=e1378]
+                        - cell "8,015,602 交易單位" [ref=e1379]
+                      - row "3/9 7,889,131 交易單位" [ref=e1380]:
+                        - cell "3/9" [ref=e1381]
+                        - cell "7,889,131 交易單位" [ref=e1382]
+                      - row "3/10 7,818,658 交易單位" [ref=e1383]:
+                        - cell "3/10" [ref=e1384]
+                        - cell "7,818,658 交易單位" [ref=e1385]
+                      - row "3/11 7,926,280 交易單位" [ref=e1386]:
+                        - cell "3/11" [ref=e1387]
+                        - cell "7,926,280 交易單位" [ref=e1388]
+                      - row "3/12 8,017,055 交易單位" [ref=e1389]:
+                        - cell "3/12" [ref=e1390]
+                        - cell "8,017,055 交易單位" [ref=e1391]
+                      - row "3/13 8,036,423 交易單位" [ref=e1392]:
+                        - cell "3/13" [ref=e1393]
+                        - cell "8,036,423 交易單位" [ref=e1394]
+                      - row "3/16 8,085,690 交易單位" [ref=e1395]:
+                        - cell "3/16" [ref=e1396]
+                        - cell "8,085,690 交易單位" [ref=e1397]
+                      - row "3/17 8,074,444 交易單位" [ref=e1398]:
+                        - cell "3/17" [ref=e1399]
+                        - cell "8,074,444 交易單位" [ref=e1400]
+                      - row "3/18 8,109,024 交易單位" [ref=e1401]:
+                        - cell "3/18" [ref=e1402]
+                        - cell "8,109,024 交易單位" [ref=e1403]
+                      - row "3/19 8,159,085 交易單位" [ref=e1404]:
+                        - cell "3/19" [ref=e1405]
+                        - cell "8,159,085 交易單位" [ref=e1406]
+                      - row "3/20 8,115,170 交易單位" [ref=e1407]:
+                        - cell "3/20" [ref=e1408]
+                        - cell "8,115,170 交易單位" [ref=e1409]
+                      - row "3/23 8,060,128 交易單位" [ref=e1410]:
+                        - cell "3/23" [ref=e1411]
+                        - cell "8,060,128 交易單位" [ref=e1412]
+                      - row "3/24 8,027,812 交易單位" [ref=e1413]:
+                        - cell "3/24" [ref=e1414]
+                        - cell "8,027,812 交易單位" [ref=e1415]
+                      - row "3/25 8,068,062 交易單位" [ref=e1416]:
+                        - cell "3/25" [ref=e1417]
+                        - cell "8,068,062 交易單位" [ref=e1418]
+                      - row "3/26 8,036,183 交易單位" [ref=e1419]:
+                        - cell "3/26" [ref=e1420]
+                        - cell "8,036,183 交易單位" [ref=e1421]
+                      - row "3/27 8,068,743 交易單位" [ref=e1422]:
+                        - cell "3/27" [ref=e1423]
+                        - cell "8,068,743 交易單位" [ref=e1424]
+                      - row "3/30 8,083,473 交易單位" [ref=e1425]:
+                        - cell "3/30" [ref=e1426]
+                        - cell "8,083,473 交易單位" [ref=e1427]
+                      - row "3/31 8,067,915 交易單位" [ref=e1428]:
+                        - cell "3/31" [ref=e1429]
+                        - cell "8,067,915 交易單位" [ref=e1430]
+                      - row "4/1 8,113,463 交易單位" [ref=e1431]:
+                        - cell "4/1" [ref=e1432]
+                        - cell "8,113,463 交易單位" [ref=e1433]
+                      - row "4/2 8,081,563 交易單位" [ref=e1434]:
+                        - cell "4/2" [ref=e1435]
+                        - cell "8,081,563 交易單位" [ref=e1436]
+              - generic [ref=e1437]: 投資人融資買進但尚未了結張數
+              - generic [ref=e1438]: 交易單位
+            - generic:  
+        - generic [ref=e1439]:
+          - heading "借券資訊" [level=3] [ref=e1440]
+          - generic [ref=e1442]:
+            - list [ref=e1443]:
+              - listitem [ref=e1444] [cursor=pointer]: 借券賣出資訊
+              - listitem [ref=e1445] [cursor=pointer]: 借券餘額資訊
+            - generic [ref=e1447]:
+              - list [ref=e1448]:
+                - listitem [ref=e1449] [cursor=pointer]: 借券賣出占市場成交值比率
+                - listitem [ref=e1450] [cursor=pointer]: 借券賣出成交數量
+              - generic [ref=e1451]:
+                - generic "A chart." [ref=e1455]:
+                  - img "A chart." [ref=e1456]:
+                    - generic [ref=e1458]:
+                      - generic [ref=e1463]: 借券賣出成交值
+                      - generic [ref=e1468]: 占市場成交值比率
+                    - generic [ref=e1532]:
+                      - generic [ref=e1534]: 3/5
+                      - generic [ref=e1536]: 3/9
+                      - generic [ref=e1538]: 3/11
+                      - generic [ref=e1540]: 3/13
+                      - generic [ref=e1542]: 3/17
+                      - generic [ref=e1544]: 3/19
+                      - generic [ref=e1546]: 3/23
+                      - generic [ref=e1548]: 3/25
+                      - generic [ref=e1550]: 3/27
+                      - generic [ref=e1552]: 3/31
+                      - generic [ref=e1554]: 4/2
+                      - generic [ref=e1556]: "0"
+                      - generic [ref=e1558]: "100"
+                      - generic [ref=e1560]: "200"
+                      - generic [ref=e1562]: "300"
+                      - generic [ref=e1564]: "400"
+                      - generic [ref=e1566]: "1.50"
+                      - generic [ref=e1568]: "2.50"
+                      - generic [ref=e1570]: "3.50"
+                      - generic [ref=e1572]: "4.50"
+                      - generic [ref=e1574]: "5.50"
+                  - generic "A tabular representation of the data in the chart." [ref=e1575]:
+                    - table [ref=e1576]:
+                      - rowgroup [ref=e1577]:
+                        - row "日期 借券賣出成交值 占市場成交值比率" [ref=e1578]:
+                          - columnheader "日期" [ref=e1579]
+                          - columnheader "借券賣出成交值" [ref=e1580]
+                          - columnheader "占市場成交值比率" [ref=e1581]
+                      - rowgroup [ref=e1582]:
+                        - row "3/5 220.27 億元 2.78 %" [ref=e1583]:
+                          - cell "3/5" [ref=e1584]
+                          - cell "220.27 億元" [ref=e1585]
+                          - cell "2.78 %" [ref=e1586]
+                        - row "3/6 166.78 億元 2.54 %" [ref=e1587]:
+                          - cell "3/6" [ref=e1588]
+                          - cell "166.78 億元" [ref=e1589]
+                          - cell "2.54 %" [ref=e1590]
+                        - row "3/9 326.35 億元 3.76 %" [ref=e1591]:
+                          - cell "3/9" [ref=e1592]
+                          - cell "326.35 億元" [ref=e1593]
+                          - cell "3.76 %" [ref=e1594]
+                        - row "3/10 219.15 億元 3.01 %" [ref=e1595]:
+                          - cell "3/10" [ref=e1596]
+                          - cell "219.15 億元" [ref=e1597]
+                          - cell "3.01 %" [ref=e1598]
+                        - row "3/11 183.60 億元 2.65 %" [ref=e1599]:
+                          - cell "3/11" [ref=e1600]
+                          - cell "183.60 億元" [ref=e1601]
+                          - cell "2.65 %" [ref=e1602]
+                        - row "3/12 248.15 億元 3.17 %" [ref=e1603]:
+                          - cell "3/12" [ref=e1604]
+                          - cell "248.15 億元" [ref=e1605]
+                          - cell "3.17 %" [ref=e1606]
+                        - row "3/13 241.79 億元 3.21 %" [ref=e1607]:
+                          - cell "3/13" [ref=e1608]
+                          - cell "241.79 億元" [ref=e1609]
+                          - cell "3.21 %" [ref=e1610]
+                        - row "3/16 224.11 億元 2.97 %" [ref=e1611]:
+                          - cell "3/16" [ref=e1612]
+                          - cell "224.11 億元" [ref=e1613]
+                          - cell "2.97 %" [ref=e1614]
+                        - row "3/17 240.25 億元 2.84 %" [ref=e1615]:
+                          - cell "3/17" [ref=e1616]
+                          - cell "240.25 億元" [ref=e1617]
+                          - cell "2.84 %" [ref=e1618]
+                        - row "3/18 258.27 億元 2.79 %" [ref=e1619]:
+                          - cell "3/18" [ref=e1620]
+                          - cell "258.27 億元" [ref=e1621]
+                          - cell "2.79 %" [ref=e1622]
+                        - row "3/19 287.99 億元 3.22 %" [ref=e1623]:
+                          - cell "3/19" [ref=e1624]
+                          - cell "287.99 億元" [ref=e1625]
+                          - cell "3.22 %" [ref=e1626]
+                        - row "3/20 342.89 億元 3.41 %" [ref=e1627]:
+                          - cell "3/20" [ref=e1628]
+                          - cell "342.89 億元" [ref=e1629]
+                          - cell "3.41 %" [ref=e1630]
+                        - row "3/23 321.03 億元 4.51 %" [ref=e1631]:
+                          - cell "3/23" [ref=e1632]
+                          - cell "321.03 億元" [ref=e1633]
+                          - cell "4.51 %" [ref=e1634]
+                        - row "3/24 245.30 億元 3.55 %" [ref=e1635]:
+                          - cell "3/24" [ref=e1636]
+                          - cell "245.30 億元" [ref=e1637]
+                          - cell "3.55 %" [ref=e1638]
+                        - row "3/25 218.43 億元 3.35 %" [ref=e1639]:
+                          - cell "3/25" [ref=e1640]
+                          - cell "218.43 億元" [ref=e1641]
+                          - cell "3.35 %" [ref=e1642]
+                        - row "3/26 178.73 億元 2.33 %" [ref=e1643]:
+                          - cell "3/26" [ref=e1644]
+                          - cell "178.73 億元" [ref=e1645]
+                          - cell "2.33 %" [ref=e1646]
+                        - row "3/27 173.61 億元 2.64 %" [ref=e1647]:
+                          - cell "3/27" [ref=e1648]
+                          - cell "173.61 億元" [ref=e1649]
+                          - cell "2.64 %" [ref=e1650]
+                        - row "3/30 243.14 億元 3.59 %" [ref=e1651]:
+                          - cell "3/30" [ref=e1652]
+                          - cell "243.14 億元" [ref=e1653]
+                          - cell "3.59 %" [ref=e1654]
+                        - row "3/31 271.33 億元 3.07 %" [ref=e1655]:
+                          - cell "3/31" [ref=e1656]
+                          - cell "271.33 億元" [ref=e1657]
+                          - cell "3.07 %" [ref=e1658]
+                        - row "4/1 202.90 億元 3.11 %" [ref=e1659]:
+                          - cell "4/1" [ref=e1660]
+                          - cell "202.90 億元" [ref=e1661]
+                          - cell "3.11 %" [ref=e1662]
+                        - row "4/2 195.65 億元 2.78 %" [ref=e1663]:
+                          - cell "4/2" [ref=e1664]
+                          - cell "195.65 億元" [ref=e1665]
+                          - cell "2.78 %" [ref=e1666]
+                - generic [ref=e1667]: 每日借券賣出成交值對集中市場影響程度
+                - generic [ref=e1668]: 億元
+                - generic [ref=e1669]: 比率(%)
+        - generic [ref=e1670]:
+          - heading "新聞訊息" [level=3] [ref=e1671]
+          - generic [ref=e1673]:
+            - list [ref=e1674]:
+              - listitem [ref=e1675] [cursor=pointer]: 證交所新聞
+              - listitem [ref=e1676] [cursor=pointer]: 上市公司即時重大訊息
+            - generic [ref=e1677]:
+              - table [ref=e1678]:
+                - rowgroup [ref=e1679]:
+                  - row "115/04/02 18:43 證交所攜手台經院與資策會推出數位雲端、電動機械及生技醫療之產業洞察報告" [ref=e1680] [cursor=pointer]:
+                    - cell "115/04/02 18:43" [ref=e1681]
+                    - cell "證交所攜手台經院與資策會推出數位雲端、電動機械及生技醫療之產業洞察報告" [ref=e1682]:
+                      - paragraph [ref=e1683]: 證交所攜手台經院與資策會推出數位雲端、電動機械及生技醫療之產業洞察報告
+                  - row "115/04/02 17:22 本週發行量加權股價指數跌幅約為1.63%，上市股票總市值達106.30兆元" [ref=e1684] [cursor=pointer]:
+                    - cell "115/04/02 17:22" [ref=e1685]
+                    - cell "本週發行量加權股價指數跌幅約為1.63%，上市股票總市值達106.30兆元" [ref=e1686]:
+                      - paragraph [ref=e1687]: 本週發行量加權股價指數跌幅約為1.63%，上市股票總市值達106.30兆元
+                  - row "115/04/02 16:45 臺灣證券交易所對益航股份有限公司（公司代號：2601）違反重大訊息規定，處以新台幣3萬元違約金" [ref=e1688] [cursor=pointer]:
+                    - cell "115/04/02 16:45" [ref=e1689]
+                    - cell "臺灣證券交易所對益航股份有限公司（公司代號：2601）違反重大訊息規定，處以新台幣3萬元違約金" [ref=e1690]:
+                      - paragraph [ref=e1691]: 臺灣證券交易所對益航股份有限公司（公司代號：2601）違反重大訊息規定，處以新台幣3萬元違約金
+                  - row "115/04/02 16:30 新代科技股份有限公司上市股票自本（115）年4月7日起得為融資融券交易" [ref=e1692] [cursor=pointer]:
+                    - cell "115/04/02 16:30" [ref=e1693]
+                    - cell "新代科技股份有限公司上市股票自本（115）年4月7日起得為融資融券交易" [ref=e1694]:
+                      - paragraph [ref=e1695]: 新代科技股份有限公司上市股票自本（115）年4月7日起得為融資融券交易
+                  - row "115/04/01 18:43 臺灣證券交易所對崇越科技股份有限公司違反重大訊息規定，處以新台幣3萬元違約金" [ref=e1696] [cursor=pointer]:
+                    - cell "115/04/01 18:43" [ref=e1697]
+                    - cell "臺灣證券交易所對崇越科技股份有限公司違反重大訊息規定，處以新台幣3萬元違約金" [ref=e1698]:
+                      - paragraph [ref=e1699]: 臺灣證券交易所對崇越科技股份有限公司違反重大訊息規定，處以新台幣3萬元違約金
+              - link "更多 " [ref=e1700] [cursor=pointer]:
+                - /url: ./about/news/news/list.html
+            - text: 
+      - generic [ref=e1701]:
+        - generic [ref=e1702]:
+          - heading "重要制度" [level=3] [ref=e1703]
+          - generic [ref=e1704]:
+            - list [ref=e1706]:
+              - group "1 / 2" [ref=e1707]:
+                - link "有價證券競價拍賣作業" [ref=e1708] [cursor=pointer]:
+                  - /url: https://scas.twse.com.tw/SCAS/Home/SetCulture?culture=zh-TW
+                - link "防制內線交易專區" [ref=e1709] [cursor=pointer]:
+                  - /url: /zh/page/investor/edu/index.html
+                - link "認購(售)權證專區" [ref=e1710] [cursor=pointer]:
+                  - /url: /zh/page/products/securities/warrant/profile.html
+                - link "ETF專區" [ref=e1711] [cursor=pointer]:
+                  - /url: /zh/ETF/news
+                - link "ETN專區" [ref=e1712] [cursor=pointer]:
+                  - /url: /zh/page/ETN/summary.html
+              - group "2 / 2" [ref=e1713]:
+                - link "本公司股價指數與授權" [ref=e1714] [cursor=pointer]:
+                  - /url: /zh/page/products/indices/series.html
+            - generic [ref=e1715]:
+              - button "Go to slide 1" [ref=e1716] [cursor=pointer]
+              - button "Go to slide 2" [ref=e1717] [cursor=pointer]
+        - generic [ref=e1718]:
+          - heading "重要宣導" [level=3] [ref=e1719]
+          - list [ref=e1722]:
+            - group "1 / 1" [ref=e1723]:
+              - link "ETF系列專題報導" [ref=e1724] [cursor=pointer]:
+                - /url: /zh/page/ETF/topics.html
+              - link "除權除息預告表" [ref=e1725] [cursor=pointer]:
+                - /url: http://www.twse.com.tw/zh/page/trading/exchange/TWT48U.html
+              - link "除權除息計算結果表" [ref=e1726] [cursor=pointer]:
+                - /url: http://www.twse.com.tw/zh/page/trading/exchange/TWT49U.html
+        - generic [ref=e1727]:
+          - heading "外賓參訪" [level=3] [ref=e1728]
+          - generic [ref=e1729]:
+            - generic [ref=e1730]:
+              - list [ref=e1731]:
+                - group "1 / 2" [ref=e1732]:
+                  - link "貝萊德來訪 貝萊德來訪" [ref=e1733] [cursor=pointer]:
+                    - /url: /zh/about/news/guests/content.html?8a8216d69c37647f019cc18e185301aa
+                    - img "貝萊德來訪" [ref=e1734]
+                    - paragraph [ref=e1735]: 貝萊德來訪
+                - group "2 / 2" [ref=e1736]:
+                  - link "DWS及Nissay Asset Management來訪 DWS及Nissay Asset Management來訪" [ref=e1737] [cursor=pointer]:
+                    - /url: /zh/about/news/guests/content.html?8a8216d69bde495d019c22f04b07013b
+                    - img "DWS及Nissay Asset Management來訪" [ref=e1738]
+                    - paragraph [ref=e1739]: DWS及Nissay Asset Management來訪
+              - generic [ref=e1740]:
+                - button "Go to slide 1" [ref=e1741] [cursor=pointer]
+                - button "Go to slide 2" [ref=e1742] [cursor=pointer]
+            - link "更多 " [ref=e1743] [cursor=pointer]:
+              - /url: ./about/news/guests/list.html
+        - generic [ref=e1744]:
+          - heading "行事曆" [level=3] [ref=e1745]
+          - generic [ref=e1747]:
+            - generic [ref=e1748]:
+              - group "1 / 24" [ref=e1749]:
+                - text: 
+                - generic [ref=e1750]: 114 年 5 月
+                - table [ref=e1751]:
+                  - rowgroup [ref=e1752]:
+                    - row "日 一 二 三 四 五 六" [ref=e1753]:
+                      - columnheader "日" [ref=e1754]
+                      - columnheader "一" [ref=e1755]
+                      - columnheader "二" [ref=e1756]
+                      - columnheader "三" [ref=e1757]
+                      - columnheader "四" [ref=e1758]
+                      - columnheader "五" [ref=e1759]
+                      - columnheader "六" [ref=e1760]
+                  - rowgroup [ref=e1761]:
+                    - row "1 2 3" [ref=e1762]:
+                      - cell [ref=e1763]
+                      - cell [ref=e1764]
+                      - cell [ref=e1765]
+                      - cell [ref=e1766]
+                      - cell "1" [ref=e1767]
+                      - cell "2" [ref=e1768]
+                      - cell "3" [ref=e1769]
+                    - row "4 5 6 7 8 9 10" [ref=e1770]:
+                      - cell "4" [ref=e1771]
+                      - cell "5" [ref=e1772]
+                      - cell "6" [ref=e1773]
+                      - cell "7" [ref=e1774]
+                      - cell "8" [ref=e1775]
+                      - cell "9" [ref=e1776]
+                      - cell "10" [ref=e1777]
+                    - row "11 12 13 14 15 16 17" [ref=e1778]:
+                      - cell "11" [ref=e1779]
+                      - cell "12" [ref=e1780]
+                      - cell "13" [ref=e1781]
+                      - cell "14" [ref=e1782]
+                      - cell "15" [ref=e1783]
+                      - cell "16" [ref=e1784]
+                      - cell "17" [ref=e1785]
+                    - row "18 19 20 21 22 23 24" [ref=e1786]:
+                      - cell "18" [ref=e1787]
+                      - cell "19" [ref=e1788]
+                      - cell "20" [ref=e1789]
+                      - cell "21" [ref=e1790]
+                      - cell "22" [ref=e1791]
+                      - cell "23" [ref=e1792]
+                      - cell "24" [ref=e1793]
+                    - row "25 26 27 28 29 30 31" [ref=e1794]:
+                      - cell "25" [ref=e1795]
+                      - cell "26" [ref=e1796]
+                      - cell "27" [ref=e1797]
+                      - cell "28" [ref=e1798]
+                      - cell "29" [ref=e1799]
+                      - cell "30" [ref=e1800]
+                      - cell "31" [ref=e1801]
+                - generic [ref=e1804] [cursor=pointer]: 圖例說明
+              - group "2 / 24" [ref=e1807]:
+                - text: 
+                - generic [ref=e1808]: 114 年 6 月
+                - table [ref=e1809]:
+                  - rowgroup [ref=e1810]:
+                    - row "日 一 二 三 四 五 六" [ref=e1811]:
+                      - columnheader "日" [ref=e1812]
+                      - columnheader "一" [ref=e1813]
+                      - columnheader "二" [ref=e1814]
+                      - columnheader "三" [ref=e1815]
+                      - columnheader "四" [ref=e1816]
+                      - columnheader "五" [ref=e1817]
+                      - columnheader "六" [ref=e1818]
+                  - rowgroup [ref=e1819]:
+                    - row "1 2 3 4 5 6 7" [ref=e1820]:
+                      - cell "1" [ref=e1821]
+                      - cell "2" [ref=e1822]
+                      - cell "3" [ref=e1823]
+                      - cell "4" [ref=e1824]
+                      - cell "5" [ref=e1825]
+                      - cell "6" [ref=e1826]
+                      - cell "7" [ref=e1827]
+                    - row "8 9 10 11 12 13 14" [ref=e1828]:
+                      - cell "8" [ref=e1829]
+                      - cell "9" [ref=e1830]
+                      - cell "10" [ref=e1831]
+                      - cell "11" [ref=e1832]
+                      - cell "12" [ref=e1833]
+                      - cell "13" [ref=e1834]
+                      - cell "14" [ref=e1835]
+                    - row "15 16 17 18 19 20 21" [ref=e1836]:
+                      - cell "15" [ref=e1837]
+                      - cell "16" [ref=e1838]
+                      - cell "17" [ref=e1839]
+                      - cell "18" [ref=e1840]
+                      - cell "19" [ref=e1841]
+                      - cell "20" [ref=e1842]
+                      - cell "21" [ref=e1843]
+                    - row "22 23 24 25 26 27 28" [ref=e1844]:
+                      - cell "22" [ref=e1845]
+                      - cell "23" [ref=e1846]
+                      - cell "24" [ref=e1847]
+                      - cell "25" [ref=e1848]
+                      - cell "26" [ref=e1849]
+                      - cell "27" [ref=e1850]
+                      - cell "28" [ref=e1851]
+                    - row "29 30" [ref=e1852]:
+                      - cell "29" [ref=e1853]
+                      - cell "30" [ref=e1854]
+                      - cell [ref=e1855]
+                      - cell [ref=e1856]
+                      - cell [ref=e1857]
+                      - cell [ref=e1858]
+                      - cell [ref=e1859]
+                - generic [ref=e1862] [cursor=pointer]: 圖例說明
+              - group "3 / 24" [ref=e1865]:
+                - text: 
+                - generic [ref=e1866]: 114 年 7 月
+                - table [ref=e1867]:
+                  - rowgroup [ref=e1868]:
+                    - row "日 一 二 三 四 五 六" [ref=e1869]:
+                      - columnheader "日" [ref=e1870]
+                      - columnheader "一" [ref=e1871]
+                      - columnheader "二" [ref=e1872]
+                      - columnheader "三" [ref=e1873]
+                      - columnheader "四" [ref=e1874]
+                      - columnheader "五" [ref=e1875]
+                      - columnheader "六" [ref=e1876]
+                  - rowgroup [ref=e1877]:
+                    - row "1 2 3 4 5" [ref=e1878]:
+                      - cell [ref=e1879]
+                      - cell [ref=e1880]
+                      - cell "1" [ref=e1881]
+                      - cell "2" [ref=e1882]
+                      - cell "3" [ref=e1883]
+                      - cell "4" [ref=e1884]
+                      - cell "5" [ref=e1885]
+                    - row "6 7 8 9 10 11 12" [ref=e1886]:
+                      - cell "6" [ref=e1887]
+                      - cell "7" [ref=e1888]
+                      - cell "8" [ref=e1889]
+                      - cell "9" [ref=e1890]
+                      - cell "10" [ref=e1891]
+                      - cell "11" [ref=e1892]
+                      - cell "12" [ref=e1893]
+                    - row "13 14 15 16 17 18 19" [ref=e1894]:
+                      - cell "13" [ref=e1895]
+                      - cell "14" [ref=e1896]
+                      - cell "15" [ref=e1897]
+                      - cell "16" [ref=e1898]
+                      - cell "17" [ref=e1899]
+                      - cell "18" [ref=e1900]
+                      - cell "19" [ref=e1901]
+                    - row "20 21 22 23 24 25 26" [ref=e1902]:
+                      - cell "20" [ref=e1903]
+                      - cell "21" [ref=e1904]
+                      - cell "22" [ref=e1905]
+                      - cell "23" [ref=e1906]
+                      - cell "24" [ref=e1907]
+                      - cell "25" [ref=e1908]
+                      - cell "26" [ref=e1909]
+                    - row "27 28 29 30 31" [ref=e1910]:
+                      - cell "27" [ref=e1911]
+                      - cell "28" [ref=e1912]
+                      - cell "29" [ref=e1913]
+                      - cell "30" [ref=e1914]
+                      - cell "31" [ref=e1915]
+                      - cell [ref=e1916]
+                      - cell [ref=e1917]
+                - generic [ref=e1920] [cursor=pointer]: 圖例說明
+              - group "4 / 24" [ref=e1923]:
+                - text: 
+                - generic [ref=e1924]: 114 年 8 月
+                - table [ref=e1925]:
+                  - rowgroup [ref=e1926]:
+                    - row "日 一 二 三 四 五 六" [ref=e1927]:
+                      - columnheader "日" [ref=e1928]
+                      - columnheader "一" [ref=e1929]
+                      - columnheader "二" [ref=e1930]
+                      - columnheader "三" [ref=e1931]
+                      - columnheader "四" [ref=e1932]
+                      - columnheader "五" [ref=e1933]
+                      - columnheader "六" [ref=e1934]
+                  - rowgroup [ref=e1935]:
+                    - row "1 2" [ref=e1936]:
+                      - cell [ref=e1937]
+                      - cell [ref=e1938]
+                      - cell [ref=e1939]
+                      - cell [ref=e1940]
+                      - cell [ref=e1941]
+                      - cell "1" [ref=e1942]
+                      - cell "2" [ref=e1943]
+                    - row "3 4 5 6 7 8 9" [ref=e1944]:
+                      - cell "3" [ref=e1945]
+                      - cell "4" [ref=e1946]
+                      - cell "5" [ref=e1947]
+                      - cell "6" [ref=e1948]
+                      - cell "7" [ref=e1949]
+                      - cell "8" [ref=e1950]
+                      - cell "9" [ref=e1951]
+                    - row "10 11 12 13 14 15 16" [ref=e1952]:
+                      - cell "10" [ref=e1953]
+                      - cell "11" [ref=e1954]
+                      - cell "12" [ref=e1955]
+                      - cell "13" [ref=e1956]
+                      - cell "14" [ref=e1957]
+                      - cell "15" [ref=e1958]
+                      - cell "16" [ref=e1959]
+                    - row "17 18 19 20 21 22 23" [ref=e1960]:
+                      - cell "17" [ref=e1961]
+                      - cell "18" [ref=e1962]
+                      - cell "19" [ref=e1963]
+                      - cell "20" [ref=e1964]
+                      - cell "21" [ref=e1965]
+                      - cell "22" [ref=e1966]
+                      - cell "23" [ref=e1967]
+                    - row "24 25 26 27 28 29 30" [ref=e1968]:
+                      - cell "24" [ref=e1969]
+                      - cell "25" [ref=e1970]
+                      - cell "26" [ref=e1971]
+                      - cell "27" [ref=e1972]
+                      - cell "28" [ref=e1973]
+                      - cell "29" [ref=e1974]
+                      - cell "30" [ref=e1975]
+                    - row "31" [ref=e1976]:
+                      - cell "31" [ref=e1977]
+                      - cell [ref=e1978]
+                      - cell [ref=e1979]
+                      - cell [ref=e1980]
+                      - cell [ref=e1981]
+                      - cell [ref=e1982]
+                      - cell [ref=e1983]
+                - generic [ref=e1986] [cursor=pointer]: 圖例說明
+              - group "5 / 24" [ref=e1989]:
+                - text: 
+                - generic [ref=e1990]: 114 年 9 月
+                - table [ref=e1991]:
+                  - rowgroup [ref=e1992]:
+                    - row "日 一 二 三 四 五 六" [ref=e1993]:
+                      - columnheader "日" [ref=e1994]
+                      - columnheader "一" [ref=e1995]
+                      - columnheader "二" [ref=e1996]
+                      - columnheader "三" [ref=e1997]
+                      - columnheader "四" [ref=e1998]
+                      - columnheader "五" [ref=e1999]
+                      - columnheader "六" [ref=e2000]
+                  - rowgroup [ref=e2001]:
+                    - row "1 2 3 4 5 6" [ref=e2002]:
+                      - cell [ref=e2003]
+                      - cell "1" [ref=e2004]
+                      - cell "2" [ref=e2005]
+                      - cell "3" [ref=e2006]
+                      - cell "4" [ref=e2007]
+                      - cell "5" [ref=e2008]
+                      - cell "6" [ref=e2009]
+                    - row "7 8 9 10 11 12 13" [ref=e2010]:
+                      - cell "7" [ref=e2011]
+                      - cell "8" [ref=e2012]
+                      - cell "9" [ref=e2013]
+                      - cell "10" [ref=e2014]
+                      - cell "11" [ref=e2015]
+                      - cell "12" [ref=e2016]
+                      - cell "13" [ref=e2017]
+                    - row "14 15 16 17 18 19 20" [ref=e2018]:
+                      - cell "14" [ref=e2019]
+                      - cell "15" [ref=e2020]
+                      - cell "16" [ref=e2021]
+                      - cell "17" [ref=e2022]
+                      - cell "18" [ref=e2023]
+                      - cell "19" [ref=e2024]
+                      - cell "20" [ref=e2025]
+                    - row "21 22 23 24 25 26 27" [ref=e2026]:
+                      - cell "21" [ref=e2027]
+                      - cell "22" [ref=e2028]
+                      - cell "23" [ref=e2029]
+                      - cell "24" [ref=e2030]
+                      - cell "25" [ref=e2031]
+                      - cell "26" [ref=e2032]
+                      - cell "27" [ref=e2033]
+                    - row "28 29 30" [ref=e2034]:
+                      - cell "28" [ref=e2035]
+                      - cell "29" [ref=e2036]
+                      - cell "30" [ref=e2037]
+                      - cell [ref=e2038]
+                      - cell [ref=e2039]
+                      - cell [ref=e2040]
+                      - cell [ref=e2041]
+                - generic [ref=e2044] [cursor=pointer]: 圖例說明
+              - group "6 / 24" [ref=e2047]:
+                - text: 
+                - generic [ref=e2048]: 114 年 10 月
+                - table [ref=e2049]:
+                  - rowgroup [ref=e2050]:
+                    - row "日 一 二 三 四 五 六" [ref=e2051]:
+                      - columnheader "日" [ref=e2052]
+                      - columnheader "一" [ref=e2053]
+                      - columnheader "二" [ref=e2054]
+                      - columnheader "三" [ref=e2055]
+                      - columnheader "四" [ref=e2056]
+                      - columnheader "五" [ref=e2057]
+                      - columnheader "六" [ref=e2058]
+                  - rowgroup [ref=e2059]:
+                    - row "1 2 3 4" [ref=e2060]:
+                      - cell [ref=e2061]
+                      - cell [ref=e2062]
+                      - cell [ref=e2063]
+                      - cell "1" [ref=e2064]
+                      - cell "2" [ref=e2065]
+                      - cell "3" [ref=e2066]
+                      - cell "4" [ref=e2067]
+                    - row "5 6 7 8 9 10 11" [ref=e2068]:
+                      - cell "5" [ref=e2069]
+                      - cell "6" [ref=e2070]
+                      - cell "7" [ref=e2071]
+                      - cell "8" [ref=e2072]
+                      - cell "9" [ref=e2073]
+                      - cell "10" [ref=e2074]
+                      - cell "11" [ref=e2075]
+                    - row "12 13 14 15 16 17 18" [ref=e2076]:
+                      - cell "12" [ref=e2077]
+                      - cell "13" [ref=e2078]
+                      - cell "14" [ref=e2079]
+                      - cell "15" [ref=e2080]
+                      - cell "16" [ref=e2081]
+                      - cell "17" [ref=e2082]
+                      - cell "18" [ref=e2083]
+                    - row "19 20 21 22 23 24 25" [ref=e2084]:
+                      - cell "19" [ref=e2085]
+                      - cell "20" [ref=e2086]
+                      - cell "21" [ref=e2087]
+                      - cell "22" [ref=e2088]
+                      - cell "23" [ref=e2089]
+                      - cell "24" [ref=e2090]
+                      - cell "25" [ref=e2091]
+                    - row "26 27 28 29 30 31" [ref=e2092]:
+                      - cell "26" [ref=e2093]
+                      - cell "27" [ref=e2094]
+                      - cell "28" [ref=e2095]
+                      - cell "29" [ref=e2096]
+                      - cell "30" [ref=e2097]
+                      - cell "31" [ref=e2098]
+                      - cell [ref=e2099]
+                - generic [ref=e2102] [cursor=pointer]: 圖例說明
+              - group "7 / 24" [ref=e2105]:
+                - text: 
+                - generic [ref=e2106]: 114 年 11 月
+                - table [ref=e2107]:
+                  - rowgroup [ref=e2108]:
+                    - row "日 一 二 三 四 五 六" [ref=e2109]:
+                      - columnheader "日" [ref=e2110]
+                      - columnheader "一" [ref=e2111]
+                      - columnheader "二" [ref=e2112]
+                      - columnheader "三" [ref=e2113]
+                      - columnheader "四" [ref=e2114]
+                      - columnheader "五" [ref=e2115]
+                      - columnheader "六" [ref=e2116]
+                  - rowgroup [ref=e2117]:
+                    - row "1" [ref=e2118]:
+                      - cell [ref=e2119]
+                      - cell [ref=e2120]
+                      - cell [ref=e2121]
+                      - cell [ref=e2122]
+                      - cell [ref=e2123]
+                      - cell [ref=e2124]
+                      - cell "1" [ref=e2125]
+                    - row "2 3 4 5 6 7 8" [ref=e2126]:
+                      - cell "2" [ref=e2127]
+                      - cell "3" [ref=e2128]
+                      - cell "4" [ref=e2129]
+                      - cell "5" [ref=e2130]
+                      - cell "6" [ref=e2131]
+                      - cell "7" [ref=e2132]
+                      - cell "8" [ref=e2133]
+                    - row "9 10 11 12 13 14 15" [ref=e2134]:
+                      - cell "9" [ref=e2135]
+                      - cell "10" [ref=e2136]
+                      - cell "11" [ref=e2137]
+                      - cell "12" [ref=e2138]
+                      - cell "13" [ref=e2139]
+                      - cell "14" [ref=e2140]
+                      - cell "15" [ref=e2141]
+                    - row "16 17 18 19 20 21 22" [ref=e2142]:
+                      - cell "16" [ref=e2143]
+                      - cell "17" [ref=e2144]
+                      - cell "18" [ref=e2145]
+                      - cell "19" [ref=e2146]
+                      - cell "20" [ref=e2147]
+                      - cell "21" [ref=e2148]
+                      - cell "22" [ref=e2149]
+                    - row "23 24 25 26 27 28 29" [ref=e2150]:
+                      - cell "23" [ref=e2151]
+                      - cell "24" [ref=e2152]
+                      - cell "25" [ref=e2153]
+                      - cell "26" [ref=e2154]
+                      - cell "27" [ref=e2155]
+                      - cell "28" [ref=e2156]
+                      - cell "29" [ref=e2157]
+                    - row "30" [ref=e2158]:
+                      - cell "30" [ref=e2159]
+                      - cell [ref=e2160]
+                      - cell [ref=e2161]
+                      - cell [ref=e2162]
+                      - cell [ref=e2163]
+                      - cell [ref=e2164]
+                      - cell [ref=e2165]
+                - generic [ref=e2168] [cursor=pointer]: 圖例說明
+              - group "8 / 24" [ref=e2171]:
+                - text: 
+                - generic [ref=e2172]: 114 年 12 月
+                - table [ref=e2173]:
+                  - rowgroup [ref=e2174]:
+                    - row "日 一 二 三 四 五 六" [ref=e2175]:
+                      - columnheader "日" [ref=e2176]
+                      - columnheader "一" [ref=e2177]
+                      - columnheader "二" [ref=e2178]
+                      - columnheader "三" [ref=e2179]
+                      - columnheader "四" [ref=e2180]
+                      - columnheader "五" [ref=e2181]
+                      - columnheader "六" [ref=e2182]
+                  - rowgroup [ref=e2183]:
+                    - row "1 2 3 4 5 6" [ref=e2184]:
+                      - cell [ref=e2185]
+                      - cell "1" [ref=e2186]
+                      - cell "2" [ref=e2187]
+                      - cell "3" [ref=e2188]
+                      - cell "4" [ref=e2189]
+                      - cell "5" [ref=e2190]
+                      - cell "6" [ref=e2191]
+                    - row "7 8 9 10 11 12 13" [ref=e2192]:
+                      - cell "7" [ref=e2193]
+                      - cell "8" [ref=e2194]
+                      - cell "9" [ref=e2195]
+                      - cell "10" [ref=e2196]
+                      - cell "11" [ref=e2197]
+                      - cell "12" [ref=e2198]
+                      - cell "13" [ref=e2199]
+                    - row "14 15 16 17 18 19 20" [ref=e2200]:
+                      - cell "14" [ref=e2201]
+                      - cell "15" [ref=e2202]
+                      - cell "16" [ref=e2203]
+                      - cell "17" [ref=e2204]
+                      - cell "18" [ref=e2205]
+                      - cell "19" [ref=e2206]
+                      - cell "20" [ref=e2207]
+                    - row "21 22 23 24 25 26 27" [ref=e2208]:
+                      - cell "21" [ref=e2209]
+                      - cell "22" [ref=e2210]
+                      - cell "23" [ref=e2211]
+                      - cell "24" [ref=e2212]
+                      - cell "25" [ref=e2213]
+                      - cell "26" [ref=e2214]
+                      - cell "27" [ref=e2215]
+                    - row "28 29 30 31" [ref=e2216]:
+                      - cell "28" [ref=e2217]
+                      - cell "29" [ref=e2218]
+                      - cell "30" [ref=e2219]
+                      - cell "31" [ref=e2220]
+                      - cell [ref=e2221]
+                      - cell [ref=e2222]
+                      - cell [ref=e2223]
+                - generic [ref=e2226] [cursor=pointer]: 圖例說明
+              - group "9 / 24" [ref=e2229]:
+                - text: 
+                - generic [ref=e2230]: 115 年 1 月
+                - table [ref=e2231]:
+                  - rowgroup [ref=e2232]:
+                    - row "日 一 二 三 四 五 六" [ref=e2233]:
+                      - columnheader "日" [ref=e2234]
+                      - columnheader "一" [ref=e2235]
+                      - columnheader "二" [ref=e2236]
+                      - columnheader "三" [ref=e2237]
+                      - columnheader "四" [ref=e2238]
+                      - columnheader "五" [ref=e2239]
+                      - columnheader "六" [ref=e2240]
+                  - rowgroup [ref=e2241]:
+                    - row "1 2 3" [ref=e2242]:
+                      - cell [ref=e2243]
+                      - cell [ref=e2244]
+                      - cell [ref=e2245]
+                      - cell [ref=e2246]
+                      - cell "1" [ref=e2247]
+                      - cell "2" [ref=e2248]
+                      - cell "3" [ref=e2249]
+                    - row "4 5 6 7 8 9 10" [ref=e2250]:
+                      - cell "4" [ref=e2251]
+                      - cell "5" [ref=e2252]
+                      - cell "6" [ref=e2253]
+                      - cell "7" [ref=e2254]
+                      - cell "8" [ref=e2255]
+                      - cell "9" [ref=e2256]
+                      - cell "10" [ref=e2257]
+                    - row "11 12 13 14 15 16 17" [ref=e2258]:
+                      - cell "11" [ref=e2259]
+                      - cell "12" [ref=e2260]
+                      - cell "13" [ref=e2261]
+                      - cell "14" [ref=e2262]
+                      - cell "15" [ref=e2263]
+                      - cell "16" [ref=e2264]
+                      - cell "17" [ref=e2265]
+                    - row "18 19 20 21 22 23 24" [ref=e2266]:
+                      - cell "18" [ref=e2267]
+                      - cell "19" [ref=e2268]
+                      - cell "20" [ref=e2269]
+                      - cell "21" [ref=e2270]
+                      - cell "22" [ref=e2271]
+                      - cell "23" [ref=e2272]
+                      - cell "24" [ref=e2273]
+                    - row "25 26 27 28 29 30 31" [ref=e2274]:
+                      - cell "25" [ref=e2275]
+                      - cell "26" [ref=e2276]
+                      - cell "27" [ref=e2277]
+                      - cell "28" [ref=e2278]
+                      - cell "29" [ref=e2279]
+                      - cell "30" [ref=e2280]
+                      - cell "31" [ref=e2281]
+                - generic [ref=e2284] [cursor=pointer]: 圖例說明
+              - group "10 / 24" [ref=e2287]:
+                - text: 
+                - generic [ref=e2288]: 115 年 2 月
+                - table [ref=e2289]:
+                  - rowgroup [ref=e2290]:
+                    - row "日 一 二 三 四 五 六" [ref=e2291]:
+                      - columnheader "日" [ref=e2292]
+                      - columnheader "一" [ref=e2293]
+                      - columnheader "二" [ref=e2294]
+                      - columnheader "三" [ref=e2295]
+                      - columnheader "四" [ref=e2296]
+                      - columnheader "五" [ref=e2297]
+                      - columnheader "六" [ref=e2298]
+                  - rowgroup [ref=e2299]:
+                    - row "1 2 3 4 5 6 7" [ref=e2300]:
+                      - cell "1" [ref=e2301]
+                      - cell "2" [ref=e2302]
+                      - cell "3" [ref=e2303]
+                      - cell "4" [ref=e2304]
+                      - cell "5" [ref=e2305]
+                      - cell "6" [ref=e2306]
+                      - cell "7" [ref=e2307]
+                    - row "8 9 10 11 12 13 14" [ref=e2308]:
+                      - cell "8" [ref=e2309]
+                      - cell "9" [ref=e2310]
+                      - cell "10" [ref=e2311]
+                      - cell "11" [ref=e2312]
+                      - cell "12" [ref=e2313]
+                      - cell "13" [ref=e2314]
+                      - cell "14" [ref=e2315]
+                    - row "15 16 17 18 19 20 21" [ref=e2316]:
+                      - cell "15" [ref=e2317]
+                      - cell "16" [ref=e2318]
+                      - cell "17" [ref=e2319]
+                      - cell "18" [ref=e2320]
+                      - cell "19" [ref=e2321]
+                      - cell "20" [ref=e2322]
+                      - cell "21" [ref=e2323]
+                    - row "22 23 24 25 26 27 28" [ref=e2324]:
+                      - cell "22" [ref=e2325]
+                      - cell "23" [ref=e2326]
+                      - cell "24" [ref=e2327]
+                      - cell "25" [ref=e2328]
+                      - cell "26" [ref=e2329]
+                      - cell "27" [ref=e2330]
+                      - cell "28" [ref=e2331]
+                    - row [ref=e2332]:
+                      - cell [ref=e2333]
+                      - cell [ref=e2334]
+                      - cell [ref=e2335]
+                      - cell [ref=e2336]
+                      - cell [ref=e2337]
+                      - cell [ref=e2338]
+                      - cell [ref=e2339]
+                    - row [ref=e2340]:
+                      - cell [ref=e2341]
+                      - cell [ref=e2342]
+                      - cell [ref=e2343]
+                      - cell [ref=e2344]
+                      - cell [ref=e2345]
+                      - cell [ref=e2346]
+                      - cell [ref=e2347]
+                - generic [ref=e2350] [cursor=pointer]: 圖例說明
+              - group "11 / 24" [ref=e2353]:
+                - text: 
+                - generic [ref=e2354]: 115 年 3 月
+                - table [ref=e2355]:
+                  - rowgroup [ref=e2356]:
+                    - row "日 一 二 三 四 五 六" [ref=e2357]:
+                      - columnheader "日" [ref=e2358]
+                      - columnheader "一" [ref=e2359]
+                      - columnheader "二" [ref=e2360]
+                      - columnheader "三" [ref=e2361]
+                      - columnheader "四" [ref=e2362]
+                      - columnheader "五" [ref=e2363]
+                      - columnheader "六" [ref=e2364]
+                  - rowgroup [ref=e2365]:
+                    - row "1 2 3 4 5 6 7" [ref=e2366]:
+                      - cell "1" [ref=e2367]
+                      - cell "2" [ref=e2368]
+                      - cell "3" [ref=e2369]
+                      - cell "4" [ref=e2370]
+                      - cell "5" [ref=e2371]
+                      - cell "6" [ref=e2372]
+                      - cell "7" [ref=e2373]
+                    - row "8 9 10 11 12 13 14" [ref=e2374]:
+                      - cell "8" [ref=e2375]
+                      - cell "9" [ref=e2376]
+                      - cell "10" [ref=e2377]
+                      - cell "11" [ref=e2378]
+                      - cell "12" [ref=e2379]
+                      - cell "13" [ref=e2380]
+                      - cell "14" [ref=e2381]
+                    - row "15 16 17 18 19 20 21" [ref=e2382]:
+                      - cell "15" [ref=e2383]
+                      - cell "16" [ref=e2384]
+                      - cell "17" [ref=e2385]
+                      - cell "18" [ref=e2386]
+                      - cell "19" [ref=e2387]
+                      - cell "20" [ref=e2388]
+                      - cell "21" [ref=e2389]
+                    - row "22 23 24 25 26 27 28" [ref=e2390]:
+                      - cell "22" [ref=e2391]
+                      - cell "23" [ref=e2392]
+                      - cell "24" [ref=e2393]
+                      - cell "25" [ref=e2394]
+                      - cell "26" [ref=e2395]
+                      - cell "27" [ref=e2396]
+                      - cell "28" [ref=e2397]
+                    - row "29 30 31" [ref=e2398]:
+                      - cell "29" [ref=e2399]
+                      - cell "30" [ref=e2400]
+                      - cell "31" [ref=e2401]
+                      - cell [ref=e2402]
+                      - cell [ref=e2403]
+                      - cell [ref=e2404]
+                      - cell [ref=e2405]
+                - generic [ref=e2408] [cursor=pointer]: 圖例說明
+              - group "12 / 24" [ref=e2411]:
+                - generic [ref=e2412]: 115 年 4 月
+                - table [ref=e2413]:
+                  - rowgroup [ref=e2414]:
+                    - row "日 一 二 三 四 五 六" [ref=e2415]:
+                      - columnheader "日" [ref=e2416]
+                      - columnheader "一" [ref=e2417]
+                      - columnheader "二" [ref=e2418]
+                      - columnheader "三" [ref=e2419]
+                      - columnheader "四" [ref=e2420]
+                      - columnheader "五" [ref=e2421]
+                      - columnheader "六" [ref=e2422]
+                  - rowgroup [ref=e2423]:
+                    - row "1 2 3 4" [ref=e2424]:
+                      - cell [ref=e2425]
+                      - cell [ref=e2426]
+                      - cell [ref=e2427]
+                      - cell "1" [ref=e2428]: "1"
+                      - cell "2" [ref=e2430]: "2"
+                      - cell "3" [ref=e2433]: "3"
+                      - cell "4" [ref=e2435]: "4"
+                    - row "5 6 7 8 9 10 11" [ref=e2437]:
+                      - cell "5" [ref=e2438]: "5"
+                      - cell "6" [ref=e2440]: "6"
+                      - cell "7" [ref=e2442]: "7"
+                      - cell "8" [ref=e2445]: "8"
+                      - cell "9" [ref=e2448]: "9"
+                      - cell "10" [ref=e2451]: "10"
+                      - cell "11" [ref=e2455]
+                    - row "12 13 14 15 16 17 18" [ref=e2456]:
+                      - cell "12" [ref=e2457]
+                      - cell "13" [ref=e2458]: "13"
+                      - cell "14" [ref=e2460]: "14"
+                      - cell "15" [ref=e2463]: "15"
+                      - cell "16" [ref=e2465]: "16"
+                      - cell "17" [ref=e2469]: "17"
+                      - cell "18" [ref=e2471]
+                    - row "19 20 21 22 23 24 25" [ref=e2472]:
+                      - cell "19" [ref=e2473]
+                      - cell "20" [ref=e2474]: "20"
+                      - cell "21" [ref=e2476]: "21"
+                      - cell "22" [ref=e2479]: "22"
+                      - cell "23" [ref=e2481]: "23"
+                      - cell "24" [ref=e2484]: "24"
+                      - cell "25" [ref=e2487]
+                    - row "26 27 28 29 30" [ref=e2488]:
+                      - cell "26" [ref=e2489]
+                      - cell "27" [ref=e2490]: "27"
+                      - cell "28" [ref=e2492]
+                      - cell "29" [ref=e2493]: "29"
+                      - cell "30" [ref=e2495]: "30"
+                      - cell [ref=e2497]
+                      - cell [ref=e2498]
+                - generic [ref=e2501] [cursor=pointer]: 圖例說明
+                - generic [ref=e2503]:
+                  - heading "國定假日/休市" [level=3] [ref=e2504]
+                  - list [ref=e2505]:
+                    - listitem [ref=e2506]: 兒童節及民族掃墓節
+              - group "13 / 24" [ref=e2507]:
+                - text: 
+                - generic [ref=e2508]: 115 年 5 月
+                - table [ref=e2509]:
+                  - rowgroup [ref=e2510]:
+                    - row "日 一 二 三 四 五 六" [ref=e2511]:
+                      - columnheader "日" [ref=e2512]
+                      - columnheader "一" [ref=e2513]
+                      - columnheader "二" [ref=e2514]
+                      - columnheader "三" [ref=e2515]
+                      - columnheader "四" [ref=e2516]
+                      - columnheader "五" [ref=e2517]
+                      - columnheader "六" [ref=e2518]
+                  - rowgroup [ref=e2519]:
+                    - row "1 2" [ref=e2520]:
+                      - cell [ref=e2521]
+                      - cell [ref=e2522]
+                      - cell [ref=e2523]
+                      - cell [ref=e2524]
+                      - cell [ref=e2525]
+                      - cell "1" [ref=e2526]
+                      - cell "2" [ref=e2527]
+                    - row "3 4 5 6 7 8 9" [ref=e2528]:
+                      - cell "3" [ref=e2529]
+                      - cell "4" [ref=e2530]
+                      - cell "5" [ref=e2531]
+                      - cell "6" [ref=e2532]
+                      - cell "7" [ref=e2533]
+                      - cell "8" [ref=e2534]
+                      - cell "9" [ref=e2535]
+                    - row "10 11 12 13 14 15 16" [ref=e2536]:
+                      - cell "10" [ref=e2537]
+                      - cell "11" [ref=e2538]
+                      - cell "12" [ref=e2539]
+                      - cell "13" [ref=e2540]
+                      - cell "14" [ref=e2541]
+                      - cell "15" [ref=e2542]
+                      - cell "16" [ref=e2543]
+                    - row "17 18 19 20 21 22 23" [ref=e2544]:
+                      - cell "17" [ref=e2545]
+                      - cell "18" [ref=e2546]
+                      - cell "19" [ref=e2547]
+                      - cell "20" [ref=e2548]
+                      - cell "21" [ref=e2549]
+                      - cell "22" [ref=e2550]
+                      - cell "23" [ref=e2551]
+                    - row "24 25 26 27 28 29 30" [ref=e2552]:
+                      - cell "24" [ref=e2553]
+                      - cell "25" [ref=e2554]
+                      - cell "26" [ref=e2555]
+                      - cell "27" [ref=e2556]
+                      - cell "28" [ref=e2557]
+                      - cell "29" [ref=e2558]
+                      - cell "30" [ref=e2559]
+                    - row "31" [ref=e2560]:
+                      - cell "31" [ref=e2561]
+                      - cell [ref=e2562]
+                      - cell [ref=e2563]
+                      - cell [ref=e2564]
+                      - cell [ref=e2565]
+                      - cell [ref=e2566]
+                      - cell [ref=e2567]
+                - generic [ref=e2570] [cursor=pointer]: 圖例說明
+              - group "14 / 24" [ref=e2573]:
+                - text: 
+                - generic [ref=e2574]: 115 年 6 月
+                - table [ref=e2575]:
+                  - rowgroup [ref=e2576]:
+                    - row "日 一 二 三 四 五 六" [ref=e2577]:
+                      - columnheader "日" [ref=e2578]
+                      - columnheader "一" [ref=e2579]
+                      - columnheader "二" [ref=e2580]
+                      - columnheader "三" [ref=e2581]
+                      - columnheader "四" [ref=e2582]
+                      - columnheader "五" [ref=e2583]
+                      - columnheader "六" [ref=e2584]
+                  - rowgroup [ref=e2585]:
+                    - row "1 2 3 4 5 6" [ref=e2586]:
+                      - cell [ref=e2587]
+                      - cell "1" [ref=e2588]
+                      - cell "2" [ref=e2589]
+                      - cell "3" [ref=e2590]
+                      - cell "4" [ref=e2591]
+                      - cell "5" [ref=e2592]
+                      - cell "6" [ref=e2593]
+                    - row "7 8 9 10 11 12 13" [ref=e2594]:
+                      - cell "7" [ref=e2595]
+                      - cell "8" [ref=e2596]
+                      - cell "9" [ref=e2597]
+                      - cell "10" [ref=e2598]
+                      - cell "11" [ref=e2599]
+                      - cell "12" [ref=e2600]
+                      - cell "13" [ref=e2601]
+                    - row "14 15 16 17 18 19 20" [ref=e2602]:
+                      - cell "14" [ref=e2603]
+                      - cell "15" [ref=e2604]
+                      - cell "16" [ref=e2605]
+                      - cell "17" [ref=e2606]
+                      - cell "18" [ref=e2607]
+                      - cell "19" [ref=e2608]
+                      - cell "20" [ref=e2609]
+                    - row "21 22 23 24 25 26 27" [ref=e2610]:
+                      - cell "21" [ref=e2611]
+                      - cell "22" [ref=e2612]
+                      - cell "23" [ref=e2613]
+                      - cell "24" [ref=e2614]
+                      - cell "25" [ref=e2615]
+                      - cell "26" [ref=e2616]
+                      - cell "27" [ref=e2617]
+                    - row "28 29 30" [ref=e2618]:
+                      - cell "28" [ref=e2619]
+                      - cell "29" [ref=e2620]
+                      - cell "30" [ref=e2621]
+                      - cell [ref=e2622]
+                      - cell [ref=e2623]
+                      - cell [ref=e2624]
+                      - cell [ref=e2625]
+                - generic [ref=e2628] [cursor=pointer]: 圖例說明
+              - group "15 / 24" [ref=e2631]:
+                - text: 
+                - generic [ref=e2632]: 115 年 7 月
+                - table [ref=e2633]:
+                  - rowgroup [ref=e2634]:
+                    - row "日 一 二 三 四 五 六" [ref=e2635]:
+                      - columnheader "日" [ref=e2636]
+                      - columnheader "一" [ref=e2637]
+                      - columnheader "二" [ref=e2638]
+                      - columnheader "三" [ref=e2639]
+                      - columnheader "四" [ref=e2640]
+                      - columnheader "五" [ref=e2641]
+                      - columnheader "六" [ref=e2642]
+                  - rowgroup [ref=e2643]:
+                    - row "1 2 3 4" [ref=e2644]:
+                      - cell [ref=e2645]
+                      - cell [ref=e2646]
+                      - cell [ref=e2647]
+                      - cell "1" [ref=e2648]
+                      - cell "2" [ref=e2649]
+                      - cell "3" [ref=e2650]
+                      - cell "4" [ref=e2651]
+                    - row "5 6 7 8 9 10 11" [ref=e2652]:
+                      - cell "5" [ref=e2653]
+                      - cell "6" [ref=e2654]
+                      - cell "7" [ref=e2655]
+                      - cell "8" [ref=e2656]
+                      - cell "9" [ref=e2657]
+                      - cell "10" [ref=e2658]
+                      - cell "11" [ref=e2659]
+                    - row "12 13 14 15 16 17 18" [ref=e2660]:
+                      - cell "12" [ref=e2661]
+                      - cell "13" [ref=e2662]
+                      - cell "14" [ref=e2663]
+                      - cell "15" [ref=e2664]
+                      - cell "16" [ref=e2665]
+                      - cell "17" [ref=e2666]
+                      - cell "18" [ref=e2667]
+                    - row "19 20 21 22 23 24 25" [ref=e2668]:
+                      - cell "19" [ref=e2669]
+                      - cell "20" [ref=e2670]
+                      - cell "21" [ref=e2671]
+                      - cell "22" [ref=e2672]
+                      - cell "23" [ref=e2673]
+                      - cell "24" [ref=e2674]
+                      - cell "25" [ref=e2675]
+                    - row "26 27 28 29 30 31" [ref=e2676]:
+                      - cell "26" [ref=e2677]
+                      - cell "27" [ref=e2678]
+                      - cell "28" [ref=e2679]
+                      - cell "29" [ref=e2680]
+                      - cell "30" [ref=e2681]
+                      - cell "31" [ref=e2682]
+                      - cell [ref=e2683]
+                - generic [ref=e2686] [cursor=pointer]: 圖例說明
+              - group "16 / 24" [ref=e2689]:
+                - text: 
+                - generic [ref=e2690]: 115 年 8 月
+                - table [ref=e2691]:
+                  - rowgroup [ref=e2692]:
+                    - row "日 一 二 三 四 五 六" [ref=e2693]:
+                      - columnheader "日" [ref=e2694]
+                      - columnheader "一" [ref=e2695]
+                      - columnheader "二" [ref=e2696]
+                      - columnheader "三" [ref=e2697]
+                      - columnheader "四" [ref=e2698]
+                      - columnheader "五" [ref=e2699]
+                      - columnheader "六" [ref=e2700]
+                  - rowgroup [ref=e2701]:
+                    - row "1" [ref=e2702]:
+                      - cell [ref=e2703]
+                      - cell [ref=e2704]
+                      - cell [ref=e2705]
+                      - cell [ref=e2706]
+                      - cell [ref=e2707]
+                      - cell [ref=e2708]
+                      - cell "1" [ref=e2709]
+                    - row "2 3 4 5 6 7 8" [ref=e2710]:
+                      - cell "2" [ref=e2711]
+                      - cell "3" [ref=e2712]
+                      - cell "4" [ref=e2713]
+                      - cell "5" [ref=e2714]
+                      - cell "6" [ref=e2715]
+                      - cell "7" [ref=e2716]
+                      - cell "8" [ref=e2717]
+                    - row "9 10 11 12 13 14 15" [ref=e2718]:
+                      - cell "9" [ref=e2719]
+                      - cell "10" [ref=e2720]
+                      - cell "11" [ref=e2721]
+                      - cell "12" [ref=e2722]
+                      - cell "13" [ref=e2723]
+                      - cell "14" [ref=e2724]
+                      - cell "15" [ref=e2725]
+                    - row "16 17 18 19 20 21 22" [ref=e2726]:
+                      - cell "16" [ref=e2727]
+                      - cell "17" [ref=e2728]
+                      - cell "18" [ref=e2729]
+                      - cell "19" [ref=e2730]
+                      - cell "20" [ref=e2731]
+                      - cell "21" [ref=e2732]
+                      - cell "22" [ref=e2733]
+                    - row "23 24 25 26 27 28 29" [ref=e2734]:
+                      - cell "23" [ref=e2735]
+                      - cell "24" [ref=e2736]
+                      - cell "25" [ref=e2737]
+                      - cell "26" [ref=e2738]
+                      - cell "27" [ref=e2739]
+                      - cell "28" [ref=e2740]
+                      - cell "29" [ref=e2741]
+                    - row "30 31" [ref=e2742]:
+                      - cell "30" [ref=e2743]
+                      - cell "31" [ref=e2744]
+                      - cell [ref=e2745]
+                      - cell [ref=e2746]
+                      - cell [ref=e2747]
+                      - cell [ref=e2748]
+                      - cell [ref=e2749]
+                - generic [ref=e2752] [cursor=pointer]: 圖例說明
+              - group "17 / 24" [ref=e2755]:
+                - text: 
+                - generic [ref=e2756]: 115 年 9 月
+                - table [ref=e2757]:
+                  - rowgroup [ref=e2758]:
+                    - row "日 一 二 三 四 五 六" [ref=e2759]:
+                      - columnheader "日" [ref=e2760]
+                      - columnheader "一" [ref=e2761]
+                      - columnheader "二" [ref=e2762]
+                      - columnheader "三" [ref=e2763]
+                      - columnheader "四" [ref=e2764]
+                      - columnheader "五" [ref=e2765]
+                      - columnheader "六" [ref=e2766]
+                  - rowgroup [ref=e2767]:
+                    - row "1 2 3 4 5" [ref=e2768]:
+                      - cell [ref=e2769]
+                      - cell [ref=e2770]
+                      - cell "1" [ref=e2771]
+                      - cell "2" [ref=e2772]
+                      - cell "3" [ref=e2773]
+                      - cell "4" [ref=e2774]
+                      - cell "5" [ref=e2775]
+                    - row "6 7 8 9 10 11 12" [ref=e2776]:
+                      - cell "6" [ref=e2777]
+                      - cell "7" [ref=e2778]
+                      - cell "8" [ref=e2779]
+                      - cell "9" [ref=e2780]
+                      - cell "10" [ref=e2781]
+                      - cell "11" [ref=e2782]
+                      - cell "12" [ref=e2783]
+                    - row "13 14 15 16 17 18 19" [ref=e2784]:
+                      - cell "13" [ref=e2785]
+                      - cell "14" [ref=e2786]
+                      - cell "15" [ref=e2787]
+                      - cell "16" [ref=e2788]
+                      - cell "17" [ref=e2789]
+                      - cell "18" [ref=e2790]
+                      - cell "19" [ref=e2791]
+                    - row "20 21 22 23 24 25 26" [ref=e2792]:
+                      - cell "20" [ref=e2793]
+                      - cell "21" [ref=e2794]
+                      - cell "22" [ref=e2795]
+                      - cell "23" [ref=e2796]
+                      - cell "24" [ref=e2797]
+                      - cell "25" [ref=e2798]
+                      - cell "26" [ref=e2799]
+                    - row "27 28 29 30" [ref=e2800]:
+                      - cell "27" [ref=e2801]
+                      - cell "28" [ref=e2802]
+                      - cell "29" [ref=e2803]
+                      - cell "30" [ref=e2804]
+                      - cell [ref=e2805]
+                      - cell [ref=e2806]
+                      - cell [ref=e2807]
+                - generic [ref=e2810] [cursor=pointer]: 圖例說明
+              - group "18 / 24" [ref=e2813]:
+                - text: 
+                - generic [ref=e2814]: 115 年 10 月
+                - table [ref=e2815]:
+                  - rowgroup [ref=e2816]:
+                    - row "日 一 二 三 四 五 六" [ref=e2817]:
+                      - columnheader "日" [ref=e2818]
+                      - columnheader "一" [ref=e2819]
+                      - columnheader "二" [ref=e2820]
+                      - columnheader "三" [ref=e2821]
+                      - columnheader "四" [ref=e2822]
+                      - columnheader "五" [ref=e2823]
+                      - columnheader "六" [ref=e2824]
+                  - rowgroup [ref=e2825]:
+                    - row "1 2 3" [ref=e2826]:
+                      - cell [ref=e2827]
+                      - cell [ref=e2828]
+                      - cell [ref=e2829]
+                      - cell [ref=e2830]
+                      - cell "1" [ref=e2831]
+                      - cell "2" [ref=e2832]
+                      - cell "3" [ref=e2833]
+                    - row "4 5 6 7 8 9 10" [ref=e2834]:
+                      - cell "4" [ref=e2835]
+                      - cell "5" [ref=e2836]
+                      - cell "6" [ref=e2837]
+                      - cell "7" [ref=e2838]
+                      - cell "8" [ref=e2839]
+                      - cell "9" [ref=e2840]
+                      - cell "10" [ref=e2841]
+                    - row "11 12 13 14 15 16 17" [ref=e2842]:
+                      - cell "11" [ref=e2843]
+                      - cell "12" [ref=e2844]
+                      - cell "13" [ref=e2845]
+                      - cell "14" [ref=e2846]
+                      - cell "15" [ref=e2847]
+                      - cell "16" [ref=e2848]
+                      - cell "17" [ref=e2849]
+                    - row "18 19 20 21 22 23 24" [ref=e2850]:
+                      - cell "18" [ref=e2851]
+                      - cell "19" [ref=e2852]
+                      - cell "20" [ref=e2853]
+                      - cell "21" [ref=e2854]
+                      - cell "22" [ref=e2855]
+                      - cell "23" [ref=e2856]
+                      - cell "24" [ref=e2857]
+                    - row "25 26 27 28 29 30 31" [ref=e2858]:
+                      - cell "25" [ref=e2859]
+                      - cell "26" [ref=e2860]
+                      - cell "27" [ref=e2861]
+                      - cell "28" [ref=e2862]
+                      - cell "29" [ref=e2863]
+                      - cell "30" [ref=e2864]
+                      - cell "31" [ref=e2865]
+                - generic [ref=e2868] [cursor=pointer]: 圖例說明
+              - group "19 / 24" [ref=e2871]:
+                - text: 
+                - generic [ref=e2872]: 115 年 11 月
+                - table [ref=e2873]:
+                  - rowgroup [ref=e2874]:
+                    - row "日 一 二 三 四 五 六" [ref=e2875]:
+                      - columnheader "日" [ref=e2876]
+                      - columnheader "一" [ref=e2877]
+                      - columnheader "二" [ref=e2878]
+                      - columnheader "三" [ref=e2879]
+                      - columnheader "四" [ref=e2880]
+                      - columnheader "五" [ref=e2881]
+                      - columnheader "六" [ref=e2882]
+                  - rowgroup [ref=e2883]:
+                    - row "1 2 3 4 5 6 7" [ref=e2884]:
+                      - cell "1" [ref=e2885]
+                      - cell "2" [ref=e2886]
+                      - cell "3" [ref=e2887]
+                      - cell "4" [ref=e2888]
+                      - cell "5" [ref=e2889]
+                      - cell "6" [ref=e2890]
+                      - cell "7" [ref=e2891]
+                    - row "8 9 10 11 12 13 14" [ref=e2892]:
+                      - cell "8" [ref=e2893]
+                      - cell "9" [ref=e2894]
+                      - cell "10" [ref=e2895]
+                      - cell "11" [ref=e2896]
+                      - cell "12" [ref=e2897]
+                      - cell "13" [ref=e2898]
+                      - cell "14" [ref=e2899]
+                    - row "15 16 17 18 19 20 21" [ref=e2900]:
+                      - cell "15" [ref=e2901]
+                      - cell "16" [ref=e2902]
+                      - cell "17" [ref=e2903]
+                      - cell "18" [ref=e2904]
+                      - cell "19" [ref=e2905]
+                      - cell "20" [ref=e2906]
+                      - cell "21" [ref=e2907]
+                    - row "22 23 24 25 26 27 28" [ref=e2908]:
+                      - cell "22" [ref=e2909]
+                      - cell "23" [ref=e2910]
+                      - cell "24" [ref=e2911]
+                      - cell "25" [ref=e2912]
+                      - cell "26" [ref=e2913]
+                      - cell "27" [ref=e2914]
+                      - cell "28" [ref=e2915]
+                    - row "29 30" [ref=e2916]:
+                      - cell "29" [ref=e2917]
+                      - cell "30" [ref=e2918]
+                      - cell [ref=e2919]
+                      - cell [ref=e2920]
+                      - cell [ref=e2921]
+                      - cell [ref=e2922]
+                      - cell [ref=e2923]
+                - generic [ref=e2926] [cursor=pointer]: 圖例說明
+              - group "20 / 24" [ref=e2929]:
+                - text: 
+                - generic [ref=e2930]: 115 年 12 月
+                - table [ref=e2931]:
+                  - rowgroup [ref=e2932]:
+                    - row "日 一 二 三 四 五 六" [ref=e2933]:
+                      - columnheader "日" [ref=e2934]
+                      - columnheader "一" [ref=e2935]
+                      - columnheader "二" [ref=e2936]
+                      - columnheader "三" [ref=e2937]
+                      - columnheader "四" [ref=e2938]
+                      - columnheader "五" [ref=e2939]
+                      - columnheader "六" [ref=e2940]
+                  - rowgroup [ref=e2941]:
+                    - row "1 2 3 4 5" [ref=e2942]:
+                      - cell [ref=e2943]
+                      - cell [ref=e2944]
+                      - cell "1" [ref=e2945]
+                      - cell "2" [ref=e2946]
+                      - cell "3" [ref=e2947]
+                      - cell "4" [ref=e2948]
+                      - cell "5" [ref=e2949]
+                    - row "6 7 8 9 10 11 12" [ref=e2950]:
+                      - cell "6" [ref=e2951]
+                      - cell "7" [ref=e2952]
+                      - cell "8" [ref=e2953]
+                      - cell "9" [ref=e2954]
+                      - cell "10" [ref=e2955]
+                      - cell "11" [ref=e2956]
+                      - cell "12" [ref=e2957]
+                    - row "13 14 15 16 17 18 19" [ref=e2958]:
+                      - cell "13" [ref=e2959]
+                      - cell "14" [ref=e2960]
+                      - cell "15" [ref=e2961]
+                      - cell "16" [ref=e2962]
+                      - cell "17" [ref=e2963]
+                      - cell "18" [ref=e2964]
+                      - cell "19" [ref=e2965]
+                    - row "20 21 22 23 24 25 26" [ref=e2966]:
+                      - cell "20" [ref=e2967]
+                      - cell "21" [ref=e2968]
+                      - cell "22" [ref=e2969]
+                      - cell "23" [ref=e2970]
+                      - cell "24" [ref=e2971]
+                      - cell "25" [ref=e2972]
+                      - cell "26" [ref=e2973]
+                    - row "27 28 29 30 31" [ref=e2974]:
+                      - cell "27" [ref=e2975]
+                      - cell "28" [ref=e2976]
+                      - cell "29" [ref=e2977]
+                      - cell "30" [ref=e2978]
+                      - cell "31" [ref=e2979]
+                      - cell [ref=e2980]
+                      - cell [ref=e2981]
+                - generic [ref=e2984] [cursor=pointer]: 圖例說明
+              - group "21 / 24" [ref=e2987]:
+                - text: 
+                - generic [ref=e2988]: 116 年 1 月
+                - table [ref=e2989]:
+                  - rowgroup [ref=e2990]:
+                    - row "日 一 二 三 四 五 六" [ref=e2991]:
+                      - columnheader "日" [ref=e2992]
+                      - columnheader "一" [ref=e2993]
+                      - columnheader "二" [ref=e2994]
+                      - columnheader "三" [ref=e2995]
+                      - columnheader "四" [ref=e2996]
+                      - columnheader "五" [ref=e2997]
+                      - columnheader "六" [ref=e2998]
+                  - rowgroup [ref=e2999]:
+                    - row "1 2" [ref=e3000]:
+                      - cell [ref=e3001]
+                      - cell [ref=e3002]
+                      - cell [ref=e3003]
+                      - cell [ref=e3004]
+                      - cell [ref=e3005]
+                      - cell "1" [ref=e3006]
+                      - cell "2" [ref=e3007]
+                    - row "3 4 5 6 7 8 9" [ref=e3008]:
+                      - cell "3" [ref=e3009]
+                      - cell "4" [ref=e3010]
+                      - cell "5" [ref=e3011]
+                      - cell "6" [ref=e3012]
+                      - cell "7" [ref=e3013]
+                      - cell "8" [ref=e3014]
+                      - cell "9" [ref=e3015]
+                    - row "10 11 12 13 14 15 16" [ref=e3016]:
+                      - cell "10" [ref=e3017]
+                      - cell "11" [ref=e3018]
+                      - cell "12" [ref=e3019]
+                      - cell "13" [ref=e3020]
+                      - cell "14" [ref=e3021]
+                      - cell "15" [ref=e3022]
+                      - cell "16" [ref=e3023]
+                    - row "17 18 19 20 21 22 23" [ref=e3024]:
+                      - cell "17" [ref=e3025]
+                      - cell "18" [ref=e3026]
+                      - cell "19" [ref=e3027]
+                      - cell "20" [ref=e3028]
+                      - cell "21" [ref=e3029]
+                      - cell "22" [ref=e3030]
+                      - cell "23" [ref=e3031]
+                    - row "24 25 26 27 28 29 30" [ref=e3032]:
+                      - cell "24" [ref=e3033]
+                      - cell "25" [ref=e3034]
+                      - cell "26" [ref=e3035]
+                      - cell "27" [ref=e3036]
+                      - cell "28" [ref=e3037]
+                      - cell "29" [ref=e3038]
+                      - cell "30" [ref=e3039]
+                    - row "31" [ref=e3040]:
+                      - cell "31" [ref=e3041]
+                      - cell [ref=e3042]
+                      - cell [ref=e3043]
+                      - cell [ref=e3044]
+                      - cell [ref=e3045]
+                      - cell [ref=e3046]
+                      - cell [ref=e3047]
+                - generic [ref=e3050] [cursor=pointer]: 圖例說明
+              - group "22 / 24" [ref=e3053]:
+                - text: 
+                - generic [ref=e3054]: 116 年 2 月
+                - table [ref=e3055]:
+                  - rowgroup [ref=e3056]:
+                    - row "日 一 二 三 四 五 六" [ref=e3057]:
+                      - columnheader "日" [ref=e3058]
+                      - columnheader "一" [ref=e3059]
+                      - columnheader "二" [ref=e3060]
+                      - columnheader "三" [ref=e3061]
+                      - columnheader "四" [ref=e3062]
+                      - columnheader "五" [ref=e3063]
+                      - columnheader "六" [ref=e3064]
+                  - rowgroup [ref=e3065]:
+                    - row "1 2 3 4 5 6" [ref=e3066]:
+                      - cell [ref=e3067]
+                      - cell "1" [ref=e3068]
+                      - cell "2" [ref=e3069]
+                      - cell "3" [ref=e3070]
+                      - cell "4" [ref=e3071]
+                      - cell "5" [ref=e3072]
+                      - cell "6" [ref=e3073]
+                    - row "7 8 9 10 11 12 13" [ref=e3074]:
+                      - cell "7" [ref=e3075]
+                      - cell "8" [ref=e3076]
+                      - cell "9" [ref=e3077]
+                      - cell "10" [ref=e3078]
+                      - cell "11" [ref=e3079]
+                      - cell "12" [ref=e3080]
+                      - cell "13" [ref=e3081]
+                    - row "14 15 16 17 18 19 20" [ref=e3082]:
+                      - cell "14" [ref=e3083]
+                      - cell "15" [ref=e3084]
+                      - cell "16" [ref=e3085]
+                      - cell "17" [ref=e3086]
+                      - cell "18" [ref=e3087]
+                      - cell "19" [ref=e3088]
+                      - cell "20" [ref=e3089]
+                    - row "21 22 23 24 25 26 27" [ref=e3090]:
+                      - cell "21" [ref=e3091]
+                      - cell "22" [ref=e3092]
+                      - cell "23" [ref=e3093]
+                      - cell "24" [ref=e3094]
+                      - cell "25" [ref=e3095]
+                      - cell "26" [ref=e3096]
+                      - cell "27" [ref=e3097]
+                    - row "28" [ref=e3098]:
+                      - cell "28" [ref=e3099]
+                      - cell [ref=e3100]
+                      - cell [ref=e3101]
+                      - cell [ref=e3102]
+                      - cell [ref=e3103]
+                      - cell [ref=e3104]
+                      - cell [ref=e3105]
+                - generic [ref=e3108] [cursor=pointer]: 圖例說明
+              - group "23 / 24" [ref=e3111]:
+                - text: 
+                - generic [ref=e3112]: 116 年 3 月
+                - table [ref=e3113]:
+                  - rowgroup [ref=e3114]:
+                    - row "日 一 二 三 四 五 六" [ref=e3115]:
+                      - columnheader "日" [ref=e3116]
+                      - columnheader "一" [ref=e3117]
+                      - columnheader "二" [ref=e3118]
+                      - columnheader "三" [ref=e3119]
+                      - columnheader "四" [ref=e3120]
+                      - columnheader "五" [ref=e3121]
+                      - columnheader "六" [ref=e3122]
+                  - rowgroup [ref=e3123]:
+                    - row "1 2 3 4 5 6" [ref=e3124]:
+                      - cell [ref=e3125]
+                      - cell "1" [ref=e3126]
+                      - cell "2" [ref=e3127]
+                      - cell "3" [ref=e3128]
+                      - cell "4" [ref=e3129]
+                      - cell "5" [ref=e3130]
+                      - cell "6" [ref=e3131]
+                    - row "7 8 9 10 11 12 13" [ref=e3132]:
+                      - cell "7" [ref=e3133]
+                      - cell "8" [ref=e3134]
+                      - cell "9" [ref=e3135]
+                      - cell "10" [ref=e3136]
+                      - cell "11" [ref=e3137]
+                      - cell "12" [ref=e3138]
+                      - cell "13" [ref=e3139]
+                    - row "14 15 16 17 18 19 20" [ref=e3140]:
+                      - cell "14" [ref=e3141]
+                      - cell "15" [ref=e3142]
+                      - cell "16" [ref=e3143]
+                      - cell "17" [ref=e3144]
+                      - cell "18" [ref=e3145]
+                      - cell "19" [ref=e3146]
+                      - cell "20" [ref=e3147]
+                    - row "21 22 23 24 25 26 27" [ref=e3148]:
+                      - cell "21" [ref=e3149]
+                      - cell "22" [ref=e3150]
+                      - cell "23" [ref=e3151]
+                      - cell "24" [ref=e3152]
+                      - cell "25" [ref=e3153]
+                      - cell "26" [ref=e3154]
+                      - cell "27" [ref=e3155]
+                    - row "28 29 30 31" [ref=e3156]:
+                      - cell "28" [ref=e3157]
+                      - cell "29" [ref=e3158]
+                      - cell "30" [ref=e3159]
+                      - cell "31" [ref=e3160]
+                      - cell [ref=e3161]
+                      - cell [ref=e3162]
+                      - cell [ref=e3163]
+                - generic [ref=e3166] [cursor=pointer]: 圖例說明
+              - group "24 / 24" [ref=e3169]:
+                - text: 
+                - generic [ref=e3170]: 116 年 4 月
+                - table [ref=e3171]:
+                  - rowgroup [ref=e3172]:
+                    - row "日 一 二 三 四 五 六" [ref=e3173]:
+                      - columnheader "日" [ref=e3174]
+                      - columnheader "一" [ref=e3175]
+                      - columnheader "二" [ref=e3176]
+                      - columnheader "三" [ref=e3177]
+                      - columnheader "四" [ref=e3178]
+                      - columnheader "五" [ref=e3179]
+                      - columnheader "六" [ref=e3180]
+                  - rowgroup [ref=e3181]:
+                    - row "1 2 3" [ref=e3182]:
+                      - cell [ref=e3183]
+                      - cell [ref=e3184]
+                      - cell [ref=e3185]
+                      - cell [ref=e3186]
+                      - cell "1" [ref=e3187]
+                      - cell "2" [ref=e3188]
+                      - cell "3" [ref=e3189]
+                    - row "4 5 6 7 8 9 10" [ref=e3190]:
+                      - cell "4" [ref=e3191]
+                      - cell "5" [ref=e3192]
+                      - cell "6" [ref=e3193]
+                      - cell "7" [ref=e3194]
+                      - cell "8" [ref=e3195]
+                      - cell "9" [ref=e3196]
+                      - cell "10" [ref=e3197]
+                    - row "11 12 13 14 15 16 17" [ref=e3198]:
+                      - cell "11" [ref=e3199]
+                      - cell "12" [ref=e3200]
+                      - cell "13" [ref=e3201]
+                      - cell "14" [ref=e3202]
+                      - cell "15" [ref=e3203]
+                      - cell "16" [ref=e3204]
+                      - cell "17" [ref=e3205]
+                    - row "18 19 20 21 22 23 24" [ref=e3206]:
+                      - cell "18" [ref=e3207]
+                      - cell "19" [ref=e3208]
+                      - cell "20" [ref=e3209]
+                      - cell "21" [ref=e3210]
+                      - cell "22" [ref=e3211]
+                      - cell "23" [ref=e3212]
+                      - cell "24" [ref=e3213]
+                    - row "25 26 27 28 29 30" [ref=e3214]:
+                      - cell "25" [ref=e3215]
+                      - cell "26" [ref=e3216]
+                      - cell "27" [ref=e3217]
+                      - cell "28" [ref=e3218]
+                      - cell "29" [ref=e3219]
+                      - cell "30" [ref=e3220]
+                      - cell [ref=e3221]
+                - generic [ref=e3224] [cursor=pointer]: 圖例說明
+            - button "Previous slide" [ref=e3227] [cursor=pointer]: prev
+            - button "Next slide" [ref=e3228] [cursor=pointer]: next

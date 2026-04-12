@@ -1,0 +1,22 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "'/html' 應用程式中發生伺服器錯誤。" [level=1] [ref=e3]:
+      - text: "'/html' 應用程式中發生伺服器錯誤。"
+      - separator [ref=e4]
+    - heading "執行階段錯誤" [level=2] [ref=e5]
+  - generic [ref=e6]:
+    - text: "描述: 伺服器上發生應用程式錯誤。此應用程式的目前自訂錯誤設定因安全性考量，防止他人從遠端看見應用程式錯誤的詳細資訊。然而，可以使用本機伺服器電腦上的瀏覽器檢視。"
+    - text: "詳細資料: 若要在遠端電腦檢視此特定錯誤訊息的詳細資訊，請於目前 Web 應用程式根目錄內的 \"web.config\" 組態檔中建立 <customErrors> 標記。然後將 <customErrors> 標記的 \"mode\" 屬性設為 \"Off\"。"
+    - table [ref=e7]:
+      - rowgroup [ref=e8]:
+        - row "<!-- Web.Config 組態檔 --> <configuration> <system.web> <customErrors mode=\"Off\"/> </system.web> </configuration>" [ref=e9]:
+          - cell "<!-- Web.Config 組態檔 --> <configuration> <system.web> <customErrors mode=\"Off\"/> </system.web> </configuration>" [ref=e10]:
+            - code [ref=e11]:
+              - generic [ref=e12]: <!-- Web.Config 組態檔 --> <configuration> <system.web> <customErrors mode="Off"/> </system.web> </configuration>
+    - text: "注意: 可以藉由修改應用程式 <customErrors> 組態標記的 \"defaultRedirect\" 屬性，使其指向自訂錯誤頁面的 URL，以便使用自訂錯誤頁面取代您目前看到的錯誤頁面。"
+    - table [ref=e13]:
+      - rowgroup [ref=e14]:
+        - row "<!-- Web.Config 組態檔 --> <configuration> <system.web> <customErrors mode=\"RemoteOnly\" defaultRedirect=\"mycustompage.htm\"/> </system.web> </configuration>" [ref=e15]:
+          - cell "<!-- Web.Config 組態檔 --> <configuration> <system.web> <customErrors mode=\"RemoteOnly\" defaultRedirect=\"mycustompage.htm\"/> </system.web> </configuration>" [ref=e16]:
+            - code [ref=e17]:
+              - generic [ref=e18]: <!-- Web.Config 組態檔 --> <configuration> <system.web> <customErrors mode="RemoteOnly" defaultRedirect="mycustompage.htm"/> </system.web> </configuration>

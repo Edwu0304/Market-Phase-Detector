@@ -1,0 +1,6 @@
+[    1493ms] [LOG] replaceState {u: /charts/14588/taiwan-10-year-government-bond-yield, c: 14588} @ https://www.macromicro.me/assets/js/chartcollection/chartcollection_bundle.js?v=260401.1200:0
+[    1545ms] TypeError: Cannot read properties of undefined (reading 'scrollHeight')
+    at Proxy.syncDescExpander (https://www.macromicro.me/assets/js/chartcollection/chartcollection_bundle.js?v=260401.1200:1:31392)
+[    1878ms] [LOG] [MacroMicro Widget] Bubble mode initialized @ https://madam-chat.macromicro.me/widget.js:235
+[    1879ms] [LOG] [MacroMicro Widget] Instance created: 1 @ https://madam-chat.macromicro.me/widget.js:624
+[    3284ms] [LOG] drawChart() called @ https://www.macromicro.me/assets/js/chartcollection/chartcollection_bundle.js?v=260401.1200:0

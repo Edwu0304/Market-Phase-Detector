@@ -1,0 +1,513 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - navigation [ref=e5]:
+          - generic [ref=e6]:
+            - link "MacroMicro 財經M平方" [ref=e7] [cursor=pointer]:
+              - /url: javascript:;
+            - generic [ref=e8]:
+              - generic [ref=e9]:
+                - button " 搜尋..." [ref=e10] [cursor=pointer]:
+                  - generic [ref=e11]: 
+                  - generic [ref=e12]: 搜尋...
+                - text:  
+              - link "立即訂閱" [ref=e13] [cursor=pointer]:
+                - /url: /subscribe#individual
+                - generic [ref=e14]: 立即訂閱
+              - text: 
+              - button "" [ref=e16] [cursor=pointer]:
+                - generic [ref=e17]: 
+              - link "登入" [ref=e18] [cursor=pointer]:
+                - /url: /login?next=%2Fsearch%3Fq%3DTaiwan%2Bhigh%2Byield%2Bspread
+                - generic [ref=e19]: 登入
+              - text:         
+              - button " Menu" [ref=e20] [cursor=pointer]:
+                - generic [ref=e21]: 
+                - generic [ref=e22]: Menu
+            - list [ref=e24]:
+              - listitem [ref=e25]:
+                - button "總經" [ref=e26] [cursor=pointer]
+              - listitem [ref=e27]:
+                - button "圖表" [ref=e28] [cursor=pointer]
+                - text: 
+              - listitem [ref=e29]:
+                - button "專區" [ref=e30] [cursor=pointer]
+                - text:           
+              - listitem [ref=e31]:
+                - button "行情" [ref=e32] [cursor=pointer]
+                - text:        
+              - listitem [ref=e33]:
+                - button "分析" [ref=e34] [cursor=pointer]
+                - text:    
+              - text:   
+              - listitem [ref=e35]:
+                - button "學院" [ref=e36] [cursor=pointer]
+                - text:   
+              - text:                    
+      - main [ref=e37]:
+        - heading "搜尋" [level=1] [ref=e40]
+        - generic [ref=e42]:
+          - generic [ref=e45]:
+            - textbox "搜尋" [ref=e46]: Taiwan high yield bond spread
+            - button "清除搜尋框" [ref=e48] [cursor=pointer]:
+              - generic [ref=e49]: ×
+          - paragraph [ref=e50]: 搜尋採用 Google 模組，搜尋結果將有機率出現部分廣告
+        - generic [ref=e56]:
+          - generic [ref=e59]:
+            - tab "refinement" [ref=e60]: 所有結果
+            - tab "refinement" [ref=e61] [cursor=pointer]: 圖表
+            - tab "refinement" [ref=e62] [cursor=pointer]: 部落格
+            - tab "refinement" [ref=e63] [cursor=pointer]: 關鍵圖表
+            - tab "refinement" [ref=e64] [cursor=pointer]: ETF
+          - generic [ref=e65]:
+            - generic [ref=e66]: 約有 1,170 項結果 (搜尋時間：0.33 秒)
+            - generic [ref=e69] [cursor=pointer]: 排序依據
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - generic [ref=e78]:
+                - link "US - Credit Spread | 用戶圖表| MacroMicro 財經M平方" [ref=e81] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/charts/85525/US-Credit-Spread
+                - generic [ref=e83]: MacroMicro 財經M平方 › charts › US-Credit-Spread
+                - main [ref=e84]:
+                  - generic [ref=e86]: ... Yield - US 10-Year Bond Yield (risk-free interest rate) Credit spread reflects corporates' default risks. High-yield bonds are bonds sold by companies with low ...
+              - generic [ref=e88]:
+                - link "US - Credit Spread | 用戶圖表| MacroMicro 財經M平方" [ref=e91] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/charts/116137/US-Credit-Spread?share=53635048bfe2d843658c9aee8530dcaf34772eb06680481992ab7a3f94e4e6c8
+                - generic [ref=e93]: MacroMicro 財經M平方 › charts › US-Credit-Spread
+                - main [ref=e94]:
+                  - generic [ref=e96]: ... Yield - US 10-Year Bond Yield (risk-free interest rate) Credit spread reflects corporates' default risks. High-yield bonds are bonds sold by companies with low ...
+              - generic [ref=e98]:
+                - link "Credit Spread, VIX and SP500 | 用戶圖表| MacroMicro 財經M平方" [ref=e101] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/charts/82929/Credit-Spread-VIX-and-SP500
+                - generic [ref=e103]: MacroMicro 財經M平方 › charts › Credit-Spread-VIX-and-SP500
+                - main [ref=e104]:
+                  - generic [ref=e106]: ... Yield - US 10-Year Bond Yield (risk-free interest rate) Credit spread reflects corporates' default risks. High-yield bonds are bonds sold by companies with low ...
+              - generic [ref=e108]:
+                - link "US Secured Overnight Financing Rate (SOFR) minus 10 Year ..." [ref=e111] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/charts/121495/US-Secured-Overnight-Financing-Rate-SOFR-minus-10-Year-Treasury-Yield
+                - generic [ref=e113]: MacroMicro 財經M平方 › charts › US-Secured-Overnight-Financing-Rate...
+                - main [ref=e114]:
+                  - generic [ref=e116]: ... high-yield bonds or equities. Ample liquidity (negative spread) may create opportunities for increased exposure to risk assets, including growth equities or ...
+              - generic [ref=e118]:
+                - link "美國-信用風險利差 - 財經M平方" [ref=e121] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/charts/930/us-credit-spread
+                - generic [ref=e123]: MacroMicro 財經M平方 › charts › us-credit-spread
+                - main [ref=e124]:
+                  - generic [ref=e126]: 美國信用風險利差＝ 美林各評級高收益債券殖利率- 美國10 年期政府公債殖利率（代表無風險利率），此指標反映市場對未來企業違約風險的預期。其中，高收益債券是信用評等較 ...
+              - generic [ref=e128]:
+                - link "US ISM PMI Inverted vs CCC/AAA Effective Yield Ratio ... - 財經M平方" [ref=e131] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/charts/105585/US-ISM-PMI-Inverted-vs-CCC-AAA-Effective-Yield-Ratio-amp-Credit-Spread
+                - generic [ref=e133]: MacroMicro 財經M平方 › charts › US-ISM-PMI-Inverted-vs-CCC-AAA-...
+                - main [ref=e134]:
+                  - generic [ref=e136]: 最新數據 · US ISM Purchasing Managers Index (PMI) Inverted · CCC/AAA Ratio · US Credit Spread · 美國-美銀美林AAA級企業債券實際收益率 · US BofAML CCC & Lower High ...
+              - generic [ref=e138]:
+                - link "MacroMicro 財經M平方" [ref=e141] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/shared_chart/list?sort=viewed&tag=6&p=74&page=59
+                - generic [ref=e143]: MacroMicro 財經M平方 › shared_chart › list
+                - main [ref=e144]:
+                  - generic [ref=e146]: 6 Percent Index 台灣-指標利率與台灣加權指數 重貼現率 台灣 ... Credit Spread, US BBB Credit Spread, and US CCC Credit Spread. ... High-Yield Bond Yield - US 10-Year.
+              - generic [ref=e148]:
+                - link "信用風險利差| 美國-股市| 圖組| MacroMicro 財經M平方" [ref=e151] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/collections/34/us-stock-relative/930/us-credit-spread
+                - generic [ref=e153]: MacroMicro 財經M平方 › collections › us-stock-relative › us-credit-spread
+                - main [ref=e154]:
+                  - generic [ref=e156]: 美國信用風險利差＝ 美林各評級高收益債券殖利率- 美國10 年期政府公債殖利率（代表無風險利率），此指標反映市場對未來企業違約風險的預期。其中，高收益債券是信用評等較 ...
+              - generic [ref=e158]:
+                - link "MacroMicro 財經M平方" [ref=e161] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/shared_chart/list?sort=updated&tag=6&p=10&page=56
+                - generic [ref=e163]: MacroMicro 財經M平方 › shared_chart › list
+                - main [ref=e164]:
+                  - generic [ref=e166]: "As an example, the US CCC Credit Spread is calculated as follows: US CCC Credit Spread = Merrill Lynch CCC-grade High-Yield Bond Yield - US 10-Year. 看更多."
+              - generic [ref=e168]:
+                - link "美國-債市總報酬指數 - 財經M平方" [ref=e171] [cursor=pointer]:
+                  - /url: https://www.macromicro.me/charts/35311/us-corporate-debt-total-return-index
+                - generic [ref=e173]: MacroMicro 財經M平方 › charts › us-corporate-debt-total-return-index
+                - main [ref=e174]:
+                  - generic [ref=e176]: ... High Yield Index Total Return Index Value） ... 台灣 · 中國 · 歐洲 · 日本 · 東南亞 · 新興市場. 產業. 產業決策平台 · 美股財報資料庫 ...
+            - generic [ref=e178]:
+              - text: "1"
+              - link "第 2 頁" [ref=e179] [cursor=pointer]: "2"
+              - link "第 3 頁" [ref=e180] [cursor=pointer]: "3"
+              - link "第 4 頁" [ref=e181] [cursor=pointer]: "4"
+              - link "第 5 頁" [ref=e182] [cursor=pointer]: "5"
+              - link "第 6 頁" [ref=e183] [cursor=pointer]: "6"
+              - link "第 7 頁" [ref=e184] [cursor=pointer]: "7"
+              - link "第 8 頁" [ref=e185] [cursor=pointer]: "8"
+              - link "第 9 頁" [ref=e186] [cursor=pointer]: "9"
+              - link "第 10 頁" [ref=e187] [cursor=pointer]: "10"
+            - link "搜尋在 Google 上搜尋「 Taiwan high yield bond spread 」" [ref=e189] [cursor=pointer]:
+              - /url: https://www.google.com/search?client=ms-google-coop&q=Taiwan+high+yield+bond+spread&cx=414d6323cec6d419d
+              - generic [ref=e190]:
+                - img "搜尋" [ref=e191]
+                - text: 在 Google 上搜尋「
+                - generic [ref=e193]: Taiwan high yield bond spread
+                - text: 」
+      - contentinfo [ref=e194]:
+        - link "成為訂閱會員" [ref=e196] [cursor=pointer]:
+          - /url: /subscribe
+          - generic [ref=e197]: 成為訂閱會員
+        - generic [ref=e198]:
+          - navigation [ref=e199]:
+            - generic [ref=e200]:
+              - heading "總經" [level=6] [ref=e201]
+              - list [ref=e202]:
+                - listitem [ref=e203]:
+                  - link " 首頁" [ref=e204] [cursor=pointer]:
+                    - /url: /
+                    - generic [ref=e205]: 
+                    - text: 首頁
+                - listitem [ref=e206]:
+                  - link " 總經" [ref=e207] [cursor=pointer]:
+                    - /url: /macro
+                    - generic [ref=e208]: 
+                    - text: 總經
+                - listitem [ref=e209]:
+                  - link "全球" [ref=e210] [cursor=pointer]:
+                    - /url: /macro
+                    - text: 全球
+                - listitem [ref=e212]:
+                  - link "國家數據中心" [ref=e213] [cursor=pointer]:
+                    - /url: /cross-country-database
+                    - text: 國家數據中心
+                - listitem [ref=e215]:
+                  - link "美國" [ref=e216] [cursor=pointer]:
+                    - /url: /macro/us
+                    - text: 美國
+                - listitem [ref=e218]:
+                  - link "台灣" [ref=e219] [cursor=pointer]:
+                    - /url: /macro/tw
+                    - text: 台灣
+                - listitem [ref=e221]:
+                  - link "中國" [ref=e222] [cursor=pointer]:
+                    - /url: /macro/cn
+                    - text: 中國
+                - listitem [ref=e224]:
+                  - link "歐洲" [ref=e225] [cursor=pointer]:
+                    - /url: /macro/eu
+                    - text: 歐洲
+                - listitem [ref=e227]:
+                  - link "日本" [ref=e228] [cursor=pointer]:
+                    - /url: /macro/jp
+                    - text: 日本
+                - listitem [ref=e230]:
+                  - link "東南亞" [ref=e231] [cursor=pointer]:
+                    - /url: /macro/an
+                    - text: 東南亞
+                - listitem [ref=e233]:
+                  - link "新興市場" [ref=e234] [cursor=pointer]:
+                    - /url: /macro/em
+                    - text: 新興市場
+            - generic [ref=e236]:
+              - heading "產業" [level=6] [ref=e237]
+              - list [ref=e238]:
+                - listitem [ref=e239]:
+                  - link " 產業決策平台" [ref=e240] [cursor=pointer]:
+                    - /url: /industry-intelligence-hub
+                    - generic [ref=e241]: 
+                    - text: 產業決策平台
+                - listitem [ref=e242]:
+                  - link " 美股財報資料庫" [ref=e243] [cursor=pointer]:
+                    - /url: /stocks/screener
+                    - generic [ref=e244]: 
+                    - text: 美股財報資料庫
+                - listitem [ref=e245]:
+                  - link " 台灣產業專區" [ref=e246] [cursor=pointer]:
+                    - /url: /sectors
+                    - generic [ref=e247]: 
+                    - text: 台灣產業專區
+            - generic [ref=e248]:
+              - heading "圖表與行情" [level=6] [ref=e249]
+              - list [ref=e250]:
+                - listitem [ref=e251]:
+                  - link " 操盤人必看" [ref=e252] [cursor=pointer]:
+                    - /url: /trader-insights
+                    - generic [ref=e253]: 
+                    - text: 操盤人必看
+                - listitem [ref=e254]:
+                  - link " 外匯觀測站" [ref=e255] [cursor=pointer]:
+                    - /url: /forex
+                    - generic [ref=e256]: 
+                    - text: 外匯觀測站
+                - listitem [ref=e257]:
+                  - link " 股市觀測站" [ref=e258] [cursor=pointer]:
+                    - /url: /stocks
+                    - generic [ref=e259]: 
+                    - text: 股市觀測站
+                - listitem [ref=e260]:
+                  - link " ETF觀測站" [ref=e261] [cursor=pointer]:
+                    - /url: /etf
+                    - generic [ref=e262]: 
+                    - text: ETF觀測站
+                - listitem [ref=e263]:
+                  - link " 原物料觀測站" [ref=e264] [cursor=pointer]:
+                    - /url: /commodities
+                    - generic [ref=e265]: 
+                    - text: 原物料觀測站
+                - listitem [ref=e266]:
+                  - link " 債券觀測站" [ref=e267] [cursor=pointer]:
+                    - /url: /bonds
+                    - generic [ref=e268]: 
+                    - text: 債券觀測站
+                - listitem [ref=e269]:
+                  - link " 加密貨幣觀測站" [ref=e270] [cursor=pointer]:
+                    - /url: /crypto
+                    - generic [ref=e271]: 
+                    - text: 加密貨幣觀測站
+                - listitem [ref=e272]:
+                  - link " 波動率觀測站" [ref=e273] [cursor=pointer]:
+                    - /url: /volatility
+                    - generic [ref=e274]: 
+                    - text: 波動率觀測站
+                - listitem [ref=e275]:
+                  - link " 主權債違約觀測站" [ref=e276] [cursor=pointer]:
+                    - /url: /cds
+                    - generic [ref=e277]: 
+                    - text: 主權債違約觀測站
+            - generic [ref=e278]:
+              - heading "專區" [level=6] [ref=e279]
+              - list [ref=e280]:
+                - listitem [ref=e281]:
+                  - link " ETF 專區" [ref=e282] [cursor=pointer]:
+                    - /url: /etf/us/screener
+                    - generic [ref=e283]: 
+                    - text: ETF 專區
+                - listitem [ref=e284]:
+                  - link " 川普專區" [ref=e285] [cursor=pointer]:
+                    - /url: /potus-47-donald-trump
+                    - generic [ref=e286]: 
+                    - text: 川普專區
+                - listitem [ref=e287]:
+                  - link " 央行專區" [ref=e288] [cursor=pointer]:
+                    - /url: /central_bank/overview
+                    - generic [ref=e289]: 
+                    - text: 央行專區
+                - listitem [ref=e290]:
+                  - link " 原物料專區" [ref=e291] [cursor=pointer]:
+                    - /url: /commodities/overview
+                    - generic [ref=e292]: 
+                    - text: 原物料專區
+                - listitem [ref=e293]:
+                  - link " 13F機構持倉" [ref=e294] [cursor=pointer]:
+                    - /url: /13f
+                    - generic [ref=e295]: 
+                    - text: 13F機構持倉
+                - listitem [ref=e296]:
+                  - link " 大額交易人持倉" [ref=e297] [cursor=pointer]:
+                    - /url: /cot-flow
+                    - generic [ref=e298]: 
+                    - text: 大額交易人持倉
+                - listitem [ref=e299]:
+                  - link " 時間軸" [ref=e300] [cursor=pointer]:
+                    - /url: /time_line
+                    - generic [ref=e301]: 
+                    - text: 時間軸
+                - listitem [ref=e302]:
+                  - link " 動態圖表" [ref=e303] [cursor=pointer]:
+                    - /url: /dynamic_chart
+                    - generic [ref=e304]: 
+                    - text: 動態圖表
+            - generic [ref=e305]:
+              - heading "分析" [level=6] [ref=e306]
+              - list [ref=e307]:
+                - listitem [ref=e308]:
+                  - link " MM獨家報告" [ref=e309] [cursor=pointer]:
+                    - /url: /mails/monthly_report
+                    - generic [ref=e310]: 
+                    - text: MM獨家報告
+                - listitem [ref=e311]:
+                  - link " MM短評" [ref=e312] [cursor=pointer]:
+                    - /url: /quickie
+                    - generic [ref=e313]: 
+                    - text: MM短評
+                - listitem [ref=e314]:
+                  - link " 關鍵圖表" [ref=e315] [cursor=pointer]:
+                    - /url: /spotlights
+                    - generic [ref=e316]: 
+                    - text: 關鍵圖表
+                - listitem [ref=e317]:
+                  - link " 部落格" [ref=e318] [cursor=pointer]:
+                    - /url: /blog
+                    - generic [ref=e319]: 
+                    - text: 部落格
+                - listitem [ref=e320]:
+                  - link " 部落格 RSS" [ref=e321] [cursor=pointer]:
+                    - /url: /feed
+                    - generic [ref=e322]: 
+                    - text: 部落格 RSS
+            - generic [ref=e323]:
+              - heading "工具" [level=6] [ref=e324]
+              - list [ref=e325]:
+                - listitem [ref=e326]:
+                  - link " 財經行事曆" [ref=e327] [cursor=pointer]:
+                    - /url: /calendar
+                    - generic [ref=e328]: 
+                    - text: 財經行事曆
+                - listitem [ref=e329]:
+                  - link " 研究工具箱" [ref=e330] [cursor=pointer]:
+                    - /url: /toolbox/chart-builder/line
+                    - generic [ref=e331]: 
+                    - text: 研究工具箱
+                - listitem [ref=e332]:
+                  - link " 數據" [ref=e333] [cursor=pointer]:
+                    - /url: /series
+                    - generic [ref=e334]: 
+                    - text: 數據
+              - heading "學院與社群" [level=6] [ref=e335]
+              - list [ref=e336]:
+                - listitem [ref=e337]:
+                  - link " MM總經線上學院" [ref=e338] [cursor=pointer]:
+                    - /url: /video
+                    - generic [ref=e339]: 
+                    - text: MM總經線上學院
+                - listitem [ref=e340]:
+                  - link " MM Podcast 頻道" [ref=e341] [cursor=pointer]:
+                    - /url: https://podcasts.apple.com/tw/podcast/macromicro-%E8%B2%A1%E7%B6%93m%E5%B9%B3%E6%96%B9/id1522682178
+                    - generic [ref=e342]: 
+                    - text: MM Podcast 頻道
+                - listitem [ref=e343]:
+                  - link " 用戶觀點 Public" [ref=e344] [cursor=pointer]:
+                    - /url: /shared_chart
+                    - generic [ref=e345]: 
+                    - text: 用戶觀點
+                    - generic [ref=e346]: Public
+            - generic [ref=e347]:
+              - heading "鄧白氏 NEW" [level=6] [ref=e348]:
+                - text: 鄧白氏
+                - generic [ref=e349]: NEW
+              - list [ref=e350]:
+                - listitem [ref=e351]:
+                  - link " 企業尊榮版領航方案" [ref=e352] [cursor=pointer]:
+                    - /url: /macromicro-dun-and-bradstreet-globalview
+                    - generic [ref=e353]: 
+                    - text: 企業尊榮版領航方案
+                - listitem [ref=e354]:
+                  - link " D&B GlobalView 數據專區" [ref=e355] [cursor=pointer]:
+                    - /url: /dnb/dun-and-bradstreet-globalview
+                    - generic [ref=e356]: 
+                    - text: D&B GlobalView 數據專區
+                - listitem [ref=e357]:
+                  - link " 全球企業樂觀洞察" [ref=e358] [cursor=pointer]:
+                    - /url: /dnb/global-business-optimism-insights
+                    - generic [ref=e359]: 
+                    - text: 全球企業樂觀洞察
+                - listitem [ref=e360]:
+                  - link " 國家風險評級" [ref=e361] [cursor=pointer]:
+                    - /url: /dnb/country-risk-ratings
+                    - generic [ref=e362]: 
+                    - text: 國家風險評級
+                - listitem [ref=e363]:
+                  - link " 產業風險評級" [ref=e364] [cursor=pointer]:
+                    - /url: /dnb/sector-risk-ratings
+                    - generic [ref=e365]: 
+                    - text: 產業風險評級
+                - listitem [ref=e366]:
+                  - link " 國家 ESG 評級" [ref=e367] [cursor=pointer]:
+                    - /url: /dnb/country-esg-risk-ratings
+                    - generic [ref=e368]: 
+                    - text: 國家 ESG 評級
+                - listitem [ref=e369]:
+                  - link " 企業營收與員工人數推估模型" [ref=e370] [cursor=pointer]:
+                    - /url: /dnb/global-sales-employee-models
+                    - generic [ref=e371]: 
+                    - text: 企業營收與員工人數推估模型
+                - listitem [ref=e372]:
+                  - link " 企業數據下載" [ref=e373] [cursor=pointer]:
+                    - /url: /dnb/corporate-data
+                    - generic [ref=e374]: 
+                    - text: 企業數據下載
+            - generic [ref=e375]:
+              - heading "更多" [level=6] [ref=e376]
+              - list [ref=e377]:
+                - listitem [ref=e378]:
+                  - link " MM福利兌換" [ref=e379] [cursor=pointer]:
+                    - /url: /user/mm-benefits
+                    - generic [ref=e380]: 
+                    - text: MM福利兌換
+                - listitem [ref=e381]:
+                  - link " 幫助中心" [ref=e382] [cursor=pointer]:
+                    - /url: https://support.macromicro.me/hc/zh-tw
+                    - generic [ref=e383]: 
+                    - text: 幫助中心
+                - listitem [ref=e384]:
+                  - link " 新手教學" [ref=e385] [cursor=pointer]:
+                    - /url: /teaching
+                    - generic [ref=e386]: 
+                    - text: 新手教學
+                - listitem [ref=e387]:
+                  - link " 關於我們" [ref=e388] [cursor=pointer]:
+                    - /url: /about
+                    - generic [ref=e389]: 
+                    - text: 關於我們
+                - listitem [ref=e390]:
+                  - link " 聯絡我們" [ref=e391] [cursor=pointer]:
+                    - /url: /contact-us
+                    - generic [ref=e392]: 
+                    - text: 聯絡我們
+                - listitem [ref=e393]:
+                  - link " 加入我們" [ref=e394] [cursor=pointer]:
+                    - /url: /careers
+                    - generic [ref=e395]: 
+                    - text: 加入我們
+                - listitem [ref=e396]:
+                  - link " 訂閱方案" [ref=e397] [cursor=pointer]:
+                    - /url: /subscribe
+                    - generic [ref=e398]: 
+                    - text: 訂閱方案
+                - listitem [ref=e399]:
+                  - link " 企業方案" [ref=e400] [cursor=pointer]:
+                    - /url: /subscribe#enterprise
+                    - generic [ref=e401]: 
+                    - text: 企業方案
+                - listitem [ref=e402]:
+                  - link " 服務條款" [ref=e403] [cursor=pointer]:
+                    - /url: /terms
+                    - generic [ref=e404]: 
+                    - text: 服務條款
+                - listitem [ref=e405]:
+                  - link " Facebook 專頁" [ref=e406] [cursor=pointer]:
+                    - /url: https://www.facebook.com/macromicro.me/
+                    - generic [ref=e407]: 
+                    - text: Facebook 專頁
+                - listitem [ref=e408]:
+                  - link " LINE 官方帳號" [ref=e409] [cursor=pointer]:
+                    - /url: https://line.me/ti/p/%40jml8635s
+                    - generic [ref=e410]: 
+                    - text: LINE 官方帳號
+                - listitem [ref=e411]:
+                  - link " YouTube" [ref=e412] [cursor=pointer]:
+                    - /url: https://www.youtube.com/channel/UC6LU7FUBvbFCh_cQasrHZ_Q
+                    - generic [ref=e413]: 
+                    - text: YouTube
+                - listitem [ref=e414]:
+                  - link " Instagram" [ref=e415] [cursor=pointer]:
+                    - /url: https://www.instagram.com/macromicro.me/
+                    - generic [ref=e416]: 
+                    - text: Instagram
+          - generic [ref=e417]:
+            - paragraph [ref=e418]: Copyright © 2026 MacroMicro
+            - paragraph [ref=e419]: 網站內提供之數據資料、分析工具、網誌內容僅供使用者作為參考，實際數據以官方公佈資料為準。任何交易行為須自行判斷並承擔風險，本網站不負擔盈虧之法律責任。
+            - paragraph [ref=e420]: 歡迎分享本網站提供之資訊連結，如需轉載內容務必經由本公司同意。
+            - generic [ref=e421]:
+              - link "繁體中文":
+                - /url: //www.macromicro.me/search?q=Taiwan+high+yield+spread
+              - link "简体中文" [ref=e422] [cursor=pointer]:
+                - /url: //sc.macromicro.me/search?q=Taiwan+high+yield+spread
+              - link "English" [ref=e423] [cursor=pointer]:
+                - /url: //en.macromicro.me/search?q=Taiwan+high+yield+spread
+    - text:                                                                           
+  - generic:
+    - button "":
+      - generic: 
+    - button " 幫 助 中 心":
+      - generic:
+        - generic: 
+        - generic:
+          - text: 幫
+          - text: 助
+          - text: 中
+          - text: 心
+    - button "":
+      - generic:
+        - generic: 
+  - text: 

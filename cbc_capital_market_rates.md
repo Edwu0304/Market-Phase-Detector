@@ -1,0 +1,125 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - img "央行LOGO標誌" [ref=e3]
+    - paragraph [ref=e4]:
+      - link "中央銀行統計資料庫" [ref=e5] [cursor=pointer]:
+        - /url: /Tree/TreeSelect
+    - button "English" [ref=e8] [cursor=pointer]
+    - link "其他相關資料庫" [ref=e9] [cursor=pointer]:
+      - /url: /Tree/TreeSelect#OtherDB
+    - link "操作說明" [ref=e10] [cursor=pointer]:
+      - /url: /Tree/TreeSelect#Guide
+    - link "統計資料庫" [ref=e11] [cursor=pointer]:
+      - /url: /Tree/TreeSelect#Content
+  - generic [ref=e13]:
+    - paragraph [ref=e14]: 29.利率 G.資本市場利率依期間
+    - paragraph [ref=e15]:
+      - text: 請選擇查詢條件，每項請至少選擇一項。(資料至多16000列與350欄)
+      - link "？" [ref=e16] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e17]:
+      - table [ref=e19]:
+        - rowgroup [ref=e20]:
+          - row "期間 全選 不全選 1987 0 39 總數 項目 全選 不全選 政府公債-3年期 0 20 總數" [ref=e21]:
+            - cell "期間 全選 不全選 1987 0 39 總數" [ref=e22]:
+              - generic [ref=e23]:
+                - generic [ref=e24]: 期間
+                - generic [ref=e25]:
+                  - button "全選" [ref=e26] [cursor=pointer]
+                  - button "不全選" [ref=e27] [cursor=pointer]
+              - listbox [ref=e29]:
+                - option "1987" [ref=e30]
+                - option "1988" [ref=e31]
+                - option "1989" [ref=e32]
+                - option "1990" [ref=e33]
+                - option "1991" [ref=e34]
+                - option "1992" [ref=e35]
+                - option "1993" [ref=e36]
+                - option "1994" [ref=e37]
+                - option "1995" [ref=e38]
+                - option "1996" [ref=e39]
+                - option "1997" [ref=e40]
+                - option "1998" [ref=e41]
+                - option "1999" [ref=e42]
+                - option "2000" [ref=e43]
+                - option "2001" [ref=e44]
+                - option "2002" [ref=e45]
+                - option "2003" [ref=e46]
+                - option "2004" [ref=e47]
+                - option "2005" [ref=e48]
+                - option "2006" [ref=e49]
+                - option "2007" [ref=e50]
+                - option "2008" [ref=e51]
+                - option "2009" [ref=e52]
+                - option "2010" [ref=e53]
+                - option "2011" [ref=e54]
+                - option "2012" [ref=e55]
+                - option "2013" [ref=e56]
+                - option "2014" [ref=e57]
+                - option "2015" [ref=e58]
+                - option "2016" [ref=e59]
+                - option "2017" [ref=e60]
+                - option "2018" [ref=e61]
+                - option "2019" [ref=e62]
+                - option "2020" [ref=e63]
+                - option "2021" [ref=e64]
+                - option "2022" [ref=e65]
+                - option "2023" [ref=e66]
+                - option "2024" [ref=e67]
+                - option "2025" [ref=e68]
+              - table [ref=e70]:
+                - row "0 39" [ref=e71]:
+                  - cell "0" [ref=e72]
+                  - cell "39" [ref=e73]
+                - row "總數" [ref=e74]
+            - cell "項目 全選 不全選 政府公債-3年期 0 20 總數" [ref=e75]:
+              - generic [ref=e76]:
+                - generic [ref=e77]: 項目
+                - generic [ref=e78]:
+                  - button "全選" [ref=e79] [cursor=pointer]
+                  - button "不全選" [ref=e80] [cursor=pointer]
+              - listbox [ref=e82]:
+                - option "政府公債-3年期" [ref=e83]
+                - option "政府公債-5年期" [ref=e84]
+                - option "政府公債-7年期" [ref=e85]
+                - option "政府公債-10年期" [ref=e86]
+                - option "政府公債-15年期" [ref=e87]
+                - option "公司債-1年期" [ref=e88]
+                - option "公司債-2年期" [ref=e89]
+                - option "公司債-3年期" [ref=e90]
+                - option "公司債-4年期" [ref=e91]
+                - option "公司債-5年期" [ref=e92]
+                - option "公司債-6年期" [ref=e93]
+                - option "公司債-7年期" [ref=e94]
+                - option "公司債-10年期" [ref=e95]
+                - option "金融債券-2年期" [ref=e96]
+                - option "金融債券-3年期" [ref=e97]
+                - option "金融債券-5年期" [ref=e98]
+                - option "央行單券-CDs-1年期" [ref=e99]
+                - option "央行單券-CDs-2年期" [ref=e100]
+                - option "央行單券-SB-1年期" [ref=e101]
+                - option "十年期政府公債次級市場利率" [ref=e102]
+              - table [ref=e104]:
+                - row "0 20" [ref=e105]:
+                  - cell "0" [ref=e106]
+                  - cell "20" [ref=e107]
+                - row "總數" [ref=e108]
+      - separator [ref=e109]
+      - button "查 詢 »" [ref=e110] [cursor=pointer]:
+        - generic [ref=e111]: 查 詢 »
+  - generic [ref=e113]:
+    - generic [ref=e114]:
+      - img "央行LOGO" [ref=e115]
+      - text: 中央銀行
+    - generic [ref=e116]:
+      - text: 聯絡地址：100243台北市中正區羅斯福路一段2號
+      - text: 中央銀行：(02)2393-6161 傳真：(02)23571974
+    - generic [ref=e117]:
+      - link "服務窗口" [ref=e118] [cursor=pointer]:
+        - /url: https://www.cbc.gov.tw/tw/sp-opma-form-1.html
+      - link "政府網站資料開放宣告" [ref=e119] [cursor=pointer]:
+        - /url: /Tree/PublicStatement
+      - link "隱私權宣告" [ref=e120] [cursor=pointer]:
+        - /url: /Tree/PrivacyStatement
+      - link "資訊安全政策宣告" [ref=e121] [cursor=pointer]:
+        - /url: /Tree/SecureStatement

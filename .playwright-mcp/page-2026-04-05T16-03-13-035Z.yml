@@ -1,0 +1,9 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "'/dgbasall' 應用程式中發生伺服器錯誤。" [level=1] [ref=e3]:
+      - text: "'/dgbasall' 應用程式中發生伺服器錯誤。"
+      - separator [ref=e4]
+    - heading "找不到資源。" [level=2] [ref=e5]
+  - generic [ref=e6]:
+    - text: "描述: HTTP 404. 您要尋找的資源 (或其相依性的其中之一) 可能已經移除、名稱已經變更或是暫時無法使用。請檢閱下列 URL，並且確定它的拼寫無誤。"
+    - text: "要求的 URL: /dgbasall/iframe.aspx"

@@ -11,13 +11,18 @@ def test_marks_lens_uses_credit_and_risk_inputs():
             "stock_index_yoy": -10.0,
             "credit_change": -50.0,
             "inventory_change": 100.0,
+            "credit_spread": 2.8,
+            "cci_total": 82.0,
+            "margin_amount": 520000000,
         }
     )
 
     assert decision.phase == "Recession"
-    # Check that core metrics are present (new metrics may also be included)
     metric_ids = {metric.metric_id for metric in decision.metrics}
     assert "stock_index_yoy" in metric_ids
     assert "credit_change" in metric_ids
     assert "inventory_change" in metric_ids
+    assert "credit_spread" in metric_ids
+    assert "cci_level" in metric_ids
+    assert "margin_balance" in metric_ids
     assert decision.reasons

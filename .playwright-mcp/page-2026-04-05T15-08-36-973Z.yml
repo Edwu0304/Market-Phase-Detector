@@ -1,0 +1,748 @@
+- generic [active] [ref=e1]:
+  - link "按 Enter 到主內容區" [ref=e2] [cursor=pointer]:
+    - /url: "#aC"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - navigation [ref=e6]:
+          - list [ref=e7]:
+            - listitem [ref=e8]:
+              - link "回首頁" [ref=e9] [cursor=pointer]:
+                - /url: /tw/mp-1.html
+            - listitem [ref=e10]:
+              - link "兒童網頁" [ref=e11] [cursor=pointer]:
+                - /url: https://knowledge.cbc.gov.tw/child/
+            - listitem [ref=e12]:
+              - link "網站導覽" [ref=e13] [cursor=pointer]:
+                - /url: sitemap-1.html
+            - listitem [ref=e14]:
+              - link "意見信箱" [ref=e15] [cursor=pointer]:
+                - /url: sp-opma-form-1.html
+            - listitem [ref=e16]:
+              - link "雙語詞彙" [ref=e17] [cursor=pointer]:
+                - /url: np-317-1.html
+            - listitem [ref=e18]:
+              - link "常見問答" [ref=e19] [cursor=pointer]:
+                - /url: np-685-1.html
+            - listitem [ref=e20]:
+              - link "智能客服" [ref=e21] [cursor=pointer]:
+                - /url: https://qna.cbc.gov.tw/webchat/index.html?botid=cbc_qna_bot
+            - listitem [ref=e22]:
+              - link "English" [ref=e23] [cursor=pointer]:
+                - /url: /en/mp-2.html
+        - link ":::" [ref=e24] [cursor=pointer]:
+          - /url: "#aU"
+        - heading "中央銀行-中文版" [level=1] [ref=e25]:
+          - link "中央銀行-中文版" [ref=e26] [cursor=pointer]:
+            - /url: mp-1.html
+            - img "中央銀行-中文版" [ref=e27]
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - generic: "關鍵字查詢:"
+              - textbox "關鍵字查詢:" [ref=e31]:
+                - /placeholder: 請輸入文字
+              - button "查詢" [ref=e32] [cursor=pointer]
+            - link "進階查詢" [ref=e34] [cursor=pointer]:
+              - /url: javascript:window.open('https://www.google.com.tw/advanced_search?as_sitesearch=www.cbc.gov.tw');
+          - generic [ref=e35]:
+            - text: "熱門 :"
+            - list [ref=e36]:
+              - listitem [ref=e37]:
+                - link "人民幣" [ref=e38] [cursor=pointer]:
+                  - /url: javascript:search($('#keywordHot_1').text());
+              - listitem [ref=e39]:
+                - link "匯率" [ref=e40] [cursor=pointer]:
+                  - /url: javascript:search($('#keywordHot_2').text());
+              - listitem [ref=e41]:
+                - link "利率" [ref=e42] [cursor=pointer]:
+                  - /url: javascript:search($('#keywordHot_3').text());
+              - listitem [ref=e43]:
+                - link "外匯存底" [ref=e44] [cursor=pointer]:
+                  - /url: javascript:search($('#keywordHot_4').text());
+              - listitem [ref=e45]:
+                - link "開放資料" [ref=e46] [cursor=pointer]:
+                  - /url: javascript:search($('#keywordHot_5').text());
+        - navigation [ref=e47]:
+          - list [ref=e48]:
+            - listitem [ref=e49]:
+              - link "最新消息" [ref=e50] [cursor=pointer]:
+                - /url: /tw/np-1040-1.html
+            - listitem [ref=e51]:
+              - link "貨幣政策與支付系統" [ref=e52] [cursor=pointer]:
+                - /url: /tw/np-1037-1.html
+            - listitem [ref=e53]:
+              - link "發行貨幣" [ref=e54] [cursor=pointer]:
+                - /url: /tw/np-301-1.html
+            - listitem [ref=e55]:
+              - link "外匯資訊" [ref=e56] [cursor=pointer]:
+                - /url: /tw/np-297-1.html
+            - listitem [ref=e57]:
+              - link "國庫收支與政府債券" [ref=e58] [cursor=pointer]:
+                - /url: /tw/np-300-1.html
+            - listitem [ref=e59]:
+              - link "統計與出版品" [ref=e60] [cursor=pointer]:
+                - /url: /tw/np-1038-1.html
+            - listitem [ref=e61]:
+              - link "主題服務" [ref=e62] [cursor=pointer]:
+                - /url: /tw/np-1039-1.html
+            - listitem [ref=e63]:
+              - link "認識央行" [ref=e64] [cursor=pointer]:
+                - /url: /tw/np-294-1.html
+    - generic [ref=e65]:
+      - link ":::" [ref=e66] [cursor=pointer]:
+        - /url: "#aC"
+      - generic:
+        - generic:
+          - generic [ref=e67]:
+            - list:
+              - listitem [ref=e68]:
+                - link "中央銀行理監事會後記者會(另開新視窗)" [ref=e69] [cursor=pointer]:
+                  - /url: https://youtube.com/live/omBCWbkzhyw?feature=share
+              - listitem [ref=e70]:
+                - link "鈔券面額主題票選活動中獎名單(另開新視窗)" [ref=e71] [cursor=pointer]:
+                  - /url: http://www.cbc.gov.tw/public/data/data/%E4%B8%AD%E5%A4%AE%E9%8A%80%E8%A1%8C%E3%80%8C%E8%87%BA%E7%81%A3%E4%B9%8B%E7%BE%8E%E3%80%8D%E7%B3%BB%E5%88%97%E9%88%94%E5%88%B8%E9%9D%A2%E9%A1%8D%E4%B8%BB%E9%A1%8C%E7%A5%A8%E9%81%B8%E6%B4%BB%E5%8B%95%E4%B8%AD%E7%8D%8E%E5%90%8D%E5%96%AE.pdf
+              - listitem [ref=e72]:
+                - link [ref=e73] [cursor=pointer]:
+                  - /url: https://www.youtube.com/watch?v=YNPIRyyk0HU&feature=youtu.be&themeRefresh=1
+              - listitem [ref=e74]:
+                - link [ref=e75] [cursor=pointer]:
+                  - /url: https://www.youtube.com/watch?v=lxAUxQ1gdEk
+            - link "上一則" [ref=e76] [cursor=pointer]:
+              - /url: javascript:;
+            - link "下一則" [ref=e77] [cursor=pointer]:
+              - /url: javascript:;
+          - list [ref=e79]:
+            - listitem [ref=e80]:
+              - link "中央銀行理監事會後記者會" [ref=e81] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e82]:
+              - link "鈔券面額主題票選活動中獎名單" [ref=e83] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e84]:
+              - link "新臺幣鈔券防偽設計" [ref=e85] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e86]:
+              - link "紅包在心不在新" [ref=e87] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e88]:
+        - generic [ref=e91]:
+          - heading "最新消息" [level=2] [ref=e92]:
+            - link "最新消息" [ref=e93] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e94]:
+            - list [ref=e95]:
+              - listitem [ref=e96]:
+                - time [ref=e97]: 2026-04-02
+                - link "本行受財政部委託訂於115年4月21日標售10年期115年度甲類第3期增額公債新..." [ref=e98] [cursor=pointer]:
+                  - /url: /tw/cp-459-191079-708b5-1.html
+              - listitem [ref=e99]:
+                - time [ref=e100]: 2026-04-02
+                - link "115年4月364天期定期存單開標結果" [ref=e101] [cursor=pointer]:
+                  - /url: /tw/cp-470-191075-0488f-1.html
+              - listitem [ref=e102]:
+                - time [ref=e103]: 2026-03-31
+                - link "115年2月銀行衍生性金融商品交易量統計" [ref=e104] [cursor=pointer]:
+                  - /url: /tw/cp-302-191064-a40d2-1.html
+              - listitem [ref=e105]:
+                - time [ref=e106]: 2026-03-30
+                - link "本行受財政部委託訂於115年4月10日標售「財115-5期182天期國庫券」新臺..." [ref=e107] [cursor=pointer]:
+                  - /url: /tw/cp-459-191060-bb6c0-1.html
+              - listitem [ref=e108]:
+                - time [ref=e109]: 2026-03-30
+                - link "本行受財政部委託訂於115年4月14日標售2年期115年度乙類第2期中央政府建設..." [ref=e110] [cursor=pointer]:
+                  - /url: /tw/cp-459-191059-47533-1.html
+            - link "更多" [ref=e112] [cursor=pointer]:
+              - /url: np-1043-1.html
+          - heading "新聞稿" [level=2] [ref=e113]:
+            - link "新聞稿" [ref=e114] [cursor=pointer]:
+              - /url: "#"
+          - heading "即時新聞澄清" [level=2] [ref=e115]:
+            - link "即時新聞澄清" [ref=e116] [cursor=pointer]:
+              - /url: "#"
+          - heading "公開市場操作" [level=2] [ref=e117]:
+            - link "公開市場操作" [ref=e118] [cursor=pointer]:
+              - /url: "#"
+          - heading "電子布告欄" [level=2] [ref=e119]:
+            - link "電子布告欄" [ref=e120] [cursor=pointer]:
+              - /url: "#"
+          - heading "徵才公告" [level=2] [ref=e121]:
+            - link "徵才公告" [ref=e122] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=e123]:
+          - list [ref=e124]:
+            - listitem [ref=e125]:
+              - link "券幣數位博物館" [ref=e126] [cursor=pointer]:
+                - /url: https://museum.cbc.gov.tw/
+                - img "券幣數位博物館" [ref=e127]
+            - listitem [ref=e128]:
+              - link "貨幣金融知識專區" [ref=e129] [cursor=pointer]:
+                - /url: https://knowledge.cbc.gov.tw
+                - img "貨幣金融知識專區" [ref=e130]
+          - heading "影音專區" [level=2] [ref=e131]
+          - generic [ref=e135]:
+            - iframe [ref=e137]:
+              - generic [active] [ref=f37e1]:
+                - generic "YouTube 影片播放器" [ref=f37e3]
+                - generic [ref=f37e5]:
+                  - generic:
+                    - generic:
+                      - button "播放影片" [ref=f37e10] [cursor=pointer]
+                      - button "隱藏播放器控制項" [ref=f37e12] [cursor=pointer]
+                      - generic [ref=f37e14]:
+                        - generic [ref=f37e19]:
+                          - generic [ref=f37e20]:
+                            - link "中央銀行理監事聯席會議會後記者會115.3.19" [ref=f37e21] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=omBCWbkzhyw
+                            - link "TheCBCTube" [ref=f37e22] [cursor=pointer]:
+                              - /url: /channel/UC7QnZmqrfeAAfcuRLWCZr1A
+                              - generic [ref=f37e23]: TheCBCTube
+                          - generic [ref=f37e24]:
+                            - button [ref=f37e25] [cursor=pointer]
+                            - generic [ref=f37e27]:
+                              - generic: TheCBCTube
+                              - generic: 3760位訂閱者
+                        - generic [ref=f37e28]:
+                          - button "分享" [ref=f37e31] [cursor=pointer]:
+                            - generic [ref=f37e35]:
+                              - img
+                          - link "在 YouTube 上觀看" [ref=f37e42] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=omBCWbkzhyw
+                            - generic [ref=f37e45]:
+                              - text: 觀看平台：
+                              - img [ref=f37e47]:
+                                - generic [ref=f37e49]:
+                                  - img
+            - paragraph [ref=e138]: 中央銀行理監事會後記者會115.3.19
+          - link "更多" [ref=e140] [cursor=pointer]:
+            - /url: np-1160-1.html
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - heading "重要指標" [level=2] [ref=e143]
+          - generic [ref=e145]:
+            - link "新臺幣/美元銀行間收盤匯率 2026-04-02 31.972" [ref=e147] [cursor=pointer]:
+              - /url: "#"
+              - heading "新臺幣/美元銀行間收盤匯率" [level=3] [ref=e148]
+              - generic [ref=e149]: 2026-04-02
+              - emphasis [ref=e151]: "31.972"
+            - generic [ref=e152]:
+              - generic "A chart." [ref=e156]:
+                - img "A chart." [ref=e157]:
+                  - generic [ref=e227]:
+                    - generic [ref=e229]: 2026/01/15
+                    - generic [ref=e231]: 2026/01/26
+                    - generic [ref=e233]: 2026/02/04
+                    - generic [ref=e235]: 2026/02/13
+                    - generic [ref=e237]: 2026/03/04
+                    - generic [ref=e239]: 2026/03/13
+                    - generic [ref=e241]: 2026/03/24
+                    - generic [ref=e243]: 2026/04/02
+                    - generic [ref=e245]: "31.2"
+                    - generic [ref=e247]: "31.4"
+                    - generic [ref=e249]: "31.6"
+                    - generic [ref=e251]: "31.8"
+                    - generic [ref=e253]: "32.0"
+                    - generic [ref=e255]: "32.2"
+                - generic "A tabular representation of the data in the chart." [ref=e256]:
+                  - table [ref=e257]:
+                    - rowgroup [ref=e258]:
+                      - row [ref=e259]:
+                        - columnheader [ref=e260]
+                        - columnheader [ref=e261]
+                    - rowgroup [ref=e262]:
+                      - row "2026/01/15 31.593" [ref=e263]:
+                        - cell "2026/01/15" [ref=e264]
+                        - cell "31.593" [ref=e265]
+                      - row "2026/01/16 31.572" [ref=e266]:
+                        - cell "2026/01/16" [ref=e267]
+                        - cell "31.572" [ref=e268]
+                      - row "2026/01/19 31.59" [ref=e269]:
+                        - cell "2026/01/19" [ref=e270]
+                        - cell "31.59" [ref=e271]
+                      - row "2026/01/20 31.608" [ref=e272]:
+                        - cell "2026/01/20" [ref=e273]
+                        - cell "31.608" [ref=e274]
+                      - row "2026/01/21 31.628" [ref=e275]:
+                        - cell "2026/01/21" [ref=e276]
+                        - cell "31.628" [ref=e277]
+                      - row "2026/01/22 31.61" [ref=e278]:
+                        - cell "2026/01/22" [ref=e279]
+                        - cell "31.61" [ref=e280]
+                      - row "2026/01/23 31.578" [ref=e281]:
+                        - cell "2026/01/23" [ref=e282]
+                        - cell "31.578" [ref=e283]
+                      - row "2026/01/26 31.508" [ref=e284]:
+                        - cell "2026/01/26" [ref=e285]
+                        - cell "31.508" [ref=e286]
+                      - row "2026/01/27 31.47" [ref=e287]:
+                        - cell "2026/01/27" [ref=e288]
+                        - cell "31.47" [ref=e289]
+                      - row "2026/01/28 31.32" [ref=e290]:
+                        - cell "2026/01/28" [ref=e291]
+                        - cell "31.32" [ref=e292]
+                      - row "2026/01/29 31.327" [ref=e293]:
+                        - cell "2026/01/29" [ref=e294]
+                        - cell "31.327" [ref=e295]
+                      - row "2026/01/30 31.468" [ref=e296]:
+                        - cell "2026/01/30" [ref=e297]
+                        - cell "31.468" [ref=e298]
+                      - row "2026/02/02 31.59" [ref=e299]:
+                        - cell "2026/02/02" [ref=e300]
+                        - cell "31.59" [ref=e301]
+                      - row "2026/02/03 31.57" [ref=e302]:
+                        - cell "2026/02/03" [ref=e303]
+                        - cell "31.57" [ref=e304]
+                      - row "2026/02/04 31.577" [ref=e305]:
+                        - cell "2026/02/04" [ref=e306]
+                        - cell "31.577" [ref=e307]
+                      - row "2026/02/05 31.648" [ref=e308]:
+                        - cell "2026/02/05" [ref=e309]
+                        - cell "31.648" [ref=e310]
+                      - row "2026/02/06 31.678" [ref=e311]:
+                        - cell "2026/02/06" [ref=e312]
+                        - cell "31.678" [ref=e313]
+                      - row "2026/02/09 31.56" [ref=e314]:
+                        - cell "2026/02/09" [ref=e315]
+                        - cell "31.56" [ref=e316]
+                      - row "2026/02/10 31.55" [ref=e317]:
+                        - cell "2026/02/10" [ref=e318]
+                        - cell "31.55" [ref=e319]
+                      - row "2026/02/11 31.478" [ref=e320]:
+                        - cell "2026/02/11" [ref=e321]
+                        - cell "31.478" [ref=e322]
+                      - row "2026/02/12 31.46" [ref=e323]:
+                        - cell "2026/02/12" [ref=e324]
+                        - cell "31.46" [ref=e325]
+                      - row "2026/02/13 31.518" [ref=e326]:
+                        - cell "2026/02/13" [ref=e327]
+                        - cell "31.518" [ref=e328]
+                      - row "2026/02/23 31.462" [ref=e329]:
+                        - cell "2026/02/23" [ref=e330]
+                        - cell "31.462" [ref=e331]
+                      - row "2026/02/24 31.461" [ref=e332]:
+                        - cell "2026/02/24" [ref=e333]
+                        - cell "31.461" [ref=e334]
+                      - row "2026/02/25 31.34" [ref=e335]:
+                        - cell "2026/02/25" [ref=e336]
+                        - cell "31.34" [ref=e337]
+                      - row "2026/02/26 31.251" [ref=e338]:
+                        - cell "2026/02/26" [ref=e339]
+                        - cell "31.251" [ref=e340]
+                      - row "2026/03/02 31.431" [ref=e341]:
+                        - cell "2026/03/02" [ref=e342]
+                        - cell "31.431" [ref=e343]
+                      - row "2026/03/03 31.609" [ref=e344]:
+                        - cell "2026/03/03" [ref=e345]
+                        - cell "31.609" [ref=e346]
+                      - row "2026/03/04 31.695" [ref=e347]:
+                        - cell "2026/03/04" [ref=e348]
+                        - cell "31.695" [ref=e349]
+                      - row "2026/03/05 31.683" [ref=e350]:
+                        - cell "2026/03/05" [ref=e351]
+                        - cell "31.683" [ref=e352]
+                      - row "2026/03/06 31.678" [ref=e353]:
+                        - cell "2026/03/06" [ref=e354]
+                        - cell "31.678" [ref=e355]
+                      - row "2026/03/09 31.92" [ref=e356]:
+                        - cell "2026/03/09" [ref=e357]
+                        - cell "31.92" [ref=e358]
+                      - row "2026/03/10 31.828" [ref=e359]:
+                        - cell "2026/03/10" [ref=e360]
+                        - cell "31.828" [ref=e361]
+                      - row "2026/03/11 31.755" [ref=e362]:
+                        - cell "2026/03/11" [ref=e363]
+                        - cell "31.755" [ref=e364]
+                      - row "2026/03/12 31.845" [ref=e365]:
+                        - cell "2026/03/12" [ref=e366]
+                        - cell "31.845" [ref=e367]
+                      - row "2026/03/13 31.918" [ref=e368]:
+                        - cell "2026/03/13" [ref=e369]
+                        - cell "31.918" [ref=e370]
+                      - row "2026/03/16 31.948" [ref=e371]:
+                        - cell "2026/03/16" [ref=e372]
+                        - cell "31.948" [ref=e373]
+                      - row "2026/03/17 31.885" [ref=e374]:
+                        - cell "2026/03/17" [ref=e375]
+                        - cell "31.885" [ref=e376]
+                      - row "2026/03/18 31.832" [ref=e377]:
+                        - cell "2026/03/18" [ref=e378]
+                        - cell "31.832" [ref=e379]
+                      - row "2026/03/19 31.953" [ref=e380]:
+                        - cell "2026/03/19" [ref=e381]
+                        - cell "31.953" [ref=e382]
+                      - row "2026/03/20 31.97" [ref=e383]:
+                        - cell "2026/03/20" [ref=e384]
+                        - cell "31.97" [ref=e385]
+                      - row "2026/03/23 32.092" [ref=e386]:
+                        - cell "2026/03/23" [ref=e387]
+                        - cell "32.092" [ref=e388]
+                      - row "2026/03/24 32.028" [ref=e389]:
+                        - cell "2026/03/24" [ref=e390]
+                        - cell "32.028" [ref=e391]
+                      - row "2026/03/25 31.952" [ref=e392]:
+                        - cell "2026/03/25" [ref=e393]
+                        - cell "31.952" [ref=e394]
+                      - row "2026/03/26 31.905" [ref=e395]:
+                        - cell "2026/03/26" [ref=e396]
+                        - cell "31.905" [ref=e397]
+                      - row "2026/03/27 31.88" [ref=e398]:
+                        - cell "2026/03/27" [ref=e399]
+                        - cell "31.88" [ref=e400]
+                      - row "2026/03/30 31.996" [ref=e401]:
+                        - cell "2026/03/30" [ref=e402]
+                        - cell "31.996" [ref=e403]
+                      - row "2026/03/31 31.98" [ref=e404]:
+                        - cell "2026/03/31" [ref=e405]
+                        - cell "31.98" [ref=e406]
+                      - row "2026/04/01 31.949" [ref=e407]:
+                        - cell "2026/04/01" [ref=e408]
+                        - cell "31.949" [ref=e409]
+                      - row "2026/04/02 31.972" [ref=e410]:
+                        - cell "2026/04/02" [ref=e411]
+                        - cell "31.972" [ref=e412]
+              - heading "新臺幣/美元銀行間收盤匯率" [level=3] [ref=e413]
+              - link "更多" [ref=e415] [cursor=pointer]:
+                - /url: np-645-1.html
+            - link "外匯存底 2026.02(十億美元) 605.49" [ref=e417] [cursor=pointer]:
+              - /url: "#"
+              - heading "外匯存底" [level=3] [ref=e418]
+              - generic [ref=e419]: 2026.02(十億美元)
+              - emphasis [ref=e421]: "605.49"
+            - link "貨幣總計數M2年增率 2026-03-19 5.38%" [ref=e423] [cursor=pointer]:
+              - /url: "#"
+              - heading "貨幣總計數M2年增率" [level=3] [ref=e424]
+              - generic [ref=e425]: 2026-03-19
+              - emphasis [ref=e427]: 5.38%
+            - link "金融業隔夜拆款利率 2026-04-02 0.815%" [ref=e429] [cursor=pointer]:
+              - /url: "#"
+              - heading "金融業隔夜拆款利率" [level=3] [ref=e430]
+              - generic [ref=e431]: 2026-04-02
+              - emphasis [ref=e433]: 0.815%
+            - link "重貼現率 2024-03-22 2%" [ref=e435] [cursor=pointer]:
+              - /url: "#"
+              - heading "重貼現率" [level=3] [ref=e436]
+              - generic [ref=e437]: 2024-03-22
+              - emphasis [ref=e439]: 2%
+            - link "準備率 2024-10-01 (請點選)" [ref=e441] [cursor=pointer]:
+              - /url: "#"
+              - heading "準備率" [level=3] [ref=e442]
+              - generic [ref=e443]: 2024-10-01
+              - emphasis [ref=e445]: (請點選)
+        - generic [ref=e446]:
+          - heading "重大政策" [level=2] [ref=e447]
+          - list [ref=e448]:
+            - generic [ref=e450]:
+              - listitem [ref=e451]:
+                - link "115年3月19日央行理監事會後記者會簡報及外界關心之議題" [ref=e452] [cursor=pointer]:
+                  - /url: /tw/cp-971-190971-41b3b-1.html
+                  - generic [ref=e453]: 115年3月19日央行理監事會後記者會簡報及外界關心之議題
+              - listitem [ref=e454]:
+                - link "115年3月19日央行理監事會後記者會參考資料" [ref=e455] [cursor=pointer]:
+                  - /url: /tw/cp-971-190955-53feb-1.html
+                  - generic [ref=e456]: 115年3月19日央行理監事會後記者會參考資料
+              - listitem [ref=e457]:
+                - link "中央銀行理監事聯席會議決議新聞稿" [ref=e458] [cursor=pointer]:
+                  - /url: /tw/cp-971-190952-05430-1.html
+                  - generic [ref=e459]: 中央銀行理監事聯席會議決議新聞稿
+          - link "更多" [ref=e461] [cursor=pointer]:
+            - /url: np-971-1.html
+        - generic [ref=e462]:
+          - heading "服務專區" [level=2] [ref=e463]
+          - list [ref=e464]:
+            - listitem [ref=e465]:
+              - generic [ref=e466]:
+                - term [ref=e467]: 推薦服務
+                - definition [ref=e468]:
+                  - link "中央銀行因應氣候變遷策略方案" [ref=e469] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/cp-302-157249-b10d1-1.html
+                - definition [ref=e470]:
+                  - link "中央銀行對金融機構辦理不動產抵押貸款業務規定修正規定" [ref=e471] [cursor=pointer]:
+                    - /url: /tw/lp-4217-1.html
+                - definition [ref=e472]:
+                  - link "不動產貸款相關資訊" [ref=e473] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/cp-4215-124958-228b5-1.html
+                - definition [ref=e474]:
+                  - link "向立法院業務及專題報告" [ref=e475] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/lp-2169-1.html
+                - definition [ref=e476]:
+                  - link "公開市場操作" [ref=e477] [cursor=pointer]:
+                    - /url: /tw/np-1172-1.html
+                - link "更多" [ref=e479] [cursor=pointer]:
+                  - /url: np-890-1.html
+            - listitem [ref=e480]:
+              - generic [ref=e481]:
+                - term [ref=e482]: 熱門服務
+                - definition [ref=e483]:
+                  - link "新臺幣/美元 銀行間收盤匯率" [ref=e484] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/lp-645-1.html
+                - definition [ref=e485]:
+                  - link "央行辦理健全房地產市場方案專區" [ref=e486] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/np-4216-1.html
+                - definition [ref=e487]:
+                  - link "利率" [ref=e488] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/np-369-1.html
+                - definition [ref=e489]:
+                  - link "金融統計" [ref=e490] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/np-521-1.html
+                - definition [ref=e491]:
+                  - link "本行發行存單" [ref=e492] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/lp-1163-1.html
+                - link "更多" [ref=e494] [cursor=pointer]:
+                  - /url: np-315-1.html
+            - listitem [ref=e495]:
+              - generic [ref=e496]:
+                - term [ref=e497]: 便民服務
+                - definition [ref=e498]:
+                  - link "中央銀行提供政府資訊申請書" [ref=e499] [cursor=pointer]:
+                    - /url: /tw/cp-467-1187-8F526-1.html
+                - definition [ref=e500]:
+                  - link "中央銀行檔案應用申請" [ref=e501] [cursor=pointer]:
+                    - /url: /tw/cp-467-1191-C6722-1.html
+                - definition [ref=e502]:
+                  - link "中央銀行人民申請案件處理時限表" [ref=e503] [cursor=pointer]:
+                    - /url: /tw/cp-467-34143-7324F-1.html
+                - definition [ref=e504]:
+                  - link "中央銀行人民陳情案件處理時限表" [ref=e505] [cursor=pointer]:
+                    - /url: /tw/cp-467-34844-8638B-1.html
+                - definition [ref=e506]:
+                  - link "中央銀行兩公約教育訓練教材" [ref=e507] [cursor=pointer]:
+                    - /url: /tw/cp-467-158114-1c89a-1.html
+                - link "更多" [ref=e509] [cursor=pointer]:
+                  - /url: np-467-1.html
+            - listitem [ref=e510]:
+              - generic [ref=e511]:
+                - term [ref=e512]: 出版報告
+                - definition [ref=e513]:
+                  - link "中央銀行季刊第47卷第4期(114年12月)" [ref=e514] [cursor=pointer]:
+                    - /url: /tw/cp-705-189703-29a01-1.html
+                - definition [ref=e515]:
+                  - link "中央銀行季刊第47卷第3期(114年9月)" [ref=e516] [cursor=pointer]:
+                    - /url: /tw/cp-705-185261-29ac3-1.html
+                - definition [ref=e517]:
+                  - link "中央銀行季刊第47卷第2期(114年6月)" [ref=e518] [cursor=pointer]:
+                    - /url: /tw/cp-705-182871-f8a8b-1.html
+                - definition [ref=e519]:
+                  - link "中央銀行季刊第47卷第1期(114年3月)" [ref=e520] [cursor=pointer]:
+                    - /url: /tw/cp-705-181372-6be09-1.html
+                - definition [ref=e521]:
+                  - link "中央銀行季刊第46卷第4期(113年12月)" [ref=e522] [cursor=pointer]:
+                    - /url: /tw/cp-705-179943-e0604-1.html
+                - link "更多" [ref=e524] [cursor=pointer]:
+                  - /url: np-705-1.html
+        - generic [ref=e526]:
+          - heading "相關連結" [level=2] [ref=e527]
+          - generic [ref=e529]:
+            - heading "主題網站" [level=3] [ref=e530]:
+              - link "主題網站" [ref=e531] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=e532]:
+              - list:
+                - listitem [ref=e533]:
+                  - link "性別平等專區" [ref=e534] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/np-6250-1.html
+                - listitem [ref=e535]:
+                  - link "資料開放" [ref=e536] [cursor=pointer]:
+                    - /url: https://www.cbc.gov.tw/tw/lp-1032-1.html
+                - listitem [ref=e537]:
+                  - link "貨幣金融知識專區" [ref=e538] [cursor=pointer]:
+                    - /url: https://knowledge.cbc.gov.tw/front/index
+                - listitem [ref=e539]:
+                  - link "社群媒體專區" [ref=e540] [cursor=pointer]:
+                    - /url: cp-890-40281-26FD9-1.html
+                - listitem [ref=e541]:
+                  - link "券幣數位博物館" [ref=e542] [cursor=pointer]:
+                    - /url: https://museum.cbc.gov.tw
+                - listitem [ref=e543]:
+                  - link "央行主管法令規章" [ref=e544] [cursor=pointer]:
+                    - /url: https://www.law.cbc.gov.tw/
+                - listitem [ref=e545]:
+                  - link "金融機構一覽" [ref=e546] [cursor=pointer]:
+                    - /url: lp-389-1.html
+                - listitem [ref=e547]:
+                  - link "統計資料庫" [ref=e548] [cursor=pointer]:
+                    - /url: https://cpx.cbc.gov.tw/Tree/TreeSelect
+              - link "更多" [ref=e550] [cursor=pointer]:
+                - /url: np-742-1.html
+            - heading "相關政府及金融機構" [level=3] [ref=e551]:
+              - link "相關政府及金融機構" [ref=e552] [cursor=pointer]:
+                - /url: "#"
+            - heading "國際組織" [level=3] [ref=e553]:
+              - link "國際組織" [ref=e554] [cursor=pointer]:
+                - /url: "#"
+            - heading "我國之支付系統運作機構" [level=3] [ref=e555]:
+              - link "我國之支付系統運作機構" [ref=e556] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e557]:
+          - button "Previous" [ref=e558] [cursor=pointer]
+          - generic [ref=e560]:
+            - link [ref=e562] [cursor=pointer]:
+              - /url: https://crpd.sfaa.gov.tw/
+              - img [ref=e563]
+            - link [ref=e565] [cursor=pointer]:
+              - /url: https://bilingual.ndc.gov.tw/
+              - img [ref=e566]
+            - link [ref=e568] [cursor=pointer]:
+              - /url: https://gazette.nat.gov.tw/egFront/
+              - img [ref=e569]
+            - link [ref=e571] [cursor=pointer]:
+              - /url: https://www.amlo.moj.gov.tw/
+              - img [ref=e572]
+            - link "全民資訊素養自我評量" [ref=e574] [cursor=pointer]:
+              - /url: https://isafeevent.moe.edu.tw/
+              - img "全民資訊素養自我評量" [ref=e575]
+            - link "165打詐儀表板" [ref=e577] [cursor=pointer]:
+              - /url: https://165dashboard.tw/
+              - img "165打詐儀表板" [ref=e578]
+            - link "內政部認識ICERD" [ref=e580] [cursor=pointer]:
+              - /url: https://www.immigration.gov.tw/5385/7445/250283/
+              - img "內政部認識ICERD" [ref=e581]
+            - link "2024 總統盃黑客松" [ref=e583] [cursor=pointer]:
+              - /url: https://presidential-hackathon.taiwan.gov.tw
+              - img "2024 總統盃黑客松" [ref=e584]
+            - link [ref=e586] [cursor=pointer]:
+              - /url: https://startup.sme.gov.tw/home/
+              - img [ref=e587]
+            - link [ref=e589] [cursor=pointer]:
+              - /url: https://www.bot.com.tw/tw/policy-business/government-employees-insurance-service
+              - img [ref=e590]
+            - link [ref=e592] [cursor=pointer]:
+              - /url: https://crpd.sfaa.gov.tw/
+              - img [ref=e593]
+            - link [ref=e595] [cursor=pointer]:
+              - /url: https://bilingual.ndc.gov.tw/
+              - img [ref=e596]
+            - link [ref=e598] [cursor=pointer]:
+              - /url: https://gazette.nat.gov.tw/egFront/
+              - img [ref=e599]
+            - link [ref=e601] [cursor=pointer]:
+              - /url: https://www.amlo.moj.gov.tw/
+              - img [ref=e602]
+            - link [ref=e604] [cursor=pointer]:
+              - /url: https://isafeevent.moe.edu.tw/
+              - img [ref=e605]
+            - link [ref=e607] [cursor=pointer]:
+              - /url: https://165dashboard.tw/
+              - img [ref=e608]
+            - link [ref=e610] [cursor=pointer]:
+              - /url: https://www.immigration.gov.tw/5385/7445/250283/
+              - img [ref=e611]
+            - link [ref=e613] [cursor=pointer]:
+              - /url: https://presidential-hackathon.taiwan.gov.tw
+              - img [ref=e614]
+            - link [ref=e616] [cursor=pointer]:
+              - /url: https://startup.sme.gov.tw/home/
+              - img [ref=e617]
+            - link [ref=e619] [cursor=pointer]:
+              - /url: https://www.bot.com.tw/tw/policy-business/government-employees-insurance-service
+              - img [ref=e620]
+            - link [ref=e622] [cursor=pointer]:
+              - /url: https://crpd.sfaa.gov.tw/
+              - img [ref=e623]
+            - link [ref=e625] [cursor=pointer]:
+              - /url: https://bilingual.ndc.gov.tw/
+              - img [ref=e626]
+            - link [ref=e628] [cursor=pointer]:
+              - /url: https://gazette.nat.gov.tw/egFront/
+              - img [ref=e629]
+            - link [ref=e631] [cursor=pointer]:
+              - /url: https://www.amlo.moj.gov.tw/
+              - img [ref=e632]
+          - button "Next" [ref=e633] [cursor=pointer]
+    - generic [ref=e635]:
+      - button "展開 OPEN" [ref=e636] [cursor=pointer]:
+        - text: 展開
+        - text: OPEN
+      - navigation [ref=e637]:
+        - list [ref=e638]:
+          - listitem [ref=e639]:
+            - link "最新消息" [ref=e640] [cursor=pointer]:
+              - /url: /tw/np-1040-1.html
+          - listitem [ref=e641]:
+            - link "貨幣政策與支付系統" [ref=e642] [cursor=pointer]:
+              - /url: /tw/np-1037-1.html
+          - listitem [ref=e643]:
+            - link "發行貨幣" [ref=e644] [cursor=pointer]:
+              - /url: /tw/np-301-1.html
+          - listitem [ref=e645]:
+            - link "外匯資訊" [ref=e646] [cursor=pointer]:
+              - /url: /tw/np-297-1.html
+          - listitem [ref=e647]:
+            - link "國庫收支與政府債券" [ref=e648] [cursor=pointer]:
+              - /url: /tw/np-300-1.html
+          - listitem [ref=e649]:
+            - link "統計與出版品" [ref=e650] [cursor=pointer]:
+              - /url: /tw/np-1038-1.html
+          - listitem [ref=e651]:
+            - link "主題服務" [ref=e652] [cursor=pointer]:
+              - /url: /tw/np-1039-1.html
+          - listitem [ref=e653]:
+            - link "認識央行" [ref=e654] [cursor=pointer]:
+              - /url: /tw/np-294-1.html
+    - contentinfo [ref=e655]:
+      - generic [ref=e656]:
+        - link ":::" [ref=e657] [cursor=pointer]:
+          - /url: "#aB"
+        - generic [ref=e658]:
+          - img "中央銀行logo" [ref=e660]
+          - paragraph [ref=e661]:
+            - link "本站通過AA檢測等級無障礙網頁檢測" [ref=e662] [cursor=pointer]:
+              - /url: https://accessibility.moda.gov.tw/Applications/Detail?category=20230428161343
+              - img "本站通過AA檢測等級無障礙網頁檢測" [ref=e663]
+            - link "egov" [ref=e664] [cursor=pointer]:
+              - /url: https://www.gov.tw/?category=20200504142322
+              - img "egov" [ref=e665]
+        - generic [ref=e666]:
+          - generic [ref=e667]:
+            - list [ref=e668]:
+              - listitem [ref=e669]:
+                - link "政府網站資料開放宣告" [ref=e670] [cursor=pointer]:
+                  - /url: /tw/cp-307-36676-DE020-1.html
+                - text: "|"
+              - listitem [ref=e671]:
+                - link "隱私權宣告" [ref=e672] [cursor=pointer]:
+                  - /url: /tw/cp-307-1266-11216-1.html
+                - text: "|"
+              - listitem [ref=e673]:
+                - link "資訊安全政策宣告" [ref=e674] [cursor=pointer]:
+                  - /url: /tw/cp-307-1267-80C11-1.html
+                - text: "|"
+              - listitem [ref=e675]:
+                - link "無障礙網頁快速鍵說明" [ref=e676] [cursor=pointer]:
+                  - /url: /tw/cp-307-1268-ACC3A-1.html
+            - paragraph [ref=e677]:
+              - text: 聯絡地址： 100243台北市中正區羅斯福路一段2號
+              - link "地圖" [ref=e678] [cursor=pointer]:
+                - /url: https://maps.google.com/maps/ms?msid=203378435237394628137.0004d724baadbf04c298d&msa=0&ll=25.035216,121.511707&spn=0.043549,0.055189
+              - text: 聯絡電話：(02)2357-1999,2393-6161
+              - link "營業時間" [ref=e679] [cursor=pointer]:
+                - /url: /tw/cp-307-26191-7696D-1.html
+              - text: 各局處室諮詢專線 免付費電話：0800-666268
+              - text: 傳真： (02)2357-1974
+          - generic [ref=e680]:
+            - text: 更新日期：
+            - emphasis [ref=e681]: 2026-04-02
+    - generic [ref=e682]:
+      - list [ref=e683]:
+        - listitem [ref=e684]:
+          - link "智能客服" [ref=e685] [cursor=pointer]:
+            - /url: https://qna.cbc.gov.tw/webchat/index.html?botid=cbc_qna_bot
+        - listitem [ref=e686]:
+          - link "Facebook" [ref=e687] [cursor=pointer]:
+            - /url: https://www.facebook.com/cbc.gov.tw/
+        - listitem [ref=e688]:
+          - link "Youtube" [ref=e689] [cursor=pointer]:
+            - /url: https://www.youtube.com/user/TheCBCTube
+        - listitem [ref=e690]:
+          - link "Instagram" [ref=e691] [cursor=pointer]:
+            - /url: https://www.instagram.com/cbc.gov.tw/
+        - listitem [ref=e692]:
+          - link "中央銀行APP" [ref=e693] [cursor=pointer]:
+            - /url: cp-890-46009-0D74C-1.html
+        - listitem [ref=e694]:
+          - link "意見信箱" [ref=e695] [cursor=pointer]:
+            - /url: /tw/sp-opma-form-1.html
+        - listitem [ref=e696]:
+          - link "訂閱電子報" [ref=e697] [cursor=pointer]:
+            - /url: https://www.cbc.gov.tw/tw/rss-302-1.xml
+      - link "收合/CLOSE" [ref=e698] [cursor=pointer]:
+        - /url: ""

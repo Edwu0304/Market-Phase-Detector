@@ -1,7 +1,25 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(taskkill *)",
+      "Bash(timeout *)",
+      "Bash(start *)",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__take_snapshot",
+      "Bash(python *)",
+      "mcp__chrome-devtools__evaluate_script",
+      "Bash(powershell *)",
+      "Bash(findstr *)",
+      "Bash(xcopy *)",
+      "Bash(rmdir *)",
+      "Bash(.venv\\scripts\\python *)",
+      "Bash(npx *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
-  }
+  },
+  "$version": 3
 }

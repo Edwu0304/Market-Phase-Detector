@@ -1,0 +1,163 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: index.asp
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.asp
+        - listitem [ref=e10]:
+          - link "English" [ref=e11] [cursor=pointer]:
+            - /url: e_index.asp
+    - generic [ref=e12]:
+      - heading "消費者信心指數" [level=3] [ref=e13]
+      - generic [ref=e15]:
+        - paragraph [ref=e16]:
+          - text: 年度：
+          - combobox [ref=e17]:
+            - option "- 請選擇年度 -"
+            - option "102年度"
+            - option "103年度"
+            - option "104年度"
+            - option "105年度"
+            - option "106年度"
+            - option "107年度"
+            - option "108年度"
+            - option "109年度"
+            - option "110年度"
+            - option "111年度"
+            - option "112年度"
+            - option "113年度"
+            - option "114年度" [selected]
+        - table [ref=e18]:
+          - rowgroup [ref=e19]:
+            - row "消費者信心指數新聞稿 消費者信心指數調查報告" [ref=e20]:
+              - columnheader "消費者信心指數新聞稿" [ref=e21]
+              - columnheader "消費者信心指數調查報告" [ref=e22]
+          - rowgroup [ref=e23]:
+            - row "消費者信心指數新聞稿1141229 114年12月份消費者信心指數調查報告" [ref=e24]:
+              - cell "消費者信心指數新聞稿1141229" [ref=e25]:
+                - link "消費者信心指數新聞稿1141229" [ref=e26] [cursor=pointer]:
+                  - /url: cci/cci_news1141229.pdf
+              - cell "114年12月份消費者信心指數調查報告" [ref=e27]:
+                - link "114年12月份消費者信心指數調查報告" [ref=e28] [cursor=pointer]:
+                  - /url: cci/cci_1141229.pdf
+            - row "消費者信心指數新聞稿1141127 114年11月份消費者信心指數調查報告" [ref=e29]:
+              - cell "消費者信心指數新聞稿1141127" [ref=e30]:
+                - link "消費者信心指數新聞稿1141127" [ref=e31] [cursor=pointer]:
+                  - /url: cci/cci_news1141127.pdf
+              - cell "114年11月份消費者信心指數調查報告" [ref=e32]:
+                - link "114年11月份消費者信心指數調查報告" [ref=e33] [cursor=pointer]:
+                  - /url: cci/cci_1141127.pdf
+            - row "消費者信心指數新聞稿1141027 114年10月份消費者信心指數調查報告" [ref=e34]:
+              - cell "消費者信心指數新聞稿1141027" [ref=e35]:
+                - link "消費者信心指數新聞稿1141027" [ref=e36] [cursor=pointer]:
+                  - /url: cci/cci_news1141027.pdf
+              - cell "114年10月份消費者信心指數調查報告" [ref=e37]:
+                - link "114年10月份消費者信心指數調查報告" [ref=e38] [cursor=pointer]:
+                  - /url: cci/cci_1141027.pdf
+            - row "消費者信心指數新聞稿1140930 114年09月份消費者信心指數調查報告" [ref=e39]:
+              - cell "消費者信心指數新聞稿1140930" [ref=e40]:
+                - link "消費者信心指數新聞稿1140930" [ref=e41] [cursor=pointer]:
+                  - /url: cci/cci_news1140930.pdf
+              - cell "114年09月份消費者信心指數調查報告" [ref=e42]:
+                - link "114年09月份消費者信心指數調查報告" [ref=e43] [cursor=pointer]:
+                  - /url: cci/cci_1140930.pdf
+            - row "消費者信心指數新聞稿1140828 114年08月份消費者信心指數調查報告" [ref=e44]:
+              - cell "消費者信心指數新聞稿1140828" [ref=e45]:
+                - link "消費者信心指數新聞稿1140828" [ref=e46] [cursor=pointer]:
+                  - /url: cci/cci_news1140827.pdf
+              - cell "114年08月份消費者信心指數調查報告" [ref=e47]:
+                - link "114年08月份消費者信心指數調查報告" [ref=e48] [cursor=pointer]:
+                  - /url: cci/cci_1140827.pdf
+            - row "消費者信心指數新聞稿1140728 114年07月份消費者信心指數調查報告" [ref=e49]:
+              - cell "消費者信心指數新聞稿1140728" [ref=e50]:
+                - link "消費者信心指數新聞稿1140728" [ref=e51] [cursor=pointer]:
+                  - /url: cci/cci_news1140728.pdf
+              - cell "114年07月份消費者信心指數調查報告" [ref=e52]:
+                - link "114年07月份消費者信心指數調查報告" [ref=e53] [cursor=pointer]:
+                  - /url: cci/cci_1140728.pdf
+            - row "消費者信心指數新聞稿1140627 114年06月份消費者信心指數調查報告" [ref=e54]:
+              - cell "消費者信心指數新聞稿1140627" [ref=e55]:
+                - link "消費者信心指數新聞稿1140627" [ref=e56] [cursor=pointer]:
+                  - /url: cci/cci_news1140627.pdf
+              - cell "114年06月份消費者信心指數調查報告" [ref=e57]:
+                - link "114年06月份消費者信心指數調查報告" [ref=e58] [cursor=pointer]:
+                  - /url: cci/cci_1140627.pdf
+            - row "消費者信心指數新聞稿1140527 114年05月份消費者信心指數調查報告" [ref=e59]:
+              - cell "消費者信心指數新聞稿1140527" [ref=e60]:
+                - link "消費者信心指數新聞稿1140527" [ref=e61] [cursor=pointer]:
+                  - /url: cci/cci_news1140527.pdf
+              - cell "114年05月份消費者信心指數調查報告" [ref=e62]:
+                - link "114年05月份消費者信心指數調查報告" [ref=e63] [cursor=pointer]:
+                  - /url: cci/cci_1140527.pdf
+            - row "消費者信心指數新聞稿1140428 114年04月份消費者信心指數調查報告" [ref=e64]:
+              - cell "消費者信心指數新聞稿1140428" [ref=e65]:
+                - link "消費者信心指數新聞稿1140428" [ref=e66] [cursor=pointer]:
+                  - /url: cci/cci_news1140428.pdf
+              - cell "114年04月份消費者信心指數調查報告" [ref=e67]:
+                - link "114年04月份消費者信心指數調查報告" [ref=e68] [cursor=pointer]:
+                  - /url: cci/cci_1140428.pdf
+            - row "消費者信心指數新聞稿1140327 114年03月份消費者信心指數調查報告" [ref=e69]:
+              - cell "消費者信心指數新聞稿1140327" [ref=e70]:
+                - link "消費者信心指數新聞稿1140327" [ref=e71] [cursor=pointer]:
+                  - /url: cci/cci_news1140327.pdf
+              - cell "114年03月份消費者信心指數調查報告" [ref=e72]:
+                - link "114年03月份消費者信心指數調查報告" [ref=e73] [cursor=pointer]:
+                  - /url: cci/cci_1140327.pdf
+            - row "消費者信心指數新聞稿1140227 114年02月份消費者信心指數調查報告" [ref=e74]:
+              - cell "消費者信心指數新聞稿1140227" [ref=e75]:
+                - link "消費者信心指數新聞稿1140227" [ref=e76] [cursor=pointer]:
+                  - /url: cci/cci_news1140227.pdf
+              - cell "114年02月份消費者信心指數調查報告" [ref=e77]:
+                - link "114年02月份消費者信心指數調查報告" [ref=e78] [cursor=pointer]:
+                  - /url: cci/cci_1140227.pdf
+            - row "消費者信心指數新聞稿1140203 114年01月份消費者信心指數調查報告" [ref=e79]:
+              - cell "消費者信心指數新聞稿1140203" [ref=e80]:
+                - link "消費者信心指數新聞稿1140203" [ref=e81] [cursor=pointer]:
+                  - /url: cci/cci_news1140203.pdf
+              - cell "114年01月份消費者信心指數調查報告" [ref=e82]:
+                - link "114年01月份消費者信心指數調查報告" [ref=e83] [cursor=pointer]:
+                  - /url: cci/cci_1140203.pdf
+        - paragraph
+  - generic [ref=e84]:
+    - navigation [ref=e87]:
+      - heading "功能選單" [level=2] [ref=e89]
+      - list [ref=e90]:
+        - listitem [ref=e91]:
+          - generic [ref=e92] [cursor=pointer]:
+            - text: 
+            - generic [ref=e93]: 台經中心簡介
+        - listitem [ref=e94]:
+          - link "消費者信心指數" [ref=e95] [cursor=pointer]:
+            - /url: cci.asp
+        - listitem [ref=e96]:
+          - link "台灣房價指數" [ref=e97] [cursor=pointer]:
+            - /url: cch.asp
+        - listitem [ref=e98]:
+          - link "能源安全指標" [ref=e99] [cursor=pointer]:
+            - /url: esi.asp
+        - listitem [ref=e100]:
+          - link "碩博士論文資料網" [ref=e101] [cursor=pointer]:
+            - /url: https://etds.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=Q8j7jt/webmge?switchlang=en
+        - listitem [ref=e102]:
+          - link "國鼎展示室預約參觀" [ref=e103] [cursor=pointer]:
+            - /url: https://www.lib.ncu.edu.tw/service/kt.php
+        - listitem [ref=e104]:
+          - generic [ref=e105] [cursor=pointer]:
+            - text: 
+            - generic [ref=e106]: 場地租借
+        - listitem [ref=e107]:
+          - generic [ref=e108] [cursor=pointer]:
+            - text: 
+            - generic [ref=e109]: 停車位申請
+        - listitem [ref=e110]:
+          - generic [ref=e111] [cursor=pointer]:
+            - text: 
+            - generic [ref=e112]: 網路資源
+        - listitem [ref=e113]:
+          - link "聯絡我們" [ref=e114] [cursor=pointer]:
+            - /url: conn.asp
+    - link " Toggle" [ref=e115] [cursor=pointer]:
+      - /url: "#sidebar"

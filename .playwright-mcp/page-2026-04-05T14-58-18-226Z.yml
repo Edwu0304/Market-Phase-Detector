@@ -1,0 +1,20 @@
+- generic [active] [ref=e1]:
+  - generic "回首頁"
+  - paragraph
+  - paragraph [ref=e2]:
+    - link "試算表" [ref=e3] [cursor=pointer]:
+      - /url: 37060.csv
+    - link "PDF(建議使用PDF版本列印)" [ref=e4] [cursor=pointer]:
+      - /url: 37060.pdf
+    - link "上一頁" [ref=e5] [cursor=pointer]:
+      - /url: javascript:history.go(-1);
+  - table "就業保險失業給付初次核付件數─按地區分資料數據表格" [ref=e6]:
+    - rowgroup [ref=e7]:
+      - row
+      - row "就業保險失業給付初次核付件數─按地區分第1頁圖表 就業保險失業給付初次核付件數─按地區分第2頁圖表" [ref=e8]:
+        - cell "就業保險失業給付初次核付件數─按地區分第1頁圖表" [ref=e9]:
+          - img "就業保險失業給付初次核付件數─按地區分第1頁圖表" [ref=e10]
+        - cell "就業保險失業給付初次核付件數─按地區分第2頁圖表" [ref=e11]:
+          - img "就業保險失業給付初次核付件數─按地區分第2頁圖表" [ref=e12]
+      - row
+      - row

@@ -1,0 +1,563 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - navigation [ref=e5]:
+          - generic [ref=e6]:
+            - link "MacroMicro" [ref=e7] [cursor=pointer]:
+              - /url: javascript:;
+            - generic [ref=e8]:
+              - generic [ref=e9]:
+                - button " Search..." [ref=e10] [cursor=pointer]:
+                  - generic [ref=e11]: 
+                  - generic [ref=e12]: Search...
+                - text:  
+              - link "Subscribe" [ref=e13] [cursor=pointer]:
+                - /url: /subscribe#individual
+                - generic [ref=e14]: Subscribe
+              - text: 
+              - button "" [ref=e16] [cursor=pointer]:
+                - generic [ref=e17]: 
+              - link "Login" [ref=e18] [cursor=pointer]:
+                - /url: /login?next=%2Fcharts%2F930%2Fus-credit-spread
+                - generic [ref=e19]: Login
+              - text:         
+              - button " Menu" [ref=e20] [cursor=pointer]:
+                - generic [ref=e21]: 
+                - generic [ref=e22]: Menu
+            - list [ref=e24]:
+              - listitem [ref=e25]:
+                - button "Macro" [ref=e26] [cursor=pointer]
+              - listitem [ref=e27]:
+                - button "Charts" [ref=e28] [cursor=pointer]
+                - text: 
+              - listitem [ref=e29]:
+                - button "Topics" [ref=e30] [cursor=pointer]
+                - text:         
+              - listitem [ref=e31]:
+                - button "Markets" [ref=e32] [cursor=pointer]
+                - text:       
+              - listitem [ref=e33]:
+                - button "Analysis" [ref=e34] [cursor=pointer]
+                - text:    
+              - text:   
+              - listitem [ref=e35]:
+                - button "Academy" [ref=e36] [cursor=pointer]
+                - text:  
+              - text:                     
+      - main [ref=e37]:
+        - generic [ref=e38]:
+          - heading "US - Credit Spread" [level=1] [ref=e42]:
+            - link "US - Credit Spread" [ref=e43] [cursor=pointer]:
+              - /url: /charts/930/us-credit-spread
+          - generic [ref=e44]:
+            - generic [ref=e47]:
+              - generic [ref=e48]:
+                - generic [ref=e53]:
+                  - paragraph [ref=e54]: US - Credit Spread
+                  - paragraph [ref=e55]: Sign up now to view more!
+                  - link "Sign up / Log in" [ref=e57] [cursor=pointer]:
+                    - /url: /login?next=%2Fcharts%2F930%2Fus-credit-spread
+                - generic [ref=e58]:
+                  - generic [ref=e59]:
+                    - button " Share" [ref=e60] [cursor=pointer]:
+                      - generic [ref=e61]: 
+                      - text: Share
+                    - text: Facebook LinkedIn LINE Twitter WhatsApp Telegram 
+                  - generic [ref=e62]:
+                    - button " Custom" [ref=e63] [cursor=pointer]:
+                      - generic [ref=e64]: 
+                      - text: Custom
+                    - text: 
+                  - button " Image" [ref=e65] [cursor=pointer]:
+                    - generic [ref=e66]: 
+                    - text: Image
+                  - link " DIY" [ref=e67] [cursor=pointer]:
+                    - /url: /toolbox/chart-builder/line?chart=930
+                    - generic [ref=e68]: 
+                    - text: DIY
+                  - button " Enlarge" [ref=e69] [cursor=pointer]:
+                    - generic [ref=e70]: 
+                    - text: Enlarge
+              - generic [ref=e71]:
+                - generic [ref=e73]:
+                  - generic [ref=e74]:
+                    - checkbox "AI Definitions" [ref=e75]
+                    - generic [ref=e76]: AI Definitions
+                  - generic [ref=e77] [cursor=pointer]:
+                    - text: Bookmark
+                    - generic [ref=e78]: 
+                - generic [ref=e79]:
+                  - generic [ref=e80]: US Credit Spread = Merrill Lynch High-Yield Bond Yield – US 10-Year Bond Yield (risk-free interest rate). This spread reflects the market's expectations of future corporate default risk. High-yield bonds are issued by companies with lower credit ratings (below BBB). Due to the higher credit risk associated with these bonds, their yield spread tends to be greater than that of investment-grade bonds. Credit risk spreads have an inverse relationship with the stock market. When companies are performing well, future cash flow growth increases, and default risk decreases (lower credit risk), leading to a narrower spread and a rising stock market. Conversely, during risk events that heighten corporate default risk (higher credit risk), the spread widens, and the stock market tends to decline.
+                  - button "More" [ref=e81] [cursor=pointer]:
+                    - generic [ref=e82]: More
+                - link [ref=e84] [cursor=pointer]:
+                  - /url: /video/562/2026-meo-fullyear-intelligence-live-pass
+                  - img [ref=e85]
+                - generic [ref=e86]:
+                  - heading "Latest Stats" [level=4] [ref=e87]
+                  - list [ref=e88]:
+                    - listitem [ref=e89]:
+                      - generic [ref=e91]:
+                        - link "US - CCC Credit Spread" [ref=e93] [cursor=pointer]:
+                          - /url: /series/3612/us-credit-spread
+                        - generic [ref=e94]: 2026-04-02
+                      - generic [ref=e95]:
+                        - text: "9.48"
+                        - generic [ref=e96]: "%"
+                      - generic [ref=e97]:
+                        - text: "Prev: 9.42"
+                        - generic [ref=e98]: "%"
+                    - listitem [ref=e99]:
+                      - generic [ref=e101]:
+                        - generic [ref=e102]: US - BBB Credit Spread
+                        - generic [ref=e103]: 2026-04-02
+                      - generic [ref=e104]:
+                        - text: "1.00"
+                        - generic [ref=e105]: Percent
+                      - generic [ref=e106]:
+                        - text: "Prev: 1.02"
+                        - generic [ref=e107]: Percent
+                    - listitem [ref=e108]:
+                      - generic [ref=e110]:
+                        - generic [ref=e111]: US - AAA Credit Spread
+                        - generic [ref=e112]: 2026-04-02
+                      - generic [ref=e113]:
+                        - text: "0.59"
+                        - generic [ref=e114]: Percent
+                      - generic [ref=e115]:
+                        - text: "Prev: 0.62"
+                        - generic [ref=e116]: Percent
+                - generic [ref=e117]:
+                  - heading "Related Collections" [level=4] [ref=e118]
+                  - list [ref=e120]:
+                    - listitem [ref=e121]:
+                      - link " Spread" [ref=e122] [cursor=pointer]:
+                        - /url: /collections/384/spreads
+                        - generic [ref=e123]: 
+                        - text: Spread
+                    - listitem [ref=e124]:
+                      - link " US Stock Market" [ref=e125] [cursor=pointer]:
+                        - /url: /collections/34/us-stock-relative
+                        - generic [ref=e126]: 
+                        - text: US Stock Market
+                - generic [ref=e127]:
+                  - heading "Source" [level=4] [ref=e128]
+                  - list [ref=e130]:
+                    - listitem [ref=e131]:
+                      - link " MacroMicro" [ref=e132] [cursor=pointer]:
+                        - /url: https://www.macromicro.me/
+                        - generic [ref=e133]: 
+                        - text: MacroMicro
+            - text: 
+          - generic [ref=e135]:
+            - generic [ref=e137]:
+              - heading "AI Recommended Charts " [level=4] [ref=e138]:
+                - text: AI Recommended Charts
+                - generic [ref=e140]: 
+              - generic [ref=e141]:
+                - generic [ref=e143]:
+                  - link "US - Credit Spread vs. Financial Stocks" [ref=e144] [cursor=pointer]:
+                    - /url: /charts/45604/us-credit-spread-vs-financial-stocks
+                    - img [ref=e145]
+                  - heading "US - Credit Spread vs. Financial Stocks" [level=4] [ref=e147]:
+                    - link "US - Credit Spread vs. Financial Stocks" [ref=e148] [cursor=pointer]:
+                      - /url: /charts/45604/us-credit-spread-vs-financial-stocks
+                - generic [ref=e150]:
+                  - link "US - Credit Spread vs. S&P 500" [ref=e151] [cursor=pointer]:
+                    - /url: /charts/21555/us-credit-spread-sp500
+                    - img [ref=e152]
+                  - heading "US - Credit Spread vs. S&P 500" [level=4] [ref=e154]:
+                    - link "US - Credit Spread vs. S&P 500" [ref=e155] [cursor=pointer]:
+                      - /url: /charts/21555/us-credit-spread-sp500
+                - generic [ref=e157]:
+                  - link "US - Credit Spread vs. US Dollar Index" [ref=e158] [cursor=pointer]:
+                    - /url: /charts/14924/us-dxy-credit-spread
+                    - img [ref=e159]
+                  - heading "US - Credit Spread vs. US Dollar Index" [level=4] [ref=e161]:
+                    - link "US - Credit Spread vs. US Dollar Index" [ref=e162] [cursor=pointer]:
+                      - /url: /charts/14924/us-dxy-credit-spread
+                - generic [ref=e164]:
+                  - link "UK - Credit Spread vs. GBP/USD" [ref=e165] [cursor=pointer]:
+                    - /url: /charts/37517/uk-credit-spread-gbp-usd
+                    - img [ref=e166]
+                  - heading "UK - Credit Spread vs. GBP/USD" [level=4] [ref=e168]:
+                    - link "UK - Credit Spread vs. GBP/USD" [ref=e169] [cursor=pointer]:
+                      - /url: /charts/37517/uk-credit-spread-gbp-usd
+            - generic [ref=e171]:
+              - heading "Feedback" [level=4] [ref=e172]
+              - textbox "Please log in." [ref=e173]
+              - generic [ref=e174]:
+                - generic [ref=e175]: 0 / 500
+                - button "Submit" [ref=e176] [cursor=pointer]
+      - contentinfo [ref=e177]:
+        - link "Subscribe Now" [ref=e179] [cursor=pointer]:
+          - /url: /subscribe
+          - generic [ref=e180]: Subscribe Now
+        - generic [ref=e181]:
+          - navigation [ref=e182]:
+            - generic [ref=e183]:
+              - heading "Macro" [level=6] [ref=e184]
+              - list [ref=e185]:
+                - listitem [ref=e186]:
+                  - link " Home" [ref=e187] [cursor=pointer]:
+                    - /url: /
+                    - generic [ref=e188]: 
+                    - text: Home
+                - listitem [ref=e189]:
+                  - link " Macro" [ref=e190] [cursor=pointer]:
+                    - /url: /macro
+                    - generic [ref=e191]: 
+                    - text: Macro
+                - listitem [ref=e192]:
+                  - link "Global" [ref=e193] [cursor=pointer]:
+                    - /url: /macro
+                    - text: Global
+                - listitem [ref=e195]:
+                  - link "Cross-Country Database" [ref=e196] [cursor=pointer]:
+                    - /url: /cross-country-database
+                    - text: Cross-Country Database
+                - listitem [ref=e198]:
+                  - link "United States" [ref=e199] [cursor=pointer]:
+                    - /url: /macro/us
+                    - text: United States
+                - listitem [ref=e201]:
+                  - link "Taiwan" [ref=e202] [cursor=pointer]:
+                    - /url: /macro/tw
+                    - text: Taiwan
+                - listitem [ref=e204]:
+                  - link "China" [ref=e205] [cursor=pointer]:
+                    - /url: /macro/cn
+                    - text: China
+                - listitem [ref=e207]:
+                  - link "Europe" [ref=e208] [cursor=pointer]:
+                    - /url: /macro/eu
+                    - text: Europe
+                - listitem [ref=e210]:
+                  - link "Japan" [ref=e211] [cursor=pointer]:
+                    - /url: /macro/jp
+                    - text: Japan
+                - listitem [ref=e213]:
+                  - link "ASEAN" [ref=e214] [cursor=pointer]:
+                    - /url: /macro/an
+                    - text: ASEAN
+                - listitem [ref=e216]:
+                  - link "Emerging Markets" [ref=e217] [cursor=pointer]:
+                    - /url: /macro/em
+                    - text: Emerging Markets
+            - generic [ref=e219]:
+              - heading "Sectors" [level=6] [ref=e220]
+              - list [ref=e221]:
+                - listitem [ref=e222]:
+                  - link " Industry Intelligence Hub" [ref=e223] [cursor=pointer]:
+                    - /url: /industry-intelligence-hub
+                    - generic [ref=e224]: 
+                    - text: Industry Intelligence Hub
+                - listitem [ref=e225]:
+                  - link " US Earnings Database" [ref=e226] [cursor=pointer]:
+                    - /url: /stocks/screener
+                    - generic [ref=e227]: 
+                    - text: US Earnings Database
+                - listitem [ref=e228]:
+                  - link " Taiwan Sector Watch" [ref=e229] [cursor=pointer]:
+                    - /url: /sectors
+                    - generic [ref=e230]: 
+                    - text: Taiwan Sector Watch
+            - generic [ref=e231]:
+              - heading "Charts & Market" [level=6] [ref=e232]
+              - list [ref=e233]:
+                - listitem [ref=e234]:
+                  - link " Trader's Insight" [ref=e235] [cursor=pointer]:
+                    - /url: /trader-insights
+                    - generic [ref=e236]: 
+                    - text: Trader's Insight
+                - listitem [ref=e237]:
+                  - link " Forex" [ref=e238] [cursor=pointer]:
+                    - /url: /forex
+                    - generic [ref=e239]: 
+                    - text: Forex
+                - listitem [ref=e240]:
+                  - link " Stocks" [ref=e241] [cursor=pointer]:
+                    - /url: /stocks
+                    - generic [ref=e242]: 
+                    - text: Stocks
+                - listitem [ref=e243]:
+                  - link " ETFs" [ref=e244] [cursor=pointer]:
+                    - /url: /etf
+                    - generic [ref=e245]: 
+                    - text: ETFs
+                - listitem [ref=e246]:
+                  - link " Bonds" [ref=e247] [cursor=pointer]:
+                    - /url: /bonds
+                    - generic [ref=e248]: 
+                    - text: Bonds
+                - listitem [ref=e249]:
+                  - link " Crypto" [ref=e250] [cursor=pointer]:
+                    - /url: /crypto
+                    - generic [ref=e251]: 
+                    - text: Crypto
+                - listitem [ref=e252]:
+                  - link " Volatility" [ref=e253] [cursor=pointer]:
+                    - /url: /volatility
+                    - generic [ref=e254]: 
+                    - text: Volatility
+                - listitem [ref=e255]:
+                  - link " Sovereign Debt Default" [ref=e256] [cursor=pointer]:
+                    - /url: /cds
+                    - generic [ref=e257]: 
+                    - text: Sovereign Debt Default
+            - generic [ref=e258]:
+              - heading "Topics" [level=6] [ref=e259]
+              - list [ref=e260]:
+                - listitem [ref=e261]:
+                  - link " ETF" [ref=e262] [cursor=pointer]:
+                    - /url: /etf/us/screener
+                    - generic [ref=e263]: 
+                    - text: ETF
+                - listitem [ref=e264]:
+                  - link " Trump Watch" [ref=e265] [cursor=pointer]:
+                    - /url: /potus-47-donald-trump
+                    - generic [ref=e266]: 
+                    - text: Trump Watch
+                - listitem [ref=e267]:
+                  - link " Central Bank" [ref=e268] [cursor=pointer]:
+                    - /url: /central_bank/overview
+                    - generic [ref=e269]: 
+                    - text: Central Bank
+                - listitem [ref=e270]:
+                  - link " Commodities" [ref=e271] [cursor=pointer]:
+                    - /url: /commodities/overview
+                    - generic [ref=e272]: 
+                    - text: Commodities
+                - listitem [ref=e273]:
+                  - link " Form 13F Filings" [ref=e274] [cursor=pointer]:
+                    - /url: /13f
+                    - generic [ref=e275]: 
+                    - text: Form 13F Filings
+                - listitem [ref=e276]:
+                  - link " Global COT Flow" [ref=e277] [cursor=pointer]:
+                    - /url: /cot-flow
+                    - generic [ref=e278]: 
+                    - text: Global COT Flow
+                - listitem [ref=e279]:
+                  - link " Timeline" [ref=e280] [cursor=pointer]:
+                    - /url: /time_line
+                    - generic [ref=e281]: 
+                    - text: Timeline
+                - listitem [ref=e282]:
+                  - link " Visual" [ref=e283] [cursor=pointer]:
+                    - /url: /dynamic_chart
+                    - generic [ref=e284]: 
+                    - text: Visual
+            - generic [ref=e285]:
+              - heading "Analysis" [level=6] [ref=e286]
+              - list [ref=e287]:
+                - listitem [ref=e288]:
+                  - link " MM Reports" [ref=e289] [cursor=pointer]:
+                    - /url: /mails/monthly_report
+                    - generic [ref=e290]: 
+                    - text: MM Reports
+                - listitem [ref=e291]:
+                  - link " MM Daily" [ref=e292] [cursor=pointer]:
+                    - /url: /quickie
+                    - generic [ref=e293]: 
+                    - text: MM Daily
+                - listitem [ref=e294]:
+                  - link " Spotlight" [ref=e295] [cursor=pointer]:
+                    - /url: /spotlights
+                    - generic [ref=e296]: 
+                    - text: Spotlight
+                - listitem [ref=e297]:
+                  - link " Blog" [ref=e298] [cursor=pointer]:
+                    - /url: /blog
+                    - generic [ref=e299]: 
+                    - text: Blog
+                - listitem [ref=e300]:
+                  - link " Blog RSS" [ref=e301] [cursor=pointer]:
+                    - /url: /feed
+                    - generic [ref=e302]: 
+                    - text: Blog RSS
+            - generic [ref=e303]:
+              - heading "Tools" [level=6] [ref=e304]
+              - list [ref=e305]:
+                - listitem [ref=e306]:
+                  - link " Economic Calendar" [ref=e307] [cursor=pointer]:
+                    - /url: /calendar
+                    - generic [ref=e308]: 
+                    - text: Economic Calendar
+                - listitem [ref=e309]:
+                  - link " Toolbox" [ref=e310] [cursor=pointer]:
+                    - /url: /toolbox/chart-builder/line
+                    - generic [ref=e311]: 
+                    - text: Toolbox
+                - listitem [ref=e312]:
+                  - link " Series" [ref=e313] [cursor=pointer]:
+                    - /url: /series
+                    - generic [ref=e314]: 
+                    - text: Series
+              - heading "Academy & Community" [level=6] [ref=e315]
+              - list [ref=e316]:
+                - listitem [ref=e317]:
+                  - link " Macro Academy" [ref=e318] [cursor=pointer]:
+                    - /url: /video
+                    - generic [ref=e319]: 
+                    - text: Macro Academy
+                - listitem [ref=e320]:
+                  - link " Youtube" [ref=e321] [cursor=pointer]:
+                    - /url: https://www.youtube.com/channel/UC9orjX1KFXp1iJ8_TGEWpyA
+                    - generic [ref=e322]: 
+                    - text: Youtube
+                - listitem [ref=e323]:
+                  - link " User Insights Public" [ref=e324] [cursor=pointer]:
+                    - /url: /shared_chart
+                    - generic [ref=e325]: 
+                    - text: User Insights
+                    - generic [ref=e326]: Public
+            - generic [ref=e327]:
+              - heading "D&B NEW" [level=6] [ref=e328]:
+                - text: D&B
+                - generic [ref=e329]: NEW
+              - list [ref=e330]:
+                - listitem [ref=e331]:
+                  - link " Enterprise Premium Leadership Plan" [ref=e332] [cursor=pointer]:
+                    - /url: /macromicro-dun-and-bradstreet-globalview
+                    - generic [ref=e333]: 
+                    - text: Enterprise Premium Leadership Plan
+                - listitem [ref=e334]:
+                  - link " D&B GlobalView Datasets" [ref=e335] [cursor=pointer]:
+                    - /url: /dnb/dun-and-bradstreet-globalview
+                    - generic [ref=e336]: 
+                    - text: D&B GlobalView Datasets
+                - listitem [ref=e337]:
+                  - link " Global Business Optimism Insights" [ref=e338] [cursor=pointer]:
+                    - /url: /dnb/global-business-optimism-insights
+                    - generic [ref=e339]: 
+                    - text: Global Business Optimism Insights
+                - listitem [ref=e340]:
+                  - link " Country Risk Ratings" [ref=e341] [cursor=pointer]:
+                    - /url: /dnb/country-risk-ratings
+                    - generic [ref=e342]: 
+                    - text: Country Risk Ratings
+                - listitem [ref=e343]:
+                  - link " Sector Risk Ratings" [ref=e344] [cursor=pointer]:
+                    - /url: /dnb/sector-risk-ratings
+                    - generic [ref=e345]: 
+                    - text: Sector Risk Ratings
+                - listitem [ref=e346]:
+                  - link " Country ESG Risk Ratings" [ref=e347] [cursor=pointer]:
+                    - /url: /dnb/country-esg-risk-ratings
+                    - generic [ref=e348]: 
+                    - text: Country ESG Risk Ratings
+                - listitem [ref=e349]:
+                  - link " Global Sales & Employee Models" [ref=e350] [cursor=pointer]:
+                    - /url: /dnb/global-sales-employee-models
+                    - generic [ref=e351]: 
+                    - text: Global Sales & Employee Models
+                - listitem [ref=e352]:
+                  - link " Corporate Data Download" [ref=e353] [cursor=pointer]:
+                    - /url: /dnb/corporate-data
+                    - generic [ref=e354]: 
+                    - text: Corporate Data Download
+            - generic [ref=e355]:
+              - heading "More" [level=6] [ref=e356]
+              - list [ref=e357]:
+                - listitem [ref=e358]:
+                  - link " My Rewards" [ref=e359] [cursor=pointer]:
+                    - /url: /user/mm-benefits
+                    - generic [ref=e360]: 
+                    - text: My Rewards
+                - listitem [ref=e361]:
+                  - link " Help Center" [ref=e362] [cursor=pointer]:
+                    - /url: https://support.macromicro.me/hc/en-001
+                    - generic [ref=e363]: 
+                    - text: Help Center
+                - listitem [ref=e364]:
+                  - link " Getting Started" [ref=e365] [cursor=pointer]:
+                    - /url: /teaching
+                    - generic [ref=e366]: 
+                    - text: Getting Started
+                - listitem [ref=e367]:
+                  - link " Partner Program" [ref=e368] [cursor=pointer]:
+                    - /url: /affiliate-marketing
+                    - generic [ref=e369]: 
+                    - text: Partner Program
+                - listitem [ref=e370]:
+                  - link " About Us" [ref=e371] [cursor=pointer]:
+                    - /url: /about
+                    - generic [ref=e372]: 
+                    - text: About Us
+                - listitem [ref=e373]:
+                  - link " Contact Us" [ref=e374] [cursor=pointer]:
+                    - /url: /contact-us
+                    - generic [ref=e375]: 
+                    - text: Contact Us
+                - listitem [ref=e376]:
+                  - link " Careers" [ref=e377] [cursor=pointer]:
+                    - /url: /careers
+                    - generic [ref=e378]: 
+                    - text: Careers
+                - listitem [ref=e379]:
+                  - link " Subscription" [ref=e380] [cursor=pointer]:
+                    - /url: /subscribe
+                    - generic [ref=e381]: 
+                    - text: Subscription
+                - listitem [ref=e382]:
+                  - link " Enterprise Solutions" [ref=e383] [cursor=pointer]:
+                    - /url: /subscribe#enterprise
+                    - generic [ref=e384]: 
+                    - text: Enterprise Solutions
+                - listitem [ref=e385]:
+                  - link " Terms of Service" [ref=e386] [cursor=pointer]:
+                    - /url: /terms
+                    - generic [ref=e387]: 
+                    - text: Terms of Service
+                - listitem [ref=e388]:
+                  - link " 𝕏/Twitter" [ref=e389] [cursor=pointer]:
+                    - /url: https://twitter.com/MacroMicroMe
+                    - generic [ref=e390]: 
+                    - text: 𝕏/Twitter
+                - listitem [ref=e391]:
+                  - link " YouTube" [ref=e392] [cursor=pointer]:
+                    - /url: https://www.youtube.com/channel/UC9orjX1KFXp1iJ8_TGEWpyA
+                    - generic [ref=e393]: 
+                    - text: YouTube
+                - listitem [ref=e394]:
+                  - link " Instagram" [ref=e395] [cursor=pointer]:
+                    - /url: https://www.instagram.com/macromicro.me/
+                    - generic [ref=e396]: 
+                    - text: Instagram
+                - listitem [ref=e397]:
+                  - link " Telegram" [ref=e398] [cursor=pointer]:
+                    - /url: https://t.me/macromicro_en
+                    - generic [ref=e399]: 
+                    - text: Telegram
+          - generic [ref=e400]:
+            - paragraph [ref=e401]: Copyright © 2026 MacroMicro
+            - paragraph [ref=e402]: The data, analysis tools, and content on this website are for informational purposes only and do not constitute financial advice, investment recommendations, or an offer to buy or sell any financial product. While we strive for accuracy, we do not guarantee the completeness or timeliness of the information provided. Users are solely responsible for their investment decisions and assume all associated risks; this website bears no liability for any losses incurred.
+            - paragraph [ref=e403]: All website content is protected by copyright. Sharing links is permitted, but reproduction or redistribution requires prior authorization.
+            - generic [ref=e404]:
+              - link "繁體中文" [ref=e405] [cursor=pointer]:
+                - /url: //www.macromicro.me/charts/930/us-credit-spread
+              - link "简体中文" [ref=e406] [cursor=pointer]:
+                - /url: //sc.macromicro.me/charts/930/us-credit-spread
+              - link "English":
+                - /url: //en.macromicro.me/charts/930/us-credit-spread
+    - text:                                                                         
+  - generic:
+    - button "":
+      - generic: 
+    - button " Help Center":
+      - generic:
+        - generic: 
+        - generic: Help Center
+    - button "":
+      - generic:
+        - generic: 
+  - text: 
+  - generic [ref=e408]:
+    - link [ref=e410] [cursor=pointer]:
+      - /url: /video/562/2026-meo-fullyear-intelligence-live-pass
+      - img [ref=e412]
+    - generic [ref=e414] [cursor=pointer]: ×
+  - button "Chat Icon" [ref=e416] [cursor=pointer]:
+    - img "Chat Icon" [ref=e417]

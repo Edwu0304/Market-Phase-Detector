@@ -1,0 +1,61 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: index.asp
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.asp
+        - listitem [ref=e10]:
+          - link "English" [ref=e11] [cursor=pointer]:
+            - /url: e_index.asp
+    - table [ref=e15]:
+      - rowgroup [ref=e16]:
+        - row "News 115年03月份消費者信心指數新聞稿暨調查報告 115年台灣消費者信心指數發布日期 114年第三季臺灣能源安全指標 20250930 財團法人二十一世紀基金會「2025年度淨零產業競爭力卓越獎」 114年9月淨零產業競爭力獎新聞稿 原訂9/29辦理114年9月份消費者信心指數實體記者會，取消辦理，改為9/30線上發布 2020年及其後台灣經濟與產業發展的挑戰學術研討會Industrial and Economic Development Challenges for Taiwan in 2020 and Beyond (2019/5/31) 2019 KT紀念講座 本中心國鼎館B2停車場試行辦理租用20個車位予總務處公告" [ref=e17]:
+          - cell "News 115年03月份消費者信心指數新聞稿暨調查報告 115年台灣消費者信心指數發布日期 114年第三季臺灣能源安全指標 20250930 財團法人二十一世紀基金會「2025年度淨零產業競爭力卓越獎」 114年9月淨零產業競爭力獎新聞稿 原訂9/29辦理114年9月份消費者信心指數實體記者會，取消辦理，改為9/30線上發布 2020年及其後台灣經濟與產業發展的挑戰學術研討會Industrial and Economic Development Challenges for Taiwan in 2020 and Beyond (2019/5/31) 2019 KT紀念講座 本中心國鼎館B2停車場試行辦理租用20個車位予總務處公告" [ref=e18]:
+            - generic [ref=e19]: News
+            - list [ref=e20]:
+              - listitem [ref=e21]:
+                - link "115年03月份消費者信心指數新聞稿暨調查報告" [ref=e22] [cursor=pointer]:
+                  - /url: http://rcted.ncu.edu.tw/cci.asp
+                  - generic [ref=e23]: 115年03月份消費者信心指數新聞稿暨調查報告
+              - listitem [ref=e24]:
+                - link "115年台灣消費者信心指數發布日期" [ref=e25] [cursor=pointer]:
+                  - /url: 115.pdf
+                  - generic [ref=e26]: 115年台灣消費者信心指數發布日期
+              - listitem [ref=e27]:
+                - link "114年第三季臺灣能源安全指標" [ref=e28] [cursor=pointer]:
+                  - /url: http://rcted.ncu.edu.tw/esi.asp
+                  - generic [ref=e29]: 114年第三季臺灣能源安全指標
+              - listitem [ref=e30]:
+                - link:
+                  - /url: ""
+              - listitem [ref=e31]:
+                - link:
+                  - /url: ""
+              - listitem [ref=e32]:
+                - link "20250930 財團法人二十一世紀基金會「2025年度淨零產業競爭力卓越獎」" [ref=e33] [cursor=pointer]:
+                  - /url: cci/20250930 財團法人二十一世紀基金會「2025年度淨零產業競爭力卓越獎」 v3.pdf
+                  - generic [ref=e34]: 20250930 財團法人二十一世紀基金會「2025年度淨零產業競爭力卓越獎」
+              - listitem [ref=e35]:
+                - link "114年9月淨零產業競爭力獎新聞稿" [ref=e36] [cursor=pointer]:
+                  - /url: cci/114年9月淨零產業競爭力獎新聞稿.pdf
+                  - generic [ref=e37]: 114年9月淨零產業競爭力獎新聞稿
+              - listitem [ref=e38]:
+                - link "原訂9/29辦理114年9月份消費者信心指數實體記者會，取消辦理，改為9/30線上發布" [ref=e39] [cursor=pointer]:
+                  - /url: ""
+                  - generic [ref=e40]: 原訂9/29辦理114年9月份消費者信心指數實體記者會，取消辦理，改為9/30線上發布
+              - listitem [ref=e41]:
+                - link "2020年及其後台灣經濟與產業發展的挑戰學術研討會Industrial and Economic Development Challenges for Taiwan in 2020 and Beyond (2019/5/31)" [ref=e42] [cursor=pointer]:
+                  - /url: https://cis.ncu.edu.tw/SeminarSys/activity/IEDCT2020
+                  - generic [ref=e43]: 2020年及其後台灣經濟與產業發展的挑戰學術研討會Industrial and Economic Development Challenges for Taiwan in 2020 and Beyond (2019/5/31)
+              - listitem [ref=e44]:
+                - link "2019 KT紀念講座" [ref=e45] [cursor=pointer]:
+                  - /url: cci/KT紀念講座.pdf
+                  - generic [ref=e46]: 2019 KT紀念講座
+              - listitem [ref=e47]:
+                - link "本中心國鼎館B2停車場試行辦理租用20個車位予總務處公告" [ref=e48] [cursor=pointer]:
+                  - /url: http://rcted.ncu.edu.tw/parking01.asp
+                  - generic [ref=e49]: 本中心國鼎館B2停車場試行辦理租用20個車位予總務處公告
+  - text:   

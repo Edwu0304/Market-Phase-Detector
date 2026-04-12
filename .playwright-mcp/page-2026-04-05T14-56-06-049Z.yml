@@ -1,0 +1,101 @@
+- table [ref=e3]:
+  - rowgroup [ref=e4]:
+    - row "回首頁 瀏覽人次：3370951" [ref=e5]:
+      - cell "回首頁 瀏覽人次：3370951" [ref=e6]:
+        - link "回首頁" [ref=e8] [cursor=pointer]:
+          - /url: default.aspx
+          - img [ref=e9]
+        - generic [ref=e10]:
+          - text: 瀏覽人次：
+          - img "3" [ref=e11]
+          - img "3" [ref=e12]
+          - img "7" [ref=e13]
+          - img "0" [ref=e14]
+          - img "9" [ref=e15]
+          - img "5" [ref=e16]
+          - img "1" [ref=e17]
+    - row "失業給付初次認定核付人數 重新讀取 歷史資料 回首頁 115年2月 5,875人 統計小百科 被保險人因非自願離職，符合申請就業保險失業給付之勞工，親自向公立就業服務機構辦理求職登記，14日內仍無法推介就業或安排職業訓練者，經核定確認符合請領資格首次給付之人數。 查詢迄期： 115 年 2 月 查 詢 人 年.月" [ref=e18]:
+      - cell "失業給付初次認定核付人數 重新讀取 歷史資料 回首頁 115年2月 5,875人 統計小百科 被保險人因非自願離職，符合申請就業保險失業給付之勞工，親自向公立就業服務機構辦理求職登記，14日內仍無法推介就業或安排職業訓練者，經核定確認符合請領資格首次給付之人數。 查詢迄期： 115 年 2 月 查 詢 人 年.月" [ref=e19]:
+        - table [ref=e20]:
+          - rowgroup [ref=e21]:
+            - row "失業給付初次認定核付人數 重新讀取 歷史資料 回首頁 115年2月 5,875人 統計小百科 被保險人因非自願離職，符合申請就業保險失業給付之勞工，親自向公立就業服務機構辦理求職登記，14日內仍無法推介就業或安排職業訓練者，經核定確認符合請領資格首次給付之人數。 查詢迄期： 115 年 2 月 查 詢 人 年.月" [ref=e22]:
+              - cell "失業給付初次認定核付人數 重新讀取 歷史資料 回首頁 115年2月 5,875人 統計小百科 被保險人因非自願離職，符合申請就業保險失業給付之勞工，親自向公立就業服務機構辦理求職登記，14日內仍無法推介就業或安排職業訓練者，經核定確認符合請領資格首次給付之人數。 查詢迄期： 115 年 2 月 查 詢 人 年.月" [ref=e23]:
+                - heading "失業給付初次認定核付人數" [level=2] [ref=e24]
+                - generic [ref=e25]:
+                  - link "重新讀取" [ref=e27] [cursor=pointer]:
+                    - /url: index03.aspx
+                  - link "歷史資料" [active] [ref=e29] [cursor=pointer]:
+                    - /url: https://statdb.mol.gov.tw/statiscla/webMain.aspx?sys=210&kind=21&type=1&funid=q08112&rdm=ylUxpUYe
+                  - link "回首頁" [ref=e31] [cursor=pointer]:
+                    - /url: default.aspx
+                  - generic [ref=e32]:
+                    - generic [ref=e33]: 115年2月
+                    - generic [ref=e35]: 5,875人
+                  - generic [ref=e36]:
+                    - generic [ref=e37]: 統計小百科
+                    - paragraph [ref=e41]: 被保險人因非自願離職，符合申請就業保險失業給付之勞工，親自向公立就業服務機構辦理求職登記，14日內仍無法推介就業或安排職業訓練者，經核定確認符合請領資格首次給付之人數。
+                - generic [ref=e42]:
+                  - generic [ref=e43]:
+                    - text: 查詢迄期：
+                    - combobox [ref=e44]:
+                      - option "100"
+                      - option "101"
+                      - option "102"
+                      - option "103"
+                      - option "104"
+                      - option "105"
+                      - option "106"
+                      - option "107"
+                      - option "108"
+                      - option "109"
+                      - option "110"
+                      - option "111"
+                      - option "112"
+                      - option "113"
+                      - option "114"
+                      - option "115" [selected]
+                    - text: 年
+                    - combobox [ref=e45]:
+                      - option "1"
+                      - option "2" [selected]
+                    - text: 月
+                    - button "查 詢" [ref=e46] [cursor=pointer]
+                  - generic [ref=e48]:
+                    - heading "人" [level=5] [ref=e50]
+                    - generic [ref=e51]:
+                      - heading "年.月" [level=5] [ref=e52]
+                      - img [ref=e296]:
+                        - generic [ref=e297]:
+                          - generic [ref=e298]:
+                            - generic [ref=e304]: "112.11"
+                            - generic [ref=e306]: "112.12"
+                            - generic [ref=e308]: "113.01"
+                            - generic [ref=e310]: "113.02"
+                            - generic [ref=e312]: "113.03"
+                            - generic [ref=e314]: "113.04"
+                            - generic [ref=e316]: "113.05"
+                            - generic [ref=e318]: "113.06"
+                            - generic [ref=e320]: "113.07"
+                            - generic [ref=e322]: "113.08"
+                            - generic [ref=e324]: "113.09"
+                            - generic [ref=e534]: "113.10"
+                            - generic [ref=e536]: "113.11"
+                          - generic [ref=e326]:
+                            - generic [ref=e328]: "0"
+                            - generic [ref=e330]: 1,000
+                            - generic [ref=e332]: 2,000
+                            - generic [ref=e334]: 3,000
+                            - generic [ref=e336]: 4,000
+                            - generic [ref=e338]: 5,000
+                            - generic [ref=e340]: 6,000
+                            - generic [ref=e342]: 7,000
+                            - generic [ref=e344]: 8,000
+                            - generic [ref=e346]: 9,000
+                          - generic [ref=e532]: 人數
+    - row "為提供更為穩定的瀏覽品質與使用體驗，建議更新瀏覽器至以下版本：IE10以上、Chrome40以上、Firefox35以上 隱私權政策及網站安全政策 最佳解析度1024*768 Copyright 2016 中華民國勞動部版權所有" [ref=e292]:
+      - cell "為提供更為穩定的瀏覽品質與使用體驗，建議更新瀏覽器至以下版本：IE10以上、Chrome40以上、Firefox35以上 隱私權政策及網站安全政策 最佳解析度1024*768 Copyright 2016 中華民國勞動部版權所有" [ref=e293]:
+        - generic [ref=e294]:
+          - text: 為提供更為穩定的瀏覽品質與使用體驗，建議更新瀏覽器至以下版本：IE10以上、Chrome40以上、Firefox35以上
+          - link "隱私權政策及網站安全政策" [ref=e295] [cursor=pointer]:
+            - /url: https://www.mol.gov.tw/3016/3032/3262/
+          - text: 最佳解析度1024*768 Copyright 2016 中華民國勞動部版權所有

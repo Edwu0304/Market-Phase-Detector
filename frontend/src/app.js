@@ -1,4 +1,4 @@
-function getBodyConfig() {
+﻿function getBodyConfig() {
   const body = document.body;
   return {
     page: body.dataset.page ?? "landing",
@@ -36,6 +36,12 @@ function phaseLabel(phase) {
     Recession: "衰退",
   };
   return labels[phase] ?? phase;
+}
+
+function nextPhase(phase) {
+  const phases = ["Recovery", "Growth", "Boom", "Recession"];
+  const index = phases.indexOf(phase);
+  return index === -1 ? phase : phases[(index + 1) % phases.length];
 }
 
 function formatDirection(value) {
@@ -278,69 +284,48 @@ function buildMetricTable(history, selectedIndex) {
 }
 
 // ===== Izaax Transposed Table =====
-function buildIzaaxTransposedTable(transposed) {
+function buildIzaaxTransposedTable(transposed, selectedMonth) {
   const {
-    current_phase,
-    current_phase_label,
-    next_phase,
-    prev_phase,
-    phase_sequence,
-    transition_keys,
     metric_rows,
     months,
-    reasons,
+    month_columns,
   } = transposed;
 
-  const currentIdx = phase_sequence.indexOf(current_phase);
-
-  // Phase progression banner
-  const phaseBanner = phase_sequence
-    .map((ph, i) => {
-      const label = { Recovery: "復甦", Growth: "成長", Boom: "榮景", Recession: "衰退" }[ph] || ph;
-      const isActive = ph === current_phase;
-      const isPrev = i === (currentIdx - 1 + phase_sequence.length) % phase_sequence.length;
-      const isNext = i === (currentIdx + 1) % phase_sequence.length;
-      let cls = "phase-step";
-      if (isActive) cls += ` phase-step-active phase-${ph.toLowerCase()}`;
-      else if (isPrev) cls += " phase-step-prev";
-      else if (isNext) cls += " phase-step-next";
-      const arrow = i < phase_sequence.length - 1 ? '<span class="phase-arrow">→</span>' : "";
-      return `<span class="${cls}">${label}</span>${arrow}`;
-    })
+  const columns = month_columns ?? months.map((month) => ({ month, phase: "", phase_label: "" }));
+  const activeColumn = columns.find((column) => column.month === selectedMonth) ?? columns[columns.length - 1] ?? { transition_keys: [] };
+  const activeKeys = new Set(activeColumn.transition_keys ?? []);
+  const monthHeaders = columns
+    .map((column) => `
+      <th class="month-header ${column.month === activeColumn.month ? "is-selected" : ""}">
+        <button class="month-header-button" data-month="${column.month}">
+          <span class="month-header-label">${column.month}</span>
+          <span class="month-phase-badge ${phaseTone(column.phase)}">${column.phase_label ?? ""}</span>
+        </button>
+      </th>
+    `)
     .join("");
 
-  // Month columns headers
-  const monthHeaders = months.map((m) => `<th class="month-header">${m}</th>`).join("");
-
-  // Metric rows with transition highlighting
   const metricRows = metric_rows
     .map((row) => {
-      const isTransitionKey = row.is_transition_key;
+      const isTransitionKey = activeKeys.has(row.metric_id);
       const rowClass = isTransitionKey ? "metric-row-transition-key" : "";
       const cells = row.values
         .map((v) => {
           let statusCls = `cell-${v.status}`;
           if (isTransitionKey) statusCls += " cell-transition-key";
+          if (v.month === activeColumn.month) statusCls += " cell-selected";
           return `<td class="${statusCls}">${v.display_value}</td>`;
         })
         .join("");
-      const labelPrefix = isTransitionKey ? '<span class="transition-key-indicator">★</span>' : "";
-      return `<tr class="metric-row ${rowClass}"><th class="metric-label">${labelPrefix}${row.label}</th>${cells}</tr>`;
+      const label = isTransitionKey
+        ? `<span class="transition-key-chip">轉段關鍵</span><span>${row.label}</span>`
+        : `<span>${row.label}</span>`;
+      return `<tr class="metric-row ${rowClass}"><th class="metric-label">${label}</th>${cells}</tr>`;
     })
     .join("");
 
-  // Reasons
-  const reasonsList = reasons.map((r) => `<li>${r}</li>`).join("");
-
   return `
-    <div class="izaax-transposed">
-      <div class="izaax-phase-banner">
-        <div class="phase-progress">${phaseBanner}</div>
-        <div class="izaax-current-phase">
-          <span class="phase-badge-large ${phaseTone(current_phase)}">${current_phase_label}</span>
-          <span class="izaax-next-info">下一步：<strong>${{ Recovery: "成長", Growth: "榮景", Boom: "衰退", Recession: "復甦" }[next_phase] || next_phase}</strong></span>
-        </div>
-      </div>
+    <div class="izaax-transposed" data-role="izaax-table-pane">
       <div class="izaax-table-scroll-wrapper">
         <table class="izaax-transposed-table">
           <thead>
@@ -355,12 +340,60 @@ function buildIzaaxTransposedTable(transposed) {
         </table>
       </div>
       <div class="izaax-legend">
-        <p><span class="transition-key-indicator">★</span> 表示影響進入下一階段的關鍵指標</p>
+        <p>只有發生階段轉換的月份才高亮真正造成轉段的關鍵指標</p>
         <p><span class="cell-positive">●</span> 正向 <span class="cell-negative">●</span> 負向 <span class="cell-neutral">●</span> 中性</p>
       </div>
-      <div class="izaax-reasons">
-        <h3>判讀原因</h3>
-        <ul>${reasonsList}</ul>
+    </div>
+  `;
+}
+
+function buildIzaaxDecisionPanel(bundle, selectedRow) {
+  const cycleSummary = `${phaseLabel(selectedRow.previous_phase ?? selectedRow.phase)} -> ${phaseLabel(selectedRow.phase)} -> ${phaseLabel(nextPhase(selectedRow.phase))}`;
+  const modeLabels = {
+    initial: "初始判定",
+    hold: "維持現階段",
+    advance: "前進一階",
+    ambiguous_hold: "混亂月份，保守維持",
+    ambiguous_advance: "混亂月份，保守前進一階",
+  };
+  const supporting = (selectedRow.supporting_signals ?? []).map((signal) => `<li>${signal}</li>`).join("");
+  const conflicting = (selectedRow.conflicting_signals ?? []).map((signal) => `<li>${signal}</li>`).join("");
+  const transitionMetrics = (selectedRow.metrics ?? [])
+    .filter((metric) => (selectedRow.transition_keys ?? []).includes(metric.id))
+    .map((metric) => `<li><strong>${metric.label}</strong> ${metric.display_value ?? metric.value}</li>`)
+    .join("");
+  const modeClass = String(selectedRow.decision_mode || "hold").replace(/_/g, "-");
+
+  return `
+    <div class="izaax-side-panel" data-role="izaax-fixed-panel">
+      <div class="izaax-side-block">
+        <p class="lens-kicker">目前判讀</p>
+        <h3>${selectedRow.month}</h3>
+        <div class="izaax-current-phase">
+          <span class="phase-badge-large ${phaseTone(selectedRow.phase)}">${selectedRow.phase_label}</span>
+          <span class="izaax-next-info">循環位置：<strong>${cycleSummary}</strong></span>
+        </div>
+      </div>
+      <div class="izaax-side-block izaax-decision-block ${modeClass}">
+        <h3>${modeLabels[selectedRow.decision_mode] ?? "當月判讀"}</h3>
+        <p>${selectedRow.decision_summary || selectedRow.narrative || ""}</p>
+        <p><strong>目前立場：</strong>${selectedRow.stance ?? "neutral"}</p>
+      </div>
+      <div class="izaax-side-block">
+        <h3>支持訊號</h3>
+        <ul class="lens-reasons">${supporting || "<li>本月沒有足夠支持訊號。</li>"}</ul>
+      </div>
+      <div class="izaax-side-block">
+        <h3>衝突訊號</h3>
+        <ul class="lens-reasons">${conflicting || "<li>本月沒有明顯衝突訊號。</li>"}</ul>
+      </div>
+      <div class="izaax-side-block">
+        <h3>轉段關鍵指標</h3>
+        <ul class="lens-reasons">${transitionMetrics || "<li>本月沒有發生階段轉換，因此不高亮轉段指標。</li>"}</ul>
+      </div>
+      <div class="izaax-side-block">
+        <h3>理由清單</h3>
+        <ul class="lens-reasons">${(selectedRow.reasons ?? []).map((reason) => `<li>${reason}</li>`).join("")}</ul>
       </div>
     </div>
   `;
@@ -380,6 +413,7 @@ function buildLensRow(lensId, bundle, strategyBook) {
 
   // Izaax: full-width transposed table, no side panel, no slider
   if (lensId === "izaax" && bundle.transposed) {
+    const selectedRow = history[maxIndex] ?? currentRow;
     return `
       <article class="lens-row lens-row-izaax" data-lens-id="${lensId}">
         <div class="lens-row-head">
@@ -389,8 +423,13 @@ function buildLensRow(lensId, bundle, strategyBook) {
             <p class="lens-book">${strategyBook.book}</p>
           </div>
         </div>
-        <div class="lens-row-body lens-row-body-full">
-          ${buildIzaaxTransposedTable(bundle.transposed)}
+        <div class="lens-row-body lens-row-body-izaax">
+          <div class="lens-main izaax-main-pane">
+            ${buildIzaaxTransposedTable(bundle.transposed, selectedRow.month)}
+          </div>
+          <aside class="lens-side izaax-side-pane" data-role="izaax-side-panel">
+            ${buildIzaaxDecisionPanel(bundle, selectedRow)}
+          </aside>
         </div>
       </article>
     `;
@@ -446,8 +485,22 @@ function createLensController(panel, lensId, bundle, strategyBook) {
   const history = bundle.history ?? [];
   const slider = panel.querySelector(".lens-history-slider");
 
-  // Izaax uses transposed table, no slider control
+  // Izaax uses clickable month headers and a fixed side panel.
   if (lensId === "izaax") {
+    const sidePanel = panel.querySelector('[data-role="izaax-side-panel"]');
+    const mainPanel = panel.querySelector(".lens-main");
+    function updateIzaaxMonth(month) {
+      const row = history.find((item) => item.month === month) ?? history[history.length - 1];
+      if (!row) {
+        return;
+      }
+      mainPanel.innerHTML = buildIzaaxTransposedTable(bundle.transposed, row.month);
+      sidePanel.innerHTML = buildIzaaxDecisionPanel(bundle, row);
+      mainPanel.querySelectorAll(".month-header-button").forEach((button) => {
+        button.addEventListener("click", () => updateIzaaxMonth(button.dataset.month));
+      });
+    }
+    updateIzaaxMonth(history[history.length - 1]?.month);
     return;
   }
 

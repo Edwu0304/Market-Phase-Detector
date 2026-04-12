@@ -29,9 +29,24 @@ from market_phase_detector.strategy_content import AUTHOR_ORDER, build_country_h
 
 
 def _build_lens_bundle(observations: dict, history_observations: list[dict]) -> dict:
+    izaax_history = []
+    urakami_history = []
+    marks_history = []
+    previous_phases = {"izaax": None, "urakami": None, "marks": None}
+    for row in history_observations:
+        izaax_row = build_izaax_history_row(row["month"], row, previous_phases["izaax"])
+        urakami_row = build_urakami_history_row(row["month"], row, previous_phases["urakami"])
+        marks_row = build_marks_history_row(row["month"], row, previous_phases["marks"])
+        izaax_history.append(izaax_row.to_dict())
+        urakami_history.append(urakami_row.to_dict())
+        marks_history.append(marks_row.to_dict())
+        previous_phases["izaax"] = izaax_row.phase
+        previous_phases["urakami"] = urakami_row.phase
+        previous_phases["marks"] = marks_row.phase
+
     izaax_bundle = {
         **build_izaax_lens(observations).to_dict(),
-        "history": [build_izaax_history_row(row["month"], row).to_dict() for row in history_observations],
+        "history": izaax_history,
     }
     # Add transposed bundle for Izaax specialized UI
     izaax_bundle["transposed"] = build_izaax_transposed_bundle(observations, history_observations).to_dict()
@@ -40,11 +55,11 @@ def _build_lens_bundle(observations: dict, history_observations: list[dict]) -> 
         "izaax": izaax_bundle,
         "urakami": {
             **build_urakami_lens(observations).to_dict(),
-            "history": [build_urakami_history_row(row["month"], row).to_dict() for row in history_observations],
+            "history": urakami_history,
         },
         "marks": {
             **build_marks_lens(observations).to_dict(),
-            "history": [build_marks_history_row(row["month"], row).to_dict() for row in history_observations],
+            "history": marks_history,
         },
     }
 
@@ -141,6 +156,7 @@ def build_sample_payload() -> dict:
         country="US",
         as_of=us_latest["as_of"],
         observations=us_latest,
+        observation_history=us_history,
         derived_signals={"macro_direction": "firm", "risk_state": "none"},
         candidate_phase="Growth",
         final_phase="Growth",
@@ -153,6 +169,7 @@ def build_sample_payload() -> dict:
         country="TW",
         as_of=tw_latest["as_of"],
         observations=tw_latest,
+        observation_history=tw_history,
         derived_signals={"macro_direction": "improving", "risk_state": "none"},
         candidate_phase="Recovery",
         final_phase="Recovery",
@@ -187,6 +204,7 @@ def _build_us_snapshot(observations: dict, history_observations: list[dict], pre
         country="US",
         as_of=observations["as_of"],
         observations=observations,
+        observation_history=history_observations,
         derived_signals={
             "macro_direction": "improving" if observations["leading_index_change"] >= 0 else "softening",
             "risk_state": transition.watch or "none",
@@ -220,6 +238,7 @@ def _build_tw_snapshot(observations: dict, history_observations: list[dict], pre
         country="TW",
         as_of=observations["as_of"],
         observations=observations,
+        observation_history=history_observations,
         derived_signals={"macro_direction": observations["leading_trend"], "risk_state": transition.watch or "none"},
         candidate_phase=candidate.phase,
         final_phase=transition.final_phase,

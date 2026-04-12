@@ -1,0 +1,234 @@
+- generic [ref=e2]:
+  - 'heading ":::  Toolbar (Mobile Version)" [level=1] [ref=e3]':
+    - generic [ref=e4]:
+      - link ":::" [ref=e5] [cursor=pointer]:
+        - /url: "#U"
+      - link "" [ref=e6] [cursor=pointer]:
+        - /url: /en/index.html
+        - heading "" [level=1] [ref=e7]:
+          - generic [ref=e8]:  
+          - text: 
+      - text:  
+    - navigation "Toolbar (Mobile Version)" [ref=e9]:
+      - listitem [ref=e10]:
+        - link "" [ref=e11] [cursor=pointer]:
+          - /url: /zh/search.html
+      - listitem [ref=e12]:
+        - button "Menu Switch" [ref=e13] [cursor=pointer]
+        - text:                                                                                                
+  - generic [ref=e16]:
+    - text: 
+    - main [ref=e17]:
+      - link ":::" [ref=e18] [cursor=pointer]:
+        - /url: "#C"
+      - generic [ref=e19]:
+        - list [ref=e20]:
+          - listitem [ref=e21]:
+            - text: 
+            - link "Home" [ref=e22] [cursor=pointer]:
+              - /url: /en/
+          - listitem [ref=e23]: Market Info
+          - listitem [ref=e24]: Statistics
+          - listitem [ref=e25]: Listed Companies Monthly Statistics
+        - link " 中文" [ref=e26] [cursor=pointer]:
+          - /url: /zh/trading/statistics/index04.html
+      - heading "Listed Companies Monthly Statistics" [level=2] [ref=e27]
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: "Year:"
+          - combobox "Year:" [ref=e34]:
+            - option "2026" [selected]
+            - option "2025"
+            - option "2024"
+            - option "2023"
+            - option "2022"
+            - option "2021"
+            - option "2020"
+            - option "2019"
+            - option "2018"
+            - option "2017"
+            - option "2016"
+            - option "2015"
+            - option "2014"
+            - option "2013"
+            - option "2012"
+            - option "2011"
+            - option "2010"
+            - option "2009"
+            - option "2008"
+            - option "2007"
+            - option "2006"
+            - option "2005"
+            - option "2004"
+            - option "2003"
+            - option "2002"
+            - option "2001"
+            - option "2000"
+            - option "1999"
+        - button "Query" [ref=e36]
+      - table [ref=e41]:
+        - rowgroup [ref=e42]:
+          - row "Statistics Name Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Notes" [ref=e43]:
+            - columnheader "Statistics Name" [ref=e44]
+            - columnheader "Jan" [ref=e45]
+            - columnheader "Feb" [ref=e46]
+            - columnheader "Mar" [ref=e47]
+            - columnheader "Apr" [ref=e48]
+            - columnheader "May" [ref=e49]
+            - columnheader "Jun" [ref=e50]
+            - columnheader "Jul" [ref=e51]
+            - columnheader "Aug" [ref=e52]
+            - columnheader "Sep" [ref=e53]
+            - columnheader "Oct" [ref=e54]
+            - columnheader "Nov" [ref=e55]
+            - columnheader "Dec" [ref=e56]
+            - columnheader "Notes" [ref=e57]
+        - rowgroup [ref=e58]:
+          - row "P/E Ratio & Yield & P/B Ratio of Listed Stocks 下載 ZIP 下載 ZIP View" [ref=e59]:
+            - cell "P/E Ratio & Yield & P/B Ratio of Listed Stocks" [ref=e60]
+            - cell "下載 ZIP" [ref=e61]:
+              - link "下載 ZIP" [ref=e62] [cursor=pointer]:
+                - /url: /rwd/zh/statistics/count?l1=Listed Companies Monthly Statistics&l2=【P/E Ratio & Yield  & P/B Ratio of Listed Stocks】月報&url=/staticFiles/inspection/inspection/04/001/202601_C04001.zip
+                - generic [ref=e63]: 下載 ZIP
+            - cell "下載 ZIP" [ref=e64]:
+              - link "下載 ZIP" [ref=e65] [cursor=pointer]:
+                - /url: /rwd/zh/statistics/count?l1=Listed Companies Monthly Statistics&l2=【P/E Ratio & Yield  & P/B Ratio of Listed Stocks】月報&url=/staticFiles/inspection/inspection/04/001/202602_C04001.zip
+                - generic [ref=e66]: 下載 ZIP
+            - cell [ref=e67]
+            - cell [ref=e68]
+            - cell [ref=e69]
+            - cell [ref=e70]
+            - cell [ref=e71]
+            - cell [ref=e72]
+            - cell [ref=e73]
+            - cell [ref=e74]
+            - cell [ref=e75]
+            - cell [ref=e76]
+            - cell "View" [ref=e77]:
+              - button "View" [ref=e78]
+          - row "Info on Listed Companies' Fund Raising of Listed Companies 下載 ZIP 下載 ZIP View" [ref=e79]:
+            - cell "Info on Listed Companies' Fund Raising of Listed Companies" [ref=e80]
+            - cell "下載 ZIP" [ref=e81]:
+              - link "下載 ZIP" [ref=e82] [cursor=pointer]:
+                - /url: /rwd/zh/statistics/count?l1=Listed Companies Monthly Statistics&l2=【Info on Listed Companies' Fund Raising of Listed Companies】月報&url=/staticFiles/inspection/inspection/04/002/202601_C04002.zip
+                - generic [ref=e83]: 下載 ZIP
+            - cell "下載 ZIP" [ref=e84]:
+              - link "下載 ZIP" [ref=e85] [cursor=pointer]:
+                - /url: /rwd/zh/statistics/count?l1=Listed Companies Monthly Statistics&l2=【Info on Listed Companies' Fund Raising of Listed Companies】月報&url=/staticFiles/inspection/inspection/04/002/202602_C04002.zip
+                - generic [ref=e86]: 下載 ZIP
+            - cell [ref=e87]
+            - cell [ref=e88]
+            - cell [ref=e89]
+            - cell [ref=e90]
+            - cell [ref=e91]
+            - cell [ref=e92]
+            - cell [ref=e93]
+            - cell [ref=e94]
+            - cell [ref=e95]
+            - cell [ref=e96]
+            - cell "View" [ref=e97]:
+              - button "View" [ref=e98]
+          - row "Operating Revenue of Domestic Listed Companies 下載 ZIP 下載 ZIP View" [ref=e99]:
+            - cell "Operating Revenue of Domestic Listed Companies" [ref=e100]
+            - cell "下載 ZIP" [ref=e101]:
+              - link "下載 ZIP" [ref=e102] [cursor=pointer]:
+                - /url: /rwd/zh/statistics/count?l1=Listed Companies Monthly Statistics&l2=【Operating Revenue of Domestic Listed Companies】月報&url=/staticFiles/inspection/inspection/04/003/202601_C04003.zip
+                - generic [ref=e103]: 下載 ZIP
+            - cell "下載 ZIP" [ref=e104]:
+              - link "下載 ZIP" [ref=e105] [cursor=pointer]:
+                - /url: /rwd/zh/statistics/count?l1=Listed Companies Monthly Statistics&l2=【Operating Revenue of Domestic Listed Companies】月報&url=/staticFiles/inspection/inspection/04/003/202602_C04003.zip
+                - generic [ref=e106]: 下載 ZIP
+            - cell [ref=e107]
+            - cell [ref=e108]
+            - cell [ref=e109]
+            - cell [ref=e110]
+            - cell [ref=e111]
+            - cell [ref=e112]
+            - cell [ref=e113]
+            - cell [ref=e114]
+            - cell [ref=e115]
+            - cell [ref=e116]
+            - cell "View" [ref=e117]:
+              - button "View" [ref=e118]
+          - row "Status of Securities Listed on TWSE 下載 ZIP 下載 ZIP View" [ref=e119]:
+            - cell "Status of Securities Listed on TWSE" [ref=e120]
+            - cell "下載 ZIP" [ref=e121]:
+              - link "下載 ZIP" [ref=e122] [cursor=pointer]:
+                - /url: /rwd/zh/statistics/count?l1=Listed Companies Monthly Statistics&l2=【Status of Securities Listed on TWSE】月報&url=/staticFiles/inspection/inspection/04/004/202601_C04004.zip
+                - generic [ref=e123]: 下載 ZIP
+            - cell "下載 ZIP" [ref=e124]:
+              - link "下載 ZIP" [ref=e125] [cursor=pointer]:
+                - /url: /rwd/zh/statistics/count?l1=Listed Companies Monthly Statistics&l2=【Status of Securities Listed on TWSE】月報&url=/staticFiles/inspection/inspection/04/004/202602_C04004.zip
+                - generic [ref=e126]: 下載 ZIP
+            - cell [ref=e127]
+            - cell [ref=e128]
+            - cell [ref=e129]
+            - cell [ref=e130]
+            - cell [ref=e131]
+            - cell [ref=e132]
+            - cell [ref=e133]
+            - cell [ref=e134]
+            - cell [ref=e135]
+            - cell [ref=e136]
+            - cell "View" [ref=e137]:
+              - button "View" [ref=e138]
+      - text: 
+  - contentinfo [ref=e139]:
+    - generic [ref=e140]:
+      - link ":::" [ref=e141] [cursor=pointer]:
+        - /url: "#B"
+      - link "TWSE " [ref=e143] [cursor=pointer]:
+        - /url: /en/index.html
+        - generic [ref=e144]:
+          - generic [ref=e145]:  
+          - generic: TWSE
+          - text: 
+      - generic [ref=e146]:
+        - list [ref=e147]:
+          - listitem [ref=e148]:
+            - link "Contact TWSE" [ref=e149] [cursor=pointer]:
+              - /url: https://suggestionbox.twse.com.tw/layout/home
+          - listitem [ref=e150]:
+            - link "Subscribe" [ref=e151] [cursor=pointer]:
+              - /url: /en/terms/subscribe.html
+          - listitem [ref=e152]:
+            - link "SiteMap" [ref=e153] [cursor=pointer]:
+              - /url: /en/sitemap.html
+          - listitem [ref=e154]:
+            - link "Disclaimer" [ref=e155] [cursor=pointer]:
+              - /url: /en/terms/use.html
+          - listitem [ref=e156]:
+            - link "Privacy Rights Protection Policy" [ref=e157] [cursor=pointer]:
+              - /url: /en/terms/privacy.html
+          - listitem [ref=e158]:
+            - link "Personal Information Management Policy Statement" [ref=e159] [cursor=pointer]:
+              - /url: /en/terms/personal.html
+          - listitem [ref=e160]:
+            - link "TWSE's Information Security Policy" [ref=e161] [cursor=pointer]:
+              - /url: /en/terms/security.html
+          - listitem [ref=e162]:
+            - link "Operating Continuity Policy" [ref=e163] [cursor=pointer]:
+              - /url: /en/terms/BCMS.html
+          - listitem [ref=e164]:
+            - link "Anti-harassment Enforcement" [ref=e165] [cursor=pointer]:
+              - /url: /en/terms/anti-harassment.html
+        - generic [ref=e166]:
+          - text: 3F, 9F-12F, 19F, No.7, Sec.5, Xinyi Rd.,
+          - generic [ref=e167]: Taipei City 110615, Taiwan (R.O.C.)
+          - generic [ref=e168]: "Tel: 886-2-81013101"
+          - generic [ref=e169]: "ISC: 886-2-27928188"
+        - generic [ref=e170]:
+          - link "TWSE approved data vendors" [ref=e171] [cursor=pointer]:
+            - /url: /en/products/information/list.html
+          - text: also distribute a comprehensive range of market data from the Taiwan Stock Exchange.
+        - generic [ref=e172]: Copyright © 2026 Taiwan Stock Exchange Corporation. All rights reserved.
+      - list [ref=e173]:
+        - listitem [ref=e174]:
+          - link " Facebook" [ref=e175] [cursor=pointer]:
+            - /url: //www.facebook.com/TaiwanStockExchangeCorp/
+        - listitem [ref=e176]:
+          - link " YouTube" [ref=e177] [cursor=pointer]:
+            - /url: //www.youtube.com/channel/UCb_JzqaWz4Dw1OScrDpGxrg
+        - listitem [ref=e178]:
+          - link " The Taiwan Monthly" [ref=e179] [cursor=pointer]:
+            - /url: //twmonthly.twse.com.tw/

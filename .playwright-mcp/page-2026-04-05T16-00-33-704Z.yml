@@ -1,0 +1,346 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - link "總體統計資料庫 中華民國統計資訊網 National Statistics, R.O.C. (Taiwan)" [ref=e6] [cursor=pointer]:
+      - /url: https://www.stat.gov.tw/
+      - img "總體統計資料庫" [ref=e7]
+      - generic [ref=e8]: 中華民國統計資訊網
+      - generic [ref=e9]: National Statistics, R.O.C. (Taiwan)
+    - generic [ref=e10]:
+      - heading "總體統計資料庫" [level=1] [ref=e11]
+      - link "跳到主要內容" [ref=e12] [cursor=pointer]:
+        - /url: javaScript:gotoframe();
+    - link:
+      - /url: https://statdb.dgbas.gov.tw/pxweb/Dialog/statfile9L.asp
+    - table "總體統計資料庫表格資料" [ref=e15]:
+      - rowgroup [ref=e16]:
+        - row "單表查詢 跨表查詢 視覺圖 快捷工具 統計驛站 首頁" [ref=e17]:
+          - cell "單表查詢" [ref=e18]:
+            - link "單表查詢" [ref=e19] [cursor=pointer]:
+              - /url: javascript:showdata(0);
+          - cell "跨表查詢" [ref=e20]:
+            - link "跨表查詢" [ref=e21] [cursor=pointer]:
+              - /url: javascript:showdata(1);
+          - cell "視覺圖" [ref=e22]:
+            - link "視覺圖" [ref=e23] [cursor=pointer]:
+              - /url: javascript:showdata(2);
+          - cell "快捷工具" [ref=e24]:
+            - link "快捷工具" [ref=e25] [cursor=pointer]:
+              - /url: javascript:showdata(3);
+          - cell "統計驛站" [ref=e26]:
+            - link "統計驛站" [ref=e27] [cursor=pointer]:
+              - /url: javascript:showdata(4);
+          - cell "首頁" [ref=e28]:
+            - link "首頁" [ref=e29] [cursor=pointer]:
+              - /url: javascript:showdata(5);
+  - generic [ref=e30]:
+    - tree [ref=e32]:
+      - list [ref=e33]:
+        - treeitem " 總體統計資料庫" [expanded] [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36] [cursor=pointer]: 
+            - generic "總體統計資料庫" [ref=e39]: 總體統計資料庫
+          - group [ref=e40]:
+            - treeitem " 國民所得統計" [ref=e41]:
+              - generic [ref=e42]:
+                - generic [ref=e43] [cursor=pointer]: 
+                - generic "國民所得統計" [ref=e46]: 國民所得統計
+              - text:             
+            - treeitem " 家庭收支統計" [ref=e47]:
+              - generic [ref=e48]:
+                - generic [ref=e49] [cursor=pointer]: 
+                - generic "家庭收支統計" [ref=e52]: 家庭收支統計
+            - treeitem " 物價統計" [ref=e53]:
+              - generic [ref=e54]:
+                - generic [ref=e55] [cursor=pointer]: 
+                - generic "物價統計" [ref=e58]: 物價統計
+              - text:       
+            - treeitem " 勞工統計" [ref=e59]:
+              - generic [ref=e60]:
+                - generic [ref=e61] [cursor=pointer]: 
+                - generic "勞工統計" [ref=e64]: 勞工統計
+              - text:      
+            - treeitem " 社會保障支出統計" [ref=e65]:
+              - generic [ref=e66]:
+                - generic: 
+                - generic "社會保障支出統計" [ref=e69]: 社會保障支出統計
+            - treeitem " 工商業統計" [ref=e70]:
+              - generic [ref=e71]:
+                - generic [ref=e72] [cursor=pointer]: 
+                - generic "工商業統計" [ref=e75]: 工商業統計
+              - text:       
+            - treeitem " 營建與不動產統計" [ref=e76]:
+              - generic [ref=e77]:
+                - generic: 
+                - generic "營建與不動產統計" [ref=e80]: 營建與不動產統計
+              - text:  
+            - treeitem " 交通統計" [ref=e81]:
+              - generic [ref=e82]:
+                - generic [ref=e83] [cursor=pointer]: 
+                - generic "交通統計" [ref=e86]: 交通統計
+              - text:        
+            - treeitem " 進出口統計" [ref=e87]:
+              - generic [ref=e88]:
+                - generic [ref=e89] [cursor=pointer]: 
+                - generic "進出口統計" [ref=e92]: 進出口統計
+              - text:  
+            - treeitem " 金融統計" [ref=e93]:
+              - generic [ref=e94]:
+                - generic [ref=e95] [cursor=pointer]: 
+                - generic "金融統計" [ref=e98]: 金融統計
+              - text:           
+            - treeitem " 財政統計" [ref=e99]:
+              - generic [ref=e100]:
+                - generic [ref=e101] [cursor=pointer]: 
+                - generic "財政統計" [ref=e104]: 財政統計
+              - text:    
+            - treeitem " 證券統計" [ref=e105]:
+              - generic [ref=e106]:
+                - generic [ref=e107] [cursor=pointer]: 
+                - generic "證券統計" [ref=e110]: 證券統計
+            - treeitem " 景氣指標統計" [ref=e111]:
+              - generic [ref=e112]:
+                - generic [ref=e113] [cursor=pointer]: 
+                - generic "景氣指標統計" [ref=e116]: 景氣指標統計
+            - treeitem " 人口統計" [ref=e117]:
+              - generic [ref=e118]:
+                - generic [ref=e119] [cursor=pointer]: 
+                - generic "人口統計" [ref=e122]: 人口統計
+            - treeitem " 警政與消防統計" [ref=e123]:
+              - generic [ref=e124]:
+                - generic [ref=e125] [cursor=pointer]: 
+                - generic "警政與消防統計" [ref=e128]: 警政與消防統計
+              - text:  
+            - treeitem " 社會保險及福利統計" [ref=e129]:
+              - generic [ref=e130]:
+                - generic: 
+                - generic "社會保險及福利統計" [ref=e133]: 社會保險及福利統計
+              - text:     
+            - treeitem " 教育統計" [ref=e134]:
+              - generic [ref=e135]:
+                - generic [ref=e136] [cursor=pointer]: 
+                - generic "教育統計" [ref=e139]: 教育統計
+              - text:    
+            - treeitem " 衛生統計" [ref=e140]:
+              - generic [ref=e141]:
+                - generic [ref=e142] [cursor=pointer]: 
+                - generic "衛生統計" [ref=e145]: 衛生統計
+              - text:     
+            - treeitem " 環保統計" [ref=e146]:
+              - generic [ref=e147]:
+                - generic [ref=e148] [cursor=pointer]: 
+                - generic "環保統計" [ref=e151]: 環保統計
+            - treeitem " 農業統計" [ref=e152]:
+              - generic [ref=e153]:
+                - generic [ref=e154] [cursor=pointer]: 
+                - generic "農業統計" [ref=e157]: 農業統計
+    - iframe [active] [ref=e159]:
+      - generic [ref=f43e1]:
+        - generic [ref=f43e2]:
+          - heading "國民所得統計常用資料 i 筆記本 訂閱" [level=1] [ref=f43e4]:
+            - text: 國民所得統計常用資料
+            - generic [ref=f43e5]:
+              - link "i" [ref=f43e6] [cursor=pointer]:
+                - /url: javascript:showinfo();
+                - generic [ref=f43e7]: i
+              - generic [ref=f43e8]:
+                - link "筆記本" [ref=f43e9] [cursor=pointer]:
+                  - /url: javascript:openLink(13);
+                  - img "筆記本" [ref=f43e10]
+                - link:
+                  - /url: javascript:openLink(14);
+                - link "訂閱" [ref=f43e11] [cursor=pointer]:
+                  - /url: javascript:openLink(15);
+                  - img "訂閱" [ref=f43e12]
+                - link:
+                  - /url: javascript:openLink(16);
+          - generic [ref=f43e13]:
+            - generic [ref=f43e14]:
+              - generic [ref=f43e15]:
+                - generic [ref=f43e16]: 統計期
+                - generic [ref=f43e18]:
+                  - combobox "年" [active] [ref=f43e19]: "109"
+                  - button "select" [ref=f43e20] [cursor=pointer]:
+                    - generic [ref=f43e21]: 
+                - generic [ref=f43e22]: 年
+                - text: 
+                - generic [ref=f43e23]:
+                  - generic [ref=f43e25]:
+                    - combobox "季" [ref=f43e26]: "1"
+                    - button "select" [ref=f43e27] [cursor=pointer]:
+                      - generic [ref=f43e28]: 
+                  - generic [ref=f43e29]: 季
+                - generic [ref=f43e30]: 至
+                - generic [ref=f43e32]:
+                  - combobox "年" [ref=f43e33]: "114"
+                  - button "select" [ref=f43e34] [cursor=pointer]:
+                    - generic [ref=f43e35]: 
+                - generic [ref=f43e36]: 年
+                - text: 
+                - generic [ref=f43e37]:
+                  - generic [ref=f43e39]:
+                    - combobox "季" [ref=f43e40]: "4"
+                    - button "select" [ref=f43e41] [cursor=pointer]:
+                      - generic [ref=f43e42]: 
+                  - generic [ref=f43e43]: 季
+              - generic [ref=f43e44]:
+                - generic [ref=f43e45]: 週期
+                - combobox "週期" [ref=f43e46]:
+                  - option "季"
+                  - option "年"
+                  - option "季(含年)" [selected]
+                  - option "歷年同季"
+              - generic [ref=f43e47]:
+                - generic [ref=f43e48]: 計算模式
+                - combobox "計算模式" [ref=f43e49]:
+                  - option "統計值" [selected]
+                  - option "年增率"
+                  - option "統計值及年增率"
+              - generic [ref=f43e50]:
+                - generic [ref=f43e51]: 輸出模式
+                - combobox "輸出模式" [ref=f43e52]:
+                  - option "網頁" [selected]
+                  - option "Excel"
+                  - option "ODS"
+                  - option "CSV"
+                  - option "CSV(UTF8)"
+                  - option "PDF"
+                  - option "JSON"
+                  - option "XML"
+                  - option "XMLView"
+                  - option "PXFile"
+                  - option "PXView"
+              - button "查詢" [ref=f43e54] [cursor=pointer]
+            - generic [ref=f43e56]:
+              - generic [ref=f43e58]: 領域：國民所得統計
+              - generic [ref=f43e59]: 單元：國民所得統計常用資料
+              - generic [ref=f43e60]: 資料週期：年/季
+              - generic [ref=f43e61]: 最新公布資料：(年)民國114年、(季)民國114年第4季
+              - generic [ref=f43e62]:
+                - generic [ref=f43e63]: 最早歷史資料：
+                - generic [ref=f43e64]: (年)民國40年、(季)民國50年第1季
+              - generic [ref=f43e65]: 資料來源：行政院主計總處
+          - table "國民所得統計常用資料查詢條件設定表格資料" [ref=f43e66]:
+            - rowgroup [ref=f43e67]:
+              - row "統計項" [ref=f43e68]:
+                - cell "統計項" [ref=f43e69]:
+                  - generic [ref=f43e70]: 統計項
+              - row "指標 (全選) 統計項 期中人口(人) 平均匯率(元/美元) 平均匯率(元/美元) 經濟成長率(%) 經濟成長率(%) 國內生產毛額GDP(名目值，百萬元) 國內生產毛額GDP(名目值，百萬元) 國內生產毛額GDP(名目值，百萬美元) 國內生產毛額GDP(名目值，百萬美元) 平均每人GDP(名目值，元) 平均每人GDP(名目值，元) 平均每人GDP(名目值，美元) 平均每人GDP(名目值，美元) 國民所得毛額GNI(名目值，百萬元) 國民所得毛額GNI(名目值，百萬元) 國民所得毛額GNI(名目值，百萬美元) 國民所得毛額GNI(名目值，百萬美元) 平均每人GNI(名目值，元) 平均每人GNI(名目值，元) 平均每人GNI(名目值，美元) 平均每人GNI(名目值，美元) 國民所得(名目值，百萬元) 國民所得(名目值，百萬元) 國民所得(名目值，百萬美元) 國民所得(名目值，百萬美元) 平均每人所得(名目值，元) 平均每人所得(名目值，元) 平均每人所得(名目值，美元) 平均每人所得(名目值，美元)" [ref=f43e71]:
+                - cell "指標 (全選) 統計項 期中人口(人) 平均匯率(元/美元) 平均匯率(元/美元) 經濟成長率(%) 經濟成長率(%) 國內生產毛額GDP(名目值，百萬元) 國內生產毛額GDP(名目值，百萬元) 國內生產毛額GDP(名目值，百萬美元) 國內生產毛額GDP(名目值，百萬美元) 平均每人GDP(名目值，元) 平均每人GDP(名目值，元) 平均每人GDP(名目值，美元) 平均每人GDP(名目值，美元) 國民所得毛額GNI(名目值，百萬元) 國民所得毛額GNI(名目值，百萬元) 國民所得毛額GNI(名目值，百萬美元) 國民所得毛額GNI(名目值，百萬美元) 平均每人GNI(名目值，元) 平均每人GNI(名目值，元) 平均每人GNI(名目值，美元) 平均每人GNI(名目值，美元) 國民所得(名目值，百萬元) 國民所得(名目值，百萬元) 國民所得(名目值，百萬美元) 國民所得(名目值，百萬美元) 平均每人所得(名目值，元) 平均每人所得(名目值，元) 平均每人所得(名目值，美元) 平均每人所得(名目值，美元)" [ref=f43e72]:
+                  - table [ref=f43e73]:
+                    - rowgroup [ref=f43e74]:
+                      - row "指標 (全選)" [ref=f43e75]:
+                        - cell
+                        - cell "指標 (全選)" [ref=f43e76]:
+                          - generic [ref=f43e77]:
+                            - text: 指標
+                            - link "(全選)" [ref=f43e78] [cursor=pointer]:
+                              - /url: javascript:clickCheckNode(0)
+                  - table [ref=f43e79]:
+                    - rowgroup [ref=f43e80]:
+                      - row "統計項 期中人口(人)" [ref=f43e81]:
+                        - cell [ref=f43e82]
+                        - cell "統計項 期中人口(人)" [ref=f43e83]:
+                          - checkbox "統計項" [checked] [ref=f43e84]
+                          - text: 期中人口(人)
+                  - table [ref=f43e86]:
+                    - rowgroup [ref=f43e87]:
+                      - row "平均匯率(元/美元) 平均匯率(元/美元)" [ref=f43e88]:
+                        - cell [ref=f43e89]
+                        - cell "平均匯率(元/美元) 平均匯率(元/美元)" [ref=f43e90]:
+                          - checkbox "平均匯率(元/美元)" [checked] [ref=f43e91]
+                          - text: 平均匯率(元/美元)
+                  - table [ref=f43e93]:
+                    - rowgroup [ref=f43e94]:
+                      - row "經濟成長率(%) 經濟成長率(%)" [ref=f43e95]:
+                        - cell [ref=f43e96]
+                        - cell "經濟成長率(%) 經濟成長率(%)" [ref=f43e97]:
+                          - checkbox "經濟成長率(%)" [checked] [ref=f43e98]
+                          - text: 經濟成長率(%)
+                  - table [ref=f43e100]:
+                    - rowgroup [ref=f43e101]:
+                      - row "國內生產毛額GDP(名目值，百萬元) 國內生產毛額GDP(名目值，百萬元)" [ref=f43e102]:
+                        - cell [ref=f43e103]
+                        - cell "國內生產毛額GDP(名目值，百萬元) 國內生產毛額GDP(名目值，百萬元)" [ref=f43e104]:
+                          - checkbox "國內生產毛額GDP(名目值，百萬元)" [checked] [ref=f43e105]
+                          - text: 國內生產毛額GDP(名目值，百萬元)
+                  - table [ref=f43e107]:
+                    - rowgroup [ref=f43e108]:
+                      - row "國內生產毛額GDP(名目值，百萬美元) 國內生產毛額GDP(名目值，百萬美元)" [ref=f43e109]:
+                        - cell [ref=f43e110]
+                        - cell "國內生產毛額GDP(名目值，百萬美元) 國內生產毛額GDP(名目值，百萬美元)" [ref=f43e111]:
+                          - checkbox "國內生產毛額GDP(名目值，百萬美元)" [checked] [ref=f43e112]
+                          - text: 國內生產毛額GDP(名目值，百萬美元)
+                  - table [ref=f43e114]:
+                    - rowgroup [ref=f43e115]:
+                      - row "平均每人GDP(名目值，元) 平均每人GDP(名目值，元)" [ref=f43e116]:
+                        - cell [ref=f43e117]
+                        - cell "平均每人GDP(名目值，元) 平均每人GDP(名目值，元)" [ref=f43e118]:
+                          - checkbox "平均每人GDP(名目值，元)" [checked] [ref=f43e119]
+                          - text: 平均每人GDP(名目值，元)
+                  - table [ref=f43e121]:
+                    - rowgroup [ref=f43e122]:
+                      - row "平均每人GDP(名目值，美元) 平均每人GDP(名目值，美元)" [ref=f43e123]:
+                        - cell [ref=f43e124]
+                        - cell "平均每人GDP(名目值，美元) 平均每人GDP(名目值，美元)" [ref=f43e125]:
+                          - checkbox "平均每人GDP(名目值，美元)" [checked] [ref=f43e126]
+                          - text: 平均每人GDP(名目值，美元)
+                  - table [ref=f43e128]:
+                    - rowgroup [ref=f43e129]:
+                      - row "國民所得毛額GNI(名目值，百萬元) 國民所得毛額GNI(名目值，百萬元)" [ref=f43e130]:
+                        - cell [ref=f43e131]
+                        - cell "國民所得毛額GNI(名目值，百萬元) 國民所得毛額GNI(名目值，百萬元)" [ref=f43e132]:
+                          - checkbox "國民所得毛額GNI(名目值，百萬元)" [checked] [ref=f43e133]
+                          - text: 國民所得毛額GNI(名目值，百萬元)
+                  - table [ref=f43e135]:
+                    - rowgroup [ref=f43e136]:
+                      - row "國民所得毛額GNI(名目值，百萬美元) 國民所得毛額GNI(名目值，百萬美元)" [ref=f43e137]:
+                        - cell [ref=f43e138]
+                        - cell "國民所得毛額GNI(名目值，百萬美元) 國民所得毛額GNI(名目值，百萬美元)" [ref=f43e139]:
+                          - checkbox "國民所得毛額GNI(名目值，百萬美元)" [checked] [ref=f43e140]
+                          - text: 國民所得毛額GNI(名目值，百萬美元)
+                  - table [ref=f43e142]:
+                    - rowgroup [ref=f43e143]:
+                      - row "平均每人GNI(名目值，元) 平均每人GNI(名目值，元)" [ref=f43e144]:
+                        - cell [ref=f43e145]
+                        - cell "平均每人GNI(名目值，元) 平均每人GNI(名目值，元)" [ref=f43e146]:
+                          - checkbox "平均每人GNI(名目值，元)" [checked] [ref=f43e147]
+                          - text: 平均每人GNI(名目值，元)
+                  - table [ref=f43e149]:
+                    - rowgroup [ref=f43e150]:
+                      - row "平均每人GNI(名目值，美元) 平均每人GNI(名目值，美元)" [ref=f43e151]:
+                        - cell [ref=f43e152]
+                        - cell "平均每人GNI(名目值，美元) 平均每人GNI(名目值，美元)" [ref=f43e153]:
+                          - checkbox "平均每人GNI(名目值，美元)" [checked] [ref=f43e154]
+                          - text: 平均每人GNI(名目值，美元)
+                  - table [ref=f43e156]:
+                    - rowgroup [ref=f43e157]:
+                      - row "國民所得(名目值，百萬元) 國民所得(名目值，百萬元)" [ref=f43e158]:
+                        - cell [ref=f43e159]
+                        - cell "國民所得(名目值，百萬元) 國民所得(名目值，百萬元)" [ref=f43e160]:
+                          - checkbox "國民所得(名目值，百萬元)" [checked] [ref=f43e161]
+                          - text: 國民所得(名目值，百萬元)
+                  - table [ref=f43e163]:
+                    - rowgroup [ref=f43e164]:
+                      - row "國民所得(名目值，百萬美元) 國民所得(名目值，百萬美元)" [ref=f43e165]:
+                        - cell [ref=f43e166]
+                        - cell "國民所得(名目值，百萬美元) 國民所得(名目值，百萬美元)" [ref=f43e167]:
+                          - checkbox "國民所得(名目值，百萬美元)" [checked] [ref=f43e168]
+                          - text: 國民所得(名目值，百萬美元)
+                  - table [ref=f43e170]:
+                    - rowgroup [ref=f43e171]:
+                      - row "平均每人所得(名目值，元) 平均每人所得(名目值，元)" [ref=f43e172]:
+                        - cell [ref=f43e173]
+                        - cell "平均每人所得(名目值，元) 平均每人所得(名目值，元)" [ref=f43e174]:
+                          - checkbox "平均每人所得(名目值，元)" [checked] [ref=f43e175]
+                          - text: 平均每人所得(名目值，元)
+                  - table [ref=f43e177]:
+                    - rowgroup [ref=f43e178]:
+                      - row "平均每人所得(名目值，美元) 平均每人所得(名目值，美元)" [ref=f43e179]:
+                        - cell [ref=f43e180]
+                        - cell "平均每人所得(名目值，美元) 平均每人所得(名目值，美元)" [ref=f43e181]:
+                          - checkbox "平均每人所得(名目值，美元)" [checked] [ref=f43e182]
+                          - text: 平均每人所得(名目值，美元)
+              - row [ref=f43e184]:
+                - cell [ref=f43e185]
+        - text:    
+    - textbox "關鍵字" [ref=e161]

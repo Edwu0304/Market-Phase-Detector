@@ -1,0 +1,2 @@
+[    4057ms] [WARNING] Error with Feature-Policy header: Some features are specified in both Feature-Policy and Permissions-Policy header: camera. Values defined in Permissions-Policy header will be used. @ :0
+[    4058ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://statdb.mol.gov.tw/html/mon/mon12/:0

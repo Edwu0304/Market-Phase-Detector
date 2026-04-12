@@ -16,7 +16,24 @@ AUTHOR_META = {
     "izaax": {
         "title": "愛榭克",
         "school": "景氣循環與資產配置",
-        "book": "以景氣循環四階段切分市場，重點放在領先指標、景氣燈號、就業與出口變化。",
+        "book": "愛榭克看的是景氣循環的核心觀察面向，不是台灣官方資料表上的單一欄位名稱。",
+        "note": "本區先列愛榭克真正關心的觀察面向，再對照本網站在台灣可取得的資料。台灣資料是對應與代理，不是愛榭克原文直接點名的台灣欄位。",
+        "core_views": [
+            "領先訊號",
+            "就業與失業壓力",
+            "出口與需求方向",
+            "消費與信心",
+            "庫存循環",
+            "殖利率曲線與衰退警訊",
+        ],
+        "tw_mapping": [
+            "領先訊號：國發會領先指標",
+            "就業壓力：失業率、失業給付或勞動壓力代理",
+            "出口與需求：出口年增率、工業生產或製造業銷售",
+            "消費與信心：零售變動、消費者信心",
+            "庫存循環：庫存與庫存 / 銷售比",
+            "殖利率曲線與衰退警訊：長短天期公債利差、Sahm Rule 代理",
+        ],
     },
     "urakami": {
         "title": "浦上邦雄",
@@ -134,13 +151,20 @@ def build_strategy_block(author: str, phase: str, section: str) -> str:
 
 def build_author_strategy(author: str) -> dict:
     meta = AUTHOR_META[author]
-    return {
+    payload = {
         "id": author,
         "title": meta["title"],
         "school": meta["school"],
         "book": meta["book"],
         "phases": {phase: dict(content) for phase, content in LENS_PHASE_CONTENT[author].items()},
     }
+    if "note" in meta:
+        payload["note"] = meta["note"]
+    if "core_views" in meta:
+        payload["core_views"] = list(meta["core_views"])
+    if "tw_mapping" in meta:
+        payload["tw_mapping"] = list(meta["tw_mapping"])
+    return payload
 
 
 def build_country_handbook(country: str, phase: str) -> dict:

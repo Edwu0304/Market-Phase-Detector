@@ -203,7 +203,14 @@ class IzaaxTransposedBundle:
 npx wrangler pages deploy dist --project-name market-phase-detector
 ```
 
-最新部署網址：`https://codex-strategy-map-redesign.market-phase-detector.pages.dev/`
+### 正式網址
+
+- **生產環境**: https://market-phase-detector.pages.dev/
+- **台灣頁**: https://market-phase-detector.pages.dev/tw/
+- **美國頁**: https://market-phase-detector.pages.dev/us/
+
+每次部署會產生 preview URL（如 `https://79918922.market-phase-detector.pages.dev`），
+可先在 preview 確認無誤後，再到 Cloudflare Dashboard 點擊 **"Set as Production"** 將該版本升級為正式網址。
 
 ---
 

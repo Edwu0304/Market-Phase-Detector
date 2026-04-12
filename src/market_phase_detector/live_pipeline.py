@@ -3,7 +3,7 @@ from datetime import date
 from statistics import mean
 
 from market_phase_detector.collectors.tw_official import extract_ndc_history_metrics
-from market_phase_detector.collectors.tw_macro_calculator import compute_tw_full_metrics, compute_sahm_rule
+from market_phase_detector.collectors.tw_macro_calculator import compute_sahm_rule, compute_tw_full_metrics
 
 
 US_SERIES = {
@@ -23,6 +23,16 @@ def classify_direction(change: float, threshold: float = 0.05) -> str:
         return "improving"
     if change < -threshold:
         return "deteriorating"
+    return "stable"
+
+
+def classify_level_trend(current: float | int | None, previous: float | int | None) -> str:
+    if current is None or previous is None:
+        return "stable"
+    if current > previous:
+        return "rising"
+    if current < previous:
+        return "falling"
     return "stable"
 
 
@@ -117,14 +127,15 @@ def build_us_history_observations(collector, months: int = 12) -> list[dict]:
         if len(claims_window) < 8 or not all([sahm_row, curve_row, hy_row]):
             continue
 
+        delta = round(current["value"] - previous["value"], 4)
         history.append(
             {
                 "month": month_key,
                 "as_of": month_key,
-                "leading_index_change": round(current["value"] - previous["value"], 4),
+                "leading_index_change": delta,
                 "claims_trend": compute_claims_trend(claims_window),
-                "coincident_trend": "improving" if round(current["value"] - previous["value"], 4) > 0 else "deteriorating" if round(current["value"] - previous["value"], 4) < 0 else "stable",
-                "coincident_direction_score": 1.0 if round(current["value"] - previous["value"], 4) > 0 else -1.0 if round(current["value"] - previous["value"], 4) < 0 else 0.0,
+                "coincident_trend": "improving" if delta > 0 else "deteriorating" if delta < 0 else "stable",
+                "coincident_direction_score": 1.0 if delta > 0 else -1.0 if delta < 0 else 0.0,
                 "sahm_rule": sahm_row["value"],
                 "yield_curve": curve_row["value"],
                 "hy_spread": hy_row["value"],
@@ -134,73 +145,83 @@ def build_us_history_observations(collector, months: int = 12) -> list[dict]:
     return history[-months:]
 
 
-def build_tw_observations(collector, external_collector=None) -> dict:
-    """建立台灣完整觀測值（包含三位大師需要的所有真實指標）
+def _build_tw_external_latest(external_collector) -> dict:
+    extra_data: dict = {}
 
-    Args:
-        collector: NDC 資料爬蟲
-        external_collector: 外部資料爬蟲（勞動部、證交所、央行等）
-    """
+    try:
+        claims_list = external_collector.fetch_mol_claims_annual()
+        if claims_list:
+            extra_data["unemployment_claims"] = claims_list[-1].get("initial_claims")
+            if len(claims_list) >= 2:
+                trend = classify_level_trend(claims_list[-1].get("initial_claims"), claims_list[-2].get("initial_claims"))
+                extra_data["unemployment_claims_trend"] = "falling" if trend == "falling" else "rising" if trend == "rising" else "stable"
+    except Exception:
+        pass
+
+    try:
+        cci = external_collector.fetch_ncu_cci()
+        if cci:
+            extra_data["cci_total"] = cci.get("cci_total")
+    except Exception:
+        pass
+
+    try:
+        pmi = external_collector.fetch_latest_cier_pmi()
+        if pmi:
+            extra_data["pmi"] = pmi.get("pmi")
+    except Exception:
+        pass
+
+    try:
+        m2 = external_collector.fetch_latest_cbc_m2()
+        if m2:
+            extra_data["m2_yoy"] = m2.get("m2_yoy")
+    except Exception:
+        pass
+
+    try:
+        pe = external_collector.fetch_twse_market_pe()
+        if pe:
+            extra_data["pe_ratio"] = pe.get("pe_ratio")
+    except Exception:
+        pass
+
+    try:
+        margin = external_collector.fetch_latest_twse_margin()
+        if margin:
+            extra_data["margin_amount"] = margin.get("margin_amount")
+            extra_data["margin_shares"] = margin.get("margin_shares")
+            if margin.get("margin_amount") is not None:
+                extra_data["margin_trend"] = "excessive" if margin.get("margin_amount", 0) >= 500000000 else "moderate"
+    except Exception:
+        pass
+
+    try:
+        bond = external_collector.fetch_cbc_credit_spread_proxy()
+        if bond:
+            extra_data["gov_yield_10y"] = bond.get("gov_yield_10y")
+            extra_data["gov_yield_2y"] = bond.get("gov_yield_2y")
+            extra_data["yield_curve_spread"] = bond.get("spread_10y_2y")
+            extra_data["credit_spread_bbb"] = bond.get("credit_spread_bbb")
+            extra_data["credit_spread"] = bond.get("credit_spread_bbb")
+    except Exception:
+        pass
+
+    try:
+        expenditure = external_collector.fetch_mof_government_expenditure()
+        if expenditure:
+            extra_data["government_spending"] = expenditure[-1].get("total_expenditure")
+    except Exception:
+        pass
+
+    return extra_data
+
+
+def build_tw_observations(collector, external_collector=None) -> dict:
     metrics = collector.fetch_ndc_zip_metrics(NDC_ZIP_URL)
     full_metrics = compute_tw_full_metrics(metrics)
+    extra_data = _build_tw_external_latest(external_collector) if external_collector else {}
 
-    # ===== 整合外部資料 =====
-    extra_data = {}
-    if external_collector:
-        # 勞動部 — 初領失業救濟金
-        try:
-            claims_list = external_collector.fetch_mol_claims_annual()
-            if claims_list:
-                extra_data["unemployment_claims"] = claims_list[-1].get("initial_claims")
-        except Exception:
-            pass
-
-        # 中央大學 — CCI
-        try:
-            cci = external_collector.fetch_ncu_cci()
-            if cci:
-                extra_data["cci_total"] = cci.get("cci_total")
-        except Exception:
-            pass
-
-        # 證交所 — 本益比
-        try:
-            pe = external_collector.fetch_twse_market_pe()
-            if pe:
-                extra_data["pe_ratio"] = pe.get("pe_ratio")
-        except Exception:
-            pass
-
-        # 證交所 — 融資餘額
-        try:
-            margin = external_collector.fetch_latest_twse_margin()
-            if margin:
-                extra_data["margin_amount"] = margin.get("margin_amount")
-                extra_data["margin_shares"] = margin.get("margin_shares")
-        except Exception:
-            pass
-
-        # 櫃買中心 — 公債殖利率 + 信用利差 (BBB - 公債10Y)
-        try:
-            bond = external_collector.fetch_cbc_credit_spread_proxy()
-            if bond:
-                extra_data["gov_yield_10y"] = bond.get("gov_yield_10y")
-                extra_data["gov_yield_2y"] = bond.get("gov_yield_2y")
-                extra_data["yield_curve_spread"] = bond.get("spread_10y_2y")
-                extra_data["credit_spread_bbb"] = bond.get("credit_spread_bbb")
-                extra_data["credit_spread"] = bond.get("credit_spread_bbb")
-        except Exception:
-            pass
-
-        # 財政部 — 政府歲出
-        try:
-            expenditure = external_collector.fetch_mof_government_expenditure()
-            if expenditure:
-                extra_data["government_spending"] = expenditure[-1].get("total_expenditure")
-        except Exception:
-            pass
-
-    # 計算薩姆規則
     sahm_value = None
     unemp_hist = [v for v in [full_metrics.get("unemployment"), full_metrics.get("unemployment_prev")] if v]
     if len(unemp_hist) >= 3:
@@ -208,14 +229,12 @@ def build_tw_observations(collector, external_collector=None) -> dict:
 
     return {
         "as_of": month_key_from_compact(full_metrics["latest_date"]),
-        # ===== 原始 NDC 指標 =====
         "business_signal_score": full_metrics["business_signal_score"],
         "leading_index_change": full_metrics["leading_index"] - full_metrics["leading_index_prev"],
         "leading_trend": classify_direction(full_metrics["leading_index"] - full_metrics["leading_index_prev"]),
         "coincident_trend": classify_direction(full_metrics["coincident_index"] - full_metrics["coincident_index_prev"]),
         "coincident_trend_score": full_metrics["coincident_index"] - full_metrics["coincident_index_prev"],
         "unemployment_trend": "rising" if full_metrics["unemployment"] > full_metrics["unemployment_prev"] else "stable",
-        # ===== 愛榭克真實指標 =====
         "industrial_production_change": full_metrics.get("industrial_production_change"),
         "industrial_production_trend": full_metrics.get("industrial_production_trend", "stable"),
         "overtime_hours_change": full_metrics.get("overtime_hours_change"),
@@ -231,7 +250,6 @@ def build_tw_observations(collector, external_collector=None) -> dict:
         "export_trend": full_metrics.get("export_trend", "stable"),
         "mfg_sales_change": full_metrics.get("manufacturing_sales_change"),
         "mfg_sales_trend": full_metrics.get("mfg_sales_trend", "stable"),
-        # ===== 浦上邦雄真實指標 =====
         "bank_lending_rate": full_metrics.get("bank_lending_rate"),
         "bank_lending_rate_change": full_metrics.get("bank_lending_rate_change"),
         "rate_trend": full_metrics.get("rate_trend", "stable"),
@@ -241,14 +259,56 @@ def build_tw_observations(collector, external_collector=None) -> dict:
         "money_supply_trend": full_metrics.get("money_supply_trend", "stable"),
         "stock_index_yoy": full_metrics.get("stock_index_yoy"),
         "stock_trend": full_metrics.get("stock_trend", "neutral"),
-        # ===== 馬克斯真實指標 =====
         "credit_inventory_ratio": full_metrics.get("credit_inventory_ratio"),
         "unemployment": full_metrics.get("unemployment"),
         "unemployment_prev": full_metrics.get("unemployment_prev"),
-        # ===== 新增外部指標 =====
         "sahm_rule": sahm_value,
         **extra_data,
     }
+
+
+def _build_tw_external_history(external_collector, months: int) -> dict:
+    external_history: dict = {}
+    if not external_collector:
+        return external_history
+
+    try:
+        claims_hist = external_collector.fetch_mol_claims_annual()
+        if claims_hist:
+            external_history["unemployment_claims"] = {str(r["year"]): r for r in claims_hist}
+            external_history["unemployment_claims_rows"] = claims_hist
+    except Exception:
+        pass
+
+    try:
+        bond_hist = external_collector.fetch_tpex_bond_history(months)
+        if bond_hist:
+            external_history["bond"] = {r["date"][:7]: r for r in bond_hist}
+    except Exception:
+        pass
+
+    try:
+        cci_hist = external_collector.fetch_ncu_cci_history(months)
+        if cci_hist:
+            external_history["cci"] = {r["date"]: r for r in cci_hist}
+    except Exception:
+        pass
+
+    try:
+        pmi_hist = external_collector.fetch_cier_pmi_history(months)
+        if pmi_hist:
+            external_history["pmi"] = {r["date"]: r for r in pmi_hist}
+    except Exception:
+        pass
+
+    try:
+        m2_hist = external_collector.fetch_cbc_m2_history(months)
+        if m2_hist:
+            external_history["m2"] = {r["date"]: r for r in m2_hist}
+    except Exception:
+        pass
+
+    return external_history
 
 
 def build_tw_history_observations(
@@ -256,59 +316,31 @@ def build_tw_history_observations(
     external_collector=None,
     months: int = 24,
 ) -> list[dict]:
-    """建立台灣歷史觀測值（預設 24 個月）
-
-    Args:
-        history_metrics: NDC 歷史指標資料
-        external_collector: 外部資料爬蟲（可選）
-        months: 要回傳的月數
-    """
     metrics_rows = extract_ndc_history_metrics(history_metrics) if isinstance(history_metrics, dict) else history_metrics
-
-    # ===== 取得外部歷史資料（如果有的話）=====
-    external_history = {}
-    if external_collector:
-        try:
-            # 勞動部 — 失業救濟金年度
-            claims_hist = external_collector.fetch_mol_claims_annual()
-            if claims_hist:
-                external_history["unemployment_claims"] = {str(r["year"]): r for r in claims_hist}
-        except Exception:
-            pass
-
-        try:
-            # 櫃買中心 — 公債殖利率 + 信用利差歷史
-            bond_hist = external_collector.fetch_tpex_bond_history(months)
-            if bond_hist:
-                external_history["bond"] = {r["date"][:7]: r for r in bond_hist}
-        except Exception:
-            pass
-
-        try:
-            # 中央大學 — CCI 歷史
-            cci_hist = external_collector.fetch_ncu_cci_history(months)
-            if cci_hist:
-                external_history["cci"] = {r["date"]: r for r in cci_hist}
-        except Exception:
-            pass
+    external_history = _build_tw_external_history(external_collector, months)
 
     history = []
     for metrics in metrics_rows[-months:]:
         full_metrics = compute_tw_full_metrics(metrics)
         month_key = month_key_from_compact(full_metrics["latest_date"])
 
-        # 計算薩姆規則（需要失業率歷史）
         sahm_value = None
         unemp_hist = [v for v in [full_metrics.get("unemployment"), full_metrics.get("unemployment_prev")] if v]
         if len(unemp_hist) >= 3:
             sahm_value = compute_sahm_rule(unemp_hist)
 
-        # 整合外部歷史資料
         extra_data = {}
         year_str = month_key[:4]
+
         if external_history.get("unemployment_claims") and year_str in external_history["unemployment_claims"]:
             claims = external_history["unemployment_claims"][year_str]
             extra_data["unemployment_claims"] = claims.get("initial_claims")
+            claims_rows = external_history.get("unemployment_claims_rows", [])
+            current_index = next((idx for idx, row in enumerate(claims_rows) if str(row.get("year")) == year_str), None)
+            if current_index is not None and current_index > 0:
+                previous_claims = claims_rows[current_index - 1]
+                trend = classify_level_trend(claims.get("initial_claims"), previous_claims.get("initial_claims"))
+                extra_data["unemployment_claims_trend"] = "falling" if trend == "falling" else "rising" if trend == "rising" else "stable"
 
         if external_history.get("bond") and month_key in external_history["bond"]:
             bond = external_history["bond"][month_key]
@@ -319,21 +351,24 @@ def build_tw_history_observations(
             extra_data["credit_spread"] = bond.get("credit_spread_bbb")
 
         if external_history.get("cci") and month_key in external_history["cci"]:
-            cci = external_history["cci"][month_key]
-            extra_data["cci_total"] = cci.get("cci_total")
+            extra_data["cci_total"] = external_history["cci"][month_key].get("cci_total")
+
+        if external_history.get("pmi") and month_key in external_history["pmi"]:
+            extra_data["pmi"] = external_history["pmi"][month_key].get("pmi")
+
+        if external_history.get("m2") and month_key in external_history["m2"]:
+            extra_data["m2_yoy"] = external_history["m2"][month_key].get("m2_yoy")
 
         history.append(
             {
                 "month": month_key,
                 "as_of": month_key,
-                # ===== 原始 NDC 指標 =====
                 "business_signal_score": full_metrics["business_signal_score"],
                 "leading_index_change": full_metrics["leading_index"] - full_metrics["leading_index_prev"],
                 "leading_trend": classify_direction(full_metrics["leading_index"] - full_metrics["leading_index_prev"]),
                 "coincident_trend": classify_direction(full_metrics["coincident_index"] - full_metrics["coincident_index_prev"]),
                 "coincident_trend_score": full_metrics["coincident_index"] - full_metrics["coincident_index_prev"],
                 "unemployment_trend": "rising" if full_metrics["unemployment"] > full_metrics["unemployment_prev"] else "stable",
-                # ===== 愛榭克真實指標 =====
                 "industrial_production_change": full_metrics.get("industrial_production_change"),
                 "industrial_production_trend": full_metrics.get("industrial_production_trend", "stable"),
                 "overtime_hours_change": full_metrics.get("overtime_hours_change"),
@@ -349,7 +384,6 @@ def build_tw_history_observations(
                 "export_trend": full_metrics.get("export_trend", "stable"),
                 "mfg_sales_change": full_metrics.get("manufacturing_sales_change"),
                 "mfg_sales_trend": full_metrics.get("mfg_sales_trend", "stable"),
-                # ===== 浦上邦雄真實指標 =====
                 "bank_lending_rate": full_metrics.get("bank_lending_rate"),
                 "bank_lending_rate_change": full_metrics.get("bank_lending_rate_change"),
                 "rate_trend": full_metrics.get("rate_trend", "stable"),
@@ -359,11 +393,9 @@ def build_tw_history_observations(
                 "money_supply_trend": full_metrics.get("money_supply_trend", "stable"),
                 "stock_index_yoy": full_metrics.get("stock_index_yoy"),
                 "stock_trend": full_metrics.get("stock_trend", "neutral"),
-                # ===== 馬克斯真實指標 =====
                 "credit_inventory_ratio": full_metrics.get("credit_inventory_ratio"),
                 "unemployment": full_metrics.get("unemployment"),
                 "unemployment_prev": full_metrics.get("unemployment_prev"),
-                # ===== 新增外部歷史指標 =====
                 "sahm_rule": sahm_value,
                 **extra_data,
             }
