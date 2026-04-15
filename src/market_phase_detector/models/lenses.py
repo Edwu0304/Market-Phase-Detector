@@ -79,6 +79,9 @@ class LensHistoryRow:
     stance: str = "neutral"
     decision_mode: str = "hold"
     decision_summary: str = ""
+    support_current_phase_signals: list[str] = field(default_factory=list)
+    support_next_phase_signals: list[str] = field(default_factory=list)
+    conflict_signals: list[str] = field(default_factory=list)
     supporting_signals: list[str] = field(default_factory=list)
     conflicting_signals: list[str] = field(default_factory=list)
 
@@ -97,6 +100,9 @@ class LensHistoryRow:
             "stance": self.stance,
             "decision_mode": self.decision_mode,
             "decision_summary": self.decision_summary,
+            "support_current_phase_signals": list(self.support_current_phase_signals),
+            "support_next_phase_signals": list(self.support_next_phase_signals),
+            "conflict_signals": list(self.conflict_signals),
             "supporting_signals": list(self.supporting_signals),
             "conflicting_signals": list(self.conflicting_signals),
         }

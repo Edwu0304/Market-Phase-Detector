@@ -404,13 +404,11 @@
         "izaax": {
           "id": "izaax",
           "title": "Izaax Lens",
-          "phase": "Recovery",
-          "phase_label": "復甦",
+          "phase": "Growth",
+          "phase_label": "成長",
           "reasons": [
-            "Leading index change 0.28",
-            "Industrial trend stable",
-            "Overtime trend stable",
-            "Exports YoY 0.0%"
+            "領先指標動能轉強 (0.28)",
+            "工業生產趨勢改善"
           ],
           "metrics": [
             {
@@ -424,10 +422,10 @@
             {
               "id": "industrial_production_trend",
               "label": "Industrial Production Trend",
-              "value": 0.0,
-              "display_value": "0.00",
+              "value": 1.0,
+              "display_value": "1.00",
               "display_format": "decimal",
-              "status": "neutral"
+              "status": "positive"
             },
             {
               "id": "labor_stress",
@@ -498,12 +496,12 @@
             }
           ],
           "transition_keys": [
-            "leading_index_change",
-            "industrial_production_trend",
-            "pmi"
+            "cci_level",
+            "inventory_sales_ratio",
+            "overtime_trend"
           ],
-          "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-          "stance": "start building risk",
+          "narrative": "Leading, production, and demand data are improving together.",
+          "stance": "hold trend exposure",
           "history": [
             {
               "month": "2024-03",
@@ -511,10 +509,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Leading index change 0.13",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%"
+                "領先指標維持改善 (0.13)",
+                "就業壓力仍受控"
               ],
               "metrics": [
                 {
@@ -528,10 +524,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": 1.0,
+                  "display_value": "1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "positive"
                 },
                 {
                   "id": "labor_stress",
@@ -603,14 +599,26 @@
               ],
               "previous_phase": null,
               "previous_phase_label": null,
-              "transition_keys": [],
+              "transition_keys": [
+                "leading_index_change",
+                "industrial_production_trend",
+                "pmi"
+              ],
               "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
               "stance": "start building risk",
               "decision_mode": "initial",
-              "decision_summary": "初始月份直接採用 復甦。",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "領先指標維持改善 (0.13)",
+                "就業壓力仍受控"
+              ],
+              "support_next_phase_signals": [
+                "工業生產趨勢改善"
+              ],
+              "conflict_signals": [],
               "supporting_signals": [
-                "領先指標回升 (0.13)",
-                "失業壓力未惡化"
+                "領先指標維持改善 (0.13)",
+                "就業壓力仍受控"
               ],
               "conflicting_signals": []
             },
@@ -620,10 +628,7 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Leading index change -0.53",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%"
+                "就業壓力仍受控"
               ],
               "metrics": [
                 {
@@ -637,10 +642,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": -1.0,
+                  "display_value": "-1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "negative"
                 },
                 {
                   "id": "labor_stress",
@@ -712,26 +717,39 @@
               ],
               "previous_phase": "Recovery",
               "previous_phase_label": "復甦",
-              "transition_keys": [],
+              "transition_keys": [
+                "leading_index_change",
+                "industrial_production_trend",
+                "pmi"
+              ],
               "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
               "stance": "start building risk",
               "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-              "supporting_signals": [
-                "失業壓力未惡化"
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "就業壓力仍受控"
               ],
-              "conflicting_signals": []
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "領先指標轉弱 (-0.53)",
+                "工業生產趨勢轉差"
+              ],
+              "supporting_signals": [
+                "就業壓力仍受控"
+              ],
+              "conflicting_signals": [
+                "領先指標轉弱 (-0.53)",
+                "工業生產趨勢轉差"
+              ]
             },
             {
               "month": "2024-05",
               "as_of": "2024-05",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change 0.54",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%"
+                "領先指標動能轉強 (0.54)",
+                "工業生產趨勢改善"
               ],
               "metrics": [
                 {
@@ -745,10 +763,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": 1.0,
+                  "display_value": "1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "positive"
                 },
                 {
                   "id": "labor_stress",
@@ -820,28 +838,39 @@
               ],
               "previous_phase": "Recovery",
               "previous_phase_label": "復甦",
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-              "supporting_signals": [
-                "領先指標回升 (0.54)",
-                "失業壓力未惡化"
+              "transition_keys": [
+                "leading_index_change",
+                "industrial_production_trend",
+                "pmi"
               ],
-              "conflicting_signals": []
+              "narrative": "Transitioned from 復甦 to 成長 based on explicit next-phase evidence.",
+              "stance": "hold trend exposure",
+              "decision_mode": "advance",
+              "decision_summary": "因為 領先指標動能轉強 (0.54)、工業生產趨勢改善，所以由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "領先指標動能轉強 (0.54)",
+                "工業生產趨勢改善"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "領先指標維持改善 (0.54)",
+                "就業壓力仍受控"
+              ],
+              "supporting_signals": [
+                "領先指標動能轉強 (0.54)",
+                "工業生產趨勢改善"
+              ],
+              "conflicting_signals": [
+                "領先指標維持改善 (0.54)",
+                "就業壓力仍受控"
+              ]
             },
             {
               "month": "2024-06",
               "as_of": "2024-06",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Leading index change -0.18",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%"
-              ],
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [],
               "metrics": [
                 {
                   "id": "leading_index_change",
@@ -854,10 +883,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": -1.0,
+                  "display_value": "-1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "negative"
                 },
                 {
                   "id": "labor_stress",
@@ -927,30 +956,35 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-              "supporting_signals": [
-                "失業壓力未惡化"
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
               ],
-              "conflicting_signals": []
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "就業壓力仍受控",
+                "工業生產趨勢轉差"
+              ],
+              "supporting_signals": [],
+              "conflicting_signals": [
+                "就業壓力仍受控",
+                "工業生產趨勢轉差"
+              ]
             },
             {
               "month": "2024-07",
               "as_of": "2024-07",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Leading index change -0.76",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%",
-                "Sahm rule 0.50"
-              ],
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [],
               "metrics": [
                 {
                   "id": "leading_index_change",
@@ -963,10 +997,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": -1.0,
+                  "display_value": "-1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "negative"
                 },
                 {
                   "id": "labor_stress",
@@ -1036,29 +1070,41 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-              "supporting_signals": [
-                "失業壓力未惡化"
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
               ],
-              "conflicting_signals": []
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "就業壓力仍受控",
+                "領先指標轉弱 (-0.76)",
+                "工業生產趨勢轉差",
+                "Sahm Rule 觸發 (0.50)"
+              ],
+              "supporting_signals": [],
+              "conflicting_signals": [
+                "就業壓力仍受控",
+                "領先指標轉弱 (-0.76)",
+                "工業生產趨勢轉差",
+                "Sahm Rule 觸發 (0.50)"
+              ]
             },
             {
               "month": "2024-08",
               "as_of": "2024-08",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change 0.46",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%",
-                "Sahm rule 0.57"
+                "領先指標動能轉強 (0.46)",
+                "工業生產趨勢改善"
               ],
               "metrics": [
                 {
@@ -1072,10 +1118,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": 1.0,
+                  "display_value": "1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "positive"
                 },
                 {
                   "id": "labor_stress",
@@ -1145,31 +1191,43 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-              "supporting_signals": [
-                "領先指標回升 (0.46)",
-                "失業壓力未惡化"
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
               ],
-              "conflicting_signals": []
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "領先指標動能轉強 (0.46)",
+                "工業生產趨勢改善"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "領先指標維持改善 (0.46)",
+                "就業壓力仍受控",
+                "Sahm Rule 觸發 (0.57)"
+              ],
+              "supporting_signals": [
+                "領先指標動能轉強 (0.46)",
+                "工業生產趨勢改善"
+              ],
+              "conflicting_signals": [
+                "領先指標維持改善 (0.46)",
+                "就業壓力仍受控",
+                "Sahm Rule 觸發 (0.57)"
+              ]
             },
             {
               "month": "2024-09",
               "as_of": "2024-09",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Leading index change -0.54",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%",
-                "Sahm rule 0.53"
-              ],
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [],
               "metrics": [
                 {
                   "id": "leading_index_change",
@@ -1182,10 +1240,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": -1.0,
+                  "display_value": "-1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "negative"
                 },
                 {
                   "id": "labor_stress",
@@ -1255,29 +1313,39 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-              "supporting_signals": [
-                "失業壓力未惡化"
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
               ],
-              "conflicting_signals": []
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "就業壓力仍受控",
+                "領先指標轉弱 (-0.54)",
+                "工業生產趨勢轉差",
+                "Sahm Rule 觸發 (0.53)"
+              ],
+              "supporting_signals": [],
+              "conflicting_signals": [
+                "就業壓力仍受控",
+                "領先指標轉弱 (-0.54)",
+                "工業生產趨勢轉差",
+                "Sahm Rule 觸發 (0.53)"
+              ]
             },
             {
               "month": "2024-10",
               "as_of": "2024-10",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Leading index change -0.64",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%"
-              ],
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [],
               "metrics": [
                 {
                   "id": "leading_index_change",
@@ -1290,10 +1358,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": -1.0,
+                  "display_value": "-1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "negative"
                 },
                 {
                   "id": "labor_stress",
@@ -1363,28 +1431,39 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-              "supporting_signals": [
-                "失業壓力未惡化"
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
               ],
-              "conflicting_signals": []
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "就業壓力仍受控",
+                "領先指標轉弱 (-0.64)",
+                "工業生產趨勢轉差"
+              ],
+              "supporting_signals": [],
+              "conflicting_signals": [
+                "就業壓力仍受控",
+                "領先指標轉弱 (-0.64)",
+                "工業生產趨勢轉差"
+              ]
             },
             {
               "month": "2024-11",
               "as_of": "2024-11",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change 0.28",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%"
+                "領先指標動能轉強 (0.28)",
+                "工業生產趨勢改善"
               ],
               "metrics": [
                 {
@@ -1398,10 +1477,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": 1.0,
+                  "display_value": "1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "positive"
                 },
                 {
                   "id": "labor_stress",
@@ -1471,32 +1550,52 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-              "supporting_signals": [
-                "領先指標回升 (0.28)",
-                "失業壓力未惡化"
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
               ],
-              "conflicting_signals": []
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "領先指標動能轉強 (0.28)",
+                "工業生產趨勢改善"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "領先指標維持改善 (0.28)",
+                "就業壓力仍受控"
+              ],
+              "supporting_signals": [
+                "領先指標動能轉強 (0.28)",
+                "工業生產趨勢改善"
+              ],
+              "conflicting_signals": [
+                "領先指標維持改善 (0.28)",
+                "就業壓力仍受控"
+              ]
             }
           ],
           "transposed": {
-            "current_phase": "Recovery",
-            "current_phase_label": "復甦",
-            "next_phase": "Growth",
-            "prev_phase": "Recession",
+            "current_phase": "Growth",
+            "current_phase_label": "成長",
+            "next_phase": "Boom",
+            "prev_phase": "Recovery",
             "phase_sequence": [
               "Recovery",
               "Growth",
               "Boom",
               "Recession"
             ],
-            "transition_keys": [],
+            "transition_keys": [
+              "cci_level",
+              "inventory_sales_ratio",
+              "overtime_trend"
+            ],
             "metric_rows": [
               {
                 "metric_id": "leading_index_change",
@@ -1664,8 +1763,8 @@
                 "metric_id": "overtime_trend",
                 "label": "Overtime Trend",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-03",
@@ -1826,8 +1925,8 @@
                 "metric_id": "cci_level",
                 "label": "CCI",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-03",
@@ -1988,8 +2087,8 @@
                 "metric_id": "inventory_sales_ratio",
                 "label": "Inventory/Sales",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-03",
@@ -2055,12 +2154,24 @@
                 "month": "2024-03",
                 "phase": "Recovery",
                 "phase_label": "復甦",
-                "transition_keys": [],
+                "transition_keys": [
+                  "leading_index_change",
+                  "industrial_production_trend",
+                  "pmi"
+                ],
                 "decision_mode": "initial",
-                "decision_summary": "初始月份直接採用 復甦。",
+                "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+                "support_current_phase_signals": [
+                  "領先指標維持改善 (0.13)",
+                  "就業壓力仍受控"
+                ],
+                "support_next_phase_signals": [
+                  "工業生產趨勢改善"
+                ],
+                "conflict_signals": [],
                 "supporting_signals": [
-                  "領先指標回升 (0.13)",
-                  "失業壓力未惡化"
+                  "領先指標維持改善 (0.13)",
+                  "就業壓力仍受控"
                 ],
                 "conflicting_signals": []
               },
@@ -2068,107 +2179,224 @@
                 "month": "2024-04",
                 "phase": "Recovery",
                 "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-                "supporting_signals": [
-                  "失業壓力未惡化"
+                "transition_keys": [
+                  "leading_index_change",
+                  "industrial_production_trend",
+                  "pmi"
                 ],
-                "conflicting_signals": []
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+                "support_current_phase_signals": [
+                  "就業壓力仍受控"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "領先指標轉弱 (-0.53)",
+                  "工業生產趨勢轉差"
+                ],
+                "supporting_signals": [
+                  "就業壓力仍受控"
+                ],
+                "conflicting_signals": [
+                  "領先指標轉弱 (-0.53)",
+                  "工業生產趨勢轉差"
+                ]
               },
               {
                 "month": "2024-05",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-                "supporting_signals": [
-                  "領先指標回升 (0.54)",
-                  "失業壓力未惡化"
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "leading_index_change",
+                  "industrial_production_trend",
+                  "pmi"
                 ],
-                "conflicting_signals": []
+                "decision_mode": "advance",
+                "decision_summary": "因為 領先指標動能轉強 (0.54)、工業生產趨勢改善，所以由 復甦 轉為 成長。",
+                "support_current_phase_signals": [
+                  "領先指標動能轉強 (0.54)",
+                  "工業生產趨勢改善"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "領先指標維持改善 (0.54)",
+                  "就業壓力仍受控"
+                ],
+                "supporting_signals": [
+                  "領先指標動能轉強 (0.54)",
+                  "工業生產趨勢改善"
+                ],
+                "conflicting_signals": [
+                  "領先指標維持改善 (0.54)",
+                  "就業壓力仍受控"
+                ]
               },
               {
                 "month": "2024-06",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-                "supporting_signals": [
-                  "失業壓力未惡化"
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
                 ],
-                "conflicting_signals": []
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "就業壓力仍受控",
+                  "工業生產趨勢轉差"
+                ],
+                "supporting_signals": [],
+                "conflicting_signals": [
+                  "就業壓力仍受控",
+                  "工業生產趨勢轉差"
+                ]
               },
               {
                 "month": "2024-07",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-                "supporting_signals": [
-                  "失業壓力未惡化"
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
                 ],
-                "conflicting_signals": []
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "就業壓力仍受控",
+                  "領先指標轉弱 (-0.76)",
+                  "工業生產趨勢轉差",
+                  "Sahm Rule 觸發 (0.50)"
+                ],
+                "supporting_signals": [],
+                "conflicting_signals": [
+                  "就業壓力仍受控",
+                  "領先指標轉弱 (-0.76)",
+                  "工業生產趨勢轉差",
+                  "Sahm Rule 觸發 (0.50)"
+                ]
               },
               {
                 "month": "2024-08",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-                "supporting_signals": [
-                  "領先指標回升 (0.46)",
-                  "失業壓力未惡化"
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
                 ],
-                "conflicting_signals": []
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [
+                  "領先指標動能轉強 (0.46)",
+                  "工業生產趨勢改善"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "領先指標維持改善 (0.46)",
+                  "就業壓力仍受控",
+                  "Sahm Rule 觸發 (0.57)"
+                ],
+                "supporting_signals": [
+                  "領先指標動能轉強 (0.46)",
+                  "工業生產趨勢改善"
+                ],
+                "conflicting_signals": [
+                  "領先指標維持改善 (0.46)",
+                  "就業壓力仍受控",
+                  "Sahm Rule 觸發 (0.57)"
+                ]
               },
               {
                 "month": "2024-09",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-                "supporting_signals": [
-                  "失業壓力未惡化"
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
                 ],
-                "conflicting_signals": []
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "就業壓力仍受控",
+                  "領先指標轉弱 (-0.54)",
+                  "工業生產趨勢轉差",
+                  "Sahm Rule 觸發 (0.53)"
+                ],
+                "supporting_signals": [],
+                "conflicting_signals": [
+                  "就業壓力仍受控",
+                  "領先指標轉弱 (-0.54)",
+                  "工業生產趨勢轉差",
+                  "Sahm Rule 觸發 (0.53)"
+                ]
               },
               {
                 "month": "2024-10",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-                "supporting_signals": [
-                  "失業壓力未惡化"
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
                 ],
-                "conflicting_signals": []
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "就業壓力仍受控",
+                  "領先指標轉弱 (-0.64)",
+                  "工業生產趨勢轉差"
+                ],
+                "supporting_signals": [],
+                "conflicting_signals": [
+                  "就業壓力仍受控",
+                  "領先指標轉弱 (-0.64)",
+                  "工業生產趨勢轉差"
+                ]
               },
               {
                 "month": "2024-11",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
-                "supporting_signals": [
-                  "領先指標回升 (0.28)",
-                  "失業壓力未惡化"
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
                 ],
-                "conflicting_signals": []
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [
+                  "領先指標動能轉強 (0.28)",
+                  "工業生產趨勢改善"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "領先指標維持改善 (0.28)",
+                  "就業壓力仍受控"
+                ],
+                "supporting_signals": [
+                  "領先指標動能轉強 (0.28)",
+                  "工業生產趨勢改善"
+                ],
+                "conflicting_signals": [
+                  "領先指標維持改善 (0.28)",
+                  "就業壓力仍受控"
+                ]
               }
             ],
             "reasons": [
-              "Leading index change 0.28",
-              "Industrial trend stable",
-              "Overtime trend stable",
-              "Exports YoY 0.0%"
+              "領先指標動能轉強 (0.28)",
+              "工業生產趨勢改善"
             ]
           }
         },
@@ -2178,9 +2406,9 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "Rate trend stable",
-            "Credit trend stable",
-            "Money trend stable"
+            "利率不再持續緊縮",
+            "信用環境止穩",
+            "流動性不再收縮"
           ],
           "metrics": [
             {
@@ -2258,9 +2486,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2333,9 +2561,20 @@
               ],
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             },
             {
@@ -2344,9 +2583,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2420,8 +2659,19 @@
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             },
             {
@@ -2430,9 +2680,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2506,8 +2756,19 @@
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             },
             {
@@ -2516,9 +2777,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2592,8 +2853,19 @@
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             },
             {
@@ -2602,9 +2874,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2678,8 +2950,19 @@
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             },
             {
@@ -2688,9 +2971,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2764,8 +3047,19 @@
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             },
             {
@@ -2774,9 +3068,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2850,8 +3144,19 @@
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             },
             {
@@ -2860,9 +3165,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2936,8 +3241,19 @@
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             },
             {
@@ -2946,9 +3262,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -3022,8 +3338,19 @@
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
               "conflicting_signals": []
             }
           ]
@@ -3034,9 +3361,8 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "Stock trend stable",
-            "Credit trend stable",
-            "Inventory trend stable"
+            "風險偏好不再惡化",
+            "信用壓力不再惡化"
           ],
           "metrics": [
             {
@@ -3113,9 +3439,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3187,9 +3512,18 @@
               ],
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -3198,9 +3532,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3273,8 +3606,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -3283,9 +3625,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3358,8 +3699,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -3368,9 +3718,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3443,8 +3792,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -3453,9 +3811,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3528,8 +3885,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -3538,9 +3904,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3613,8 +3978,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -3623,9 +3997,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3698,8 +4071,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -3708,9 +4090,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3783,8 +4164,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -3793,9 +4183,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -3868,8 +4257,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             }
           ]
@@ -3916,11 +4314,11 @@
         "unemployment": 3.36,
         "unemployment_prev": 3.4,
         "sahm_rule": null,
-        "gov_yield_10y": 1.57,
+        "gov_yield_10y": 1.56,
         "gov_yield_2y": 1.6005,
-        "yield_curve_spread": -0.03049999999999997,
-        "credit_spread_bbb": 0.6825,
-        "credit_spread": 0.6825,
+        "yield_curve_spread": -0.04049999999999998,
+        "credit_spread_bbb": 0.7002,
+        "credit_spread": 0.7002,
         "pmi": 51.4,
         "m2_yoy": 5.47
       },
@@ -4089,8 +4487,8 @@
           "gov_yield_10y": 1.6988,
           "gov_yield_2y": 1.8105,
           "yield_curve_spread": -0.11169999999999991,
-          "credit_spread_bbb": 0.5299,
-          "credit_spread": 0.5299,
+          "credit_spread_bbb": 0.5302,
+          "credit_spread": 0.5302,
           "pmi": 53.7,
           "m2_yoy": 6.25
         },
@@ -4131,11 +4529,11 @@
           "unemployment": 3.45,
           "unemployment_prev": 3.39,
           "sahm_rule": null,
-          "gov_yield_10y": 1.66,
+          "gov_yield_10y": 1.685,
           "gov_yield_2y": 1.8105,
-          "yield_curve_spread": -0.15050000000000008,
-          "credit_spread_bbb": 0.5799,
-          "credit_spread": 0.5799,
+          "yield_curve_spread": -0.12549999999999994,
+          "credit_spread_bbb": 0.5538,
+          "credit_spread": 0.5538,
           "pmi": 52.2,
           "m2_yoy": 6.2
         },
@@ -4179,8 +4577,8 @@
           "gov_yield_10y": 1.5544,
           "gov_yield_2y": 1.696,
           "yield_curve_spread": -0.14159999999999995,
-          "credit_spread_bbb": null,
-          "credit_spread": null,
+          "credit_spread_bbb": 0.6866,
+          "credit_spread": 0.6866,
           "pmi": 53.6,
           "m2_yoy": 5.8
         },
@@ -4221,11 +4619,11 @@
           "unemployment": 3.43,
           "unemployment_prev": 3.48,
           "sahm_rule": null,
-          "gov_yield_10y": 1.47,
+          "gov_yield_10y": 1.49,
           "gov_yield_2y": 1.584,
-          "yield_curve_spread": -0.1140000000000001,
-          "credit_spread_bbb": 0.7673,
-          "credit_spread": 0.7673,
+          "yield_curve_spread": -0.09400000000000008,
+          "credit_spread_bbb": 0.7428,
+          "credit_spread": 0.7428,
           "pmi": 49.2,
           "m2_yoy": 5.6
         },
@@ -4269,8 +4667,8 @@
           "gov_yield_10y": 1.49,
           "gov_yield_2y": 1.5905,
           "yield_curve_spread": -0.10050000000000003,
-          "credit_spread_bbb": null,
-          "credit_spread": null,
+          "credit_spread_bbb": 0.7435,
+          "credit_spread": 0.7435,
           "pmi": 50.0,
           "m2_yoy": 5.83
         },
@@ -4311,11 +4709,11 @@
           "unemployment": 3.36,
           "unemployment_prev": 3.4,
           "sahm_rule": null,
-          "gov_yield_10y": 1.57,
+          "gov_yield_10y": 1.56,
           "gov_yield_2y": 1.6005,
-          "yield_curve_spread": -0.03049999999999997,
-          "credit_spread_bbb": 0.6825,
-          "credit_spread": 0.6825,
+          "yield_curve_spread": -0.04049999999999998,
+          "credit_spread_bbb": 0.7002,
+          "credit_spread": 0.7002,
           "pmi": 51.4,
           "m2_yoy": 5.47
         }
@@ -4460,11 +4858,8 @@
           "phase": "Growth",
           "phase_label": "成長",
           "reasons": [
-            "Leading index change -0.14",
-            "Industrial trend improving",
-            "Overtime trend stable",
-            "Exports YoY 14.2%",
-            "PMI 51.4"
+            "工業生產趨勢改善",
+            "出口成長明顯轉強 (14.2%)"
           ],
           "metrics": [
             {
@@ -4554,7 +4949,7 @@
           "transition_keys": [
             "cci_level",
             "inventory_sales_ratio",
-            "exports_yoy"
+            "overtime_trend"
           ],
           "narrative": "Leading, production, and demand data are improving together.",
           "stance": "hold trend exposure",
@@ -4562,13 +4957,12 @@
             {
               "month": "2024-03",
               "as_of": "2024-03",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "Leading index change 0.59",
-                "Industrial trend improving",
-                "Overtime trend stable",
-                "Exports YoY 22.7%"
+                "領先指標維持改善 (0.59)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (22.7%)"
               ],
               "metrics": [
                 {
@@ -4657,14 +5051,30 @@
               ],
               "previous_phase": null,
               "previous_phase_label": null,
-              "transition_keys": [],
-              "narrative": "Leading, production, and demand data are improving together.",
-              "stance": "hold trend exposure",
+              "transition_keys": [
+                "leading_index_change",
+                "industrial_production_trend",
+                "pmi"
+              ],
+              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
+              "stance": "start building risk",
               "decision_mode": "initial",
-              "decision_summary": "初始月份直接採用 成長。",
-              "supporting_signals": [
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "領先指標維持改善 (0.59)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (22.7%)"
+              ],
+              "support_next_phase_signals": [
+                "領先指標動能轉強 (0.59)",
                 "工業生產趨勢改善",
-                "出口年增強勁 (22.7%)"
+                "出口成長明顯轉強 (22.7%)"
+              ],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "領先指標維持改善 (0.59)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (22.7%)"
               ],
               "conflicting_signals": []
             },
@@ -4674,11 +5084,8 @@
               "phase": "Growth",
               "phase_label": "成長",
               "reasons": [
-                "Leading index change 0.64",
-                "Industrial trend deteriorating",
-                "Overtime trend stable",
-                "Exports YoY 10.0%",
-                "PMI 49.4"
+                "領先指標動能轉強 (0.64)",
+                "出口成長明顯轉強 (10.0%)"
               ],
               "metrics": [
                 {
@@ -4765,34 +5172,51 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Growth",
-              "previous_phase_label": "成長",
-              "transition_keys": [],
-              "narrative": "Leading, production, and demand data are improving together.",
+              "previous_phase": "Recovery",
+              "previous_phase_label": "復甦",
+              "transition_keys": [
+                "leading_index_change",
+                "industrial_production_trend",
+                "pmi"
+              ],
+              "narrative": "Transitioned from 復甦 to 成長 based on explicit next-phase evidence.",
               "stance": "hold trend exposure",
-              "decision_mode": "ambiguous_hold",
-              "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 成長。",
+              "decision_mode": "advance",
+              "decision_summary": "因為 領先指標動能轉強 (0.64)、出口成長明顯轉強 (10.0%)，所以由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "領先指標動能轉強 (0.64)",
+                "出口成長明顯轉強 (10.0%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "領先指標維持改善 (0.64)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (10.0%)",
+                "工業生產趨勢轉差",
+                "PMI 跌破 50 (49.4)"
+              ],
               "supporting_signals": [
-                "領先指標明顯轉強 (0.64)",
-                "出口年增強勁 (10.0%)"
+                "領先指標動能轉強 (0.64)",
+                "出口成長明顯轉強 (10.0%)"
               ],
               "conflicting_signals": [
-                "失業壓力未惡化",
-                "工業生產趨勢惡化",
-                "PMI 跌破擴張線 (49.4)"
+                "領先指標維持改善 (0.64)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (10.0%)",
+                "工業生產趨勢轉差",
+                "PMI 跌破 50 (49.4)"
               ]
             },
             {
               "month": "2024-05",
               "as_of": "2024-05",
-              "phase": "Boom",
-              "phase_label": "榮景",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change 0.57",
-                "Industrial trend improving",
-                "Overtime trend stable",
-                "Exports YoY 9.1%",
-                "PMI 55.4"
+                "領先指標動能轉強 (0.57)",
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (9.1%)",
+                "PMI 維持強勢擴張 (55.4)"
               ],
               "metrics": [
                 {
@@ -4884,30 +5308,46 @@
               "transition_keys": [
                 "cci_level",
                 "inventory_sales_ratio",
-                "exports_yoy"
+                "overtime_trend"
               ],
-              "narrative": "Transitioned from 成長 to 榮景 as leading and cycle data changed.",
-              "stance": "trim risk",
-              "decision_mode": "ambiguous_advance",
-              "decision_summary": "核心訊號允許由 成長 前進到 榮景，因此只前進一階。",
-              "supporting_signals": [],
-              "conflicting_signals": [
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "領先指標動能轉強 (0.57)",
                 "工業生產趨勢改善",
-                "出口年增強勁 (9.1%)",
-                "PMI 維持擴張 (55.4)"
+                "出口成長明顯轉強 (9.1%)",
+                "PMI 維持強勢擴張 (55.4)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "領先指標維持改善 (0.57)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (9.1%)",
+                "PMI 回到 50 以上 (55.4)"
+              ],
+              "supporting_signals": [
+                "領先指標動能轉強 (0.57)",
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (9.1%)",
+                "PMI 維持強勢擴張 (55.4)"
+              ],
+              "conflicting_signals": [
+                "領先指標維持改善 (0.57)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (9.1%)",
+                "PMI 回到 50 以上 (55.4)"
               ]
             },
             {
               "month": "2024-06",
               "as_of": "2024-06",
-              "phase": "Boom",
-              "phase_label": "榮景",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change 0.39",
-                "Industrial trend deteriorating",
-                "Overtime trend stable",
-                "Exports YoY 29.8%",
-                "PMI 53.7"
+                "領先指標動能轉強 (0.39)",
+                "出口成長明顯轉強 (29.8%)"
               ],
               "metrics": [
                 {
@@ -4994,33 +5434,49 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Boom",
-              "previous_phase_label": "榮景",
-              "transition_keys": [],
-              "narrative": "Growth is still positive, but risk of overheating is rising.",
-              "stance": "trim risk",
-              "decision_mode": "ambiguous_hold",
-              "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 榮景。",
-              "supporting_signals": [],
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
+              ],
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "領先指標動能轉強 (0.39)",
+                "出口成長明顯轉強 (29.8%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "領先指標維持改善 (0.39)",
+                "出口重新回到正成長 (29.8%)",
+                "PMI 回到 50 以上 (53.7)",
+                "工業生產趨勢轉差",
+                "就業壓力升高"
+              ],
+              "supporting_signals": [
+                "領先指標動能轉強 (0.39)",
+                "出口成長明顯轉強 (29.8%)"
+              ],
               "conflicting_signals": [
-                "領先指標回升 (0.39)",
-                "PMI 站回擴張線 (53.7)",
-                "出口年增強勁 (29.8%)",
-                "工業生產趨勢惡化",
-                "失業壓力上升"
+                "領先指標維持改善 (0.39)",
+                "出口重新回到正成長 (29.8%)",
+                "PMI 回到 50 以上 (53.7)",
+                "工業生產趨勢轉差",
+                "就業壓力升高"
               ]
             },
             {
               "month": "2024-07",
               "as_of": "2024-07",
-              "phase": "Boom",
-              "phase_label": "榮景",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change 0.16",
-                "Industrial trend improving",
-                "Overtime trend stable",
-                "Exports YoY 8.2%",
-                "PMI 52.2"
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (8.2%)"
               ],
               "metrics": [
                 {
@@ -5107,33 +5563,47 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Boom",
-              "previous_phase_label": "榮景",
-              "transition_keys": [],
-              "narrative": "Growth is still positive, but risk of overheating is rising.",
-              "stance": "trim risk",
-              "decision_mode": "ambiguous_hold",
-              "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 榮景。",
-              "supporting_signals": [],
-              "conflicting_signals": [
-                "領先指標回升 (0.16)",
-                "PMI 站回擴張線 (52.2)",
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
+              ],
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
                 "工業生產趨勢改善",
-                "出口年增強勁 (8.2%)",
-                "失業壓力上升"
+                "出口成長明顯轉強 (8.2%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "領先指標維持改善 (0.16)",
+                "出口重新回到正成長 (8.2%)",
+                "PMI 回到 50 以上 (52.2)",
+                "就業壓力升高"
+              ],
+              "supporting_signals": [
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (8.2%)"
+              ],
+              "conflicting_signals": [
+                "領先指標維持改善 (0.16)",
+                "出口重新回到正成長 (8.2%)",
+                "PMI 回到 50 以上 (52.2)",
+                "就業壓力升高"
               ]
             },
             {
               "month": "2024-08",
               "as_of": "2024-08",
-              "phase": "Boom",
-              "phase_label": "榮景",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change -0.14",
-                "Industrial trend improving",
-                "Overtime trend stable",
-                "Exports YoY 20.3%",
-                "PMI 53.6"
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (20.3%)"
               ],
               "metrics": [
                 {
@@ -5220,33 +5690,43 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Boom",
-              "previous_phase_label": "榮景",
-              "transition_keys": [],
-              "narrative": "Growth is still positive, but risk of overheating is rising.",
-              "stance": "trim risk",
-              "decision_mode": "ambiguous_hold",
-              "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 榮景。",
-              "supporting_signals": [],
-              "conflicting_signals": [
-                "PMI 站回擴張線 (53.6)",
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
+              ],
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
                 "工業生產趨勢改善",
-                "出口年增強勁 (20.3%)",
-                "失業壓力上升"
+                "出口成長明顯轉強 (20.3%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "出口重新回到正成長 (20.3%)",
+                "PMI 回到 50 以上 (53.6)",
+                "就業壓力升高"
+              ],
+              "supporting_signals": [
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (20.3%)"
+              ],
+              "conflicting_signals": [
+                "出口重新回到正成長 (20.3%)",
+                "PMI 回到 50 以上 (53.6)",
+                "就業壓力升高"
               ]
             },
             {
               "month": "2024-09",
               "as_of": "2024-09",
-              "phase": "Recession",
-              "phase_label": "衰退",
-              "reasons": [
-                "Leading index change -0.25",
-                "Industrial trend deteriorating",
-                "Overtime trend stable",
-                "Exports YoY 4.9%",
-                "PMI 49.2"
-              ],
+              "phase": "Growth",
+              "phase_label": "成長",
+              "reasons": [],
               "metrics": [
                 {
                   "id": "leading_index_change",
@@ -5332,38 +5812,43 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Boom",
-              "previous_phase_label": "榮景",
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
               "transition_keys": [
-                "sahm_rule",
-                "unemployment_claims",
-                "inventory_sales_ratio"
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
               ],
-              "narrative": "Transitioned from 榮景 to 衰退 as leading and cycle data changed.",
-              "stance": "defend capital",
-              "decision_mode": "ambiguous_advance",
-              "decision_summary": "原始訊號有混亂，但推進到 衰退 的證據明顯較集中，因此只前進一階。",
-              "supporting_signals": [
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "就業壓力仍受控",
+                "出口重新回到正成長 (4.9%)",
                 "領先指標轉弱 (-0.25)",
-                "工業生產趨勢惡化",
-                "PMI 跌破擴張線 (49.2)"
+                "工業生產趨勢轉差",
+                "PMI 跌破 50 (49.2)"
               ],
+              "supporting_signals": [],
               "conflicting_signals": [
-                "失業壓力未惡化",
-                "出口轉正 (4.9%)"
+                "就業壓力仍受控",
+                "出口重新回到正成長 (4.9%)",
+                "領先指標轉弱 (-0.25)",
+                "工業生產趨勢轉差",
+                "PMI 跌破 50 (49.2)"
               ]
             },
             {
               "month": "2024-10",
               "as_of": "2024-10",
-              "phase": "Recession",
-              "phase_label": "衰退",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change -0.24",
-                "Industrial trend improving",
-                "Overtime trend rising",
-                "Exports YoY 11.2%",
-                "PMI 50.0"
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (11.2%)"
               ],
               "metrics": [
                 {
@@ -5450,35 +5935,49 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recession",
-              "previous_phase_label": "衰退",
-              "transition_keys": [],
-              "narrative": "Labor and demand pressure are strong enough to dominate the cycle signal.",
-              "stance": "defend capital",
-              "decision_mode": "ambiguous_hold",
-              "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 衰退。",
-              "supporting_signals": [
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
+              ],
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "雖然出現 加班工時顯示需求進一步升溫，但還不足以由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (11.2%)"
+              ],
+              "support_next_phase_signals": [
+                "加班工時顯示需求進一步升溫"
+              ],
+              "conflict_signals": [
+                "就業壓力仍受控",
+                "出口重新回到正成長 (11.2%)",
+                "PMI 回到 50 以上 (50.0)",
                 "領先指標轉弱 (-0.24)"
               ],
-              "conflicting_signals": [
-                "失業壓力未惡化",
-                "PMI 站回擴張線 (50.0)",
+              "supporting_signals": [
                 "工業生產趨勢改善",
-                "加班工時轉強",
-                "出口年增強勁 (11.2%)"
+                "出口成長明顯轉強 (11.2%)"
+              ],
+              "conflicting_signals": [
+                "就業壓力仍受控",
+                "出口重新回到正成長 (11.2%)",
+                "PMI 回到 50 以上 (50.0)",
+                "領先指標轉弱 (-0.24)"
               ]
             },
             {
               "month": "2024-11",
               "as_of": "2024-11",
-              "phase": "Recession",
-              "phase_label": "衰退",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Leading index change -0.14",
-                "Industrial trend improving",
-                "Overtime trend stable",
-                "Exports YoY 14.2%",
-                "PMI 51.4"
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (14.2%)"
               ],
               "metrics": [
                 {
@@ -5565,34 +6064,54 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recession",
-              "previous_phase_label": "衰退",
-              "transition_keys": [],
-              "narrative": "Labor and demand pressure are strong enough to dominate the cycle signal.",
-              "stance": "defend capital",
-              "decision_mode": "ambiguous_hold",
-              "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 衰退。",
-              "supporting_signals": [],
-              "conflicting_signals": [
-                "失業壓力未惡化",
-                "PMI 站回擴張線 (51.4)",
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
+              "transition_keys": [
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
+              ],
+              "narrative": "Leading, production, and demand data are improving together.",
+              "stance": "hold trend exposure",
+              "decision_mode": "hold",
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
                 "工業生產趨勢改善",
-                "出口年增強勁 (14.2%)"
+                "出口成長明顯轉強 (14.2%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "就業壓力仍受控",
+                "出口重新回到正成長 (14.2%)",
+                "PMI 回到 50 以上 (51.4)"
+              ],
+              "supporting_signals": [
+                "工業生產趨勢改善",
+                "出口成長明顯轉強 (14.2%)"
+              ],
+              "conflicting_signals": [
+                "就業壓力仍受控",
+                "出口重新回到正成長 (14.2%)",
+                "PMI 回到 50 以上 (51.4)"
               ]
             }
           ],
           "transposed": {
-            "current_phase": "Recession",
-            "current_phase_label": "衰退",
-            "next_phase": "Recovery",
-            "prev_phase": "Boom",
+            "current_phase": "Growth",
+            "current_phase_label": "成長",
+            "next_phase": "Boom",
+            "prev_phase": "Recovery",
             "phase_sequence": [
               "Recovery",
               "Growth",
               "Boom",
               "Recession"
             ],
-            "transition_keys": [],
+            "transition_keys": [
+              "cci_level",
+              "inventory_sales_ratio",
+              "overtime_trend"
+            ],
             "metric_rows": [
               {
                 "metric_id": "leading_index_change",
@@ -5760,8 +6279,8 @@
                 "metric_id": "overtime_trend",
                 "label": "Overtime Trend",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-03",
@@ -5922,8 +6441,8 @@
                 "metric_id": "cci_level",
                 "label": "CCI",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-03",
@@ -6084,8 +6603,8 @@
                 "metric_id": "inventory_sales_ratio",
                 "label": "Inventory/Sales",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-03",
@@ -6149,14 +6668,30 @@
             "month_columns": [
               {
                 "month": "2024-03",
-                "phase": "Growth",
-                "phase_label": "成長",
-                "transition_keys": [],
+                "phase": "Recovery",
+                "phase_label": "復甦",
+                "transition_keys": [
+                  "leading_index_change",
+                  "industrial_production_trend",
+                  "pmi"
+                ],
                 "decision_mode": "initial",
-                "decision_summary": "初始月份直接採用 成長。",
-                "supporting_signals": [
+                "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+                "support_current_phase_signals": [
+                  "領先指標維持改善 (0.59)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (22.7%)"
+                ],
+                "support_next_phase_signals": [
+                  "領先指標動能轉強 (0.59)",
                   "工業生產趨勢改善",
-                  "出口年增強勁 (22.7%)"
+                  "出口成長明顯轉強 (22.7%)"
+                ],
+                "conflict_signals": [],
+                "supporting_signals": [
+                  "領先指標維持改善 (0.59)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (22.7%)"
                 ],
                 "conflicting_signals": []
               },
@@ -6164,145 +6699,272 @@
                 "month": "2024-04",
                 "phase": "Growth",
                 "phase_label": "成長",
-                "transition_keys": [],
-                "decision_mode": "ambiguous_hold",
-                "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 成長。",
+                "transition_keys": [
+                  "leading_index_change",
+                  "industrial_production_trend",
+                  "pmi"
+                ],
+                "decision_mode": "advance",
+                "decision_summary": "因為 領先指標動能轉強 (0.64)、出口成長明顯轉強 (10.0%)，所以由 復甦 轉為 成長。",
+                "support_current_phase_signals": [
+                  "領先指標動能轉強 (0.64)",
+                  "出口成長明顯轉強 (10.0%)"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "領先指標維持改善 (0.64)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (10.0%)",
+                  "工業生產趨勢轉差",
+                  "PMI 跌破 50 (49.4)"
+                ],
                 "supporting_signals": [
-                  "領先指標明顯轉強 (0.64)",
-                  "出口年增強勁 (10.0%)"
+                  "領先指標動能轉強 (0.64)",
+                  "出口成長明顯轉強 (10.0%)"
                 ],
                 "conflicting_signals": [
-                  "失業壓力未惡化",
-                  "工業生產趨勢惡化",
-                  "PMI 跌破擴張線 (49.4)"
+                  "領先指標維持改善 (0.64)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (10.0%)",
+                  "工業生產趨勢轉差",
+                  "PMI 跌破 50 (49.4)"
                 ]
               },
               {
                 "month": "2024-05",
-                "phase": "Boom",
-                "phase_label": "榮景",
+                "phase": "Growth",
+                "phase_label": "成長",
                 "transition_keys": [
                   "cci_level",
                   "inventory_sales_ratio",
-                  "exports_yoy"
+                  "overtime_trend"
                 ],
-                "decision_mode": "ambiguous_advance",
-                "decision_summary": "核心訊號允許由 成長 前進到 榮景，因此只前進一階。",
-                "supporting_signals": [],
-                "conflicting_signals": [
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [
+                  "領先指標動能轉強 (0.57)",
                   "工業生產趨勢改善",
-                  "出口年增強勁 (9.1%)",
-                  "PMI 維持擴張 (55.4)"
+                  "出口成長明顯轉強 (9.1%)",
+                  "PMI 維持強勢擴張 (55.4)"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "領先指標維持改善 (0.57)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (9.1%)",
+                  "PMI 回到 50 以上 (55.4)"
+                ],
+                "supporting_signals": [
+                  "領先指標動能轉強 (0.57)",
+                  "工業生產趨勢改善",
+                  "出口成長明顯轉強 (9.1%)",
+                  "PMI 維持強勢擴張 (55.4)"
+                ],
+                "conflicting_signals": [
+                  "領先指標維持改善 (0.57)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (9.1%)",
+                  "PMI 回到 50 以上 (55.4)"
                 ]
               },
               {
                 "month": "2024-06",
-                "phase": "Boom",
-                "phase_label": "榮景",
-                "transition_keys": [],
-                "decision_mode": "ambiguous_hold",
-                "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 榮景。",
-                "supporting_signals": [],
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
+                ],
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [
+                  "領先指標動能轉強 (0.39)",
+                  "出口成長明顯轉強 (29.8%)"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "領先指標維持改善 (0.39)",
+                  "出口重新回到正成長 (29.8%)",
+                  "PMI 回到 50 以上 (53.7)",
+                  "工業生產趨勢轉差",
+                  "就業壓力升高"
+                ],
+                "supporting_signals": [
+                  "領先指標動能轉強 (0.39)",
+                  "出口成長明顯轉強 (29.8%)"
+                ],
                 "conflicting_signals": [
-                  "領先指標回升 (0.39)",
-                  "PMI 站回擴張線 (53.7)",
-                  "出口年增強勁 (29.8%)",
-                  "工業生產趨勢惡化",
-                  "失業壓力上升"
+                  "領先指標維持改善 (0.39)",
+                  "出口重新回到正成長 (29.8%)",
+                  "PMI 回到 50 以上 (53.7)",
+                  "工業生產趨勢轉差",
+                  "就業壓力升高"
                 ]
               },
               {
                 "month": "2024-07",
-                "phase": "Boom",
-                "phase_label": "榮景",
-                "transition_keys": [],
-                "decision_mode": "ambiguous_hold",
-                "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 榮景。",
-                "supporting_signals": [],
-                "conflicting_signals": [
-                  "領先指標回升 (0.16)",
-                  "PMI 站回擴張線 (52.2)",
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
+                ],
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [
                   "工業生產趨勢改善",
-                  "出口年增強勁 (8.2%)",
-                  "失業壓力上升"
+                  "出口成長明顯轉強 (8.2%)"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "領先指標維持改善 (0.16)",
+                  "出口重新回到正成長 (8.2%)",
+                  "PMI 回到 50 以上 (52.2)",
+                  "就業壓力升高"
+                ],
+                "supporting_signals": [
+                  "工業生產趨勢改善",
+                  "出口成長明顯轉強 (8.2%)"
+                ],
+                "conflicting_signals": [
+                  "領先指標維持改善 (0.16)",
+                  "出口重新回到正成長 (8.2%)",
+                  "PMI 回到 50 以上 (52.2)",
+                  "就業壓力升高"
                 ]
               },
               {
                 "month": "2024-08",
-                "phase": "Boom",
-                "phase_label": "榮景",
-                "transition_keys": [],
-                "decision_mode": "ambiguous_hold",
-                "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 榮景。",
-                "supporting_signals": [],
-                "conflicting_signals": [
-                  "PMI 站回擴張線 (53.6)",
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
+                ],
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [
                   "工業生產趨勢改善",
-                  "出口年增強勁 (20.3%)",
-                  "失業壓力上升"
+                  "出口成長明顯轉強 (20.3%)"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "出口重新回到正成長 (20.3%)",
+                  "PMI 回到 50 以上 (53.6)",
+                  "就業壓力升高"
+                ],
+                "supporting_signals": [
+                  "工業生產趨勢改善",
+                  "出口成長明顯轉強 (20.3%)"
+                ],
+                "conflicting_signals": [
+                  "出口重新回到正成長 (20.3%)",
+                  "PMI 回到 50 以上 (53.6)",
+                  "就業壓力升高"
                 ]
               },
               {
                 "month": "2024-09",
-                "phase": "Recession",
-                "phase_label": "衰退",
+                "phase": "Growth",
+                "phase_label": "成長",
                 "transition_keys": [
-                  "sahm_rule",
-                  "unemployment_claims",
-                  "inventory_sales_ratio"
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
                 ],
-                "decision_mode": "ambiguous_advance",
-                "decision_summary": "原始訊號有混亂，但推進到 衰退 的證據明顯較集中，因此只前進一階。",
-                "supporting_signals": [
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (4.9%)",
                   "領先指標轉弱 (-0.25)",
-                  "工業生產趨勢惡化",
-                  "PMI 跌破擴張線 (49.2)"
+                  "工業生產趨勢轉差",
+                  "PMI 跌破 50 (49.2)"
                 ],
+                "supporting_signals": [],
                 "conflicting_signals": [
-                  "失業壓力未惡化",
-                  "出口轉正 (4.9%)"
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (4.9%)",
+                  "領先指標轉弱 (-0.25)",
+                  "工業生產趨勢轉差",
+                  "PMI 跌破 50 (49.2)"
                 ]
               },
               {
                 "month": "2024-10",
-                "phase": "Recession",
-                "phase_label": "衰退",
-                "transition_keys": [],
-                "decision_mode": "ambiguous_hold",
-                "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 衰退。",
-                "supporting_signals": [
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
+                ],
+                "decision_mode": "hold",
+                "decision_summary": "雖然出現 加班工時顯示需求進一步升溫，但還不足以由 成長 轉為 榮景。",
+                "support_current_phase_signals": [
+                  "工業生產趨勢改善",
+                  "出口成長明顯轉強 (11.2%)"
+                ],
+                "support_next_phase_signals": [
+                  "加班工時顯示需求進一步升溫"
+                ],
+                "conflict_signals": [
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (11.2%)",
+                  "PMI 回到 50 以上 (50.0)",
                   "領先指標轉弱 (-0.24)"
                 ],
-                "conflicting_signals": [
-                  "失業壓力未惡化",
-                  "PMI 站回擴張線 (50.0)",
+                "supporting_signals": [
                   "工業生產趨勢改善",
-                  "加班工時轉強",
-                  "出口年增強勁 (11.2%)"
+                  "出口成長明顯轉強 (11.2%)"
+                ],
+                "conflicting_signals": [
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (11.2%)",
+                  "PMI 回到 50 以上 (50.0)",
+                  "領先指標轉弱 (-0.24)"
                 ]
               },
               {
                 "month": "2024-11",
-                "phase": "Recession",
-                "phase_label": "衰退",
-                "transition_keys": [],
-                "decision_mode": "ambiguous_hold",
-                "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 衰退。",
-                "supporting_signals": [],
-                "conflicting_signals": [
-                  "失業壓力未惡化",
-                  "PMI 站回擴張線 (51.4)",
+                "phase": "Growth",
+                "phase_label": "成長",
+                "transition_keys": [
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
+                ],
+                "decision_mode": "hold",
+                "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+                "support_current_phase_signals": [
                   "工業生產趨勢改善",
-                  "出口年增強勁 (14.2%)"
+                  "出口成長明顯轉強 (14.2%)"
+                ],
+                "support_next_phase_signals": [],
+                "conflict_signals": [
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (14.2%)",
+                  "PMI 回到 50 以上 (51.4)"
+                ],
+                "supporting_signals": [
+                  "工業生產趨勢改善",
+                  "出口成長明顯轉強 (14.2%)"
+                ],
+                "conflicting_signals": [
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (14.2%)",
+                  "PMI 回到 50 以上 (51.4)"
                 ]
               }
             ],
             "reasons": [
-              "Leading index change -0.14",
-              "Industrial trend improving",
-              "Overtime trend stable",
-              "Exports YoY 14.2%",
-              "PMI 51.4"
+              "工業生產趨勢改善",
+              "出口成長明顯轉強 (14.2%)"
             ]
           }
         },
@@ -6312,12 +6974,8 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "Rate trend rising",
-            "Credit trend stable",
-            "Money trend contracting",
-            "Bank lending rate 2.166%",
-            "M2 YoY 5.47%",
-            "Yield curve inverted"
+            "信用環境止穩",
+            "流動性不再收縮"
           ],
           "metrics": [
             {
@@ -6365,8 +7023,8 @@
             {
               "id": "yield_curve",
               "label": "Yield Curve Spread",
-              "value": -0.03049999999999997,
-              "display_value": "-0.03",
+              "value": -0.04049999999999998,
+              "display_value": "-0.04",
               "display_format": "spread",
               "status": "negative",
               "proxy_label": "Proxy"
@@ -6395,11 +7053,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend rising",
-                "Credit trend stable",
-                "Money trend expanding",
-                "Bank lending rate 2.017%",
-                "M2 YoY 6.15%"
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -6472,22 +7127,35 @@
               ],
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [
+                "放款利率仍具支撐 (2.017%)",
+                "M2 維持支撐 (6.15%)"
+              ],
+              "conflict_signals": [
+                "利率重新偏緊"
+              ],
+              "supporting_signals": [
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "conflicting_signals": [
+                "利率重新偏緊"
+              ]
             },
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Rate trend rising",
-                "Credit trend stable",
-                "Money trend contracting",
-                "Bank lending rate 2.155%",
-                "M2 YoY 6.06%"
+                "放款利率仍具支撐 (2.155%)",
+                "M2 維持支撐 (6.06%)"
               ],
               "metrics": [
                 {
@@ -6558,25 +7226,38 @@
                 "credit_change",
                 "m2_yoy"
               ],
-              "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
-              "stance": "turn risk back on",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "narrative": "Transitioned from 復甦 to 成長 as rates, credit, and liquidity shifted.",
+              "stance": "hold cyclical exposure",
+              "decision_mode": "advance",
+              "decision_summary": "因為 放款利率仍具支撐 (2.155%)、M2 維持支撐 (6.06%)，所以由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "放款利率仍具支撐 (2.155%)",
+                "M2 維持支撐 (6.06%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "信用環境止穩",
+                "流動性不再收縮",
+                "利率重新偏緊"
+              ],
+              "supporting_signals": [
+                "放款利率仍具支撐 (2.155%)",
+                "M2 維持支撐 (6.06%)"
+              ],
+              "conflicting_signals": [
+                "信用環境止穩",
+                "流動性不再收縮",
+                "利率重新偏緊"
+              ]
             },
             {
               "month": "2024-05",
               "as_of": "2024-05",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Rate trend rising",
-                "Credit trend stable",
-                "Money trend expanding",
-                "Bank lending rate 2.187%",
-                "M2 YoY 6.04%",
-                "Yield curve inverted"
+                "放款利率仍具支撐 (2.187%)",
+                "M2 維持支撐 (6.04%)"
               ],
               "metrics": [
                 {
@@ -6640,19 +7321,38 @@
                   "proxy_label": "Proxy"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
               "transition_keys": [
-                "bank_lending_rate",
-                "credit_change",
-                "m2_yoy"
+                "yield_curve",
+                "pe_ratio",
+                "margin_balance"
               ],
-              "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
-              "stance": "turn risk back on",
+              "narrative": "Rates, credit, and liquidity all support a constructive cycle backdrop.",
+              "stance": "hold cyclical exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "放款利率仍具支撐 (2.187%)",
+                "M2 維持支撐 (6.04%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "信用環境止穩",
+                "流動性不再收縮",
+                "利率重新偏緊",
+                "殖利率曲線倒掛 (-0.20)"
+              ],
+              "supporting_signals": [
+                "放款利率仍具支撐 (2.187%)",
+                "M2 維持支撐 (6.04%)"
+              ],
+              "conflicting_signals": [
+                "信用環境止穩",
+                "流動性不再收縮",
+                "利率重新偏緊",
+                "殖利率曲線倒掛 (-0.20)"
+              ]
             },
             {
               "month": "2024-06",
@@ -6660,12 +7360,9 @@
               "phase": "Growth",
               "phase_label": "成長",
               "reasons": [
-                "Rate trend falling",
-                "Credit trend stable",
-                "Money trend expanding",
-                "Bank lending rate 2.127%",
-                "M2 YoY 6.25%",
-                "Yield curve inverted"
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.127%)",
+                "M2 維持支撐 (6.25%)"
               ],
               "metrics": [
                 {
@@ -6729,19 +7426,40 @@
                   "proxy_label": "Proxy"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
               "transition_keys": [
-                "bank_lending_rate",
-                "credit_change",
-                "m2_yoy"
+                "yield_curve",
+                "pe_ratio",
+                "margin_balance"
               ],
-              "narrative": "Transitioned from 復甦 to 成長 as rates, credit, and liquidity shifted.",
+              "narrative": "Rates, credit, and liquidity all support a constructive cycle backdrop.",
               "stance": "hold cyclical exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.127%)",
+                "M2 維持支撐 (6.25%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮",
+                "殖利率曲線倒掛 (-0.11)"
+              ],
+              "supporting_signals": [
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.127%)",
+                "M2 維持支撐 (6.25%)"
+              ],
+              "conflicting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮",
+                "殖利率曲線倒掛 (-0.11)"
+              ]
             },
             {
               "month": "2024-07",
@@ -6749,12 +7467,9 @@
               "phase": "Growth",
               "phase_label": "成長",
               "reasons": [
-                "Rate trend falling",
-                "Credit trend stable",
-                "Money trend expanding",
-                "Bank lending rate 2.115%",
-                "M2 YoY 6.20%",
-                "Yield curve inverted"
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.115%)",
+                "M2 維持支撐 (6.20%)"
               ],
               "metrics": [
                 {
@@ -6802,8 +7517,8 @@
                 {
                   "id": "yield_curve",
                   "label": "Yield Curve Spread",
-                  "value": -0.15050000000000008,
-                  "display_value": "-0.15",
+                  "value": -0.12549999999999994,
+                  "display_value": "-0.13",
                   "display_format": "spread",
                   "status": "negative",
                   "proxy_label": "Proxy"
@@ -6828,22 +7543,38 @@
               "narrative": "Rates, credit, and liquidity all support a constructive cycle backdrop.",
               "stance": "hold cyclical exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.115%)",
+                "M2 維持支撐 (6.20%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮",
+                "殖利率曲線倒掛 (-0.13)"
+              ],
+              "supporting_signals": [
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.115%)",
+                "M2 維持支撐 (6.20%)"
+              ],
+              "conflicting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮",
+                "殖利率曲線倒掛 (-0.13)"
+              ]
             },
             {
               "month": "2024-08",
               "as_of": "2024-08",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend contracting",
-                "Bank lending rate 2.125%",
-                "M2 YoY 5.80%",
-                "Yield curve inverted"
+                "放款利率仍具支撐 (2.125%)"
               ],
               "metrics": [
                 {
@@ -6914,25 +7645,37 @@
                 "pe_ratio",
                 "margin_balance"
               ],
-              "narrative": "Transitioned from 成長 to 復甦 as rates, credit, and liquidity shifted.",
-              "stance": "turn risk back on",
+              "narrative": "Rates, credit, and liquidity all support a constructive cycle backdrop.",
+              "stance": "hold cyclical exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "放款利率仍具支撐 (2.125%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮",
+                "殖利率曲線倒掛 (-0.14)"
+              ],
+              "supporting_signals": [
+                "放款利率仍具支撐 (2.125%)"
+              ],
+              "conflicting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮",
+                "殖利率曲線倒掛 (-0.14)"
+              ]
             },
             {
               "month": "2024-09",
               "as_of": "2024-09",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Rate trend rising",
-                "Credit trend stable",
-                "Money trend contracting",
-                "Bank lending rate 2.146%",
-                "M2 YoY 5.60%",
-                "Yield curve inverted"
+                "放款利率仍具支撐 (2.146%)"
               ],
               "metrics": [
                 {
@@ -6980,8 +7723,8 @@
                 {
                   "id": "yield_curve",
                   "label": "Yield Curve Spread",
-                  "value": -0.1140000000000001,
-                  "display_value": "-0.11",
+                  "value": -0.09400000000000008,
+                  "display_value": "-0.09",
                   "display_format": "spread",
                   "status": "negative",
                   "proxy_label": "Proxy"
@@ -6996,19 +7739,36 @@
                   "proxy_label": "Proxy"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
               "transition_keys": [
-                "bank_lending_rate",
-                "credit_change",
-                "m2_yoy"
+                "yield_curve",
+                "pe_ratio",
+                "margin_balance"
               ],
-              "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
-              "stance": "turn risk back on",
+              "narrative": "Rates, credit, and liquidity all support a constructive cycle backdrop.",
+              "stance": "hold cyclical exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "放款利率仍具支撐 (2.146%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "信用環境止穩",
+                "流動性不再收縮",
+                "利率重新偏緊",
+                "殖利率曲線倒掛 (-0.09)"
+              ],
+              "supporting_signals": [
+                "放款利率仍具支撐 (2.146%)"
+              ],
+              "conflicting_signals": [
+                "信用環境止穩",
+                "流動性不再收縮",
+                "利率重新偏緊",
+                "殖利率曲線倒掛 (-0.09)"
+              ]
             },
             {
               "month": "2024-10",
@@ -7016,12 +7776,8 @@
               "phase": "Growth",
               "phase_label": "成長",
               "reasons": [
-                "Rate trend falling",
-                "Credit trend stable",
-                "Money trend expanding",
-                "Bank lending rate 2.129%",
-                "M2 YoY 5.83%",
-                "Yield curve inverted"
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.129%)"
               ],
               "metrics": [
                 {
@@ -7085,32 +7841,46 @@
                   "proxy_label": "Proxy"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
+              "previous_phase": "Growth",
+              "previous_phase_label": "成長",
               "transition_keys": [
-                "bank_lending_rate",
-                "credit_change",
-                "m2_yoy"
+                "yield_curve",
+                "pe_ratio",
+                "margin_balance"
               ],
-              "narrative": "Transitioned from 復甦 to 成長 as rates, credit, and liquidity shifted.",
+              "narrative": "Rates, credit, and liquidity all support a constructive cycle backdrop.",
               "stance": "hold cyclical exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.129%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮",
+                "殖利率曲線倒掛 (-0.10)"
+              ],
+              "supporting_signals": [
+                "利率開始走寬鬆",
+                "放款利率仍具支撐 (2.129%)"
+              ],
+              "conflicting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮",
+                "殖利率曲線倒掛 (-0.10)"
+              ]
             },
             {
               "month": "2024-11",
               "as_of": "2024-11",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "Rate trend rising",
-                "Credit trend stable",
-                "Money trend contracting",
-                "Bank lending rate 2.166%",
-                "M2 YoY 5.47%",
-                "Yield curve inverted"
+                "放款利率仍具支撐 (2.166%)"
               ],
               "metrics": [
                 {
@@ -7158,8 +7928,8 @@
                 {
                   "id": "yield_curve",
                   "label": "Yield Curve Spread",
-                  "value": -0.03049999999999997,
-                  "display_value": "-0.03",
+                  "value": -0.04049999999999998,
+                  "display_value": "-0.04",
                   "display_format": "spread",
                   "status": "negative",
                   "proxy_label": "Proxy"
@@ -7181,12 +7951,29 @@
                 "pe_ratio",
                 "margin_balance"
               ],
-              "narrative": "Transitioned from 成長 to 復甦 as rates, credit, and liquidity shifted.",
-              "stance": "turn risk back on",
+              "narrative": "Rates, credit, and liquidity all support a constructive cycle backdrop.",
+              "stance": "hold cyclical exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_summary": "目前沒有足夠訊號由 成長 轉為 榮景。",
+              "support_current_phase_signals": [
+                "放款利率仍具支撐 (2.166%)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [
+                "信用環境止穩",
+                "流動性不再收縮",
+                "利率重新偏緊",
+                "殖利率曲線倒掛 (-0.04)"
+              ],
+              "supporting_signals": [
+                "放款利率仍具支撐 (2.166%)"
+              ],
+              "conflicting_signals": [
+                "信用環境止穩",
+                "流動性不再收縮",
+                "利率重新偏緊",
+                "殖利率曲線倒掛 (-0.04)"
+              ]
             }
           ]
         },
@@ -7196,10 +7983,9 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "Stock trend neutral",
-            "Credit trend stable",
-            "Inventory trend stable",
-            "Credit spread 0.68"
+            "風險偏好不再惡化",
+            "信用壓力不再惡化",
+            "信用利差收斂 (0.70)"
           ],
           "metrics": [
             {
@@ -7229,8 +8015,8 @@
             {
               "id": "credit_spread",
               "label": "Credit Spread",
-              "value": 0.6825,
-              "display_value": "0.68",
+              "value": 0.7002,
+              "display_value": "0.70",
               "display_format": "spread",
               "status": "neutral"
             },
@@ -7276,9 +8062,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend bullish",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -7350,9 +8135,20 @@
               ],
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [
+                "股市年增率具建設性 (6.6%)"
+              ],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -7361,9 +8157,8 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend neutral",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -7436,8 +8231,17 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
+              ],
               "conflicting_signals": []
             },
             {
@@ -7446,10 +8250,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend neutral",
-                "Credit trend stable",
-                "Inventory trend stable",
-                "Credit spread 0.62"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.62)"
               ],
               "metrics": [
                 {
@@ -7522,8 +8325,19 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.62)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.62)"
+              ],
               "conflicting_signals": []
             },
             {
@@ -7532,10 +8346,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend bullish",
-                "Credit trend stable",
-                "Inventory trend stable",
-                "Credit spread 0.53"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.53)"
               ],
               "metrics": [
                 {
@@ -7565,7 +8378,7 @@
                 {
                   "id": "credit_spread",
                   "label": "Credit Spread",
-                  "value": 0.5299,
+                  "value": 0.5302,
                   "display_value": "0.53",
                   "display_format": "spread",
                   "status": "neutral"
@@ -7608,8 +8421,21 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "雖然出現 股市年增率具建設性 (6.4%)，但還不足以由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.53)"
+              ],
+              "support_next_phase_signals": [
+                "股市年增率具建設性 (6.4%)"
+              ],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.53)"
+              ],
               "conflicting_signals": []
             },
             {
@@ -7618,10 +8444,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend neutral",
-                "Credit trend stable",
-                "Inventory trend stable",
-                "Credit spread 0.58"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.55)"
               ],
               "metrics": [
                 {
@@ -7651,8 +8476,8 @@
                 {
                   "id": "credit_spread",
                   "label": "Credit Spread",
-                  "value": 0.5799,
-                  "display_value": "0.58",
+                  "value": 0.5538,
+                  "display_value": "0.55",
                   "display_format": "spread",
                   "status": "neutral"
                 },
@@ -7694,8 +8519,19 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.55)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.55)"
+              ],
               "conflicting_signals": []
             },
             {
@@ -7704,9 +8540,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend bearish",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.69)"
               ],
               "metrics": [
                 {
@@ -7736,8 +8572,8 @@
                 {
                   "id": "credit_spread",
                   "label": "Credit Spread",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": 0.6866,
+                  "display_value": "0.69",
                   "display_format": "spread",
                   "status": "neutral"
                 },
@@ -7779,8 +8615,19 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.69)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.69)"
+              ],
               "conflicting_signals": []
             },
             {
@@ -7789,10 +8636,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend neutral",
-                "Credit trend stable",
-                "Inventory trend stable",
-                "Credit spread 0.77"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.74)"
               ],
               "metrics": [
                 {
@@ -7822,8 +8668,8 @@
                 {
                   "id": "credit_spread",
                   "label": "Credit Spread",
-                  "value": 0.7673,
-                  "display_value": "0.77",
+                  "value": 0.7428,
+                  "display_value": "0.74",
                   "display_format": "spread",
                   "status": "neutral"
                 },
@@ -7865,8 +8711,19 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.74)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.74)"
+              ],
               "conflicting_signals": []
             },
             {
@@ -7875,9 +8732,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend bullish",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.74)"
               ],
               "metrics": [
                 {
@@ -7907,8 +8764,8 @@
                 {
                   "id": "credit_spread",
                   "label": "Credit Spread",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": 0.7435,
+                  "display_value": "0.74",
                   "display_format": "spread",
                   "status": "neutral"
                 },
@@ -7950,8 +8807,21 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "雖然出現 股市年增率具建設性 (5.1%)，但還不足以由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.74)"
+              ],
+              "support_next_phase_signals": [
+                "股市年增率具建設性 (5.1%)"
+              ],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.74)"
+              ],
               "conflicting_signals": []
             },
             {
@@ -7960,10 +8830,9 @@
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend neutral",
-                "Credit trend stable",
-                "Inventory trend stable",
-                "Credit spread 0.68"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.70)"
               ],
               "metrics": [
                 {
@@ -7993,8 +8862,8 @@
                 {
                   "id": "credit_spread",
                   "label": "Credit Spread",
-                  "value": 0.6825,
-                  "display_value": "0.68",
+                  "value": 0.7002,
+                  "display_value": "0.70",
                   "display_format": "spread",
                   "status": "neutral"
                 },
@@ -8036,8 +8905,19 @@
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
+              "decision_summary": "目前沒有足夠訊號由 復甦 轉為 成長。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.70)"
+              ],
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化",
+                "信用利差收斂 (0.70)"
+              ],
               "conflicting_signals": []
             }
           ]
