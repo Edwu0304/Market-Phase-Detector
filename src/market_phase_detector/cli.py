@@ -4,6 +4,7 @@ from pathlib import Path
 from market_phase_detector.collectors.tw_official import TaiwanOfficialCollector
 from market_phase_detector.collectors.tw_external import TaiwanExternalCollector
 from market_phase_detector.collectors.us_fred import FredCollector
+from market_phase_detector.collectors.us_market import USMarketCollector
 from market_phase_detector.content import build_site_content
 from market_phase_detector.engine.state_machine import resolve_transition
 from market_phase_detector.engine.tw_rules import derive_tw_candidate
@@ -295,11 +296,12 @@ def fetch_live_dashboard_payload() -> dict:
 
 def fetch_live_dashboard_bundle(months: int = 24) -> dict:
     us_collector = FredCollector()
+    us_market = USMarketCollector()
     tw_collector = TaiwanOfficialCollector()
     tw_external = TaiwanExternalCollector()
-    us_history = build_us_history_observations(us_collector, months=months)
+    us_history = build_us_history_observations(us_collector, market_collector=us_market, months=months)
     tw_history = build_tw_history_observations(tw_collector.fetch_ndc_zip_history_metrics(NDC_ZIP_URL), external_collector=tw_external, months=months)
-    us_observations = build_us_observations(us_collector)
+    us_observations = build_us_observations(us_collector, market_collector=us_market)
     tw_observations = build_tw_observations(tw_collector, external_collector=tw_external)
     latest_payload = _build_latest_payload(us_observations, tw_observations, us_history, tw_history)
     history_payloads = _build_history_payloads(us_history, tw_history)

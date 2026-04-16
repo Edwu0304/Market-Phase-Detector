@@ -2,6 +2,8 @@ from market_phase_detector.collectors.tw_external import (
     parse_cbc_m2_from_homepage,
     parse_cier_pmi_article,
     parse_cier_pmi_history_page,
+    parse_tw_revenue_snapshot,
+    parse_twse_market_snapshot,
 )
 
 
@@ -68,4 +70,66 @@ def test_parse_cbc_m2_from_homepage_extracts_latest_value() -> None:
         "date": "2026-03",
         "m2_yoy": 5.38,
         "source_date": "2026-03-19",
+    }
+
+
+def test_parse_twse_market_snapshot_extracts_breadth_and_sector_leadership() -> None:
+    payload = {
+        "tables": [
+            {
+                "title": "115年04月10日 價格指數(臺灣證券交易所)",
+                "fields": ["指數", "收盤指數", "漲跌(+/-)", "漲跌點數", "漲跌百分比(%)", "特殊處理註記"],
+                "data": [
+                    ["水泥類指數", "126.89", "+", "0.55", "0.44", ""],
+                    ["塑膠類指數", "188.63", "-", "4.71", "-2.44", ""],
+                    ["電機機械類指數", "473.53", "+", "8.54", "1.84", ""],
+                ],
+            },
+            {
+                "title": "漲跌證券數合計",
+                "fields": ["類型", "整體市場", "股票"],
+                "data": [
+                    ["上漲(漲停)", "8,084(208)", "520(39)"],
+                    ["下跌(跌停)", "3,989(78)", "452(1)"],
+                    ["持平", "691", "94"],
+                ],
+            },
+        ]
+    }
+
+    record = parse_twse_market_snapshot(payload, "2026-04-10")
+
+    assert record == {
+        "date": "2026-04-10",
+        "advance_count": 520,
+        "decline_count": 452,
+        "unchanged_count": 94,
+        "advance_decline_spread": 68,
+        "breadth_ratio": 1.1504,
+        "sector_advance_count": 2,
+        "sector_decline_count": 1,
+        "sector_breadth_ratio": 2.0,
+        "sector_leader": "電機機械類指數",
+        "sector_leader_return": 1.84,
+        "sector_laggard": "塑膠類指數",
+        "sector_laggard_return": -2.44,
+    }
+
+
+def test_parse_tw_revenue_snapshot_aggregates_yoy_growth() -> None:
+    listed = [
+        {"資料年月": "11503", "營業收入-當月營收": "100", "營業收入-去年當月營收": "80"},
+        {"資料年月": "11503", "營業收入-當月營收": "200", "營業收入-去年當月營收": "160"},
+    ]
+    otc = [
+        {"資料年月": "11503", "營業收入-當月營收": "150", "營業收入-去年當月營收": "120"},
+    ]
+
+    record = parse_tw_revenue_snapshot(listed, otc)
+
+    assert record == {
+        "date": "2026-03",
+        "revenue_current_total": 450.0,
+        "revenue_year_ago_total": 360.0,
+        "revenue_yoy": 25.0,
     }

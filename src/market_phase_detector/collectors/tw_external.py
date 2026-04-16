@@ -20,6 +20,10 @@ MOL_CLAIMS_URL = "https://statdb.mol.gov.tw/html/year/year12/37040.csv"
 NCU_CCI_URL = "https://rcted.ncu.edu.tw/"
 TWSE_YIELDS_URL = "https://www.twse.com.tw/res/data/zh/home/yields.json"
 TWSE_VALUES_URL = "https://www.twse.com.tw/res/data/zh/home/values.json"
+TWSE_MI_INDEX_URL = "https://www.twse.com.tw/exchangeReport/MI_INDEX"
+TWSE_REVENUE_LISTED_URL = "https://openapi.twse.com.tw/v1/opendata/t187ap05_L"
+TWSE_REVENUE_FINANCIAL_URL = "https://openapi.twse.com.tw/v1/opendata/t187ap05_P"
+TPEX_REVENUE_URL = "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O"
 CBC_DISCOUNT_RATE_URL = "https://www.cbc.gov.tw/tw/lp-640-1-1-20.html"
 CBC_HOME_URL = "https://www.cbc.gov.tw/tw/mp-1.html"
 CBC_M2_HISTORY_URL = "https://www.cbc.gov.tw/tw/lp-643-1.html"
@@ -359,6 +363,159 @@ def fetch_latest_twse_margin(collector: HttpCollector | None) -> dict | None:
     }
 
 
+def _parse_twse_count(value: str | None) -> int | None:
+    if value is None:
+        return None
+    match = re.search(r"([\d,]+)", str(value))
+    if not match:
+        return None
+    return int(match.group(1).replace(",", ""))
+
+
+def parse_twse_market_snapshot(payload: dict, date_label: str) -> dict | None:
+    tables = payload.get("tables", [])
+    breadth_table = next((table for table in tables if table.get("title") == "漲跌證券數合計"), None)
+    price_table = next((table for table in tables if "價格指數(臺灣證券交易所)" in str(table.get("title", ""))), None)
+    if not breadth_table or not price_table:
+        return None
+
+    advance_count = decline_count = unchanged_count = None
+    for row in breadth_table.get("data", []):
+        if not row or len(row) < 3:
+            continue
+        kind = str(row[0])
+        if kind.startswith("上漲"):
+            advance_count = _parse_twse_count(row[2])
+        elif kind.startswith("下跌"):
+            decline_count = _parse_twse_count(row[2])
+        elif kind.startswith("持平"):
+            unchanged_count = _parse_twse_count(row[2])
+
+    sector_rows = []
+    for row in price_table.get("data", []):
+        if len(row) < 5:
+            continue
+        name = str(row[0])
+        if "類指數" not in name:
+            continue
+        pct = _safe_float(row[4])
+        if pct is None:
+            continue
+        sector_rows.append((name, pct))
+
+    if not sector_rows:
+        return None
+
+    sector_leader, sector_leader_return = max(sector_rows, key=lambda item: item[1])
+    sector_laggard, sector_laggard_return = min(sector_rows, key=lambda item: item[1])
+    sector_advance_count = sum(1 for _, pct in sector_rows if pct > 0)
+    sector_decline_count = sum(1 for _, pct in sector_rows if pct < 0)
+    sector_breadth_ratio = None
+    if sector_decline_count:
+        sector_breadth_ratio = round(sector_advance_count / sector_decline_count, 4)
+    breadth_ratio = None
+    if advance_count is not None and decline_count not in {None, 0}:
+        breadth_ratio = round(advance_count / decline_count, 4)
+
+    return {
+        "date": date_label,
+        "advance_count": advance_count,
+        "decline_count": decline_count,
+        "unchanged_count": unchanged_count,
+        "advance_decline_spread": None if advance_count is None or decline_count is None else advance_count - decline_count,
+        "breadth_ratio": breadth_ratio,
+        "sector_advance_count": sector_advance_count,
+        "sector_decline_count": sector_decline_count,
+        "sector_breadth_ratio": sector_breadth_ratio,
+        "sector_leader": sector_leader,
+        "sector_leader_return": sector_leader_return,
+        "sector_laggard": sector_laggard,
+        "sector_laggard_return": sector_laggard_return,
+    }
+
+
+def parse_tw_revenue_snapshot(listed_rows: list[dict], otc_rows: list[dict]) -> dict | None:
+    all_rows = []
+    for row in listed_rows + otc_rows:
+        current = _safe_float(row.get("營業收入-當月營收"))
+        previous = _safe_float(row.get("營業收入-去年當月營收"))
+        month_label = row.get("資料年月")
+        if current is None or previous is None or month_label in {None, ""}:
+            continue
+        all_rows.append((month_label, current, previous))
+
+    if not all_rows:
+        return None
+
+    target_month = max(item[0] for item in all_rows)
+    current_total = sum(current for month, current, _ in all_rows if month == target_month)
+    previous_total = sum(previous for month, _, previous in all_rows if month == target_month)
+    if previous_total == 0:
+        return None
+
+    roc_year = int(target_month[:3]) + 1911
+    month_num = int(target_month[3:])
+    return {
+        "date": _month_key(roc_year, month_num),
+        "revenue_current_total": current_total,
+        "revenue_year_ago_total": previous_total,
+        "revenue_yoy": round((current_total / previous_total - 1) * 100, 2),
+    }
+
+
+def fetch_latest_tw_revenue_snapshot(collector: HttpCollector | None) -> dict | None:
+    timeout = collector.timeout if collector else 30
+    listed = requests.get(TWSE_REVENUE_LISTED_URL, timeout=timeout).json()
+    financial = requests.get(TWSE_REVENUE_FINANCIAL_URL, timeout=timeout).json()
+    otc = requests.get(TPEX_REVENUE_URL, timeout=timeout).json()
+    return parse_tw_revenue_snapshot(listed + financial, otc)
+
+
+def fetch_latest_twse_market_snapshot(collector: HttpCollector | None) -> dict | None:
+    timeout = collector.timeout if collector else 30
+    today = datetime.now()
+    for offset in range(10):
+        candidate = today.replace(day=max(1, today.day - offset))
+        date_str = candidate.strftime("%Y%m%d")
+        response = requests.get(TWSE_MI_INDEX_URL, params={"response": "json", "date": date_str, "type": "ALLBUT0999"}, timeout=timeout)
+        payload = response.json()
+        if payload.get("stat") != "OK":
+            continue
+        record = parse_twse_market_snapshot(payload, candidate.strftime("%Y-%m-%d"))
+        if record:
+            return record
+    return None
+
+
+def fetch_twse_market_snapshot_history(collector: HttpCollector | None, months: int = 24) -> list[dict]:
+    timeout = collector.timeout if collector else 30
+    now = datetime.now()
+    rows: list[dict] = []
+    for offset in range(months):
+        year = now.year
+        month = now.month - offset
+        while month <= 0:
+            month += 12
+            year -= 1
+        last_day = calendar.monthrange(year, month)[1]
+        record = None
+        for day in range(last_day, 0, -1):
+            candidate = datetime(year, month, day)
+            if candidate.weekday() >= 5:
+                continue
+            date_str = candidate.strftime("%Y%m%d")
+            response = requests.get(TWSE_MI_INDEX_URL, params={"response": "json", "date": date_str, "type": "ALLBUT0999"}, timeout=timeout)
+            payload = response.json()
+            if payload.get("stat") != "OK":
+                continue
+            record = parse_twse_market_snapshot(payload, candidate.strftime("%Y-%m-%d"))
+            if record:
+                break
+        if record:
+            rows.append(record)
+    return sorted(rows, key=lambda row: row["date"])
+
+
 def fetch_cbc_discount_rate(collector: HttpCollector | None) -> list[dict]:
     timeout = collector.timeout if collector else 30
     html_text = requests.get(CBC_DISCOUNT_RATE_URL, timeout=timeout).text
@@ -416,6 +573,15 @@ class TaiwanExternalCollector(HttpCollector):
 
     def fetch_latest_twse_margin(self) -> dict | None:
         return fetch_latest_twse_margin(self)
+
+    def fetch_latest_twse_market_snapshot(self) -> dict | None:
+        return fetch_latest_twse_market_snapshot(self)
+
+    def fetch_twse_market_snapshot_history(self, months: int = 24) -> list[dict]:
+        return fetch_twse_market_snapshot_history(self, months)
+
+    def fetch_latest_tw_revenue_snapshot(self) -> dict | None:
+        return fetch_latest_tw_revenue_snapshot(self)
 
     def fetch_cbc_discount_rate(self) -> list[dict]:
         return fetch_cbc_discount_rate(self)

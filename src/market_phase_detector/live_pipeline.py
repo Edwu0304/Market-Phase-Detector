@@ -3,6 +3,7 @@ from datetime import date
 from statistics import mean
 
 from market_phase_detector.collectors.tw_official import extract_ndc_history_metrics
+from market_phase_detector.collectors.us_market import USMarketCollector
 from market_phase_detector.collectors.tw_macro_calculator import compute_sahm_rule, compute_tw_full_metrics
 
 
@@ -12,6 +13,18 @@ US_SERIES = {
     "sahm_rule": "SAHMCURRENT",
     "yield_curve": "T10Y2Y",
     "hy_spread": "BAMLH0A0HYM2",
+    "inflation_expectation_5y": "T5YIE",
+    "funding_stress": "STLFSI4",
+    "lending_standards": "DRTSCILM",
+    "yield_10y": "DGS10",
+    "yield_2y": "DGS2",
+    "commodity_index": "PPIACO",
+    "industrial_metals_index": "WPU10",
+    "policy_uncertainty": "USEPUINDXM",
+    "hy_yield": "BAMLH0A0HYM2EY",
+    "earnings_growth_proxy": "A3202C0A144NBEA",
+    "delinquency_rate": "DRBLACBS",
+    "chargeoff_rate": "CORBLACBS",
 }
 
 NDC_BUSINESS_INDICATORS_URL = "https://www.ndc.gov.tw/en/Content_List.aspx?n=7FC514B520F97C0D"
@@ -24,6 +37,16 @@ def classify_direction(change: float, threshold: float = 0.05) -> str:
     if change < -threshold:
         return "deteriorating"
     return "stable"
+
+
+def classify_breadth_regime(ratio: float | None) -> str:
+    if ratio is None:
+        return "unknown"
+    if ratio >= 1.2:
+        return "broadening"
+    if ratio <= 0.8:
+        return "narrowing"
+    return "balanced"
 
 
 def classify_level_trend(current: float | int | None, previous: float | int | None) -> str:
@@ -56,6 +79,88 @@ def compute_monthly_change(rows: list[dict]) -> float:
     return round(rows[-1]["value"] - rows[-2]["value"], 4)
 
 
+def compute_year_over_year_change(current: float | None, previous: float | None) -> float | None:
+    if current is None or previous in {None, 0}:
+        return None
+    return round((current / previous - 1) * 100, 2)
+
+
+def classify_yield_curve_regime(current_10y: float | None, previous_10y: float | None, current_2y: float | None, previous_2y: float | None) -> str:
+    if None in {current_10y, previous_10y, current_2y, previous_2y}:
+        return "unknown"
+    current_spread = current_10y - current_2y
+    previous_spread = previous_10y - previous_2y
+    if current_spread < 0:
+        return "inversion"
+    spread_change = current_spread - previous_spread
+    long_change = current_10y - previous_10y
+    short_change = current_2y - previous_2y
+    if spread_change > 0:
+        if long_change >= 0 and short_change >= 0:
+            return "bear_steepening"
+        return "bull_steepening"
+    if spread_change < 0:
+        return "flattening"
+    return "stable"
+
+
+def compute_distress_proxy(credit_spread: float | None, funding_stress: float | None, lending_standards: float | None) -> float | None:
+    if credit_spread is None and funding_stress is None and lending_standards is None:
+        return None
+    score = 0.0
+    if credit_spread is not None:
+        score += credit_spread / 2.0
+    if funding_stress is not None:
+        score += max(funding_stress, 0)
+    if lending_standards is not None:
+        score += max(lending_standards, 0) / 20.0
+    return round(score, 4)
+
+
+def classify_distress_regime(distress_proxy: float | None) -> str:
+    if distress_proxy is None:
+        return "unknown"
+    if distress_proxy >= 2.5:
+        return "high"
+    if distress_proxy >= 1.0:
+        return "elevated"
+    return "contained"
+
+
+def compute_issuance_appetite_proxy(hy_yield: float | None, lending_standards: float | None) -> float | None:
+    if hy_yield is None and lending_standards is None:
+        return None
+    hy_component = 0.0 if hy_yield is None else max(0.0, 10.0 - hy_yield)
+    lending_component = 0.0 if lending_standards is None else max(0.0, 12.0 - lending_standards / 2.0)
+    return round(hy_component + lending_component, 4)
+
+
+def classify_issuance_appetite(issuance_proxy: float | None) -> str:
+    if issuance_proxy is None:
+        return "unknown"
+    if issuance_proxy >= 14:
+        return "open"
+    if issuance_proxy >= 8:
+        return "selective"
+    return "tight"
+
+
+def compute_default_pressure_proxy(delinquency_rate: float | None, chargeoff_rate: float | None) -> float | None:
+    if delinquency_rate is None and chargeoff_rate is None:
+        return None
+    return round((delinquency_rate or 0.0) + (chargeoff_rate or 0.0), 4)
+
+
+def classify_default_pressure(default_pressure_proxy: float | None) -> str:
+    if default_pressure_proxy is None:
+        return "unknown"
+    if default_pressure_proxy >= 2.5:
+        return "high"
+    if default_pressure_proxy >= 1.0:
+        return "elevated"
+    return "contained"
+
+
 def month_key_from_date(value: str) -> str:
     return value[:7]
 
@@ -83,12 +188,39 @@ def _latest_row_for_month(rows: list[dict], month_key: str) -> dict | None:
     return eligible[-1]
 
 
-def build_us_observations(collector) -> dict:
+def build_us_observations(collector, market_collector=None) -> dict:
     leading_index = collector.fetch_latest_csv(US_SERIES["leading_index"])
     claims = collector.fetch_latest_csv(US_SERIES["claims"])
     sahm = collector.fetch_latest_csv(US_SERIES["sahm_rule"])
     curve = collector.fetch_latest_csv(US_SERIES["yield_curve"])
     hy = collector.fetch_latest_csv(US_SERIES["hy_spread"])
+    inflation = collector.fetch_latest_csv(US_SERIES["inflation_expectation_5y"])
+    funding = collector.fetch_latest_csv(US_SERIES["funding_stress"])
+    lending = collector.fetch_latest_csv(US_SERIES["lending_standards"])
+    yield_10y = collector.fetch_latest_csv(US_SERIES["yield_10y"])
+    yield_2y = collector.fetch_latest_csv(US_SERIES["yield_2y"])
+    commodity = collector.fetch_latest_csv(US_SERIES["commodity_index"])
+    metals = collector.fetch_latest_csv(US_SERIES["industrial_metals_index"])
+    policy_uncertainty = collector.fetch_latest_csv(US_SERIES["policy_uncertainty"])
+    hy_yield = collector.fetch_latest_csv(US_SERIES["hy_yield"])
+    earnings = collector.fetch_latest_csv(US_SERIES["earnings_growth_proxy"])
+    delinquency = collector.fetch_latest_csv(US_SERIES["delinquency_rate"])
+    chargeoff = collector.fetch_latest_csv(US_SERIES["chargeoff_rate"])
+    sector_rotation = market_collector.fetch_sector_rotation_snapshot() if market_collector else None
+    intermarket = market_collector.fetch_intermarket_snapshot() if market_collector else None
+    yield_curve_regime = classify_yield_curve_regime(
+        yield_10y["latest"]["value"],
+        yield_10y["rows"][-2]["value"] if len(yield_10y["rows"]) >= 2 else None,
+        yield_2y["latest"]["value"],
+        yield_2y["rows"][-2]["value"] if len(yield_2y["rows"]) >= 2 else None,
+    )
+    distress_proxy = compute_distress_proxy(hy["latest"]["value"], funding["latest"]["value"], lending["latest"]["value"])
+    issuance_appetite_proxy = compute_issuance_appetite_proxy(hy_yield["latest"]["value"], lending["latest"]["value"])
+    earnings_growth_proxy = compute_year_over_year_change(
+        earnings["latest"]["value"],
+        earnings["rows"][-2]["value"] if len(earnings["rows"]) >= 2 else None,
+    )
+    default_pressure_proxy = compute_default_pressure_proxy(delinquency["latest"]["value"], chargeoff["latest"]["value"])
 
     return {
         "as_of": month_key_from_date(min(
@@ -96,22 +228,77 @@ def build_us_observations(collector) -> dict:
             sahm["latest"]["date"],
             curve["latest"]["date"],
             hy["latest"]["date"],
+            inflation["latest"]["date"],
+            funding["latest"]["date"],
+            lending["latest"]["date"],
+            commodity["latest"]["date"],
+            metals["latest"]["date"],
+            policy_uncertainty["latest"]["date"],
+            hy_yield["latest"]["date"],
         )),
         "leading_index_change": compute_monthly_change(leading_index["rows"]),
         "claims_trend": compute_claims_trend(claims["rows"]),
         "sahm_rule": sahm["latest"]["value"],
         "yield_curve": curve["latest"]["value"],
         "hy_spread": hy["latest"]["value"],
+        "inflation_expectation_5y": inflation["latest"]["value"],
+        "funding_stress": funding["latest"]["value"],
+        "lending_standards": lending["latest"]["value"],
+        "yield_10y": yield_10y["latest"]["value"],
+        "yield_2y": yield_2y["latest"]["value"],
+        "yield_curve_regime": yield_curve_regime,
+        "commodity_index": commodity["latest"]["value"],
+        "commodity_trend": classify_direction(compute_monthly_change(commodity["rows"])),
+        "industrial_metals_index": metals["latest"]["value"],
+        "industrial_metals_trend": classify_direction(compute_monthly_change(metals["rows"])),
+        "policy_uncertainty": policy_uncertainty["latest"]["value"],
+        "hy_yield": hy_yield["latest"]["value"],
+        "earnings_growth_proxy": earnings_growth_proxy,
+        "delinquency_rate": delinquency["latest"]["value"],
+        "chargeoff_rate": chargeoff["latest"]["value"],
+        "default_pressure_proxy": default_pressure_proxy,
+        "default_pressure_regime": classify_default_pressure(default_pressure_proxy),
+        "distress_proxy": distress_proxy,
+        "distress_regime": classify_distress_regime(distress_proxy),
+        "issuance_appetite_proxy": issuance_appetite_proxy,
+        "issuance_appetite_regime": classify_issuance_appetite(issuance_appetite_proxy),
+        "sector_leader": None if sector_rotation is None else sector_rotation.get("sector_leader"),
+        "sector_leader_return": None if sector_rotation is None else sector_rotation.get("sector_leader_return"),
+        "sector_laggard": None if sector_rotation is None else sector_rotation.get("sector_laggard"),
+        "sector_laggard_return": None if sector_rotation is None else sector_rotation.get("sector_laggard_return"),
+        "sector_advance_count": None if sector_rotation is None else sector_rotation.get("sector_advance_count"),
+        "sector_decline_count": None if sector_rotation is None else sector_rotation.get("sector_decline_count"),
+        "sector_breadth_ratio": None if sector_rotation is None else sector_rotation.get("sector_breadth_ratio"),
+        "bond_return_3m": None if intermarket is None else intermarket.get("bond_return_3m"),
+        "equity_return_3m": None if intermarket is None else intermarket.get("equity_return_3m"),
+        "commodity_return_3m": None if intermarket is None else intermarket.get("commodity_return_3m"),
+        "intermarket_order": None if intermarket is None else intermarket.get("intermarket_order"),
     }
 
 
-def build_us_history_observations(collector, months: int = 12) -> list[dict]:
+def build_us_history_observations(collector, market_collector=None, months: int = 12) -> list[dict]:
     series = {name: collector.fetch_latest_csv(series_id) for name, series_id in US_SERIES.items()}
+    sector_rotation_history = market_collector.fetch_sector_rotation_history(months=months) if market_collector else []
+    sector_rotation_map = {row["date"]: row for row in sector_rotation_history}
+    intermarket_history = market_collector.fetch_intermarket_history(months=months) if market_collector else []
+    intermarket_map = {row["date"]: row for row in intermarket_history}
     leading_rows = series["leading_index"]["rows"]
     claims_rows = series["claims"]["rows"]
     sahm_rows = series["sahm_rule"]["rows"]
     curve_rows = series["yield_curve"]["rows"]
     hy_rows = series["hy_spread"]["rows"]
+    inflation_rows = series["inflation_expectation_5y"]["rows"]
+    funding_rows = series["funding_stress"]["rows"]
+    lending_rows = series["lending_standards"]["rows"]
+    yield_10y_rows = series["yield_10y"]["rows"]
+    yield_2y_rows = series["yield_2y"]["rows"]
+    commodity_rows = series["commodity_index"]["rows"]
+    metals_rows = series["industrial_metals_index"]["rows"]
+    policy_uncertainty_rows = series["policy_uncertainty"]["rows"]
+    hy_yield_rows = series["hy_yield"]["rows"]
+    earnings_rows = series["earnings_growth_proxy"]["rows"]
+    delinquency_rows = series["delinquency_rate"]["rows"]
+    chargeoff_rows = series["chargeoff_rate"]["rows"]
 
     history: list[dict] = []
     for index in range(1, len(leading_rows)):
@@ -123,11 +310,36 @@ def build_us_history_observations(collector, months: int = 12) -> list[dict]:
         sahm_row = _latest_row_for_month(sahm_rows, month_key)
         curve_row = _latest_row_for_month(curve_rows, month_key)
         hy_row = _latest_row_for_month(hy_rows, month_key)
+        inflation_row = _latest_row_for_month(inflation_rows, month_key)
+        funding_row = _latest_row_for_month(funding_rows, month_key)
+        lending_row = _latest_row_for_month(lending_rows, month_key)
+        yield_10y_row = _latest_row_for_month(yield_10y_rows, month_key)
+        yield_2y_row = _latest_row_for_month(yield_2y_rows, month_key)
+        commodity_row = _latest_row_for_month(commodity_rows, month_key)
+        metals_row = _latest_row_for_month(metals_rows, month_key)
+        policy_uncertainty_row = _latest_row_for_month(policy_uncertainty_rows, month_key)
+        hy_yield_row = _latest_row_for_month(hy_yield_rows, month_key)
+        earnings_row = _latest_row_for_month(earnings_rows, month_key)
+        delinquency_row = _latest_row_for_month(delinquency_rows, month_key)
+        chargeoff_row = _latest_row_for_month(chargeoff_rows, month_key)
+        previous_month_key = month_key_from_date(previous["date"])
+        prev_yield_10y_row = _latest_row_for_month(yield_10y_rows, previous_month_key)
+        prev_yield_2y_row = _latest_row_for_month(yield_2y_rows, previous_month_key)
+        prev_commodity_row = _latest_row_for_month(commodity_rows, previous_month_key)
+        prev_metals_row = _latest_row_for_month(metals_rows, previous_month_key)
+        prev_year_month_key = f"{int(month_key[:4]) - 1}-{month_key[5:7]}"
+        prev_earnings_row = _latest_row_for_month(earnings_rows, prev_year_month_key)
 
-        if len(claims_window) < 8 or not all([sahm_row, curve_row, hy_row]):
+        if len(claims_window) < 8 or not all([sahm_row, curve_row, hy_row, inflation_row, funding_row, lending_row, yield_10y_row, yield_2y_row, commodity_row, metals_row, policy_uncertainty_row, hy_yield_row]):
             continue
 
         delta = round(current["value"] - previous["value"], 4)
+        distress_proxy = compute_distress_proxy(hy_row["value"], funding_row["value"], lending_row["value"])
+        issuance_appetite_proxy = compute_issuance_appetite_proxy(hy_yield_row["value"], lending_row["value"])
+        default_pressure_proxy = compute_default_pressure_proxy(
+            delinquency_row["value"] if delinquency_row else None,
+            chargeoff_row["value"] if chargeoff_row else None,
+        )
         history.append(
             {
                 "month": month_key,
@@ -139,6 +351,50 @@ def build_us_history_observations(collector, months: int = 12) -> list[dict]:
                 "sahm_rule": sahm_row["value"],
                 "yield_curve": curve_row["value"],
                 "hy_spread": hy_row["value"],
+                "inflation_expectation_5y": inflation_row["value"],
+                "funding_stress": funding_row["value"],
+                "lending_standards": lending_row["value"],
+                "yield_10y": yield_10y_row["value"],
+                "yield_2y": yield_2y_row["value"],
+                "yield_curve_regime": classify_yield_curve_regime(
+                    yield_10y_row["value"],
+                    prev_yield_10y_row["value"] if prev_yield_10y_row else None,
+                    yield_2y_row["value"],
+                    prev_yield_2y_row["value"] if prev_yield_2y_row else None,
+                ),
+                "commodity_index": commodity_row["value"],
+                "commodity_trend": classify_direction(
+                    0.0 if prev_commodity_row is None else commodity_row["value"] - prev_commodity_row["value"]
+                ),
+                "industrial_metals_index": metals_row["value"],
+                "industrial_metals_trend": classify_direction(
+                    0.0 if prev_metals_row is None else metals_row["value"] - prev_metals_row["value"]
+                ),
+                "policy_uncertainty": policy_uncertainty_row["value"],
+                "hy_yield": hy_yield_row["value"],
+                "earnings_growth_proxy": compute_year_over_year_change(
+                    earnings_row["value"] if earnings_row else None,
+                    prev_earnings_row["value"] if prev_earnings_row else None,
+                ),
+                "delinquency_rate": None if delinquency_row is None else delinquency_row["value"],
+                "chargeoff_rate": None if chargeoff_row is None else chargeoff_row["value"],
+                "default_pressure_proxy": default_pressure_proxy,
+                "default_pressure_regime": classify_default_pressure(default_pressure_proxy),
+                "distress_proxy": distress_proxy,
+                "distress_regime": classify_distress_regime(distress_proxy),
+                "issuance_appetite_proxy": issuance_appetite_proxy,
+                "issuance_appetite_regime": classify_issuance_appetite(issuance_appetite_proxy),
+                "sector_leader": None if month_key not in sector_rotation_map else sector_rotation_map[month_key].get("sector_leader"),
+                "sector_leader_return": None if month_key not in sector_rotation_map else sector_rotation_map[month_key].get("sector_leader_return"),
+                "sector_laggard": None if month_key not in sector_rotation_map else sector_rotation_map[month_key].get("sector_laggard"),
+                "sector_laggard_return": None if month_key not in sector_rotation_map else sector_rotation_map[month_key].get("sector_laggard_return"),
+                "sector_advance_count": None if month_key not in sector_rotation_map else sector_rotation_map[month_key].get("sector_advance_count"),
+                "sector_decline_count": None if month_key not in sector_rotation_map else sector_rotation_map[month_key].get("sector_decline_count"),
+                "sector_breadth_ratio": None if month_key not in sector_rotation_map else sector_rotation_map[month_key].get("sector_breadth_ratio"),
+                "bond_return_3m": None if month_key not in intermarket_map else intermarket_map[month_key].get("bond_return_3m"),
+                "equity_return_3m": None if month_key not in intermarket_map else intermarket_map[month_key].get("equity_return_3m"),
+                "commodity_return_3m": None if month_key not in intermarket_map else intermarket_map[month_key].get("commodity_return_3m"),
+                "intermarket_order": None if month_key not in intermarket_map else intermarket_map[month_key].get("intermarket_order"),
             }
         )
 
@@ -197,6 +453,31 @@ def _build_tw_external_latest(external_collector) -> dict:
         pass
 
     try:
+        market_snapshot = external_collector.fetch_latest_twse_market_snapshot()
+        if market_snapshot:
+            extra_data["breadth_ratio"] = market_snapshot.get("breadth_ratio")
+            extra_data["advance_decline_spread"] = market_snapshot.get("advance_decline_spread")
+            extra_data["sector_advance_count"] = market_snapshot.get("sector_advance_count")
+            extra_data["sector_decline_count"] = market_snapshot.get("sector_decline_count")
+            extra_data["sector_breadth_ratio"] = market_snapshot.get("sector_breadth_ratio")
+            extra_data["sector_leader"] = market_snapshot.get("sector_leader")
+            extra_data["sector_leader_return"] = market_snapshot.get("sector_leader_return")
+            extra_data["sector_laggard"] = market_snapshot.get("sector_laggard")
+            extra_data["sector_laggard_return"] = market_snapshot.get("sector_laggard_return")
+            extra_data["breadth_regime"] = classify_breadth_regime(market_snapshot.get("breadth_ratio"))
+    except Exception:
+        pass
+
+    try:
+        revenue_snapshot = external_collector.fetch_latest_tw_revenue_snapshot()
+        if revenue_snapshot:
+            extra_data["earnings_growth_proxy"] = revenue_snapshot.get("revenue_yoy")
+            extra_data["revenue_current_total"] = revenue_snapshot.get("revenue_current_total")
+            extra_data["revenue_year_ago_total"] = revenue_snapshot.get("revenue_year_ago_total")
+    except Exception:
+        pass
+
+    try:
         bond = external_collector.fetch_cbc_credit_spread_proxy()
         if bond:
             extra_data["gov_yield_10y"] = bond.get("gov_yield_10y")
@@ -204,6 +485,13 @@ def _build_tw_external_latest(external_collector) -> dict:
             extra_data["yield_curve_spread"] = bond.get("spread_10y_2y")
             extra_data["credit_spread_bbb"] = bond.get("credit_spread_bbb")
             extra_data["credit_spread"] = bond.get("credit_spread_bbb")
+    except Exception:
+        pass
+
+    try:
+        discount_rows = external_collector.fetch_cbc_discount_rate()
+        if discount_rows:
+            extra_data["funding_stress_proxy"] = discount_rows[-1].get("short_term_rate")
     except Exception:
         pass
 
@@ -308,6 +596,13 @@ def _build_tw_external_history(external_collector, months: int) -> dict:
     except Exception:
         pass
 
+    try:
+        market_hist = external_collector.fetch_twse_market_snapshot_history(months)
+        if market_hist:
+            external_history["market_snapshot"] = {r["date"][:7]: r for r in market_hist}
+    except Exception:
+        pass
+
     return external_history
 
 
@@ -358,6 +653,27 @@ def build_tw_history_observations(
 
         if external_history.get("m2") and month_key in external_history["m2"]:
             extra_data["m2_yoy"] = external_history["m2"][month_key].get("m2_yoy")
+
+        if external_history.get("market_snapshot") and month_key in external_history["market_snapshot"]:
+            market_snapshot = external_history["market_snapshot"][month_key]
+            extra_data["breadth_ratio"] = market_snapshot.get("breadth_ratio")
+            extra_data["advance_decline_spread"] = market_snapshot.get("advance_decline_spread")
+            extra_data["sector_advance_count"] = market_snapshot.get("sector_advance_count")
+            extra_data["sector_decline_count"] = market_snapshot.get("sector_decline_count")
+            extra_data["sector_breadth_ratio"] = market_snapshot.get("sector_breadth_ratio")
+            extra_data["sector_leader"] = market_snapshot.get("sector_leader")
+            extra_data["sector_leader_return"] = market_snapshot.get("sector_leader_return")
+            extra_data["sector_laggard"] = market_snapshot.get("sector_laggard")
+            extra_data["sector_laggard_return"] = market_snapshot.get("sector_laggard_return")
+            extra_data["breadth_regime"] = classify_breadth_regime(market_snapshot.get("breadth_ratio"))
+
+        try:
+            discount_rows = external_collector.fetch_cbc_discount_rate()
+            rate_map = {row["date"]: row for row in discount_rows}
+            if month_key in rate_map:
+                extra_data["funding_stress_proxy"] = rate_map[month_key].get("short_term_rate")
+        except Exception:
+            pass
 
         history.append(
             {
