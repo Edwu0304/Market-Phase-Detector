@@ -5,12 +5,12 @@ def build_country_snapshot(
     country: str,
     as_of: str,
     observations: dict,
-    observation_history: list[dict] | None,
     derived_signals: dict,
     candidate_phase: str,
     final_phase: str,
     reasons: list[str],
     watch: str | None,
+    observation_history: list[dict] | None = None,
     handbook: dict | None = None,
     lenses: dict | None = None,
 ) -> dict:

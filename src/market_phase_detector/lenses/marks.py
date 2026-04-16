@@ -1,4 +1,5 @@
 from market_phase_detector.lenses.metric_sets import LENS_TITLES
+from market_phase_detector.lenses.transition_logic import PHASE_SEQUENCE, pick_phase_from_support, resolve_phase_transition
 from market_phase_detector.models.lenses import LensDecision, LensHistoryRow, LensMetric
 from market_phase_detector.strategy_content import PHASE_LABELS
 
@@ -11,18 +12,48 @@ TRANSITION_METRICS = {
 }
 
 
-def _phase_from_risk(stock_trend: str, credit_trend: str, inventory_trend: str) -> str:
-    stock_score = 1.0 if stock_trend == "improving" else (-1.0 if stock_trend == "deteriorating" else 0.0)
-    credit_score = 1.0 if credit_trend == "improving" else (-1.0 if credit_trend == "deteriorating" else 0.0)
-    inventory_penalty = -0.5 if inventory_trend == "deteriorating" else 0.0
-    total = stock_score + credit_score + inventory_penalty
-    if credit_trend == "deteriorating" and stock_trend == "deteriorating":
-        return "Recession"
-    if total >= 1.5:
-        return "Boom"
-    if total >= 0.5:
-        return "Growth"
-    return "Recovery"
+def _phase_signals(observations: dict) -> dict[str, list[str]]:
+    signals = {phase: [] for phase in PHASE_SEQUENCE}
+
+    stock_trend = observations.get("stock_trend", "stable")
+    credit_trend = observations.get("credit_trend", "stable")
+    inventory_trend = observations.get("inventory_trend", "stable")
+    stock_yoy = observations.get("stock_index_yoy")
+    credit_spread = observations.get("credit_spread")
+    cci_level = observations.get("cci_total")
+    margin_amount = observations.get("margin_amount")
+
+    if stock_trend != "deteriorating":
+        signals["Recovery"].append("風險偏好不再惡化")
+    if credit_trend != "deteriorating":
+        signals["Recovery"].append("信用壓力不再惡化")
+    if credit_spread is not None and credit_spread < 1.0:
+        signals["Recovery"].append(f"信用利差收斂 ({credit_spread:.2f})")
+
+    if stock_trend == "improving":
+        signals["Growth"].append("股市趨勢改善")
+    if credit_trend == "improving":
+        signals["Growth"].append("信用趨勢改善")
+    if stock_yoy is not None and stock_yoy > 5:
+        signals["Growth"].append(f"股市年增率具建設性 ({stock_yoy:.1f}%)")
+
+    if cci_level is not None and cci_level >= 80:
+        signals["Boom"].append(f"景氣與情緒過熱 ({cci_level:.1f})")
+    if margin_amount is not None and margin_amount > 500000000:
+        signals["Boom"].append("融資餘額過熱")
+    if stock_yoy is not None and stock_yoy > 10:
+        signals["Boom"].append(f"股市漲幅過熱 ({stock_yoy:.1f}%)")
+
+    if stock_trend == "deteriorating":
+        signals["Recession"].append("股市趨勢轉差")
+    if credit_trend == "deteriorating":
+        signals["Recession"].append("信用趨勢轉差")
+    if inventory_trend == "deteriorating":
+        signals["Recession"].append("庫存趨勢轉差")
+    if credit_spread is not None and credit_spread > 2:
+        signals["Recession"].append(f"信用利差明顯擴大 ({credit_spread:.2f})")
+
+    return signals
 
 
 def _stance_for_phase(phase: str) -> str:
@@ -46,9 +77,8 @@ def _build_narrative(phase: str, previous_phase: str | None) -> str:
 
 
 def build_marks_lens(observations: dict) -> LensDecision:
-    stock_trend = observations.get("stock_trend", "stable")
-    credit_trend = observations.get("credit_trend", "stable")
-    inventory_trend = observations.get("inventory_trend", "stable")
+    phase_signals = _phase_signals(observations)
+    phase = pick_phase_from_support(phase_signals)
     stock_yoy = observations.get("stock_index_yoy")
     credit_change = observations.get("credit_change")
     inventory_change = observations.get("inventory_change")
@@ -56,23 +86,9 @@ def build_marks_lens(observations: dict) -> LensDecision:
     cci_level = observations.get("cci_total")
     government_spending = observations.get("government_spending")
     margin_amount = observations.get("margin_amount")
-
     credit_spread_signal = "wide" if credit_spread is not None and credit_spread > 2 else ("narrow" if credit_spread is not None and credit_spread < 0.5 else "neutral")
     cci_euphoria = bool(cci_level is not None and cci_level > 80)
     margin_excessive = bool(margin_amount is not None and margin_amount > 500000000)
-
-    phase = _phase_from_risk(stock_trend, credit_trend, inventory_trend)
-    reasons = [
-        f"Stock trend {stock_trend}",
-        f"Credit trend {credit_trend}",
-        f"Inventory trend {inventory_trend}",
-    ]
-    if credit_spread is not None:
-        reasons.append(f"Credit spread {credit_spread:.2f}")
-    if cci_level is not None:
-        reasons.append(f"CCI {cci_level:.1f}")
-    if margin_amount is not None:
-        reasons.append(f"Margin balance {margin_amount:.0f}")
 
     metrics = [
         LensMetric("stock_index_yoy", "Stock Index YoY", stock_yoy if stock_yoy is not None else 0.0, "percent", "positive" if (stock_yoy or 0) > 0 else "negative" if (stock_yoy or 0) < 0 else "neutral"),
@@ -89,7 +105,7 @@ def build_marks_lens(observations: dict) -> LensDecision:
         title=LENS_TITLES["marks"],
         phase=phase,
         phase_label=PHASE_LABELS[phase],
-        reasons=reasons,
+        reasons=list(phase_signals.get(phase, [])),
         metrics=metrics,
         transition_keys=TRANSITION_METRICS[phase],
         narrative=_build_narrative(phase, None),
@@ -99,17 +115,27 @@ def build_marks_lens(observations: dict) -> LensDecision:
 
 def build_marks_history_row(month: str, observations: dict, previous_phase: str | None = None) -> LensHistoryRow:
     current = build_marks_lens(observations)
-    transition_keys = TRANSITION_METRICS[previous_phase] if previous_phase and previous_phase != current.phase else TRANSITION_METRICS[current.phase]
+    phase_signals = _phase_signals(observations)
+    resolved = resolve_phase_transition(phase_signals, previous_phase, min_next_support=2)
+    phase = resolved["phase"]
+    transition_keys = TRANSITION_METRICS[previous_phase] if previous_phase and previous_phase != phase else TRANSITION_METRICS[phase]
     return LensHistoryRow(
         month=month,
         as_of=observations["as_of"],
-        phase=current.phase,
-        phase_label=current.phase_label,
-        reasons=current.reasons,
+        phase=phase,
+        phase_label=PHASE_LABELS[phase],
+        reasons=list(phase_signals.get(phase, [])),
         metrics=current.metrics,
         previous_phase=previous_phase,
         previous_phase_label=PHASE_LABELS[previous_phase] if previous_phase else None,
         transition_keys=transition_keys,
-        narrative=_build_narrative(current.phase, previous_phase),
-        stance=_stance_for_phase(current.phase),
+        narrative=_build_narrative(phase, previous_phase),
+        stance=_stance_for_phase(phase),
+        decision_mode=resolved["decision_mode"],
+        decision_summary=resolved["decision_summary"],
+        support_current_phase_signals=list(resolved["support_current_phase_signals"]),
+        support_next_phase_signals=list(resolved["support_next_phase_signals"]),
+        conflict_signals=list(resolved["conflict_signals"]),
+        supporting_signals=list(resolved["support_current_phase_signals"]),
+        conflicting_signals=list(resolved["conflict_signals"]),
     )

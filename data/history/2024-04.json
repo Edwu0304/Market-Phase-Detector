@@ -200,49 +200,6 @@
       },
       "observation_history": [
         {
-          "month": "2024-03",
-          "as_of": "2024-03",
-          "leading_index_change": 0.1343,
-          "claims_trend": "rising",
-          "coincident_trend": "improving",
-          "coincident_direction_score": 1.0,
-          "sahm_rule": 0.33,
-          "yield_curve": -0.39,
-          "hy_spread": 3.15,
-          "inflation_expectation_5y": 2.38,
-          "funding_stress": -0.9349,
-          "lending_standards": 14.5,
-          "yield_10y": 4.2,
-          "yield_2y": 4.59,
-          "yield_curve_regime": "inversion",
-          "commodity_index": 255.095,
-          "commodity_trend": "improving",
-          "industrial_metals_index": 307.579,
-          "industrial_metals_trend": "deteriorating",
-          "policy_uncertainty": 93.20401,
-          "hy_yield": 7.5,
-          "earnings_growth_proxy": 9.83,
-          "delinquency_rate": 1.11,
-          "chargeoff_rate": 0.44,
-          "default_pressure_proxy": 1.55,
-          "default_pressure_regime": "elevated",
-          "distress_proxy": 2.3,
-          "distress_regime": "elevated",
-          "issuance_appetite_proxy": 7.25,
-          "issuance_appetite_regime": "tight",
-          "sector_leader": null,
-          "sector_leader_return": null,
-          "sector_laggard": null,
-          "sector_laggard_return": null,
-          "sector_advance_count": null,
-          "sector_decline_count": null,
-          "sector_breadth_ratio": null,
-          "bond_return_3m": null,
-          "equity_return_3m": null,
-          "commodity_return_3m": null,
-          "intermarket_order": null
-        },
-        {
           "month": "2024-04",
           "as_of": "2024-04",
           "leading_index_change": -0.5256,
@@ -288,12 +245,12 @@
       ],
       "derived_signals": {
         "macro_direction": "softening",
-        "risk_state": "insufficient_confirmation"
+        "risk_state": "none"
       },
       "decision": {
         "candidate_phase": "Recovery",
-        "final_phase": "Boom",
-        "watch": "insufficient_confirmation",
+        "final_phase": "Recovery",
+        "watch": null,
         "reasons": [
           "領先活動正從偏弱環境往上修復。"
         ]
@@ -301,8 +258,8 @@
       "handbook": {
         "country": "US",
         "country_label": "美國",
-        "phase": "Boom",
-        "phase_label": "榮景",
+        "phase": "Recovery",
+        "phase_label": "復甦",
         "authors": [
           {
             "id": "izaax",
@@ -423,13 +380,11 @@
         "izaax": {
           "id": "izaax",
           "title": "Izaax Lens",
-          "phase": "Recovery",
-          "phase_label": "復甦",
+          "phase": "Recession",
+          "phase_label": "衰退",
           "reasons": [
-            "Leading index change -0.53",
-            "Industrial trend stable",
-            "Overtime trend stable",
-            "Exports YoY 0.0%"
+            "領先指標轉弱 (-0.53)",
+            "工業生產趨勢轉差"
           ],
           "metrics": [
             {
@@ -443,10 +398,10 @@
             {
               "id": "industrial_production_trend",
               "label": "Industrial Production Trend",
-              "value": 0.0,
-              "display_value": "0.00",
+              "value": -1.0,
+              "display_value": "-1.00",
               "display_format": "decimal",
-              "status": "neutral"
+              "status": "negative"
             },
             {
               "id": "labor_stress",
@@ -518,131 +473,20 @@
           ],
           "transition_keys": [
             "leading_index_change",
-            "industrial_production_trend",
-            "pmi"
+            "pmi",
+            "sahm_rule"
           ],
-          "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-          "stance": "start building risk",
+          "narrative": "Labor and demand pressure are strong enough to dominate the cycle signal.",
+          "stance": "defend capital",
           "history": [
-            {
-              "month": "2024-03",
-              "as_of": "2024-03",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Leading index change 0.13",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%"
-              ],
-              "metrics": [
-                {
-                  "id": "leading_index_change",
-                  "label": "Leading Index Change",
-                  "value": 0.1343,
-                  "display_value": "0.13",
-                  "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "industrial_production_trend",
-                  "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "labor_stress",
-                  "label": "Labor Stress",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "overtime_trend",
-                  "label": "Overtime Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "exports_yoy",
-                  "label": "Exports YoY",
-                  "value": 0.0,
-                  "display_value": "0.0%",
-                  "display_format": "percent",
-                  "status": "neutral"
-                },
-                {
-                  "id": "unemployment_claims",
-                  "label": "Unemployment Claims",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "cci_level",
-                  "label": "CCI",
-                  "value": 50.0,
-                  "display_value": "50.00",
-                  "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "pmi",
-                  "label": "PMI",
-                  "value": 50.0,
-                  "display_value": "50.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "sahm_rule",
-                  "label": "Sahm Rule",
-                  "value": 0.33,
-                  "display_value": "0.33",
-                  "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "inventory_sales_ratio",
-                  "label": "Inventory/Sales",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                }
-              ],
-              "previous_phase": null,
-              "previous_phase_label": null,
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "initial",
-              "decision_summary": "初始月份直接採用 復甦。",
-              "supporting_signals": [
-                "領先指標回升 (0.13)",
-                "失業壓力未惡化"
-              ],
-              "conflicting_signals": []
-            },
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Recession",
+              "phase_label": "衰退",
               "reasons": [
-                "Leading index change -0.53",
-                "Industrial trend stable",
-                "Overtime trend stable",
-                "Exports YoY 0.0%"
+                "領先指標轉弱 (-0.53)",
+                "工業生產趨勢轉差"
               ],
               "metrics": [
                 {
@@ -656,10 +500,10 @@
                 {
                   "id": "industrial_production_trend",
                   "label": "Industrial Production Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
+                  "value": -1.0,
+                  "display_value": "-1.00",
                   "display_format": "decimal",
-                  "status": "neutral"
+                  "status": "negative"
                 },
                 {
                   "id": "labor_stress",
@@ -729,44 +573,56 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
-              "decision_mode": "hold",
-              "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
+              "previous_phase": null,
+              "previous_phase_label": null,
+              "transition_keys": [
+                "leading_index_change",
+                "pmi",
+                "sahm_rule"
+              ],
+              "narrative": "Labor and demand pressure are strong enough to dominate the cycle signal.",
+              "stance": "defend capital",
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 衰退 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "領先指標轉弱 (-0.53)",
+                "工業生產趨勢轉差"
+              ],
+              "support_next_phase_signals": [
+                "就業壓力仍受控"
+              ],
+              "conflict_signals": [],
               "supporting_signals": [
-                "失業壓力未惡化"
+                "領先指標轉弱 (-0.53)",
+                "工業生產趨勢轉差"
               ],
               "conflicting_signals": []
             }
           ],
           "transposed": {
-            "current_phase": "Recovery",
-            "current_phase_label": "復甦",
-            "next_phase": "Growth",
-            "prev_phase": "Recession",
+            "current_phase": "Recession",
+            "current_phase_label": "衰退",
+            "next_phase": "Recovery",
+            "prev_phase": "Boom",
             "phase_sequence": [
               "Recovery",
               "Growth",
               "Boom",
               "Recession"
             ],
-            "transition_keys": [],
+            "transition_keys": [
+              "leading_index_change",
+              "pmi",
+              "sahm_rule"
+            ],
             "metric_rows": [
               {
                 "metric_id": "leading_index_change",
                 "label": "Leading Index Change",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "0.13",
-                    "status": "positive"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "-0.53",
@@ -782,11 +638,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "0.00",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "0.00",
                     "status": "neutral"
@@ -800,11 +651,6 @@
                 "is_transition_key": false,
                 "transition_direction": "",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "0.00",
-                    "status": "neutral"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "0.00",
@@ -820,11 +666,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "0.00",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "0.00",
                     "status": "neutral"
@@ -838,11 +679,6 @@
                 "is_transition_key": false,
                 "transition_direction": "",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "--",
-                    "status": "neutral"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "--",
@@ -858,11 +694,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "--",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "--",
                     "status": "neutral"
@@ -877,11 +708,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "--",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "--",
                     "status": "neutral"
@@ -892,14 +718,9 @@
                 "metric_id": "pmi",
                 "label": "PMI",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "--",
-                    "status": "neutral"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "--",
@@ -911,14 +732,9 @@
                 "metric_id": "sahm_rule",
                 "label": "Sahm Rule",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "0.33",
-                    "status": "positive"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "0.40",
@@ -934,11 +750,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "0.00",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "0.00",
                     "status": "neutral"
@@ -947,41 +758,38 @@
               }
             ],
             "months": [
-              "2024-03",
               "2024-04"
             ],
             "month_columns": [
               {
-                "month": "2024-03",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "initial",
-                "decision_summary": "初始月份直接採用 復甦。",
-                "supporting_signals": [
-                  "領先指標回升 (0.13)",
-                  "失業壓力未惡化"
-                ],
-                "conflicting_signals": []
-              },
-              {
                 "month": "2024-04",
-                "phase": "Recovery",
-                "phase_label": "復甦",
-                "transition_keys": [],
-                "decision_mode": "hold",
-                "decision_summary": "訊號不足以推進到 成長，因此維持 復甦。",
+                "phase": "Recession",
+                "phase_label": "衰退",
+                "transition_keys": [
+                  "leading_index_change",
+                  "pmi",
+                  "sahm_rule"
+                ],
+                "decision_mode": "initial",
+                "decision_summary": "初始月份以 衰退 的支持訊號最多，作為當期階段。",
+                "support_current_phase_signals": [
+                  "領先指標轉弱 (-0.53)",
+                  "工業生產趨勢轉差"
+                ],
+                "support_next_phase_signals": [
+                  "就業壓力仍受控"
+                ],
+                "conflict_signals": [],
                 "supporting_signals": [
-                  "失業壓力未惡化"
+                  "領先指標轉弱 (-0.53)",
+                  "工業生產趨勢轉差"
                 ],
                 "conflicting_signals": []
               }
             ],
             "reasons": [
-              "Leading index change -0.53",
-              "Industrial trend stable",
-              "Overtime trend stable",
-              "Exports YoY 0.0%"
+              "領先指標轉弱 (-0.53)",
+              "工業生產趨勢轉差"
             ]
           }
         },
@@ -991,9 +799,9 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "Rate trend stable",
-            "Credit trend stable",
-            "Money trend stable"
+            "利率不再持續緊縮",
+            "信用環境止穩",
+            "流動性不再收縮"
           ],
           "metrics": [
             {
@@ -1066,14 +874,14 @@
           "stance": "turn risk back on",
           "history": [
             {
-              "month": "2024-03",
-              "as_of": "2024-03",
+              "month": "2024-04",
+              "as_of": "2024-04",
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -1146,95 +954,20 @@
               ],
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
-            },
-            {
-              "month": "2024-04",
-              "as_of": "2024-04",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Rate trend stable",
-                "Credit trend stable",
-                "Money trend stable"
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
-              "metrics": [
-                {
-                  "id": "bank_lending_rate",
-                  "label": "Bank Lending Rate",
-                  "value": 0.0,
-                  "display_value": "0.0%",
-                  "display_format": "percent",
-                  "status": "neutral"
-                },
-                {
-                  "id": "credit_change",
-                  "label": "Credit Change",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "m1b_change",
-                  "label": "M1B Change",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "m2_yoy",
-                  "label": "M2 YoY",
-                  "value": 0.0,
-                  "display_value": "0.0%",
-                  "display_format": "percent",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "pe_ratio",
-                  "label": "PE Ratio",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "yield_curve",
-                  "label": "Yield Curve Spread",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "spread",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "margin_balance",
-                  "label": "Margin Balance",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                }
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "利率不再持續緊縮",
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [
-                "bank_lending_rate",
-                "credit_change",
-                "m2_yoy"
-              ],
-              "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
-              "stance": "turn risk back on",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
               "conflicting_signals": []
             }
           ]
@@ -1245,9 +978,8 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "Stock trend stable",
-            "Credit trend stable",
-            "Inventory trend stable"
+            "風險偏好不再惡化",
+            "信用壓力不再惡化"
           ],
           "metrics": [
             {
@@ -1319,14 +1051,13 @@
           "stance": "rebuild exposure",
           "history": [
             {
-              "month": "2024-03",
-              "as_of": "2024-03",
+              "month": "2024-04",
+              "as_of": "2024-04",
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
@@ -1398,94 +1129,18 @@
               ],
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
-            },
-            {
-              "month": "2024-04",
-              "as_of": "2024-04",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Stock trend stable",
-                "Credit trend stable",
-                "Inventory trend stable"
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
-              "metrics": [
-                {
-                  "id": "stock_index_yoy",
-                  "label": "Stock Index YoY",
-                  "value": 0.0,
-                  "display_value": "0.0%",
-                  "display_format": "percent",
-                  "status": "neutral"
-                },
-                {
-                  "id": "credit_change",
-                  "label": "Credit Change",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "inventory_change",
-                  "label": "Inventory Change",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "credit_spread",
-                  "label": "Credit Spread",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "spread",
-                  "status": "neutral"
-                },
-                {
-                  "id": "cci_level",
-                  "label": "CCI",
-                  "value": 50.0,
-                  "display_value": "50.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "government_spending",
-                  "label": "Government Spending",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Planned"
-                },
-                {
-                  "id": "margin_balance",
-                  "label": "Margin Balance",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                }
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [
-                "credit_spread",
-                "stock_index_yoy",
-                "margin_balance"
-              ],
-              "narrative": "Credit stress is easing before full risk appetite returns.",
-              "stance": "rebuild exposure",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
               "conflicting_signals": []
             }
           ]
@@ -1536,46 +1191,6 @@
         "m2_yoy": 6.06
       },
       "observation_history": [
-        {
-          "month": "2024-03",
-          "as_of": "2024-03",
-          "business_signal_score": 31,
-          "leading_index_change": 0.5890334999999993,
-          "leading_trend": "improving",
-          "coincident_trend": "improving",
-          "coincident_trend_score": 0.5160008600000054,
-          "unemployment_trend": "stable",
-          "industrial_production_change": 14.959999999999994,
-          "industrial_production_trend": "improving",
-          "overtime_hours_change": 0.40000000000000036,
-          "overtime_trend": "stable",
-          "machinery_import_yoy": 46.90756871359966,
-          "investment_trend": "expanding",
-          "retail_sales_change": 250.12719200000015,
-          "consumption_trend": "expanding",
-          "inventory_change": null,
-          "inventory_trend": "stable",
-          "inventory_sales_ratio": null,
-          "exports_yoy": 22.71299389214162,
-          "export_trend": "expanding",
-          "mfg_sales_change": 17.570000000000007,
-          "mfg_sales_trend": "improving",
-          "bank_lending_rate": 2.017,
-          "bank_lending_rate_change": 0.029999999999999805,
-          "rate_trend": "rising",
-          "credit_change": null,
-          "credit_trend": "stable",
-          "m1b_change": 223512.0,
-          "money_supply_trend": "expanding",
-          "stock_index_yoy": 6.616082319230383,
-          "stock_trend": "bullish",
-          "credit_inventory_ratio": null,
-          "unemployment": 3.38,
-          "unemployment_prev": 3.39,
-          "sahm_rule": null,
-          "m2_yoy": 6.15,
-          "funding_stress_proxy": 4.25
-        },
         {
           "month": "2024-04",
           "as_of": "2024-04",
@@ -1754,14 +1369,11 @@
         "izaax": {
           "id": "izaax",
           "title": "Izaax Lens",
-          "phase": "Recovery",
-          "phase_label": "復甦",
+          "phase": "Growth",
+          "phase_label": "成長",
           "reasons": [
-            "Leading index change 0.64",
-            "Industrial trend deteriorating",
-            "Overtime trend stable",
-            "Exports YoY 10.0%",
-            "PMI 49.4"
+            "領先指標動能轉強 (0.64)",
+            "出口成長明顯轉強 (10.0%)"
           ],
           "metrics": [
             {
@@ -1849,133 +1461,22 @@
             }
           ],
           "transition_keys": [
-            "leading_index_change",
-            "industrial_production_trend",
-            "pmi"
+            "cci_level",
+            "inventory_sales_ratio",
+            "overtime_trend"
           ],
-          "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-          "stance": "start building risk",
+          "narrative": "Leading, production, and demand data are improving together.",
+          "stance": "hold trend exposure",
           "history": [
-            {
-              "month": "2024-03",
-              "as_of": "2024-03",
-              "phase": "Growth",
-              "phase_label": "成長",
-              "reasons": [
-                "Leading index change 0.59",
-                "Industrial trend improving",
-                "Overtime trend stable",
-                "Exports YoY 22.7%"
-              ],
-              "metrics": [
-                {
-                  "id": "leading_index_change",
-                  "label": "Leading Index Change",
-                  "value": 0.5890334999999993,
-                  "display_value": "0.59",
-                  "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "industrial_production_trend",
-                  "label": "Industrial Production Trend",
-                  "value": 1.0,
-                  "display_value": "1.00",
-                  "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "labor_stress",
-                  "label": "Labor Stress",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "overtime_trend",
-                  "label": "Overtime Trend",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "exports_yoy",
-                  "label": "Exports YoY",
-                  "value": 22.71299389214162,
-                  "display_value": "22.7%",
-                  "display_format": "percent",
-                  "status": "positive"
-                },
-                {
-                  "id": "unemployment_claims",
-                  "label": "Unemployment Claims",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "cci_level",
-                  "label": "CCI",
-                  "value": 50.0,
-                  "display_value": "50.00",
-                  "display_format": "decimal",
-                  "status": "positive",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "pmi",
-                  "label": "PMI",
-                  "value": 50.0,
-                  "display_value": "50.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "sahm_rule",
-                  "label": "Sahm Rule",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "inventory_sales_ratio",
-                  "label": "Inventory/Sales",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                }
-              ],
-              "previous_phase": null,
-              "previous_phase_label": null,
-              "transition_keys": [],
-              "narrative": "Leading, production, and demand data are improving together.",
-              "stance": "hold trend exposure",
-              "decision_mode": "initial",
-              "decision_summary": "初始月份直接採用 成長。",
-              "supporting_signals": [
-                "工業生產趨勢改善",
-                "出口年增強勁 (22.7%)"
-              ],
-              "conflicting_signals": []
-            },
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Growth",
-              "phase_label": "成長",
+              "phase": "Recovery",
+              "phase_label": "復甦",
               "reasons": [
-                "Leading index change 0.64",
-                "Industrial trend deteriorating",
-                "Overtime trend stable",
-                "Exports YoY 10.0%",
-                "PMI 49.4"
+                "領先指標維持改善 (0.64)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (10.0%)"
               ],
               "metrics": [
                 {
@@ -2062,49 +1563,65 @@
                   "status": "neutral"
                 }
               ],
-              "previous_phase": "Growth",
-              "previous_phase_label": "成長",
-              "transition_keys": [],
-              "narrative": "Leading, production, and demand data are improving together.",
-              "stance": "hold trend exposure",
-              "decision_mode": "ambiguous_hold",
-              "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 成長。",
+              "previous_phase": null,
+              "previous_phase_label": null,
+              "transition_keys": [
+                "leading_index_change",
+                "industrial_production_trend",
+                "pmi"
+              ],
+              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
+              "stance": "start building risk",
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "領先指標維持改善 (0.64)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (10.0%)"
+              ],
+              "support_next_phase_signals": [
+                "領先指標動能轉強 (0.64)",
+                "出口成長明顯轉強 (10.0%)"
+              ],
+              "conflict_signals": [
+                "工業生產趨勢轉差",
+                "PMI 跌破 50 (49.4)"
+              ],
               "supporting_signals": [
-                "領先指標明顯轉強 (0.64)",
-                "出口年增強勁 (10.0%)"
+                "領先指標維持改善 (0.64)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (10.0%)"
               ],
               "conflicting_signals": [
-                "失業壓力未惡化",
-                "工業生產趨勢惡化",
-                "PMI 跌破擴張線 (49.4)"
+                "工業生產趨勢轉差",
+                "PMI 跌破 50 (49.4)"
               ]
             }
           ],
           "transposed": {
-            "current_phase": "Growth",
-            "current_phase_label": "成長",
-            "next_phase": "Boom",
-            "prev_phase": "Recovery",
+            "current_phase": "Recovery",
+            "current_phase_label": "復甦",
+            "next_phase": "Growth",
+            "prev_phase": "Recession",
             "phase_sequence": [
               "Recovery",
               "Growth",
               "Boom",
               "Recession"
             ],
-            "transition_keys": [],
+            "transition_keys": [
+              "leading_index_change",
+              "industrial_production_trend",
+              "pmi"
+            ],
             "metric_rows": [
               {
                 "metric_id": "leading_index_change",
                 "label": "Leading Index Change",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "0.59",
-                    "status": "positive"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "0.64",
@@ -2116,14 +1633,9 @@
                 "metric_id": "industrial_production_trend",
                 "label": "Industrial Production Trend",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "1.00",
-                    "status": "positive"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "-1.00",
@@ -2139,11 +1651,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "0.00",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "0.00",
                     "status": "neutral"
@@ -2157,11 +1664,6 @@
                 "is_transition_key": false,
                 "transition_direction": "",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "0.00",
-                    "status": "neutral"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "0.00",
@@ -2177,11 +1679,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "22.7%",
-                    "status": "positive"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "10.0%",
                     "status": "positive"
@@ -2195,11 +1692,6 @@
                 "is_transition_key": false,
                 "transition_direction": "",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "--",
-                    "status": "neutral"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "--",
@@ -2215,11 +1707,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "--",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "--",
                     "status": "neutral"
@@ -2230,14 +1717,9 @@
                 "metric_id": "pmi",
                 "label": "PMI",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
-                  {
-                    "month": "2024-03",
-                    "display_value": "--",
-                    "status": "neutral"
-                  },
                   {
                     "month": "2024-04",
                     "display_value": "49.40",
@@ -2253,11 +1735,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "--",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "--",
                     "status": "neutral"
@@ -2272,11 +1749,6 @@
                 "transition_direction": "",
                 "values": [
                   {
-                    "month": "2024-03",
-                    "display_value": "0.00",
-                    "status": "neutral"
-                  },
-                  {
                     "month": "2024-04",
                     "display_value": "0.00",
                     "status": "neutral"
@@ -2285,47 +1757,48 @@
               }
             ],
             "months": [
-              "2024-03",
               "2024-04"
             ],
             "month_columns": [
               {
-                "month": "2024-03",
-                "phase": "Growth",
-                "phase_label": "成長",
-                "transition_keys": [],
-                "decision_mode": "initial",
-                "decision_summary": "初始月份直接採用 成長。",
-                "supporting_signals": [
-                  "工業生產趨勢改善",
-                  "出口年增強勁 (22.7%)"
-                ],
-                "conflicting_signals": []
-              },
-              {
                 "month": "2024-04",
-                "phase": "Growth",
-                "phase_label": "成長",
-                "transition_keys": [],
-                "decision_mode": "ambiguous_hold",
-                "decision_summary": "訊號彼此衝突或會破壞固定循環順序，因此保守維持 成長。",
+                "phase": "Recovery",
+                "phase_label": "復甦",
+                "transition_keys": [
+                  "leading_index_change",
+                  "industrial_production_trend",
+                  "pmi"
+                ],
+                "decision_mode": "initial",
+                "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+                "support_current_phase_signals": [
+                  "領先指標維持改善 (0.64)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (10.0%)"
+                ],
+                "support_next_phase_signals": [
+                  "領先指標動能轉強 (0.64)",
+                  "出口成長明顯轉強 (10.0%)"
+                ],
+                "conflict_signals": [
+                  "工業生產趨勢轉差",
+                  "PMI 跌破 50 (49.4)"
+                ],
                 "supporting_signals": [
-                  "領先指標明顯轉強 (0.64)",
-                  "出口年增強勁 (10.0%)"
+                  "領先指標維持改善 (0.64)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (10.0%)"
                 ],
                 "conflicting_signals": [
-                  "失業壓力未惡化",
-                  "工業生產趨勢惡化",
-                  "PMI 跌破擴張線 (49.4)"
+                  "工業生產趨勢轉差",
+                  "PMI 跌破 50 (49.4)"
                 ]
               }
             ],
             "reasons": [
-              "Leading index change 0.64",
-              "Industrial trend deteriorating",
-              "Overtime trend stable",
-              "Exports YoY 10.0%",
-              "PMI 49.4"
+              "領先指標維持改善 (0.64)",
+              "就業壓力仍受控",
+              "出口重新回到正成長 (10.0%)"
             ]
           }
         },
@@ -2335,11 +1808,8 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "Rate trend rising",
-            "Credit trend stable",
-            "Money trend contracting",
-            "Bank lending rate 2.155%",
-            "M2 YoY 6.06%"
+            "信用環境止穩",
+            "流動性不再收縮"
           ],
           "metrics": [
             {
@@ -2412,104 +1882,13 @@
           "stance": "turn risk back on",
           "history": [
             {
-              "month": "2024-03",
-              "as_of": "2024-03",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Rate trend rising",
-                "Credit trend stable",
-                "Money trend expanding",
-                "Bank lending rate 2.017%",
-                "M2 YoY 6.15%"
-              ],
-              "metrics": [
-                {
-                  "id": "bank_lending_rate",
-                  "label": "Bank Lending Rate",
-                  "value": 2.017,
-                  "display_value": "2.0%",
-                  "display_format": "percent",
-                  "status": "negative"
-                },
-                {
-                  "id": "credit_change",
-                  "label": "Credit Change",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "m1b_change",
-                  "label": "M1B Change",
-                  "value": 223512.0,
-                  "display_value": "223512.00",
-                  "display_format": "decimal",
-                  "status": "positive"
-                },
-                {
-                  "id": "m2_yoy",
-                  "label": "M2 YoY",
-                  "value": 6.15,
-                  "display_value": "6.2%",
-                  "display_format": "percent",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "pe_ratio",
-                  "label": "PE Ratio",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "yield_curve",
-                  "label": "Yield Curve Spread",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "spread",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "margin_balance",
-                  "label": "Margin Balance",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                }
-              ],
-              "previous_phase": null,
-              "previous_phase_label": null,
-              "transition_keys": [
-                "bank_lending_rate",
-                "credit_change",
-                "m2_yoy"
-              ],
-              "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
-              "stance": "turn risk back on",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
-            },
-            {
               "month": "2024-04",
               "as_of": "2024-04",
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Rate trend rising",
-                "Credit trend stable",
-                "Money trend contracting",
-                "Bank lending rate 2.155%",
-                "M2 YoY 6.06%"
+                "信用環境止穩",
+                "流動性不再收縮"
               ],
               "metrics": [
                 {
@@ -2573,8 +1952,8 @@
                   "proxy_label": "Proxy"
                 }
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
+              "previous_phase": null,
+              "previous_phase_label": null,
               "transition_keys": [
                 "bank_lending_rate",
                 "credit_change",
@@ -2582,10 +1961,26 @@
               ],
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "support_next_phase_signals": [
+                "放款利率仍具支撐 (2.155%)",
+                "M2 維持支撐 (6.06%)"
+              ],
+              "conflict_signals": [
+                "利率重新偏緊"
+              ],
+              "supporting_signals": [
+                "信用環境止穩",
+                "流動性不再收縮"
+              ],
+              "conflicting_signals": [
+                "利率重新偏緊"
+              ]
             }
           ]
         },
@@ -2595,9 +1990,8 @@
           "phase": "Recovery",
           "phase_label": "復甦",
           "reasons": [
-            "Stock trend neutral",
-            "Credit trend stable",
-            "Inventory trend stable"
+            "風險偏好不再惡化",
+            "信用壓力不再惡化"
           ],
           "metrics": [
             {
@@ -2669,21 +2063,20 @@
           "stance": "rebuild exposure",
           "history": [
             {
-              "month": "2024-03",
-              "as_of": "2024-03",
+              "month": "2024-04",
+              "as_of": "2024-04",
               "phase": "Recovery",
               "phase_label": "復甦",
               "reasons": [
-                "Stock trend bullish",
-                "Credit trend stable",
-                "Inventory trend stable"
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
               "metrics": [
                 {
                   "id": "stock_index_yoy",
                   "label": "Stock Index YoY",
-                  "value": 6.616082319230383,
-                  "display_value": "6.6%",
+                  "value": 2.025286888282012,
+                  "display_value": "2.0%",
                   "display_format": "percent",
                   "status": "positive"
                 },
@@ -2748,94 +2141,18 @@
               ],
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
-              "conflicting_signals": []
-            },
-            {
-              "month": "2024-04",
-              "as_of": "2024-04",
-              "phase": "Recovery",
-              "phase_label": "復甦",
-              "reasons": [
-                "Stock trend neutral",
-                "Credit trend stable",
-                "Inventory trend stable"
+              "decision_mode": "initial",
+              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "support_current_phase_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
-              "metrics": [
-                {
-                  "id": "stock_index_yoy",
-                  "label": "Stock Index YoY",
-                  "value": 2.025286888282012,
-                  "display_value": "2.0%",
-                  "display_format": "percent",
-                  "status": "positive"
-                },
-                {
-                  "id": "credit_change",
-                  "label": "Credit Change",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "inventory_change",
-                  "label": "Inventory Change",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral"
-                },
-                {
-                  "id": "credit_spread",
-                  "label": "Credit Spread",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "spread",
-                  "status": "neutral"
-                },
-                {
-                  "id": "cci_level",
-                  "label": "CCI",
-                  "value": 50.0,
-                  "display_value": "50.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                },
-                {
-                  "id": "government_spending",
-                  "label": "Government Spending",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Planned"
-                },
-                {
-                  "id": "margin_balance",
-                  "label": "Margin Balance",
-                  "value": 0.0,
-                  "display_value": "0.00",
-                  "display_format": "decimal",
-                  "status": "neutral",
-                  "proxy_label": "Proxy"
-                }
+              "support_next_phase_signals": [],
+              "conflict_signals": [],
+              "supporting_signals": [
+                "風險偏好不再惡化",
+                "信用壓力不再惡化"
               ],
-              "previous_phase": "Recovery",
-              "previous_phase_label": "復甦",
-              "transition_keys": [
-                "credit_spread",
-                "stock_index_yoy",
-                "margin_balance"
-              ],
-              "narrative": "Credit stress is easing before full risk appetite returns.",
-              "stance": "rebuild exposure",
-              "decision_mode": "hold",
-              "decision_summary": "",
-              "supporting_signals": [],
               "conflicting_signals": []
             }
           ]
