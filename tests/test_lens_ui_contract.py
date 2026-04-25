@@ -29,3 +29,13 @@ def test_standard_lens_month_switch_preserves_table_scroll_position():
     assert "history-table-wrap" in country_components
     assert "preservedTableScrollLeft" in page_script
     assert "preservedTableScrollTop" in page_script
+
+
+def test_lens_domain_mentions_semantic_rows_and_source_type_rendering():
+    lens_components = Path("frontend/src/domain/lens.js").read_text(encoding="utf-8")
+    assert "semantic_rows" in lens_components
+    assert "source-type-chip" in lens_components
+    assert "site-metric-subtitle" in lens_components
+    assert "Semantic Rows" in lens_components
+    assert "warning-badge" in lens_components
+    assert "warning-block" in lens_components

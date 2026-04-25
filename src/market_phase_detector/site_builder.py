@@ -22,4 +22,9 @@ def build_site(frontend_dir: str | Path, data_dir: str | Path, output_dir: str |
 
     output_path.mkdir(parents=True, exist_ok=True)
     shutil.copytree(frontend_path, output_path, dirs_exist_ok=True)
-    shutil.copytree(data_path, output_path / "data", dirs_exist_ok=True)
+    shutil.copytree(
+        data_path,
+        output_path / "data",
+        dirs_exist_ok=True,
+        ignore=shutil.ignore_patterns(".git", ".gitignore"),
+    )

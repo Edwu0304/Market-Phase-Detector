@@ -1,6 +1,6 @@
 from market_phase_detector.lenses.metric_sets import LENS_TITLES
 from market_phase_detector.lenses.transition_logic import PHASE_SEQUENCE, next_phase, pick_phase_from_support, resolve_phase_transition
-from market_phase_detector.models.lenses import LensDecision, LensHistoryRow, LensMetric
+from market_phase_detector.models.lenses import LensDecision, LensHistoryRow, LensMetric, SemanticLensRow
 from market_phase_detector.strategy_content import PHASE_LABELS
 
 
@@ -10,6 +10,54 @@ TRANSITION_METRICS = {
     "Boom": ["yield_curve", "bank_lending_rate", "margin_balance"],
     "Recession": ["bank_lending_rate", "credit_change", "yield_curve"],
 }
+
+URAKAMI_SEMANTIC_ROW_SPECS = [
+    {
+        "row_id": "urakami-rate-direction",
+        "master_category": "政策與短率方向",
+        "master_description": "判斷金融相場是否啟動的第一層利率觀察。",
+        "site_metric_label": "銀行放款利率 / rate trend",
+        "source_type": "proxy",
+        "metric_ids": ["bank_lending_rate"],
+        "transition_role": "advance",
+    },
+    {
+        "row_id": "urakami-credit-liquidity",
+        "master_category": "信用與流動性",
+        "master_description": "觀察信用擴張與貨幣供給是否支撐市場向上。",
+        "site_metric_label": "credit change / M2 YoY / M1B",
+        "source_type": "proxy",
+        "metric_ids": ["credit_change", "m2_yoy", "m1b_change"],
+        "transition_role": "advance",
+    },
+    {
+        "row_id": "urakami-yield-curve",
+        "master_category": "殖利率曲線",
+        "master_description": "觀察陡峭化、平坦化與倒掛所代表的景氣轉折。",
+        "site_metric_label": "Yield Curve Spread",
+        "source_type": "proxy",
+        "metric_ids": ["yield_curve"],
+        "transition_role": "risk",
+    },
+    {
+        "row_id": "urakami-valuation",
+        "master_category": "估值與過熱",
+        "master_description": "觀察 PER 是否從金融相場走向過熱。",
+        "site_metric_label": "PE Ratio",
+        "source_type": "proxy",
+        "metric_ids": ["pe_ratio"],
+        "transition_role": "risk",
+    },
+    {
+        "row_id": "urakami-leverage",
+        "master_category": "市場槓桿與擁擠",
+        "master_description": "觀察融資餘額與擁擠交易是否升溫。",
+        "site_metric_label": "Margin Balance",
+        "source_type": "proxy",
+        "metric_ids": ["margin_balance"],
+        "transition_role": "risk",
+    },
+]
 
 
 def _phase_signals(observations: dict) -> dict[str, list[str]]:
@@ -83,6 +131,40 @@ def _build_narrative(phase: str, previous_phase: str | None) -> str:
     }[phase]
 
 
+def _build_semantic_rows(metrics: list[LensMetric], transition_keys: list[str]) -> list[SemanticLensRow]:
+    metric_map = {metric.metric_id: metric for metric in metrics}
+    rows = []
+    for spec in URAKAMI_SEMANTIC_ROW_SPECS:
+        current_values = []
+        for metric_id in spec["metric_ids"]:
+            metric = metric_map.get(metric_id)
+            if metric is None:
+                continue
+            metric_dict = metric.to_dict()
+            current_values.append(
+                {
+                    "metric_id": metric_id,
+                    "label": metric_dict["label"],
+                    "display_value": metric_dict["display_value"],
+                    "status": metric_dict["status"],
+                }
+            )
+        rows.append(
+            SemanticLensRow(
+                row_id=spec["row_id"],
+                master_category=spec["master_category"],
+                master_description=spec["master_description"],
+                site_metric_label=spec["site_metric_label"],
+                source_type=spec["source_type"],
+                metric_ids=list(spec["metric_ids"]),
+                current_values=current_values,
+                transition_role=spec["transition_role"],
+                is_transition_driver=any(metric_id in transition_keys for metric_id in spec["metric_ids"]),
+            )
+        )
+    return rows
+
+
 def build_urakami_lens(observations: dict) -> LensDecision:
     phase_signals = _phase_signals(observations)
     phase = pick_phase_from_support(phase_signals)
@@ -117,6 +199,7 @@ def build_urakami_lens(observations: dict) -> LensDecision:
         phase_label=PHASE_LABELS[phase],
         reasons=list(phase_signals.get(phase, [])),
         metrics=metrics,
+        semantic_rows=_build_semantic_rows(metrics, TRANSITION_METRICS[phase]),
         transition_keys=TRANSITION_METRICS[phase],
         narrative=_build_narrative(phase, None),
         stance=_stance_for_phase(phase),
@@ -127,6 +210,10 @@ def build_urakami_history_row(month: str, observations: dict, previous_phase: st
     current = build_urakami_lens(observations)
     phase_signals = _phase_signals(observations)
     resolved = resolve_phase_transition(phase_signals, previous_phase, min_next_support=2)
+    if previous_phase and resolved["decision_mode"] == "override":
+        resolved["phase"] = previous_phase
+        resolved["decision_mode"] = "hold"
+        resolved["decision_summary"] = f"Hold {PHASE_LABELS[previous_phase]}; conflicting signals are noted but not strong enough for a regime change."
     phase = resolved["phase"]
     transition_keys = TRANSITION_METRICS[previous_phase] if previous_phase and previous_phase != phase else TRANSITION_METRICS[phase]
     return LensHistoryRow(
@@ -136,6 +223,7 @@ def build_urakami_history_row(month: str, observations: dict, previous_phase: st
         phase_label=PHASE_LABELS[phase],
         reasons=list(phase_signals.get(phase, [])),
         metrics=current.metrics,
+        semantic_rows=_build_semantic_rows(current.metrics, transition_keys),
         previous_phase=previous_phase,
         previous_phase_label=PHASE_LABELS[previous_phase] if previous_phase else None,
         transition_keys=transition_keys,

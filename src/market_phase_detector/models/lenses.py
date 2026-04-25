@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from dataclasses import dataclass, field
 
 
@@ -46,7 +48,11 @@ class LensDecision:
     phase_label: str
     reasons: list[str] = field(default_factory=list)
     metrics: list[LensMetric] = field(default_factory=list)
+    semantic_rows: list[SemanticLensRow] = field(default_factory=list)
     transition_keys: list[str] = field(default_factory=list)
+    warning_state: str | None = None
+    warning_level: str | None = None
+    warning_reasons: list[str] = field(default_factory=list)
     narrative: str = ""
     stance: str = "neutral"
 
@@ -58,7 +64,11 @@ class LensDecision:
             "phase_label": self.phase_label,
             "reasons": list(self.reasons),
             "metrics": [metric.to_dict() for metric in self.metrics],
+            "semantic_rows": [row.to_dict() for row in self.semantic_rows],
             "transition_keys": list(self.transition_keys),
+            "warning_state": self.warning_state,
+            "warning_level": self.warning_level,
+            "warning_reasons": list(self.warning_reasons),
             "narrative": self.narrative,
             "stance": self.stance,
         }
@@ -72,9 +82,13 @@ class LensHistoryRow:
     phase_label: str
     reasons: list[str] = field(default_factory=list)
     metrics: list[LensMetric] = field(default_factory=list)
+    semantic_rows: list[SemanticLensRow] = field(default_factory=list)
     previous_phase: str | None = None
     previous_phase_label: str | None = None
     transition_keys: list[str] = field(default_factory=list)
+    warning_state: str | None = None
+    warning_level: str | None = None
+    warning_reasons: list[str] = field(default_factory=list)
     narrative: str = ""
     stance: str = "neutral"
     decision_mode: str = "hold"
@@ -93,9 +107,13 @@ class LensHistoryRow:
             "phase_label": self.phase_label,
             "reasons": list(self.reasons),
             "metrics": [metric.to_dict() for metric in self.metrics],
+            "semantic_rows": [row.to_dict() for row in self.semantic_rows],
             "previous_phase": self.previous_phase,
             "previous_phase_label": self.previous_phase_label,
             "transition_keys": list(self.transition_keys),
+            "warning_state": self.warning_state,
+            "warning_level": self.warning_level,
+            "warning_reasons": list(self.warning_reasons),
             "narrative": self.narrative,
             "stance": self.stance,
             "decision_mode": self.decision_mode,
@@ -141,6 +159,62 @@ class TransposedMetricRow:
 
 
 @dataclass(slots=True)
+class SemanticMetricRow:
+    row_id: str
+    master_category: str
+    master_description: str
+    site_metric_label: str
+    source_type: str
+    metric_ids: list[str] = field(default_factory=list)
+    display_format: str = "decimal"
+    current_value: dict = field(default_factory=dict)
+    history_values: list[dict] = field(default_factory=list)
+    transition_role: str = "confirm"
+    is_transition_driver: bool = False
+
+    def to_dict(self) -> dict:
+        return {
+            "row_id": self.row_id,
+            "master_category": self.master_category,
+            "master_description": self.master_description,
+            "site_metric_label": self.site_metric_label,
+            "source_type": self.source_type,
+            "metric_ids": list(self.metric_ids),
+            "display_format": self.display_format,
+            "current_value": self.current_value,
+            "history_values": self.history_values,
+            "transition_role": self.transition_role,
+            "is_transition_driver": self.is_transition_driver,
+        }
+
+
+@dataclass(slots=True)
+class SemanticLensRow:
+    row_id: str
+    master_category: str
+    master_description: str
+    site_metric_label: str
+    source_type: str
+    metric_ids: list[str] = field(default_factory=list)
+    current_values: list[dict] = field(default_factory=list)
+    transition_role: str = "confirm"
+    is_transition_driver: bool = False
+
+    def to_dict(self) -> dict:
+        return {
+            "row_id": self.row_id,
+            "master_category": self.master_category,
+            "master_description": self.master_description,
+            "site_metric_label": self.site_metric_label,
+            "source_type": self.source_type,
+            "metric_ids": list(self.metric_ids),
+            "current_values": self.current_values,
+            "transition_role": self.transition_role,
+            "is_transition_driver": self.is_transition_driver,
+        }
+
+
+@dataclass(slots=True)
 class IzaaxTransposedBundle:
     """Transposed Izaax data: metrics as rows, months as columns."""
     current_phase: str
@@ -151,8 +225,12 @@ class IzaaxTransposedBundle:
     transition_keys: list[str]  # Which metric_ids are critical for next transition
     metric_rows: list[TransposedMetricRow]
     months: list[str]  # Month labels
+    semantic_rows: list[SemanticMetricRow] = field(default_factory=list)
     month_columns: list[dict] = field(default_factory=list)  # [{"month": "...", "phase": "...", "phase_label": "...", "transition_keys": [...]}]
     reasons: list[str] = field(default_factory=list)
+    warning_state: str | None = None
+    warning_level: str | None = None
+    warning_reasons: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -163,7 +241,11 @@ class IzaaxTransposedBundle:
             "phase_sequence": self.phase_sequence,
             "transition_keys": self.transition_keys,
             "metric_rows": [r.to_dict() for r in self.metric_rows],
+            "semantic_rows": [r.to_dict() for r in self.semantic_rows],
             "months": self.months,
             "month_columns": self.month_columns,
             "reasons": self.reasons,
+            "warning_state": self.warning_state,
+            "warning_level": self.warning_level,
+            "warning_reasons": self.warning_reasons,
         }

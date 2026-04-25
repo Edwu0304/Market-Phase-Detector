@@ -7,7 +7,9 @@ import html
 import io
 import json
 import re
+from csv import reader
 from datetime import datetime
+from urllib.parse import urljoin
 
 import pandas as pd
 import requests
@@ -18,6 +20,7 @@ from market_phase_detector.collectors.base import HttpCollector
 TPEX_BOND_BASE_URL = "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond"
 MOL_CLAIMS_URL = "https://statdb.mol.gov.tw/html/year/year12/37040.csv"
 NCU_CCI_URL = "https://rcted.ncu.edu.tw/"
+NCU_CCI_ARCHIVE_URL = "https://rcted.ncu.edu.tw/cci.asp"
 TWSE_YIELDS_URL = "https://www.twse.com.tw/res/data/zh/home/yields.json"
 TWSE_VALUES_URL = "https://www.twse.com.tw/res/data/zh/home/values.json"
 TWSE_MI_INDEX_URL = "https://www.twse.com.tw/exchangeReport/MI_INDEX"
@@ -115,6 +118,64 @@ def parse_ncu_cci_from_news(html_text: str) -> dict | None:
         return None
 
     return {"date": _month_key(year, month), "cci_total": value}
+
+
+def parse_ncu_cci_archive_page(html_text: str, source_url: str) -> dict | None:
+    matches = re.findall(r'href="([^"]*cci_(\d{7})\.pdf)"', html_text, re.IGNORECASE)
+    if not matches:
+        return None
+
+    relative_url, stamp = max(matches, key=lambda item: item[1])
+    roc_year = int(stamp[:3])
+    month = int(stamp[3:5])
+    return {
+        "date": _month_key(roc_year + 1911, month),
+        "source_url": urljoin(source_url, relative_url),
+    }
+
+
+def parse_ncu_cci_archive_records(html_text: str, source_url: str) -> list[dict]:
+    matches = re.findall(r'href="([^"]*cci_(\d{7})\.pdf)"', html_text, re.IGNORECASE)
+    records = []
+    seen = set()
+    for relative_url, stamp in matches:
+        if stamp in seen:
+            continue
+        seen.add(stamp)
+        roc_year = int(stamp[:3])
+        month = int(stamp[3:5])
+        records.append(
+            {
+                "date": _month_key(roc_year + 1911, month),
+                "source_url": urljoin(source_url, relative_url),
+            }
+        )
+    return sorted(records, key=lambda row: row["date"])
+
+
+def parse_ncu_cci_pdf_text(pdf_text: str, month_key: str, source_url: str) -> dict | None:
+    normalized = re.sub(r"\s+", "", pdf_text)
+    match = re.search(
+        r"(?:消費者信心指數(?:\(CCI\))?.*?)?(?:總指數|總數)(?:為|達)?([0-9]+(?:\.[0-9]+)?)點",
+        normalized,
+    )
+    if not match:
+        return None
+
+    value = _safe_float(match.group(1))
+    if value is None:
+        return None
+    return {"date": month_key, "cci_total": value, "source_url": source_url}
+
+
+def _extract_pdf_text(content: bytes) -> str:
+    from pypdf import PdfReader
+
+    reader = PdfReader(io.BytesIO(content))
+    parts = []
+    for page in reader.pages:
+        parts.append(page.extract_text() or "")
+    return "\n".join(parts)
 
 
 def parse_dgbas_cpi(html_text: str) -> list[dict]:
@@ -302,28 +363,62 @@ def fetch_mol_claims_annual(collector: HttpCollector | None) -> list[dict]:
     text = response.content.decode("big5", errors="replace")
 
     rows: list[dict] = []
-    for line in text.strip().splitlines()[3:]:
-        parts = [part.strip() for part in line.split(",")]
-        if len(parts) < 7:
+    for parts in reader(io.StringIO(text)):
+        if len(parts) < 3:
             continue
 
-        year_match = re.search(r"(\d+)", parts[0])
+        label = parts[0].strip()
+        year_match = re.search(r"(\d{4})", label)
         if not year_match:
             continue
-        year = int(year_match.group(1))
-        if year < 1911:
-            year += 1911
 
-        claims = _safe_float(parts[6])
-        rows.append({"date": str(year), "initial_claims": int(claims) if claims is not None else None, "year": year})
+        year = int(year_match.group(1))
+        claims = _safe_float(parts[2])
+        if claims is None:
+            continue
+
+        rows.append({"date": str(year), "initial_claims": int(claims), "year": year})
 
     return rows
 
 
 def fetch_ncu_cci(collector: HttpCollector | None) -> dict | None:
     timeout = collector.timeout if collector else 30
+    archive_response = requests.get(NCU_CCI_ARCHIVE_URL, timeout=timeout)
+    archive_response.encoding = archive_response.apparent_encoding or archive_response.encoding
+    archive_record = parse_ncu_cci_archive_page(archive_response.text, NCU_CCI_ARCHIVE_URL)
+    if archive_record:
+        pdf_response = requests.get(archive_record["source_url"], timeout=timeout)
+        pdf_response.raise_for_status()
+        try:
+            pdf_text = _extract_pdf_text(pdf_response.content)
+        except Exception:
+            pdf_text = ""
+        pdf_record = parse_ncu_cci_pdf_text(pdf_text, archive_record["date"], archive_record["source_url"])
+        if pdf_record:
+            return pdf_record
+
     html_text = requests.get(NCU_CCI_URL, timeout=timeout).text
     return parse_ncu_cci_from_news(html_text)
+
+
+def fetch_ncu_cci_history(collector: HttpCollector | None, months: int = 24) -> list[dict]:
+    timeout = collector.timeout if collector else 30
+    archive_response = requests.get(NCU_CCI_ARCHIVE_URL, timeout=timeout)
+    archive_response.encoding = archive_response.apparent_encoding or archive_response.encoding
+    archive_records = parse_ncu_cci_archive_records(archive_response.text, NCU_CCI_ARCHIVE_URL)
+    rows = []
+    for record in archive_records[-months:]:
+        try:
+            pdf_response = requests.get(record["source_url"], timeout=timeout)
+            pdf_response.raise_for_status()
+            pdf_text = _extract_pdf_text(pdf_response.content)
+            parsed = parse_ncu_cci_pdf_text(pdf_text, record["date"], record["source_url"])
+            if parsed:
+                rows.append(parsed)
+        except Exception:
+            continue
+    return rows[-months:]
 
 
 def fetch_twse_market_pe(collector: HttpCollector | None) -> dict | None:
@@ -351,15 +446,20 @@ def fetch_latest_twse_margin(collector: HttpCollector | None) -> dict | None:
     if not margin_rows:
         return None
 
-    last_row = margin_rows[-1]
-    if len(last_row) < 4:
+    dated_rows = [row for row in margin_rows if len(row) >= 4]
+    if not dated_rows:
         return None
 
+    latest_row = max(
+        dated_rows,
+        key=lambda row: tuple(int(part) for part in str(row[0]).split("/")),
+    )
+
     return {
-        "date": str(last_row[0]),
-        "margin_shares": int(last_row[1]),
-        "margin_amount": int(last_row[2]),
-        "short_shares": int(last_row[3]),
+        "date": str(latest_row[0]),
+        "margin_shares": int(latest_row[1]),
+        "margin_amount": int(latest_row[2]),
+        "short_shares": int(latest_row[3]),
     }
 
 
@@ -567,6 +667,9 @@ class TaiwanExternalCollector(HttpCollector):
 
     def fetch_ncu_cci(self) -> dict | None:
         return fetch_ncu_cci(self)
+
+    def fetch_ncu_cci_history(self, months: int = 24) -> list[dict]:
+        return fetch_ncu_cci_history(self, months)
 
     def fetch_twse_market_pe(self) -> dict | None:
         return fetch_twse_market_pe(self)

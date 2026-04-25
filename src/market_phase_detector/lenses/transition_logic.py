@@ -40,43 +40,53 @@ def resolve_phase_transition(
         return {
             "phase": final_phase,
             "decision_mode": "initial",
-            "decision_summary": f"初始月份以 {PHASE_LABELS[final_phase]} 的支持訊號最多，作為當期階段。",
+            "decision_summary": f"Initial month resolves to {PHASE_LABELS[final_phase]} based on the strongest support.",
             "support_current_phase_signals": list(phase_signals.get(final_phase, [])),
             "support_next_phase_signals": list(phase_signals.get(next_phase_value, [])),
             "conflict_signals": conflict_signals,
         }
 
     candidate_next_phase = next_phase(previous_phase_value)
-    next_of_next_phase = next_phase(candidate_next_phase)
+    strongest_phase = pick_phase_from_support(phase_signals)
     current_support = list(phase_signals.get(previous_phase_value, []))
     next_support = list(phase_signals.get(candidate_next_phase, []))
+    strongest_support = list(phase_signals.get(strongest_phase, []))
 
-    if len(next_support) >= min_next_support:
+    if (
+        strongest_phase not in {previous_phase_value, candidate_next_phase}
+        and len(strongest_support) >= min_next_support
+        and len(strongest_support) > max(len(current_support), len(next_support))
+    ):
+        final_phase = strongest_phase
+        decision_mode = "override"
+        decision_summary = (
+            f"Override {PHASE_LABELS[previous_phase_value]} and resolve to {PHASE_LABELS[final_phase]} "
+            f"because {'; '.join(strongest_support)}."
+        )
+    elif len(next_support) >= min_next_support:
         final_phase = candidate_next_phase
         decision_mode = "advance"
         decision_summary = (
-            f"因為 {'、'.join(next_support)}，所以由 {PHASE_LABELS[previous_phase_value]} "
-            f"轉為 {PHASE_LABELS[final_phase]}。"
+            f"Advance from {PHASE_LABELS[previous_phase_value]} to {PHASE_LABELS[final_phase]} "
+            f"because {'; '.join(next_support)}."
         )
     else:
         final_phase = previous_phase_value
         decision_mode = "hold"
         if next_support:
             decision_summary = (
-                f"雖然出現 {'、'.join(next_support)}，但還不足以由 {PHASE_LABELS[previous_phase_value]} "
-                f"轉為 {PHASE_LABELS[candidate_next_phase]}。"
+                f"Hold {PHASE_LABELS[previous_phase_value]}; "
+                f"{'; '.join(next_support)} is not enough to move to {PHASE_LABELS[candidate_next_phase]}."
             )
         else:
             decision_summary = (
-                f"目前沒有足夠訊號由 {PHASE_LABELS[previous_phase_value]} 轉為 "
-                f"{PHASE_LABELS[candidate_next_phase]}。"
+                f"Hold {PHASE_LABELS[previous_phase_value]}; "
+                f"there is not enough evidence to move to {PHASE_LABELS[candidate_next_phase]}."
             )
 
     conflict_targets = {final_phase, next_phase(final_phase)}
     if previous_phase_value == final_phase:
         conflict_targets.add(candidate_next_phase)
-    else:
-        conflict_targets.add(next_of_next_phase)
 
     conflict_signals = [
         signal

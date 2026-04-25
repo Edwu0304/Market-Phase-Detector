@@ -169,6 +169,29 @@ def month_key_from_compact(value: str) -> str:
     return f"{value[:4]}-{value[4:6]}"
 
 
+def _latest_dated_row(rows: list[dict], month_key: str | None = None) -> dict | None:
+    dated_rows = [row for row in rows if row.get("date")]
+    if month_key is not None:
+        dated_rows = [row for row in dated_rows if (_row_month_key(row.get("date"), month_key) or "9999-99") <= month_key]
+    if not dated_rows:
+        return None
+    return max(dated_rows, key=lambda row: _row_month_key(row.get("date"), month_key) or str(row["date"]))
+
+
+def _row_month_key(date_value, reference_month_key: str | None = None) -> str | None:
+    if not date_value:
+        return None
+    value = str(date_value)
+    if len(value) >= 7 and value[4] == "-":
+        return value[:7]
+    if len(value) == 4 and value.isdigit():
+        return f"{value}-12"
+    month_day = value.split("/")
+    if len(month_day) == 2 and all(part.isdigit() for part in month_day) and reference_month_key:
+        return f"{reference_month_key[:4]}-{int(month_day[0]):02d}"
+    return None
+
+
 def _month_end_from_key(month_key: str) -> date:
     year = int(month_key[:4])
     month = int(month_key[5:7])
@@ -206,56 +229,83 @@ def build_us_observations(collector, market_collector=None) -> dict:
     earnings = collector.fetch_latest_csv(US_SERIES["earnings_growth_proxy"])
     delinquency = collector.fetch_latest_csv(US_SERIES["delinquency_rate"])
     chargeoff = collector.fetch_latest_csv(US_SERIES["chargeoff_rate"])
-    sector_rotation = market_collector.fetch_sector_rotation_snapshot() if market_collector else None
-    intermarket = market_collector.fetch_intermarket_snapshot() if market_collector else None
+    as_of_month = month_key_from_date(min(
+        leading_index["latest"]["date"],
+        sahm["latest"]["date"],
+        curve["latest"]["date"],
+        hy["latest"]["date"],
+        inflation["latest"]["date"],
+        funding["latest"]["date"],
+        lending["latest"]["date"],
+        commodity["latest"]["date"],
+        metals["latest"]["date"],
+        policy_uncertainty["latest"]["date"],
+        hy_yield["latest"]["date"],
+    ))
+    sector_rotation_snapshot = market_collector.fetch_sector_rotation_snapshot() if market_collector else None
+    intermarket_snapshot = market_collector.fetch_intermarket_snapshot() if market_collector else None
+    sector_rotation_history = market_collector.fetch_sector_rotation_history(months=24) if market_collector else []
+    intermarket_history = market_collector.fetch_intermarket_history(months=24) if market_collector else []
+    sector_rotation_map = {row["date"]: row for row in sector_rotation_history}
+    intermarket_map = {row["date"]: row for row in intermarket_history}
+
+    sahm_row = _latest_row_for_month(sahm["rows"], as_of_month)
+    curve_row = _latest_row_for_month(curve["rows"], as_of_month)
+    hy_row = _latest_row_for_month(hy["rows"], as_of_month)
+    inflation_row = _latest_row_for_month(inflation["rows"], as_of_month)
+    funding_row = _latest_row_for_month(funding["rows"], as_of_month)
+    lending_row = _latest_row_for_month(lending["rows"], as_of_month)
+    yield_10y_row = _latest_row_for_month(yield_10y["rows"], as_of_month)
+    yield_2y_row = _latest_row_for_month(yield_2y["rows"], as_of_month)
+    commodity_row = _latest_row_for_month(commodity["rows"], as_of_month)
+    metals_row = _latest_row_for_month(metals["rows"], as_of_month)
+    policy_uncertainty_row = _latest_row_for_month(policy_uncertainty["rows"], as_of_month)
+    hy_yield_row = _latest_row_for_month(hy_yield["rows"], as_of_month)
+    earnings_row = _latest_row_for_month(earnings["rows"], as_of_month)
+    delinquency_row = _latest_row_for_month(delinquency["rows"], as_of_month)
+    chargeoff_row = _latest_row_for_month(chargeoff["rows"], as_of_month)
+    previous_month_key = f"{int(as_of_month[:4]) - 1}-{as_of_month[5:7]}" if as_of_month.endswith("-01") else None
+    sector_rotation = sector_rotation_map.get(as_of_month) or sector_rotation_snapshot
+    intermarket = intermarket_map.get(as_of_month) or intermarket_snapshot
     yield_curve_regime = classify_yield_curve_regime(
-        yield_10y["latest"]["value"],
+        None if yield_10y_row is None else yield_10y_row["value"],
         yield_10y["rows"][-2]["value"] if len(yield_10y["rows"]) >= 2 else None,
-        yield_2y["latest"]["value"],
+        None if yield_2y_row is None else yield_2y_row["value"],
         yield_2y["rows"][-2]["value"] if len(yield_2y["rows"]) >= 2 else None,
     )
-    distress_proxy = compute_distress_proxy(hy["latest"]["value"], funding["latest"]["value"], lending["latest"]["value"])
-    issuance_appetite_proxy = compute_issuance_appetite_proxy(hy_yield["latest"]["value"], lending["latest"]["value"])
+    distress_proxy = compute_distress_proxy(None if hy_row is None else hy_row["value"], None if funding_row is None else funding_row["value"], None if lending_row is None else lending_row["value"])
+    issuance_appetite_proxy = compute_issuance_appetite_proxy(None if hy_yield_row is None else hy_yield_row["value"], None if lending_row is None else lending_row["value"])
     earnings_growth_proxy = compute_year_over_year_change(
-        earnings["latest"]["value"],
+        None if earnings_row is None else earnings_row["value"],
         earnings["rows"][-2]["value"] if len(earnings["rows"]) >= 2 else None,
     )
-    default_pressure_proxy = compute_default_pressure_proxy(delinquency["latest"]["value"], chargeoff["latest"]["value"])
+    default_pressure_proxy = compute_default_pressure_proxy(
+        None if delinquency_row is None else delinquency_row["value"],
+        None if chargeoff_row is None else chargeoff_row["value"],
+    )
 
     return {
-        "as_of": month_key_from_date(min(
-            leading_index["latest"]["date"],
-            sahm["latest"]["date"],
-            curve["latest"]["date"],
-            hy["latest"]["date"],
-            inflation["latest"]["date"],
-            funding["latest"]["date"],
-            lending["latest"]["date"],
-            commodity["latest"]["date"],
-            metals["latest"]["date"],
-            policy_uncertainty["latest"]["date"],
-            hy_yield["latest"]["date"],
-        )),
+        "as_of": as_of_month,
         "leading_index_change": compute_monthly_change(leading_index["rows"]),
         "claims_trend": compute_claims_trend(claims["rows"]),
-        "sahm_rule": sahm["latest"]["value"],
-        "yield_curve": curve["latest"]["value"],
-        "hy_spread": hy["latest"]["value"],
-        "inflation_expectation_5y": inflation["latest"]["value"],
-        "funding_stress": funding["latest"]["value"],
-        "lending_standards": lending["latest"]["value"],
-        "yield_10y": yield_10y["latest"]["value"],
-        "yield_2y": yield_2y["latest"]["value"],
+        "sahm_rule": None if sahm_row is None else sahm_row["value"],
+        "yield_curve": None if curve_row is None else curve_row["value"],
+        "hy_spread": None if hy_row is None else hy_row["value"],
+        "inflation_expectation_5y": None if inflation_row is None else inflation_row["value"],
+        "funding_stress": None if funding_row is None else funding_row["value"],
+        "lending_standards": None if lending_row is None else lending_row["value"],
+        "yield_10y": None if yield_10y_row is None else yield_10y_row["value"],
+        "yield_2y": None if yield_2y_row is None else yield_2y_row["value"],
         "yield_curve_regime": yield_curve_regime,
-        "commodity_index": commodity["latest"]["value"],
+        "commodity_index": None if commodity_row is None else commodity_row["value"],
         "commodity_trend": classify_direction(compute_monthly_change(commodity["rows"])),
-        "industrial_metals_index": metals["latest"]["value"],
+        "industrial_metals_index": None if metals_row is None else metals_row["value"],
         "industrial_metals_trend": classify_direction(compute_monthly_change(metals["rows"])),
-        "policy_uncertainty": policy_uncertainty["latest"]["value"],
-        "hy_yield": hy_yield["latest"]["value"],
+        "policy_uncertainty": None if policy_uncertainty_row is None else policy_uncertainty_row["value"],
+        "hy_yield": None if hy_yield_row is None else hy_yield_row["value"],
         "earnings_growth_proxy": earnings_growth_proxy,
-        "delinquency_rate": delinquency["latest"]["value"],
-        "chargeoff_rate": chargeoff["latest"]["value"],
+        "delinquency_rate": None if delinquency_row is None else delinquency_row["value"],
+        "chargeoff_rate": None if chargeoff_row is None else chargeoff_row["value"],
         "default_pressure_proxy": default_pressure_proxy,
         "default_pressure_regime": classify_default_pressure(default_pressure_proxy),
         "distress_proxy": distress_proxy,
@@ -401,35 +451,39 @@ def build_us_history_observations(collector, market_collector=None, months: int 
     return history[-months:]
 
 
-def _build_tw_external_latest(external_collector) -> dict:
+def _build_tw_external_latest(external_collector, month_key: str) -> dict:
     extra_data: dict = {}
 
     try:
         claims_list = external_collector.fetch_mol_claims_annual()
-        if claims_list:
-            extra_data["unemployment_claims"] = claims_list[-1].get("initial_claims")
-            if len(claims_list) >= 2:
-                trend = classify_level_trend(claims_list[-1].get("initial_claims"), claims_list[-2].get("initial_claims"))
+        claims_cutoff = [row for row in claims_list if str(row.get("year", "")) <= month_key[:4]] if claims_list else []
+        if claims_cutoff:
+            extra_data["unemployment_claims"] = claims_cutoff[-1].get("initial_claims")
+            if len(claims_cutoff) >= 2:
+                trend = classify_level_trend(claims_cutoff[-1].get("initial_claims"), claims_cutoff[-2].get("initial_claims"))
                 extra_data["unemployment_claims_trend"] = "falling" if trend == "falling" else "rising" if trend == "rising" else "stable"
     except Exception:
         pass
 
     try:
-        cci = external_collector.fetch_ncu_cci()
+        cci_hist = external_collector.fetch_ncu_cci_history(24)
+        cci = _latest_dated_row(cci_hist, month_key)
         if cci:
             extra_data["cci_total"] = cci.get("cci_total")
     except Exception:
         pass
 
     try:
-        pmi = external_collector.fetch_latest_cier_pmi()
+        pmi_hist = external_collector.fetch_cier_pmi_history(24)
+        pmi = _latest_dated_row(pmi_hist, month_key)
         if pmi:
             extra_data["pmi"] = pmi.get("pmi")
     except Exception:
         pass
 
     try:
-        m2 = external_collector.fetch_latest_cbc_m2()
+        m2_hist = external_collector.fetch_cbc_m2_history(24)
+        m2 = _latest_dated_row(m2_hist, month_key)
         if m2:
             extra_data["m2_yoy"] = m2.get("m2_yoy")
     except Exception:
@@ -444,7 +498,7 @@ def _build_tw_external_latest(external_collector) -> dict:
 
     try:
         margin = external_collector.fetch_latest_twse_margin()
-        if margin:
+        if margin and (_row_month_key(margin.get("date"), month_key) or "9999-99") <= month_key:
             extra_data["margin_amount"] = margin.get("margin_amount")
             extra_data["margin_shares"] = margin.get("margin_shares")
             if margin.get("margin_amount") is not None:
@@ -453,7 +507,12 @@ def _build_tw_external_latest(external_collector) -> dict:
         pass
 
     try:
-        market_snapshot = external_collector.fetch_latest_twse_market_snapshot()
+        market_hist = external_collector.fetch_twse_market_snapshot_history(24)
+        market_snapshot = _latest_dated_row(market_hist, month_key)
+        latest_market_snapshot = external_collector.fetch_latest_twse_market_snapshot()
+        if latest_market_snapshot and (_row_month_key(latest_market_snapshot.get("date"), month_key) or "9999-99") <= month_key:
+            if market_snapshot is None or (_row_month_key(latest_market_snapshot.get("date"), month_key) or "") > (_row_month_key(market_snapshot.get("date"), month_key) or ""):
+                market_snapshot = latest_market_snapshot
         if market_snapshot:
             extra_data["breadth_ratio"] = market_snapshot.get("breadth_ratio")
             extra_data["advance_decline_spread"] = market_snapshot.get("advance_decline_spread")
@@ -470,7 +529,7 @@ def _build_tw_external_latest(external_collector) -> dict:
 
     try:
         revenue_snapshot = external_collector.fetch_latest_tw_revenue_snapshot()
-        if revenue_snapshot:
+        if revenue_snapshot and (_row_month_key(revenue_snapshot.get("date"), month_key) or "9999-99") <= month_key:
             extra_data["earnings_growth_proxy"] = revenue_snapshot.get("revenue_yoy")
             extra_data["revenue_current_total"] = revenue_snapshot.get("revenue_current_total")
             extra_data["revenue_year_ago_total"] = revenue_snapshot.get("revenue_year_ago_total")
@@ -478,7 +537,12 @@ def _build_tw_external_latest(external_collector) -> dict:
         pass
 
     try:
-        bond = external_collector.fetch_cbc_credit_spread_proxy()
+        bond_year = int(month_key[:4])
+        bond_month = int(month_key[5:7])
+        if hasattr(external_collector, "fetch_tpex_bond_data"):
+            bond = external_collector.fetch_tpex_bond_data(bond_year, bond_month)
+        else:
+            bond = external_collector.fetch_cbc_credit_spread_proxy()
         if bond:
             extra_data["gov_yield_10y"] = bond.get("gov_yield_10y")
             extra_data["gov_yield_2y"] = bond.get("gov_yield_2y")
@@ -490,8 +554,9 @@ def _build_tw_external_latest(external_collector) -> dict:
 
     try:
         discount_rows = external_collector.fetch_cbc_discount_rate()
-        if discount_rows:
-            extra_data["funding_stress_proxy"] = discount_rows[-1].get("short_term_rate")
+        latest_discount_row = _latest_dated_row(discount_rows, month_key)
+        if latest_discount_row:
+            extra_data["funding_stress_proxy"] = latest_discount_row.get("short_term_rate")
     except Exception:
         pass
 
@@ -508,7 +573,8 @@ def _build_tw_external_latest(external_collector) -> dict:
 def build_tw_observations(collector, external_collector=None) -> dict:
     metrics = collector.fetch_ndc_zip_metrics(NDC_ZIP_URL)
     full_metrics = compute_tw_full_metrics(metrics)
-    extra_data = _build_tw_external_latest(external_collector) if external_collector else {}
+    as_of_month = month_key_from_compact(full_metrics["latest_date"])
+    extra_data = _build_tw_external_latest(external_collector, as_of_month) if external_collector else {}
 
     sahm_value = None
     unemp_hist = [v for v in [full_metrics.get("unemployment"), full_metrics.get("unemployment_prev")] if v]
@@ -516,7 +582,7 @@ def build_tw_observations(collector, external_collector=None) -> dict:
         sahm_value = compute_sahm_rule(unemp_hist)
 
     return {
-        "as_of": month_key_from_compact(full_metrics["latest_date"]),
+        "as_of": as_of_month,
         "business_signal_score": full_metrics["business_signal_score"],
         "leading_index_change": full_metrics["leading_index"] - full_metrics["leading_index_prev"],
         "leading_trend": classify_direction(full_metrics["leading_index"] - full_metrics["leading_index_prev"]),

@@ -27,6 +27,7 @@ def test_urakami_lens_uses_rates_and_market_proxies():
     assert "m2_yoy" in metric_ids
     assert "yield_curve" in metric_ids
     assert "margin_balance" in metric_ids
+    assert decision.semantic_rows
     assert decision.reasons
 
 
@@ -53,3 +54,4 @@ def test_urakami_history_row_exposes_support_buckets():
     assert row.support_current_phase_signals
     assert hasattr(row, "support_next_phase_signals")
     assert hasattr(row, "conflict_signals")
+    assert row.semantic_rows

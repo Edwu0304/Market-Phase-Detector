@@ -1,26 +1,26 @@
 from market_phase_detector.lenses.metric_sets import LENS_TITLES
-from market_phase_detector.lenses.transition_logic import (
-    PHASE_SEQUENCE,
-    next_phase,
-    pick_phase_from_support,
-    previous_phase,
-    resolve_phase_transition,
-)
+from market_phase_detector.lenses.transition_logic import PHASE_SEQUENCE, next_phase, previous_phase
 from market_phase_detector.models.lenses import (
     IzaaxTransposedBundle,
     LensDecision,
     LensHistoryRow,
     LensMetric,
+    SemanticMetricRow,
     TransposedMetricRow,
 )
 from market_phase_detector.strategy_content import PHASE_LABELS
 
 
 TRANSITION_METRICS = {
-    "Recovery": {"next": ["leading_index_change", "industrial_production_trend", "pmi"], "prev": ["labor_stress", "unemployment_claims"]},
-    "Growth": {"next": ["cci_level", "inventory_sales_ratio", "overtime_trend"], "prev": ["leading_index_change", "pmi"]},
-    "Boom": {"next": ["sahm_rule", "unemployment_claims", "inventory_sales_ratio"], "prev": ["cci_level", "leading_index_change"]},
-    "Recession": {"next": ["leading_index_change", "pmi", "sahm_rule"], "prev": ["inventory_sales_ratio", "labor_stress"]},
+    "Recovery": {"next": ["leading_index_change", "industrial_production_trend", "pmi"], "warning": ["labor_stress", "unemployment_claims", "exports_yoy"]},
+    "Growth": {"next": ["cci_level", "inventory_sales_ratio", "overtime_trend"], "warning": ["industrial_production_trend", "labor_stress", "exports_yoy"]},
+    "Boom": {"next": ["sahm_rule", "unemployment_claims", "inventory_sales_ratio"], "warning": ["cci_level", "leading_index_change"]},
+    "Recession": {"next": ["leading_index_change", "pmi", "sahm_rule"], "warning": []},
+}
+
+WARNING_LABELS = {
+    "recession_warning": "轉弱警訊",
+    "boom_warning": "過熱警訊",
 }
 
 
@@ -51,7 +51,14 @@ def _metric_status(value: float | None, positive_threshold: float = 0.0) -> str:
     return "neutral"
 
 
-def _build_narrative(phase: str, previous_phase_value: str | None) -> str:
+def _build_narrative(phase: str, previous_phase_value: str | None, warning_state: str | None = None) -> str:
+    if warning_state == "recession_warning":
+        return {
+            "Recovery": "Leading data is still rebuilding, but downside pressure is starting to show.",
+            "Growth": "Growth remains intact, but recession-type pressure is now visible.",
+            "Boom": "The cycle still reads hot, but deterioration risk is becoming harder to ignore.",
+            "Recession": "Labor and demand pressure are strong enough to dominate the cycle signal.",
+        }[phase]
     if previous_phase_value and previous_phase_value != phase:
         return f"Transitioned from {PHASE_LABELS[previous_phase_value]} to {PHASE_LABELS[phase]} based on explicit next-phase evidence."
     return {
@@ -60,12 +67,6 @@ def _build_narrative(phase: str, previous_phase_value: str | None) -> str:
         "Boom": "Growth remains strong and overheating evidence is now visible.",
         "Recession": "Labor and demand pressure are strong enough to dominate the cycle signal.",
     }[phase]
-
-
-def _transition_keys_for_phase(phase: str, previous_phase_value: str | None) -> list[str]:
-    if previous_phase_value and previous_phase_value != phase:
-        return TRANSITION_METRICS.get(previous_phase_value, {}).get("next", [])
-    return TRANSITION_METRICS.get(phase, {}).get("next", [])
 
 
 def _phase_signals(observations: dict) -> dict[str, list[str]]:
@@ -100,11 +101,11 @@ def _phase_signals(observations: dict) -> dict[str, list[str]]:
         signals["Growth"].append(f"PMI 維持強勢擴張 ({pmi:.1f})")
 
     if cci is not None and cci >= 80:
-        signals["Boom"].append(f"景氣熱度逼近過熱 ({cci:.1f})")
+        signals["Boom"].append(f"消費信心過熱 ({cci:.1f})")
     if overtime == "rising":
         signals["Boom"].append("加班工時顯示需求進一步升溫")
     if _inventory_score(inventory) < 0:
-        signals["Boom"].append("庫存壓力升高，接近高峰末段")
+        signals["Boom"].append("庫存循環顯示景氣接近過熱")
 
     if leading <= -0.2:
         signals["Recession"].append(f"領先指標轉弱 ({leading:.2f})")
@@ -122,11 +123,126 @@ def _phase_signals(observations: dict) -> dict[str, list[str]]:
     return signals
 
 
+def _resolve_warning(previous_phase_value: str, phase_signals: dict[str, list[str]]) -> tuple[str | None, str | None, list[str]]:
+    if previous_phase_value == "Growth":
+        warning_reasons = list(phase_signals.get("Recession", []))
+        if len(warning_reasons) >= 3:
+            return "recession_warning", "strong", warning_reasons
+        if len(warning_reasons) >= 2:
+            return "recession_warning", "moderate", warning_reasons
+    if previous_phase_value == "Boom":
+        warning_reasons = list(phase_signals.get("Recession", []))
+        if len(warning_reasons) >= 2:
+            return "recession_warning", "strong", warning_reasons
+    if previous_phase_value == "Recovery":
+        warning_reasons = list(phase_signals.get("Recession", []))
+        if len(warning_reasons) >= 2:
+            return "recession_warning", "moderate", warning_reasons
+    return None, None, []
+
+
+def _resolve_initial_phase(phase_signals: dict[str, list[str]]) -> str:
+    if len(phase_signals.get("Growth", [])) >= 2:
+        return "Growth"
+    if len(phase_signals.get("Recovery", [])) >= 2:
+        return "Recovery"
+    if len(phase_signals.get("Boom", [])) >= 2:
+        return "Boom"
+    if len(phase_signals.get("Recession", [])) >= 2:
+        return "Recession"
+    return "Recovery"
+
+
+def _resolve_izaax_transition(phase_signals: dict[str, list[str]], previous_phase_value: str | None) -> dict[str, object]:
+    if previous_phase_value is None:
+        phase = _resolve_initial_phase(phase_signals)
+        warning_state, warning_level, warning_reasons = _resolve_warning(phase, phase_signals)
+        return {
+            "phase": phase,
+            "decision_mode": "initial",
+            "decision_summary": f"初始月份以 {PHASE_LABELS[phase]} 作為起始階段。",
+            "support_current_phase_signals": list(phase_signals.get(phase, [])),
+            "support_next_phase_signals": list(phase_signals.get(next_phase(phase), [])),
+            "conflict_signals": [
+                signal
+                for phase_key, signals in phase_signals.items()
+                if phase_key not in {phase, next_phase(phase)}
+                for signal in signals
+            ],
+            "warning_state": warning_state,
+            "warning_level": warning_level,
+            "warning_reasons": warning_reasons,
+        }
+
+    candidate_next_phase = next_phase(previous_phase_value)
+    current_support = list(phase_signals.get(previous_phase_value, []))
+    next_support = list(phase_signals.get(candidate_next_phase, []))
+    warning_state, warning_level, warning_reasons = _resolve_warning(previous_phase_value, phase_signals)
+
+    if len(next_support) >= 2:
+        phase = candidate_next_phase
+        decision_mode = "advance"
+        decision_summary = (
+            f"由 {PHASE_LABELS[previous_phase_value]} 推進到 {PHASE_LABELS[phase]}，"
+            f"因為 {'、'.join(next_support)}。"
+        )
+    else:
+        phase = previous_phase_value
+        decision_mode = "hold"
+        if warning_state == "recession_warning":
+            decision_summary = (
+                f"維持 {PHASE_LABELS[phase]}，但出現{WARNING_LABELS[warning_state]}："
+                f"{'、'.join(warning_reasons)}。"
+            )
+        elif next_support:
+            decision_summary = (
+                f"維持 {PHASE_LABELS[phase]}，"
+                f"目前 {'、'.join(next_support)} 仍不足以推進到 {PHASE_LABELS[candidate_next_phase]}。"
+            )
+        else:
+            decision_summary = f"維持 {PHASE_LABELS[phase]}，目前沒有足夠訊號推進到 {PHASE_LABELS[candidate_next_phase]}。"
+
+    conflict_targets = {phase, next_phase(phase)}
+    conflict_signals = [
+        signal
+        for phase_key, signals in phase_signals.items()
+        if phase_key not in conflict_targets
+        for signal in signals
+    ]
+
+    return {
+        "phase": phase,
+        "decision_mode": decision_mode,
+        "decision_summary": decision_summary,
+        "support_current_phase_signals": list(phase_signals.get(phase, [])) if phase != previous_phase_value else current_support,
+        "support_next_phase_signals": list(phase_signals.get(next_phase(phase), [])),
+        "conflict_signals": conflict_signals,
+        "warning_state": warning_state,
+        "warning_level": warning_level,
+        "warning_reasons": warning_reasons,
+    }
+
+
+def _transition_keys_for_phase(phase: str, previous_phase_value: str | None) -> list[str]:
+    if previous_phase_value and previous_phase_value != phase and phase == next_phase(previous_phase_value):
+        return TRANSITION_METRICS.get(previous_phase_value, {}).get("next", [])
+    return TRANSITION_METRICS.get(phase, {}).get("next", [])
+
+
+def _warning_keys_for_phase(phase: str) -> list[str]:
+    return TRANSITION_METRICS.get(phase, {}).get("warning", [])
+
+
+def _warning_label(warning_state: str | None) -> str | None:
+    if warning_state is None:
+        return None
+    return WARNING_LABELS.get(warning_state, warning_state)
+
+
 def build_izaax_lens(observations: dict) -> LensDecision:
     phase_signals = _phase_signals(observations)
-    phase = pick_phase_from_support(phase_signals)
-    if len(phase_signals.get("Growth", [])) >= 2 and phase == "Recovery":
-        phase = "Growth"
+    resolved = _resolve_izaax_transition(phase_signals, "Growth")
+    phase = resolved["phase"]
 
     leading_score = observations.get("leading_index_change", 0.0) or 0.0
     industrial_trend = observations.get("industrial_production_trend", observations.get("coincident_trend", "stable"))
@@ -140,7 +256,7 @@ def build_izaax_lens(observations: dict) -> LensDecision:
     sahm_value = observations.get("sahm_rule")
     inventory_score = _inventory_score(observations.get("inventory_sales_ratio"))
 
-    reasons = list(phase_signals.get(phase, [])) or [f"Phase resolved to {phase} with limited explicit evidence."]
+    reasons = list(resolved["support_current_phase_signals"]) or [f"Phase resolved to {phase} with limited explicit evidence."]
 
     metrics = [
         LensMetric("leading_index_change", "Leading Index Change", leading_score, "decimal", _metric_status(leading_score)),
@@ -163,7 +279,10 @@ def build_izaax_lens(observations: dict) -> LensDecision:
         reasons=reasons,
         metrics=metrics,
         transition_keys=_transition_keys_for_phase(phase, None),
-        narrative=_build_narrative(phase, None),
+        warning_state=resolved["warning_state"],
+        warning_level=resolved["warning_level"],
+        warning_reasons=list(resolved["warning_reasons"]),
+        narrative=_build_narrative(phase, None, resolved["warning_state"]),
         stance={
             "Recovery": "start building risk",
             "Growth": "hold trend exposure",
@@ -174,21 +293,49 @@ def build_izaax_lens(observations: dict) -> LensDecision:
 
 
 def build_izaax_history_row(month: str, observations: dict, previous_phase: str | None = None) -> LensHistoryRow:
-    current = build_izaax_lens(observations)
     phase_signals = _phase_signals(observations)
-    resolved = resolve_phase_transition(phase_signals, previous_phase, min_next_support=2)
+    resolved = _resolve_izaax_transition(phase_signals, previous_phase)
     resolved_phase = resolved["phase"]
+
+    leading_score = observations.get("leading_index_change", 0.0) or 0.0
+    industrial_trend = observations.get("industrial_production_trend", observations.get("coincident_trend", "stable"))
+    overtime_trend = observations.get("overtime_trend", "stable")
+    labor_stress = 1.0 if observations.get("unemployment_trend") == "rising" else 0.0
+    claims_trend = observations.get("unemployment_claims_trend", "stable")
+    exports_yoy = observations.get("exports_yoy", 0.0) or 0.0
+    pmi = observations.get("pmi")
+    cci_level = observations.get("cci_total")
+    cci_signal = "euphoria" if cci_level is not None and cci_level > 80 else ("warm" if cci_level is not None and cci_level > 70 else "neutral")
+    sahm_value = observations.get("sahm_rule")
+    inventory_score = _inventory_score(observations.get("inventory_sales_ratio"))
+
+    metrics = [
+        LensMetric("leading_index_change", "Leading Index Change", leading_score, "decimal", _metric_status(leading_score)),
+        LensMetric("industrial_production_trend", "Industrial Production Trend", _direction_score(industrial_trend), "decimal", _metric_status(_direction_score(industrial_trend))),
+        LensMetric("labor_stress", "Labor Stress", labor_stress, "decimal", "negative" if labor_stress else "positive"),
+        LensMetric("overtime_trend", "Overtime Trend", _direction_score(overtime_trend), "decimal", _metric_status(_direction_score(overtime_trend))),
+        LensMetric("exports_yoy", "Exports YoY", exports_yoy, "percent", _metric_status(exports_yoy)),
+        LensMetric("unemployment_claims", "Unemployment Claims", observations.get("unemployment_claims") or 0.0, "decimal", "positive" if claims_trend == "falling" else "negative" if claims_trend == "rising" else "neutral", proxy_label="Proxy"),
+        LensMetric("cci_level", "CCI", cci_level if cci_level is not None else 50.0, "decimal", "negative" if cci_signal == "euphoria" else "positive", proxy_label="Proxy"),
+        LensMetric("pmi", "PMI", pmi if pmi is not None else 50.0, "decimal", "positive" if pmi is not None and pmi >= 50 else "negative" if pmi is not None else "neutral", proxy_label="Proxy"),
+        LensMetric("sahm_rule", "Sahm Rule", sahm_value if sahm_value is not None else 0.0, "decimal", "negative" if sahm_value is not None and sahm_value >= 0.5 else "positive"),
+        LensMetric("inventory_sales_ratio", "Inventory/Sales", inventory_score, "decimal", _metric_status(inventory_score)),
+    ]
+
     return LensHistoryRow(
         month=month,
         as_of=observations["as_of"],
         phase=resolved_phase,
         phase_label=PHASE_LABELS[resolved_phase],
-        reasons=list(phase_signals.get(resolved_phase, [])),
-        metrics=current.metrics,
+        reasons=list(resolved["support_current_phase_signals"]),
+        metrics=metrics,
         previous_phase=previous_phase,
         previous_phase_label=PHASE_LABELS[previous_phase] if previous_phase else None,
         transition_keys=_transition_keys_for_phase(resolved_phase, previous_phase),
-        narrative=_build_narrative(resolved_phase, previous_phase),
+        warning_state=resolved["warning_state"],
+        warning_level=resolved["warning_level"],
+        warning_reasons=list(resolved["warning_reasons"]),
+        narrative=_build_narrative(resolved_phase, previous_phase, resolved["warning_state"]),
         stance={
             "Recovery": "start building risk",
             "Growth": "hold trend exposure",
@@ -251,6 +398,73 @@ def _get_metric_label(metric_id: str) -> str:
     return labels.get(metric_id, metric_id)
 
 
+IZAAX_SEMANTIC_ROW_SPECS = [
+    {
+        "row_id": "izaax-leading-signals",
+        "master_category": "領先訊號",
+        "master_description": "愛謝客用來判斷景氣是否提前轉向的核心觀察面向。",
+        "site_metric_label": "國發會領先指標",
+        "source_type": "original",
+        "metric_ids": ["leading_index_change"],
+        "transition_role": "advance",
+    },
+    {
+        "row_id": "izaax-labor-stress",
+        "master_category": "勞動壓力",
+        "master_description": "觀察就業市場是否開始反映景氣轉弱。",
+        "site_metric_label": "就業壓力 / 初領失業給付",
+        "source_type": "proxy",
+        "metric_ids": ["labor_stress", "unemployment_claims"],
+        "transition_role": "risk",
+    },
+    {
+        "row_id": "izaax-production-demand",
+        "master_category": "生產與需求",
+        "master_description": "工業活動與需求是否持續擴張或開始轉弱。",
+        "site_metric_label": "工業生產 / 加班工時",
+        "source_type": "proxy",
+        "metric_ids": ["industrial_production_trend", "overtime_trend"],
+        "transition_role": "confirm",
+    },
+    {
+        "row_id": "izaax-export-demand",
+        "master_category": "出口與全球需求",
+        "master_description": "出口是否仍支撐景氣循環向上。",
+        "site_metric_label": "出口年增率",
+        "source_type": "original",
+        "metric_ids": ["exports_yoy"],
+        "transition_role": "advance",
+    },
+    {
+        "row_id": "izaax-confidence",
+        "master_category": "信心與需求溫度",
+        "master_description": "需求熱度與信心的代理觀察值。",
+        "site_metric_label": "CCI",
+        "source_type": "proxy",
+        "metric_ids": ["cci_level"],
+        "transition_role": "confirm",
+    },
+    {
+        "row_id": "izaax-inventory-cycle",
+        "master_category": "庫存循環",
+        "master_description": "庫存去化或累積是否接近下一階段的壓力點。",
+        "site_metric_label": "庫存 / 銷售比",
+        "source_type": "proxy",
+        "metric_ids": ["inventory_sales_ratio"],
+        "transition_role": "risk",
+    },
+    {
+        "row_id": "izaax-recession-warning",
+        "master_category": "衰退警訊",
+        "master_description": "補充觀察衰退壓力是否明顯升高。",
+        "site_metric_label": "PMI / Sahm Rule / 勞動壓力",
+        "source_type": "proxy",
+        "metric_ids": ["pmi", "sahm_rule", "labor_stress"],
+        "transition_role": "risk",
+    },
+]
+
+
 def _month_label(observations: dict) -> str:
     month = observations.get("month")
     if month:
@@ -296,9 +510,14 @@ def build_izaax_transposed_bundle(current_observations: dict, history_observatio
             "conflict_signals": list(row.conflict_signals),
             "supporting_signals": list(row.supporting_signals),
             "conflicting_signals": list(row.conflicting_signals),
+            "warning_state": row.warning_state,
+            "warning_level": row.warning_level,
+            "warning_label": _warning_label(row.warning_state),
+            "warning_reasons": list(row.warning_reasons),
         }
         for row in history_rows
     ]
+
     metric_ids = [
         "leading_index_change",
         "industrial_production_trend",
@@ -315,6 +534,7 @@ def build_izaax_transposed_bundle(current_observations: dict, history_observatio
     for metric_id in metric_ids:
         display_format = _get_display_format_for_metric(metric_id)
         values = []
+        warning_keys = set(_warning_keys_for_phase(current_phase))
         for obs in deduped:
             value = _get_metric_value_for_phase(metric_id, obs)
             values.append(
@@ -329,9 +549,36 @@ def build_izaax_transposed_bundle(current_observations: dict, history_observatio
                 metric_id=metric_id,
                 label=_get_metric_label(metric_id),
                 display_format=display_format,
-                is_transition_key=metric_id in latest_row.transition_keys,
-                transition_direction="next" if metric_id in latest_row.transition_keys else "",
+                is_transition_key=metric_id in latest_row.transition_keys or (latest_row.warning_state is not None and metric_id in warning_keys),
+                transition_direction="warning" if latest_row.warning_state is not None and metric_id in warning_keys else "next" if metric_id in latest_row.transition_keys else "",
                 values=values,
+            )
+        )
+
+    metric_rows_by_id = {row.metric_id: row for row in metric_rows}
+    semantic_rows = []
+    warning_metric_ids = set(_warning_keys_for_phase(current_phase)) if latest_row.warning_state else set()
+    for spec in IZAAX_SEMANTIC_ROW_SPECS:
+        current_metric = next((metric for metric in latest_row.metrics if metric.metric_id in spec["metric_ids"]), None)
+        first_metric_row = next((metric_rows_by_id[metric_id] for metric_id in spec["metric_ids"] if metric_id in metric_rows_by_id), None)
+        history_values = first_metric_row.values if first_metric_row else []
+        semantic_rows.append(
+            SemanticMetricRow(
+                row_id=spec["row_id"],
+                master_category=spec["master_category"],
+                master_description=spec["master_description"],
+                site_metric_label=spec["site_metric_label"],
+                source_type=spec["source_type"],
+                metric_ids=list(spec["metric_ids"]),
+                display_format=current_metric.display_format if current_metric else "decimal",
+                current_value={
+                    "display_value": None if current_metric is None else current_metric.to_dict().get("display_value"),
+                    "status": None if current_metric is None else current_metric.status,
+                },
+                history_values=history_values,
+                transition_role=spec["transition_role"],
+                is_transition_driver=any(metric_id in latest_row.transition_keys for metric_id in spec["metric_ids"])
+                or any(metric_id in warning_metric_ids for metric_id in spec["metric_ids"]),
             )
         )
 
@@ -343,7 +590,11 @@ def build_izaax_transposed_bundle(current_observations: dict, history_observatio
         phase_sequence=PHASE_SEQUENCE,
         transition_keys=list(latest_row.transition_keys),
         metric_rows=metric_rows,
+        semantic_rows=semantic_rows,
         months=months,
         month_columns=month_columns,
         reasons=list(latest_row.reasons),
+        warning_state=latest_row.warning_state,
+        warning_level=latest_row.warning_level,
+        warning_reasons=list(latest_row.warning_reasons),
     )

@@ -25,6 +25,7 @@ def test_marks_lens_uses_credit_and_risk_inputs():
     assert "credit_spread" in metric_ids
     assert "cci_level" in metric_ids
     assert "margin_balance" in metric_ids
+    assert decision.semantic_rows
     assert decision.reasons
 
 
@@ -49,3 +50,4 @@ def test_marks_history_row_exposes_support_buckets():
     assert row.support_current_phase_signals
     assert hasattr(row, "support_next_phase_signals")
     assert hasattr(row, "conflict_signals")
+    assert row.semantic_rows

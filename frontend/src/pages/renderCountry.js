@@ -6,16 +6,36 @@ import {
 } from "../domain/country.js";
 import {
   renderIzaaxLensRow,
-  renderLensDecisionPanel,
   renderStandardLensRow,
   renderTransposedMetricTable,
+  renderLensDecisionPanel,
 } from "../domain/lens.js";
 import { phaseTone } from "../tokens.js";
 import { buildNav } from "./shared.js";
 
+function scrollWrapToLatest(element) {
+  if (!element) {
+    return;
+  }
+  element.scrollLeft = element.scrollWidth;
+}
+
 function buildCountryShell(country, config) {
-  const observations = Object.entries(country.observations ?? {})
-    .map(([key, value]) => renderObservationChip(key, value))
+  const summaryKeys = [
+    "as_of",
+    "leading_index_change",
+    "breadth_regime",
+    "yield_curve_regime",
+    "earnings_growth_proxy",
+    "sector_leader",
+    "sector_breadth_ratio",
+    "distress_regime",
+    "default_pressure_regime",
+    "intermarket_order",
+  ];
+  const observations = summaryKeys
+    .filter((key) => Object.prototype.hasOwnProperty.call(country.observations ?? {}, key))
+    .map((key) => renderObservationChip(key, country.observations[key]))
     .join("");
 
   return `
@@ -24,9 +44,9 @@ function buildCountryShell(country, config) {
       ${renderCountryStatusBand(country)}
       <section class="hero hero-country country-command-header">
         <div class="hero-copy command-header-copy">
-          <p class="eyebrow">國別策略地圖</p>
+          <p class="eyebrow">Country Workspace</p>
           <h1>${country.handbook.country_label}</h1>
-          <p class="subtitle">每個 lens 都列出該作者完整會看的指標。切換月份後，會高亮正在推動下一階段或已造成轉段的訊號。</p>
+          <p class="subtitle">Read the site phase first, then compare how each lens interprets the same month with its own evidence and transition rules.</p>
         </div>
         ${renderSitePhasePanel(country)}
       </section>
@@ -40,7 +60,7 @@ function buildLensRow(lensId, bundle, strategyBook) {
   const history = bundle.history ?? [];
   const maxIndex = Math.max(history.length - 1, 0);
   const currentRow = history[maxIndex] ?? {
-    month: "無資料",
+    month: "No data",
     as_of: bundle.as_of ?? "",
     phase: bundle.phase,
     phase_label: bundle.phase_label,
@@ -77,7 +97,7 @@ function createLensController(panel, lensId, bundle, strategyBook) {
       sidePanel.innerHTML = renderLensDecisionPanel(bundle, row);
       const nextScrollWrapper = mainPanel.querySelector(".izaax-table-scroll-wrapper");
       if (nextScrollWrapper) {
-        nextScrollWrapper.scrollLeft = preservedScrollLeft;
+        nextScrollWrapper.scrollLeft = row.month === history[history.length - 1]?.month ? nextScrollWrapper.scrollWidth : preservedScrollLeft;
         nextScrollWrapper.scrollTop = preservedScrollTop;
       }
       mainPanel.querySelectorAll(".month-header-button").forEach((button) => {
@@ -124,12 +144,15 @@ function createLensController(panel, lensId, bundle, strategyBook) {
   slider.addEventListener("input", (event) => {
     updateLensRow(event.target.value);
   });
+
+  const initialHistoryTableWrap = tableSlot.querySelector(".history-table-wrap");
+  scrollWrapToLatest(initialHistoryTableWrap);
 }
 
 export function renderCountryPage(payload, siteContent, config) {
   const country = payload.countries.find((entry) => entry.country === config.country);
   if (!country) {
-    throw new Error(`找不到 ${config.country} 的國別資料。`);
+    throw new Error(`Missing country payload for ${config.country}.`);
   }
 
   const app = document.getElementById("app");

@@ -38,3 +38,11 @@ def test_visual_system_mentions_terminal_ui_regions():
     assert ".country-status-band" in styles
     assert ".country-command-header" in styles
     assert ".lens-workspace" in styles
+
+
+def test_visual_system_mentions_semantic_row_regions():
+    styles = Path("frontend/src/styles.css").read_text(encoding="utf-8")
+    assert ".semantic-row-block" in styles
+    assert ".semantic-row-card" in styles
+    assert ".source-type-chip" in styles
+    assert ".site-metric-subtitle" in styles

@@ -316,6 +316,151 @@ def test_build_tw_observations_wires_existing_external_fields():
     assert observations["breadth_regime"] == "broadening"
 
 
+def test_build_tw_observations_prefers_latest_discount_rate_by_date():
+    class ReverseOrderedExternalCollector(StubTaiwanExternalCollector):
+        def fetch_cbc_discount_rate(self):
+            return [
+                {"date": "2026-02", "discount_rate": 1.875, "accommodation_rate": 2.25, "short_term_rate": 0.91},
+                {"date": "2026-01", "discount_rate": 1.875, "accommodation_rate": 2.25, "short_term_rate": 0.82},
+            ]
+
+    collector = StubTaiwanCollector(
+        {
+            "latest_date": "202602",
+            "business_signal_score": 29,
+            "leading_index": 103.5,
+            "leading_index_prev": 103.1,
+            "coincident_index": 106.4,
+            "coincident_index_prev": 106.1,
+            "unemployment": 3.32,
+            "unemployment_prev": 3.29,
+            "export_value": 1367.0,
+            "export_value_year_ago": 1200.0,
+        }
+    )
+
+    observations = build_tw_observations(collector, external_collector=ReverseOrderedExternalCollector())
+
+    assert observations["funding_stress_proxy"] == 0.91
+
+
+def test_build_tw_observations_uses_bond_data_for_observation_month():
+    class MonthAwareExternalCollector(StubTaiwanExternalCollector):
+        def fetch_tpex_bond_data(self, year: int, month: int):
+            assert (year, month) == (2026, 2)
+            return {
+                "date": "2026-02-26",
+                "gov_yield_10y": 1.415,
+                "gov_yield_2y": 1.569,
+                "spread_10y_2y": -0.154,
+                "credit_spread_bbb": 0.7358,
+            }
+
+    collector = StubTaiwanCollector(
+        {
+            "latest_date": "202602",
+            "business_signal_score": 29,
+            "leading_index": 103.5,
+            "leading_index_prev": 103.1,
+            "coincident_index": 106.4,
+            "coincident_index_prev": 106.1,
+            "unemployment": 3.32,
+            "unemployment_prev": 3.29,
+            "export_value": 1367.0,
+            "export_value_year_ago": 1200.0,
+        }
+    )
+
+    observations = build_tw_observations(collector, external_collector=MonthAwareExternalCollector())
+
+    assert observations["gov_yield_10y"] == 1.415
+    assert observations["gov_yield_2y"] == 1.569
+    assert observations["yield_curve_spread"] == -0.154
+    assert observations["credit_spread_bbb"] == 0.7358
+
+
+def test_build_tw_observations_cuts_external_data_to_phase_month():
+    class FutureBiasedExternalCollector(StubTaiwanExternalCollector):
+        def fetch_ncu_cci(self):
+            return {"date": "2026-03", "cci_total": 62.3}
+
+        def fetch_ncu_cci_history(self, months: int):
+            return [
+                {"date": "2026-02", "cci_total": 66.58},
+                {"date": "2026-03", "cci_total": 62.3},
+            ]
+
+        def fetch_latest_cier_pmi(self):
+            return {"date": "2026-03", "pmi": 55.4}
+
+        def fetch_cier_pmi_history(self, months: int):
+            return [
+                {"date": "2026-02", "pmi": 58.5},
+                {"date": "2026-03", "pmi": 55.4},
+            ]
+
+        def fetch_latest_cbc_m2(self):
+            return {"date": "2026-03", "m2_yoy": 5.38}
+
+        def fetch_cbc_m2_history(self, months: int):
+            return [
+                {"date": "2026-02", "m2_yoy": 5.16},
+                {"date": "2026-03", "m2_yoy": 5.38},
+            ]
+
+        def fetch_latest_twse_market_snapshot(self):
+            return {
+                "date": "2026-04-17",
+                "breadth_ratio": 1.0061,
+                "advance_decline_spread": 3,
+                "sector_advance_count": 20,
+                "sector_decline_count": 17,
+                "sector_breadth_ratio": 1.1765,
+                "sector_leader": "玻璃陶瓷類指數",
+                "sector_leader_return": 5.75,
+                "sector_laggard": "塑膠類指數",
+                "sector_laggard_return": -2.55,
+            }
+
+        def fetch_twse_market_snapshot_history(self, months: int = 24):
+            return [
+                {
+                    "date": "2026-02-28",
+                    "breadth_ratio": 1.31,
+                    "advance_decline_spread": 122,
+                    "sector_advance_count": 20,
+                    "sector_decline_count": 12,
+                    "sector_breadth_ratio": 1.6667,
+                    "sector_leader": "航運類指數",
+                    "sector_leader_return": 3.01,
+                    "sector_laggard": "金融保險類指數",
+                    "sector_laggard_return": -2.8,
+                }
+            ]
+
+    collector = StubTaiwanCollector(
+        {
+            "latest_date": "202602",
+            "business_signal_score": 29,
+            "leading_index": 103.5,
+            "leading_index_prev": 103.1,
+            "coincident_index": 106.4,
+            "coincident_index_prev": 106.1,
+            "unemployment": 3.32,
+            "unemployment_prev": 3.29,
+            "export_value": 1367.0,
+            "export_value_year_ago": 1200.0,
+        }
+    )
+
+    observations = build_tw_observations(collector, external_collector=FutureBiasedExternalCollector())
+
+    assert observations["cci_total"] == 66.58
+    assert observations["pmi"] == 58.5
+    assert observations["m2_yoy"] == 5.16
+    assert observations["breadth_ratio"] == 1.31
+
+
 def test_build_us_history_observations_can_backfill_twelve_months():
     leading_rows = []
     claims_rows = []

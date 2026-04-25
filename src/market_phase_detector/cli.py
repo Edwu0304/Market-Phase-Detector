@@ -45,21 +45,37 @@ def _build_lens_bundle(observations: dict, history_observations: list[dict]) -> 
         previous_phases["urakami"] = urakami_row.phase
         previous_phases["marks"] = marks_row.phase
 
+    izaax_decision = build_izaax_lens(observations).to_dict()
+    izaax_transposed = build_izaax_transposed_bundle(observations, history_observations).to_dict()
+    izaax_decision["phase"] = izaax_transposed["current_phase"]
+    izaax_decision["phase_label"] = izaax_transposed["current_phase_label"]
+    izaax_decision["warning_state"] = izaax_transposed.get("warning_state")
+    izaax_decision["warning_level"] = izaax_transposed.get("warning_level")
+    izaax_decision["warning_reasons"] = izaax_transposed.get("warning_reasons", [])
+
     izaax_bundle = {
-        **build_izaax_lens(observations).to_dict(),
+        **izaax_decision,
         "history": izaax_history,
+        "transposed": izaax_transposed,
     }
-    # Add transposed bundle for Izaax specialized UI
-    izaax_bundle["transposed"] = build_izaax_transposed_bundle(observations, history_observations).to_dict()
+
+    urakami_decision = build_urakami_lens(observations).to_dict()
+    if urakami_history:
+        urakami_decision["phase"] = urakami_history[-1]["phase"]
+        urakami_decision["phase_label"] = urakami_history[-1]["phase_label"]
+    marks_decision = build_marks_lens(observations).to_dict()
+    if marks_history:
+        marks_decision["phase"] = marks_history[-1]["phase"]
+        marks_decision["phase_label"] = marks_history[-1]["phase_label"]
 
     return {
         "izaax": izaax_bundle,
         "urakami": {
-            **build_urakami_lens(observations).to_dict(),
+            **urakami_decision,
             "history": urakami_history,
         },
         "marks": {
-            **build_marks_lens(observations).to_dict(),
+            **marks_decision,
             "history": marks_history,
         },
     }

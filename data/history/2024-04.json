@@ -166,7 +166,7 @@
         "yield_curve": -0.35,
         "hy_spread": 3.18,
         "inflation_expectation_5y": 2.43,
-        "funding_stress": -0.8413,
+        "funding_stress": -0.8411,
         "lending_standards": 15.6,
         "yield_10y": 4.69,
         "yield_2y": 5.04,
@@ -210,7 +210,7 @@
           "yield_curve": -0.35,
           "hy_spread": 3.18,
           "inflation_expectation_5y": 2.43,
-          "funding_stress": -0.8413,
+          "funding_stress": -0.8411,
           "lending_standards": 15.6,
           "yield_10y": 4.69,
           "yield_2y": 5.04,
@@ -383,8 +383,7 @@
           "phase": "Recession",
           "phase_label": "衰退",
           "reasons": [
-            "領先指標轉弱 (-0.53)",
-            "工業生產趨勢轉差"
+            "Phase resolved to Growth with limited explicit evidence."
           ],
           "metrics": [
             {
@@ -471,13 +470,17 @@
               "status": "neutral"
             }
           ],
+          "semantic_rows": [],
           "transition_keys": [
-            "leading_index_change",
-            "pmi",
-            "sahm_rule"
+            "cci_level",
+            "inventory_sales_ratio",
+            "overtime_trend"
           ],
-          "narrative": "Labor and demand pressure are strong enough to dominate the cycle signal.",
-          "stance": "defend capital",
+          "warning_state": null,
+          "warning_level": null,
+          "warning_reasons": [],
+          "narrative": "Growth remains intact, but recession-type pressure is now visible.",
+          "stance": "hold trend exposure",
           "history": [
             {
               "month": "2024-04",
@@ -573,6 +576,7 @@
                   "status": "neutral"
                 }
               ],
+              "semantic_rows": [],
               "previous_phase": null,
               "previous_phase_label": null,
               "transition_keys": [
@@ -580,10 +584,13 @@
                 "pmi",
                 "sahm_rule"
               ],
+              "warning_state": null,
+              "warning_level": null,
+              "warning_reasons": [],
               "narrative": "Labor and demand pressure are strong enough to dominate the cycle signal.",
               "stance": "defend capital",
               "decision_mode": "initial",
-              "decision_summary": "初始月份以 衰退 的支持訊號最多，作為當期階段。",
+              "decision_summary": "初始月份以 衰退 作為起始階段。",
               "support_current_phase_signals": [
                 "領先指標轉弱 (-0.53)",
                 "工業生產趨勢轉差"
@@ -757,6 +764,180 @@
                 ]
               }
             ],
+            "semantic_rows": [
+              {
+                "row_id": "izaax-leading-signals",
+                "master_category": "領先訊號",
+                "master_description": "愛謝客用來判斷景氣是否提前轉向的核心觀察面向。",
+                "site_metric_label": "國發會領先指標",
+                "source_type": "original",
+                "metric_ids": [
+                  "leading_index_change"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "-0.53",
+                  "status": "negative"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "-0.53",
+                    "status": "negative"
+                  }
+                ],
+                "transition_role": "advance",
+                "is_transition_driver": true
+              },
+              {
+                "row_id": "izaax-labor-stress",
+                "master_category": "勞動壓力",
+                "master_description": "觀察就業市場是否開始反映景氣轉弱。",
+                "site_metric_label": "就業壓力 / 初領失業給付",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "labor_stress",
+                  "unemployment_claims"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "0.00",
+                  "status": "positive"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "risk",
+                "is_transition_driver": false
+              },
+              {
+                "row_id": "izaax-production-demand",
+                "master_category": "生產與需求",
+                "master_description": "工業活動與需求是否持續擴張或開始轉弱。",
+                "site_metric_label": "工業生產 / 加班工時",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "industrial_production_trend",
+                  "overtime_trend"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "-1.00",
+                  "status": "negative"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "confirm",
+                "is_transition_driver": false
+              },
+              {
+                "row_id": "izaax-export-demand",
+                "master_category": "出口與全球需求",
+                "master_description": "出口是否仍支撐景氣循環向上。",
+                "site_metric_label": "出口年增率",
+                "source_type": "original",
+                "metric_ids": [
+                  "exports_yoy"
+                ],
+                "display_format": "percent",
+                "current_value": {
+                  "display_value": "0.0%",
+                  "status": "neutral"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "--",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "advance",
+                "is_transition_driver": false
+              },
+              {
+                "row_id": "izaax-confidence",
+                "master_category": "信心與需求溫度",
+                "master_description": "需求熱度與信心的代理觀察值。",
+                "site_metric_label": "CCI",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "cci_level"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "50.00",
+                  "status": "positive"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "--",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "confirm",
+                "is_transition_driver": false
+              },
+              {
+                "row_id": "izaax-inventory-cycle",
+                "master_category": "庫存循環",
+                "master_description": "庫存去化或累積是否接近下一階段的壓力點。",
+                "site_metric_label": "庫存 / 銷售比",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "inventory_sales_ratio"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "0.00",
+                  "status": "neutral"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "risk",
+                "is_transition_driver": false
+              },
+              {
+                "row_id": "izaax-recession-warning",
+                "master_category": "衰退警訊",
+                "master_description": "補充觀察衰退壓力是否明顯升高。",
+                "site_metric_label": "PMI / Sahm Rule / 勞動壓力",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "pmi",
+                  "sahm_rule",
+                  "labor_stress"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "0.00",
+                  "status": "positive"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "--",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "risk",
+                "is_transition_driver": true
+              }
+            ],
             "months": [
               "2024-04"
             ],
@@ -771,7 +952,7 @@
                   "sahm_rule"
                 ],
                 "decision_mode": "initial",
-                "decision_summary": "初始月份以 衰退 的支持訊號最多，作為當期階段。",
+                "decision_summary": "初始月份以 衰退 作為起始階段。",
                 "support_current_phase_signals": [
                   "領先指標轉弱 (-0.53)",
                   "工業生產趨勢轉差"
@@ -784,13 +965,20 @@
                   "領先指標轉弱 (-0.53)",
                   "工業生產趨勢轉差"
                 ],
-                "conflicting_signals": []
+                "conflicting_signals": [],
+                "warning_state": null,
+                "warning_level": null,
+                "warning_label": null,
+                "warning_reasons": []
               }
             ],
             "reasons": [
               "領先指標轉弱 (-0.53)",
               "工業生產趨勢轉差"
-            ]
+            ],
+            "warning_state": null,
+            "warning_level": null,
+            "warning_reasons": []
           }
         },
         "urakami": {
@@ -865,11 +1053,130 @@
               "proxy_label": "Proxy"
             }
           ],
+          "semantic_rows": [
+            {
+              "row_id": "urakami-rate-direction",
+              "master_category": "政策與短率方向",
+              "master_description": "判斷金融相場是否啟動的第一層利率觀察。",
+              "site_metric_label": "銀行放款利率 / rate trend",
+              "source_type": "proxy",
+              "metric_ids": [
+                "bank_lending_rate"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "bank_lending_rate",
+                  "label": "Bank Lending Rate",
+                  "display_value": "0.0%",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "advance",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "urakami-credit-liquidity",
+              "master_category": "信用與流動性",
+              "master_description": "觀察信用擴張與貨幣供給是否支撐市場向上。",
+              "site_metric_label": "credit change / M2 YoY / M1B",
+              "source_type": "proxy",
+              "metric_ids": [
+                "credit_change",
+                "m2_yoy",
+                "m1b_change"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "credit_change",
+                  "label": "Credit Change",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                },
+                {
+                  "metric_id": "m2_yoy",
+                  "label": "M2 YoY",
+                  "display_value": "0.0%",
+                  "status": "neutral"
+                },
+                {
+                  "metric_id": "m1b_change",
+                  "label": "M1B Change",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "advance",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "urakami-yield-curve",
+              "master_category": "殖利率曲線",
+              "master_description": "觀察陡峭化、平坦化與倒掛所代表的景氣轉折。",
+              "site_metric_label": "Yield Curve Spread",
+              "source_type": "proxy",
+              "metric_ids": [
+                "yield_curve"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "yield_curve",
+                  "label": "Yield Curve Spread",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "risk",
+              "is_transition_driver": false
+            },
+            {
+              "row_id": "urakami-valuation",
+              "master_category": "估值與過熱",
+              "master_description": "觀察 PER 是否從金融相場走向過熱。",
+              "site_metric_label": "PE Ratio",
+              "source_type": "proxy",
+              "metric_ids": [
+                "pe_ratio"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "pe_ratio",
+                  "label": "PE Ratio",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "risk",
+              "is_transition_driver": false
+            },
+            {
+              "row_id": "urakami-leverage",
+              "master_category": "市場槓桿與擁擠",
+              "master_description": "觀察融資餘額與擁擠交易是否升溫。",
+              "site_metric_label": "Margin Balance",
+              "source_type": "proxy",
+              "metric_ids": [
+                "margin_balance"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "margin_balance",
+                  "label": "Margin Balance",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "risk",
+              "is_transition_driver": false
+            }
+          ],
           "transition_keys": [
             "bank_lending_rate",
             "credit_change",
             "m2_yoy"
           ],
+          "warning_state": null,
+          "warning_level": null,
+          "warning_reasons": [],
           "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
           "stance": "turn risk back on",
           "history": [
@@ -945,6 +1252,122 @@
                   "proxy_label": "Proxy"
                 }
               ],
+              "semantic_rows": [
+                {
+                  "row_id": "urakami-rate-direction",
+                  "master_category": "政策與短率方向",
+                  "master_description": "判斷金融相場是否啟動的第一層利率觀察。",
+                  "site_metric_label": "銀行放款利率 / rate trend",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "bank_lending_rate"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "bank_lending_rate",
+                      "label": "Bank Lending Rate",
+                      "display_value": "0.0%",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "advance",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "urakami-credit-liquidity",
+                  "master_category": "信用與流動性",
+                  "master_description": "觀察信用擴張與貨幣供給是否支撐市場向上。",
+                  "site_metric_label": "credit change / M2 YoY / M1B",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "credit_change",
+                    "m2_yoy",
+                    "m1b_change"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "credit_change",
+                      "label": "Credit Change",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    },
+                    {
+                      "metric_id": "m2_yoy",
+                      "label": "M2 YoY",
+                      "display_value": "0.0%",
+                      "status": "neutral"
+                    },
+                    {
+                      "metric_id": "m1b_change",
+                      "label": "M1B Change",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "advance",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "urakami-yield-curve",
+                  "master_category": "殖利率曲線",
+                  "master_description": "觀察陡峭化、平坦化與倒掛所代表的景氣轉折。",
+                  "site_metric_label": "Yield Curve Spread",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "yield_curve"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "yield_curve",
+                      "label": "Yield Curve Spread",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "risk",
+                  "is_transition_driver": false
+                },
+                {
+                  "row_id": "urakami-valuation",
+                  "master_category": "估值與過熱",
+                  "master_description": "觀察 PER 是否從金融相場走向過熱。",
+                  "site_metric_label": "PE Ratio",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "pe_ratio"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "pe_ratio",
+                      "label": "PE Ratio",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "risk",
+                  "is_transition_driver": false
+                },
+                {
+                  "row_id": "urakami-leverage",
+                  "master_category": "市場槓桿與擁擠",
+                  "master_description": "觀察融資餘額與擁擠交易是否升溫。",
+                  "site_metric_label": "Margin Balance",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "margin_balance"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "margin_balance",
+                      "label": "Margin Balance",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "risk",
+                  "is_transition_driver": false
+                }
+              ],
               "previous_phase": null,
               "previous_phase_label": null,
               "transition_keys": [
@@ -952,10 +1375,13 @@
                 "credit_change",
                 "m2_yoy"
               ],
+              "warning_state": null,
+              "warning_level": null,
+              "warning_reasons": [],
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "initial",
-              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "decision_summary": "Initial month resolves to 復甦 based on the strongest support.",
               "support_current_phase_signals": [
                 "利率不再持續緊縮",
                 "信用環境止穩",
@@ -1042,11 +1468,130 @@
               "proxy_label": "Proxy"
             }
           ],
+          "semantic_rows": [
+            {
+              "row_id": "marks-credit-spreads",
+              "master_category": "信用利差",
+              "master_description": "Marks 最核心的信用週期觀察面向。",
+              "site_metric_label": "Credit Spread",
+              "source_type": "original",
+              "metric_ids": [
+                "credit_spread"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "credit_spread",
+                  "label": "Credit Spread",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "advance",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "marks-risk-appetite",
+              "master_category": "風險偏好",
+              "master_description": "市場是否願意承擔風險，從價格與情緒觀察。",
+              "site_metric_label": "Stock Index YoY / CCI",
+              "source_type": "proxy",
+              "metric_ids": [
+                "stock_index_yoy",
+                "cci_level"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "stock_index_yoy",
+                  "label": "Stock Index YoY",
+                  "display_value": "0.0%",
+                  "status": "neutral"
+                },
+                {
+                  "metric_id": "cci_level",
+                  "label": "CCI",
+                  "display_value": "50.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "confirm",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "marks-financing",
+              "master_category": "融資條件",
+              "master_description": "信用條件是否仍支撐風險資產擴張。",
+              "site_metric_label": "Credit Change",
+              "source_type": "proxy",
+              "metric_ids": [
+                "credit_change"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "credit_change",
+                  "label": "Credit Change",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "advance",
+              "is_transition_driver": false
+            },
+            {
+              "row_id": "marks-leverage",
+              "master_category": "槓桿與擁擠",
+              "master_description": "利用槓桿與擁擠程度觀察過熱風險。",
+              "site_metric_label": "Margin Balance",
+              "source_type": "proxy",
+              "metric_ids": [
+                "margin_balance"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "margin_balance",
+                  "label": "Margin Balance",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "risk",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "marks-secondary-context",
+              "master_category": "次級景氣上下文",
+              "master_description": "庫存與政府支出僅作為次級輔助觀察，不是主透鏡。",
+              "site_metric_label": "Inventory Change / Government Spending",
+              "source_type": "proxy",
+              "metric_ids": [
+                "inventory_change",
+                "government_spending"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "inventory_change",
+                  "label": "Inventory Change",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                },
+                {
+                  "metric_id": "government_spending",
+                  "label": "Government Spending",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "confirm",
+              "is_transition_driver": false
+            }
+          ],
           "transition_keys": [
             "credit_spread",
             "stock_index_yoy",
             "margin_balance"
           ],
+          "warning_state": null,
+          "warning_level": null,
+          "warning_reasons": [],
           "narrative": "Credit stress is easing before full risk appetite returns.",
           "stance": "rebuild exposure",
           "history": [
@@ -1120,6 +1665,122 @@
                   "proxy_label": "Proxy"
                 }
               ],
+              "semantic_rows": [
+                {
+                  "row_id": "marks-credit-spreads",
+                  "master_category": "信用利差",
+                  "master_description": "Marks 最核心的信用週期觀察面向。",
+                  "site_metric_label": "Credit Spread",
+                  "source_type": "original",
+                  "metric_ids": [
+                    "credit_spread"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "credit_spread",
+                      "label": "Credit Spread",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "advance",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "marks-risk-appetite",
+                  "master_category": "風險偏好",
+                  "master_description": "市場是否願意承擔風險，從價格與情緒觀察。",
+                  "site_metric_label": "Stock Index YoY / CCI",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "stock_index_yoy",
+                    "cci_level"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "stock_index_yoy",
+                      "label": "Stock Index YoY",
+                      "display_value": "0.0%",
+                      "status": "neutral"
+                    },
+                    {
+                      "metric_id": "cci_level",
+                      "label": "CCI",
+                      "display_value": "50.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "confirm",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "marks-financing",
+                  "master_category": "融資條件",
+                  "master_description": "信用條件是否仍支撐風險資產擴張。",
+                  "site_metric_label": "Credit Change",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "credit_change"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "credit_change",
+                      "label": "Credit Change",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "advance",
+                  "is_transition_driver": false
+                },
+                {
+                  "row_id": "marks-leverage",
+                  "master_category": "槓桿與擁擠",
+                  "master_description": "利用槓桿與擁擠程度觀察過熱風險。",
+                  "site_metric_label": "Margin Balance",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "margin_balance"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "margin_balance",
+                      "label": "Margin Balance",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "risk",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "marks-secondary-context",
+                  "master_category": "次級景氣上下文",
+                  "master_description": "庫存與政府支出僅作為次級輔助觀察，不是主透鏡。",
+                  "site_metric_label": "Inventory Change / Government Spending",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "inventory_change",
+                    "government_spending"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "inventory_change",
+                      "label": "Inventory Change",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    },
+                    {
+                      "metric_id": "government_spending",
+                      "label": "Government Spending",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "confirm",
+                  "is_transition_driver": false
+                }
+              ],
               "previous_phase": null,
               "previous_phase_label": null,
               "transition_keys": [
@@ -1127,10 +1788,13 @@
                 "stock_index_yoy",
                 "margin_balance"
               ],
+              "warning_state": null,
+              "warning_level": null,
+              "warning_reasons": [],
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "initial",
-              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "decision_summary": "Initial month resolves to 復甦 based on the strongest support.",
               "support_current_phase_signals": [
                 "風險偏好不再惡化",
                 "信用壓力不再惡化"
@@ -1460,23 +2124,29 @@
               "status": "neutral"
             }
           ],
+          "semantic_rows": [],
           "transition_keys": [
             "cci_level",
             "inventory_sales_ratio",
             "overtime_trend"
           ],
-          "narrative": "Leading, production, and demand data are improving together.",
+          "warning_state": "recession_warning",
+          "warning_level": "moderate",
+          "warning_reasons": [
+            "工業生產趨勢轉差",
+            "PMI 跌破 50 (49.4)"
+          ],
+          "narrative": "Growth remains intact, but recession-type pressure is now visible.",
           "stance": "hold trend exposure",
           "history": [
             {
               "month": "2024-04",
               "as_of": "2024-04",
-              "phase": "Recovery",
-              "phase_label": "復甦",
+              "phase": "Growth",
+              "phase_label": "成長",
               "reasons": [
-                "領先指標維持改善 (0.64)",
-                "就業壓力仍受控",
-                "出口重新回到正成長 (10.0%)"
+                "領先指標動能轉強 (0.64)",
+                "出口成長明顯轉強 (10.0%)"
               ],
               "metrics": [
                 {
@@ -1563,46 +2233,54 @@
                   "status": "neutral"
                 }
               ],
+              "semantic_rows": [],
               "previous_phase": null,
               "previous_phase_label": null,
               "transition_keys": [
-                "leading_index_change",
-                "industrial_production_trend",
-                "pmi"
+                "cci_level",
+                "inventory_sales_ratio",
+                "overtime_trend"
               ],
-              "narrative": "Leading data is stabilizing after weakness, but conviction is not broad yet.",
-              "stance": "start building risk",
+              "warning_state": "recession_warning",
+              "warning_level": "moderate",
+              "warning_reasons": [
+                "工業生產趨勢轉差",
+                "PMI 跌破 50 (49.4)"
+              ],
+              "narrative": "Growth remains intact, but recession-type pressure is now visible.",
+              "stance": "hold trend exposure",
               "decision_mode": "initial",
-              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "decision_summary": "初始月份以 成長 作為起始階段。",
               "support_current_phase_signals": [
-                "領先指標維持改善 (0.64)",
-                "就業壓力仍受控",
-                "出口重新回到正成長 (10.0%)"
-              ],
-              "support_next_phase_signals": [
                 "領先指標動能轉強 (0.64)",
                 "出口成長明顯轉強 (10.0%)"
               ],
+              "support_next_phase_signals": [],
               "conflict_signals": [
+                "領先指標維持改善 (0.64)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (10.0%)",
                 "工業生產趨勢轉差",
                 "PMI 跌破 50 (49.4)"
               ],
               "supporting_signals": [
-                "領先指標維持改善 (0.64)",
-                "就業壓力仍受控",
-                "出口重新回到正成長 (10.0%)"
+                "領先指標動能轉強 (0.64)",
+                "出口成長明顯轉強 (10.0%)"
               ],
               "conflicting_signals": [
+                "領先指標維持改善 (0.64)",
+                "就業壓力仍受控",
+                "出口重新回到正成長 (10.0%)",
                 "工業生產趨勢轉差",
                 "PMI 跌破 50 (49.4)"
               ]
             }
           ],
           "transposed": {
-            "current_phase": "Recovery",
-            "current_phase_label": "復甦",
-            "next_phase": "Growth",
-            "prev_phase": "Recession",
+            "current_phase": "Growth",
+            "current_phase_label": "成長",
+            "next_phase": "Boom",
+            "prev_phase": "Recovery",
             "phase_sequence": [
               "Recovery",
               "Growth",
@@ -1610,17 +2288,17 @@
               "Recession"
             ],
             "transition_keys": [
-              "leading_index_change",
-              "industrial_production_trend",
-              "pmi"
+              "cci_level",
+              "inventory_sales_ratio",
+              "overtime_trend"
             ],
             "metric_rows": [
               {
                 "metric_id": "leading_index_change",
                 "label": "Leading Index Change",
                 "display_format": "decimal",
-                "is_transition_key": true,
-                "transition_direction": "next",
+                "is_transition_key": false,
+                "transition_direction": "",
                 "values": [
                   {
                     "month": "2024-04",
@@ -1634,7 +2312,7 @@
                 "label": "Industrial Production Trend",
                 "display_format": "decimal",
                 "is_transition_key": true,
-                "transition_direction": "next",
+                "transition_direction": "warning",
                 "values": [
                   {
                     "month": "2024-04",
@@ -1647,8 +2325,8 @@
                 "metric_id": "labor_stress",
                 "label": "Labor Stress",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "warning",
                 "values": [
                   {
                     "month": "2024-04",
@@ -1661,8 +2339,8 @@
                 "metric_id": "overtime_trend",
                 "label": "Overtime Trend",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-04",
@@ -1675,8 +2353,8 @@
                 "metric_id": "exports_yoy",
                 "label": "Exports YoY",
                 "display_format": "percent",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "warning",
                 "values": [
                   {
                     "month": "2024-04",
@@ -1703,8 +2381,8 @@
                 "metric_id": "cci_level",
                 "label": "CCI",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-04",
@@ -1717,8 +2395,8 @@
                 "metric_id": "pmi",
                 "label": "PMI",
                 "display_format": "decimal",
-                "is_transition_key": true,
-                "transition_direction": "next",
+                "is_transition_key": false,
+                "transition_direction": "",
                 "values": [
                   {
                     "month": "2024-04",
@@ -1745,8 +2423,8 @@
                 "metric_id": "inventory_sales_ratio",
                 "label": "Inventory/Sales",
                 "display_format": "decimal",
-                "is_transition_key": false,
-                "transition_direction": "",
+                "is_transition_key": true,
+                "transition_direction": "next",
                 "values": [
                   {
                     "month": "2024-04",
@@ -1756,49 +2434,236 @@
                 ]
               }
             ],
+            "semantic_rows": [
+              {
+                "row_id": "izaax-leading-signals",
+                "master_category": "領先訊號",
+                "master_description": "愛謝客用來判斷景氣是否提前轉向的核心觀察面向。",
+                "site_metric_label": "國發會領先指標",
+                "source_type": "original",
+                "metric_ids": [
+                  "leading_index_change"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "0.64",
+                  "status": "positive"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.64",
+                    "status": "positive"
+                  }
+                ],
+                "transition_role": "advance",
+                "is_transition_driver": false
+              },
+              {
+                "row_id": "izaax-labor-stress",
+                "master_category": "勞動壓力",
+                "master_description": "觀察就業市場是否開始反映景氣轉弱。",
+                "site_metric_label": "就業壓力 / 初領失業給付",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "labor_stress",
+                  "unemployment_claims"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "0.00",
+                  "status": "positive"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "risk",
+                "is_transition_driver": true
+              },
+              {
+                "row_id": "izaax-production-demand",
+                "master_category": "生產與需求",
+                "master_description": "工業活動與需求是否持續擴張或開始轉弱。",
+                "site_metric_label": "工業生產 / 加班工時",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "industrial_production_trend",
+                  "overtime_trend"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "-1.00",
+                  "status": "negative"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "-1.00",
+                    "status": "negative"
+                  }
+                ],
+                "transition_role": "confirm",
+                "is_transition_driver": true
+              },
+              {
+                "row_id": "izaax-export-demand",
+                "master_category": "出口與全球需求",
+                "master_description": "出口是否仍支撐景氣循環向上。",
+                "site_metric_label": "出口年增率",
+                "source_type": "original",
+                "metric_ids": [
+                  "exports_yoy"
+                ],
+                "display_format": "percent",
+                "current_value": {
+                  "display_value": "10.0%",
+                  "status": "positive"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "10.0%",
+                    "status": "positive"
+                  }
+                ],
+                "transition_role": "advance",
+                "is_transition_driver": true
+              },
+              {
+                "row_id": "izaax-confidence",
+                "master_category": "信心與需求溫度",
+                "master_description": "需求熱度與信心的代理觀察值。",
+                "site_metric_label": "CCI",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "cci_level"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "50.00",
+                  "status": "positive"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "--",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "confirm",
+                "is_transition_driver": true
+              },
+              {
+                "row_id": "izaax-inventory-cycle",
+                "master_category": "庫存循環",
+                "master_description": "庫存去化或累積是否接近下一階段的壓力點。",
+                "site_metric_label": "庫存 / 銷售比",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "inventory_sales_ratio"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "0.00",
+                  "status": "neutral"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "0.00",
+                    "status": "neutral"
+                  }
+                ],
+                "transition_role": "risk",
+                "is_transition_driver": true
+              },
+              {
+                "row_id": "izaax-recession-warning",
+                "master_category": "衰退警訊",
+                "master_description": "補充觀察衰退壓力是否明顯升高。",
+                "site_metric_label": "PMI / Sahm Rule / 勞動壓力",
+                "source_type": "proxy",
+                "metric_ids": [
+                  "pmi",
+                  "sahm_rule",
+                  "labor_stress"
+                ],
+                "display_format": "decimal",
+                "current_value": {
+                  "display_value": "0.00",
+                  "status": "positive"
+                },
+                "history_values": [
+                  {
+                    "month": "2024-04",
+                    "display_value": "49.40",
+                    "status": "positive"
+                  }
+                ],
+                "transition_role": "risk",
+                "is_transition_driver": true
+              }
+            ],
             "months": [
               "2024-04"
             ],
             "month_columns": [
               {
                 "month": "2024-04",
-                "phase": "Recovery",
-                "phase_label": "復甦",
+                "phase": "Growth",
+                "phase_label": "成長",
                 "transition_keys": [
-                  "leading_index_change",
-                  "industrial_production_trend",
-                  "pmi"
+                  "cci_level",
+                  "inventory_sales_ratio",
+                  "overtime_trend"
                 ],
                 "decision_mode": "initial",
-                "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+                "decision_summary": "初始月份以 成長 作為起始階段。",
                 "support_current_phase_signals": [
-                  "領先指標維持改善 (0.64)",
-                  "就業壓力仍受控",
-                  "出口重新回到正成長 (10.0%)"
-                ],
-                "support_next_phase_signals": [
                   "領先指標動能轉強 (0.64)",
                   "出口成長明顯轉強 (10.0%)"
                 ],
+                "support_next_phase_signals": [],
                 "conflict_signals": [
+                  "領先指標維持改善 (0.64)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (10.0%)",
                   "工業生產趨勢轉差",
                   "PMI 跌破 50 (49.4)"
                 ],
                 "supporting_signals": [
-                  "領先指標維持改善 (0.64)",
-                  "就業壓力仍受控",
-                  "出口重新回到正成長 (10.0%)"
+                  "領先指標動能轉強 (0.64)",
+                  "出口成長明顯轉強 (10.0%)"
                 ],
                 "conflicting_signals": [
+                  "領先指標維持改善 (0.64)",
+                  "就業壓力仍受控",
+                  "出口重新回到正成長 (10.0%)",
+                  "工業生產趨勢轉差",
+                  "PMI 跌破 50 (49.4)"
+                ],
+                "warning_state": "recession_warning",
+                "warning_level": "moderate",
+                "warning_label": "轉弱警訊",
+                "warning_reasons": [
                   "工業生產趨勢轉差",
                   "PMI 跌破 50 (49.4)"
                 ]
               }
             ],
             "reasons": [
-              "領先指標維持改善 (0.64)",
-              "就業壓力仍受控",
-              "出口重新回到正成長 (10.0%)"
+              "領先指標動能轉強 (0.64)",
+              "出口成長明顯轉強 (10.0%)"
+            ],
+            "warning_state": "recession_warning",
+            "warning_level": "moderate",
+            "warning_reasons": [
+              "工業生產趨勢轉差",
+              "PMI 跌破 50 (49.4)"
             ]
           }
         },
@@ -1873,11 +2738,130 @@
               "proxy_label": "Proxy"
             }
           ],
+          "semantic_rows": [
+            {
+              "row_id": "urakami-rate-direction",
+              "master_category": "政策與短率方向",
+              "master_description": "判斷金融相場是否啟動的第一層利率觀察。",
+              "site_metric_label": "銀行放款利率 / rate trend",
+              "source_type": "proxy",
+              "metric_ids": [
+                "bank_lending_rate"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "bank_lending_rate",
+                  "label": "Bank Lending Rate",
+                  "display_value": "2.2%",
+                  "status": "negative"
+                }
+              ],
+              "transition_role": "advance",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "urakami-credit-liquidity",
+              "master_category": "信用與流動性",
+              "master_description": "觀察信用擴張與貨幣供給是否支撐市場向上。",
+              "site_metric_label": "credit change / M2 YoY / M1B",
+              "source_type": "proxy",
+              "metric_ids": [
+                "credit_change",
+                "m2_yoy",
+                "m1b_change"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "credit_change",
+                  "label": "Credit Change",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                },
+                {
+                  "metric_id": "m2_yoy",
+                  "label": "M2 YoY",
+                  "display_value": "6.1%",
+                  "status": "neutral"
+                },
+                {
+                  "metric_id": "m1b_change",
+                  "label": "M1B Change",
+                  "display_value": "-55554.00",
+                  "status": "negative"
+                }
+              ],
+              "transition_role": "advance",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "urakami-yield-curve",
+              "master_category": "殖利率曲線",
+              "master_description": "觀察陡峭化、平坦化與倒掛所代表的景氣轉折。",
+              "site_metric_label": "Yield Curve Spread",
+              "source_type": "proxy",
+              "metric_ids": [
+                "yield_curve"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "yield_curve",
+                  "label": "Yield Curve Spread",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "risk",
+              "is_transition_driver": false
+            },
+            {
+              "row_id": "urakami-valuation",
+              "master_category": "估值與過熱",
+              "master_description": "觀察 PER 是否從金融相場走向過熱。",
+              "site_metric_label": "PE Ratio",
+              "source_type": "proxy",
+              "metric_ids": [
+                "pe_ratio"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "pe_ratio",
+                  "label": "PE Ratio",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "risk",
+              "is_transition_driver": false
+            },
+            {
+              "row_id": "urakami-leverage",
+              "master_category": "市場槓桿與擁擠",
+              "master_description": "觀察融資餘額與擁擠交易是否升溫。",
+              "site_metric_label": "Margin Balance",
+              "source_type": "proxy",
+              "metric_ids": [
+                "margin_balance"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "margin_balance",
+                  "label": "Margin Balance",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "risk",
+              "is_transition_driver": false
+            }
+          ],
           "transition_keys": [
             "bank_lending_rate",
             "credit_change",
             "m2_yoy"
           ],
+          "warning_state": null,
+          "warning_level": null,
+          "warning_reasons": [],
           "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
           "stance": "turn risk back on",
           "history": [
@@ -1952,6 +2936,122 @@
                   "proxy_label": "Proxy"
                 }
               ],
+              "semantic_rows": [
+                {
+                  "row_id": "urakami-rate-direction",
+                  "master_category": "政策與短率方向",
+                  "master_description": "判斷金融相場是否啟動的第一層利率觀察。",
+                  "site_metric_label": "銀行放款利率 / rate trend",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "bank_lending_rate"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "bank_lending_rate",
+                      "label": "Bank Lending Rate",
+                      "display_value": "2.2%",
+                      "status": "negative"
+                    }
+                  ],
+                  "transition_role": "advance",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "urakami-credit-liquidity",
+                  "master_category": "信用與流動性",
+                  "master_description": "觀察信用擴張與貨幣供給是否支撐市場向上。",
+                  "site_metric_label": "credit change / M2 YoY / M1B",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "credit_change",
+                    "m2_yoy",
+                    "m1b_change"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "credit_change",
+                      "label": "Credit Change",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    },
+                    {
+                      "metric_id": "m2_yoy",
+                      "label": "M2 YoY",
+                      "display_value": "6.1%",
+                      "status": "neutral"
+                    },
+                    {
+                      "metric_id": "m1b_change",
+                      "label": "M1B Change",
+                      "display_value": "-55554.00",
+                      "status": "negative"
+                    }
+                  ],
+                  "transition_role": "advance",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "urakami-yield-curve",
+                  "master_category": "殖利率曲線",
+                  "master_description": "觀察陡峭化、平坦化與倒掛所代表的景氣轉折。",
+                  "site_metric_label": "Yield Curve Spread",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "yield_curve"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "yield_curve",
+                      "label": "Yield Curve Spread",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "risk",
+                  "is_transition_driver": false
+                },
+                {
+                  "row_id": "urakami-valuation",
+                  "master_category": "估值與過熱",
+                  "master_description": "觀察 PER 是否從金融相場走向過熱。",
+                  "site_metric_label": "PE Ratio",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "pe_ratio"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "pe_ratio",
+                      "label": "PE Ratio",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "risk",
+                  "is_transition_driver": false
+                },
+                {
+                  "row_id": "urakami-leverage",
+                  "master_category": "市場槓桿與擁擠",
+                  "master_description": "觀察融資餘額與擁擠交易是否升溫。",
+                  "site_metric_label": "Margin Balance",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "margin_balance"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "margin_balance",
+                      "label": "Margin Balance",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "risk",
+                  "is_transition_driver": false
+                }
+              ],
               "previous_phase": null,
               "previous_phase_label": null,
               "transition_keys": [
@@ -1959,10 +3059,13 @@
                 "credit_change",
                 "m2_yoy"
               ],
+              "warning_state": null,
+              "warning_level": null,
+              "warning_reasons": [],
               "narrative": "Rates and liquidity are stabilizing, but market confirmation is still early.",
               "stance": "turn risk back on",
               "decision_mode": "initial",
-              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "decision_summary": "Initial month resolves to 復甦 based on the strongest support.",
               "support_current_phase_signals": [
                 "信用環境止穩",
                 "流動性不再收縮"
@@ -2054,11 +3157,130 @@
               "proxy_label": "Proxy"
             }
           ],
+          "semantic_rows": [
+            {
+              "row_id": "marks-credit-spreads",
+              "master_category": "信用利差",
+              "master_description": "Marks 最核心的信用週期觀察面向。",
+              "site_metric_label": "Credit Spread",
+              "source_type": "original",
+              "metric_ids": [
+                "credit_spread"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "credit_spread",
+                  "label": "Credit Spread",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "advance",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "marks-risk-appetite",
+              "master_category": "風險偏好",
+              "master_description": "市場是否願意承擔風險，從價格與情緒觀察。",
+              "site_metric_label": "Stock Index YoY / CCI",
+              "source_type": "proxy",
+              "metric_ids": [
+                "stock_index_yoy",
+                "cci_level"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "stock_index_yoy",
+                  "label": "Stock Index YoY",
+                  "display_value": "2.0%",
+                  "status": "positive"
+                },
+                {
+                  "metric_id": "cci_level",
+                  "label": "CCI",
+                  "display_value": "50.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "confirm",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "marks-financing",
+              "master_category": "融資條件",
+              "master_description": "信用條件是否仍支撐風險資產擴張。",
+              "site_metric_label": "Credit Change",
+              "source_type": "proxy",
+              "metric_ids": [
+                "credit_change"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "credit_change",
+                  "label": "Credit Change",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "advance",
+              "is_transition_driver": false
+            },
+            {
+              "row_id": "marks-leverage",
+              "master_category": "槓桿與擁擠",
+              "master_description": "利用槓桿與擁擠程度觀察過熱風險。",
+              "site_metric_label": "Margin Balance",
+              "source_type": "proxy",
+              "metric_ids": [
+                "margin_balance"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "margin_balance",
+                  "label": "Margin Balance",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "risk",
+              "is_transition_driver": true
+            },
+            {
+              "row_id": "marks-secondary-context",
+              "master_category": "次級景氣上下文",
+              "master_description": "庫存與政府支出僅作為次級輔助觀察，不是主透鏡。",
+              "site_metric_label": "Inventory Change / Government Spending",
+              "source_type": "proxy",
+              "metric_ids": [
+                "inventory_change",
+                "government_spending"
+              ],
+              "current_values": [
+                {
+                  "metric_id": "inventory_change",
+                  "label": "Inventory Change",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                },
+                {
+                  "metric_id": "government_spending",
+                  "label": "Government Spending",
+                  "display_value": "0.00",
+                  "status": "neutral"
+                }
+              ],
+              "transition_role": "confirm",
+              "is_transition_driver": false
+            }
+          ],
           "transition_keys": [
             "credit_spread",
             "stock_index_yoy",
             "margin_balance"
           ],
+          "warning_state": null,
+          "warning_level": null,
+          "warning_reasons": [],
           "narrative": "Credit stress is easing before full risk appetite returns.",
           "stance": "rebuild exposure",
           "history": [
@@ -2132,6 +3354,122 @@
                   "proxy_label": "Proxy"
                 }
               ],
+              "semantic_rows": [
+                {
+                  "row_id": "marks-credit-spreads",
+                  "master_category": "信用利差",
+                  "master_description": "Marks 最核心的信用週期觀察面向。",
+                  "site_metric_label": "Credit Spread",
+                  "source_type": "original",
+                  "metric_ids": [
+                    "credit_spread"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "credit_spread",
+                      "label": "Credit Spread",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "advance",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "marks-risk-appetite",
+                  "master_category": "風險偏好",
+                  "master_description": "市場是否願意承擔風險，從價格與情緒觀察。",
+                  "site_metric_label": "Stock Index YoY / CCI",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "stock_index_yoy",
+                    "cci_level"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "stock_index_yoy",
+                      "label": "Stock Index YoY",
+                      "display_value": "2.0%",
+                      "status": "positive"
+                    },
+                    {
+                      "metric_id": "cci_level",
+                      "label": "CCI",
+                      "display_value": "50.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "confirm",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "marks-financing",
+                  "master_category": "融資條件",
+                  "master_description": "信用條件是否仍支撐風險資產擴張。",
+                  "site_metric_label": "Credit Change",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "credit_change"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "credit_change",
+                      "label": "Credit Change",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "advance",
+                  "is_transition_driver": false
+                },
+                {
+                  "row_id": "marks-leverage",
+                  "master_category": "槓桿與擁擠",
+                  "master_description": "利用槓桿與擁擠程度觀察過熱風險。",
+                  "site_metric_label": "Margin Balance",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "margin_balance"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "margin_balance",
+                      "label": "Margin Balance",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "risk",
+                  "is_transition_driver": true
+                },
+                {
+                  "row_id": "marks-secondary-context",
+                  "master_category": "次級景氣上下文",
+                  "master_description": "庫存與政府支出僅作為次級輔助觀察，不是主透鏡。",
+                  "site_metric_label": "Inventory Change / Government Spending",
+                  "source_type": "proxy",
+                  "metric_ids": [
+                    "inventory_change",
+                    "government_spending"
+                  ],
+                  "current_values": [
+                    {
+                      "metric_id": "inventory_change",
+                      "label": "Inventory Change",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    },
+                    {
+                      "metric_id": "government_spending",
+                      "label": "Government Spending",
+                      "display_value": "0.00",
+                      "status": "neutral"
+                    }
+                  ],
+                  "transition_role": "confirm",
+                  "is_transition_driver": false
+                }
+              ],
               "previous_phase": null,
               "previous_phase_label": null,
               "transition_keys": [
@@ -2139,10 +3477,13 @@
                 "stock_index_yoy",
                 "margin_balance"
               ],
+              "warning_state": null,
+              "warning_level": null,
+              "warning_reasons": [],
               "narrative": "Credit stress is easing before full risk appetite returns.",
               "stance": "rebuild exposure",
               "decision_mode": "initial",
-              "decision_summary": "初始月份以 復甦 的支持訊號最多，作為當期階段。",
+              "decision_summary": "Initial month resolves to 復甦 based on the strongest support.",
               "support_current_phase_signals": [
                 "風險偏好不再惡化",
                 "信用壓力不再惡化"

@@ -1,7 +1,12 @@
 from market_phase_detector.collectors.tw_external import (
+    fetch_latest_twse_margin,
+    fetch_mol_claims_annual,
+    parse_ncu_cci_archive_page,
+    parse_ncu_cci_pdf_text,
     parse_cbc_m2_from_homepage,
     parse_cier_pmi_article,
     parse_cier_pmi_history_page,
+    parse_ncu_cci_from_news,
     parse_tw_revenue_snapshot,
     parse_twse_market_snapshot,
 )
@@ -70,6 +75,121 @@ def test_parse_cbc_m2_from_homepage_extracts_latest_value() -> None:
         "date": "2026-03",
         "m2_yoy": 5.38,
         "source_date": "2026-03-19",
+    }
+
+
+def test_parse_ncu_cci_from_news_extracts_latest_month_and_value() -> None:
+    html = """
+    <html>
+      <body>
+        <h2>115年3月消費者信心指數(CCI)調查總數為62.3點</h2>
+        <p>較上月上升0.1點。</p>
+      </body>
+    </html>
+    """
+
+    record = parse_ncu_cci_from_news(html)
+
+    assert record == {
+        "date": "2026-03",
+        "cci_total": 62.3,
+    }
+
+
+def test_parse_ncu_cci_archive_page_returns_latest_report_pdf() -> None:
+    html = """
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="cci/cci_news1150127.pdf">消費者信心指數新聞稿1150127</a></td>
+          <td><a href="cci/cci_1150127.pdf">115年01月份消費者信心指數調查報告</a></td>
+        </tr>
+        <tr>
+          <td><a href="cci/cci_news1150327.pdf">消費者信心指數新聞稿1150327</a></td>
+          <td><a href="cci/cci_1150327.pdf">115年03月份消費者信心指數調查報告</a></td>
+        </tr>
+      </tbody>
+    </table>
+    """
+
+    record = parse_ncu_cci_archive_page(html, "https://rcted.ncu.edu.tw/cci.asp")
+
+    assert record == {
+        "date": "2026-03",
+        "source_url": "https://rcted.ncu.edu.tw/cci/cci_1150327.pdf",
+    }
+
+
+def test_parse_ncu_cci_pdf_text_extracts_total_index() -> None:
+    pdf_text = """
+    115年03月份消費者信心指數調查報告
+    本月消費者信心指數(CCI)總指數為62.3點，與上個月比較上升0.1點。
+    """
+
+    record = parse_ncu_cci_pdf_text(pdf_text, "2026-03", "https://rcted.ncu.edu.tw/cci/cci_1150327.pdf")
+
+    assert record == {
+        "date": "2026-03",
+        "cci_total": 62.3,
+        "source_url": "https://rcted.ncu.edu.tw/cci/cci_1150327.pdf",
+    }
+
+
+def test_fetch_mol_claims_annual_ignores_notes_and_extracts_latest_year(monkeypatch) -> None:
+    csv_text = """
+" Year ",""," Cases of first"," Cases of re-application"," Grand total"," Cases of first"," Cases of re-confirm","  Amount","  Placement","  (Person)",
+" 111年  2022 ","331983","70160","261823","330071","68056","262015","8120524","58875","5943",
+" 112年  2023 ","396517","88124","308393","392193","85534","306659","9868584","70055","7680",
+" 3.領滿失業給付期間者，自領滿之日起2年內再次請領失業給付，其失業給付以發給原給付期間之二分之一為 ","","","","     insurance program shall be added","","","","","",
+    """.strip()
+
+    class StubResponse:
+        def __init__(self, content: bytes) -> None:
+            self.content = content
+
+        def raise_for_status(self) -> None:
+            return None
+
+    def stub_get(url: str, timeout: int, verify: bool = False):
+        return StubResponse(csv_text.encode("big5", errors="replace"))
+
+    monkeypatch.setattr("market_phase_detector.collectors.tw_external.requests.get", stub_get)
+
+    rows = fetch_mol_claims_annual(None)
+
+    assert rows == [
+        {"date": "2022", "initial_claims": 70160, "year": 2022},
+        {"date": "2023", "initial_claims": 88124, "year": 2023},
+    ]
+
+
+def test_fetch_latest_twse_margin_prefers_first_row_when_api_is_descending(monkeypatch) -> None:
+    payload = {
+        "chart": {
+            "margin": [
+                ["4/17", 8557238, 427120349, 183334],
+                ["4/16", 8454685, 422408757, 178392],
+                ["3/5", 7959571, 379166593, 225312],
+            ]
+        }
+    }
+
+    class StubResponse:
+        def json(self):
+            return payload
+
+    def stub_get(url: str, timeout: int):
+        return StubResponse()
+
+    monkeypatch.setattr("market_phase_detector.collectors.tw_external.requests.get", stub_get)
+
+    record = fetch_latest_twse_margin(None)
+
+    assert record == {
+        "date": "4/17",
+        "margin_shares": 8557238,
+        "margin_amount": 427120349,
+        "short_shares": 183334,
     }
 
 
